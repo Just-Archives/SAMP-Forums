@@ -1,0 +1,185 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Move Object and reconnect (0.3.DL?) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello, i found a bug. Create object. Move it (long way). Disconnect from server, connect to the same server and port to the object. And you see object in the actual pos but not moving. (testing on 0.3" />
+<link rel="canonical" href="showthread3d27.html?tid=666039" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread3d27.html?tid=666039">Move Object and reconnect (0.3.DL?)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Move Object and reconnect (0.3.DL?) (<em>/showthread.php?tid=666039</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Move Object and reconnect (0.3.DL?) - <a href="member7c28.html?action=profile&amp;uid=57188">ATomas</a> -  23.04.2019
+<br />
+<br />
+Hello,<br />
+i found a bug. Create object. Move it (long way). Disconnect from server, connect to the same server and port to the object. And you see object in the actual pos but not moving. (testing on 0.3.DL, I use natives: CreateObject and MoveObject). GetObjectPos return correct position, but object in client not show in this return position.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member115e.html?action=profile&amp;uid=87151">BloodMaster</a> -  02.05.2019
+<br />
+<br />
+I am not sure, but I believe using Incognito streamer solves this problem. (But it doesn't mean it shouldn't be addressed by the developers)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member0393.html?action=profile&amp;uid=25572">niCe</a> -  02.05.2019
+<br />
+<br />
+It's not a bug, the move instruction is sent to the clients only at the moment, when the movement begins. The movement itself is done client-side, not server-side. You can divide the long distance into multiple shorter ones to make server-sided synchronized movement.<br />
+<br />
+Or use the streamer plugin, if it helps. <font size="1">Oh wait, you stated recently, that whoever uses plugins, their scipts are no longer their work. No plugins then.</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member7c28.html?action=profile&amp;uid=57188">ATomas</a> -  07.05.2019
+<br />
+<br />
+To fix this problem, use MoveObject again when the player connects to the server. I think SA-MP could fix this bug in the next version.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				You can divide the long distance into multiple shorter ones to make server-sided synchronized movement.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>It's a bad solution. When player connect to server the object doesn't move. When send MoveObject object start from bad (old) position.<br />
+<br />
+<br />
+Why use a foreign streamer plugin? I created my own streamer plugin over which I have 100% control and not crash my server.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> -  11.05.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ATomas</strong><br />
+<a href="showthreadce43.html?pid=4098003#pid4098003" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">To fix this problem, use MoveObject again when the player connects to the server. I think SA-MP could fix this bug in the next version.<br />
+<br />
+<br />
+It's a bad solution. When player connect to server the object doesn't move. When send MoveObject object start from bad (old) position.<br />
+<br />
+<br />
+Why use a foreign streamer plugin? I created my own streamer plugin over which I have 100% control and not crash my server.</div>
+</td>
+</tr>
+</table>
+</div>First of all, its not bad solution. Its not perfect but it is the best one you will get with available functions in samp.<br />
+<br />
+Second, why not use streamer plugin? Its stable, its fast and its awesome. I dont think there is a server that doesnt use streamer plugin by incognito.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member7c28.html?action=profile&amp;uid=57188">ATomas</a> -  12.05.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				First of all, its not bad solution. Its not perfect but it is the best one you will get with available functions in samp.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>using MoveObject again when the player connects to the server have perfect synchronization.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member705e.html?action=profile&amp;uid=193537">IllidanS4</a> -  24.10.2019
+<br />
+<br />
+The server also calculates the movement in order to (somewhat) accurately call OnObjectMoved. When a player joins, you can loop through all objects, see if they are moving, and inform the player of the movement with the proper RPC. I suppose you'd have to use YSF for most of this though.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member00c6.html?action=profile&amp;uid=336510">zinadoll</a> -  14.11.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BloodMaster</strong><br />
+<a href="showthreadafca.html?pid=4097348#pid4097348" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I am not sure, but I believe using Incognito streamer solves this problem. (But it doesn't mean it shouldn't <a href="https://myip.kim/" target="_blank"><font color="#000000">my ip</font></a> <a href="https://birthdaywishes.onl/" target="_blank"><font color="#000000">birthday wishes</font></a> <a href="https://elecpay.in/tneb/" target="_blank"><font color="#000000">tneb</font></a>  be addressed by the developers)</div>
+</td>
+</tr>
+</table>
+</div>I use natives: CreateObject and MoveObject). GetObjectPos return correct position, but object in client not show in this return position.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Move Object and reconnect (0.3.DL?) - <a href="member3648.html?action=profile&amp;uid=351455">finntreutelka</a> -  13.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>zinadoll</strong><br />
+<a href="showthreadfe63.html?pid=4122150#pid4122150" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I use natives: CreateObject and MoveObject). GetObjectPos return correct <a href="https://omegle-online.com/" target="_blank"><font color="#000000">omegle</font></a> position, but object in client not show <a href="https://walmartone.pro/" target="_blank"><font color="#000000">walmart one</font></a> in this return position.</div>
+</td>
+</tr>
+</table>
+</div> The movement itself is done client-side, not server-side.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

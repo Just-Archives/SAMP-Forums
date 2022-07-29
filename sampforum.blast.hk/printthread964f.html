@@ -1,0 +1,358 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Today I learned - Share your newly found knowledge! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Yes, just like reddit. Simple. If you learned something new related to SA-MP scripting, share it here! Please:Explain what it is you learned, don't just say you learned something. &lt;---- Try keeping it" />
+<link rel="canonical" href="showthread964f.html?tid=359953" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread964f.html?tid=359953">Today I learned - Share your newly found knowledge!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Today I learned - Share your newly found knowledge! (<em>/showthread.php?tid=359953</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadf80e.html?tid=359953&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2102.html?tid=359953&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4c3d.html?tid=359953&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8b69.html?tid=359953&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread0f1f.html?tid=359953&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc388.html?tid=359953&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreada82c.html?tid=359953&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7428.html?tid=359953&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4cd5.html?tid=359953&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc3e0.html?tid=359953&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread9e7f.html?tid=359953&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadeeb4.html?tid=359953&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1904.html?tid=359953&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3cda.html?tid=359953&amp;page=15">15</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf7a6.html?tid=359953&amp;page=16">16</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread745f.html?tid=359953&amp;page=17">17</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread39fa.html?tid=359953&amp;page=18">18</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Today I learned - Share your newly found knowledge! - <a href="membercec9.html?action=profile&amp;uid=23640">Slice</a> -  15.07.2012
+<br />
+<br />
+<font size="1">Yes, just like reddit.</font><br />
+<br />
+Simple. If you learned something new  <u>related to SA-MP scripting</u>, share it here!<br />
+<br />
+<font size="4"><b>Please</b></font>:<ul><li>Explain what it is you learned, don't just say you learned something. <b><font color="Red">&lt;----</font></b></li>
+<li>Try keeping it concise.</li>
+<li>Don't post stupid pictures or otherwise annoying, non-related stuff.</li>
+<li>Don't link to or quote posts then say you learned that.</li>
+</ul>
+I'll start..<br />
+<br />
+<br />
+<b>Today I learned</b> the proper way to forward public functions is this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #2222BB;">public</span> OnSomethingHappen<span style="color: #000000;">(</span>a, b, c<span style="color: #000000;">)</span>;</div></div></pre>
+</div>I've always done it without "public". The only difference, it seems, is it enforces some extra restrictions (such as not being able to assign default values).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member059a.html?action=profile&amp;uid=78223">Lorenc_</a> -  15.07.2012
+<br />
+<br />
+<b>Today I learned</b> that you can use a hash sign (#) instead of quote marks. E.G: SetPVarInt( playerid, #slice, 1 );
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member3983.html?action=profile&amp;uid=17127">CaHbKo</a> -  15.07.2012
+<br />
+<br />
+<b>Today I learned</b>, that...<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Mauzen</strong><br />
+<a href="showthread4faa.html?pid=1989327#pid1989327" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Converting variabes "downwards" isnt a big problem btw. Just use normal cells, and if it really depends on being just 1/2 bytes long, you could do this:<br />
+cell &amp; 0x0000FFFF (2 byte/16 bit value)<br />
+cell &amp; 0x000000FF (1 byte/8 bit value)</div>
+</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membercec9.html?action=profile&amp;uid=23640">Slice</a> -  17.07.2012
+<br />
+<br />
+<b>Today I learned</b> the compiler accepts trailing commas in enums.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Valid:</span><br/><span style="color: #2222BB;">enum</span> <span style="color: #000000;">{</span><br/>    ABC,<br/>    DEF,<br/>    GHI,<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: Today I learned - Share your newly found knowledge! - <a href="member48a1.html?action=profile&amp;uid=106963">Drebin</a> -  17.07.2012
+<br />
+<br />
+<b>Today I learned</b> that color embeddings can be defined ontop of the script.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define BLUE_EMBED "{0000FF}"</span><br/> <br/> <br/>SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, <span style="color: #000066;">"White turns into"</span>BLUE_EMBED<span style="color: #000066;">" blue."</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4c11.html?action=profile&amp;uid=159975">leonardo1434</a> -  17.07.2012
+<br />
+<br />
+<b><i>Today I learned</i> </b>that strcat is 2x more fast than format and with a simple definition you can make a new model of format.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member0ccb.html?action=profile&amp;uid=133113">RebeloX</a> -  17.07.2012
+<br />
+<br />
+<b>Today I learned</b> that dialogs can be defined inside the enumerator<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> <span style="color: #000000;">{</span><br/>    DIALOG_1,<br/>    DIALOG_2<br/><span style="color: #000000;">}</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberbbf3.html?action=profile&amp;uid=80597">Ricop522</a> -  17.07.2012
+<br />
+<br />
+<b>Today I learned</b> how to #emit
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member882c.html?action=profile&amp;uid=110008">Ironboy</a> -  17.07.2012
+<br />
+<br />
+<b>Today i learned</b> Enumerators (enums).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5a53.html?action=profile&amp;uid=77733">Universal</a> -  18.07.2012
+<br />
+<br />
+<b>Today I learned</b> that OnGameModeExit is not being called when you shutdown the server console.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberd0f7.html?action=profile&amp;uid=127">Simon</a> -  18.07.2012
+<br />
+<br />
+<b>TIL</b> a little trick to extend the amount of statements executed in ternary statements.<br />
+<br />
+Never thought about using the ',' operator this way. Group of statements must be enclosed in brackets. It's a neat little trick that might create some interesting constructs:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">main <span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> <span style="color: #000000;">bool</span><span style="color: #000000;">:</span>cond <span style="color: #000000;">=</span> true;<br/>    cond <span style="color: #000000;">?</span> <span style="color: #000000;">(</span><span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"T - First"</span><span style="color: #000000;">)</span>, <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"T - Second"</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> <span style="color: #000000;">(</span><span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"F - First"</span><span style="color: #000000;">)</span>, <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"F - Second"</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"SWITCHING TRUTH"</span><span style="color: #000000;">)</span>;<br/><br/>    cond <span style="color: #000000;">=</span> false;<br/>    cond <span style="color: #000000;">?</span> <span style="color: #000000;">(</span><span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"T - First"</span><span style="color: #000000;">)</span>, <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"T - Second"</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> <span style="color: #000000;">(</span><span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"F - First"</span><span style="color: #000000;">)</span>, <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"F - Second"</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member6dd1.html?action=profile&amp;uid=146437">Night Dreamer</a> -  18.07.2012
+<br />
+<br />
+<b>Today I learned</b> more about bits <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">const </span><span style="color: #0000BB">color </span><span style="color: #007700">= ((</span><span style="color: #0000BB">183</span><span style="color: #007700">)&lt;&lt;</span><span style="color: #0000BB">24</span><span style="color: #007700">|(</span><span style="color: #0000BB">115</span><span style="color: #007700">)&lt;&lt;</span><span style="color: #0000BB">16</span><span style="color: #007700">|(</span><span style="color: #0000BB">222</span><span style="color: #007700">)&lt;&lt;</span><span style="color: #0000BB">8</span><span style="color: #007700">); </span><span style="color: #FF8000">//purple!!!
+
+<br/></span><span style="color: #0000BB">GetPrintedRGB</span><span style="color: #007700">(</span><span style="color: #0000BB">color</span><span style="color: #007700">) return </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Red: %d, Green: %d, Blue: %d"</span><span style="color: #007700">, ((</span><span style="color: #0000BB">colorFrom </span><span style="color: #007700">&gt;&gt; </span><span style="color: #0000BB">24</span><span style="color: #007700">) &amp; </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">), ((</span><span style="color: #0000BB">colorFrom </span><span style="color: #007700">&gt;&gt; </span><span style="color: #0000BB">16</span><span style="color: #007700">) &amp; </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">), ((</span><span style="color: #0000BB">colorFrom </span><span style="color: #007700">&gt;&gt; </span><span style="color: #0000BB">8</span><span style="color: #007700">) &amp; </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">)); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member0ccb.html?action=profile&amp;uid=133113">RebeloX</a> -  18.07.2012
+<br />
+<br />
+<b>Today I learned</b> how to use <b>#error</b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#if !defined MAX_SLOTS</span><br/>    <span style="color: #2222AA;">#error You must define the MAX_SLOTS in your script</span><br/><span style="color: #2222AA;">#endif</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4c5f.html?action=profile&amp;uid=46049">RyDeR`</a> -  18.07.2012
+<br />
+<br />
+<b>Today I learned</b> that publics like <font face="Courier New">OnPlayerText</font> (in a filterscript) are still intact while the gamemode is restarting so you can, for example, actually still chat using Send(Player/Client)Message(ToAll)!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member00c7.html?action=profile&amp;uid=64968">admantis</a> -  18.07.2012
+<br />
+<br />
+Today I learned that filterscripts don't get reloaded when the servre is restarted, you have to reload the filterscripts manually.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberbdf3.html?action=profile&amp;uid=172937">EV007</a> -  19.07.2012
+<br />
+<br />
+<b>Today I learned</b> that I can use one line<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetPlayerColor<span style="color: #000000;">(</span>playerid,<span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_one <span style="color: #000000;">)</span> <span style="color: #000000;">?</span> <span style="color: #000000;">COLOR_RED</span> <span style="color: #000000;">:</span> COLOR_BLUE <span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+instead of:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_one<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>SetPlayerColor<span style="color: #000000;">(</span>playerid,COLOR_RED<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_two<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>SetPlayerColor<span style="color: #000000;">(</span>playerid,COLOR_BLUE<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member6f1c.html?action=profile&amp;uid=97403">FireCat</a> -  19.07.2012
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>EV007</strong><br />
+<a href="showthreadad1f.html?pid=1996908#pid1996908" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>Today I learned</b> that I can use one line<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetPlayerColor<span style="color: #000000;">(</span>playerid,<span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_one <span style="color: #000000;">)</span> <span style="color: #000000;">?</span> <span style="color: #000000;">COLOR_RED</span> <span style="color: #000000;">:</span> COLOR_BLUE <span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+instead of:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_one<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>SetPlayerColor<span style="color: #000000;">(</span>playerid,COLOR_RED<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>team<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> team_two<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>SetPlayerColor<span style="color: #000000;">(</span>playerid,COLOR_BLUE<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Thats called the ternary operator
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: Today I learned - Share your newly found knowledge! - <a href="membercbae.html?action=profile&amp;uid=158907">JoBullet</a> -  19.07.2012
+<br />
+<br />
+<b>Today I learned</b> that returning array from function works in such a way that array's address is stored in a following address:<br />
+current function frame address + (argcount + 3) * sizeof(cell)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member6f1c.html?action=profile&amp;uid=97403">FireCat</a> -  20.07.2012
+<br />
+<br />
+Today I learned you can do this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> Something<br/><span style="color: #000000;">{</span><br/> hi,<br/> bye<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"%s"</span>,<span style="color: #000000;">Something</span><span style="color: #000000;">:</span>hi<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4d73.html?action=profile&amp;uid=145974">Littlehelper</a> -  21.07.2012
+<br />
+<br />
+<b>Today I learned</b> how to make my cat speak.<br />
+Jks, <b>Today I learned</b> why there were # tags being used in colors. (To Encode Them)<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000066;">"#COL_ORANGE"</span></div></div></pre>
+</div>Plus, i learned that pawn will not give error if the color is defined or not if you use hash tag in color.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

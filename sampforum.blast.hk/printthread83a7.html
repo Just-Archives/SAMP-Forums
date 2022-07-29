@@ -1,0 +1,95 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Block Alt-Enter - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="The key combination sends the game into a windowed mode. I don't ever want to use it. Playing any game with a light desktop visible around it and a chance to lose focus is not useful. How could I comp" />
+<link rel="canonical" href="showthread83a7.html?tid=678370" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread83a7.html?tid=678370">Block Alt-Enter</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Client Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=16</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Block Alt-Enter (<em>/showthread.php?tid=678370</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Block Alt-Enter - <a href="memberf222.html?action=profile&amp;uid=265453">j7n</a> -  24.08.2020
+<br />
+<br />
+The key combination sends the game into a windowed mode. I don't ever want to use it. Playing any game with a light desktop visible around it and a chance to lose focus is not useful. How could I completely disable this?<br />
+<br />
+I have a problem with AutoHotkey scripts sending the game into windowed mode accidentally. This causes the display output to become corrupted, lose anti-aliasing, and usually require a restart.<br />
+<br />
+In AutoHotkey I do something like the following. Just doing one SendInput {NumpadEnter} is enough to trigger the problem.<br />
+<br />
+&#36;&gt;!0::<br />
+Sleep 300<br />
+BlockInput On<br />
+Sleep 100<br />
+SendInput t%Clear%/skin{NumpadEnter}<br />
+Sleep 400<br />
+; a dialog appears<br />
+SendInput %VehId%{NumpadEnter}<br />
+BlockInput Off<br />
+return<br />
+<br />
+The combination is Alt-0. If I am still holding the Alt while an input without "t" is being sent, I will trigger the combination Alt-Enter. This happens if I have to reach across the keyboard or use two hands. I was unable to completely trap the key combination in AHK, nor programmatically release the Alt. Maybe you could give me a hint of how to find this command in samp itself to change to some non-existant combo?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Block Alt-Enter - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  24.08.2020
+<br />
+<br />
+Why are you using 'NumpadEnter' if it's causing the problem, why not using 'Enter' instead?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Block Alt-Enter - <a href="memberf222.html?action=profile&amp;uid=265453">j7n</a> -  25.08.2020
+<br />
+<br />
+I believed, without thorough verification, that I had successfully worked around this problem because the keys are different to the underlying GTA. One can be set for jumping out of the car but not the other. Regular {Enter} of course causes the game to enter windowed mode as well.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Block Alt-Enter - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  25.08.2020
+<br />
+<br />
+You could trigger the script on release of the alt key, or toggle off BlockInput when alt is released.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Block Alt-Enter - <a href="memberf222.html?action=profile&amp;uid=265453">j7n</a> -  26.08.2020
+<br />
+<br />
+Waiting for release of Alt seems to work so far. Time will tell if it reliably works when the key gets stuck.<br />
+<br />
+KeyWait, Alt, L
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

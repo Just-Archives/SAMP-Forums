@@ -1,0 +1,149 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Player automatic AFK when iddle in the truck with attached trailer. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="So Me and my friend do something and we found this case. So when someone in the truck with attached trailer, and do nothing (didn't press esc, only chat) in that truck, that player will be AFK. We hav" />
+<link rel="canonical" href="showthread3633.html?tid=663717" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread3633.html?tid=663717">Player automatic AFK when iddle in the truck with attached trailer.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Player automatic AFK when iddle in the truck with attached trailer. (<em>/showthread.php?tid=663717</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Player automatic AFK when iddle in the truck with attached trailer. - <a href="member985d.html?action=profile&amp;uid=304769">Assister</a> -  09.02.2019
+<br />
+<br />
+So Me and my friend do something and we found this case.<br />
+<br />
+So when someone in the truck with attached trailer, and do nothing (didn't press esc, only chat) in that truck, that player will be AFK.<br />
+<br />
+We have try to another vehicle, and it doesn't work also we try in the truck without trailer it doesn't work too.<br />
+<br />
+Is this bug from 0.3DL or the server problem? The server connection is good and our connection is good no problem. ( Ping under 50 )<br />
+<br />
+Sorry for my bad english, we just try to fix this.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  10.02.2019
+<br />
+<br />
+Check your OnPlayerUpdate() make sure there isn't something there related to truck/trailer that returns 0
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> -  15.02.2019
+<br />
+<br />
+If you open some dialog (im using style_list) in truck with trailer player goes afk too, same effect is when player is aiming without moving camera ^^ but who cares about bugs in this game
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member985d.html?action=profile&amp;uid=304769">Assister</a> -  20.02.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthreadc0dc.html?pid=4082130#pid4082130" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Check your OnPlayerUpdate() make sure there isn't something there related to truck/trailer that returns 0</div>
+</td>
+</tr>
+</table>
+</div>We have check it, there is no related to the truck or trailer at OnPlayerUpdate.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jefff</strong><br />
+<a href="showthreade3e6.html?pid=4083390#pid4083390" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">If you open some dialog (im using style_list) in truck with trailer player goes afk too, same effect is when player is aiming without moving camera ^^ but who cares about bugs in this game</div>
+</td>
+</tr>
+</table>
+</div>Well we just want to know, is this a bug or not. <img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.png" title="Roll Eyes (Sarcastic)"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> -  20.02.2019
+<br />
+<br />
+For me its very ugly bug same as sniper rifle god mode
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  04.03.2019
+<br />
+<br />
+Do you use Streamer Plugin or any other plugins which uses recent sampgdk? It seems that this issue is caused by it. Try to test your script without any plugins, then add or remove some specific plugins to see in which the problem occurs to ensure.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member644b.html?action=profile&amp;uid=321535">userid</a> -  06.03.2019
+<br />
+<br />
+It happens to me too (0.3.DL)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player automatic AFK when iddle in the truck with attached trailer. - <a href="member00c6.html?action=profile&amp;uid=336510">zinadoll</a> -  14.11.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jefff</strong><br />
+<a href="showthread5b5f.html?pid=4084708#pid4084708" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">For  <a href="https://autoclicker.pro/" target="_blank"><font color="#000000">auto clicker</font></a> <a href="https://wordunscrambler.onl/" target="_blank"><font color="#000000">word unscrambler</font></a> <a href="https://jumblesolver.pro/" target="_blank"><font color="#000000">jumble solver</font></a> me its very ugly bug same as sniper rifle god mode</div>
+</td>
+</tr>
+</table>
+</div>trailer player goes afk too, same effect is when player is aiming without moving camera ^^ but who cares about bugs in this game
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

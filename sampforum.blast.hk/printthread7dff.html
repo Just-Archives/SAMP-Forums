@@ -1,0 +1,340 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> RemoveBuildingForPlayer - crash if player reconnects - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="OK, so this is very weird. I have placed on OnPlayerConnect the function to remove the buildings for players. If a player loses connection and reconnects, that player's game will either crash or freez" />
+<link rel="canonical" href="showthread7dff.html?tid=485132" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread7dff.html?tid=485132">RemoveBuildingForPlayer - crash if player reconnects</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  RemoveBuildingForPlayer - crash if player reconnects (<em>/showthread.php?tid=485132</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+RemoveBuildingForPlayer - crash if player reconnects - <a href="member05ab.html?action=profile&amp;uid=183558">Dr.Einstein</a> -  03.01.2014
+<br />
+<br />
+OK, so this is very weird. I have placed on <b>OnPlayerConnect</b> the function to remove the buildings for players. If a player loses connection and reconnects, that player's game will either crash or freeze. I did a lot of tests with this and still the game got stuck. I called the function once on <b>OnPlayerSpawn</b> but that still crashed me after I 'gmxed' the server. I also used a timer for this, but it gave me the same result. Moreover, I ran the function only one time for each player, meaning the first time the player connects, but the second time of connection, the server doesn't remove the objects.<br />
+<br />
+PS: There are at least 600 objects that get removed.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="memberb538.html?action=profile&amp;uid=201791">Excelize</a> -  03.01.2014
+<br />
+<br />
+Just put it into a filterscript, it makes it much easier.(Atleast for me.)<br />
+<br />
+So you can load/unload if it's bugged
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="membercee8.html?action=profile&amp;uid=97817">ikey07</a> -  03.01.2014
+<br />
+<br />
+Remove only on spawn and once, after it, add stat which tells that player's objs is removed.<br />
+<br />
+like<br />
+<br />
+new Removed[MAX_PLAYERS];<br />
+<br />
+<br />
+OnPlayerSpawn()<br />
+{<br />
+if(!Removed[playerid])<br />
+{<br />
+//Remove script<br />
+Removed[playerid] = 1;<br />
+}<br />
+<br />
+<br />
+}
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: RemoveBuildingForPlayer - crash if player reconnects - <a href="member84d8.html?action=profile&amp;uid=84376">BigETI</a> -  03.01.2014
+<br />
+<br />
+We can't be sure, if a player has actually close his/her game or just loose his/her connection to the server and reconnects. (Sometimes bugged players can't send a quit request to the server, so they are going to be shown as "timed out"). A lot of RemoveBuildingForPlayer code can crash a player indeed, and if a player times out for a short period of time and reconnects, the script will execute RemoveBuildingForPlayer, even if the player has already the objects removed from his/her game.<br />
+<br />
+It can be useful to unload "remove building" code after a player calls OnPlayerDisconnect(), but we don't have this feature yet in SA:MP.<br />
+<br />
+Also a lot of "remove building" code can mess up dialog sync (a feature to prevent cheaters executing invalid/forbidden dialog IDs), making dialogs unable to use in the server.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  03.01.2014
+<br />
+<br />
+Another reason here why gmx is crappy <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/> anyways it's likely that your trying to remove objects too many times 600 is quite a lot to remove and it will usually start crashing players around 1000 objects.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member05ab.html?action=profile&amp;uid=183558">Dr.Einstein</a> -  03.01.2014
+<br />
+<br />
+I see, thanks for the extra info fellas. Well, at least I fixed the issue with Windows 8 players, whose game would freeze.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member14e4.html?action=profile&amp;uid=180384">DaRk_RaiN</a> -  04.01.2014
+<br />
+<br />
+Yep also happened to me in my server, only about 200 removed objects.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="membercee8.html?action=profile&amp;uid=97817">ikey07</a> -  04.01.2014
+<br />
+<br />
+Well if you remove such area as LS docks, where is alot of same containers or lights, you can increase removed obj range, so you don't have to remove each one light/container.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  04.01.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ikey07</strong><br />
+<a href="showthread1624.html?pid=2849698#pid2849698" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well if you remove such area as LS docks, where is alot of same containers or lights, you can increase removed obj range, so you don't have to remove each one light/container.</div>
+</td>
+</tr>
+</table>
+</div>Thumbs up to that suggestion, just take a look at the mapping section some of those maps could have some lines reduced by doing this.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  15.05.2017
+<br />
+<br />
+Still the main problem is that if a player loose connection for a second, it will crash him on reconnect, because if you remove the same building twice for a player he crashes, I'm trying to find a fix to it...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member0e5e.html?action=profile&amp;uid=260190">Spmn</a> -  15.05.2017
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>rt-2</strong><br />
+<a href="showthreadee46.html?pid=3880087#pid3880087" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Still the main problem is that if a player loose connection for a second, it will crash him on reconnect, because if you remove the same building twice for a player he crashes, I'm trying to find a fix to it...</div>
+</td>
+</tr>
+</table>
+</div>Not really... Crashes happen only when a certain amount of removed buildings is reached. So, your players get crashed only because you remove a lot of objects, and when they reconnect, that amount is doubled and most likely that limit is reached
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  16.05.2017
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Spmn</strong><br />
+<a href="showthreadad5c.html?pid=3880157#pid3880157" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Not really... Crashes happen only when a certain amount of removed buildings is reached. So, your players get crashed only because you remove a lot of objects, and when they reconnect, that amount is doubled and most likely that limit is reached</div>
+</td>
+</tr>
+</table>
+</div>So you mean that "When removing the same object for a player, they will crash. Commonly, players crash when reconnecting to the server because the server removes buildings on OnPlayerConnect." from <a href="https://sampwiki.blast.hk/wiki/RemoveBuildingForPlayer" target="_blank">https://sampwiki.blast.hk/wiki/RemoveBuildingForPlayer</a> is wrong?<br />
+<br />
+Anyway does anyone found a way to avoid re-removing buildings for players?<br />
+Thank you,<br />
+rt-2
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member0e5e.html?action=profile&amp;uid=260190">Spmn</a> -  16.05.2017
+<br />
+<br />
+Had around 100 buildings removed on my server. Players barely crashed when they reconnected after connection loss.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  17.05.2017
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>rt-2</strong><br />
+<a href="showthread2e98.html?pid=3880490#pid3880490" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">So you mean that "When removing the same object for a player, they will crash. Commonly, players crash when reconnecting to the server because the server removes buildings on OnPlayerConnect." from <a href="https://sampwiki.blast.hk/wiki/RemoveBuildingForPlayer" target="_blank">https://sampwiki.blast.hk/wiki/RemoveBuildingForPlayer</a> is wrong?<br />
+<br />
+Anyway does anyone found a way to avoid re-removing buildings for players?<br />
+Thank you,<br />
+rt-2</div>
+</td>
+</tr>
+</table>
+</div>You can "test" whether or not objects were removed.<br />
+Remove a building that has a collision for players joining the server that did NOT have a timeout the last time he left (just like usual).<br />
+If someone joins who timed out the last time he left, teleport him onto that building. After a second or two, check the player's position. If the player is still on the object, call your RemoveBuildingForPlayer code. If he falls through, the buildings were already removed (the player didn't crash, but loose connection).<br />
+<br />
+<br />
+It's ugly, not 100% reliable but technically the only way to find out whether or not a building exists client side.<br />
+Make sure the player doesn't pause and there is enough time for syncing before checking, then it should all work well.<br />
+I do this on my server and did not have any issues with this (local as well as real server), except players can use hacks/mods to teleport/freeze them.<br />
+I run this test during the very first spawn, if the camera is placed/pointed somewhere else it won't even be visible - it just takes 3 seconds. You can show the Rules or similar during this time period.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member0e5e.html?action=profile&amp;uid=260190">Spmn</a> -  17.05.2017
+<br />
+<br />
+I used a similar approach on a stunt server and it worked flawless:<br />
+1) teleport the player on <a href="http://i.imgur.com/8BypWrU.png" target="_blank">this</a> object, right above the sea level<br />
+2) wait 1-2 seconds (IIRC, I made use of player's ping and/or fps for more accurate results) <br />
+3) use GetPlayerAnimationIndex() to detect if player was swimming or not<br />
+-&gt; if player isn't swimming -&gt; call remove building code, INCLUDING that object<br />
+-&gt; else -&gt; skip<br />
+<br />
+I also had a library based on this, but I can't find it right now.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  18.05.2017
+<br />
+<br />
+Thats very nice ideas guys.<br />
+Thank you,
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> -  06.10.2017
+<br />
+<br />
+This bug is still present. It is necessary that Kalcor made after reconnect so that the remote objects returned to their places. Players complain, I do not know how to solve this problem.<br />
+<br />
+It would also be cool to add a function that checks if the objects are removed from the player or not. In this case, it would be possible to simply check and, if necessary, delete objects on the connection.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  06.10.2017
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">int RemovedBuilduing[1000];
+int CountRemove;
+
+void Remove(int objectid)
+{
+	RemovedBuilduing[CountRemove]=objectid;
+	CountRemove++;
+}</pre>
+</div>When CountRemove reach 1000 there is memory leak<br />
+it's how Kalcor did this function
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RemoveBuildingForPlayer - crash if player reconnects - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  02.12.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>][Noname][</strong><br />
+<a href="showthreade521-2.html?pid=3939561#pid3939561" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">int RemovedBuilduing[1000];
+int CountRemove;
+
+void Remove(int objectid)
+{
+	RemovedBuilduing[CountRemove]=objectid;
+	CountRemove++;
+}</pre>
+</div>When CountRemove reach 1000 there is memory leak<br />
+it's how Kalcor did this function</div>
+</td>
+</tr>
+</table>
+</div>Is it fixed in the new DL version, because that would be very interesting.<br />
+I don't think this is even possible to fix in a fixes.inc fashion.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

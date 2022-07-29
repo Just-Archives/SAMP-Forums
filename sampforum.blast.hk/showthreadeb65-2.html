@@ -1,0 +1,968 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3z is released!</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "0cd6c12c1950ecdb0762011d2347a178";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="Amazing" />
+<link rel="canonical" href="showthread45d5.html?tid=494414" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="0cd6c12c1950ecdb0762011d2347a178" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadcad5-3.html?mode=linear&amp;tid=494414&amp;pid=2937469#pid2937469">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3z is released!
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid2937469"></a>
+<div class="post classic " style="" id="post_2937469">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member3cb9.html?action=profile&amp;uid=227983"><img src="uploads/avatars/227983.png" alt="" width="55" height="41" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member3cb9.html?action=profile&amp;uid=227983">Lusher</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 34<br />
+	Threads: 6<br />
+	Joined: Mar 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationf089.html?uid=227983"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8ecd.html?tid=494414&amp;pid=2937469#pid2937469" title="Re: SA-MP 0.3z is released!">#141</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 141 by Lusher" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">03.03.2014, 03:14 <span class="post_edit" id="edited_by_2937469"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_2937469">
+		Amazing <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_2937469">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searche7bc.html?action=finduser&amp;uid=227983" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyd275.html?tid=494414&amp;replyto=2937469" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadc35c.html?tid=494414&amp;action=nextoldest">Next Oldest</a> | <a href="showthread1a39.html?tid=494414&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="494414" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread5124.html?tid=494414&amp;pid=2910612&amp;mode=threaded">SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 13.02.2014, 09:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade70d-2.html?tid=494414&amp;pid=2910613&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member78ed.html?action=profile&amp;uid=149753">Konstantinos</a> - 13.02.2014, 09:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread17d7-2.html?tid=494414&amp;pid=2910618&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberac75.html?action=profile&amp;uid=194384">Ari</a> - 13.02.2014, 09:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6ea9-3.html?tid=494414&amp;pid=2910620&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member87ae.html?action=profile&amp;uid=65161">Flake.</a> - 13.02.2014, 09:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b57-2.html?tid=494414&amp;pid=2910621&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberedaa.html?action=profile&amp;uid=65388">legodude</a> - 13.02.2014, 09:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread42fb-2.html?tid=494414&amp;pid=2910624&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9ab5.html?action=profile&amp;uid=98308">[ED]Drix</a> - 13.02.2014, 09:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3a6e-2.html?tid=494414&amp;pid=2910632&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member17a4.html?action=profile&amp;uid=180250">SwisherSweet</a> - 13.02.2014, 09:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd298.html?tid=494414&amp;pid=2910634&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6f66.html?action=profile&amp;uid=139888">BlueSky_</a> - 13.02.2014, 09:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7d72.html?tid=494414&amp;pid=2910635&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbb2e-2.html?action=profile&amp;uid=157843">Zex Tan</a> - 13.02.2014, 09:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddc7b.html?tid=494414&amp;pid=2910637&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd792.html?action=profile&amp;uid=132735">Vlad_Dredd</a> - 13.02.2014, 09:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5dd6.html?tid=494414&amp;pid=2910638&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> - 13.02.2014, 09:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0e0d.html?tid=494414&amp;pid=2910640&amp;mode=threaded">Re : SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbaea.html?action=profile&amp;uid=175370">samp_boy</a> - 13.02.2014, 09:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1aaf.html?tid=494414&amp;pid=2910646&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member388e.html?action=profile&amp;uid=98432">Kitten</a> - 13.02.2014, 09:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3500.html?tid=494414&amp;pid=2910652&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9acc.html?action=profile&amp;uid=181058">$Marco$</a> - 13.02.2014, 09:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread014f-2.html?tid=494414&amp;pid=2910659&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3ccf.html?action=profile&amp;uid=157025">im</a> - 13.02.2014, 09:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd5f5-2.html?tid=494414&amp;pid=2910662&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membera815.html?action=profile&amp;uid=226506">SydKane</a> - 13.02.2014, 10:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7c38.html?tid=494414&amp;pid=2910665&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf9be.html?action=profile&amp;uid=102471">doreto</a> - 13.02.2014, 10:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadca08-2.html?tid=494414&amp;pid=2910666&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1af3.html?action=profile&amp;uid=216149">PrinceOfPersia</a> - 13.02.2014, 10:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d09.html?tid=494414&amp;pid=2910670&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member014b.html?action=profile&amp;uid=224408">laske</a> - 13.02.2014, 10:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4517-2.html?tid=494414&amp;pid=2910675&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf6db.html?action=profile&amp;uid=60174">QuaTTrO</a> - 13.02.2014, 10:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0850.html?tid=494414&amp;pid=2910679&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1872.html?action=profile&amp;uid=151309">newbienoob</a> - 13.02.2014, 10:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf65c-2.html?tid=494414&amp;pid=2910681&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 13.02.2014, 10:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc732-2.html?tid=494414&amp;pid=2910683&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member741f.html?action=profile&amp;uid=144832">thecool</a> - 13.02.2014, 10:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4f6d.html?tid=494414&amp;pid=2910687&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberccb3.html?action=profile&amp;uid=152126">Manyula</a> - 13.02.2014, 10:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2337-2.html?tid=494414&amp;pid=2910694&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf30b.html?action=profile&amp;uid=98312">Fool</a> - 13.02.2014, 10:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb399-2.html?tid=494414&amp;pid=2910695&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberabf1.html?action=profile&amp;uid=216977">AlonzoTorres</a> - 13.02.2014, 10:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc574.html?tid=494414&amp;pid=2910697&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3523.html?action=profile&amp;uid=208423">georJik</a> - 13.02.2014, 10:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf66f.html?tid=494414&amp;pid=2910702&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member05ac.html?action=profile&amp;uid=108176">Igorek</a> - 13.02.2014, 10:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfbeb-2.html?tid=494414&amp;pid=2910703&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1fed.html?action=profile&amp;uid=155646">KubiPL</a> - 13.02.2014, 10:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e07.html?tid=494414&amp;pid=2910706&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member5598.html?action=profile&amp;uid=196856">Lampo7</a> - 13.02.2014, 10:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf89f-3.html?tid=494414&amp;pid=2910710&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 13.02.2014, 10:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3b8b.html?tid=494414&amp;pid=2910712&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 13.02.2014, 10:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7e18-2.html?tid=494414&amp;pid=2910716&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3e63.html?action=profile&amp;uid=213026">Aldi666</a> - 13.02.2014, 10:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6228.html?tid=494414&amp;pid=2910718&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membera0f6.html?action=profile&amp;uid=222022">anou1</a> - 13.02.2014, 10:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4e9d-2.html?tid=494414&amp;pid=2910721&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member70cc.html?action=profile&amp;uid=147500">Donny_Gonzalez</a> - 13.02.2014, 10:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc17c.html?tid=494414&amp;pid=2910722&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> - 13.02.2014, 10:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread335b.html?tid=494414&amp;pid=2910723&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member0d5b.html?action=profile&amp;uid=73170">TheArcher</a> - 13.02.2014, 10:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5343.html?tid=494414&amp;pid=2910734&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member87ae.html?action=profile&amp;uid=65161">Flake.</a> - 13.02.2014, 10:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3598-2.html?tid=494414&amp;pid=2910741&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member0d5b.html?action=profile&amp;uid=73170">TheArcher</a> - 13.02.2014, 11:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1383-2.html?tid=494414&amp;pid=2910744&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9c69.html?action=profile&amp;uid=141141">=KempeR=</a> - 13.02.2014, 11:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9cd0.html?tid=494414&amp;pid=2910745&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf878.html?action=profile&amp;uid=9791">dugi</a> - 13.02.2014, 11:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada136.html?tid=494414&amp;pid=2910749&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9324.html?action=profile&amp;uid=128722">Jekazzz</a> - 13.02.2014, 11:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddfbc.html?tid=494414&amp;pid=2910758&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member04c5.html?action=profile&amp;uid=67320">Wizardking</a> - 13.02.2014, 11:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread465d.html?tid=494414&amp;pid=2910792&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> - 13.02.2014, 11:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf273-2.html?tid=494414&amp;pid=2910906&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberb148.html?action=profile&amp;uid=223392">Wormart</a> - 13.02.2014, 12:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread61bd.html?tid=494414&amp;pid=2910915&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberc002.html?action=profile&amp;uid=205695">Omar55555</a> - 13.02.2014, 12:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcce5.html?tid=494414&amp;pid=2910919&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> - 13.02.2014, 12:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread401d-3.html?tid=494414&amp;pid=2910923&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member17da.html?action=profile&amp;uid=178237">Don_Cage</a> - 13.02.2014, 12:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadecdf-2.html?tid=494414&amp;pid=2910933&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6981.html?action=profile&amp;uid=224946">kooltuO</a> - 13.02.2014, 12:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread82a3-2.html?tid=494414&amp;pid=2910934&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1c18.html?action=profile&amp;uid=165715">Private200</a> - 13.02.2014, 12:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3f0d.html?tid=494414&amp;pid=2910941&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member505a.html?action=profile&amp;uid=193356">Odedara</a> - 13.02.2014, 12:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadba10-3.html?tid=494414&amp;pid=2910947&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1d0c.html?action=profile&amp;uid=58418">vyper</a> - 13.02.2014, 12:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6d30.html?tid=494414&amp;pid=2910953&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberccde.html?action=profile&amp;uid=150123">[D]ry[D]esert</a> - 13.02.2014, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread619f-2.html?tid=494414&amp;pid=2910967&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3eba.html?action=profile&amp;uid=33027">Jese</a> - 13.02.2014, 13:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread479a-3.html?tid=494414&amp;pid=2910971&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membere228.html?action=profile&amp;uid=206841">M3HR4N</a> - 13.02.2014, 13:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7c02.html?tid=494414&amp;pid=2910978&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membercf34.html?action=profile&amp;uid=180537">LeGGGeNNdA</a> - 13.02.2014, 13:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade701.html?tid=494414&amp;pid=2910992&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member5b44.html?action=profile&amp;uid=151360">Tellken</a> - 13.02.2014, 13:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada9d8-3.html?tid=494414&amp;pid=2910995&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf34d.html?action=profile&amp;uid=137061">Kmatsu</a> - 13.02.2014, 13:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread465f-2.html?tid=494414&amp;pid=2911020&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 13.02.2014, 13:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5e75-2.html?tid=494414&amp;pid=2911021&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member517f.html?action=profile&amp;uid=149769">[J]</a> - 13.02.2014, 13:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaa07.html?tid=494414&amp;pid=2911035&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6348.html?action=profile&amp;uid=124429">Mark™</a> - 13.02.2014, 13:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4e8e-2.html?tid=494414&amp;pid=2911046&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1e04.html?action=profile&amp;uid=124739">SDraw</a> - 13.02.2014, 13:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4c10-2.html?tid=494414&amp;pid=2911077&amp;mode=threaded">Respuesta: Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member8477.html?action=profile&amp;uid=191711">IvanAyuso</a> - 13.02.2014, 14:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadee60.html?tid=494414&amp;pid=2911129&amp;mode=threaded">Re : SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member579c.html?action=profile&amp;uid=122371">will-56</a> - 13.02.2014, 14:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadba8f.html?tid=494414&amp;pid=2911298&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member649a.html?action=profile&amp;uid=22849">cyber_punk</a> - 13.02.2014, 16:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7ebe.html?tid=494414&amp;pid=2911307&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membereba4.html?action=profile&amp;uid=195100">Juniiro3</a> - 13.02.2014, 16:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd577.html?tid=494414&amp;pid=2911318&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membere024.html?action=profile&amp;uid=134343">Cole_William</a> - 13.02.2014, 16:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada741.html?tid=494414&amp;pid=2911379&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member93d5.html?action=profile&amp;uid=223675">Fornew</a> - 13.02.2014, 16:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6dff.html?tid=494414&amp;pid=2911386&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 13.02.2014, 16:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b26-3.html?tid=494414&amp;pid=2911395&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3192.html?action=profile&amp;uid=223315">RadioActive26</a> - 13.02.2014, 16:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf931-2.html?tid=494414&amp;pid=2911396&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member0ad0.html?action=profile&amp;uid=198401">JimmyCh</a> - 13.02.2014, 16:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1628.html?tid=494414&amp;pid=2911419&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member79b6.html?action=profile&amp;uid=110085">mirco9</a> - 13.02.2014, 17:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ed4-2.html?tid=494414&amp;pid=2911423&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member39b2.html?action=profile&amp;uid=204328">connork</a> - 13.02.2014, 17:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9920.html?tid=494414&amp;pid=2911442&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd365.html?action=profile&amp;uid=205813">Georgel12</a> - 13.02.2014, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6924-2.html?tid=494414&amp;pid=2911452&amp;mode=threaded">Re : SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member4b95.html?action=profile&amp;uid=200637">iDroid</a> - 13.02.2014, 17:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb9e3-2.html?tid=494414&amp;pid=2911486&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6e3c.html?action=profile&amp;uid=220121">i0sa</a> - 13.02.2014, 18:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada3eb-2.html?tid=494414&amp;pid=2911492&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member2868.html?action=profile&amp;uid=187236">Saadat</a> - 13.02.2014, 18:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade166.html?tid=494414&amp;pid=2911495&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member010a.html?action=profile&amp;uid=185071">DowDaw</a> - 13.02.2014, 18:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5504.html?tid=494414&amp;pid=2911496&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member2982.html?action=profile&amp;uid=48181">GBLTeam</a> - 13.02.2014, 18:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada920-2.html?tid=494414&amp;pid=2911519&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membercd12.html?action=profile&amp;uid=191295">TiW</a> - 13.02.2014, 18:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc52c.html?tid=494414&amp;pid=2911526&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member7eee.html?action=profile&amp;uid=220403">Clad</a> - 13.02.2014, 18:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada3aa-3.html?tid=494414&amp;pid=2911538&amp;mode=threaded">AW: Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1854.html?action=profile&amp;uid=149189">Mellnik</a> - 13.02.2014, 18:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8164-3.html?tid=494414&amp;pid=2911541&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf878.html?action=profile&amp;uid=9791">dugi</a> - 13.02.2014, 18:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread86dc.html?tid=494414&amp;pid=2911544&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member86e2.html?action=profile&amp;uid=224313">JawSome</a> - 13.02.2014, 18:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadec2c.html?tid=494414&amp;pid=2911578&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6c13.html?action=profile&amp;uid=216736">DarkLored</a> - 13.02.2014, 18:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf23f.html?tid=494414&amp;pid=2911607&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> - 13.02.2014, 19:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb6c2-2.html?tid=494414&amp;pid=2911614&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd582.html?action=profile&amp;uid=145852">MrSpy0x22</a> - 13.02.2014, 19:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd053-4.html?tid=494414&amp;pid=2911630&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9e0b-2.html?action=profile&amp;uid=8886">T-N-Z</a> - 13.02.2014, 19:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3dbf.html?tid=494414&amp;pid=2911631&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6f34.html?action=profile&amp;uid=217853">Jejox</a> - 13.02.2014, 19:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread858c.html?tid=494414&amp;pid=2911636&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberadd5.html?action=profile&amp;uid=173270">Akira297</a> - 13.02.2014, 19:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1362.html?tid=494414&amp;pid=2911642&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9a62.html?action=profile&amp;uid=217367">Tarangamesic</a> - 13.02.2014, 19:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2fee.html?tid=494414&amp;pid=2911654&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd582.html?action=profile&amp;uid=145852">MrSpy0x22</a> - 13.02.2014, 19:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1a73.html?tid=494414&amp;pid=2911680&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membera5b0.html?action=profile&amp;uid=210880">iBeast</a> - 13.02.2014, 19:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1c1b.html?tid=494414&amp;pid=2911722&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberdc85.html?action=profile&amp;uid=199378">shittt</a> - 13.02.2014, 20:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada6db-4.html?tid=494414&amp;pid=2911783&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1467.html?action=profile&amp;uid=226498">terrow</a> - 13.02.2014, 21:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread68b5.html?tid=494414&amp;pid=2911787&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1cbe.html?action=profile&amp;uid=102056">[IZ]Kira</a> - 13.02.2014, 21:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a16-2.html?tid=494414&amp;pid=2911815&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member01b1.html?action=profile&amp;uid=210369">Wizzy951</a> - 13.02.2014, 22:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadefbe.html?tid=494414&amp;pid=2911826&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member415b.html?action=profile&amp;uid=102775">Gryphus One</a> - 13.02.2014, 22:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2068-2.html?tid=494414&amp;pid=2911830&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member95c2.html?action=profile&amp;uid=191374">Error000</a> - 13.02.2014, 22:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf5a3.html?tid=494414&amp;pid=2911884&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member445e.html?action=profile&amp;uid=159175">Matt</a> - 13.02.2014, 23:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6705.html?tid=494414&amp;pid=2911896&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberc8f9.html?action=profile&amp;uid=131321">Stereotype</a> - 13.02.2014, 23:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6409-3.html?tid=494414&amp;pid=2911915&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberfbb4-2.html?action=profile&amp;uid=11757">Some Tenth</a> - 13.02.2014, 23:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread91e3-2.html?tid=494414&amp;pid=2911920&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberc98b.html?action=profile&amp;uid=163417">Rhymed32</a> - 13.02.2014, 23:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread292e-2.html?tid=494414&amp;pid=2911953&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 14.02.2014, 01:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread672d.html?tid=494414&amp;pid=2912034&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberc2dd.html?action=profile&amp;uid=205171">trandiep1982</a> - 14.02.2014, 04:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd2c6-2.html?tid=494414&amp;pid=2912136&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9e76.html?action=profile&amp;uid=213272">Serbian011</a> - 14.02.2014, 07:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread902d-3.html?tid=494414&amp;pid=2912198&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member059a.html?action=profile&amp;uid=78223">Lorenc_</a> - 14.02.2014, 08:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread417a.html?tid=494414&amp;pid=2912222&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6ae1.html?action=profile&amp;uid=155081">Beckett</a> - 14.02.2014, 08:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread844d-2.html?tid=494414&amp;pid=2912249&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberdefb.html?action=profile&amp;uid=169288">M3mPHi$_S3</a> - 14.02.2014, 09:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2474-2.html?tid=494414&amp;pid=2912252&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member207e.html?action=profile&amp;uid=194217">Hade1234</a> - 14.02.2014, 09:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5367-2.html?tid=494414&amp;pid=2912435&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1697.html?action=profile&amp;uid=137006">Parka</a> - 14.02.2014, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc7fc.html?tid=494414&amp;pid=2912439&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member0206.html?action=profile&amp;uid=223935">TheBosss</a> - 14.02.2014, 12:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread27c0-2.html?tid=494414&amp;pid=2912476&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberb538.html?action=profile&amp;uid=201791">Excelize</a> - 14.02.2014, 12:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeafd-2.html?tid=494414&amp;pid=2912491&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member29e5.html?action=profile&amp;uid=183597">XxStunner</a> - 14.02.2014, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6013-2.html?tid=494414&amp;pid=2913466&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member0271.html?action=profile&amp;uid=140286">MrBurn</a> - 14.02.2014, 22:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bfd-2.html?tid=494414&amp;pid=2913539&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member019b.html?action=profile&amp;uid=129722">maxisaibot</a> - 15.02.2014, 00:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread15b6.html?tid=494414&amp;pid=2913671&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf2a8.html?action=profile&amp;uid=121286">Jon_De</a> - 15.02.2014, 05:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread143a-2.html?tid=494414&amp;pid=2913732&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member16ff.html?action=profile&amp;uid=162781">DartfoL</a> - 15.02.2014, 06:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbd8b.html?tid=494414&amp;pid=2913767&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member5afd.html?action=profile&amp;uid=220032">sampvxtreme</a> - 15.02.2014, 07:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0c3-2.html?tid=494414&amp;pid=2913793&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membercaf3.html?action=profile&amp;uid=191145">Xicor</a> - 15.02.2014, 08:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3297.html?tid=494414&amp;pid=2913837&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member5afd.html?action=profile&amp;uid=220032">sampvxtreme</a> - 15.02.2014, 08:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread25e3.html?tid=494414&amp;pid=2914108&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by Guest4390857394857 - 15.02.2014, 12:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread04c7.html?tid=494414&amp;pid=2914127&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3f86.html?action=profile&amp;uid=177580">DeitY</a> - 15.02.2014, 12:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread544b-2.html?tid=494414&amp;pid=2914138&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="membereacd.html?action=profile&amp;uid=179070">wajahatlog</a> - 15.02.2014, 12:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada6f9-5.html?tid=494414&amp;pid=2916387&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member9758.html?action=profile&amp;uid=193789">SPA</a> - 16.02.2014, 18:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5090.html?tid=494414&amp;pid=2916440&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member4e07.html?action=profile&amp;uid=214041">Boss201</a> - 16.02.2014, 18:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2650.html?tid=494414&amp;pid=2916610&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberdc99.html?action=profile&amp;uid=223475">sampsvr</a> - 16.02.2014, 20:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc154-2.html?tid=494414&amp;pid=2917082&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6538.html?action=profile&amp;uid=142292">-Sam_hero-</a> - 17.02.2014, 08:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb11c.html?tid=494414&amp;pid=2917198&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member259e-2.html?action=profile&amp;uid=213564">Black01</a> - 17.02.2014, 10:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread00f7-2.html?tid=494414&amp;pid=2917248&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member7c1a.html?action=profile&amp;uid=215617">hhaaoo123</a> - 17.02.2014, 11:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread92d2-2.html?tid=494414&amp;pid=2917478&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member5485.html?action=profile&amp;uid=8419">dacads</a> - 17.02.2014, 14:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf108.html?tid=494414&amp;pid=2917553&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member8de2.html?action=profile&amp;uid=207804">Mobeen</a> - 17.02.2014, 14:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0e2a-2.html?tid=494414&amp;pid=2917654&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member2b51.html?action=profile&amp;uid=219962">iThePunisher</a> - 17.02.2014, 16:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e4c-2.html?tid=494414&amp;pid=2918602&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member2bae.html?action=profile&amp;uid=121874">X3nZ</a> - 18.02.2014, 09:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade72a-2.html?tid=494414&amp;pid=2930577&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6930.html?action=profile&amp;uid=212928">OnPlayerText</a> - 26.02.2014, 12:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6602.html?tid=494414&amp;pid=2931752&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member8a97.html?action=profile&amp;uid=189724">MarshallNero</a> - 27.02.2014, 07:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread75e7-3.html?tid=494414&amp;pid=2932078&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member6be6.html?action=profile&amp;uid=227845">Viber</a> - 27.02.2014, 13:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0f2c-2.html?tid=494414&amp;pid=2932334&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3af1.html?action=profile&amp;uid=227776">Sagna</a> - 27.02.2014, 16:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb572.html?tid=494414&amp;pid=2932360&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member8cd8.html?action=profile&amp;uid=227804">Gnabry</a> - 27.02.2014, 16:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6f02.html?tid=494414&amp;pid=2937036&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd3a8.html?action=profile&amp;uid=150939">Георгий</a> - 02.03.2014, 19:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: SA-MP 0.3z is released!</strong> <span class="smalltext">- by <a href="member3cb9.html?action=profile&amp;uid=227983">Lusher</a> - 03.03.2014, 03:14</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc2e9-3.html?tid=494414&amp;pid=2986776&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member3715.html?action=profile&amp;uid=136833">Vin Diesel</a> - 10.04.2014, 14:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9203-2.html?tid=494414&amp;pid=2987779&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by SupaFool - 11.04.2014, 10:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread482c-4.html?tid=494414&amp;pid=2992705&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member4dfd.html?action=profile&amp;uid=231233">DhanielThysun</a> - 14.04.2014, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadff5e.html?tid=494414&amp;pid=2992827&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberf2a8.html?action=profile&amp;uid=121286">Jon_De</a> - 14.04.2014, 17:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7ad3.html?tid=494414&amp;pid=2993000&amp;mode=threaded">AW: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member1854.html?action=profile&amp;uid=149189">Mellnik</a> - 14.04.2014, 19:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6fe8.html?tid=494414&amp;pid=3015414&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberdfb8.html?action=profile&amp;uid=232322">Andreas1331</a> - 30.04.2014, 10:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread85f9.html?tid=494414&amp;pid=3028202&amp;mode=threaded">Respuesta: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberdde4.html?action=profile&amp;uid=137793">ancezas</a> - 09.05.2014, 08:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread33bd.html?tid=494414&amp;pid=3071002&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member01b2.html?action=profile&amp;uid=134537">rutledm1</a> - 09.06.2014, 13:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6389.html?tid=494414&amp;pid=3074824&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member12d1.html?action=profile&amp;uid=193502">Raza2013</a> - 12.06.2014, 04:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb2a9.html?tid=494414&amp;pid=3077274&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="memberd897.html?action=profile&amp;uid=226190">beatsbydre</a> - 13.06.2014, 17:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread74b4-5.html?tid=494414&amp;pid=3077685&amp;mode=threaded">AW: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member2cbe.html?action=profile&amp;uid=180252">Saize</a> - 14.06.2014, 00:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread523f.html?tid=494414&amp;pid=3078069&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member90a1.html?action=profile&amp;uid=218131">icuttashas</a> - 14.06.2014, 09:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada50e.html?tid=494414&amp;pid=3095020&amp;mode=threaded">Re: SA-MP 0.3z is released!</a> <span class="smalltext">- by <a href="member068b.html?action=profile&amp;uid=226722">Donihammer</a> - 25.06.2014, 19:28</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread45d5.html?tid=494414">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-494414.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=0cd6c12c1950ecdb0762011d2347a178" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="494414" />
+<input type="hidden" name="pid" value="2937469" />
+
+	<input type="hidden" name="my_post_key" value="0cd6c12c1950ecdb0762011d2347a178" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

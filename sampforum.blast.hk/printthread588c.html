@@ -1,0 +1,121 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Realistic vehicle placement: - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Here is some vehicles placed mostly in country areas. I guess its mostly usable for RP, where natural look is needed. It consists more working class vehicles, not so many expensive cars. Use them if y" />
+<link rel="canonical" href="showthread588c.html?tid=652433" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread588c.html?tid=652433">Realistic vehicle placement:</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: General (<i>https://sampforum.blast.hk/forumdisplay.php?fid=13</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Realistic vehicle placement: (<em>/showthread.php?tid=652433</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Realistic vehicle placement: - <a href="member6ace.html?action=profile&amp;uid=296667">VeryTallMidget</a> -  11.04.2018
+<br />
+<br />
+Here is some vehicles placed mostly in country areas.<br />
+I guess its mostly usable for RP, where natural look is needed.<br />
+It consists more working class vehicles, not so many expensive cars.<br />
+Use them if you like it.<br />
+<br />
++Added L.V. (828 vehicles)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="memberb171.html?action=profile&amp;uid=305191">Nyzenic</a> -  11.04.2018
+<br />
+<br />
+These are pretty useful. Thanks for sharing!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="member6ace.html?action=profile&amp;uid=296667">VeryTallMidget</a> -  25.10.2018
+<br />
+<br />
+Is it possible to load previously added vehicles to samp debug ?<br />
+I have LS half way done but the cars are all over the place...<br />
+<br />
+I know i can do it this way:<br />
+Add them to server and then run server, connect, save the in-car pos, but then i dont have vehicle selection like it is in debug mode.<br />
+<br />
+Or maybe code cmd funcion to use in server to select from all vehicles ?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  25.10.2018
+<br />
+<br />
+In one of the SAMP default gamemodes/scripts there is a function to load this format.<br />
+<br />
+You could load these files with that function, then continue placing them using /v or /vsel from fsdebug.<br />
+Then write another command to save the vehicle you currently drive in the correct format.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="member6ace.html?action=profile&amp;uid=296667">VeryTallMidget</a> -  25.10.2018
+<br />
+<br />
+Correct format ?<br />
+You mean this:<br />
+AddStaticVehicle(551,1613.4619,2199.8357,10.6163,2  62.9698,75,1); // <br />
+Yes i must change it to load it to server.<br />
+But in server /vsel dont work, this is the problem.<br />
+/save works in server.<br />
+<br />
+So i guess i only need a command to be able to spawn any vehicle while im in server (server running in my own machine).<br />
+Then i would load existing cars to server and see whare they are, and add some more.<br />
+<br />
+This is why i was thinking if the samp_debug.exe can load vehicles into the empty map.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="member6ace.html?action=profile&amp;uid=296667">VeryTallMidget</a> -  26.10.2018
+<br />
+<br />
+Well. i got it working.<img alt="" border="0" class="inlineimg" src="images/smilies/cool.png" title="cool"/><br />
+Im using (SATDM~RP V9_FINAL) as a server and it already has a cmd function: /car<br />
+I changed it to /v (/v ID#)<br />
+Also disabled this line:<br />
+	// if(VehicleInfo[vehicleid][Temp] == 1) SetTimerEx("EraseVehicle", 5000,0,"i",vehicleid);<br />
+Then temporary vehicle will not dissapear.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Realistic vehicle placement: - <a href="member6ace.html?action=profile&amp;uid=296667">VeryTallMidget</a> -  16.05.2020
+<br />
+<br />
+Hmmm...?? LS is missing, I had it somewhere...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

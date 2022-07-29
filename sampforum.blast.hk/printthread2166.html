@@ -1,0 +1,88 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> SetSpawnInfo and some other funcs - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello, Since Kalcor has decided to be more active at forums recently, I have decided to report two of the many bugs. --- #1 One of the messages from 2010: Quote: Originally Posted by Riddick Hey.. i h" />
+<link rel="canonical" href="showthread2166.html?tid=662010" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2166.html?tid=662010">SetSpawnInfo and some other funcs</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  SetSpawnInfo and some other funcs (<em>/showthread.php?tid=662010</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+SetSpawnInfo and some other funcs - <a href="member2ee2.html?action=profile&amp;uid=85372">Riddick94</a> -  21.12.2018
+<br />
+<br />
+Hello,<br />
+<br />
+Since Kalcor has decided to be more active at forums recently, I have decided to report two of the <b>many</b> bugs.<br />
+<br />
+---<br />
+#1<br />
+One of the messages from 2010:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Riddick</strong><br />
+</div>
+<div style="font-style:italic">Hey.. i had today a some bug with GivePlayerWeapon. I've a command /gun [weapon_id] [ammo] and skills of weapons to one hand. One pistol, sawn-0ff etc. After i wrote /gun 22 100 (Pistol and 100 ammo) ammuntion to magazine has set to 34.. not 17.<br />
+<br />
+[...]</div>
+</td>
+</tr>
+</table>
+</div>In short - weapon's clip size ammo is set to 34 (as for example of 9mm pistol) even though that my weapon skill for 9mm is set to have pistol in one hand. So in fact as a result as I should have 17 ammo, not 34 (17 * 2 = 34). May not be SA-MP's bug, but SA, I am not sure.<br />
+<br />
+---<br />
+#2<br />
+native's "SetSpawnInfo" parameter called "team" does NOT have any effect at all. You gotta set your team manually anyway with "SetPlayerTeam".<br />
+<br />
+That should be fixed internally.<br />
+<br />
+Thanks<br />
+<br />
+<font size="1"><i>edit://<br />
+Oh, oh! Let me edit my post real quick before I hear some other people saying some shit like "scriptable".... Thank you very much, don't waste your keyboard and time.</i></font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SetSpawnInfo and some other funcs - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  21.12.2018
+<br />
+<br />
+I can confirm the second issue R.E. SetSpawnInfo.<br />
+<br />
+Edit:<br />
+<a href="showthread0ab1.html?tid=624667" target="_blank">https://sampforum.blast.hk/showthread.php?tid=624667</a><br />
+<a href="showthread9b73.html?tid=649396" target="_blank">https://sampforum.blast.hk/showthread.php?tid=649396</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

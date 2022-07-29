@@ -1,0 +1,84 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> 3-х мерный итератор - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Здравствуйте, у меня вопрос по итераторам. Не могу сделать трёх мерный итератор с библиотекой foreach. Помогите, �" />
+<link rel="canonical" href="showthreada0cb.html?tid=675318" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreada0cb.html?tid=675318">3-х мерный итератор</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: Non-English (<i>https://sampforum.blast.hk/forumdisplay.php?fid=9</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Languages (<i>https://sampforum.blast.hk/forumdisplay.php?fid=33</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Русский/Russian (<i>https://sampforum.blast.hk/forumdisplay.php?fid=32</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  3-х мерный итератор (<em>/showthread.php?tid=675318</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+3-х мерный итератор - <a href="membera0a6.html?action=profile&amp;uid=314113">NikitaFoxze</a> -  09.05.2020
+<br />
+<br />
+Здравствуйте, у меня вопрос по итераторам. Не могу сделать трёх мерный итератор с библиотекой foreach.<br />
+Помогите, сделал несколько тестов, но всё идёт в тупик.<br />
+<br />
+На форумах писали делать так:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">new Iterator:Iter3[5][8]&lt;10&gt;;
+for (new i = 0; i != Iter_InternalSize(Iter3); ++i)
+{
+    Iter_Init(Iter3[i]);
+}
+Iter_Add(Iter3[3][6], 7);</pre>
+</div>Во-первых сразу же ошибка в создании итератора (new):<br />
+error 001: expected token: ";", but found "-identifier-"<br />
+Меняю на "new Iterator:Iter3[5][8][10];" и всё работает.<br />
+<br />
+Теперь дальше идут ошибки в Iter_Add:<br />
+ error 035: argument type mismatch (argument 1)<br />
+ error 017: undefined symbol "@YSII_Cg"<br />
+ error 017: undefined symbol "@YSII_Ag"<br />
+ fatal error 107: too many error messages on one line<br />
+<br />
+И я не совсем понимаю за что отвечает Iter_Init. <br />
+Sos <img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3-х мерный итератор - <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> -  14.09.2020
+<br />
+<br />
+<a href="https://pro-pawn.ru/showthread.php?15081" target="_blank">https://pro-pawn.ru/showthread.php?15081</a> тут всё расписано по итераторам.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,250 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> SA-MP 0.3z R4 server update - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This update is for SA-MP server owners only If updating from an existing 0.3z server: you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in t" />
+<link rel="canonical" href="showthread219b.html?tid=531302" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread219b.html?tid=531302">SA-MP 0.3z R4 server update</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: News and Updates (<i>https://sampforum.blast.hk/forumdisplay.php?fid=74</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  SA-MP 0.3z R4 server update (<em>/showthread.php?tid=531302</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread89a5.html?tid=531302&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread52ce.html?tid=531302&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread66e6.html?tid=531302&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread568a.html?tid=531302&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4484.html?tid=531302&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread5fcd.html?tid=531302&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7a55.html?tid=531302&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread52f3.html?tid=531302&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+SA-MP 0.3z R4 server update - <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> -  12.08.2014
+<br />
+<br />
+<u>This update is for SA-MP server owners only</u><br />
+<br />
+<font color="Red"><b>If updating from an existing 0.3z server:</b></font> you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in the 0.3z server download package.<br />
+<br />
+<font color="Red"><b>Important:</b></font> If your script uses the OnUnoccupiedVehicleUpdate callback, you will need to recompile your scripts with the latest pawn includes to use this server update.<br />
+<br />
+<font size="3"><b>SA-MP 0.3z R4 server</b></font><br />
+<br />
+We received some reports that players might be able to use the vehicle trailer syncing in order to move vehicles around on the server without being in control of them.<br />
+<br />
+- Additional sanity checks have been added to the trailer validation on the server.<br />
+- A new callback is added to identify players updating their vehicle's trailers:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnTrailerUpdate<span style="color: #000000;">(</span>playerid, vehicleid<span style="color: #000000;">)</span>; <br/><span style="color: #228822;">// playerid is the player who sent a trailer update. vehicleid is the trailer being updated.</span><br/><span style="color: #228822;">// Returning 0 to this function will stop the trailer update being sent to other players on the server. The trailer's position will still be updated internally on the server.</span></div></div></pre>
+</div>
+- The OnUnoccupiedVehicleUpdate is updated to include the new velocity of the vehicle updated.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnUnoccupiedVehicleUpdate<span style="color: #000000;">(</span>vehicleid, playerid, passenger_seat, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_x, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_z, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_x, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_z<span style="color: #000000;">)</span>;<br/><span style="color: #228822;">// If your script uses this callback, you will need to update this definition and recompile your scripts to use the 0.3z-R4 server.</span></div></div></pre>
+</div>
+- Removes script HTTP debug messages left in the 0.3z-R3 server.<br />
+<br />
+Downloads:<br />
+<br />
+SA-MP 0.3z R4 Linux Server: <a href="http://files.sa-mp.com/samp03zsvr_R4.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R4.tar.gz</a><br />
+SA-MP 0.3z R4 Windows Server: <a href="http://files.sa-mp.com/samp03z_svr_R4_win32.zip" target="_blank">http://files.sa-mp.com/samp03z_svr_R4_win32.zip</a><br />
+SA-MP 0.3z R4 Linux Server (1000 max player): <a href="http://files.sa-mp.com/samp03zsvr_R4-1000p.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R4-1000p.tar.gz</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: SA-MP 0.3z R4 server update - <a href="memberc0f3.html?action=profile&amp;uid=205131">Swedky</a> -  12.08.2014
+<br />
+<br />
+Ty Kalcor! <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member962c.html?action=profile&amp;uid=208406">SW1FTmeister</a> -  12.08.2014
+<br />
+<br />
+Thanks, fast update!<br />
+<br />
+PS: Remove the ";" from the callbacks as it can confuse the newer scripters. <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: SA-MP 0.3z R4 server update - <a href="member2558.html?action=profile&amp;uid=122388">EduGTA</a> -  12.08.2014
+<br />
+<br />
+<b>Thanks a lot!</b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> -  12.08.2014
+<br />
+<br />
+Thanks for the update!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member01ec.html?action=profile&amp;uid=150594">nickdodd25</a> -  12.08.2014
+<br />
+<br />
+Oh nice i recently had issues with syncing trailers with players and OnTrailerUpdate should come in handy.<br />
+<br />
+Also what about adding vehicle angle to OnUnoccupiedVehicleUpdate?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: SA-MP 0.3z R4 server update - <a href="memberc252.html?action=profile&amp;uid=133373">Miguel_Leopold</a> -  12.08.2014
+<br />
+<br />
+Thanks a lot.<br />
+Also some players use Vehicle Sync Update on vehicles drive by other users to confuse some anticheats.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> -  12.08.2014
+<br />
+<br />
+Awesome. Thanks Kalcor.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> -  12.08.2014
+<br />
+<br />
+Nice one Kalcor.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member5077.html?action=profile&amp;uid=173981">MehranGta</a> -  12.08.2014
+<br />
+<br />
+Nice release Kalcor.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member0a7c.html?action=profile&amp;uid=237828">JonasGabriel</a> -  12.08.2014
+<br />
+<br />
+Thanks, Release Kalcor <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member17da.html?action=profile&amp;uid=178237">Don_Cage</a> -  12.08.2014
+<br />
+<br />
+Thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member805a.html?action=profile&amp;uid=230062">brent94</a> -  12.08.2014
+<br />
+<br />
+Thanks for the update!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member05ac.html?action=profile&amp;uid=108176">Igorek</a> -  12.08.2014
+<br />
+<br />
+Good Update / Обнова хрень.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> -  12.08.2014
+<br />
+<br />
+I\'M LOVING THE TRAILER CALLBACK.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> -  12.08.2014
+<br />
+<br />
+Nice update of Unoccupied Vehicle.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member1708.html?action=profile&amp;uid=184410">PT</a> -  12.08.2014
+<br />
+<br />
+nice update, i like the new params for the OnUnoccupiedVehicleUpdate
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member1fed.html?action=profile&amp;uid=155646">KubiPL</a> -  12.08.2014
+<br />
+<br />
+Nice, thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member3523.html?action=profile&amp;uid=208423">georJik</a> -  12.08.2014
+<br />
+<br />
+Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R4 server update - <a href="member7661.html?action=profile&amp;uid=239767">AzaMx</a> -  12.08.2014
+<br />
+<br />
+Nice, thank you for the updates
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

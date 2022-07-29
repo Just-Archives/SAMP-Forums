@@ -1,0 +1,1579 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3.7 in development</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "c5e900598730c9c2c857896c0c9f0ccb";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="I'm pleased to announce a new version of SA-MP, version 0.3.7. While we're still not ready to make the jump to 0.4, it's clear an update is needed to address some of the existing problems in 0.3z. Her" />
+<link rel="canonical" href="showthread81bc.html?tid=558447" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="c5e900598730c9c2c857896c0c9f0ccb" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthread4e36-2.html?mode=linear&amp;tid=558447&amp;pid=3332966#pid3332966">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3.7 in development
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3332966"></a>
+<div class="post classic " style="" id="post_3332966">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberfb65.html?action=profile&amp;uid=3"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberfb65.html?action=profile&amp;uid=3"><span style="color: #078A07;"><strong>Kalcor</strong></span></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				SA-MP Developer<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,180<br />
+	Threads: 55<br />
+	Joined: Apr 2005
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation2d74.html?uid=3"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread0020.html?tid=558447&amp;pid=3332966#pid3332966" title="SA-MP 0.3.7 in development">#1</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 1 by Kalcor" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">17.01.2015, 08:34 <span class="post_edit" id="edited_by_3332966"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by Kalcor; 17/01/2015 at 12:02 PM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3332966">
+		I'm pleased to announce a new version of SA-MP, version 0.3.7. While we're still not ready to make the jump to 0.4, it's clear an update is needed to address some of the existing problems in 0.3z.<br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-139-2.png"/><br />
+<br />
+Here are some of the new features coming in SA-MP 0.3.7. You can expect more things to be added and shown as we get closer to release.<br />
+<br />
+<font size="4"><b>Font size changing</b></font><br />
+<br />
+You can now change the font size used by the SA-MP chat box and UIs. Although not officially supported, you can also change the font face and weight.<br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-137.png"/><br />
+<br />
+<font size="4"><b>Other features and fixes</b></font><br />
+<br />
+Fixes camera collisions on objects and vehicles that are outside the normal world map.<br />
+The server can disable collisions between driven vehicles for racing and stunt tracks.<br />
+Improvements to the editor's test mode.<br />
+Connection cookie system to prevent spoofed connection flooding.<br />
+Fixes for vertex lighting and UV animation on objects that have a large draw distance.<br />
+Fixed player weapon ID shot desync during a weapon change.<br />
+The scoreboard is bigger if you run the game at higher resolutions.<br />
+Fixes for various client crashes in 0.3z.<br />
+<br />
+<font size="4"><b>New objects</b></font><br />
+<br />
+Matite from GamerX server jumped aboard again for SA-MP 0.3.7. There are over 240 new objects added, featuring everything from hats, to fruits, to new stunting areas. Below are just of a few of the new objects added.<br />
+<br />
+<font size="4"><b>Modular land objects</b></font><br />
+<br />
+These can be used as a base to build custom maps and islands.<br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-136.png"/><br />
+<br />
+<font size="4"><b>New enterable building LS Beachside</b></font><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/LSBeachSide-1b.png"/><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/LSBeachSideInside-5.png"/><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/LSBeachSideInside-9.png"/><br />
+<br />
+<font size="4"><b>New stunting objects including half tubes and a mapped island</b></font><br />
+<br />
+These tubes are reusable and come in 3 different sizes.<br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-034.png"/><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-072.png"/><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/sa-mp-085.png"/><br />
+<br />
+More screenshots of the stunt island <a href="http://www.sa-mp.com/stuff/037shots/tubesrc.html" target="_blank">here</a>.<br />
+<br />
+<font size="4"><b>A stage, microphone, and instruments</b></font><br />
+<br />
+<img alt="" border="0" src="http://www.sa-mp.com/stuff/037shots/StageAndInstruments-4.png"/><br />
+<br />
+... and much more. Coming soon.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3332966">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc4c7.html?action=finduser&amp;uid=3" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply4944.html?tid=558447&amp;replyto=3332966" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadfc46.html?tid=558447&amp;action=nextoldest">Next Oldest</a> | <a href="showthread2545.html?tid=558447&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="558447" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 0px;"><strong>SA-MP 0.3.7 in development</strong> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 17.01.2015, 08:34</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread168f-3.html?tid=558447&amp;pid=3333162&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 17.01.2015, 12:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddf8d-2.html?tid=558447&amp;pid=3333164&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 17.01.2015, 12:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread95b8-2.html?tid=558447&amp;pid=3333165&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member631c.html?action=profile&amp;uid=205456">Zmith</a> - 17.01.2015, 12:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread63fc.html?tid=558447&amp;pid=3333169&amp;mode=threaded">Re : SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere81c.html?action=profile&amp;uid=123620">Alvin007</a> - 17.01.2015, 12:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d9f-3.html?tid=558447&amp;pid=3333174&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6ef6.html?action=profile&amp;uid=212353">Battlezone</a> - 17.01.2015, 12:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd41e-2.html?tid=558447&amp;pid=3333175&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3b41.html?action=profile&amp;uid=234263">Chilli9434</a> - 17.01.2015, 12:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb155-2.html?tid=558447&amp;pid=3333176&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 17.01.2015, 12:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8e6d-2.html?tid=558447&amp;pid=3333178&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd167.html?action=profile&amp;uid=188647">Fabian1997</a> - 17.01.2015, 12:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4a57-3.html?tid=558447&amp;pid=3333180&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd57f.html?action=profile&amp;uid=103960">TommyB</a> - 17.01.2015, 12:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1836.html?tid=558447&amp;pid=3333181&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1faf.html?action=profile&amp;uid=50263">kurta999</a> - 17.01.2015, 12:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread250c-2.html?tid=558447&amp;pid=3333182&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2860.html?action=profile&amp;uid=106463">kirk</a> - 17.01.2015, 12:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0efb.html?tid=558447&amp;pid=3333184&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfd94.html?action=profile&amp;uid=191356">XXCrazyMan707XX</a> - 17.01.2015, 12:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8a6a-2.html?tid=558447&amp;pid=3333185&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by Patrick - 17.01.2015, 12:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc4f1.html?tid=558447&amp;pid=3333186&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member723c.html?action=profile&amp;uid=7058">Redirect Left</a> - 17.01.2015, 12:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcfa4-2.html?tid=558447&amp;pid=3333187&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member101e.html?action=profile&amp;uid=204617">Sledgehammer</a> - 17.01.2015, 12:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3fb9-2.html?tid=558447&amp;pid=3333188&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberebd7.html?action=profile&amp;uid=15287">Matess</a> - 17.01.2015, 12:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ffb.html?tid=558447&amp;pid=3333189&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member03f0.html?action=profile&amp;uid=106967">adri1</a> - 17.01.2015, 12:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadec74-2.html?tid=558447&amp;pid=3333190&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1bd7.html?action=profile&amp;uid=50776">andrewgrob</a> - 17.01.2015, 12:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf6b5.html?tid=558447&amp;pid=3333192&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 17.01.2015, 12:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd297.html?tid=558447&amp;pid=3333193&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 17.01.2015, 12:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread799e-2.html?tid=558447&amp;pid=3333196&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9d3f.html?action=profile&amp;uid=238067">codectile</a> - 17.01.2015, 12:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1810-2.html?tid=558447&amp;pid=3333198&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7486-2.html?action=profile&amp;uid=146395">Zume</a> - 17.01.2015, 12:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5ba5-2.html?tid=558447&amp;pid=3333199&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 17.01.2015, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddc9d-3.html?tid=558447&amp;pid=3333200&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1c8a.html?action=profile&amp;uid=160544">Djole1337</a> - 17.01.2015, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade920-2.html?tid=558447&amp;pid=3333201&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 17.01.2015, 12:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc5c8.html?tid=558447&amp;pid=3333202&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 17.01.2015, 12:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9298.html?tid=558447&amp;pid=3333203&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc469.html?action=profile&amp;uid=203669">PrivatioBoni</a> - 17.01.2015, 12:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4795.html?tid=558447&amp;pid=3333207&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2df4.html?action=profile&amp;uid=133179">Banana_Ghost</a> - 17.01.2015, 12:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5950.html?tid=558447&amp;pid=3333210&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberccb3.html?action=profile&amp;uid=152126">Manyula</a> - 17.01.2015, 12:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc643.html?tid=558447&amp;pid=3333212&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere4e3.html?action=profile&amp;uid=119025">DrTHE</a> - 17.01.2015, 12:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada1d2.html?tid=558447&amp;pid=3333213&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7b62.html?action=profile&amp;uid=239547">Professional06</a> - 17.01.2015, 12:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0e86.html?tid=558447&amp;pid=3333215&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 12:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread05aa.html?tid=558447&amp;pid=3333217&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member09b9.html?action=profile&amp;uid=149207">CePaX</a> - 17.01.2015, 12:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread194f.html?tid=558447&amp;pid=3333223&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberede6.html?action=profile&amp;uid=47313">Kyle</a> - 17.01.2015, 12:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread93ad-2.html?tid=558447&amp;pid=3333227&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0439.html?action=profile&amp;uid=154558">Fantastic</a> - 17.01.2015, 12:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc2b2-2.html?tid=558447&amp;pid=3333228&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfa97.html?action=profile&amp;uid=156802">TwisT3R</a> - 17.01.2015, 12:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbe1c.html?tid=558447&amp;pid=3333229&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfd0d.html?action=profile&amp;uid=97809">MixeG</a> - 17.01.2015, 12:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread30a5-2.html?tid=558447&amp;pid=3333230&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1294.html?action=profile&amp;uid=116646">inferno211</a> - 17.01.2015, 12:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread41bf.html?tid=558447&amp;pid=3333233&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 17.01.2015, 12:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread19ad.html?tid=558447&amp;pid=3333234&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbeb9.html?action=profile&amp;uid=247730">Ryses</a> - 17.01.2015, 12:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1b78.html?tid=558447&amp;pid=3333235&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> - 17.01.2015, 12:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd657.html?tid=558447&amp;pid=3333239&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 17.01.2015, 12:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5dba-3.html?tid=558447&amp;pid=3333242&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0b22-2.html?action=profile&amp;uid=232360">JuanStone</a> - 17.01.2015, 12:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3121.html?tid=558447&amp;pid=3333244&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercadd.html?action=profile&amp;uid=205173">Areeb</a> - 17.01.2015, 12:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadccde-2.html?tid=558447&amp;pid=3333246&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member989d.html?action=profile&amp;uid=137">JernejL</a> - 17.01.2015, 12:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread49d4-2.html?tid=558447&amp;pid=3333249&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercb66.html?action=profile&amp;uid=197509">EiresJason</a> - 17.01.2015, 12:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread407c.html?tid=558447&amp;pid=3333253&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3073.html?action=profile&amp;uid=12614">Will77</a> - 17.01.2015, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6e6c.html?tid=558447&amp;pid=3333255&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdb96.html?action=profile&amp;uid=222342">KovaNovik</a> - 17.01.2015, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread10e8-3.html?tid=558447&amp;pid=3333257&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfa97.html?action=profile&amp;uid=156802">TwisT3R</a> - 17.01.2015, 13:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd4cf-2.html?tid=558447&amp;pid=3333263&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membered5b.html?action=profile&amp;uid=113068">linuxthefish</a> - 17.01.2015, 13:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8cfa-4.html?tid=558447&amp;pid=3333265&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member471d.html?action=profile&amp;uid=133429">AndreT</a> - 17.01.2015, 13:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbeab.html?tid=558447&amp;pid=3333267&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberccb3.html?action=profile&amp;uid=152126">Manyula</a> - 17.01.2015, 13:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread76db.html?tid=558447&amp;pid=3333268&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0feb.html?action=profile&amp;uid=222438">xo</a> - 17.01.2015, 13:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadde32-2.html?tid=558447&amp;pid=3333272&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdb96.html?action=profile&amp;uid=222342">KovaNovik</a> - 17.01.2015, 13:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread23b6.html?tid=558447&amp;pid=3333274&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 17.01.2015, 13:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd88a-3.html?tid=558447&amp;pid=3333279&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4ccc.html?action=profile&amp;uid=165533">Sanady</a> - 17.01.2015, 13:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2f24.html?tid=558447&amp;pid=3333282&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7c20.html?action=profile&amp;uid=76310">Mmartin</a> - 17.01.2015, 13:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread727f-2.html?tid=558447&amp;pid=3333285&amp;mode=threaded">AW: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1854.html?action=profile&amp;uid=149189">Mellnik</a> - 17.01.2015, 13:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0d21.html?tid=558447&amp;pid=3333293&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member826c.html?action=profile&amp;uid=231910">Kruno88</a> - 17.01.2015, 13:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade41a.html?tid=558447&amp;pid=3333295&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd7ef.html?action=profile&amp;uid=135587">WLSF</a> - 17.01.2015, 13:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6cf8.html?tid=558447&amp;pid=3333297&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13d6.html?action=profile&amp;uid=173158">cm666</a> - 17.01.2015, 13:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada008.html?tid=558447&amp;pid=3333303&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d0c.html?action=profile&amp;uid=58418">vyper</a> - 17.01.2015, 13:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread03b5.html?tid=558447&amp;pid=3333306&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 17.01.2015, 13:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread07ef-3.html?tid=558447&amp;pid=3333307&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member15ba.html?action=profile&amp;uid=106596">Henkie</a> - 17.01.2015, 13:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9e98-2.html?tid=558447&amp;pid=3333309&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdb96.html?action=profile&amp;uid=222342">KovaNovik</a> - 17.01.2015, 13:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf233.html?tid=558447&amp;pid=3333310&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ef1.html?action=profile&amp;uid=218502">Evocator</a> - 17.01.2015, 13:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3e27.html?tid=558447&amp;pid=3333311&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member200d.html?action=profile&amp;uid=230795">Cyber123</a> - 17.01.2015, 13:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd71d-4.html?tid=558447&amp;pid=3333312&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3bb0.html?action=profile&amp;uid=240594">www</a> - 17.01.2015, 13:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5fdf-2.html?tid=558447&amp;pid=3333318&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member68e0.html?action=profile&amp;uid=115827">Unknown1234</a> - 17.01.2015, 13:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bb9.html?tid=558447&amp;pid=3333321&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member203c.html?action=profile&amp;uid=37476">Whizion</a> - 17.01.2015, 13:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9011.html?tid=558447&amp;pid=3333322&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd02d.html?action=profile&amp;uid=207800">Hwang</a> - 17.01.2015, 13:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd9bf-2.html?tid=558447&amp;pid=3333323&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6348.html?action=profile&amp;uid=124429">Mark™</a> - 17.01.2015, 13:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread370e-2.html?tid=558447&amp;pid=3333325&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29e9.html?action=profile&amp;uid=145609">Mr.R</a> - 17.01.2015, 13:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2aed.html?tid=558447&amp;pid=3333347&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2c6b.html?action=profile&amp;uid=187715">nikita86826</a> - 17.01.2015, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc88d.html?tid=558447&amp;pid=3333350&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5b95.html?action=profile&amp;uid=195551">Infernux</a> - 17.01.2015, 14:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadffdc-3.html?tid=558447&amp;pid=3333353&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3ba5.html?action=profile&amp;uid=238168">Kapersky™</a> - 17.01.2015, 14:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9962.html?tid=558447&amp;pid=3333354&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera1cb.html?action=profile&amp;uid=192267">kaZax</a> - 17.01.2015, 14:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread014b-2.html?tid=558447&amp;pid=3333358&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member23b6.html?action=profile&amp;uid=223973">Ferjkee</a> - 17.01.2015, 14:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread992a-2.html?tid=558447&amp;pid=3333362&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2d2e.html?action=profile&amp;uid=199420">Aliassassin123456</a> - 17.01.2015, 14:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6000.html?tid=558447&amp;pid=3333363&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member84d7.html?action=profile&amp;uid=101621">Wennicke</a> - 17.01.2015, 14:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1e5d-2.html?tid=558447&amp;pid=3333367&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 17.01.2015, 14:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadac80-2.html?tid=558447&amp;pid=3333369&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member48a1.html?action=profile&amp;uid=106963">Drebin</a> - 17.01.2015, 14:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbf6a.html?tid=558447&amp;pid=3333370&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member28e7.html?action=profile&amp;uid=98026">Danny</a> - 17.01.2015, 14:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada7a5.html?tid=558447&amp;pid=3333371&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8928.html?action=profile&amp;uid=13347">Vince</a> - 17.01.2015, 14:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1779-2.html?tid=558447&amp;pid=3333372&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> - 17.01.2015, 14:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5d48-2.html?tid=558447&amp;pid=3333376&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8953.html?action=profile&amp;uid=223119">AceK</a> - 17.01.2015, 14:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread23e7.html?tid=558447&amp;pid=3333377&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc4bc.html?action=profile&amp;uid=69550">yugecin</a> - 17.01.2015, 14:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadce06-2.html?tid=558447&amp;pid=3333378&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera506.html?action=profile&amp;uid=234024">Nenzittow</a> - 17.01.2015, 14:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread44d5-2.html?tid=558447&amp;pid=3333379&amp;mode=threaded">Re : SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf1ce.html?action=profile&amp;uid=111607">DexX39</a> - 17.01.2015, 14:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc22b.html?tid=558447&amp;pid=3333380&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 17.01.2015, 14:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread827a-2.html?tid=558447&amp;pid=3333381&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb3fe.html?action=profile&amp;uid=206093">NinjaTuna</a> - 17.01.2015, 14:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbd35-2.html?tid=558447&amp;pid=3333385&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2d2e.html?action=profile&amp;uid=199420">Aliassassin123456</a> - 17.01.2015, 14:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3fac-3.html?tid=558447&amp;pid=3333392&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 17.01.2015, 14:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5325.html?tid=558447&amp;pid=3333398&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc9c5.html?action=profile&amp;uid=141721">Dredd</a> - 17.01.2015, 14:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1299.html?tid=558447&amp;pid=3333446&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8f56.html?action=profile&amp;uid=82218">Killa[DGZ]</a> - 17.01.2015, 14:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7f89.html?tid=558447&amp;pid=3333451&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6526.html?action=profile&amp;uid=198228">GreenSt4lker</a> - 17.01.2015, 14:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd2e8.html?tid=558447&amp;pid=3333454&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13ad.html?action=profile&amp;uid=76946">ikkentim</a> - 17.01.2015, 14:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread383d-2.html?tid=558447&amp;pid=3333455&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8fb4.html?action=profile&amp;uid=116648">kemal123</a> - 17.01.2015, 14:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread90ba-2.html?tid=558447&amp;pid=3333458&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 17.01.2015, 14:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc601.html?tid=558447&amp;pid=3333467&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8904.html?action=profile&amp;uid=201574">Mielnicky</a> - 17.01.2015, 15:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadce93-2.html?tid=558447&amp;pid=3333478&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere94c.html?action=profile&amp;uid=224659">AroseKhanNiazi</a> - 17.01.2015, 15:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2173-2.html?tid=558447&amp;pid=3333482&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd4a1.html?action=profile&amp;uid=182726">Fernado Samuel</a> - 17.01.2015, 15:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread40d4.html?tid=558447&amp;pid=3333488&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera68a.html?action=profile&amp;uid=220426">Runn3R</a> - 17.01.2015, 15:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6699.html?tid=558447&amp;pid=3333492&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8dd3.html?action=profile&amp;uid=173890">Kimossab</a> - 17.01.2015, 15:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb34d.html?tid=558447&amp;pid=3333499&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 17.01.2015, 15:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade397.html?tid=558447&amp;pid=3333507&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a> - 17.01.2015, 15:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread41e4.html?tid=558447&amp;pid=3333511&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member882c.html?action=profile&amp;uid=110008">Ironboy</a> - 17.01.2015, 15:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread04b8.html?tid=558447&amp;pid=3333518&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member53b7.html?action=profile&amp;uid=120242">AIped</a> - 17.01.2015, 15:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b16.html?tid=558447&amp;pid=3333530&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd1f0.html?action=profile&amp;uid=166275">Uberanwar</a> - 17.01.2015, 15:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc022.html?tid=558447&amp;pid=3333545&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdb36.html?action=profile&amp;uid=183481">Pro_LiZzy</a> - 17.01.2015, 15:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5c7d.html?tid=558447&amp;pid=3333551&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera2f8.html?action=profile&amp;uid=10237">Mauzen</a> - 17.01.2015, 15:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3acc.html?tid=558447&amp;pid=3333554&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0a3e.html?action=profile&amp;uid=216669">Mixa3D</a> - 17.01.2015, 15:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadad39.html?tid=558447&amp;pid=3333566&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc7cc.html?action=profile&amp;uid=248056">Boromir</a> - 17.01.2015, 15:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread20e8.html?tid=558447&amp;pid=3333570&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member03f0.html?action=profile&amp;uid=106967">adri1</a> - 17.01.2015, 15:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4330.html?tid=558447&amp;pid=3333577&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere457.html?action=profile&amp;uid=218602">Wipe</a> - 17.01.2015, 15:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf380-2.html?tid=558447&amp;pid=3333582&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfd0d.html?action=profile&amp;uid=97809">MixeG</a> - 17.01.2015, 15:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6c05-2.html?tid=558447&amp;pid=3333592&amp;mode=threaded">Re : SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercb7c.html?action=profile&amp;uid=128732">nicolaskettler</a> - 17.01.2015, 15:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb06c.html?tid=558447&amp;pid=3333596&amp;mode=threaded">Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 17.01.2015, 15:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3bab.html?tid=558447&amp;pid=3333599&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera535.html?action=profile&amp;uid=177059">ShooteR1990</a> - 17.01.2015, 15:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e06-2.html?tid=558447&amp;pid=3333602&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7971.html?action=profile&amp;uid=45736">Elorreli</a> - 17.01.2015, 16:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread093e.html?tid=558447&amp;pid=3333607&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef23.html?action=profile&amp;uid=218433">MohanedZzZ</a> - 17.01.2015, 16:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7611-2.html?tid=558447&amp;pid=3333608&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e2e.html?action=profile&amp;uid=239828">jotajeda</a> - 17.01.2015, 16:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8ff4-2.html?tid=558447&amp;pid=3333611&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member38d5.html?action=profile&amp;uid=163179">[BWL]Chamaleon</a> - 17.01.2015, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4172.html?tid=558447&amp;pid=3333612&amp;mode=threaded">Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 17.01.2015, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf56f.html?tid=558447&amp;pid=3333613&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 17.01.2015, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread252f.html?tid=558447&amp;pid=3333617&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2e48.html?action=profile&amp;uid=236264">LivingLikeYouDo</a> - 17.01.2015, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6b9d.html?tid=558447&amp;pid=3333625&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 17.01.2015, 16:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd2f8.html?tid=558447&amp;pid=3333627&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6add.html?action=profile&amp;uid=158392">Garsino</a> - 17.01.2015, 16:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade3f3-2.html?tid=558447&amp;pid=3333628&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7971.html?action=profile&amp;uid=45736">Elorreli</a> - 17.01.2015, 16:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1a0e.html?tid=558447&amp;pid=3333634&amp;mode=threaded">Respuesta: Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e2e.html?action=profile&amp;uid=239828">jotajeda</a> - 17.01.2015, 16:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada6a3.html?tid=558447&amp;pid=3333636&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercb75.html?action=profile&amp;uid=240150">Toolkit</a> - 17.01.2015, 16:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2481.html?tid=558447&amp;pid=3333641&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3943.html?action=profile&amp;uid=169603">zT KiNgKoNg</a> - 17.01.2015, 16:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread251d-2.html?tid=558447&amp;pid=3333646&amp;mode=threaded">AW: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2cbe.html?action=profile&amp;uid=180252">Saize</a> - 17.01.2015, 16:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbe5a.html?tid=558447&amp;pid=3333653&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera53a.html?action=profile&amp;uid=226756">kwart</a> - 17.01.2015, 16:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread790e.html?tid=558447&amp;pid=3333655&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ee6.html?action=profile&amp;uid=45586">Blantas</a> - 17.01.2015, 16:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8fea.html?tid=558447&amp;pid=3333657&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 17.01.2015, 16:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd86b.html?tid=558447&amp;pid=3333660&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere202.html?action=profile&amp;uid=58151">Jay_</a> - 17.01.2015, 16:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb252-2.html?tid=558447&amp;pid=3333663&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb499.html?action=profile&amp;uid=163141">JaKe Elite</a> - 17.01.2015, 16:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade492-2.html?tid=558447&amp;pid=3333669&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 17.01.2015, 16:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread09e1-2.html?tid=558447&amp;pid=3333678&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> - 17.01.2015, 16:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadef9c-2.html?tid=558447&amp;pid=3333687&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 17.01.2015, 16:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada81c.html?tid=558447&amp;pid=3333699&amp;mode=threaded">Respuesta: Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberce70.html?action=profile&amp;uid=183075">Malganys</a> - 17.01.2015, 16:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada6de.html?tid=558447&amp;pid=3333734&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7971.html?action=profile&amp;uid=45736">Elorreli</a> - 17.01.2015, 17:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0926-2.html?tid=558447&amp;pid=3333738&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1f76.html?action=profile&amp;uid=197133">Kyance</a> - 17.01.2015, 17:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadafc9.html?tid=558447&amp;pid=3333741&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member221a.html?action=profile&amp;uid=230127">iReacheR</a> - 17.01.2015, 17:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6d26.html?tid=558447&amp;pid=3333743&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> - 17.01.2015, 17:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread76dd.html?tid=558447&amp;pid=3333754&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 17.01.2015, 17:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc167.html?tid=558447&amp;pid=3333758&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8dd3.html?action=profile&amp;uid=173890">Kimossab</a> - 17.01.2015, 17:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd408-2.html?tid=558447&amp;pid=3333765&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 17:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread22f3.html?tid=558447&amp;pid=3333767&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6ef9.html?action=profile&amp;uid=231246">PuN1Sh3r</a> - 17.01.2015, 17:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1a35-2.html?tid=558447&amp;pid=3333770&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6526.html?action=profile&amp;uid=198228">GreenSt4lker</a> - 17.01.2015, 17:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7581-2.html?tid=558447&amp;pid=3333771&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera7d5.html?action=profile&amp;uid=196388">bihboy23</a> - 17.01.2015, 17:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread10cd-2.html?tid=558447&amp;pid=3333772&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 17.01.2015, 17:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd2ce-2.html?tid=558447&amp;pid=3333776&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member48a2.html?action=profile&amp;uid=154515">Verdan</a> - 17.01.2015, 17:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0c2.html?tid=558447&amp;pid=3333777&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 17.01.2015, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread673b-2.html?tid=558447&amp;pid=3333778&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera9bb.html?action=profile&amp;uid=170281">..Bobby..</a> - 17.01.2015, 17:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread48af.html?tid=558447&amp;pid=3333781&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member584b.html?action=profile&amp;uid=226396">xStunt</a> - 17.01.2015, 17:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd60f-2.html?tid=558447&amp;pid=3333783&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 17:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6ef9-3.html?tid=558447&amp;pid=3333785&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member458a.html?action=profile&amp;uid=185384">GWMPT</a> - 17.01.2015, 17:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1ff1.html?tid=558447&amp;pid=3333789&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1f76.html?action=profile&amp;uid=197133">Kyance</a> - 17.01.2015, 17:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread511d.html?tid=558447&amp;pid=3333790&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 17:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5d54-2.html?tid=558447&amp;pid=3333800&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13ad.html?action=profile&amp;uid=76946">ikkentim</a> - 17.01.2015, 17:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfbf8.html?tid=558447&amp;pid=3333814&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e0b-2.html?action=profile&amp;uid=8886">T-N-Z</a> - 17.01.2015, 17:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0911.html?tid=558447&amp;pid=3333823&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 18:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb0e6.html?tid=558447&amp;pid=3333826&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2706.html?action=profile&amp;uid=190595">Mexanizm93</a> - 17.01.2015, 18:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3819.html?tid=558447&amp;pid=3333829&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbad6.html?action=profile&amp;uid=24958">Sergei</a> - 17.01.2015, 18:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb55f-2.html?tid=558447&amp;pid=3333830&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e0b-2.html?action=profile&amp;uid=8886">T-N-Z</a> - 17.01.2015, 18:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread68a6.html?tid=558447&amp;pid=3333831&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 17.01.2015, 18:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread096c.html?tid=558447&amp;pid=3333835&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.01.2015, 18:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4355-2.html?tid=558447&amp;pid=3333854&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member178c.html?action=profile&amp;uid=243203">AndreLuiz</a> - 17.01.2015, 18:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada933-2.html?tid=558447&amp;pid=3333871&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9a2a.html?action=profile&amp;uid=237384">Chloride</a> - 17.01.2015, 18:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ddb-2.html?tid=558447&amp;pid=3333880&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member616a.html?action=profile&amp;uid=126674">Kaperstone</a> - 17.01.2015, 18:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbab5-2.html?tid=558447&amp;pid=3333885&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbc65.html?action=profile&amp;uid=231550">TDMY0HoWnEr</a> - 17.01.2015, 18:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade594.html?tid=558447&amp;pid=3333886&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by Guest4390857394857 - 17.01.2015, 18:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf75a-3.html?tid=558447&amp;pid=3333900&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfa96.html?action=profile&amp;uid=233885">StephenBrash</a> - 17.01.2015, 18:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddaf6.html?tid=558447&amp;pid=3333906&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberebeb.html?action=profile&amp;uid=224692">Armandito</a> - 17.01.2015, 19:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread944b.html?tid=558447&amp;pid=3333910&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercc6c.html?action=profile&amp;uid=169788">Sawalha</a> - 17.01.2015, 19:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread171a-2.html?tid=558447&amp;pid=3333914&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaac6.html?action=profile&amp;uid=243346">ReyMysterio</a> - 17.01.2015, 19:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread92f0.html?tid=558447&amp;pid=3333916&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member41c8-2.html?action=profile&amp;uid=59061">mahdi499</a> - 17.01.2015, 19:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8bb7-2.html?tid=558447&amp;pid=3333942&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4d19.html?action=profile&amp;uid=182121">Lukac</a> - 17.01.2015, 19:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7602-2.html?tid=558447&amp;pid=3333949&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3f86.html?action=profile&amp;uid=177580">DeitY</a> - 17.01.2015, 19:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddb90-2.html?tid=558447&amp;pid=3333956&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8eed.html?action=profile&amp;uid=227907">Goncho28</a> - 17.01.2015, 19:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d17.html?tid=558447&amp;pid=3334004&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3422.html?action=profile&amp;uid=245214">Seha75270</a> - 17.01.2015, 20:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread39a1.html?tid=558447&amp;pid=3334010&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member10f6.html?action=profile&amp;uid=133399">BlueBaron</a> - 17.01.2015, 20:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddc4b-3.html?tid=558447&amp;pid=3334025&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd8cb.html?action=profile&amp;uid=231023">Skully82</a> - 17.01.2015, 20:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread931a.html?tid=558447&amp;pid=3334197&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf3c8.html?action=profile&amp;uid=248531">SecretBoss</a> - 17.01.2015, 23:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd432.html?tid=558447&amp;pid=3334198&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0082.html?action=profile&amp;uid=225213">gkaravelis</a> - 17.01.2015, 23:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc92e.html?tid=558447&amp;pid=3334199&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 17.01.2015, 23:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6fa5.html?tid=558447&amp;pid=3334213&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member902e.html?action=profile&amp;uid=183495">Mark_Samp</a> - 17.01.2015, 23:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5dd0.html?tid=558447&amp;pid=3334245&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member933d.html?action=profile&amp;uid=243834">Koenigsegg</a> - 17.01.2015, 23:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade064.html?tid=558447&amp;pid=3334250&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberabe2.html?action=profile&amp;uid=248300">bigboy81</a> - 18.01.2015, 00:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf99c-2.html?tid=558447&amp;pid=3334263&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6e3c.html?action=profile&amp;uid=220121">i0sa</a> - 18.01.2015, 00:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8b60.html?tid=558447&amp;pid=3334264&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3a7f.html?action=profile&amp;uid=213220">Markonisha</a> - 18.01.2015, 00:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadafc8-2.html?tid=558447&amp;pid=3334265&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 18.01.2015, 00:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbdb3.html?tid=558447&amp;pid=3334392&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfeec.html?action=profile&amp;uid=114385">OTACON</a> - 18.01.2015, 04:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread45ed.html?tid=558447&amp;pid=3334394&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 18.01.2015, 04:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc77c.html?tid=558447&amp;pid=3334418&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0cdc.html?action=profile&amp;uid=46957">Jay187</a> - 18.01.2015, 04:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread896a.html?tid=558447&amp;pid=3334419&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6d0b.html?action=profile&amp;uid=83068">Adoniiz</a> - 18.01.2015, 04:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade4ef.html?tid=558447&amp;pid=3334431&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 18.01.2015, 05:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade9fe-2.html?tid=558447&amp;pid=3334436&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 18.01.2015, 05:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadec08.html?tid=558447&amp;pid=3334438&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd365-2.html?action=profile&amp;uid=68422">Potassium</a> - 18.01.2015, 05:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5647.html?tid=558447&amp;pid=3334440&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 18.01.2015, 05:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1998.html?tid=558447&amp;pid=3334446&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member80f1.html?action=profile&amp;uid=146311">[Twixx]</a> - 18.01.2015, 05:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e38.html?tid=558447&amp;pid=3334453&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8d0c.html?action=profile&amp;uid=42627">Calgon</a> - 18.01.2015, 06:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread306e.html?tid=558447&amp;pid=3334462&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf37e.html?action=profile&amp;uid=183218">Excips</a> - 18.01.2015, 06:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc055.html?tid=558447&amp;pid=3334471&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member259e.html?action=profile&amp;uid=229835">Roquee</a> - 18.01.2015, 06:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread94f4-2.html?tid=558447&amp;pid=3334472&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc93e.html?action=profile&amp;uid=246049">Rog</a> - 18.01.2015, 06:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0140-2.html?tid=558447&amp;pid=3334489&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2c8f.html?action=profile&amp;uid=5351">Matite</a> - 18.01.2015, 06:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6a36.html?tid=558447&amp;pid=3334499&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4b4c.html?action=profile&amp;uid=230358">danish007</a> - 18.01.2015, 07:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf146-2.html?tid=558447&amp;pid=3334521&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> - 18.01.2015, 07:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5137-2.html?tid=558447&amp;pid=3334554&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member63e3.html?action=profile&amp;uid=249490">FranklinT</a> - 18.01.2015, 08:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread546d-2.html?tid=558447&amp;pid=3334563&amp;mode=threaded">Re : SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member418e.html?action=profile&amp;uid=201449">StevenPhp</a> - 18.01.2015, 08:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0c3c-2.html?tid=558447&amp;pid=3334564&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4f7a.html?action=profile&amp;uid=240267">MikkiMapper</a> - 18.01.2015, 08:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread72c1.html?tid=558447&amp;pid=3334579&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 18.01.2015, 08:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread306d.html?tid=558447&amp;pid=3334705&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb2a2.html?action=profile&amp;uid=104282">knackworst</a> - 18.01.2015, 10:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade886-3.html?tid=558447&amp;pid=3334715&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member99b5.html?action=profile&amp;uid=75179">Cypress</a> - 18.01.2015, 10:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4dee.html?tid=558447&amp;pid=3334716&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7092.html?action=profile&amp;uid=175804">AaronFarley</a> - 18.01.2015, 10:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc399.html?tid=558447&amp;pid=3334729&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc8c4-2.html?action=profile&amp;uid=105749">MicroD</a> - 18.01.2015, 10:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb7b6.html?tid=558447&amp;pid=3334755&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfb44-2.html?action=profile&amp;uid=128604">7Zip</a> - 18.01.2015, 11:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread40cf.html?tid=558447&amp;pid=3334777&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere762.html?action=profile&amp;uid=244810">Michael B</a> - 18.01.2015, 11:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadde67.html?tid=558447&amp;pid=3334822&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member163f.html?action=profile&amp;uid=215847">FahadKing07</a> - 18.01.2015, 12:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd28d-3.html?tid=558447&amp;pid=3334827&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d51.html?action=profile&amp;uid=28672">BuLLeT[LTU]</a> - 18.01.2015, 12:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddc46.html?tid=558447&amp;pid=3334844&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1a07.html?action=profile&amp;uid=247623">ZikoFox</a> - 18.01.2015, 12:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread68f9-2.html?tid=558447&amp;pid=3334854&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1b95.html?action=profile&amp;uid=216659">Stev</a> - 18.01.2015, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread11af.html?tid=558447&amp;pid=3334898&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 18.01.2015, 13:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade8bb.html?tid=558447&amp;pid=3334916&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member17e7.html?action=profile&amp;uid=58127">Infinity</a> - 18.01.2015, 13:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfdce-3.html?tid=558447&amp;pid=3334938&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3314.html?action=profile&amp;uid=248208">Crupynas</a> - 18.01.2015, 13:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ad4.html?tid=558447&amp;pid=3334939&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 18.01.2015, 13:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9790.html?tid=558447&amp;pid=3334951&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 18.01.2015, 13:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread31e1.html?tid=558447&amp;pid=3334955&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member17e7.html?action=profile&amp;uid=58127">Infinity</a> - 18.01.2015, 13:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4a89.html?tid=558447&amp;pid=3334965&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> - 18.01.2015, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf944.html?tid=558447&amp;pid=3335000&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1f76.html?action=profile&amp;uid=197133">Kyance</a> - 18.01.2015, 14:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3aa3.html?tid=558447&amp;pid=3335016&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member754f.html?action=profile&amp;uid=59625">HyperZ</a> - 18.01.2015, 14:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddcee.html?tid=558447&amp;pid=3335024&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 18.01.2015, 14:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread967b-2.html?tid=558447&amp;pid=3335056&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 18.01.2015, 14:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb28-2.html?tid=558447&amp;pid=3335082&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2d9d.html?action=profile&amp;uid=159915">Catalyst-</a> - 18.01.2015, 15:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread442b-2.html?tid=558447&amp;pid=3335093&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4bf9.html?action=profile&amp;uid=84139">SimonItaly</a> - 18.01.2015, 15:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1fa1.html?tid=558447&amp;pid=3335103&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 18.01.2015, 15:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade454.html?tid=558447&amp;pid=3335104&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ee6.html?action=profile&amp;uid=45586">Blantas</a> - 18.01.2015, 15:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcde8.html?tid=558447&amp;pid=3335106&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 15:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6393.html?tid=558447&amp;pid=3335113&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ee6.html?action=profile&amp;uid=45586">Blantas</a> - 18.01.2015, 15:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9860.html?tid=558447&amp;pid=3335119&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 15:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbee4.html?tid=558447&amp;pid=3335123&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ee6.html?action=profile&amp;uid=45586">Blantas</a> - 18.01.2015, 15:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread34b0-4.html?tid=558447&amp;pid=3335142&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 18.01.2015, 15:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8159.html?tid=558447&amp;pid=3335159&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8a9c.html?action=profile&amp;uid=202835">VenomMancer</a> - 18.01.2015, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread73d0-3.html?tid=558447&amp;pid=3335174&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member85dd.html?action=profile&amp;uid=123828">Adejair_Junior</a> - 18.01.2015, 16:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1504.html?tid=558447&amp;pid=3335195&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 16:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5083.html?tid=558447&amp;pid=3335198&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8d4a.html?action=profile&amp;uid=20444">Finn</a> - 18.01.2015, 16:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread54fb.html?tid=558447&amp;pid=3335206&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 16:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread00ba-2.html?tid=558447&amp;pid=3335223&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member78e4.html?action=profile&amp;uid=185654">Ke_NiReM</a> - 18.01.2015, 16:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7236.html?tid=558447&amp;pid=3335298&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4d91.html?action=profile&amp;uid=118801">pWesley</a> - 18.01.2015, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbe18.html?tid=558447&amp;pid=3335383&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercee8.html?action=profile&amp;uid=97817">ikey07</a> - 18.01.2015, 18:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread052b.html?tid=558447&amp;pid=3335386&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8e29.html?action=profile&amp;uid=100375">CoaPsyFactor</a> - 18.01.2015, 18:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc9df.html?tid=558447&amp;pid=3335418&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb246.html?action=profile&amp;uid=65020">Charles_Bukowski</a> - 18.01.2015, 18:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc5dc.html?tid=558447&amp;pid=3335425&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 18.01.2015, 18:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread95f4.html?tid=558447&amp;pid=3335427&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 18.01.2015, 18:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf51c-3.html?tid=558447&amp;pid=3335430&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 18:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf123.html?tid=558447&amp;pid=3335460&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbad6.html?action=profile&amp;uid=24958">Sergei</a> - 18.01.2015, 18:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c17-2.html?tid=558447&amp;pid=3335470&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e0b.html?action=profile&amp;uid=9420">Schneider</a> - 18.01.2015, 19:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade95f.html?tid=558447&amp;pid=3335534&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7384.html?action=profile&amp;uid=221286">GameR16</a> - 18.01.2015, 19:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread39ab.html?tid=558447&amp;pid=3335567&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2504.html?action=profile&amp;uid=52922">lyrical</a> - 18.01.2015, 19:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf263-2.html?tid=558447&amp;pid=3335598&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberda69.html?action=profile&amp;uid=71690">RedFusion</a> - 18.01.2015, 20:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8725-3.html?tid=558447&amp;pid=3335606&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 18.01.2015, 20:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeea1.html?tid=558447&amp;pid=3335621&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1647.html?action=profile&amp;uid=217611">AtomicPower</a> - 18.01.2015, 20:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade347.html?tid=558447&amp;pid=3335655&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb239.html?action=profile&amp;uid=127502">Maurice_Smoke</a> - 18.01.2015, 20:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5474.html?tid=558447&amp;pid=3335673&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf179.html?action=profile&amp;uid=71667">vassilis</a> - 18.01.2015, 20:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada542.html?tid=558447&amp;pid=3335718&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberacdb.html?action=profile&amp;uid=191910">Xtream</a> - 18.01.2015, 21:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3d46-2.html?tid=558447&amp;pid=3335728&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2c8f.html?action=profile&amp;uid=5351">Matite</a> - 18.01.2015, 21:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd6d-2.html?tid=558447&amp;pid=3335746&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6526.html?action=profile&amp;uid=198228">GreenSt4lker</a> - 18.01.2015, 21:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc285-2.html?tid=558447&amp;pid=3335762&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member68ab.html?action=profile&amp;uid=249139">Naoufal</a> - 18.01.2015, 21:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b66.html?tid=558447&amp;pid=3335768&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9885.html?action=profile&amp;uid=223816">Orma</a> - 18.01.2015, 21:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1f8c.html?tid=558447&amp;pid=3335794&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member85dd.html?action=profile&amp;uid=123828">Adejair_Junior</a> - 18.01.2015, 22:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb3eb-2.html?tid=558447&amp;pid=3335822&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3140.html?action=profile&amp;uid=151598">iiNzTicTx</a> - 18.01.2015, 22:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread77be.html?tid=558447&amp;pid=3335830&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2c8f.html?action=profile&amp;uid=5351">Matite</a> - 18.01.2015, 22:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaded1b.html?tid=558447&amp;pid=3335834&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 18.01.2015, 22:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf5f0-2.html?tid=558447&amp;pid=3336387&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member631b.html?action=profile&amp;uid=185928">BodyBoardVEVO</a> - 19.01.2015, 11:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada803.html?tid=558447&amp;pid=3336418&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 19.01.2015, 11:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread21ed-4.html?tid=558447&amp;pid=3336422&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberede6.html?action=profile&amp;uid=47313">Kyle</a> - 19.01.2015, 11:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread824a.html?tid=558447&amp;pid=3336437&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9bb5.html?action=profile&amp;uid=172903">Akcent_Voltaj</a> - 19.01.2015, 11:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6088-2.html?tid=558447&amp;pid=3336451&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 19.01.2015, 11:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread00c4.html?tid=558447&amp;pid=3336465&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf5e1.html?action=profile&amp;uid=243496">Disneyman</a> - 19.01.2015, 11:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada9e3-3.html?tid=558447&amp;pid=3336468&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member548b.html?action=profile&amp;uid=225620">Need4samp</a> - 19.01.2015, 12:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada030-2.html?tid=558447&amp;pid=3336525&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1af3.html?action=profile&amp;uid=216149">PrinceOfPersia</a> - 19.01.2015, 12:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd570.html?tid=558447&amp;pid=3336534&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5d94.html?action=profile&amp;uid=238573">IntelGrapics</a> - 19.01.2015, 12:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd59e.html?tid=558447&amp;pid=3336536&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 19.01.2015, 12:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8f8e-2.html?tid=558447&amp;pid=3337340&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera67e.html?action=profile&amp;uid=211967">cnoopers</a> - 19.01.2015, 22:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread96d7-2.html?tid=558447&amp;pid=3337364&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member962c.html?action=profile&amp;uid=208406">SW1FTmeister</a> - 19.01.2015, 23:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbd6e.html?tid=558447&amp;pid=3337381&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera8e6.html?action=profile&amp;uid=80263">blackturbo</a> - 19.01.2015, 23:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread819b-2.html?tid=558447&amp;pid=3337449&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 20.01.2015, 02:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread64d5-3.html?tid=558447&amp;pid=3337450&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member10e9.html?action=profile&amp;uid=134599">xLewisx</a> - 20.01.2015, 02:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4311-2.html?tid=558447&amp;pid=3337453&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 20.01.2015, 02:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7f38-3.html?tid=558447&amp;pid=3337457&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member10e9.html?action=profile&amp;uid=134599">xLewisx</a> - 20.01.2015, 02:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7131.html?tid=558447&amp;pid=3337459&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0eb9-2.html?action=profile&amp;uid=112281">TopFuel</a> - 20.01.2015, 02:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread143c.html?tid=558447&amp;pid=3337529&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8d25.html?action=profile&amp;uid=65263">dark boy</a> - 20.01.2015, 05:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade896-2.html?tid=558447&amp;pid=3337602&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 20.01.2015, 07:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc074-2.html?tid=558447&amp;pid=3337604&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1faf.html?action=profile&amp;uid=50263">kurta999</a> - 20.01.2015, 07:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb9d-4.html?tid=558447&amp;pid=3337733&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 20.01.2015, 11:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4975-3.html?tid=558447&amp;pid=3337753&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 20.01.2015, 11:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd0bb.html?tid=558447&amp;pid=3337763&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 20.01.2015, 11:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8ba5-2.html?tid=558447&amp;pid=3337858&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd68a.html?action=profile&amp;uid=217980">vulgo</a> - 20.01.2015, 13:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread564a-2.html?tid=558447&amp;pid=3337883&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3476.html?action=profile&amp;uid=98345">corne</a> - 20.01.2015, 13:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread975c.html?tid=558447&amp;pid=3337887&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 20.01.2015, 13:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb298.html?tid=558447&amp;pid=3337937&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdad8.html?action=profile&amp;uid=156516">CrazyChoco</a> - 20.01.2015, 14:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2f24-2.html?tid=558447&amp;pid=3337941&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9885.html?action=profile&amp;uid=223816">Orma</a> - 20.01.2015, 14:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6ec4.html?tid=558447&amp;pid=3338205&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf2e8.html?action=profile&amp;uid=78823">ranslsad</a> - 20.01.2015, 16:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada5ac.html?tid=558447&amp;pid=3338289&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a> - 20.01.2015, 17:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2631.html?tid=558447&amp;pid=3339739&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 21.01.2015, 17:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5098.html?tid=558447&amp;pid=3341928&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberf909.html?action=profile&amp;uid=249820">K0UMA</a> - 23.01.2015, 14:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0325-4.html?tid=558447&amp;pid=3341979&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 23.01.2015, 15:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeaba.html?tid=558447&amp;pid=3342008&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd6e4.html?action=profile&amp;uid=144270">Ha$H_Sexyboy</a> - 23.01.2015, 15:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb3c0-3.html?tid=558447&amp;pid=3342011&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 23.01.2015, 15:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread821d-2.html?tid=558447&amp;pid=3342020&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e0b-2.html?action=profile&amp;uid=8886">T-N-Z</a> - 23.01.2015, 15:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread72ec.html?tid=558447&amp;pid=3342059&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc128.html?action=profile&amp;uid=140130">Jstylezzz</a> - 23.01.2015, 15:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaee3-3.html?tid=558447&amp;pid=3342065&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4571-2.html?action=profile&amp;uid=233298">M0HAMMAD</a> - 23.01.2015, 16:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread87bc.html?tid=558447&amp;pid=3342104&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera941.html?action=profile&amp;uid=200624">amirab</a> - 23.01.2015, 16:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0c49.html?tid=558447&amp;pid=3342136&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member40f6.html?action=profile&amp;uid=181190">Rick.</a> - 23.01.2015, 16:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd802-2.html?tid=558447&amp;pid=3342143&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdad8.html?action=profile&amp;uid=156516">CrazyChoco</a> - 23.01.2015, 16:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd87c.html?tid=558447&amp;pid=3342191&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera506.html?action=profile&amp;uid=234024">Nenzittow</a> - 23.01.2015, 17:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7564.html?tid=558447&amp;pid=3342218&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 23.01.2015, 17:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7c30.html?tid=558447&amp;pid=3342226&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 23.01.2015, 17:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade5ab.html?tid=558447&amp;pid=3342271&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 23.01.2015, 18:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada7fd.html?tid=558447&amp;pid=3342377&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera32d.html?action=profile&amp;uid=125217">Darius94</a> - 23.01.2015, 19:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7fd8.html?tid=558447&amp;pid=3342382&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 23.01.2015, 19:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread535b.html?tid=558447&amp;pid=3342408&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9b1d.html?action=profile&amp;uid=237588">BlackBurberry</a> - 23.01.2015, 19:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2fff-2.html?tid=558447&amp;pid=3342410&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera506.html?action=profile&amp;uid=234024">Nenzittow</a> - 23.01.2015, 19:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd774.html?tid=558447&amp;pid=3342416&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member53b7.html?action=profile&amp;uid=120242">AIped</a> - 23.01.2015, 19:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc145.html?tid=558447&amp;pid=3342426&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d56.html?action=profile&amp;uid=99758">HeLiOn_PrImE</a> - 23.01.2015, 19:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade90b.html?tid=558447&amp;pid=3342438&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9c0f.html?action=profile&amp;uid=225251">AleckRP</a> - 23.01.2015, 20:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread310e.html?tid=558447&amp;pid=3343986&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member361f.html?action=profile&amp;uid=196495">UpSMaX</a> - 24.01.2015, 20:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaa9d.html?tid=558447&amp;pid=3344047&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb27e.html?action=profile&amp;uid=169405">Erno.</a> - 24.01.2015, 20:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada94c-2.html?tid=558447&amp;pid=3344081&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 24.01.2015, 20:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4373-2.html?tid=558447&amp;pid=3344099&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7f9e.html?action=profile&amp;uid=155739">Partner</a> - 24.01.2015, 21:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbb5b.html?tid=558447&amp;pid=3344296&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membereb97.html?action=profile&amp;uid=231188">RDM</a> - 24.01.2015, 23:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfc46-2.html?tid=558447&amp;pid=3344547&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere856.html?action=profile&amp;uid=121806">DraconianGamer</a> - 25.01.2015, 04:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4865-3.html?tid=558447&amp;pid=3344553&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member67c9.html?action=profile&amp;uid=245488">RoC4life</a> - 25.01.2015, 04:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbe5f-3.html?tid=558447&amp;pid=3344597&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc85e.html?action=profile&amp;uid=235546">Edw</a> - 25.01.2015, 06:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcde9.html?tid=558447&amp;pid=3344689&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9517.html?action=profile&amp;uid=189439">Johny32</a> - 25.01.2015, 08:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread461d.html?tid=558447&amp;pid=3344992&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 25.01.2015, 12:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadecc2.html?tid=558447&amp;pid=3345606&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaf55.html?action=profile&amp;uid=237562">Zenonz</a> - 25.01.2015, 18:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb4e2-2.html?tid=558447&amp;pid=3345647&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member74df.html?action=profile&amp;uid=216169">iFiras</a> - 25.01.2015, 18:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0bab.html?tid=558447&amp;pid=3345677&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere52e.html?action=profile&amp;uid=225585">Melad</a> - 25.01.2015, 18:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaa73-2.html?tid=558447&amp;pid=3345733&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd07b-2.html?action=profile&amp;uid=77768">vinigas</a> - 25.01.2015, 19:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc74c.html?tid=558447&amp;pid=3345878&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberce1d.html?action=profile&amp;uid=247436">Practicality</a> - 25.01.2015, 20:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7d84.html?tid=558447&amp;pid=3345917&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4906.html?action=profile&amp;uid=47188">samiras</a> - 25.01.2015, 21:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbc30-3.html?tid=558447&amp;pid=3345923&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbad6.html?action=profile&amp;uid=24958">Sergei</a> - 25.01.2015, 21:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada4b4.html?tid=558447&amp;pid=3345929&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 25.01.2015, 21:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade01e-2.html?tid=558447&amp;pid=3346106&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3553.html?action=profile&amp;uid=196724">Cerealguy</a> - 26.01.2015, 01:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6bc4-2.html?tid=558447&amp;pid=3346422&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6f66.html?action=profile&amp;uid=139888">BlueSky_</a> - 26.01.2015, 10:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadca99.html?tid=558447&amp;pid=3346480&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 26.01.2015, 12:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada4ac-2.html?tid=558447&amp;pid=3346593&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d90.html?action=profile&amp;uid=216997">ZombieNest</a> - 26.01.2015, 13:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbbfd-2.html?tid=558447&amp;pid=3346740&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6f9c.html?action=profile&amp;uid=145281">denNorske</a> - 26.01.2015, 16:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread735e-2.html?tid=558447&amp;pid=3347209&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member23b9.html?action=profile&amp;uid=249062">GatsbyTrieu</a> - 26.01.2015, 21:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3111.html?tid=558447&amp;pid=3347239&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2539.html?action=profile&amp;uid=21413">Kane_Phoenix</a> - 26.01.2015, 21:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8018.html?tid=558447&amp;pid=3347754&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberb0fa.html?action=profile&amp;uid=249901">cbRobber7</a> - 27.01.2015, 08:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0a9e-2.html?tid=558447&amp;pid=3347858&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member67c9.html?action=profile&amp;uid=245488">RoC4life</a> - 27.01.2015, 11:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2b8c.html?tid=558447&amp;pid=3347980&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere58a.html?action=profile&amp;uid=109432">alanhutch</a> - 27.01.2015, 13:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3541.html?tid=558447&amp;pid=3348039&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member47e7.html?action=profile&amp;uid=169017">Amora187</a> - 27.01.2015, 14:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf82a-3.html?tid=558447&amp;pid=3354576&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberad5f.html?action=profile&amp;uid=185843">Joshua1</a> - 01.02.2015, 04:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb611.html?tid=558447&amp;pid=3354850&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera162.html?action=profile&amp;uid=250738">Carnn</a> - 01.02.2015, 09:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc10d.html?tid=558447&amp;pid=3356331&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3b02.html?action=profile&amp;uid=98543">Chrillzen</a> - 02.02.2015, 12:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb7ac.html?tid=558447&amp;pid=3356476&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membereadc.html?action=profile&amp;uid=220850">Micklo</a> - 02.02.2015, 14:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf2dc.html?tid=558447&amp;pid=3358042&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdeed.html?action=profile&amp;uid=242344">abdullahbest</a> - 03.02.2015, 15:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7940.html?tid=558447&amp;pid=3358990&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member014f.html?action=profile&amp;uid=227931">thaKing</a> - 04.02.2015, 09:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4af5.html?tid=558447&amp;pid=3359399&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberccb3.html?action=profile&amp;uid=152126">Manyula</a> - 04.02.2015, 16:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread27fb.html?tid=558447&amp;pid=3360307&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 05.02.2015, 11:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd760-2.html?tid=558447&amp;pid=3360309&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member390c-2.html?action=profile&amp;uid=25412">sam1929</a> - 05.02.2015, 12:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade513.html?tid=558447&amp;pid=3360362&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4232.html?action=profile&amp;uid=251226">Karan007</a> - 05.02.2015, 13:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadda28.html?tid=558447&amp;pid=3360577&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0842.html?action=profile&amp;uid=237211">Nelle83</a> - 05.02.2015, 16:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadefd8.html?tid=558447&amp;pid=3362525&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1528.html?action=profile&amp;uid=231406">SturtIndia</a> - 07.02.2015, 08:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4670-2.html?tid=558447&amp;pid=3362527&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2ed3.html?action=profile&amp;uid=237392">Shevil</a> - 07.02.2015, 08:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1ecc-2.html?tid=558447&amp;pid=3364077&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member68ab.html?action=profile&amp;uid=249139">Naoufal</a> - 08.02.2015, 13:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd623-2.html?tid=558447&amp;pid=3364195&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5820.html?action=profile&amp;uid=251742">Moki</a> - 08.02.2015, 15:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d6e.html?tid=558447&amp;pid=3364307&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberad65.html?action=profile&amp;uid=251001">citrusLV</a> - 08.02.2015, 16:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4a6a-3.html?tid=558447&amp;pid=3364477&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member65d7.html?action=profile&amp;uid=188473">DRUNKY</a> - 08.02.2015, 17:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread88be-2.html?tid=558447&amp;pid=3364483&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8c9f.html?action=profile&amp;uid=142272">NoSoap</a> - 08.02.2015, 17:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd4f5.html?tid=558447&amp;pid=3365813&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaa72.html?action=profile&amp;uid=54308">Gamer_Z</a> - 09.02.2015, 21:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9be4.html?tid=558447&amp;pid=3365983&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5a33.html?action=profile&amp;uid=215152">monalestok</a> - 10.02.2015, 00:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1ffb-2.html?tid=558447&amp;pid=3366480&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5870.html?action=profile&amp;uid=231030">player94</a> - 10.02.2015, 16:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4769-2.html?tid=558447&amp;pid=3376515&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercaf3.html?action=profile&amp;uid=191145">Xicor</a> - 19.02.2015, 10:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb21.html?tid=558447&amp;pid=3376672&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4c26.html?action=profile&amp;uid=79694">SilverSink</a> - 19.02.2015, 13:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade0a2-2.html?tid=558447&amp;pid=3377541&amp;mode=threaded">SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercf3b.html?action=profile&amp;uid=121956">RubenZone</a> - 20.02.2015, 06:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadae5f.html?tid=558447&amp;pid=3378786&amp;mode=threaded">Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member21d7.html?action=profile&amp;uid=234120">ManuelAbregu</a> - 21.02.2015, 07:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0bfb-2.html?tid=558447&amp;pid=3378965&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4682.html?action=profile&amp;uid=251070">Bester</a> - 21.02.2015, 11:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8a75-2.html?tid=558447&amp;pid=3379406&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3c04.html?action=profile&amp;uid=145397">N0FeaR</a> - 21.02.2015, 17:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadff23.html?tid=558447&amp;pid=3379520&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4043.html?action=profile&amp;uid=194873">ipsLuan</a> - 21.02.2015, 18:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada0d4-2.html?tid=558447&amp;pid=3379649&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberc5ac.html?action=profile&amp;uid=225820">jesdynguyen</a> - 21.02.2015, 19:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade844-2.html?tid=558447&amp;pid=3379841&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d56.html?action=profile&amp;uid=99758">HeLiOn_PrImE</a> - 21.02.2015, 21:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3bfc.html?tid=558447&amp;pid=3380198&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere642.html?action=profile&amp;uid=245199">Ahammad</a> - 22.02.2015, 07:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd158-2.html?tid=558447&amp;pid=3404196&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member4371.html?action=profile&amp;uid=241240">HazardouS</a> - 15.03.2015, 22:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadba9c.html?tid=558447&amp;pid=3404450&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member2c4d.html?action=profile&amp;uid=177055">Bhxblu</a> - 16.03.2015, 08:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9b7a.html?tid=558447&amp;pid=3405822&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberdeed.html?action=profile&amp;uid=242344">abdullahbest</a> - 17.03.2015, 17:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1758.html?tid=558447&amp;pid=3406143&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member825c.html?action=profile&amp;uid=253868">Hawzerstar</a> - 17.03.2015, 22:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2b3c-2.html?tid=558447&amp;pid=3406385&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8564.html?action=profile&amp;uid=111921">Tailer</a> - 18.03.2015, 07:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d67.html?tid=558447&amp;pid=3406729&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 18.03.2015, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd3c2.html?tid=558447&amp;pid=3406876&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1d56.html?action=profile&amp;uid=99758">HeLiOn_PrImE</a> - 18.03.2015, 17:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9043-3.html?tid=558447&amp;pid=3407606&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberfda4.html?action=profile&amp;uid=185289">leeifi</a> - 19.03.2015, 13:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade409-2.html?tid=558447&amp;pid=3407610&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member53b7.html?action=profile&amp;uid=120242">AIped</a> - 19.03.2015, 13:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ef7.html?tid=558447&amp;pid=3407725&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member1528.html?action=profile&amp;uid=231406">KayJ</a> - 19.03.2015, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc030.html?tid=558447&amp;pid=3409689&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member74be-2.html?action=profile&amp;uid=254679">Hype</a> - 21.03.2015, 18:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0502-2.html?tid=558447&amp;pid=3428442&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member98df.html?action=profile&amp;uid=209316">Gazzy</a> - 12.04.2015, 03:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5224-3.html?tid=558447&amp;pid=3429404&amp;mode=threaded">Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 12.04.2015, 22:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade91b.html?tid=558447&amp;pid=3429450&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3f86.html?action=profile&amp;uid=177580">DeitY</a> - 12.04.2015, 22:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5f89.html?tid=558447&amp;pid=3429926&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 13.04.2015, 12:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4647-2.html?tid=558447&amp;pid=3429941&amp;mode=threaded">Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 13.04.2015, 12:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf7f1-2.html?tid=558447&amp;pid=3430320&amp;mode=threaded">Re: Respuesta: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 13.04.2015, 20:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7f47.html?tid=558447&amp;pid=3430453&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera703.html?action=profile&amp;uid=205231">nrg700</a> - 14.04.2015, 07:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7edd-3.html?tid=558447&amp;pid=3432448&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0a2d.html?action=profile&amp;uid=255441">PoisonedJuice</a> - 16.04.2015, 13:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf85a-2.html?tid=558447&amp;pid=3432508&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 16.04.2015, 14:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadafc1.html?tid=558447&amp;pid=3435093&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member498b.html?action=profile&amp;uid=228918">Cookland</a> - 19.04.2015, 07:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadec69-2.html?tid=558447&amp;pid=3435291&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercd5e.html?action=profile&amp;uid=255686">iFrame</a> - 19.04.2015, 11:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4a81.html?tid=558447&amp;pid=3435340&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membercf34.html?action=profile&amp;uid=180537">LeGGGeNNdA</a> - 19.04.2015, 12:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1641.html?tid=558447&amp;pid=3435571&amp;mode=threaded">AW: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere373.html?action=profile&amp;uid=139423">kwok</a> - 19.04.2015, 16:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf5b1-2.html?tid=558447&amp;pid=3435594&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> - 19.04.2015, 16:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd30a.html?tid=558447&amp;pid=3436057&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8ed8.html?action=profile&amp;uid=218986">paulbobin</a> - 20.04.2015, 09:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4f36.html?tid=558447&amp;pid=3436163&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> - 20.04.2015, 13:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5f16-3.html?tid=558447&amp;pid=3436356&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 20.04.2015, 17:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcafe.html?tid=558447&amp;pid=3436886&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 21.04.2015, 10:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread122d.html?tid=558447&amp;pid=3436925&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member22fd-2.html?action=profile&amp;uid=254652">tantri</a> - 21.04.2015, 11:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadecc6.html?tid=558447&amp;pid=3437050&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberce16.html?action=profile&amp;uid=244461">KarapTeloS</a> - 21.04.2015, 14:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5929.html?tid=558447&amp;pid=3437212&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member8593.html?action=profile&amp;uid=244694">Darkwood17</a> - 21.04.2015, 16:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8dd7-2.html?tid=558447&amp;pid=3438864&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="memberaffa.html?action=profile&amp;uid=256473">ALTUEVRUSLAN</a> - 23.04.2015, 15:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d64.html?tid=558447&amp;pid=3440822&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member3457.html?action=profile&amp;uid=248559">TheMafien</a> - 25.04.2015, 18:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd053-2.html?tid=558447&amp;pid=3442453&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member9e49.html?action=profile&amp;uid=254343">energizer1337</a> - 27.04.2015, 10:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbc8e.html?tid=558447&amp;pid=3442581&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6d89.html?action=profile&amp;uid=252824">hugosousa</a> - 27.04.2015, 12:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread40ec.html?tid=558447&amp;pid=3443089&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membere087.html?action=profile&amp;uid=234923">feheristi97</a> - 27.04.2015, 22:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8949-2.html?tid=558447&amp;pid=3443128&amp;mode=threaded">AW: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member6931.html?action=profile&amp;uid=175791">Phцnix</a> - 27.04.2015, 23:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6e8e-2.html?tid=558447&amp;pid=3443396&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member0a2d.html?action=profile&amp;uid=255441">PoisonedJuice</a> - 28.04.2015, 10:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread605c-3.html?tid=558447&amp;pid=3443441&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="membera366.html?action=profile&amp;uid=145088">TheUltimateR2</a> - 28.04.2015, 12:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd040.html?tid=558447&amp;pid=3443602&amp;mode=threaded">Re: SA-MP 0.3.7 in development (RC soon)</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 28.04.2015, 15:51</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread81bc.html?tid=558447">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-558447.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=c5e900598730c9c2c857896c0c9f0ccb" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="558447" />
+<input type="hidden" name="pid" value="3332966" />
+
+	<input type="hidden" name="my_post_key" value="c5e900598730c9c2c857896c0c9f0ccb" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

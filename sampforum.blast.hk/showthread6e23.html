@@ -1,0 +1,1043 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3z R4 server update</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "fc37bd557f7d58cd80547415a02b05ef";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="This update is for SA-MP server owners only If updating from an existing 0.3z server: you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in t" />
+<link rel="canonical" href="showthread219b.html?tid=531302" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="fc37bd557f7d58cd80547415a02b05ef" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadb807-2.html?mode=linear&amp;tid=531302&amp;pid=3158156#pid3158156">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3z R4 server update
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3158156"></a>
+<div class="post classic " style="" id="post_3158156">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberfb65.html?action=profile&amp;uid=3"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberfb65.html?action=profile&amp;uid=3"><span style="color: #078A07;"><strong>Kalcor</strong></span></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				SA-MP Developer<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,180<br />
+	Threads: 55<br />
+	Joined: Apr 2005
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation2d74.html?uid=3"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread5e72.html?tid=531302&amp;pid=3158156#pid3158156" title="SA-MP 0.3z R4 server update">#1</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 1 by Kalcor" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.08.2014, 03:08 <span class="post_edit" id="edited_by_3158156"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3158156">
+		<u>This update is for SA-MP server owners only</u><br />
+<br />
+<font color="Red"><b>If updating from an existing 0.3z server:</b></font> you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in the 0.3z server download package.<br />
+<br />
+<font color="Red"><b>Important:</b></font> If your script uses the OnUnoccupiedVehicleUpdate callback, you will need to recompile your scripts with the latest pawn includes to use this server update.<br />
+<br />
+<font size="3"><b>SA-MP 0.3z R4 server</b></font><br />
+<br />
+We received some reports that players might be able to use the vehicle trailer syncing in order to move vehicles around on the server without being in control of them.<br />
+<br />
+- Additional sanity checks have been added to the trailer validation on the server.<br />
+- A new callback is added to identify players updating their vehicle's trailers:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnTrailerUpdate<span style="color: #000000;">(</span>playerid, vehicleid<span style="color: #000000;">)</span>; <br/><span style="color: #228822;">// playerid is the player who sent a trailer update. vehicleid is the trailer being updated.</span><br/><span style="color: #228822;">// Returning 0 to this function will stop the trailer update being sent to other players on the server. The trailer's position will still be updated internally on the server.</span></div></div></pre>
+</div>
+- The OnUnoccupiedVehicleUpdate is updated to include the new velocity of the vehicle updated.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnUnoccupiedVehicleUpdate<span style="color: #000000;">(</span>vehicleid, playerid, passenger_seat, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_x, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>new_z, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_x, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vel_z<span style="color: #000000;">)</span>;<br/><span style="color: #228822;">// If your script uses this callback, you will need to update this definition and recompile your scripts to use the 0.3z-R4 server.</span></div></div></pre>
+</div>
+- Removes script HTTP debug messages left in the 0.3z-R3 server.<br />
+<br />
+Downloads:<br />
+<br />
+SA-MP 0.3z R4 Linux Server: <a href="http://files.sa-mp.com/samp03zsvr_R4.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R4.tar.gz</a><br />
+SA-MP 0.3z R4 Windows Server: <a href="http://files.sa-mp.com/samp03z_svr_R4_win32.zip" target="_blank">http://files.sa-mp.com/samp03z_svr_R4_win32.zip</a><br />
+SA-MP 0.3z R4 Linux Server (1000 max player): <a href="http://files.sa-mp.com/samp03zsvr_R4-1000p.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R4-1000p.tar.gz</a>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3158156">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc4c7.html?action=finduser&amp;uid=3" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply391a.html?tid=531302&amp;replyto=3158156" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthread59a8.html?tid=531302&amp;action=nextoldest">Next Oldest</a> | <a href="showthreadfc46.html?tid=531302&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="531302" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 0px;"><strong>SA-MP 0.3z R4 server update</strong> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 12.08.2014, 03:08</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7943.html?tid=531302&amp;pid=3158157&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberc0f3.html?action=profile&amp;uid=205131">Swedky</a> - 12.08.2014, 03:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade209-4.html?tid=531302&amp;pid=3158160&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member962c.html?action=profile&amp;uid=208406">SW1FTmeister</a> - 12.08.2014, 03:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade69b-3.html?tid=531302&amp;pid=3158168&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member2558.html?action=profile&amp;uid=122388">EduGTA</a> - 12.08.2014, 03:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d0b-3.html?tid=531302&amp;pid=3158169&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> - 12.08.2014, 03:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6be4.html?tid=531302&amp;pid=3158172&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member01ec.html?action=profile&amp;uid=150594">nickdodd25</a> - 12.08.2014, 03:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade013.html?tid=531302&amp;pid=3158175&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberc252.html?action=profile&amp;uid=133373">Miguel_Leopold</a> - 12.08.2014, 04:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0d67.html?tid=531302&amp;pid=3158177&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 12.08.2014, 04:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9946.html?tid=531302&amp;pid=3158178&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 12.08.2014, 04:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0779.html?tid=531302&amp;pid=3158182&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5077.html?action=profile&amp;uid=173981">MehranGta</a> - 12.08.2014, 04:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread47f3-3.html?tid=531302&amp;pid=3158187&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0a7c.html?action=profile&amp;uid=237828">JonasGabriel</a> - 12.08.2014, 04:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a4d.html?tid=531302&amp;pid=3158191&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member17da.html?action=profile&amp;uid=178237">Don_Cage</a> - 12.08.2014, 05:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4672-2.html?tid=531302&amp;pid=3158201&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member805a.html?action=profile&amp;uid=230062">brent94</a> - 12.08.2014, 05:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0c3a.html?tid=531302&amp;pid=3158205&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member05ac.html?action=profile&amp;uid=108176">Igorek</a> - 12.08.2014, 05:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread86db-2.html?tid=531302&amp;pid=3158209&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 12.08.2014, 05:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaf88.html?tid=531302&amp;pid=3158216&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> - 12.08.2014, 06:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeccd-2.html?tid=531302&amp;pid=3158217&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 12.08.2014, 06:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaae4.html?tid=531302&amp;pid=3158237&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1fed.html?action=profile&amp;uid=155646">KubiPL</a> - 12.08.2014, 06:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb24c-2.html?tid=531302&amp;pid=3158238&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member3523.html?action=profile&amp;uid=208423">georJik</a> - 12.08.2014, 06:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread82ff-2.html?tid=531302&amp;pid=3158258&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7661.html?action=profile&amp;uid=239767">AzaMx</a> - 12.08.2014, 07:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1770.html?tid=531302&amp;pid=3158263&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberd999.html?action=profile&amp;uid=229844">swiftyrus</a> - 12.08.2014, 07:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread31ae.html?tid=531302&amp;pid=3158266&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member059a.html?action=profile&amp;uid=78223">Lorenc_</a> - 12.08.2014, 08:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade1ab.html?tid=531302&amp;pid=3158270&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member50a7.html?action=profile&amp;uid=174352">BecksLennon</a> - 12.08.2014, 08:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf806.html?tid=531302&amp;pid=3158273&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member3be5.html?action=profile&amp;uid=212671">polander</a> - 12.08.2014, 08:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9c23.html?tid=531302&amp;pid=3158280&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8a9c.html?action=profile&amp;uid=202835">VenomMancer</a> - 12.08.2014, 08:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade948.html?tid=531302&amp;pid=3158292&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member740f.html?action=profile&amp;uid=130194">Vodo</a> - 12.08.2014, 08:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb721.html?tid=531302&amp;pid=3158303&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 12.08.2014, 09:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6774-2.html?tid=531302&amp;pid=3158345&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member94c2.html?action=profile&amp;uid=237286">Maxmium</a> - 12.08.2014, 10:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd3e1.html?tid=531302&amp;pid=3158354&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9e16.html?action=profile&amp;uid=180876">ReaZoN</a> - 12.08.2014, 10:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade71d.html?tid=531302&amp;pid=3158371&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member20c4.html?action=profile&amp;uid=168303">d711728</a> - 12.08.2014, 10:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0e26-2.html?tid=531302&amp;pid=3158411&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> - 12.08.2014, 11:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d57-2.html?tid=531302&amp;pid=3158413&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member78e4.html?action=profile&amp;uid=185654">Ke_NiReM</a> - 12.08.2014, 11:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfca5.html?tid=531302&amp;pid=3158497&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member13ad.html?action=profile&amp;uid=76946">ikkentim</a> - 12.08.2014, 12:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada86b-2.html?tid=531302&amp;pid=3158499&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5842.html?action=profile&amp;uid=237691">Callum98</a> - 12.08.2014, 12:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0b79.html?tid=531302&amp;pid=3158504&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member685f.html?action=profile&amp;uid=130183">Privies</a> - 12.08.2014, 12:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf61d.html?tid=531302&amp;pid=3158512&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by Guest4390857394857 - 12.08.2014, 12:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5b09-2.html?tid=531302&amp;pid=3158522&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member2418.html?action=profile&amp;uid=121194">hypZZ</a> - 12.08.2014, 12:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread620c.html?tid=531302&amp;pid=3158539&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member53b7.html?action=profile&amp;uid=120242">AIped</a> - 12.08.2014, 13:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread079f-2.html?tid=531302&amp;pid=3158550&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 12.08.2014, 13:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5d05.html?tid=531302&amp;pid=3158561&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 12.08.2014, 13:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread33f2-2.html?tid=531302&amp;pid=3158612&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9b7c.html?action=profile&amp;uid=171735">darkxdll</a> - 12.08.2014, 14:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7e0f-2.html?tid=531302&amp;pid=3158628&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 12.08.2014, 14:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2b88.html?tid=531302&amp;pid=3158688&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf337.html?action=profile&amp;uid=239915">Maskara</a> - 12.08.2014, 15:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2206.html?tid=531302&amp;pid=3158691&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf6db.html?action=profile&amp;uid=60174">QuaTTrO</a> - 12.08.2014, 15:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread04b2.html?tid=531302&amp;pid=3158757&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member584b.html?action=profile&amp;uid=226396">xStunt</a> - 12.08.2014, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread28e7-2.html?tid=531302&amp;pid=3158808&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf98f.html?action=profile&amp;uid=233552">ScorpiusMalfoy</a> - 12.08.2014, 16:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3721.html?tid=531302&amp;pid=3158809&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 12.08.2014, 16:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3552.html?tid=531302&amp;pid=3158820&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membercb75.html?action=profile&amp;uid=240150">Toolkit</a> - 12.08.2014, 16:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb8c-3.html?tid=531302&amp;pid=3158873&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1417.html?action=profile&amp;uid=238001">SanAndreasMP</a> - 12.08.2014, 17:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6208.html?tid=531302&amp;pid=3159379&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member36da.html?action=profile&amp;uid=170561">!R1Ch@rD!</a> - 13.08.2014, 03:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread96b8.html?tid=531302&amp;pid=3159412&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 13.08.2014, 05:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada379.html?tid=531302&amp;pid=3159413&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member43cf.html?action=profile&amp;uid=216003">LuisR</a> - 13.08.2014, 05:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4303-2.html?tid=531302&amp;pid=3159417&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 13.08.2014, 05:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread56e1.html?tid=531302&amp;pid=3159752&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7b62.html?action=profile&amp;uid=239547">Professional06</a> - 13.08.2014, 13:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c6b.html?tid=531302&amp;pid=3159865&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member4a9c.html?action=profile&amp;uid=164476">Tuntun</a> - 13.08.2014, 14:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1e64.html?tid=531302&amp;pid=3159876&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8a9c.html?action=profile&amp;uid=202835">VenomMancer</a> - 13.08.2014, 14:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcae4-2.html?tid=531302&amp;pid=3159910&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere024.html?action=profile&amp;uid=134343">Cole_William</a> - 13.08.2014, 15:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread02a7.html?tid=531302&amp;pid=3159970&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member2869.html?action=profile&amp;uid=195501">MpK</a> - 13.08.2014, 16:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcf46-2.html?tid=531302&amp;pid=3160081&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member207e.html?action=profile&amp;uid=194217">Hade1234</a> - 13.08.2014, 18:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb75d.html?tid=531302&amp;pid=3160120&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberfdfb.html?action=profile&amp;uid=124671">Naruto_Emilio</a> - 13.08.2014, 18:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6a67.html?tid=531302&amp;pid=3160248&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0ccb.html?action=profile&amp;uid=133113">RebeloX</a> - 13.08.2014, 20:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread441d-2.html?tid=531302&amp;pid=3160254&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 13.08.2014, 20:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9129.html?tid=531302&amp;pid=3160263&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0ccb.html?action=profile&amp;uid=133113">RebeloX</a> - 13.08.2014, 20:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread55de-2.html?tid=531302&amp;pid=3160280&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member561a.html?action=profile&amp;uid=50199">[HLF]Southclaw</a> - 13.08.2014, 20:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6b30-3.html?tid=531302&amp;pid=3160322&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5d7a.html?action=profile&amp;uid=238136">Jimmmy</a> - 13.08.2014, 21:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7e09.html?tid=531302&amp;pid=3160375&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 13.08.2014, 22:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc3ea-2.html?tid=531302&amp;pid=3160386&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member115e.html?action=profile&amp;uid=87151">BloodMaster</a> - 13.08.2014, 22:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ee3.html?tid=531302&amp;pid=3160428&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 13.08.2014, 23:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf73b-3.html?tid=531302&amp;pid=3160477&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf222-2.html?action=profile&amp;uid=130362">V415</a> - 14.08.2014, 00:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb46.html?tid=531302&amp;pid=3160841&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberd04d.html?action=profile&amp;uid=225768">SpearReal</a> - 14.08.2014, 11:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread92b7.html?tid=531302&amp;pid=3160981&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 14.08.2014, 14:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0a63-2.html?tid=531302&amp;pid=3161086&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 14.08.2014, 15:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadee17.html?tid=531302&amp;pid=3161195&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberfdfb.html?action=profile&amp;uid=124671">Naruto_Emilio</a> - 14.08.2014, 18:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf6b4.html?tid=531302&amp;pid=3161375&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8f40.html?action=profile&amp;uid=149855">derpierre65</a> - 14.08.2014, 21:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd97f.html?tid=531302&amp;pid=3161517&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 14.08.2014, 23:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada7b7.html?tid=531302&amp;pid=3161580&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 15.08.2014, 01:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5404-2.html?tid=531302&amp;pid=3161729&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member3203.html?action=profile&amp;uid=93829">Kirollos</a> - 15.08.2014, 07:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9314-3.html?tid=531302&amp;pid=3161757&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member2882.html?action=profile&amp;uid=230673">NoobPlayer</a> - 15.08.2014, 08:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0835.html?tid=531302&amp;pid=3162033&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere106.html?action=profile&amp;uid=132619">paulandrei93</a> - 15.08.2014, 13:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9e8f-2.html?tid=531302&amp;pid=3162166&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberaf31.html?action=profile&amp;uid=220269">aoEXE</a> - 15.08.2014, 15:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a2c-2.html?tid=531302&amp;pid=3162202&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member2d72.html?action=profile&amp;uid=209856">Jokic</a> - 15.08.2014, 16:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread079c.html?tid=531302&amp;pid=3162220&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberda1e.html?action=profile&amp;uid=231671">XxSlaydeRxX</a> - 15.08.2014, 17:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbd1d-2.html?tid=531302&amp;pid=3162338&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8a05.html?action=profile&amp;uid=237011">LarryTiger</a> - 15.08.2014, 20:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4824.html?tid=531302&amp;pid=3162949&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7321-2.html?action=profile&amp;uid=240557">sTreamE</a> - 16.08.2014, 09:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread83ca.html?tid=531302&amp;pid=3162957&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7321-2.html?action=profile&amp;uid=240557">sTreamE</a> - 16.08.2014, 09:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade5f3.html?tid=531302&amp;pid=3163028&amp;mode=threaded">Re : Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member3bb0.html?action=profile&amp;uid=240594">www</a> - 16.08.2014, 10:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d70.html?tid=531302&amp;pid=3163422&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member60ea.html?action=profile&amp;uid=122057">Basssiiie</a> - 16.08.2014, 15:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd01.html?tid=531302&amp;pid=3163649&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf4c2.html?action=profile&amp;uid=5303">BeckzyBoi</a> - 16.08.2014, 19:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4f0c.html?tid=531302&amp;pid=3163779&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 16.08.2014, 21:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread298a.html?tid=531302&amp;pid=3163808&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf4c2.html?action=profile&amp;uid=5303">BeckzyBoi</a> - 16.08.2014, 21:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5796-2.html?tid=531302&amp;pid=3164219&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 17.08.2014, 08:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddcd3.html?tid=531302&amp;pid=3164226&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 17.08.2014, 08:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1332.html?tid=531302&amp;pid=3164268&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8005.html?action=profile&amp;uid=239055">Gogeta101</a> - 17.08.2014, 09:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread75c5.html?tid=531302&amp;pid=3164463&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1aa9-2.html?action=profile&amp;uid=216138">Riste</a> - 17.08.2014, 13:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf64c.html?tid=531302&amp;pid=3164767&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 17.08.2014, 17:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1cb1.html?tid=531302&amp;pid=3165979&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberbd32-2.html?action=profile&amp;uid=230456">ShoortyFl</a> - 18.08.2014, 13:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread42e7-2.html?tid=531302&amp;pid=3166022&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberccb3.html?action=profile&amp;uid=152126">Manyula</a> - 18.08.2014, 14:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread422b.html?tid=531302&amp;pid=3166209&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 18.08.2014, 17:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb3c.html?tid=531302&amp;pid=3166238&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberbd32-2.html?action=profile&amp;uid=230456">ShoortyFl</a> - 18.08.2014, 18:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade77a.html?tid=531302&amp;pid=3166805&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 19.08.2014, 10:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf877.html?tid=531302&amp;pid=3167405&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member4571-2.html?action=profile&amp;uid=233298">M0HAMMAD</a> - 19.08.2014, 20:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaed2.html?tid=531302&amp;pid=3167757&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9e58.html?action=profile&amp;uid=130602">Inverse</a> - 20.08.2014, 10:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d41.html?tid=531302&amp;pid=3169155&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member31cf.html?action=profile&amp;uid=136865">Элиот</a> - 21.08.2014, 16:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6738.html?tid=531302&amp;pid=3170232&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberb2e1.html?action=profile&amp;uid=151494">zQrba.</a> - 22.08.2014, 16:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4017-2.html?tid=531302&amp;pid=3170403&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8005.html?action=profile&amp;uid=239055">Gogeta101</a> - 22.08.2014, 21:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9ba7.html?tid=531302&amp;pid=3170702&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7e2a.html?action=profile&amp;uid=241228">Spizor</a> - 23.08.2014, 05:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread43cc.html?tid=531302&amp;pid=3171516&amp;mode=threaded">Re : SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member53d1.html?action=profile&amp;uid=229497">Ivan59</a> - 23.08.2014, 21:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread363b.html?tid=531302&amp;pid=3172580&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberae4e.html?action=profile&amp;uid=74520">Rocky Racoon</a> - 24.08.2014, 19:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread651a.html?tid=531302&amp;pid=3173576&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member20c8.html?action=profile&amp;uid=174841">NoahF</a> - 25.08.2014, 13:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfc77.html?tid=531302&amp;pid=3173616&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member6d72.html?action=profile&amp;uid=236189">DovFlaminggo</a> - 25.08.2014, 13:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb3dc.html?tid=531302&amp;pid=3173617&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member3d3e.html?action=profile&amp;uid=211799">AiRaLoKa</a> - 25.08.2014, 13:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d28.html?tid=531302&amp;pid=3175455&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0b74.html?action=profile&amp;uid=17123">brett7</a> - 26.08.2014, 21:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5235-2.html?tid=531302&amp;pid=3176130&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0bbf.html?action=profile&amp;uid=235472">PreetZ</a> - 27.08.2014, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6a71-2.html?tid=531302&amp;pid=3176262&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5a96.html?action=profile&amp;uid=239673">Ajvanho</a> - 27.08.2014, 15:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb62e.html?tid=531302&amp;pid=3177177&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member87ae.html?action=profile&amp;uid=65161">Flake.</a> - 28.08.2014, 01:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8b6d.html?tid=531302&amp;pid=3177460&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7b75.html?action=profile&amp;uid=240021">lucaslub</a> - 28.08.2014, 11:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2ef2.html?tid=531302&amp;pid=3194816&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberb71c.html?action=profile&amp;uid=236261">TracerX</a> - 13.09.2014, 08:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeaeb.html?tid=531302&amp;pid=3194824&amp;mode=threaded">Re : SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member53d1.html?action=profile&amp;uid=229497">Ivan59</a> - 13.09.2014, 08:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf8d4-3.html?tid=531302&amp;pid=3194875&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9517.html?action=profile&amp;uid=189439">Johny32</a> - 13.09.2014, 09:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7523.html?tid=531302&amp;pid=3195044&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member6b32.html?action=profile&amp;uid=5772">Webghost</a> - 13.09.2014, 12:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbb4d.html?tid=531302&amp;pid=3195708&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8790.html?action=profile&amp;uid=239997">benjenden</a> - 14.09.2014, 01:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread801a.html?tid=531302&amp;pid=3195738&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member17d2.html?action=profile&amp;uid=175134">Team_PRO</a> - 14.09.2014, 02:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8802.html?tid=531302&amp;pid=3195914&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member4d85.html?action=profile&amp;uid=220781">SickAttack</a> - 14.09.2014, 06:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf034.html?tid=531302&amp;pid=3198243&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberbdeb-2.html?action=profile&amp;uid=242910">WalterWhite</a> - 16.09.2014, 09:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread418d-2.html?tid=531302&amp;pid=3200787&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member00cd.html?action=profile&amp;uid=238503">FlavioCesar</a> - 18.09.2014, 18:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc226.html?tid=531302&amp;pid=3201526&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1e28.html?action=profile&amp;uid=130388">Tinchy</a> - 19.09.2014, 15:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd7e5-2.html?tid=531302&amp;pid=3218192&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberaaa1-3.html?action=profile&amp;uid=232731">MafiaZ</a> - 05.10.2014, 01:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2706.html?tid=531302&amp;pid=3220172&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member862e.html?action=profile&amp;uid=227146">ice2k1</a> - 07.10.2014, 07:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc7c3-2.html?tid=531302&amp;pid=3220462&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member561a.html?action=profile&amp;uid=50199">[HLF]Southclaw</a> - 07.10.2014, 15:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf346.html?tid=531302&amp;pid=3220474&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member723c.html?action=profile&amp;uid=7058">Redirect Left</a> - 07.10.2014, 15:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d3b.html?tid=531302&amp;pid=3220854&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8d0c.html?action=profile&amp;uid=42627">Calgon</a> - 08.10.2014, 00:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread41ec.html?tid=531302&amp;pid=3221452&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberbfa1.html?action=profile&amp;uid=198394">Zues</a> - 08.10.2014, 16:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadce21-4.html?tid=531302&amp;pid=3222222&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberd6f0.html?action=profile&amp;uid=114">[NS]Noobie</a> - 09.10.2014, 11:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7dca-2.html?tid=531302&amp;pid=3222267&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5f8f.html?action=profile&amp;uid=215177">YanLanger</a> - 09.10.2014, 12:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6d85-2.html?tid=531302&amp;pid=3223643&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9053.html?action=profile&amp;uid=244088">zwoorelook</a> - 11.10.2014, 07:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2006.html?tid=531302&amp;pid=3225499&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere087.html?action=profile&amp;uid=234923">feheristi97</a> - 12.10.2014, 22:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9361-2.html?tid=531302&amp;pid=3225637&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member178c.html?action=profile&amp;uid=243203">AndreLuiz</a> - 13.10.2014, 04:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7f93-2.html?tid=531302&amp;pid=3241706&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberde53.html?action=profile&amp;uid=224060">kr105</a> - 30.10.2014, 23:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e38-2.html?tid=531302&amp;pid=3241719&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member561a.html?action=profile&amp;uid=50199">[HLF]Southclaw</a> - 30.10.2014, 23:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1631-2.html?tid=531302&amp;pid=3241963&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberec64-2.html?action=profile&amp;uid=192509">Mefisto</a> - 31.10.2014, 09:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5339-2.html?tid=531302&amp;pid=3244412&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 02.11.2014, 03:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd92b-2.html?tid=531302&amp;pid=3244782&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 02.11.2014, 12:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b03.html?tid=531302&amp;pid=3245044&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 02.11.2014, 15:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcb5c-2.html?tid=531302&amp;pid=3250932&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 08.11.2014, 11:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc494-2.html?tid=531302&amp;pid=3251133&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 08.11.2014, 15:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread35cb-3.html?tid=531302&amp;pid=3259411&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member0a70.html?action=profile&amp;uid=225900">Kapupc</a> - 17.11.2014, 08:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf30b.html?tid=531302&amp;pid=3260077&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 18.11.2014, 00:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ec3-2.html?tid=531302&amp;pid=3260223&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 18.11.2014, 10:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5492.html?tid=531302&amp;pid=3279836&amp;mode=threaded">Re: Respuesta: Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member28e8.html?action=profile&amp;uid=246519">0day</a> - 07.12.2014, 20:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3a9f.html?tid=531302&amp;pid=3280767&amp;mode=threaded">Answer</a> <span class="smalltext">- by <a href="member1b93.html?action=profile&amp;uid=238738">Ygzeb</a> - 08.12.2014, 16:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e05-3.html?tid=531302&amp;pid=3280780&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 08.12.2014, 16:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread267c-2.html?tid=531302&amp;pid=3280781&amp;mode=threaded">Re: Answer</a> <span class="smalltext">- by <a href="member97a8.html?action=profile&amp;uid=246486">Unyx</a> - 08.12.2014, 16:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd16d-2.html?tid=531302&amp;pid=3280798&amp;mode=threaded">Re: Answer</a> <span class="smalltext">- by <a href="member1faf.html?action=profile&amp;uid=50263">kurta999</a> - 08.12.2014, 17:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread431e.html?tid=531302&amp;pid=3281017&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1fed.html?action=profile&amp;uid=155646">KubiPL</a> - 08.12.2014, 19:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b1d-2.html?tid=531302&amp;pid=3281260&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> - 08.12.2014, 23:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7fd6.html?tid=531302&amp;pid=3281942&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member1fed.html?action=profile&amp;uid=155646">KubiPL</a> - 09.12.2014, 17:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadff09-2.html?tid=531302&amp;pid=3282322&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member181d.html?action=profile&amp;uid=233562">TakeiT</a> - 09.12.2014, 21:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadddbd.html?tid=531302&amp;pid=3282820&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 10.12.2014, 12:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d3f-2.html?tid=531302&amp;pid=3288792&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 15.12.2014, 21:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd70b-2.html?tid=531302&amp;pid=3288921&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 16.12.2014, 01:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd9e7.html?tid=531302&amp;pid=3291981&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 18.12.2014, 17:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread78b6.html?tid=531302&amp;pid=3291998&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member9e0b.html?action=profile&amp;uid=9420">Schneider</a> - 18.12.2014, 17:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd94b.html?tid=531302&amp;pid=3292863&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member48cb.html?action=profile&amp;uid=212024">long76</a> - 19.12.2014, 12:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread18a6.html?tid=531302&amp;pid=3293320&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 19.12.2014, 22:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfbc5.html?tid=531302&amp;pid=3293525&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member68b2.html?action=profile&amp;uid=245366">NGGMars</a> - 20.12.2014, 04:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd765-2.html?tid=531302&amp;pid=3293571&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 20.12.2014, 07:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbc6a.html?tid=531302&amp;pid=3293655&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member561a.html?action=profile&amp;uid=50199">[HLF]Southclaw</a> - 20.12.2014, 09:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread66bb-3.html?tid=531302&amp;pid=3303949&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberb577.html?action=profile&amp;uid=248915">BaggyB</a> - 28.12.2014, 10:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1691.html?tid=531302&amp;pid=3306274&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member7dd6.html?action=profile&amp;uid=247002">AgusZ</a> - 29.12.2014, 17:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1025-3.html?tid=531302&amp;pid=3320959&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf6b9.html?action=profile&amp;uid=89032">Kantar0</a> - 08.01.2015, 20:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread84b0-2.html?tid=531302&amp;pid=3321037&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member04b2.html?action=profile&amp;uid=129303">PaulDinam</a> - 08.01.2015, 20:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0826-3.html?tid=531302&amp;pid=3321068&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberd7ef.html?action=profile&amp;uid=135587">WLSF</a> - 08.01.2015, 21:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4738.html?tid=531302&amp;pid=3321160&amp;mode=threaded">Respuesta: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberf6b9.html?action=profile&amp;uid=89032">Kantar0</a> - 08.01.2015, 22:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7a54.html?tid=531302&amp;pid=3328531&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="membere087.html?action=profile&amp;uid=234923">feheristi97</a> - 13.01.2015, 22:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeae5.html?tid=531302&amp;pid=3328697&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 14.01.2015, 02:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8a1b.html?tid=531302&amp;pid=3345186&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member5f08.html?action=profile&amp;uid=239859">Nicki12</a> - 25.01.2015, 14:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7917-2.html?tid=531302&amp;pid=3357114&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="member71bc.html?action=profile&amp;uid=160922">Zaila</a> - 02.02.2015, 22:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4203.html?tid=531302&amp;pid=3409146&amp;mode=threaded">Re: SA-MP 0.3z R4 server update</a> <span class="smalltext">- by <a href="memberc5c9.html?action=profile&amp;uid=254017">Hughes</a> - 21.03.2015, 09:13</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread219b.html?tid=531302">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-531302.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=fc37bd557f7d58cd80547415a02b05ef" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="531302" />
+<input type="hidden" name="pid" value="3158156" />
+
+	<input type="hidden" name="my_post_key" value="fc37bd557f7d58cd80547415a02b05ef" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

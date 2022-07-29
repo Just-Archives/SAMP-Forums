@@ -1,0 +1,854 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3.7 R2-2 server update</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "3de3e4eedfe358b8b77ab512863e4a25";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="XD ..." />
+<link rel="canonical" href="showthread7eab.html?tid=640644" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="3de3e4eedfe358b8b77ab512863e4a25" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthread7eb7.html?mode=linear&amp;tid=640644&amp;pid=3924251#pid3924251">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3.7 R2-2 server update
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3924251"></a>
+<div class="post classic " style="" id="post_3924251">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberc439.html?action=profile&amp;uid=255806"><img src="uploads/avatars/255806.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberc439.html?action=profile&amp;uid=255806"><s>AbyssMorgan</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,208<br />
+	Threads: 36<br />
+	Joined: Apr 2015
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread3b49.html?tid=640644&amp;pid=3924251#pid3924251" title="Re: SA-MP 0.3.7 R2-2 server update">#21</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 21 by AbyssMorgan" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">05.09.2017, 15:27 <span class="post_edit" id="edited_by_3924251"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3924251">
+		<b>XD</b> <font color="#FFFFFF">...</font>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3924251">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search27a0.html?action=finduser&amp;uid=255806" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply98f1.html?tid=640644&amp;replyto=3924251" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadbef7.html?tid=640644&amp;action=nextoldest">Next Oldest</a> | <a href="showthreadcfc3.html?tid=640644&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="640644" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread080f.html?tid=640644&amp;pid=3924143&amp;mode=threaded">SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 05.09.2017, 12:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread23a9-2.html?tid=640644&amp;pid=3924145&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> - 05.09.2017, 12:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread409d.html?tid=640644&amp;pid=3924146&amp;mode=threaded">Respuesta: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member03f0.html?action=profile&amp;uid=106967">adri1</a> - 05.09.2017, 12:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb83b.html?tid=640644&amp;pid=3924148&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member2105.html?action=profile&amp;uid=246263">Banditul18</a> - 05.09.2017, 12:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread44d4.html?tid=640644&amp;pid=3924149&amp;mode=threaded">Respuesta: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> - 05.09.2017, 12:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3d06.html?tid=640644&amp;pid=3924150&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberfea8.html?action=profile&amp;uid=304441">NeTTs</a> - 05.09.2017, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread664c.html?tid=640644&amp;pid=3924151&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6961.html?action=profile&amp;uid=303678">PrestigeSteve</a> - 05.09.2017, 12:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread762d.html?tid=640644&amp;pid=3924175&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membere24f.html?action=profile&amp;uid=287146">cuber</a> - 05.09.2017, 13:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread693e-2.html?tid=640644&amp;pid=3924177&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> - 05.09.2017, 13:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5571-2.html?tid=640644&amp;pid=3924178&amp;mode=threaded">Thank you, this was messing me up!</a> <span class="smalltext">- by <a href="memberf5df.html?action=profile&amp;uid=279148">RazorGuigo</a> - 05.09.2017, 13:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4e6b-2.html?tid=640644&amp;pid=3924185&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberd679.html?action=profile&amp;uid=262801">aymel</a> - 05.09.2017, 13:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd3b9.html?tid=640644&amp;pid=3924189&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member5b5a.html?action=profile&amp;uid=302228">Xeon™</a> - 05.09.2017, 13:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3e87-2.html?tid=640644&amp;pid=3924192&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membera8dc.html?action=profile&amp;uid=193780">Omirrow</a> - 05.09.2017, 13:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread195a-2.html?tid=640644&amp;pid=3924197&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1823.html?action=profile&amp;uid=296701">iLearner</a> - 05.09.2017, 13:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf086.html?tid=640644&amp;pid=3924201&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member2a0d.html?action=profile&amp;uid=257520">Belengher</a> - 05.09.2017, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb89b.html?tid=640644&amp;pid=3924203&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member2a0d.html?action=profile&amp;uid=257520">Belengher</a> - 05.09.2017, 14:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread91ff.html?tid=640644&amp;pid=3924208&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1edf.html?action=profile&amp;uid=200801">shourya12</a> - 05.09.2017, 14:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbfcf.html?tid=640644&amp;pid=3924210&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by adri[4]Life - 05.09.2017, 14:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf5a6-2.html?tid=640644&amp;pid=3924218&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member26d8.html?action=profile&amp;uid=291184">Meller</a> - 05.09.2017, 14:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread494c.html?tid=640644&amp;pid=3924221&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member90a8.html?action=profile&amp;uid=245435">HydraHumza</a> - 05.09.2017, 14:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: SA-MP 0.3.7 R2-2 server update</strong> <span class="smalltext">- by <a href="memberc439.html?action=profile&amp;uid=255806">AbyssMorgan</a> - 05.09.2017, 15:27</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7398.html?tid=640644&amp;pid=3924259&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6de4.html?action=profile&amp;uid=304097">BadJih</a> - 05.09.2017, 15:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb9f3.html?tid=640644&amp;pid=3924270&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 05.09.2017, 15:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfee1-2.html?tid=640644&amp;pid=3924275&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member8ded.html?action=profile&amp;uid=272347">Roozevelt</a> - 05.09.2017, 16:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread221f.html?tid=640644&amp;pid=3924276&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member33b0.html?action=profile&amp;uid=127071">Hansrutger</a> - 05.09.2017, 16:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadab27-2.html?tid=640644&amp;pid=3924306&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member757d.html?action=profile&amp;uid=228482">Awide</a> - 05.09.2017, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3601-2.html?tid=640644&amp;pid=3924328&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberc2f2.html?action=profile&amp;uid=270444">Jackson28</a> - 05.09.2017, 18:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread104b-3.html?tid=640644&amp;pid=3924383&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1294.html?action=profile&amp;uid=116646">inferno211</a> - 05.09.2017, 20:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8f25-2.html?tid=640644&amp;pid=3924388&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 05.09.2017, 20:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc948-3.html?tid=640644&amp;pid=3924414&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberf4ec.html?action=profile&amp;uid=234088">Barnwell</a> - 05.09.2017, 21:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada06e-2.html?tid=640644&amp;pid=3924419&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1d56.html?action=profile&amp;uid=99758">HeLiOn_PrImE</a> - 05.09.2017, 21:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8f29-2.html?tid=640644&amp;pid=3924420&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> - 05.09.2017, 21:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread984c-3.html?tid=640644&amp;pid=3924444&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member33b0.html?action=profile&amp;uid=127071">Hansrutger</a> - 05.09.2017, 22:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7939.html?tid=640644&amp;pid=3924503&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberdf5a.html?action=profile&amp;uid=210018">EdwardOwen</a> - 06.09.2017, 01:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5354-2.html?tid=640644&amp;pid=3924505&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member8f56.html?action=profile&amp;uid=82218">Killa[DGZ]</a> - 06.09.2017, 01:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread10b9.html?tid=640644&amp;pid=3924552&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1823.html?action=profile&amp;uid=296701">iLearner</a> - 06.09.2017, 04:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7d5e-2.html?tid=640644&amp;pid=3924558&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membera605.html?action=profile&amp;uid=291852">wallee</a> - 06.09.2017, 05:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada3bd-3.html?tid=640644&amp;pid=3924583&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberba57.html?action=profile&amp;uid=294528">TopShooter2</a> - 06.09.2017, 07:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc5c0.html?tid=640644&amp;pid=3924598&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberd04f.html?action=profile&amp;uid=293379">Zeth</a> - 06.09.2017, 08:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1098-2.html?tid=640644&amp;pid=3924635&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member3271.html?action=profile&amp;uid=202569">Yousha</a> - 06.09.2017, 10:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4194.html?tid=640644&amp;pid=3924638&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberd57f.html?action=profile&amp;uid=103960">TommyB</a> - 06.09.2017, 10:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread152d.html?tid=640644&amp;pid=3924639&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> - 06.09.2017, 10:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbf85.html?tid=640644&amp;pid=3924640&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberda68.html?action=profile&amp;uid=46764">Freaksken</a> - 06.09.2017, 10:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread135b-2.html?tid=640644&amp;pid=3924654&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberee47.html?action=profile&amp;uid=243204">X337</a> - 06.09.2017, 11:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb8a9.html?tid=640644&amp;pid=3924693&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member3a89.html?action=profile&amp;uid=216976">WingedFrostWolf</a> - 06.09.2017, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada5ba.html?tid=640644&amp;pid=3924787&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member2950.html?action=profile&amp;uid=303713">israelStaff</a> - 06.09.2017, 15:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread843b.html?tid=640644&amp;pid=3924843&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberae6b.html?action=profile&amp;uid=271995">WantedHunter</a> - 06.09.2017, 17:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread545a.html?tid=640644&amp;pid=3924851&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member0d5b.html?action=profile&amp;uid=73170">TheArcher</a> - 06.09.2017, 17:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade8c0-2.html?tid=640644&amp;pid=3924861&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member37cc.html?action=profile&amp;uid=36935">ZiGGi</a> - 06.09.2017, 17:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade516.html?tid=640644&amp;pid=3924942&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6334.html?action=profile&amp;uid=292887">Sanel123</a> - 06.09.2017, 21:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread84b3.html?tid=640644&amp;pid=3924947&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> - 06.09.2017, 22:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaf65.html?tid=640644&amp;pid=3925088&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member13ad.html?action=profile&amp;uid=76946">ikkentim</a> - 07.09.2017, 07:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaeff.html?tid=640644&amp;pid=3925094&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberf6db.html?action=profile&amp;uid=60174">QuaTTrO</a> - 07.09.2017, 08:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d36.html?tid=640644&amp;pid=3925129&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member4bc0-2.html?action=profile&amp;uid=204640">liguanhua123</a> - 07.09.2017, 12:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2eee.html?tid=640644&amp;pid=3925155&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6b4b.html?action=profile&amp;uid=291922">Eduardof077</a> - 07.09.2017, 13:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread331f.html?tid=640644&amp;pid=3925176&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member5679.html?action=profile&amp;uid=302916">Gameluner</a> - 07.09.2017, 13:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade70a-2.html?tid=640644&amp;pid=3925969&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membera3f1.html?action=profile&amp;uid=232033">Jensenn</a> - 08.09.2017, 23:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadded1.html?tid=640644&amp;pid=3926331&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1843.html?action=profile&amp;uid=171656">GreenHood</a> - 09.09.2017, 15:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada0e0.html?tid=640644&amp;pid=3926381&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberf4c2.html?action=profile&amp;uid=5303">BeckzyBoi</a> - 09.09.2017, 16:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread121e.html?tid=640644&amp;pid=3926382&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberc439.html?action=profile&amp;uid=255806">AbyssMorgan</a> - 09.09.2017, 16:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7991.html?tid=640644&amp;pid=3926442&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membere087.html?action=profile&amp;uid=234923">feheristi97</a> - 09.09.2017, 18:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada6a6.html?tid=640644&amp;pid=3926475&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membere24f.html?action=profile&amp;uid=287146">cuber</a> - 09.09.2017, 18:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb489.html?tid=640644&amp;pid=3926482&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by adri[4]Life - 09.09.2017, 18:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3eb7.html?tid=640644&amp;pid=3926536&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member37cc.html?action=profile&amp;uid=36935">ZiGGi</a> - 09.09.2017, 20:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf732-2.html?tid=640644&amp;pid=3926542&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by adri[4]Life - 09.09.2017, 20:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd3bb.html?tid=640644&amp;pid=3926901&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6ecf.html?action=profile&amp;uid=88630">wups</a> - 10.09.2017, 15:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb8df.html?tid=640644&amp;pid=3926999&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member61fc.html?action=profile&amp;uid=212473">Crystallize</a> - 10.09.2017, 18:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadea8c.html?tid=640644&amp;pid=3927128&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6de4.html?action=profile&amp;uid=304097">BadJih</a> - 10.09.2017, 23:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1ef4-2.html?tid=640644&amp;pid=3927415&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member6dfc.html?action=profile&amp;uid=296636">Escobabe</a> - 11.09.2017, 15:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread66d6.html?tid=640644&amp;pid=3927476&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member8e29.html?action=profile&amp;uid=100375">CoaPsyFactor</a> - 11.09.2017, 17:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbeff-2.html?tid=640644&amp;pid=3927560&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberbfbd.html?action=profile&amp;uid=255363">MichiEXE</a> - 11.09.2017, 19:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada192.html?tid=640644&amp;pid=3928094&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberc956.html?action=profile&amp;uid=260603">BiggyZee</a> - 12.09.2017, 20:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7905-2.html?tid=640644&amp;pid=3928115&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 12.09.2017, 20:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb243.html?tid=640644&amp;pid=3929060&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member8f71.html?action=profile&amp;uid=157536">Klayton</a> - 14.09.2017, 18:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4009-2.html?tid=640644&amp;pid=3929093&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by adri[4]Life - 14.09.2017, 20:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1983.html?tid=640644&amp;pid=3929167&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member871a.html?action=profile&amp;uid=301645">Paulice</a> - 15.09.2017, 00:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread285f.html?tid=640644&amp;pid=3929286&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member909c.html?action=profile&amp;uid=144513">~Error</a> - 15.09.2017, 10:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadea45.html?tid=640644&amp;pid=3929744&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member68eb.html?action=profile&amp;uid=266262">skiplovebra</a> - 16.09.2017, 01:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8ef2-2.html?tid=640644&amp;pid=3929751&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member69f5.html?action=profile&amp;uid=300895">DonaldDuck</a> - 16.09.2017, 01:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6c7b-2.html?tid=640644&amp;pid=3929902&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membere29a.html?action=profile&amp;uid=265130">Mister0</a> - 16.09.2017, 11:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ac9.html?tid=640644&amp;pid=3930886&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membercee8.html?action=profile&amp;uid=97817">ikey07</a> - 18.09.2017, 00:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread76df.html?tid=640644&amp;pid=3932718&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 21.09.2017, 11:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread37d0.html?tid=640644&amp;pid=3932943&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member7a14.html?action=profile&amp;uid=299074">ZaikerH</a> - 21.09.2017, 17:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread801f-2.html?tid=640644&amp;pid=3932947&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 21.09.2017, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf9e8-2.html?tid=640644&amp;pid=3933226&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member2595.html?action=profile&amp;uid=268413">elhanan</a> - 22.09.2017, 08:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread466c.html?tid=640644&amp;pid=3933250&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member4271.html?action=profile&amp;uid=288330">mrfelix24777</a> - 22.09.2017, 09:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8634-2.html?tid=640644&amp;pid=3933501&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="membereb76.html?action=profile&amp;uid=271055">Zorono</a> - 22.09.2017, 17:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3062.html?tid=640644&amp;pid=3933605&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member26e2.html?action=profile&amp;uid=279768">RxErT</a> - 22.09.2017, 20:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread05df.html?tid=640644&amp;pid=3933734&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member059a.html?action=profile&amp;uid=78223">Lorenc_</a> - 23.09.2017, 01:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5e0d.html?tid=640644&amp;pid=3933755&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member1489.html?action=profile&amp;uid=266103">mw3samp</a> - 23.09.2017, 02:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3942.html?tid=640644&amp;pid=3936121&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member46fb.html?action=profile&amp;uid=258205">JuanM27</a> - 27.09.2017, 11:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9907-2.html?tid=640644&amp;pid=3936127&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberf878.html?action=profile&amp;uid=9791">dugi</a> - 27.09.2017, 11:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7969.html?tid=640644&amp;pid=3936131&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member46fb.html?action=profile&amp;uid=258205">JuanM27</a> - 27.09.2017, 11:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6c2a.html?tid=640644&amp;pid=3937103&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member51ae.html?action=profile&amp;uid=298824">DimaShift</a> - 30.09.2017, 06:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread44d7.html?tid=640644&amp;pid=3937104&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member51ae.html?action=profile&amp;uid=298824">DimaShift</a> - 30.09.2017, 06:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8d02.html?tid=640644&amp;pid=3937108&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by Astralis - 30.09.2017, 06:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3f7e.html?tid=640644&amp;pid=3937113&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member51ae.html?action=profile&amp;uid=298824">DimaShift</a> - 30.09.2017, 06:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0b77.html?tid=640644&amp;pid=3937361&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="member3140.html?action=profile&amp;uid=151598">iiNzTicTx</a> - 30.09.2017, 23:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadab10.html?tid=640644&amp;pid=3993346&amp;mode=threaded">Re: SA-MP 0.3.7 R2-2 server update</a> <span class="smalltext">- by <a href="memberffe5.html?action=profile&amp;uid=306333">CodyMcWilliams</a> - 16.02.2018, 04:08</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread7eab.html?tid=640644">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-640644.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=3de3e4eedfe358b8b77ab512863e4a25" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="640644" />
+<input type="hidden" name="pid" value="3924251" />
+
+	<input type="hidden" name="my_post_key" value="3de3e4eedfe358b8b77ab512863e4a25" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

@@ -1,0 +1,2290 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3.7 R2-1 server update</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "927cfcb825ef5d27053c133975acab9f";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="There seems to be a bug with SHA256_PassHash and too long strings: This code pawn Код: new ret_hash; SHA256_PassHash(&quot;1234567890abcdefgh1234567890&quot;, &quot;&quot;, ret_hash, sizeof(ret_hash)); printf(&quot;IS : %s" />
+<link rel="canonical" href="showthread3e06.html?tid=581259&amp;page=4" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="927cfcb825ef5d27053c133975acab9f" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (14):</span>
+<!-- start: multipage_prevpage -->
+<a href="showthread23c1.html?tid=581259&amp;page=3" class="pagination_previous">&laquo; Previous</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_start -->
+<a href="showthread14ea.html?tid=581259" class="pagination_first">1</a> 
+<!-- end: multipage_start --><!-- start: multipage_page -->
+<a href="showthreadc3dc.html?tid=581259&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread23c1.html?tid=581259&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+ <span class="pagination_current">4</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="showthread3449.html?tid=581259&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread2c5e.html?tid=581259&amp;page=6" class="pagination_page">6</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&hellip;  <a href="showthread3a5d.html?tid=581259&amp;page=14" class="pagination_last">14</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="showthread3449.html?tid=581259&amp;page=5" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage --><!-- start: multipage_jump_page -->
+<div class="popup_menu drop_go_page" style="display: none;">
+	<form action="https://sampforum.blast.hk/showthread.php?tid=581259" method="post">
+		<label>Jump to page:</label> <input type="number" class="textbox" name="page" value="4" size="4" min="1" max="14" />
+		<input type="submit" class="button" value="Go" />
+	</form>
+</div>
+<a href="javascript:;" class="go_page" title="Jump to page"><i class="fa fa-sort-down"></i></a>&nbsp;
+<script type="text/javascript">
+	var go_page = 'go_page_' + $(".go_page").length;
+	$(".go_page").last().attr('id', go_page);
+	$(".drop_go_page").last().attr('id', go_page + '_popup');
+	$('#' + go_page).popupMenu(false).on('click', function() {
+		var drop_go_page = $(this).prev('.drop_go_page');
+		if (drop_go_page.is(':visible')) {
+			drop_go_page.find('.textbox').trigger('focus');
+		}
+	});
+</script>
+<!-- end: multipage_jump_page -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthread11ce-2.html?mode=threaded&amp;tid=581259&amp;pid=3520386#pid3520386">Threaded Mode</a></span>
+				</div>
+				
+					SA-MP 0.3.7 R2-1 server update
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3519973"></a>
+<div class="post classic " style="" id="post_3519973">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member1aeb.html?action=profile&amp;uid=9106"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member1aeb.html?action=profile&amp;uid=9106">Hris</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 7<br />
+	Threads: 1<br />
+	Joined: May 2007
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation9b46.html?uid=9106"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread7728.html?tid=581259&amp;pid=3519973#pid3519973" title="Re: SA-MP 0.3.7 R2 server update">#61</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 61 by Hris" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">13.07.2015, 22:18 <span class="post_edit" id="edited_by_3519973"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3519973">
+		There seems to be a bug with SHA256_PassHash and too long strings:<br />
+This code<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> ret_hash<span style="color: #000000;">[</span><span style="color: #000000;">65</span><span style="color: #000000;">]</span>;<br/>    SHA256_PassHash<span style="color: #000000;">(</span><span style="color: #000066;">"1234567890abcdefgh1234567890"</span>, <span style="color: #000066;">""</span>, ret_hash, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ret_hash<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"IS    : %s"</span>, ret_hash<span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"SHOULD: %s"</span>, <span style="color: #000066;">"02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3"</span><span style="color: #000000;">)</span>;<br/>    SHA256_PassHash<span style="color: #000000;">(</span><span style="color: #000066;">"1234567890abcdefgh"</span>, <span style="color: #000066;">"1234567890"</span>, ret_hash, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ret_hash<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"IS    : %s"</span>, ret_hash<span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"SHOULD: %s"</span>, <span style="color: #000066;">"02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3"</span><span style="color: #000000;">)</span>;<br/>    SHA256_PassHash<span style="color: #000000;">(</span><span style="color: #000066;">"1234567890abcdefgh1234567890abcdefgh"</span>, <span style="color: #000066;">""</span>, ret_hash, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ret_hash<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"IS    : %s"</span>, ret_hash<span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"SHOULD: %s"</span>, <span style="color: #000066;">"88F28A457C964A9FB3A3DC364B4973A3A5F54786CC4D519A58BABB30A9FFE808"</span><span style="color: #000000;">)</span>;<br/>    SHA256_PassHash<span style="color: #000000;">(</span><span style="color: #000066;">"1234567890abcdefgh"</span>, <span style="color: #000066;">"1234567890abcdefgh"</span>, ret_hash, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ret_hash<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"IS    : %s"</span>, ret_hash<span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"SHOULD: %s"</span>, <span style="color: #000066;">"88F28A457C964A9FB3A3DC364B4973A3A5F54786CC4D519A58BABB30A9FFE808"</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>outputs this<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">IS    : 02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3
+SHOULD: 02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3
+IS    : 02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3
+SHOULD: 02AB0B351B726947624D09D4E0E977B3C59B2D1CAE127B314DB75C7FB95A05D3
+IS    : DE33E4115A41CDB51CC0E051CB6E31C01F6CE87D1FB95D007F1464ADB8C5547A
+SHOULD: 88F28A457C964A9FB3A3DC364B4973A3A5F54786CC4D519A58BABB30A9FFE808
+IS    : DE33E4115A41CDB51CC0E051CB6E31C01F6CE87D1FB95D007F1464ADB8C5547A
+SHOULD: 88F28A457C964A9FB3A3DC364B4973A3A5F54786CC4D519A58BABB30A9FFE808</pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3519973">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search6de7.html?action=finduser&amp;uid=9106" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply1297.html?tid=581259&amp;replyto=3519973" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520386"></a>
+<div class="post classic " style="" id="post_3520386">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberb238.html?action=profile&amp;uid=262264"><img src="uploads/avatars/262264.png" alt="" width="55" height="37" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberb238.html?action=profile&amp;uid=262264">Orsini24</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 8<br />
+	Threads: 3<br />
+	Joined: Jul 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation9ec8.html?uid=262264"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread0dac.html?tid=581259&amp;pid=3520386#pid3520386" title="Re: SA-MP 0.3.7 R2-1 server update">#62</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 62 by Orsini24" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 08:52 <span class="post_edit" id="edited_by_3520386"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520386">
+		good job!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520386">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchfd80.html?action=finduser&amp;uid=262264" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplya691.html?tid=581259&amp;replyto=3520386" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520390"></a>
+<div class="post classic " style="" id="post_3520390">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberfb65.html?action=profile&amp;uid=3"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberfb65.html?action=profile&amp;uid=3"><span style="color: #078A07;"><strong>Kalcor</strong></span></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				SA-MP Developer<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,180<br />
+	Threads: 55<br />
+	Joined: Apr 2005
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation2d74.html?uid=3"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread454f.html?tid=581259&amp;pid=3520390#pid3520390" title="Re: SA-MP 0.3.7 R2-1 server update">#63</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 63 by Kalcor" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 09:03 <span class="post_edit" id="edited_by_3520390"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520390">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Slice</strong><br />
+<a href="showthread9b1c.html?pid=3519553#pid3519553" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Null values still cause crashes instead of simply empty strings.</div>
+</td>
+</tr>
+</table>
+</div>This should be fixed in the R2-1 server.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Hris</strong><br />
+<a href="showthread7728.html?pid=3519973#pid3519973" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">There seems to be a bug with SHA256_PassHash and too long strings:</div>
+</td>
+</tr>
+</table>
+</div>Indeed. I confirmed there was a problem with the SHA256 implementation. It should be fixed in the R2-1 server.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Admigo</strong><br />
+<a href="showthread33ea.html?pid=3519497#pid3519497" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I am happy with any updates that Kalcor releases but you are right. There should be more focus on fixing bugs .. []</div>
+</td>
+</tr>
+</table>
+</div>SA-MP will never be completely bug and glitch free. It's a multiplayer mod written for a game not designed for multiplayer and with no source code/modding tools available. The only way I could make it completely bug free would be to concentrate on a narrow set of features. There are a lot of different things people want to do with San Andreas so I just try to add stuff and keep refining it. If it's something that doesn't cause the game or server to crash and burn it gets a lower priority from me.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520390">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc4c7.html?action=finduser&amp;uid=3" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply5af2.html?tid=581259&amp;replyto=3520390" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520400"></a>
+<div class="post classic " style="" id="post_3520400">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2ef1.html?action=profile&amp;uid=218502"><img src="uploads/avatars/218502.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2ef1.html?action=profile&amp;uid=218502">Evocator</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 470<br />
+	Threads: 7<br />
+	Joined: Nov 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationc0a6.html?uid=218502"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread0f39.html?tid=581259&amp;pid=3520400#pid3520400" title="Re: SA-MP 0.3.7 R2-1 server update">#64</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 64 by Evocator" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 09:22 <span class="post_edit" id="edited_by_3520400"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520400">
+		Thanks for the fix of the SHA256 Kalcor.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520400">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search2399.html?action=finduser&amp;uid=218502" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply124d.html?tid=581259&amp;replyto=3520400" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520443"></a>
+<div class="post classic " style="" id="post_3520443">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member4a30.html?action=profile&amp;uid=244733"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,733<br />
+	Threads: 187<br />
+	Joined: Oct 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation5395.html?uid=244733"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8bb7.html?tid=581259&amp;pid=3520443#pid3520443" title="Re: SA-MP 0.3.7 R2-1 server update">#65</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 65 by Glossy42O" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 10:43 <span class="post_edit" id="edited_by_3520443"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520443">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kalcor</strong><br />
+<a href="showthread454f.html?pid=3520390#pid3520390" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This should be fixed in the R2-1 server.<br />
+<br />
+<br />
+<br />
+Indeed. I confirmed there was a problem with the SHA256 implementation. It should be fixed in the R2-1 server.<br />
+<br />
+<br />
+<br />
+SA-MP will never be completely bug and glitch free. It's a multiplayer mod written for a game not designed for multiplayer and with no source code/modding tools available. The only way I could make it completely bug free would be to concentrate on a narrow set of features. There are a lot of different things people want to do with San Andreas so I just try to add stuff and keep refining it. If it's something that doesn't cause the game or server to crash and burn it gets a lower priority from me.</div>
+</td>
+</tr>
+</table>
+</div>"- Adds protection against hackers who spam OnPlayerConnect messages."<br />
+<br />
+Didn't work on my server.<br />
+<br />
+Any help ?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520443">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search8d1b.html?action=finduser&amp;uid=244733" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply4558.html?tid=581259&amp;replyto=3520443" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520445"></a>
+<div class="post classic " style="" id="post_3520445">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberf878.html?action=profile&amp;uid=9791"><img src="uploads/avatars/9791.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberf878.html?action=profile&amp;uid=9791"><span style="color: #0697C7;"><strong>dugi</strong></span></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Beta Tester<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,350<br />
+	Threads: 96<br />
+	Joined: Jun 2007
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation35fb.html?uid=9791"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread34b9.html?tid=581259&amp;pid=3520445#pid3520445" title="Re: SA-MP 0.3.7 R2-1 server update">#66</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 66 by dugi" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 10:45 <span class="post_edit" id="edited_by_3520445"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520445">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Glossy42O</strong><br />
+<a href="showthread8bb7.html?pid=3520443#pid3520443" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">"- Adds protection against hackers who spam OnPlayerConnect messages."<br />
+<br />
+Didn't work on my server.<br />
+<br />
+Any help ?</div>
+</td>
+</tr>
+</table>
+</div>See <a href="showthreadffb7.html?pid=3518249#pid3518249" target="_blank">http://forum.sa-mp.com/showpost.php?...9&amp;postcount=48</a>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520445">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search55d9.html?action=finduser&amp;uid=9791" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplya64d.html?tid=581259&amp;replyto=3520445" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520491"></a>
+<div class="post classic " style="" id="post_3520491">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberef13.html?action=profile&amp;uid=195632"><img src="uploads/avatars/195632.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 843<br />
+	Threads: 61<br />
+	Joined: Feb 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationacbd.html?uid=195632"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadb78e.html?tid=581259&amp;pid=3520491#pid3520491" title="Re: SA-MP 0.3.7 R2-1 server update">#67</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 67 by dominik523" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 12:24 <span class="post_edit" id="edited_by_3520491"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520491">
+		I'm glad to see even more fixes. Thank you so much SA:MP team!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520491">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search6d66.html?action=finduser&amp;uid=195632" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyec2c.html?tid=581259&amp;replyto=3520491" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520519"></a>
+<div class="post classic " style="" id="post_3520519">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member871d.html?action=profile&amp;uid=64945"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member871d.html?action=profile&amp;uid=64945">Smithy</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 838<br />
+	Threads: 62<br />
+	Joined: Sep 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation97b4.html?uid=64945"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc621.html?tid=581259&amp;pid=3520519#pid3520519" title="Re: SA-MP 0.3.7 R2-1 server update">#68</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 68 by Smithy" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 12:59 <span class="post_edit" id="edited_by_3520519"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520519">
+		Great updates!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520519">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchb727.html?action=finduser&amp;uid=64945" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc995.html?tid=581259&amp;replyto=3520519" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520553"></a>
+<div class="post classic " style="" id="post_3520553">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberea53.html?action=profile&amp;uid=257892"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberea53.html?action=profile&amp;uid=257892">maxQ</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 22<br />
+	Threads: 5<br />
+	Joined: May 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation5f73.html?uid=257892"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreade4df.html?tid=581259&amp;pid=3520553#pid3520553" title="Re: SA-MP 0.3.7 R2-1 server update">#69</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 69 by maxQ" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 13:22 <span class="post_edit" id="edited_by_3520553"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520553">
+		Seems good,Thanks for your great work.<img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/><img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/><img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/><img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/><br />
+<br />
+Regards,<br />
+maxQ
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520553">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9418.html?action=finduser&amp;uid=257892" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplye1d7.html?tid=581259&amp;replyto=3520553" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520624"></a>
+<div class="post classic " style="" id="post_3520624">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member13fe.html?action=profile&amp;uid=108398"><img src="uploads/avatars/108398.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,840<br />
+	Threads: 399<br />
+	Joined: Oct 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation2fea.html?uid=108398"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread3399.html?tid=581259&amp;pid=3520624#pid3520624" title="Re: SA-MP 0.3.7 R2-1 server update">#70</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 70 by Admigo" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 14:24 <span class="post_edit" id="edited_by_3520624"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520624">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kalcor</strong><br />
+<a href="showthread454f.html?pid=3520390#pid3520390" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This should be fixed in the R2-1 server.<br />
+<br />
+<br />
+<br />
+Indeed. I confirmed there was a problem with the SHA256 implementation. It should be fixed in the R2-1 server.<br />
+<br />
+<br />
+<br />
+SA-MP will never be completely bug and glitch free. It's a multiplayer mod written for a game not designed for multiplayer and with no source code/modding tools available. The only way I could make it completely bug free would be to concentrate on a narrow set of features. There are a lot of different things people want to do with San Andreas so I just try to add stuff and keep refining it. If it's something that doesn't cause the game or server to crash and burn it gets a lower priority from me.</div>
+</td>
+</tr>
+</table>
+</div>I think you are right. Its great you fixed those bugs that quickly. I like the way you think to have new features. <br />
+I can't wait to see more updates. Keep up the good work Kalcor and team.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520624">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search0342.html?action=finduser&amp;uid=108398" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply9223.html?tid=581259&amp;replyto=3520624" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520739"></a>
+<div class="post classic " style="" id="post_3520739">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberc252.html?action=profile&amp;uid=133373"><img src="uploads/avatars/133373.png" alt="" width="55" height="32" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberc252.html?action=profile&amp;uid=133373">Miguel_Leopold</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 143<br />
+	Threads: 22<br />
+	Joined: Jul 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation44ee.html?uid=133373"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread84f7.html?tid=581259&amp;pid=3520739#pid3520739" title="Respuesta: SA-MP 0.3.7 R2-1 server update">#71</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 71 by Miguel_Leopold" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 16:04 <span class="post_edit" id="edited_by_3520739"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Последний раз редактировалось Miguel_Leopold; 14.07.2015 в 18:27.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520739">
+		<font size="4"><b>EDIT: I was confused, i thought that the function return the number of SVars created.</b></font><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<font size="1">Thanks for update <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/> but there is one problem still existing with SVars <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/>.<br />
+<br />
+Code in 0.3.7 R2-1:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 306px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">    </span><span style="color: #007700">new </span><span style="color: #0000BB">vName</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"start %i"</span><span style="color: #007700">, </span><span style="color: #0000BB">GetSVarsUpperIndex</span><span style="color: #007700">());
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"------------------------------"</span><span style="color: #007700">);
+<br/>    for(new </span><span style="color: #0000BB">i </span><span style="color: #007700">= </span><span style="color: #0000BB">1</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt;= </span><span style="color: #0000BB">9</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)
+<br/>    {
+<br/>        </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">vName</span><span style="color: #007700">,</span><span style="color: #0000BB">16</span><span style="color: #007700">,</span><span style="color: #DD0000">"var%i"</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SetSVarInt</span><span style="color: #007700">(</span><span style="color: #0000BB">vName</span><span style="color: #007700">, </span><span style="color: #0000BB">999</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%i,%s"</span><span style="color: #007700">, </span><span style="color: #0000BB">GetSVarsUpperIndex</span><span style="color: #007700">(), </span><span style="color: #0000BB">vName</span><span style="color: #007700">);
+<br/>    }
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"------------------------------"</span><span style="color: #007700">);
+<br/>    for(new </span><span style="color: #0000BB">i </span><span style="color: #007700">= </span><span style="color: #0000BB">1</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt;= </span><span style="color: #0000BB">9</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)
+<br/>    {
+<br/>        </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">vName</span><span style="color: #007700">,</span><span style="color: #0000BB">16</span><span style="color: #007700">,</span><span style="color: #DD0000">"var%i"</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">DeleteSVar</span><span style="color: #007700">(</span><span style="color: #0000BB">vName</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%i,%s"</span><span style="color: #007700">, </span><span style="color: #0000BB">GetSVarsUpperIndex</span><span style="color: #007700">(), </span><span style="color: #0000BB">vName</span><span style="color: #007700">);
+<br/>    }
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"------------------------------"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"end %i"</span><span style="color: #007700">, </span><span style="color: #0000BB">GetSVarsUpperIndex</span><span style="color: #007700">()); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>results:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 386px;
+		text-align: left;
+		overflow: auto">[10:51:03] start 0
+[10:51:03] ------------------------------
+[10:51:03] 1,var1
+[10:51:03] 2,var2
+[10:51:03] 3,var3
+[10:51:03] 4,var4
+[10:51:03] 5,var5
+[10:51:03] 6,var6
+[10:51:03] 7,var7
+[10:51:03] 8,var8
+[10:51:03] 9,var9
+[10:51:03] ------------------------------
+<b><font size="3">[10:51:03] 9,var1
+[10:51:03] 9,var2
+[10:51:03] 9,var3
+[10:51:03] 9,var4
+[10:51:03] 9,var5
+[10:51:03] 9,var6
+[10:51:03] 9,var7
+[10:51:03] 9,var8</font></b>
+[10:51:03] 0,var9
+[10:51:03] ------------------------------
+[10:51:03] end 0</pre>
+</div>The Server Variables are not deleted until end.<br />
+What do you think?</font><br />
+</td>
+</tr>
+</table>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520739">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searched13.html?action=finduser&amp;uid=133373" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc866.html?tid=581259&amp;replyto=3520739" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520761"></a>
+<div class="post classic " style="" id="post_3520761">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member0777.html?action=profile&amp;uid=250392"><img src="uploads/avatars/250392.png" alt="" width="55" height="50" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member0777.html?action=profile&amp;uid=250392">LinuxViper</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 104<br />
+	Threads: 0<br />
+	Joined: Jan 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation079c.html?uid=250392"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread2208.html?tid=581259&amp;pid=3520761#pid3520761" title="Re: SA-MP 0.3.7 R2-1 server update">#72</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 72 by LinuxViper" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 16:37 <span class="post_edit" id="edited_by_3520761"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520761">
+		Nice
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520761">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search06b4.html?action=finduser&amp;uid=250392" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply407b.html?tid=581259&amp;replyto=3520761" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520815"></a>
+<div class="post classic " style="" id="post_3520815">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2ea1.html?action=profile&amp;uid=119872"><img src="uploads/avatars/119872.png" alt="" width="55" height="53" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2ea1.html?action=profile&amp;uid=119872"><s>Dragony92</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 484<br />
+	Threads: 49<br />
+	Joined: Feb 2011
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadfb41.html?tid=581259&amp;pid=3520815#pid3520815" title="Re: Respuesta: SA-MP 0.3.7 R2-1 server update">#73</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 73 by Dragony92" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 18:00 <span class="post_edit" id="edited_by_3520815"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520815">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Miguel_Leopold</strong><br />
+<a href="showthread84f7.html?pid=3520739#pid3520739" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">The Server Variables are not deleted until end.<br />
+What do you think?</div>
+</td>
+</tr>
+</table>
+</div>You are deleting them from bottom to top, test that again but delete vars from top to bottom if you want to get  lower upper index.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:311px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> vName<span style="color: #000000;">[</span><span style="color: #000000;">16</span><span style="color: #000000;">]</span>; <br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"start %i"</span>, GetSVarsUpperIndex<span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>; <br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"------------------------------"</span><span style="color: #000000;">)</span>; <br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>; i <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">9</span>; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <br/>    <span style="color: #000000;">{</span> <br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>vName,<span style="color: #000000;">16</span>,<span style="color: #000066;">"var%i"</span>, i<span style="color: #000000;">)</span>; <br/>        SetSVarInt<span style="color: #000000;">(</span>vName, <span style="color: #000000;">999</span><span style="color: #000000;">)</span>; <br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"%i,%s"</span>, GetSVarsUpperIndex<span style="color: #000000;">(</span><span style="color: #000000;">)</span>, vName<span style="color: #000000;">)</span>; <br/>    <span style="color: #000000;">}</span> <br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"------------------------------"</span><span style="color: #000000;">)</span>; <br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">9</span>; i  <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span>; i<span style="color: #000000;">--</span><span style="color: #000000;">)</span> <br/>    <span style="color: #000000;">{</span> <br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>vName,<span style="color: #000000;">16</span>,<span style="color: #000066;">"var%i"</span>, i<span style="color: #000000;">)</span>; <br/>        DeleteSVar<span style="color: #000000;">(</span>vName<span style="color: #000000;">)</span>; <br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"%i,%s"</span>, GetSVarsUpperIndex<span style="color: #000000;">(</span><span style="color: #000000;">)</span>, vName<span style="color: #000000;">)</span>; <br/>    <span style="color: #000000;">}</span> <br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"------------------------------"</span><span style="color: #000000;">)</span>; <br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"end %i"</span>, GetSVarsUpperIndex<span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520815">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search5d8b.html?action=finduser&amp;uid=119872" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply0515.html?tid=581259&amp;replyto=3520815" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520856"></a>
+<div class="post classic " style="" id="post_3520856">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberc252.html?action=profile&amp;uid=133373"><img src="uploads/avatars/133373.png" alt="" width="55" height="32" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberc252.html?action=profile&amp;uid=133373">Miguel_Leopold</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 143<br />
+	Threads: 22<br />
+	Joined: Jul 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation44ee.html?uid=133373"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8a35.html?tid=581259&amp;pid=3520856#pid3520856" title="Respuesta: Re: Respuesta: SA-MP 0.3.7 R2-1 server update">#74</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 74 by Miguel_Leopold" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 18:25 <span class="post_edit" id="edited_by_3520856"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520856">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dragony92</strong><br />
+<a href="showthreadfb41.html?pid=3520815#pid3520815" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You are deleting them from bottom to top, test that again but delete vars from top to bottom if you want to get  lower upper index.</div>
+</td>
+</tr>
+</table>
+</div>You're right!<br />
+ I was confused, i thought that the function return the number of SVars created.<br />
+Thank you.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520856">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searched13.html?action=finduser&amp;uid=133373" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply8dbb.html?tid=581259&amp;replyto=3520856" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520873"></a>
+<div class="post classic " style="" id="post_3520873">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membereb3b.html?action=profile&amp;uid=262062"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membereb3b.html?action=profile&amp;uid=262062"><s>JokeyL</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 68<br />
+	Threads: 5<br />
+	Joined: Jul 2015
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread1f99.html?tid=581259&amp;pid=3520873#pid3520873" title="Re: SA-MP 0.3.7 R2-1 server update">#75</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 75 by JokeyL" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 18:50 <span class="post_edit" id="edited_by_3520873"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520873">
+		Nice update, thanks.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520873">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search3148.html?action=finduser&amp;uid=262062" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplydc41.html?tid=581259&amp;replyto=3520873" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520875"></a>
+<div class="post classic " style="" id="post_3520875">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member23b9.html?action=profile&amp;uid=249062"><img src="uploads/avatars/249062.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member23b9.html?action=profile&amp;uid=249062">GatsbyTrieu</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 40<br />
+	Threads: 18<br />
+	Joined: Dec 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation0f4a.html?uid=249062"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread477d.html?tid=581259&amp;pid=3520875#pid3520875" title="Re: SA-MP 0.3.7 R2-1 server update">#76</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 76 by GatsbyTrieu" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 18:55 <span class="post_edit" id="edited_by_3520875"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520875">
+		where i can got the 0.3.7 1000p guys ?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520875">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9ed4.html?action=finduser&amp;uid=249062" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply44ab.html?tid=581259&amp;replyto=3520875" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520882"></a>
+<div class="post classic " style="" id="post_3520882">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2ea1.html?action=profile&amp;uid=119872"><img src="uploads/avatars/119872.png" alt="" width="55" height="53" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2ea1.html?action=profile&amp;uid=119872"><s>Dragony92</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 484<br />
+	Threads: 49<br />
+	Joined: Feb 2011
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread7c7e-2.html?tid=581259&amp;pid=3520882#pid3520882" title="Re: SA-MP 0.3.7 R2-1 server update">#77</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 77 by Dragony92" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 18:58 <span class="post_edit" id="edited_by_3520882"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520882">
+		From 0.3.7 there are only 1000p servers.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kalcor</strong><br />
+<a href="showthread53be.html?pid=3342927#pid3342927" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">- The server will only come in a 1000 player variation from now on since there should be no performance difference between a 500 player server and 1000 player server. If you have existing script loops bound to MAX_PLAYERS or MAX_VEHICLES you should consider rewriting these loops to use GetPlayerPoolSize()/GetVehiclePoolSize(). Alternatively, redefine MAX_PLAYERS lower in your script or by editing the SA-MP pawn includes.<br />
+<br />
+Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Old code</span><br/><span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> x<span style="color: #000000;">=</span><span style="color: #000000;">0</span>; x <span style="color: #000000;">&lt;</span> MAX_PLAYERS; x<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerConnected<span style="color: #000000;">(</span>x<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #228822;">// do stuff with a player id</span><br/>    <span style="color: #000000;">}</span><br/><span style="color: #000000;">}</span><br/><br/><span style="color: #228822;">// New code</span><br/><span style="color: #2222BB;">new</span> HighestPlayerId <span style="color: #000000;">=</span> GetPlayerPoolSize<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> x<span style="color: #000000;">=</span><span style="color: #000000;">0</span>; x <span style="color: #000000;">&lt;=</span> HighestPlayerId; x<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #228822;">// (note the condition change from &lt; to &lt;=)</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerConnected<span style="color: #000000;">(</span>x<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #228822;">// do stuff with a player id</span><br/>    <span style="color: #000000;">}</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520882">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search5d8b.html?action=finduser&amp;uid=119872" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply131e.html?tid=581259&amp;replyto=3520882" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520913"></a>
+<div class="post classic " style="" id="post_3520913">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberfbdc.html?action=profile&amp;uid=142475"><img src="uploads/avatars/142475.png" alt="" width="55" height="50" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberfbdc.html?action=profile&amp;uid=142475">AdamsLT</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 124<br />
+	Threads: 3<br />
+	Joined: Oct 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationc603.html?uid=142475"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread721b.html?tid=581259&amp;pid=3520913#pid3520913" title="Re: SA-MP 0.3.7 R2-1 server update">#78</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 78 by AdamsLT" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 19:35 <span class="post_edit" id="edited_by_3520913"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520913">
+		Skins ID 165 and 166 lost their sunglasses<br />
+<a href="http://i.imgur.com/jUu1pAF.jpg" target="_blank">http://i.imgur.com/jUu1pAF.jpg</a><br />
+<br />
+<a href="https://sampwiki.blast.hk/wiki/Skins:Public" target="_blank">https://sampwiki.blast.hk/wiki/Skins:Public</a><br />
+The first two skins in this page (<b>wmomib</b> and <b>bmymib</b>)<br />
+<br />
+<br />
+I feel it's undocumented. I only noticed this change a couple of days ago. <br />
+Did this change in 0.3.7 or in previous releases? I don't remember this being addressed.<br />
+<br />
+Are there any more changes like this? It would be nice to know. Thanks<br />
+I mean it's a nice change, I'm grateful.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520913">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchbe36.html?action=finduser&amp;uid=142475" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply8826.html?tid=581259&amp;replyto=3520913" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520924"></a>
+<div class="post classic " style="" id="post_3520924">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere05a.html?action=profile&amp;uid=250673"><img src="uploads/avatars/250673.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere05a.html?action=profile&amp;uid=250673">hamzajaved780</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 145<br />
+	Threads: 11<br />
+	Joined: Jan 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationa4dc.html?uid=250673"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread0784.html?tid=581259&amp;pid=3520924#pid3520924" title="Re: SA-MP 0.3.7 R2-1 server update">#79</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 79 by hamzajaved780" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 19:41 <span class="post_edit" id="edited_by_3520924"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520924">
+		Very Nice Update...
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520924">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search2439.html?action=finduser&amp;uid=250673" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply8556.html?tid=581259&amp;replyto=3520924" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3520976"></a>
+<div class="post classic " style="" id="post_3520976">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberbc04.html?action=profile&amp;uid=53564"><img src="uploads/avatars/53564.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberbc04.html?action=profile&amp;uid=53564"><s>Virtual1ty</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 734<br />
+	Threads: 8<br />
+	Joined: Jun 2009
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread170e.html?tid=581259&amp;pid=3520976#pid3520976" title="Re: SA-MP 0.3.7 R2-1 server update">#80</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 80 by Virtual1ty" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.07.2015, 20:41 <span class="post_edit" id="edited_by_3520976"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3520976">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>AdamsLT</strong><br />
+<a href="showthread721b.html?pid=3520913#pid3520913" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Skins ID 165 and 166 lost their sunglasses<br />
+<a href="http://i.imgur.com/jUu1pAF.jpg" target="_blank">http://i.imgur.com/jUu1pAF.jpg</a><br />
+<br />
+<a href="https://sampwiki.blast.hk/wiki/Skins:Public" target="_blank">https://sampwiki.blast.hk/wiki/Skins:Public</a><br />
+The first two skins in this page (<b>wmomib</b> and <b>bmymib</b>)<br />
+<br />
+<br />
+I feel it's undocumented. I only noticed this change a couple of days ago. <br />
+Did this change in 0.3.7 or in previous releases? I don't remember this being addressed.<br />
+<br />
+Are there any more changes like this? It would be nice to know. Thanks<br />
+I mean it's a nice change, I'm grateful.</div>
+</td>
+</tr>
+</table>
+</div>Indeed, nice new update, but why isn't this documented? Also there are some inconsistent spaces in the SAMP.ide file for the new 0.3.7 skins, please "fix" that. This is what I mean, why not just a single space as it is in the whole file:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">... 9,9, PED_TYPE_EMG,VOICE_EMG_LAPD1 ,VOICE_EMG_LAPD8</pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3520976">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchbcce.html?action=finduser&amp;uid=53564" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply7e01.html?tid=581259&amp;replyto=3520976" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreaddef0.html?tid=581259&amp;action=nextoldest">Next Oldest</a> | <a href="showthreaded4c.html?tid=581259&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="581259" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (14):</span>
+<!-- start: multipage_prevpage -->
+<a href="showthread23c1.html?tid=581259&amp;page=3" class="pagination_previous">&laquo; Previous</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_start -->
+<a href="showthread14ea.html?tid=581259" class="pagination_first">1</a> 
+<!-- end: multipage_start --><!-- start: multipage_page -->
+<a href="showthreadc3dc.html?tid=581259&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread23c1.html?tid=581259&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+ <span class="pagination_current">4</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="showthread3449.html?tid=581259&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread2c5e.html?tid=581259&amp;page=6" class="pagination_page">6</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&hellip;  <a href="showthread3a5d.html?tid=581259&amp;page=14" class="pagination_last">14</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="showthread3449.html?tid=581259&amp;page=5" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage --><!-- start: multipage_jump_page -->
+<div class="popup_menu drop_go_page" style="display: none;">
+	<form action="https://sampforum.blast.hk/showthread.php?tid=581259" method="post">
+		<label>Jump to page:</label> <input type="number" class="textbox" name="page" value="4" size="4" min="1" max="14" />
+		<input type="submit" class="button" value="Go" />
+	</form>
+</div>
+<a href="javascript:;" class="go_page" title="Jump to page"><i class="fa fa-sort-down"></i></a>&nbsp;
+<script type="text/javascript">
+	var go_page = 'go_page_' + $(".go_page").length;
+	$(".go_page").last().attr('id', go_page);
+	$(".drop_go_page").last().attr('id', go_page + '_popup');
+	$('#' + go_page).popupMenu(false).on('click', function() {
+		var drop_go_page = $(this).prev('.drop_go_page');
+		if (drop_go_page.is(':visible')) {
+			drop_go_page.find('.textbox').trigger('focus');
+		}
+	});
+</script>
+<!-- end: multipage_jump_page -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread14ea.html?tid=581259">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-581259.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=927cfcb825ef5d27053c133975acab9f" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="tid" value="581259" />
+<input type="hidden" name="pid" value="3520386" />
+
+	<input type="hidden" name="my_post_key" value="927cfcb825ef5d27053c133975acab9f" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

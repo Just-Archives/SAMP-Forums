@@ -1,0 +1,380 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Flymode. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="In 0.3.7 R1, flymode worked fine. In R2, it gives the white loading screen of death. It's not TogglePlayerSpectate causing the issue. I think it's AttachCameraTo*. I don't know how to explain this any" />
+<link rel="canonical" href="showthreadc91e.html?tid=582605" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadc91e.html?tid=582605">Flymode.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Flymode. (<em>/showthread.php?tid=582605</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread1a38.html?tid=582605&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  21.07.2015
+<br />
+<br />
+In 0.3.7 R1, flymode worked fine. In R2, it gives the white loading screen of death. It's not TogglePlayerSpectate causing the issue. I think it's AttachCameraTo*. I don't know how to explain this any further, it's just that simple.<br />
+<br />
+The following piece of the flymode FS doesn't cause any harm, it just gives you the beach view.<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">		new Float:X, Float:Y, Float:Z;
+		GetPlayerPos(playerid, X, Y, Z);
+		TogglePlayerSpectating(playerid, true);
+		SetPlayerCameraPos(playerid, X, Y, Z);</pre>
+</div>This code makes the screen blink between that view and the white loading screen of death.<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">		new Float:X, Float:Y, Float:Z;
+		GetPlayerPos(playerid, X, Y, Z);
+		noclipdata[playerid][flyobject] = CreatePlayerObject(playerid, 19300, X, Y, Z, 0.0, 0.0, 0.0);
+		AttachCameraToPlayerObject(playerid, noclipdata[playerid][flyobject]);</pre>
+</div>This code locks you in the white loading screen of death.<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">FlyMode(playerid);</pre>
+</div><font size="1">(The flymode function is from the flymode FS packed with the default server package.)</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  22.07.2015
+<br />
+<br />
+confirm this bug<br />
+GetTickCount must return value more then 2147483648/2<br />
+it happen only on this value
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  22.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SPAWN_METAL</strong><br />
+<a href="showthread00ae.html?pid=3528395#pid3528395" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">confirm this bug<br />
+GetTickCount must return value more then 2147483648/2<br />
+it happen only on this value</div>
+</td>
+</tr>
+</table>
+</div>It happens as soon as I start the server.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> -  22.07.2015
+<br />
+<br />
+I tried using this before 0.3.7 and I also had the white screen of death and it was the flymode FS provided with the SA-MP server package.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  22.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Crayder</strong><br />
+<a href="showthreadaf44.html?pid=3528455#pid3528455" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It happens as soon as I start the server.</div>
+</td>
+</tr>
+</table>
+</div>What your GetTickCount value at this moment?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  22.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SPAWN_METAL</strong><br />
+<a href="showthread5295.html?pid=3528684#pid3528684" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">What your GetTickCount value at this moment?</div>
+</td>
+</tr>
+</table>
+</div>The tickcount starts at 0. The tickcount is how many milliseconds since the server was started.<br />
+<br />
+@Tamer: It was fine for me up until 0.3.7 R2. I used it nearly every other day in Texture Studio.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberf878.html?action=profile&amp;uid=9791">dugi</a> -  22.07.2015
+<br />
+<br />
+Whats the uptime of your pc? If it's over 24 days restart it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  22.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>dugi</strong><br />
+<a href="showthreadaf25.html?pid=3528864#pid3528864" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Whats the uptime of your pc? If it's over 24 days restart it.</div>
+</td>
+</tr>
+</table>
+</div>Well it's not even over three days, I switch up between Win7 and WinXP a lot. I'll restart anyways and edit with results.<br />
+<br />
+EDIT:<br />
+Checked my up time before I rebooted, it was only, "3 Days, 10 Hours, 42 Minutes, 12 Seconds." (systeminfo)<br />
+<br />
+I was a bit off when I said no longer than three days, but I was close.<br />
+<br />
+<br />
+After I rebooted flymode is working. There still must be a bug if it was like that only after 3 days, plus the bug has been happening since I installed R2 (over 10 days ago).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  23.07.2015
+<br />
+<br />
+The bug has returned.<br />
+Uptime: "0 Days, 9 Hours, 34 Minutes, 3 Seconds" (systeminfo)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  23.07.2015
+<br />
+<br />
+I will upload hooked GetTickCount for testing
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  23.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SPAWN_METAL</strong><br />
+<a href="showthread95f3.html?pid=3529456#pid3529456" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I will upload hooked GetTickCount for testing</div>
+</td>
+</tr>
+</table>
+</div>Computer uptime and server uptime are completely different things. The SA-MP GetTickCount function is for server uptime. That means it is only a few thousand when I get in the server. That's not the problem.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  23.07.2015
+<br />
+<br />
+I have no idea what really happen<br />
+<br />
+may be it's another bug<br />
+<br />
+I thing server send to client tick parameter
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member2df4.html?action=profile&amp;uid=133179">Banana_Ghost</a> -  24.07.2015
+<br />
+<br />
+I can confirm this (happens on a Windows box) after a few days of the actual host uptime.  A reboot generally fixes the problem.  This didn't start happening until SA-MP 0.3.7.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  26.07.2015
+<br />
+<br />
+<a href="http://www.gta-samp.ru/files/GetTickCountTest.rar" target="_blank">www.gta-samp.ru/files/GetTickCountTest.rar</a><br />
+<br />
+GetTickCountTest.so - plugin for R2-1, only for linux, hook of GetTickCount and set it to 1073721000 (max_int/2) at start<br />
+GetTickCountTest - source of plugin<br />
+<br />
+test.pwn - /test for AttachCameraToObject, timer print every second GetTickCount to chat, 20 second after gamemode start camera will glitch<br />
+<br />
+camera will glitch after 20 seconds if you close server before GetTickCount will increase to max_int/2
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="membercd4a.html?action=profile&amp;uid=152224">Onfroi</a> -  27.07.2015
+<br />
+<br />
+Was the filterscript updated? Because the older version of flymode works fine for me on R2.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  27.07.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Onfroi</strong><br />
+<a href="showthreadac71.html?pid=3533679#pid3533679" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Was the filterscript updated? Because the older version of flymode works fine for me on R2.</div>
+</td>
+</tr>
+</table>
+</div>It doesn't need updated, same natives.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  16.08.2015
+<br />
+<br />
+bump<br />
+<br />
+<a href="showthread5d4d-2.html?pid=3532715#pid3532715" target="_blank">http://forum.sa-mp.com/showpost.php?...5&amp;postcount=14</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  16.08.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SPAWN_METAL</strong><br />
+<a href="showthreadede9.html?pid=3552366#pid3552366" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">bump<br />
+<br />
+<a href="showthread5d4d-2.html?pid=3532715#pid3532715" target="_blank">http://forum.sa-mp.com/showpost.php?...5&amp;postcount=14</a></div>
+</td>
+</tr>
+</table>
+</div>That has nothing to do with what's happening to me. The problem is occurring way before the tickcount overflows.<br />
+<br />
+<br />
+This is more of a client support worthy topic, it only happens on my desktop.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  05.09.2015
+<br />
+<br />
+Ok, it's definitely not time related. On my old laptop (now my primary laptop now that I have upgraded it) this is occurring and I have just turned it on...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Flymode. - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  12.09.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Crayder</strong><br />
+<a href="showthread8d21.html?pid=3552452#pid3552452" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">That has nothing to do with what's happening to me. The problem is occurring way before the tickcount overflows.<br />
+<br />
+<br />
+This is more of a client support worthy topic, it only happens on my desktop.</div>
+</td>
+</tr>
+</table>
+</div>Can you try test with GetTickCount hook?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,374 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Crash addresses: Reasons and Solutions - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="The below table lists some common client crash addresses which you can use to help trace the problem and prevent it from occurring in future. In most cases client crashes occur because of a problem in" />
+<link rel="canonical" href="showthread7fda.html?tid=339691" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread7fda.html?tid=339691">Crash addresses: Reasons and Solutions</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Client Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=16</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Crash addresses: Reasons and Solutions (<em>/showthread.php?tid=339691</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread7fc0.html?tid=339691&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf60d.html?tid=339691&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread6ab9.html?tid=339691&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreade8e4.html?tid=339691&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread07ea.html?tid=339691&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread892e.html?tid=339691&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Crash addresses: Reasons and Solutions - <a href="membere202.html?action=profile&amp;uid=58151">Jay_</a> -  04.05.2012
+<br />
+<br />
+The below table lists some common client crash addresses which you can use to help trace the problem and prevent it from occurring in future. In most cases client crashes occur because of a problem in the script. Although, it is worth mentioning that SA-MP is pretty stable nowadays.<br />
+<br />
+<br />
+<table><tr><td class="alt2"><b>FREQUENCY</b></td><td class="alt2"><b>ADDRESS</b></td><td class="alt2"><b>CAUSE</b></td><td class="alt2"><b>SOLUTION</b></td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><font color="red">0x00000000</font></td><td class="alt2">SA-MP is not initializing.</td><td class="alt2">Re-install the game, ensure singleplayer works If you have any mods installed, remove them</td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><a href="http://pastebin.com/tEZgUaGx" target="_blank"><font color="red">0x006E3D17</font></a></td><td class="alt2">Skin related. Often occurs when changing the skin of a player who is in a vehicle, or is just entering or exiting one.</td><td class="alt2">Ensure the player is on foot prior to changing their skin.</td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><font color="red">0x0058370A</font></td><td class="alt2">Hard to trace. Appears to be vehicle / camera related. Occured when the script attempted to put the player in a vehicle. The vehicle the player is being teleported into is not yet available and/or rendered in the world</td><td class="alt2">Wait a few hundred-ms before teleporting a player into a vehicle that is newly created. Another solution would potentially be to use SetCameraBehindPlayer prior to teleporting them to the vehicle.</td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><font color="red">0x0040F64C</font></td><td class="alt2">Issue in Windows 7 / Vista relating to permissions. Problem in the installer version that the SA-MP client uses</td><td class="alt2">Update to SA-MP 0.3d. If it still occurs rename your GTASA directory.</td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><a href="http://pastebin.com/eXbXZTYE" target="_blank"><font color="red">0x0059F8B4</font></a></td><td class="alt2">Occurs when the client fails to load SA-MP objects. Usually a problem with one an essential file, samp.img being missing.</td><td class="alt2">Re-install the client. Try running the installer as Administrator if using Windows Vista / 7.</td></tr><tr><td class="alt2"><b><div align="center"><font color="green">Rare</font></div></b></td><td class="alt2"><a href="http://pastebin.com/SttHxVvc" target="_blank"><font color="red">0x00746929</font></a> OR <font color="red">0x0081214A</font></td><td class="alt2">Badly configured client side setting.</td><td class="alt2"><a href="https://sampwiki.blast.hk/wiki/Common_Problems#When_launching_GTA_with_SA:MP_it_won.27t_start" target="_blank">Click</a></td></tr><tr><td class="alt2"><b><div align="center"><font color="blue">Frequent</font></div></b></td><td class="alt2"><font color="red">0x007F0BF7</font></td><td class="alt2">Related to vehicle upgrades. Often caused when the server attempts to put an invalid upgrade on a vehicle (EG nos or spoilers on a motorbike). Other causes could be bad client side vehicle mods.</td><td class="alt2">There have been various scripts released on these forums which feature error checking for this.</td></tr><tr><td class="alt2"><b><div align="center"><font color="blue">Frequent</font></div></b></td><td class="alt2"><a href="http://pastebin.com/42Brp7Cy" target="_blank"><font color="red">0x00544BC8</font></a></td><td class="alt2">Object related. Typically occurs when too many objects are showing for the client, i.e. more than what it can handle.</td><td class="alt2">One practical solution may be to use an object handler/streamer. Many streamers on these forums come with configuration settings to decrease the maximum amount of visible objects showing for a player at any given time</td></tr><tr><td class="alt2"><b><div align="center"><font color="blue">Frequent</font></div></b></td><td class="alt2"><a href="http://pastebin.com/q1w9na6p" target="_blank"><font color="red">0x00415D47</font></a></td><td class="alt2">Object related. Typically occurs when too many object textures are loaded for the client.</td><td class="alt2">Low-level problem that is hard to trace and fix. I think it's somehow related to collisions It occurs randomly depending on the object. Try to remove groups of objects and use the process of elimination to establish which objects are causing it and remove them from your mode.</td></tr><tr><td class="alt2"><b><div align="center"><font color="blue">Frequent</font></div></b></td><td class="alt2"><font color="red">0x00536DF4</font></td><td class="alt2">Object related. Typically occurs when too many object textures are loaded for the client.</td><td class="alt2">See above.</td></tr><tr><td class="alt2"><b><div align="center"><font color="blue">Frequent</font></div></b></td><td class="alt2"></td><td class="alt2"></td><td class="alt2"></td></tr></table>
+<br />
+<font size="3"><b><u>Chat box warning codes</u></b></font><br />
+<br />
+<br />
+<table><tr><td class="alt2"><b>MESSAGE</b></td><td class="alt2"><b>CAUSE</b></td><td class="alt2"><b>SOLUTION</b></td></tr><tr><td class="alt2"><font color="red">Exception 0xC0000005 at 0x5E5815</font></td><td class="alt2">Difficult to trace. The method this address points to does a whole load of things.  It processes animation blending based on the surface the ped is standing on and then deals with audio, and is called right after a function which *gives* you weapons... Perhaps what happened here is that some script-invoked event occurred right at the moment that you were entering a vehicle (e.g. receiving a weapon, teleporting or something similar). </td><td class="alt2">-</td></tr><tr><td class="alt2"><font color="red">Exception 0x0000005 at 0x534134</font></td><td class="alt2">Issue with Windows 7 / Vista Access levels</td><td class="alt2">Running SA-MP as administrator appear to fix it.</td></tr><tr><td class="alt2"><font color="red">Exception 0xC0000005 at 0x544BC8</font></td><td class="alt2">See 0x00544BC8</td><td class="alt2">See 0x00544BC8</td></tr><tr><td class="alt2"><font color="red">Exception 0xC0000005 at 0x536DF4</font></td><td class="alt2">See 0x00544BC8</td><td class="alt2">See 0x00544BC8</td></tr><tr><td class="alt2"><font color="red">Exception 0xC0000005 at 0x7F120E</font></td><td class="alt2">Invalid vehicle upgrade applied</td><td class="alt2"><a href="showthread05a9.html?tid=267025" target="_blank">Click</a></td></tr></table>
+<br />
+<br />
+<br />
+<b><font size="4">To be updated</font></b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : Crash addresses: Reasons and Solutions - <a href="memberebe8.html?action=profile&amp;uid=114770">Vukilore</a> -  04.05.2012
+<br />
+<br />
+Very usefull, thanks !
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member30ed.html?action=profile&amp;uid=51889">mincer1667</a> -  04.05.2012
+<br />
+<br />
+yes very useful i got this one: Warning(s007): Exception 0xC0000005 at 0x5E5815 and solution here is -   <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member241e.html?action=profile&amp;uid=115788">MP2</a> -  04.05.2012
+<br />
+<br />
+Was hoping someone would make something like this one day!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member00c7.html?action=profile&amp;uid=64968">admantis</a> -  04.05.2012
+<br />
+<br />
+Thank you very much for this chart, I'm grateful.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member30ed.html?action=profile&amp;uid=51889">mincer1667</a> -  04.05.2012
+<br />
+<br />
+could you also add Warning(s007): Exception 0xC0000005 at 0x4D1750 if possible?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="membere202.html?action=profile&amp;uid=58151">Jay_</a> -  04.05.2012
+<br />
+<br />
+It's difficult to trace the issue and isn't really fixable from scripting.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member09b6.html?action=profile&amp;uid=126843">tyler12</a> -  04.05.2012
+<br />
+<br />
+Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member30ed.html?action=profile&amp;uid=51889">mincer1667</a> -  04.05.2012
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jay_</strong><br />
+<a href="showthread09c9.html?pid=1841739#pid1841739" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">R* failed to add a NULL-check to the method this points to - RpAnimBlendClumpGetFirstAssociation. <br />
+<br />
+In other words, you can't really fix it.</div>
+</td>
+</tr>
+</table>
+</div>okay
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member28e7.html?action=profile&amp;uid=98026">Danny</a> -  05.05.2012
+<br />
+<br />
+Hey, first I want to say you've made a great tread :P<br />
+<br />
+Second, can you please add the 0x74DA25-error? I'm having troubles with this, the most common answer on my questions is 'check your vehicle components' but I'm afraid I cannot really trace it back to something that causes this.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="memberaa83.html?action=profile&amp;uid=113523">Michael@Belgium</a> -  05.05.2012
+<br />
+<br />
+Hmm good post !
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member5d3c.html?action=profile&amp;uid=148192">sampreader</a> -  07.05.2012
+<br />
+<br />
+Exception At Address: 0x77D8DFE4
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member17b6.html?action=profile&amp;uid=162304">SwiftKidZ</a> -  10.05.2012
+<br />
+<br />
+Nice
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member84c0.html?action=profile&amp;uid=102824">Libra_PL</a> -  13.05.2012
+<br />
+<br />
+This is very useful. Some months ago I saw similiar topic/post with ~30 different crash addresses with reasons, I'm trying to find them and that's why I came here.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member9c0b.html?action=profile&amp;uid=145923">rscaerzx</a> -  13.05.2012
+<br />
+<br />
+Thanks, this is very useful thread <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member4f47.html?action=profile&amp;uid=112301">Edvin</a> -  13.05.2012
+<br />
+<br />
+Thanks, Thanks, Thanks :X It help's me very much <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/> Rep++!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - [MM]IKKE -  16.05.2012
+<br />
+<br />
+You get <br />
+" 0x0000000A"<br />
+When you try loading a Single Player game via MultiPlayer
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member8f14.html?action=profile&amp;uid=15786">Whitetiger</a> -  19.05.2012
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">SA-MP 0.3e
+Exception At Address: 0x007324B6
+
+Registers:
+EAX: 0x00000002	EBX: 0x0000002F	ECX: 0x091F7C80	EDX: 0x00000004
+ESI: 0x0000000C	EDI: 0x1EAE2D28	EBP: 0x15A038B0	ESP: 0x0023FCE0
+EFLAGS: 0x00210293
+
+Stack:
++0000: 0x023BA1C8   0x023BA1C8   0x00000004   0x00000000
++0010: 0xFFFFFFFF   0xFFFFFFFF   0xFFFFFFFF   0x00000000
++0020: 0x00000001   0x0000000B   0x00000001   0x00000001
++0030: 0x00000004   0x00000001   0x00000001   0x00000001
++0040: 0x00000001   0x19F68B98   0x039CD340   0x02CD61C8
++0050: 0x00000001   0x00757877   0x039CD340   0x00000000
++0060: 0x00000000   0x0000002F   0x00000000   0x02C60C8C
++0070: 0x7E42DEB2   0x00000000   0x00000001   0x3F8CCCCD
++0080: 0xBD864000   0x00805769   0x0000002F   0x3F800000
++0090: 0x00000005   0x00000000   0x409DE700   0x02C60C8C
++00A0: 0x08EF6C24   0x7E42DEB2   0x00732639   0x15A038B0
++00B0: 0x00000004   0x08B21960   0x00732BDC   0x023BA1C8
++00C0: 0x15A038B0   0x00000004   0x7E42DEB2   0x0000001A
++00D0: 0x02C8F0F0   0x00733F2A   0x08B21900   0x43236219
++00E0: 0x00000001   0x0053E01E   0x00000000   0x0053EAA6
++00F0: 0x0026F17C   0x0053EAC4   0x44200000   0x44000000
++0100: 0x0053ECC2   0x00000001   0x00619B71   0x0000001A
++0110: 0x00000001   0x00000001   0x0000000A   0x00748DA0
++0120: 0x0000001A   0x00000001   0x7C80B741   0x00000000
++0130: 0x0023FFC0   0x7FFDD000   0x01260000   0x4EEE126C
++0140: 0x002627F0   0x00000008   0x00000100   0x00000008
++0150: 0x00000102   0x44200000   0x44000000   0x00000000
++0160: 0x00000000   0x00000500   0x00000400   0x00000000
++0170: 0x00000001   0x001704FE   0x00000113   0x00000001
++0180: 0x00000000   0x01E05005   0x00000280   0x00000200
++0190: 0x0000002C   0x00000000   0x7FFDD000   0x0023FFB0
++01A0: 0x00825EA4   0x00887E20   0xFFFFFFFF   0x0023FE70
++01B0: 0x00835342   0x00000065   0x0023FFC0   0x008246F1
++01C0: 0x00400000   0x00000000   0x015823DD   0x0000000A
++01D0: 0x00000094   0x00000005   0x00000001   0x00000A28
++01E0: 0x00000002   0x76726553   0x20656369   0x6B636150
++01F0: 0xB2003320   0x00000246   0x80545A2B   0xB22A8BF0
++0200: 0x8A283890   0xFFDFF120   0x00000000   0x0000001F
++0210: 0x88C6B020   0xFFDFF540   0x80545C13   0xFFFFFFFF
++0220: 0x00000246   0x80545A2B   0xB22A8C28   0x88C6B020
++0230: 0xFFDFF120   0x88C6B1BC   0x80503886   0x88C6B090
++0240: 0x88C6B020   0x804FB094   0x88C6B18C   0x88C6B020
++0250: 0x88C6B054   0xB22A8C6C   0x806442DE   0x889F1578
++0260: 0x00824588   0x00000000   0x0013F420   0x7FFDD000
++0270: 0xC0000005   0x00000005   0x015823DD   0x00000044
+
+SCM Op: 0x470, lDbg: 0
+
+Game Version: US 1.0
+
+State Information: Ped Context: 0
+P0 (0,0) P2 (0,0)</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">SA-MP 0.3e
+Exception At Address: 0x007324B6
+
+Registers:
+EAX: 0x00000002	EBX: 0x0000004F	ECX: 0x04D3D550	EDX: 0x00000030
+ESI: 0x0000000C	EDI: 0x1B5ED5F0	EBP: 0x1BD66FD8	ESP: 0x0028FCA8
+EFLAGS: 0x00010293
+
+Stack:
++0000: 0x03EE44C8   0x03EE44C8   0x00000030   0x00000000
++0010: 0xFFFFFFFF   0xFFFFFFFF   0xFFFFFFFF   0x65BD61A4
++0020: 0x053B7AB0   0x0028FCF4   0x65C20220   0x053B7AB0
++0030: 0x04D18530   0x04D18530   0x0030EA44   0x053BAB84
++0040: 0x00000000   0x00000000   0x053BB054   0x04D18564
++0050: 0x007F96F8   0x053BAB84   0x0000001F   0x0030EA44
++0060: 0x756E6C30   0x00000000   0x04D18530   0x00000000
++0070: 0x14759570   0x0000001A   0x00000000   0x00000000
++0080: 0x00000000   0x0028FD18   0x00000030   0x00000000
++0090: 0x42400000   0x756E6C30   0x03DC89DD   0x053BAB80
++00A0: 0x00001000   0x756E6C30   0x00732639   0x1BD66FD8
++00B0: 0x00000030   0x048245E8   0x00732BDC   0x03EE44C8
++00C0: 0x1BD66FD8   0x00000030   0x756E6C30   0x0000001A
++00D0: 0x04D4F364   0x007337EA   0x04824500   0x442B990B
++00E0: 0x00000001   0x0053DFF3   0x00000000   0x0053EAA6
++00F0: 0x0030EA44   0x0053EAC4   0x44200000   0x44000000
++0100: 0x0053ECC2   0x00000001   0x00619B71   0x0000001A
++0110: 0x00000001   0x00000001   0x0000000A   0x00748DA0
++0120: 0x0000001A   0x00000001   0x748C1245   0x00000000
++0130: 0x0028FF88   0x7EFDE000   0x01300000   0x4E20B180
++0140: 0x003010F0   0x00000008   0x00000100   0x00000008
++0150: 0x00000102   0x44200000   0x44000000   0x00000000
++0160: 0x00000000   0x00000500   0x00000400   0x00000000
++0170: 0x00000001   0x00320468   0x00000113   0x00000001
++0180: 0x00000000   0x01FCD2F2   0x00000280   0x00000200
++0190: 0x0000002C   0x0028FE2C   0x00825EA4   0x748C1245
++01A0: 0x00000000   0x7EFDE000   0xFFFFFFFF   0x00821D17
++01B0: 0x00000065   0x00000065   0x0028FF88   0x008246F1
++01C0: 0x00400000   0x00000000   0x0178330E   0x0000000A
++01D0: 0x00000094   0x00000006   0x00000001   0x00001DB1
++01E0: 0x00000002   0x76726553   0x20656369   0x6B636150
++01F0: 0x00003120   0x00000000   0x00000000   0x00000000
++0200: 0x00000000   0x00000000   0x00000000   0x00000000
++0210: 0x00000000   0x00000000   0x00000000   0x00000000
++0220: 0x00000000   0x00000000   0x00000000   0x00000000
++0230: 0x00000000   0x00000000   0x00000000   0x00000000
++0240: 0x00000000   0x00000000   0x00000000   0x00000000
++0250: 0x00000000   0x00000000   0x00000000   0x00000000
++0260: 0x00824588   0x00000000   0x00000000   0x7EFDE000
++0270: 0xC0000005   0x00000000   0x0178330E   0x00000044
+
+SCM Op: 0x77E, lDbg: 0
+
+Game Version: US 1.0
+
+State Information: Ped Context: 0
+P0 (0,0) P1 (0,0) P3 (0,0) 
+P4 (0,0) P5 (0,0)</pre>
+</div>any ideas?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member84c0.html?action=profile&amp;uid=102824">Libra_PL</a> -  19.05.2012
+<br />
+<br />
+I had some crashes (many have same addresses) and one of them is 0x00571B73 - I am not sure it happens only in one way, but sometimes when I jump on the Jetmax and start driving it (?). Usually also I don't see water (it's invisible) while I get those exception messages in chat.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Crash addresses: Reasons and Solutions - <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> -  19.05.2012
+<br />
+<br />
+Very useful list, thanks.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

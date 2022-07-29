@@ -1,0 +1,77 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Server crashes when kicking a player inside OnPlayerStateChange - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="When using Kick(playerid) inside OnPlayerStateChange, and the newstate is PLAYER_STATE_DRIVER, the server crashes: 0.3.DL Windows: Code: Server crashed due to an unknown error Native backtrace: #0 004" />
+<link rel="canonical" href="showthread5e67.html?tid=662952" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread5e67.html?tid=662952">Server crashes when kicking a player inside OnPlayerStateChange</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Server crashes when kicking a player inside OnPlayerStateChange (<em>/showthread.php?tid=662952</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Server crashes when kicking a player inside OnPlayerStateChange - <a href="member587e.html?action=profile&amp;uid=198674">Graber</a> -  16.01.2019
+<br />
+<br />
+When using Kick(playerid) inside OnPlayerStateChange, and the newstate is PLAYER_STATE_DRIVER, the server crashes:<br />
+<br />
+0.3.DL Windows:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">[22:11:08] [debug] Server crashed due to an unknown error
+[22:11:08] [debug] Native backtrace:
+[22:11:08] [debug] #0 004874d1 in ?? () in samp-server.exe
+[22:11:08] [debug] #1 004950b3 in ?? () in samp-server.exe
+[22:11:08] [debug] #2 777fb8d0 in ?? () in C:\WINDOWS\SYSTEM32\ntdll.dll</pre>
+</div>After making some internal debugging, it seems this happens because the server tries to use the player's pointer after calling the callback, but the pointed memory was already freed because the player was kicked.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crashes when kicking a player inside OnPlayerStateChange - <a href="member51b0.html?action=profile&amp;uid=304365">rorrobryan</a> -  17.01.2019
+<br />
+<br />
+It may be that you save the data wrong or you need to add a folder of logs in scriptfiles
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crashes when kicking a player inside OnPlayerStateChange - <a href="member87c5.html?action=profile&amp;uid=167460">Kaliber</a> -  18.01.2019
+<br />
+<br />
+You have to use a small timer, to delay the kick <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

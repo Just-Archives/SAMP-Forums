@@ -1,0 +1,483 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Server crash when destroyvehicle - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi, I find hidden bug. When I destroy vehicle in OnVehicleDeath there is chance to crash a server. Code: Code: hook OnVehicleDeath(vehicleid, killerid){ Debug(DBG_CORE, &quot;Vehicle/Core.pwn&quot;,&quot;OnVehicleDe" />
+<link rel="canonical" href="showthread420c.html?tid=589131" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread420c.html?tid=589131">Server crash when destroyvehicle</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Server crash when destroyvehicle (<em>/showthread.php?tid=589131</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Server crash when destroyvehicle - <a href="member6809.html?action=profile&amp;uid=132945">Patchwerk</a> -  15.09.2015
+<br />
+<br />
+Hi,<br />
+<br />
+I find hidden bug. When I destroy vehicle in OnVehicleDeath there is chance to crash a server.<br />
+<br />
+Code:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 466px;
+		text-align: left;
+		overflow: auto">hook OnVehicleDeath(vehicleid, killerid){
+	Debug(DBG_CORE, "Vehicle/Core.pwn","OnVehicleDeath(%d,%d)",vehicleid,killerid);
+	foreach(new car : Vehicles){
+		if(Vehicles[car][ID] == vehicleid){
+			printf("%d == %d", Vehicles[car][ID], vehicleid);
+			DestroyVehicle(vehicleid);
+			veh_Locked[vehicleid] = INVALID_PLAYER_ID;
+			defer ReCreateCar(car);
+		}
+	}
+}
+
+timer ReCreateCar[2500](car)
+{ 
+	new type = Vehicles[car][Type];
+	Vehicles[type][Color][0] = random(255);
+	Vehicles[type][Color][1] = random(255);
+	new rand = random(VehicleCategorySize[type]);
+	printf("ReCreateCar(%d), type = %d, rand = %d", car, type, rand);
+	Vehicles[car][ID] = CreateVehicle(VehicleCategory[type][rand], Vehicles[car][Pos][0], Vehicles[car][Pos][1], Vehicles[car][Pos][2], Vehicles[car][Pos][3], Vehicles[car][Color][0], Vehicles[car][Color][1], 120);
+	printf("ReCreateCar(%d), type = %d, rand = %d", car, type, rand);
+	veh_Traveled[Vehicles[car][ID]] = randomEx(0,200000);
+	if(!Vehicle_IsManual(Vehicles[car][ID])){
+		SetVehicleFuel(Vehicles[car][ID], RandomFloat(3.0, GetModelMaxFuel(VehicleCategory[type][rand]), 2) );
+		print("SetVehicleParams");
+		SetVehicleParamsEx(Vehicles[car][ID],0,0,0,0,0,0,0);
+	}
+}</pre>
+</div>LOG:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">[20:47:59] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:47:59] 7 == 7
+[20:48:02] ReCreateCar(6), type = 8, rand = 23
+[20:48:02] ReCreateCar(6), type = 8, rand = 23
+[20:48:02] SetVehicleParams
+[20:48:12] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:48:12] 7 == 7
+[20:48:15] ReCreateCar(6), type = 8, rand = 15
+[20:48:15] ReCreateCar(6), type = 8, rand = 15
+[20:48:15] SetVehicleParams
+[20:48:24] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:48:24] 7 == 7
+[20:48:27] ReCreateCar(6), type = 8, rand = 4
+[20:48:27] ReCreateCar(6), type = 8, rand = 4
+[20:48:27] SetVehicleParams
+[20:48:32] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:48:32] 7 == 7
+[20:48:35] ReCreateCar(6), type = 8, rand = 3
+[20:48:35] ReCreateCar(6), type = 8, rand = 3
+[20:48:35] SetVehicleParams
+[20:48:47] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:48:47] 7 == 7
+[20:48:50] ReCreateCar(6), type = 8, rand = 18
+[20:48:50] ReCreateCar(6), type = 8, rand = 18
+[20:48:50] SetVehicleParams
+[20:49:13] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:49:13] 7 == 7
+[20:49:16] ReCreateCar(6), type = 8, rand = 18
+[20:49:16] ReCreateCar(6), type = 8, rand = 18
+[20:49:16] SetVehicleParams
+[20:49:30] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,0)
+[20:49:30] 7 == 7
+[20:49:33] ReCreateCar(6), type = 8, rand = 17
+[20:49:33] ReCreateCar(6), type = 8, rand = 17
+[20:49:33] SetVehicleParams
+[20:49:46] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:49:46] 7 == 7
+[20:49:49] ReCreateCar(6), type = 8, rand = 32
+[20:49:49] ReCreateCar(6), type = 8, rand = 32
+[20:49:49] SetVehicleParams
+[20:50:02] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:50:02] 7 == 7
+[20:50:05] ReCreateCar(6), type = 8, rand = 24
+[20:50:05] ReCreateCar(6), type = 8, rand = 24
+[20:50:05] SetVehicleParams
+[20:50:18] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:50:18] 7 == 7
+[20:50:21] ReCreateCar(6), type = 8, rand = 28
+[20:50:21] ReCreateCar(6), type = 8, rand = 28
+[20:50:21] SetVehicleParams
+[20:50:34] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:50:34] 7 == 7
+[20:50:37] ReCreateCar(6), type = 8, rand = 13
+[20:50:37] ReCreateCar(6), type = 8, rand = 13
+[20:50:37] SetVehicleParams
+[20:50:52] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:50:52] 7 == 7
+[20:50:55] ReCreateCar(6), type = 8, rand = 26
+[20:50:55] ReCreateCar(6), type = 8, rand = 26
+[20:50:55] SetVehicleParams
+[20:51:10] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:51:10] 7 == 7
+[20:51:13] ReCreateCar(6), type = 8, rand = 2
+[20:51:13] ReCreateCar(6), type = 8, rand = 2
+[20:51:13] SetVehicleParams
+[20:51:28] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:51:28] 7 == 7
+[20:51:31] ReCreateCar(6), type = 8, rand = 31
+[20:51:31] ReCreateCar(6), type = 8, rand = 31
+[20:51:31] SetVehicleParams
+[20:51:38] Vehicle/Core.pwn -&gt; OnVehicleDeath(21,0)
+[20:51:38] 21 == 21
+[20:51:41] ReCreateCar(20), type = 6, rand = 8
+[20:51:41] ReCreateCar(20), type = 6, rand = 8
+[20:51:41] SetVehicleParams
+[20:51:55] Vehicle/Core.pwn -&gt; OnVehicleDeath(7,4)
+[20:51:55] 7 == 7
+[20:51:58] [debug] Server crashed due to an unknown error
+[20:51:58] [debug] Native backtrace:
+[20:51:58] [debug] #0 f7407e8b in _ZN10StackTraceC1EPv () from plugins/crashdetect.so
+[20:51:58] [debug] #1 f7400bcf in _ZN11CrashDetect20PrintNativeBacktraceERSoPv () from plugins/crashdetect.so
+[20:51:58] [debug] #2 f7401dbc in _ZN11CrashDetect20PrintNativeBacktraceEPv () from plugins/crashdetect.so
+[20:51:58] [debug] #3 f7402226 in _ZN11CrashDetect11OnExceptionEPv () from plugins/crashdetect.so
+[20:51:58] [debug] #4 f7407adc in ?? () from plugins/crashdetect.so
+[20:51:58] [debug] #5 f76e8410 in ?? ()
+[20:51:58] [debug] #6 0809568a in ?? () from ./7777svr
+[20:51:58] [debug] #7 080957cd in ?? () from ./7777svr
+[20:51:58] [debug] #8 f63975b4 in ?? () from plugins/streamer.so
+[20:51:58] [debug] #9 080ebba0 in ?? () from ./7777svr
+[20:51:58] [debug] #10 080af03c in ?? () from ./7777svr
+[20:51:58] [debug] #11 080aa13a in ?? () from ./7777svr
+[20:51:58] [debug] #12 f7442e46 in __libc_start_main () from /lib/i386-linux-gnu/i686/cmov/libc.so.6
+[20:51:58] [debug] #13 0804b4e1 in ?? () from ./7777svr</pre>
+</div>
+Can someone confirm this bug? We destroy about 50 vehicles before crash. <br />
+<br />
+Cheers
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  15.09.2015
+<br />
+<br />
+confirm
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> -  15.09.2015
+<br />
+<br />
+Also, if we try to disable the vehicle objective under OnVehicleDeath with SetVehicleParamsEx, it will not disappear until respawn.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> -  15.09.2015
+<br />
+<br />
+is there something with restart?<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				[20:51:55] 7 == 7<br />
+[20:51:58] [debug] Server crashed due to an unknown error<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>3 seconds after
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member89d1.html?action=profile&amp;uid=141017">cawfee</a> -  18.11.2016
+<br />
+<br />
+Confirmed (been over a year now... I know)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member02f6.html?action=profile&amp;uid=319896">NeXTGoD</a> -  03.09.2018
+<br />
+<br />
+This bug is still affecting my server very badly version 0.3.7-R2<br />
+<br />
+is there any fix for it<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member1ffa.html?action=profile&amp;uid=309269">RogueDrifter</a> -  03.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NeXTGoD</strong><br />
+<a href="showthreadb650.html?pid=4048466#pid4048466" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This bug is still affecting my server very badly version 0.3.7-R2<br />
+<br />
+is there any fix for it<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/></div>
+</td>
+</tr>
+</table>
+</div>Don't destroy vehicles under OnVehicleDeath??
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member02f6.html?action=profile&amp;uid=319896">NeXTGoD</a> -  03.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>RogueDrifter</strong><br />
+<a href="showthread62cd.html?pid=4048513#pid4048513" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Don't destroy vehicles under OnVehicleDeath??</div>
+</td>
+</tr>
+</table>
+</div>Nope, the public is empty
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member1ffa.html?action=profile&amp;uid=309269">RogueDrifter</a> -  03.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NeXTGoD</strong><br />
+<a href="showthread799b.html?pid=4048535#pid4048535" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Nope, the public is empty</div>
+</td>
+</tr>
+</table>
+</div>Show server logs using crashdetect.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member02f6.html?action=profile&amp;uid=319896">NeXTGoD</a> -  03.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>RogueDrifter</strong><br />
+<a href="showthread195d.html?pid=4048539#pid4048539" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Show server logs using crashdetect.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">[03/09/2018 16:05:40] OnPlayerSpawn(1)
+[03/09/2018 16:05:40] CountdownPlayer(1,3)
+[03/09/2018 16:05:43] OnVehicleDeath(4)
+[03/09/2018 16:05:43] CountdownPlayer(1,2)
+[03/09/2018 16:05:43] [debug] Server crashed due to an unknown error
+[03/09/2018 16:05:44] [debug] Native backtrace:
+[03/09/2018 16:05:44] [debug] #0 b7355ed6 in _Z13GetStackTraceRSt6vectorI10StackFrameSaIS0_EEPv () from plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] #1 b734e210 in _ZN18CrashDetectHandler20PrintNativeBacktraceERSoRKN2os7ContextE () from plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] #2 b734f05c in _ZN18CrashDetectHandler20PrintNativeBacktraceERKN2os7ContextE () from plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] #3 b734fbb6 in _ZN18CrashDetectHandler7OnCrashERKN2os7ContextE () from plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] #4 b73555c2 in ?? () from plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] #5 b76fe600 in __kernel_rt_sigreturn () from linux-gate.so.1
+[03/09/2018 16:05:44] [debug] #6 0814b4bc in ?? () from ./samp8888_6551
+[03/09/2018 16:05:44] [debug] #7 0814cccf in ?? () from ./samp8888_6551
+[03/09/2018 16:05:44] [debug] #8 080af078 in ?? () from ./samp8888_6551
+[03/09/2018 16:05:44] [debug] #9 080aa13a in ?? () from ./samp8888_6551
+[03/09/2018 16:05:44] [debug] #10 b7396723 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6
+[03/09/2018 16:05:44] [debug] #11 0804b4e1 in ?? () from ./samp8888_6551
+[03/09/2018 16:05:44] [debug] Registers:
+[03/09/2018 16:05:44] [debug] EAX: 447a0000 EBX: 0a2ff5b0 ECX: 00000000 EDX: c511ac1b
+[03/09/2018 16:05:44] [debug] ESI: 00000004 EDI: 0a2ff67b EBP: bfcc5028 ESP: bfcc5000
+[03/09/2018 16:05:44] [debug] EIP: 0814b4bc EFLAGS: 00010246
+[03/09/2018 16:05:44] [debug] Stack:
+[03/09/2018 16:05:44] [debug] ESP+00000000: 0a2ff5bc 00000000 00000040 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000020: 00000002 0a37cf18 bfcc5048 0814cccf
+[03/09/2018 16:05:44] [debug] ESP+00000040: 00000000 08159c53 bfcc5078 080af078
+[03/09/2018 16:05:44] [debug] ESP+00000060: 081a18b4 00000000 00000000 004c4b40
+[03/09/2018 16:05:44] [debug] ESP+00000080: 0a168e78 08159c53 00000006 08159c6d
+[03/09/2018 16:05:44] [debug] ESP+000000a0: bfcc50bc b76646d6 b76c8000 b76302f3
+[03/09/2018 16:05:44] [debug] ESP+000000c0: 00010000 000022b8 00000032 0163044b
+[03/09/2018 16:05:44] [debug] ESP+000000e0: b76c8000 b76c8000 b76c95a0 b75d60a9
+[03/09/2018 16:05:44] [debug] ESP+00000100: 080494b0 b76c9784 b74edd64 081a1880
+[03/09/2018 16:05:44] [debug] ESP+00000120: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000140: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000160: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000180: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+000001a0: b74ed3a4 b7720000 081505cb b74ed000
+[03/09/2018 16:05:44] [debug] ESP+000001c0: 00000001 bfcc5254 bfcc525c b770de9a
+[03/09/2018 16:05:44] [debug] ESP+000001e0: 080494b0 b74ed000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000200: 00000000 00000000 00000001 0804b4c0
+[03/09/2018 16:05:44] [debug] ESP+00000220: 00000001 0804b4c0 00000000 0804b4e1
+[03/09/2018 16:05:44] [debug] ESP+00000240: 081505b0 b770e350 bfcc524c 0000001c
+[03/09/2018 16:05:44] [debug] ESP+00000260: bfcc5eb1 bfcc5ec1 bfcc5ee6 bfcc5ef0
+[03/09/2018 16:05:44] [debug] ESP+00000280: bfcc5f62 bfcc5f6f bfcc5fa6 bfcc5fc5
+[03/09/2018 16:05:44] [debug] ESP+000002a0: 00000021 b76fe000 00000010 bfebfbff
+[03/09/2018 16:05:44] [debug] ESP+000002c0: 00000003 08048034 00000004 00000020
+[03/09/2018 16:05:44] [debug] ESP+000002e0: 00000008 00000000 00000009 0804b4c0
+[03/09/2018 16:05:44] [debug] ESP+00000300: 0000000d 000003e8 0000000e 000003e8
+[03/09/2018 16:05:44] [debug] ESP+00000320: 0000001f bfcc5fe8 0000000f bfcc534b
+[03/09/2018 16:05:44] [debug] ESP+00000340: c40c55b9 d0b79f9a 6964cb19 00363836
+[03/09/2018 16:05:44] [debug] ESP+00000360: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+00000380: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+000003a0: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+000003c0: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] ESP+000003e0: 00000000 00000000 00000000 00000000
+[03/09/2018 16:05:44] [debug] Loaded modules:
+[03/09/2018 16:05:44] [debug] 00000000 - 00187d1f samp8888_6551
+[03/09/2018 16:05:44] [debug] b7700000 - b7700704 linux-gate.so.1
+[03/09/2018 16:05:44] [debug] b76e8000 - b76ea81f /lib/i386-linux-gnu/libdl.so.2
+[03/09/2018 16:05:44] [debug] b76cd000 - b76e72f3 /lib/i386-linux-gnu/libpthread.so.0
+[03/09/2018 16:05:44] [debug] b7553000 - b76d63b3 /usr/lib/i386-linux-gnu/libstdc++.so.6
+[03/09/2018 16:05:44] [debug] b750e000 - b7551ab7 /lib/i386-linux-gnu/libm.so.6
+[03/09/2018 16:05:44] [debug] b74f1000 - b750d3c4 /lib/i386-linux-gnu/libgcc_s.so.1
+[03/09/2018 16:05:44] [debug] b737d000 - b74f8ddb /lib/i386-linux-gnu/libc.so.6
+[03/09/2018 16:05:44] [debug] b76ff000 - b771fd6c /lib/ld-linux.so.2
+[03/09/2018 16:05:44] [debug] b7337000 - b7378e08 plugins/crashdetect.so
+[03/09/2018 16:05:44] [debug] b7272000 - b7336bcf plugins/streamer.so
+[03/09/2018 16:05:44] [debug] b76f2000 - b76f9093 /lib/i386-linux-gnu/librt.so.1
+[03/09/2018 16:05:44] [debug] b703b000 - b7278854 plugins/YSF.so
+[03/09/2018 16:05:44] [debug] b702e000 - b7039790 plugins/sscanf.so
+[03/09/2018 16:05:44] [debug] b7028000 - b702b5d8 plugins/MapAndreas.so
+[03/09/2018 16:05:44] [debug] b6fe5000 - b6ff03ef /lib/i386-linux-gnu/libnss_files.so.2</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member02f6.html?action=profile&amp;uid=319896">NeXTGoD</a> -  07.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>RogueDrifter</strong><br />
+<a href="showthread195d.html?pid=4048539#pid4048539" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Show server logs using crashdetect.</div>
+</td>
+</tr>
+</table>
+</div>UPDATE: Day 4 has passed without any crashes, so I think I've fixed it with ( vehicleid != INVALID_VEHICLE_ID ) check before destroying the vehicle.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="memberf50c.html?action=profile&amp;uid=213864">ashleymeah</a> -  09.09.2018
+<br />
+<br />
+This is interesting, this is a few years ago but I ran a script that did this with no issue but another option here to stay clear of this issue is to destroy the vehicle in "OnVehicleSpawn" with a variable to allow the first spawn.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> -  09.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ashleymeah</strong><br />
+<a href="showthread352f.html?pid=4050246#pid4050246" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This is interesting, this is a few years ago but I ran a script that did this with no issue but another option here to stay clear of this issue is to destroy the vehicle in "OnVehicleSpawn" with a variable to allow the first spawn.</div>
+</td>
+</tr>
+</table>
+</div>No, the solution is to check for the invalid vehicle before destroying it obviously...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member587e.html?action=profile&amp;uid=198674">Graber</a> -  10.09.2018
+<br />
+<br />
+The original error shows a vehicle being destroyed inside a foreach loop, in other words, removing an item from an iterator inside a loop, which is known with YSI to cause problems.<br />
+<br />
+Although maybe the error could be a result of a SA-MP bug, but first a repro should be made without any other includes.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server crash when destroyvehicle - <a href="member5ba7.html?action=profile&amp;uid=173463">AmigaBlizzard</a> -  16.09.2018
+<br />
+<br />
+Or you could set a flag for that vehicle and destroy it under OnVehicleSpawn in case the flag was set.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

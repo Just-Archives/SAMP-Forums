@@ -1,0 +1,244 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> SA-MP 0.3z R2-2 server update - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This update is for SA-MP server owners only If updating from an existing 0.3z server: you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in t" />
+<link rel="canonical" href="showthread14a6.html?tid=506214" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread14a6.html?tid=506214">SA-MP 0.3z R2-2 server update</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: News and Updates (<i>https://sampforum.blast.hk/forumdisplay.php?fid=74</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  SA-MP 0.3z R2-2 server update (<em>/showthread.php?tid=506214</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreade82c.html?tid=506214&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread503c.html?tid=506214&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread67ee.html?tid=506214&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4586.html?tid=506214&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadd0db.html?tid=506214&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadcd79.html?tid=506214&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3ebc.html?tid=506214&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreada4a2.html?tid=506214&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+SA-MP 0.3z R2-2 server update - <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> -  12.04.2014
+<br />
+<br />
+<u>This update is for SA-MP server owners only</u><br />
+<br />
+<font color="Red"><b>If updating from an existing 0.3z server:</b></font> you can update simply by replacing the 'samp03svr' file on linux, or 'samp-server.exe' file on Windows, found in the 0.3z server download package.<br />
+<br />
+<font size="3"><b>SA-MP 0.3z R2-1 server</b></font><br />
+<br />
+- Fix: Specially crafted tools could attack the server's lower level networking layer, causing the server to hang and drop players.<br />
+<br />
+<font size="3"><b>SA-MP 0.3z R2-2 server</b></font><br />
+<br />
+- The default 'ackslimit' is raised from 1000 to 3000. Some servers had problems with players being erroneously kicked with an 'ackslimit' of 1000.<br />
+<br />
+- Adds OnIncomingConnection pawn callback. This is a notification when an IP address attempts a connection to the server.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> OnIncomingConnection<span style="color: #000000;">(</span>playerid, ip_address<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, port<span style="color: #000000;">)</span>;</div></div></pre>
+</div>- Adds the following pawn natives:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">native</span> BlockIpAddress<span style="color: #000000;">(</span>ip_address<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, timems<span style="color: #000000;">)</span>; <span style="color: #228822;">// blocks an IP address from further communication (wildcards allowed)</span><br/><span style="color: #2222BB;">native</span> UnBlockIpAddress<span style="color: #000000;">(</span>ip_address<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// IP unblock</span><br/><span style="color: #2222BB;">native</span> SendDeathMessageToPlayer<span style="color: #000000;">(</span>playerid, killer, killee, weapon<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">native</span> CreateExplosionForPlayer<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>X, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>Y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>Z, type, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>Radius<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+- Removes the Packet Modified lines from the server log.<br />
+- [death] [kill] [nick] messages won't be written to the server log if 'chatlogging' is 0.<br />
+<br />
+Downloads:<br />
+<br />
+SA-MP 0.3z R2-2 Linux Server: <a href="http://files.sa-mp.com/samp03zsvr_R2-2.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R2-2.tar.gz</a><br />
+SA-MP 0.3z R2-2 Windows Server: <a href="http://files.sa-mp.com/samp03z_svr_R2-2_win32.zip" target="_blank">http://files.sa-mp.com/samp03z_svr_R2-2_win32.zip</a><br />
+SA-MP 0.3z R2-2 Linux Server (1000 max player): <a href="http://files.sa-mp.com/samp03zsvr_R2-2-1000p.tar.gz" target="_blank">http://files.sa-mp.com/samp03zsvr_R2-2-1000p.tar.gz</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member939e.html?action=profile&amp;uid=174033">StuartD</a> -  12.04.2014
+<br />
+<br />
+Awesome Sir Kalcor.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member050f.html?action=profile&amp;uid=224778">Mriss</a> -  12.04.2014
+<br />
+<br />
+2nd  Nice, thanks Kal
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="memberbe7b.html?action=profile&amp;uid=224329">Faizaan</a> -  12.04.2014
+<br />
+<br />
+LOL Im gettin it
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member87ae.html?action=profile&amp;uid=65161">Flake.</a> -  12.04.2014
+<br />
+<br />
+Very nice indeed, cheers.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member96b6.html?action=profile&amp;uid=95148">26_RUSSS</a> -  12.04.2014
+<br />
+<br />
+thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member2b25.html?action=profile&amp;uid=138992">gtakillerIV</a> -  12.04.2014
+<br />
+<br />
+Thanks.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  12.04.2014
+<br />
+<br />
+Thanks Kalcor!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member0618.html?action=profile&amp;uid=38224">Span1ard</a> -  12.04.2014
+<br />
+<br />
+thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member15ac.html?action=profile&amp;uid=123666">Johurt</a> -  12.04.2014
+<br />
+<br />
+Thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member45bc.html?action=profile&amp;uid=208607">Sublime</a> -  12.04.2014
+<br />
+<br />
+Works at some point, but at the other times it won\'t stop the attack at all. Am going to write a report on it soon.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="memberdc99.html?action=profile&amp;uid=223475">sampsvr</a> -  12.04.2014
+<br />
+<br />
+Thx <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member3ccf.html?action=profile&amp;uid=157025">im</a> -  12.04.2014
+<br />
+<br />
+nice.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="memberd935.html?action=profile&amp;uid=42830">CyNiC</a> -  12.04.2014
+<br />
+<br />
+We were waiting for this due to these attacks and I\'ll can give some feedback for you later regarding this update. Thank\'s.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> -  12.04.2014
+<br />
+<br />
+Thanks a bunch!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : SA-MP 0.3z R2 server update - <a href="member7971.html?action=profile&amp;uid=45736">Elorreli</a> -  12.04.2014
+<br />
+<br />
+Thanks a lot <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="memberbcee.html?action=profile&amp;uid=228820">iBanner</a> -  12.04.2014
+<br />
+<br />
+Good job! Thanks a lot for this! Wooo!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member78e4.html?action=profile&amp;uid=185654">Ke_NiReM</a> -  12.04.2014
+<br />
+<br />
+Awesome Bro (y) , Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member6a39.html?action=profile&amp;uid=191020">Silicium</a> -  12.04.2014
+<br />
+<br />
+awsm
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3z R2 server update - <a href="member65d7.html?action=profile&amp;uid=188473">DRUNKY</a> -  12.04.2014
+<br />
+<br />
+THANKS!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

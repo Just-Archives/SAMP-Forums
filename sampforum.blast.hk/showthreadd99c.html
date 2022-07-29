@@ -1,0 +1,868 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3z R2 client update (optional)</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "e9f141596a3af93fa15b7dbae5efb1d5";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="Quote: Originally Posted by Khanz Remove your mods. The health bar is the one above other players. Why would you call me &quot;guilty&quot; straight away, and saying that I am having mods installed? Keep your d" />
+<link rel="canonical" href="showthreadbd53.html?tid=544585" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="e9f141596a3af93fa15b7dbae5efb1d5" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthread9496.html?mode=linear&amp;tid=544585&amp;pid=3247013#pid3247013">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3z R2 client update (optional)
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3247013"></a>
+<div class="post classic " style="" id="post_3247013">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2ee2.html?action=profile&amp;uid=85372"><img src="uploads/avatars/85372.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2ee2.html?action=profile&amp;uid=85372"><s>Riddick94</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,767<br />
+	Threads: 124<br />
+	Joined: Mar 2010
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread81ff.html?tid=544585&amp;pid=3247013#pid3247013" title="Re: SA-MP 0.3z R2 client update (optional)">#41</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 41 by Riddick94" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.11.2014, 13:03 <span class="post_edit" id="edited_by_3247013"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3247013">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Khanz</strong><br />
+<a href="showthread1822.html?pid=3246452#pid3246452" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Remove your mods.<br/><br />
+The health bar is the one above other players.</div>
+</td>
+</tr>
+</table>
+</div>Why would you call me "guilty" straight away, and saying that I am having mods installed? Keep your distance.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Whitetiger</strong><br />
+<a href="showthread6540.html?pid=3246600#pid3246600" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">That\'s odd. I\'m on an Intel card as well and I\'m not having that issue.</div>
+</td>
+</tr>
+</table>
+</div>Happens sometimes to me, sometimes when I reinstall my GTA - it doesn\'t happened, but other times it does. It might be the laptop problem, I am not having a problem with it.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>DaniceMcHarley</strong><br />
+<a href="showthreade3a1.html?pid=3246780#pid3246780" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You were unable to see the player\'s health and armour bar if you had intel graphics card, now it\'s fixed after this update.</div>
+</td>
+</tr>
+</table>
+</div>That\'s more like it. I can\'t stand Kalcor\'s description of his updates. Well, nevermind.<br />
+<br/><br />
+Sorted.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3247013">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search898e.html?action=finduser&amp;uid=85372" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply1a64.html?tid=544585&amp;replyto=3247013" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadde92.html?tid=544585&amp;action=nextoldest">Next Oldest</a> | <a href="showthreade2e9.html?tid=544585&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="544585" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread1315.html?tid=544585&amp;pid=3245069&amp;mode=threaded">SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 02.11.2014, 16:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1936-3.html?tid=544585&amp;pid=3245077&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 02.11.2014, 16:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf565-2.html?tid=544585&amp;pid=3245078&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 02.11.2014, 16:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ade.html?tid=544585&amp;pid=3245080&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member723c.html?action=profile&amp;uid=7058">Redirect Left</a> - 02.11.2014, 16:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd81f.html?tid=544585&amp;pid=3245082&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 02.11.2014, 16:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb57c-2.html?tid=544585&amp;pid=3245087&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 02.11.2014, 16:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcda6.html?tid=544585&amp;pid=3245096&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberb930.html?action=profile&amp;uid=142377">awsomedude</a> - 02.11.2014, 16:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread60fb-2.html?tid=544585&amp;pid=3245101&amp;mode=threaded">AW: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member1854.html?action=profile&amp;uid=149189">Mellnik</a> - 02.11.2014, 16:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1afd.html?tid=544585&amp;pid=3245111&amp;mode=threaded">Re: AW: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 02.11.2014, 16:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread090c-3.html?tid=544585&amp;pid=3245137&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberb4e2.html?action=profile&amp;uid=42013">StreetGT</a> - 02.11.2014, 17:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a4c.html?tid=544585&amp;pid=3245159&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member27f3.html?action=profile&amp;uid=138844">DanishHaq</a> - 02.11.2014, 17:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5ea1.html?tid=544585&amp;pid=3245170&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 02.11.2014, 17:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread519a-2.html?tid=544585&amp;pid=3245198&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberaecc.html?action=profile&amp;uid=143957">Tamer</a> - 02.11.2014, 17:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0654-3.html?tid=544585&amp;pid=3245210&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberd935.html?action=profile&amp;uid=42830">CyNiC</a> - 02.11.2014, 17:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread87f6.html?tid=544585&amp;pid=3245260&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 02.11.2014, 18:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade45f.html?tid=544585&amp;pid=3245278&amp;mode=threaded">Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> - 02.11.2014, 19:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadec43.html?tid=544585&amp;pid=3245287&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberc9c5.html?action=profile&amp;uid=141721">Dredd</a> - 02.11.2014, 19:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadedaa-3.html?tid=544585&amp;pid=3245290&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 02.11.2014, 19:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1c31.html?tid=544585&amp;pid=3245330&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberd6f0.html?action=profile&amp;uid=114">[NS]Noobie</a> - 02.11.2014, 19:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread61f7-3.html?tid=544585&amp;pid=3245409&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> - 02.11.2014, 21:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade2b5.html?tid=544585&amp;pid=3245416&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> - 02.11.2014, 21:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread74f5.html?tid=544585&amp;pid=3245498&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member445e.html?action=profile&amp;uid=159175">Matt</a> - 02.11.2014, 23:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7d17.html?tid=544585&amp;pid=3245593&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7f29.html?action=profile&amp;uid=156573">Amir_Nevermore</a> - 03.11.2014, 05:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d6b-2.html?tid=544585&amp;pid=3245595&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member2df4.html?action=profile&amp;uid=133179">Banana_Ghost</a> - 03.11.2014, 05:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade527.html?tid=544585&amp;pid=3245596&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membere06c.html?action=profile&amp;uid=230293">Doranne</a> - 03.11.2014, 05:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread42c3.html?tid=544585&amp;pid=3245648&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 03.11.2014, 07:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4635-2.html?tid=544585&amp;pid=3245691&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 03.11.2014, 09:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc550.html?tid=544585&amp;pid=3245692&amp;mode=threaded">Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member8477.html?action=profile&amp;uid=191711">IvanAyuso</a> - 03.11.2014, 09:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ead-2.html?tid=544585&amp;pid=3246295&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membera68a.html?action=profile&amp;uid=220426">Runn3R</a> - 03.11.2014, 19:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaebf-2.html?tid=544585&amp;pid=3246300&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 03.11.2014, 20:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d55-2.html?tid=544585&amp;pid=3246335&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberf878.html?action=profile&amp;uid=9791">dugi</a> - 03.11.2014, 20:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd523.html?tid=544585&amp;pid=3246431&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membercb75.html?action=profile&amp;uid=240150">Toolkit</a> - 03.11.2014, 22:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb322.html?tid=544585&amp;pid=3246435&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member2ee2.html?action=profile&amp;uid=85372">Riddick94</a> - 03.11.2014, 22:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bee.html?tid=544585&amp;pid=3246452&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member20a4.html?action=profile&amp;uid=42321">Khanz</a> - 03.11.2014, 23:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6209-2.html?tid=544585&amp;pid=3246600&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member8f14.html?action=profile&amp;uid=15786">Whitetiger</a> - 04.11.2014, 04:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5190.html?tid=544585&amp;pid=3246608&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member04bd.html?action=profile&amp;uid=28037">OKStyle</a> - 04.11.2014, 05:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcaa8.html?tid=544585&amp;pid=3246610&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> - 04.11.2014, 05:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9275.html?tid=544585&amp;pid=3246657&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member6ae1.html?action=profile&amp;uid=155081">DaniceMcHarley</a> - 04.11.2014, 06:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread06ec-2.html?tid=544585&amp;pid=3246685&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 04.11.2014, 07:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada738.html?tid=544585&amp;pid=3246780&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member6ae1.html?action=profile&amp;uid=155081">DaniceMcHarley</a> - 04.11.2014, 09:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: SA-MP 0.3z R2 client update (optional)</strong> <span class="smalltext">- by <a href="member2ee2.html?action=profile&amp;uid=85372">Riddick94</a> - 04.11.2014, 13:03</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada05f.html?tid=544585&amp;pid=3247799&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member4dee.html?action=profile&amp;uid=179281">James_Braga</a> - 05.11.2014, 04:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7418-2.html?tid=544585&amp;pid=3248327&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member93c4.html?action=profile&amp;uid=245481">TRTDM</a> - 05.11.2014, 17:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1d55.html?tid=544585&amp;pid=3248548&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> - 05.11.2014, 21:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd705-3.html?tid=544585&amp;pid=3248684&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 06.11.2014, 00:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4654.html?tid=544585&amp;pid=3248941&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member2539.html?action=profile&amp;uid=21413">Kane_Phoenix</a> - 06.11.2014, 11:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5370-2.html?tid=544585&amp;pid=3248978&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member5afd.html?action=profile&amp;uid=220032">sampvxtreme</a> - 06.11.2014, 11:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb6f.html?tid=544585&amp;pid=3249290&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member450f.html?action=profile&amp;uid=220497">bookknp</a> - 06.11.2014, 17:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1117-2.html?tid=544585&amp;pid=3250155&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 07.11.2014, 14:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread43c0-2.html?tid=544585&amp;pid=3252581&amp;mode=threaded">Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member03f0.html?action=profile&amp;uid=106967">adri1</a> - 09.11.2014, 19:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3e55.html?tid=544585&amp;pid=3252594&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member101e.html?action=profile&amp;uid=204617">Sledgehammer</a> - 09.11.2014, 19:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8453-2.html?tid=544585&amp;pid=3253279&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 10.11.2014, 17:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9ce5.html?tid=544585&amp;pid=3254041&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> - 11.11.2014, 13:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread51e1.html?tid=544585&amp;pid=3254088&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member88a1.html?action=profile&amp;uid=217151">Toxik</a> - 11.11.2014, 15:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2b51.html?tid=544585&amp;pid=3254163&amp;mode=threaded">Respuesta: Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member03f0.html?action=profile&amp;uid=106967">adri1</a> - 11.11.2014, 16:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread55a7-2.html?tid=544585&amp;pid=3254189&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberbc15.html?action=profile&amp;uid=175232">ahmedkoki</a> - 11.11.2014, 17:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2259.html?tid=544585&amp;pid=3256183&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> - 13.11.2014, 23:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread97bb-2.html?tid=544585&amp;pid=3256326&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberbc15.html?action=profile&amp;uid=175232">ahmedkoki</a> - 14.11.2014, 05:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread36b4-2.html?tid=544585&amp;pid=3256422&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member1d56.html?action=profile&amp;uid=99758">HeLiOn_PrImE</a> - 14.11.2014, 10:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd10.html?tid=544585&amp;pid=3258569&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 16.11.2014, 11:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada625.html?tid=544585&amp;pid=3260136&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membere087.html?action=profile&amp;uid=234923">feheristi97</a> - 18.11.2014, 04:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread685a.html?tid=544585&amp;pid=3261956&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> - 20.11.2014, 15:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4962.html?tid=544585&amp;pid=3262315&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberf839.html?action=profile&amp;uid=134963">Kindred</a> - 20.11.2014, 20:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread43e4-2.html?tid=544585&amp;pid=3268433&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7dd6.html?action=profile&amp;uid=247002">AgusZ</a> - 27.11.2014, 10:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb53-3.html?tid=544585&amp;pid=3271395&amp;mode=threaded">Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member56c2.html?action=profile&amp;uid=246795">LuffyJunior</a> - 30.11.2014, 00:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread51e6.html?tid=544585&amp;pid=3271561&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member7f76.html?action=profile&amp;uid=193455">ToySoldier</a> - 30.11.2014, 07:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc19e.html?tid=544585&amp;pid=3281558&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member498b.html?action=profile&amp;uid=228918">Cookland</a> - 09.12.2014, 10:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3883.html?tid=544585&amp;pid=3284187&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberbf84.html?action=profile&amp;uid=247886">emin06</a> - 11.12.2014, 17:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread769b.html?tid=544585&amp;pid=3287098&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="membere642.html?action=profile&amp;uid=245199">Ahammad</a> - 14.12.2014, 11:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread07ba.html?tid=544585&amp;pid=3287672&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member753a.html?action=profile&amp;uid=233017">yann59</a> - 14.12.2014, 20:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd9d0.html?tid=544585&amp;pid=3292082&amp;mode=threaded">Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member6505.html?action=profile&amp;uid=97499">Elpiezas</a> - 18.12.2014, 18:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfce4.html?tid=544585&amp;pid=3292199&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberc14a.html?action=profile&amp;uid=181003">ForT</a> - 18.12.2014, 20:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4b2d.html?tid=544585&amp;pid=3292506&amp;mode=threaded">Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member28e8.html?action=profile&amp;uid=246519">0day</a> - 19.12.2014, 01:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3d99.html?tid=544585&amp;pid=3292559&amp;mode=threaded">Respuesta: Re: Respuesta: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member37f0.html?action=profile&amp;uid=170757">RafaelZam</a> - 19.12.2014, 03:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd40b.html?tid=544585&amp;pid=3293560&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberde53.html?action=profile&amp;uid=224060">kr105</a> - 20.12.2014, 06:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc382.html?tid=544585&amp;pid=3293673&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberef13.html?action=profile&amp;uid=195632">dominik523</a> - 20.12.2014, 09:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread34aa.html?tid=544585&amp;pid=3293777&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> - 20.12.2014, 11:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcff9.html?tid=544585&amp;pid=3294076&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member5077.html?action=profile&amp;uid=173981">MehranGta</a> - 20.12.2014, 15:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbed1.html?tid=544585&amp;pid=3294787&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberef41.html?action=profile&amp;uid=29295">Sew_Sumi</a> - 21.12.2014, 04:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread93f2.html?tid=544585&amp;pid=3297780&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a> - 23.12.2014, 12:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6f1e.html?tid=544585&amp;pid=3394771&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member4f72.html?action=profile&amp;uid=249700">chsulaj</a> - 06.03.2015, 18:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0579.html?tid=544585&amp;pid=3394789&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member101e.html?action=profile&amp;uid=204617">Sledgehammer</a> - 06.03.2015, 18:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7492-2.html?tid=544585&amp;pid=3404089&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 15.03.2015, 20:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade8e2.html?tid=544585&amp;pid=3440823&amp;mode=threaded">Re: SA-MP 0.3z R2 client update (optional)</a> <span class="smalltext">- by <a href="member3457.html?action=profile&amp;uid=248559">TheMafien</a> - 25.04.2015, 18:58</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthreadbd53.html?tid=544585">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-544585.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=e9f141596a3af93fa15b7dbae5efb1d5" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="544585" />
+<input type="hidden" name="pid" value="3247013" />
+
+	<input type="hidden" name="my_post_key" value="e9f141596a3af93fa15b7dbae5efb1d5" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

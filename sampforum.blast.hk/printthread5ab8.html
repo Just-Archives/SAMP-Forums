@@ -1,0 +1,474 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Complete scripting bugs list (0.3 updated) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="a_players.incSpawnPlayer - Kills the player if they are in a vehicle. native SetPlayerAmmo(playerid, weaponslot, ammo) - It asks you for the weaponslot but it should say weaponid. GetPlayerColor - Ret" />
+<link rel="canonical" href="showthread5ab8.html?tid=59486" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread5ab8.html?tid=59486">Complete scripting bugs list (0.3 updated)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Complete scripting bugs list (0.3 updated) (<em>/showthread.php?tid=59486</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadac6b.html?tid=59486&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadecca.html?tid=59486&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreada77a.html?tid=59486&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3838.html?tid=59486&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadedd6.html?tid=59486&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadba55.html?tid=59486&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Complete scripting bugs list (0.3e updated) - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  27.12.2008
+<br />
+<br />
+<font color="blue">a_players.inc</font><ul><li>SpawnPlayer - Kills the player if they are in a vehicle.</li>
+<li>native SetPlayerAmmo(playerid, weaponslot, ammo) - It asks you for the weaponslot but it should say weaponid.</li>
+<li>GetPlayerColor - Returns 0 unless SetPlayerColor has been used.</li>
+<li>GetPlayerSkin - If you change the skin id with SetSpawnInfo, GetPlayerSkin will return the new skin id if the player hasn't respawned yet and is still using the old skin.</li>
+<li>SetPlayerName - If you set to the same name but some letters are in a different case it doesn't work (eg "heLLO" to "hello").</li>
+<li>GetPlayerWeapon - If you are in a vehicle and change weapon using SetPlayerArmedWeapon, it returns the old weapon ID.</li>
+<li>ForceClassSelection - It only resets the variable when the player dies, not if he respawns (SpawnPlayer, TogglePlayerControllable 0).</li>
+<li>RemovePlayerFromVehicle - It only shows the 'exit vehicle' animation for the player being removed.</li>
+<li>GetPlayerSpecialAction - SPECIAL_ACTION_SITTING and SPECIAL_ACTION_EXIT_VEHICLE don't work.</li>
+<li>SetPlayerCheckpoint - If a checkpoint is already set it will use the size of that checkpoint instead of the new one.</li>
+<li>SetPlayerRaceCheckpoint - See SetPlayerCheckpoint.</li>
+<li>SetPlayerWorldBounds - If you hold down the aim key you can walk through world boundries.</li>
+<li>IsPlayerInCheckpoint - Variable isn't initiated until a checkpoint has been set so it returns a undetermined value.</li>
+<li>IsPlayerInRaceCheckpoint - See IsPlayerInCheckpoint.</li>
+<li>TogglePlayerSpectating - Spectating breaks if the target leaves their stream zone (teleport, enter interior).</li>
+</ul><font color="blue">a_samp.inc</font><ul><li>SetTimerEx - Arrays and strings do not work correctly - they will always pass only one string.</li>
+<li>GetWeaponName - Returns null for ids 18 (Molotov Cocktail), 44 (Thermal Goggles) and 45 (Night vision Goggles).</li>
+<li>AllowInteriorWeapons - Doesn't work - is easilly scriptable so should be removed?</li>
+<li>SetDeathDropAmount - Doesn't work - is easilly scriptable so should be removed?</li>
+<li>DisableInteriorEnterExits - If the gamemode is changed the doors aren't reenabled.</li>
+<li>CreateMenu - You can't change the width of column 2 it just uses the same as column 1.</li>
+<li>TextDrawColor - Requires the text draw to be shown again for changes to be made.</li>
+<li>TextDrawBackgroundColor - Requires the text draw to be shown again for changes to be made.</li>
+</ul><font color="blue">a_vehicles.inc</font><ul><li>GetVehicleComponentInSlot - Doesn't work for CARMODTYPE_STEREO.</li>
+<li>RepairVehicle - It doesn't work on vehicles Dune and Monster truck - maybe more.</li>
+</ul>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member8d4a.html?action=profile&amp;uid=20444">Finn</a> -  29.10.2009
+<br />
+<br />
+<b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberbad6.html?action=profile&amp;uid=24958">Sergei</a> -  29.10.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.</div>
+</td>
+</tr>
+</table>
+</div>Weapon data isn't being updated when player is in vehicle, so not much can be done for that.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  29.10.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.</div>
+</td>
+</tr>
+</table>
+</div>It works fine for me.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member6452.html?action=profile&amp;uid=40275">Burridge</a> -  29.10.2009
+<br />
+<br />
+<b>SetPlayerHealth(playerid, 0.0);</b> (Killing the player basically) dosn't work properly, it sets the player's HP to 0 just fine, but the player on his screen, can still run around, but the player is de-sycned for everyone else. You can jump of somthing high (Ish) or slap yourself (Admin command) to die properly.<br />
+<br />
+This bug also accurs if they are still alive, but have fallen of somthing high.<br />
+<br />
+The bug seems to be instant death basically.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="membere202.html?action=profile&amp;uid=58151">Jay_</a> -  29.10.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>&#36;ЂЯĢ </strong><br />
+</div>
+<div style="font-style:italic">Weapon data isn't being updated when player is in vehicle, so not much can be done for that.</div>
+</td>
+</tr>
+</table>
+</div>Off course it is. How do you think GTA know's when you've ran out of ammo when you driveby someone?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member8d4a.html?action=profile&amp;uid=20444">Finn</a> -  30.10.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BeckzyBoi </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.</div>
+</td>
+</tr>
+</table>
+</div>It works fine for me.</div>
+</td>
+</tr>
+</table>
+</div>Huh, when I use ResetPlayerWeapons and then check the weapons with GetPlayerWeaponData, it still shows the weapons even though I have reset the player's weapons.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberdac4.html?action=profile&amp;uid=12580">Joe Staff</a> -  05.11.2009
+<br />
+<br />
+In the Dialog Input box, you can exceed the maximum limit by 'pasting' (CTRL+V), but it still doesn't show up as a returned string.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member1918.html?action=profile&amp;uid=32743">mprofitt</a> -  14.11.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BeckzyBoi </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.</div>
+</td>
+</tr>
+</table>
+</div>It works fine for me.</div>
+</td>
+</tr>
+</table>
+</div>Huh, when I use ResetPlayerWeapons and then check the weapons with GetPlayerWeaponData, it still shows the weapons even though I have reset the player's weapons.</div>
+</td>
+</tr>
+</table>
+</div>I see this exact issue with RestPlayerWeapons. Is there a work around?<br />
+<br/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  14.11.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>mprofitt </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BeckzyBoi </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>ResetPlayerWeapons(playerid);</b><br />
+<br />
+- Doesn't have effect on players which are in a vehicle.</div>
+</td>
+</tr>
+</table>
+</div>It works fine for me.</div>
+</td>
+</tr>
+</table>
+</div>Huh, when I use ResetPlayerWeapons and then check the weapons with GetPlayerWeaponData, it still shows the weapons even though I have reset the player's weapons.</div>
+</td>
+</tr>
+</table>
+</div>I see this exact issue with RestPlayerWeapons. Is there a work around?<br />
+<br/></div>
+</td>
+</tr>
+</table>
+</div>It is supposed to. Check if there is any ammo for the weapon.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member8d4a.html?action=profile&amp;uid=20444">Finn</a> -  16.11.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BeckzyBoi </strong><br />
+</div>
+<div style="font-style:italic">It is supposed to. Check if there is any ammo for the weapon.</div>
+</td>
+</tr>
+</table>
+</div>It is not supposed to have different effect on foot than in vehicle, that's for sure. Either it's a GTA bug or SA-MP bug, it doesn't matter. <br />
+<br />
+ResetPlayerWeapons isn't doing what it should.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member80a0.html?action=profile&amp;uid=60179">-8oHd4N-</a> -  21.11.2009
+<br />
+<br />
+RepairVehicle body does not work on monster truck <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/> <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member177f.html?action=profile&amp;uid=14577">Karlip</a> -  21.11.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>-8oHd4N- </strong><br />
+</div>
+<div style="font-style:italic">RepairVehicle body does not work on monster truck <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/> <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>Your right, it doesn't.<br />
+<br />
+I actually never used it on Monster Trucks until 5 seconds ago.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberbad6.html?action=profile&amp;uid=24958">Sergei</a> -  30.11.2009
+<br />
+<br />
+<b>SetPlayerPosFindZ</b> doesn't seem to be working for NPCs. I have tried various things about that and it just doesn't move NPC anywhere while SetPlayerPos does.<br />
+<br />
+<br />
+EDIT (12.12.09):<br />
+<br />
+<b>OnPlayerRequestClass</b> is called two times when selecting it with shift but you restrict spawn under OnPlayerRequestSpawn. If you click on spawn button it's called only one time as it is supposed it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member8d4a.html?action=profile&amp;uid=20444">Finn</a> -  19.12.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><b>CreatePlayer3DTextLabel</b> does not work after server restart (gmx).<br />
+<br />
+When the player re-joins the server <b>CreatePlayer3DTextLabel</b> starts working fine again, but if the player is in the server over the restart it doesn't work anymore.</div>
+</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberb9e6.html?action=profile&amp;uid=15952">yezizhu</a> -  24.12.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Finn </strong><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>BeckzyBoi </strong><br />
+</div>
+<div style="font-style:italic">It is supposed to. Check if there is any ammo for the weapon.</div>
+</td>
+</tr>
+</table>
+</div>It is not supposed to have different effect on foot than in vehicle, that's for sure. Either it's a GTA bug or SA-MP bug, it doesn't matter. <br />
+<br />
+ResetPlayerWeapons isn't doing what it should.</div>
+</td>
+</tr>
+</table>
+</div>My opion<br />
+There's no such a function calls ResetPlayerWeaponData but calls ResetPlayerWeapons
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member9b34.html?action=profile&amp;uid=12095">hansen111</a> -  29.12.2009
+<br />
+<br />
+Police vehicle lights (red &amp; blue) dont get updated onVehicleStreamIn() if no driver is in, which means if you leave a police vehicle with lights on and go out of range and come back in range (onVehicleStreamIn()) the lights are off although they where left on. As we cant control these lights with a function it cant be corrected scriptwise in onVehicleStreamIn() and makes it impossible to see if the vehicle is in code 3 or just stopped for any normal reason.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member4d8d.html?action=profile&amp;uid=48013">HydraX</a> -  10.01.2010
+<br />
+<br />
+This is more of a 0.3 client bug..<br />
+When You reach the max number of letters in a line it passes your screen instead of making a new line.. or is that what \n is for?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="memberac49.html?action=profile&amp;uid=4995">De[M]oN</a> -  18.01.2010
+<br />
+<br />
+fseek does not work after using fread/fwrite/fgetchar/freadblock etc.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Complete bugs list (0.3 updated) - <a href="member9fe3.html?action=profile&amp;uid=40114">shady91</a> -  20.01.2010
+<br />
+<br />
+i have it so that when a vehicle streams in it auto mod's them witch works fine, but when i make it so that rims go onto a monster truck but it dosen't work anymore it used to now it just doesn't work nomore since 0.3 r4. my codes fine trust me i know if you want to see it ill show you it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

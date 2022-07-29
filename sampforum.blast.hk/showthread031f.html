@@ -1,0 +1,871 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Fix for crash on load in Windows 7/8</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "1f85b37f44527f3d8e1aa6bac17a8253";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="It works but after 100%, it shows another error message any help please?" />
+<link rel="canonical" href="showthreada60e.html?tid=103182" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="1f85b37f44527f3d8e1aa6bac17a8253" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay3c85.html?fid=16">Client Support</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthread1cb7-2.html?mode=linear&amp;tid=103182&amp;pid=511562#pid511562">Linear Mode</a></span>
+				</div>
+				
+					Fix for crash on load in Windows 7/8
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid511562"></a>
+<div class="post classic " style="" id="post_511562">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member0a62.html?action=profile&amp;uid=73000"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member0a62.html?action=profile&amp;uid=73000">Darkside210</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1<br />
+	Threads: 0<br />
+	Joined: Dec 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationc2ce.html?uid=73000"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread6f5d.html?tid=103182&amp;pid=511562#pid511562" title="Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users">#21</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 21 by Darkside210" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.01.2010, 09:09 <span class="post_edit" id="edited_by_511562"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_511562">
+		It works but after 100%, it shows another error message <br />
+any help please?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_511562">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc500.html?action=finduser&amp;uid=73000" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply59b0-2.html?tid=103182&amp;replyto=511562" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthread8d13.html?tid=103182&amp;action=nextoldest">Next Oldest</a> | <a href="showthread7b62.html?tid=103182&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="103182" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread9610-2.html?tid=103182&amp;pid=429944&amp;mode=threaded">Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="membera9b7.html?action=profile&amp;uid=5834">tomozj</a> - 18.10.2009, 19:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade355-2.html?tid=103182&amp;pid=430857&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberf4c0-2.html?action=profile&amp;uid=54196">athens1908</a> - 19.10.2009, 17:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread23cc-2.html?tid=103182&amp;pid=430960&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="membera9b7.html?action=profile&amp;uid=5834">tomozj</a> - 19.10.2009, 18:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread748f-3.html?tid=103182&amp;pid=431047&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member407d.html?action=profile&amp;uid=36368">Toyotaspeed</a> - 19.10.2009, 19:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7846-4.html?tid=103182&amp;pid=433568&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member286e.html?action=profile&amp;uid=40602">Nitemare3219</a> - 21.10.2009, 21:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada94b-2.html?tid=103182&amp;pid=434429&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="membera9b7.html?action=profile&amp;uid=5834">tomozj</a> - 22.10.2009, 20:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadad1b-4.html?tid=103182&amp;pid=434453&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member4537.html?action=profile&amp;uid=18866">KevKo95</a> - 22.10.2009, 20:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd4e-2.html?tid=103182&amp;pid=435385&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member8db0.html?action=profile&amp;uid=16916">ledzep</a> - 23.10.2009, 22:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc079-3.html?tid=103182&amp;pid=436847&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberc1f1.html?action=profile&amp;uid=25964">kevinwalter</a> - 25.10.2009, 14:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread57b7-4.html?tid=103182&amp;pid=438792&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberb516.html?action=profile&amp;uid=69874">Shoie13</a> - 27.10.2009, 14:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadea89-2.html?tid=103182&amp;pid=440728&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member5380.html?action=profile&amp;uid=69854">iron_war_lord</a> - 29.10.2009, 08:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5130.html?tid=103182&amp;pid=443209&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member556c.html?action=profile&amp;uid=70313">wilis</a> - 31.10.2009, 22:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd4d-3.html?tid=103182&amp;pid=444669&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberc5c1.html?action=profile&amp;uid=63962">ReaperzYang</a> - 02.11.2009, 11:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf05a-2.html?tid=103182&amp;pid=449286&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member112d.html?action=profile&amp;uid=65178">[O_o]Alexxx</a> - 07.11.2009, 17:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadee98-4.html?tid=103182&amp;pid=449922&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberdec1.html?action=profile&amp;uid=39276">Company</a> - 08.11.2009, 10:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcc56-2.html?tid=103182&amp;pid=451565&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member0599.html?action=profile&amp;uid=39793">Klutty</a> - 09.11.2009, 19:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread67f7.html?tid=103182&amp;pid=453394&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberdec1.html?action=profile&amp;uid=39276">Company</a> - 10.11.2009, 23:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb63-3.html?tid=103182&amp;pid=459712&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member6452.html?action=profile&amp;uid=40275">Burridge</a> - 16.11.2009, 08:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0bc-4.html?tid=103182&amp;pid=465245&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member3fd6.html?action=profile&amp;uid=46250">zukane2</a> - 22.11.2009, 00:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0b9e-2.html?tid=103182&amp;pid=498291&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member1020.html?action=profile&amp;uid=10550">Anddos</a> - 24.12.2009, 18:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</strong> <span class="smalltext">- by <a href="member0a62.html?action=profile&amp;uid=73000">Darkside210</a> - 04.01.2010, 09:09</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadba16.html?tid=103182&amp;pid=516243&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member1901.html?action=profile&amp;uid=28079">Jay_Duck</a> - 08.01.2010, 03:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfe16.html?tid=103182&amp;pid=517969&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member5edd.html?action=profile&amp;uid=77059">patryk0o0</a> - 09.01.2010, 13:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadff7b.html?tid=103182&amp;pid=522897&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member27af.html?action=profile&amp;uid=42432">KnooL</a> - 13.01.2010, 17:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread65c8.html?tid=103182&amp;pid=522924&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member5edd.html?action=profile&amp;uid=77059">patryk0o0</a> - 13.01.2010, 17:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbc14.html?tid=103182&amp;pid=525423&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member87c1-2.html?action=profile&amp;uid=77771">Mittnamn</a> - 16.01.2010, 12:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread41de.html?tid=103182&amp;pid=530251&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member9204.html?action=profile&amp;uid=60030">addysnow1</a> - 20.01.2010, 19:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade7f7.html?tid=103182&amp;pid=530741&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member7347.html?action=profile&amp;uid=78325">EmricKaljo</a> - 21.01.2010, 11:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade7d7-2.html?tid=103182&amp;pid=530743&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member7347.html?action=profile&amp;uid=78325">EmricKaljo</a> - 21.01.2010, 11:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6d45.html?tid=103182&amp;pid=531691&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member4d8d.html?action=profile&amp;uid=48013">HydraX</a> - 22.01.2010, 01:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd9bd-2.html?tid=103182&amp;pid=541570&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member101d.html?action=profile&amp;uid=61061">Mitsiexxl</a> - 30.01.2010, 07:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6683-2.html?tid=103182&amp;pid=560578&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member84ab.html?action=profile&amp;uid=81115">Neo Sasuke</a> - 15.02.2010, 13:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd5d4-4.html?tid=103182&amp;pid=655449&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member0c17.html?action=profile&amp;uid=5525">Tr1viUm</a> - 25.04.2010, 11:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadce93-3.html?tid=103182&amp;pid=667030&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member413f.html?action=profile&amp;uid=89988">Joonas15</a> - 04.05.2010, 12:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf286-2.html?tid=103182&amp;pid=713985&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member50e4.html?action=profile&amp;uid=14179">Brad</a> - 07.06.2010, 23:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5ee0.html?tid=103182&amp;pid=756305&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="membere2d4.html?action=profile&amp;uid=65523">Lilcuete</a> - 17.07.2010, 16:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6f2e-3.html?tid=103182&amp;pid=783975&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member62e5.html?action=profile&amp;uid=101224">muhib777</a> - 08.08.2010, 22:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada781-2.html?tid=103182&amp;pid=791746&amp;mode=threaded">AW: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member6dc0.html?action=profile&amp;uid=97317">Manuel1948</a> - 14.08.2010, 01:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread83f0-3.html?tid=103182&amp;pid=796729&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberf744.html?action=profile&amp;uid=22349">Mike Garber</a> - 17.08.2010, 11:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread00ee-4.html?tid=103182&amp;pid=868951&amp;mode=threaded">Re: AW: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member02fb.html?action=profile&amp;uid=55467">Retardedwolf</a> - 11.10.2010, 08:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread288b.html?tid=103182&amp;pid=868960&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member2ca8.html?action=profile&amp;uid=100577">••• ĤБĶБM •••</a> - 11.10.2010, 09:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4438-2.html?tid=103182&amp;pid=873998&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="memberaabe.html?action=profile&amp;uid=34494">DiggingForFire</a> - 15.10.2010, 23:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8327-6.html?tid=103182&amp;pid=903249&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member8c93.html?action=profile&amp;uid=39403">SugarD-x</a> - 08.11.2010, 20:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8114.html?tid=103182&amp;pid=987352&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member0823.html?action=profile&amp;uid=47181">lost_navy</a> - 30.12.2010, 12:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc328-3.html?tid=103182&amp;pid=988399&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member0823.html?action=profile&amp;uid=47181">lost_navy</a> - 30.12.2010, 19:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread02d8-3.html?tid=103182&amp;pid=997979&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member8c93.html?action=profile&amp;uid=39403">SugarD-x</a> - 04.01.2011, 08:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5b94-2.html?tid=103182&amp;pid=1026015&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member1447.html?action=profile&amp;uid=109706">Ext[R]eme</a> - 19.01.2011, 15:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd9b4-3.html?tid=103182&amp;pid=1030428&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberb679.html?action=profile&amp;uid=116636">Killa_Billa1</a> - 22.01.2011, 04:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1ba7.html?tid=103182&amp;pid=1082135&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member496a.html?action=profile&amp;uid=116002">Marcie</a> - 21.02.2011, 14:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada75b.html?tid=103182&amp;pid=1197706&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberbcdb.html?action=profile&amp;uid=127154">SmallGekasCBCNR</a> - 08.05.2011, 06:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddaaa-4.html?tid=103182&amp;pid=1200075&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberbcdb.html?action=profile&amp;uid=127154">SmallGekasCBCNR</a> - 09.05.2011, 18:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbe9e-2.html?tid=103182&amp;pid=1200161&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberbcdb.html?action=profile&amp;uid=127154">SmallGekasCBCNR</a> - 09.05.2011, 19:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3839.html?tid=103182&amp;pid=1204950&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberdd01.html?action=profile&amp;uid=74783">park4bmx</a> - 13.05.2011, 21:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c26-2.html?tid=103182&amp;pid=1301453&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberfdfc.html?action=profile&amp;uid=122498">Donya</a> - 20.07.2011, 03:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfe98-3.html?tid=103182&amp;pid=1301478&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberf6d4.html?action=profile&amp;uid=80385">Scenario</a> - 20.07.2011, 04:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddf3a.html?tid=103182&amp;pid=1301482&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberfdfc.html?action=profile&amp;uid=122498">Donya</a> - 20.07.2011, 04:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcc93-3.html?tid=103182&amp;pid=1321259&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member4229.html?action=profile&amp;uid=67512">jamesbond007</a> - 31.07.2011, 21:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaded22-4.html?tid=103182&amp;pid=1358156&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberaab4.html?action=profile&amp;uid=19385">hoodline</a> - 20.08.2011, 13:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0c30-2.html?tid=103182&amp;pid=1358387&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member0b42.html?action=profile&amp;uid=38655">x-cutter</a> - 20.08.2011, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb9f2.html?tid=103182&amp;pid=1358789&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member8c93.html?action=profile&amp;uid=39403">SugarD-x</a> - 20.08.2011, 19:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ca3.html?tid=103182&amp;pid=1383642&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member818c.html?action=profile&amp;uid=136894">.exe</a> - 04.09.2011, 05:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8c46-2.html?tid=103182&amp;pid=1542192&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberff65.html?action=profile&amp;uid=146186">RepzThat</a> - 28.11.2011, 01:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade74d-3.html?tid=103182&amp;pid=1542602&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="membercc98.html?action=profile&amp;uid=130429">Egyptian Trooper</a> - 28.11.2011, 11:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada2df.html?tid=103182&amp;pid=1548873&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member32df.html?action=profile&amp;uid=140364">jtweak</a> - 01.12.2011, 23:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9997.html?tid=103182&amp;pid=1548879&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberfa5f.html?action=profile&amp;uid=138934">Thresholdold</a> - 01.12.2011, 23:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddd31.html?tid=103182&amp;pid=1549051&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member32df.html?action=profile&amp;uid=140364">jtweak</a> - 02.12.2011, 04:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4865-4.html?tid=103182&amp;pid=1549055&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member32df.html?action=profile&amp;uid=140364">jtweak</a> - 02.12.2011, 04:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread67fa-2.html?tid=103182&amp;pid=1549237&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member32df.html?action=profile&amp;uid=140364">jtweak</a> - 02.12.2011, 09:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9f06-2.html?tid=103182&amp;pid=1593914&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member738f.html?action=profile&amp;uid=138641">NessaHD</a> - 27.12.2011, 09:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5292.html?tid=103182&amp;pid=1701766&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member8bad.html?action=profile&amp;uid=147277">FiReAlEx</a> - 28.02.2012, 11:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb9a3.html?tid=103182&amp;pid=1744346&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberce45.html?action=profile&amp;uid=155881">new121</a> - 20.03.2012, 23:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4828.html?tid=103182&amp;pid=1879325&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member5756-2.html?action=profile&amp;uid=125577">Templar_Hernandez</a> - 22.05.2012, 21:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread94e6-4.html?tid=103182&amp;pid=1932432&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="memberdefb.html?action=profile&amp;uid=169288">M3mPHi$_S3</a> - 19.06.2012, 08:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread815e.html?tid=103182&amp;pid=1953518&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member0133.html?action=profile&amp;uid=167279">Arsenol</a> - 29.06.2012, 04:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb87.html?tid=103182&amp;pid=1954096&amp;mode=threaded">Re: FIX FOR CRASHING ON LOAD FOR WINDOWS 7 USERS</a> <span class="smalltext">- by <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> - 29.06.2012, 13:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbd5b.html?tid=103182&amp;pid=1977916&amp;mode=threaded">Re: fix for crash on load in Windows7</a> <span class="smalltext">- by <a href="memberd3a6.html?action=profile&amp;uid=143992">reh_007</a> - 10.07.2012, 17:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread11aa.html?tid=103182&amp;pid=2177403&amp;mode=threaded">Re: fix for crash on load in Windows7</a> <span class="smalltext">- by <a href="member712d.html?action=profile&amp;uid=163416">Koyelz</a> - 19.10.2012, 06:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcd33.html?tid=103182&amp;pid=2207915&amp;mode=threaded">Re: fix for crash on load in Windows7</a> <span class="smalltext">- by <a href="member48cd.html?action=profile&amp;uid=14546">silvan</a> - 06.11.2012, 12:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddebf.html?tid=103182&amp;pid=2237716&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member2838.html?action=profile&amp;uid=180347">Gomuk</a> - 23.11.2012, 20:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread43bd-2.html?tid=103182&amp;pid=2439595&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member91e0.html?action=profile&amp;uid=168097">Snufkyn</a> - 21.03.2013, 20:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade719.html?tid=103182&amp;pid=2504498&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member0a58.html?action=profile&amp;uid=79298">Spydah</a> - 30.04.2013, 12:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread38cf.html?tid=103182&amp;pid=2539515&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberfb6e.html?action=profile&amp;uid=54725">Salvator_Salieri</a> - 24.05.2013, 18:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread13f6-3.html?tid=103182&amp;pid=2548453&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member5f5c.html?action=profile&amp;uid=204042">ezra112</a> - 30.05.2013, 18:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread16a2-3.html?tid=103182&amp;pid=2565039&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member2a67.html?action=profile&amp;uid=205104">jack556</a> - 11.06.2013, 12:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd112-3.html?tid=103182&amp;pid=2566478&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberc5c0.html?action=profile&amp;uid=11204">Donvalley</a> - 12.06.2013, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread14b3.html?tid=103182&amp;pid=2689835&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member4103.html?action=profile&amp;uid=214065">Cimas</a> - 09.09.2013, 06:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a8c-2.html?tid=103182&amp;pid=2711834&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member3458.html?action=profile&amp;uid=146580">Rudy_</a> - 26.09.2013, 07:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadff9e-3.html?tid=103182&amp;pid=2711886&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member705b.html?action=profile&amp;uid=214985">xHarshx</a> - 26.09.2013, 10:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0bbf.html?tid=103182&amp;pid=2711983&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member3458.html?action=profile&amp;uid=146580">Rudy_</a> - 26.09.2013, 11:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0f59.html?tid=103182&amp;pid=2713028&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member3458.html?action=profile&amp;uid=146580">Rudy_</a> - 27.09.2013, 05:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread177c.html?tid=103182&amp;pid=2721660&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member505a.html?action=profile&amp;uid=193356">Odedara</a> - 03.10.2013, 00:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf983.html?tid=103182&amp;pid=3212325&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberc5f2.html?action=profile&amp;uid=239295">vignesh007</a> - 29.09.2014, 10:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb880.html?tid=103182&amp;pid=3326576&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member280f.html?action=profile&amp;uid=164302">Jeremy95</a> - 12.01.2015, 15:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6442-4.html?tid=103182&amp;pid=3436727&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member191b.html?action=profile&amp;uid=256310">ktmydeal</a> - 21.04.2015, 02:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread257e.html?tid=103182&amp;pid=3462018&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member695c.html?action=profile&amp;uid=253449">truck8685</a> - 17.05.2015, 22:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread62b9.html?tid=103182&amp;pid=3478650&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member814c.html?action=profile&amp;uid=252258">perfectboy</a> - 04.06.2015, 12:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1c0f-3.html?tid=103182&amp;pid=3538857&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member03cb.html?action=profile&amp;uid=263637">UnknownPlayer</a> - 01.08.2015, 00:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread38c2.html?tid=103182&amp;pid=3554464&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member8645.html?action=profile&amp;uid=264629">zsomgyi</a> - 19.08.2015, 06:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8da8.html?tid=103182&amp;pid=3557077&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="membere451.html?action=profile&amp;uid=165688">sousokchay</a> - 22.08.2015, 08:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2f25-2.html?tid=103182&amp;pid=3624098&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberfa74.html?action=profile&amp;uid=270840">Dankata46</a> - 07.12.2015, 08:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7a4c.html?tid=103182&amp;pid=3629983&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member26e1.html?action=profile&amp;uid=270267">amirtiva</a> - 21.12.2015, 15:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread594b.html?tid=103182&amp;pid=3649667&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberec21.html?action=profile&amp;uid=271836">Touati</a> - 30.01.2016, 18:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread23a9-3.html?tid=103182&amp;pid=4045722&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="memberf990.html?action=profile&amp;uid=299582">NoorMustafa123</a> - 18.08.2018, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade679.html?tid=103182&amp;pid=4045731&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> - 18.08.2018, 18:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade6d8-2.html?tid=103182&amp;pid=4097060&amp;mode=threaded">Re: [0.3a] Temporary fix for crashing on load (80% ish) for Windows 7 users</a> <span class="smalltext">- by <a href="member88f3.html?action=profile&amp;uid=330440">JamesWillian</a> - 30.04.2019, 03:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5c52.html?tid=103182&amp;pid=4101809&amp;mode=threaded">Re: Fix for crash on load in Windows 7/8</a> <span class="smalltext">- by <a href="member781a.html?action=profile&amp;uid=301831">Thorn33</a> - 10.06.2019, 21:32</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthreada60e.html?tid=103182">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" selected="selected">-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay3c85.html?fid=16">Client Support</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-103182.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=1f85b37f44527f3d8e1aa6bac17a8253" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="103182" />
+<input type="hidden" name="pid" value="511562" />
+
+	<input type="hidden" name="my_post_key" value="1f85b37f44527f3d8e1aa6bac17a8253" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

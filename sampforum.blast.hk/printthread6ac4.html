@@ -1,0 +1,215 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [0.3.7] SetPlayerInterior bug - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Can't set player interior if player was never spawned. SetPlayerInterior returns 1 ( success ), but GetPlayerInterior returns 0. * I'm using spectate mode to avoid default spawn system, so it might be" />
+<link rel="canonical" href="showthread6ac4.html?tid=659443" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread6ac4.html?tid=659443">[0.3.7] SetPlayerInterior bug</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [0.3.7] SetPlayerInterior bug (<em>/showthread.php?tid=659443</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[0.3.7] SetPlayerInterior bug - <a href="memberbd4c.html?action=profile&amp;uid=296925">Spoookymon</a> -  03.10.2018
+<br />
+<br />
+Can't set player interior if player was never spawned.<br />
+<br />
+SetPlayerInterior returns 1 ( success ), but GetPlayerInterior returns 0.<br />
+<br />
+<font color="Red">* I'm using spectate mode to avoid default spawn system, so it might be part of the problem.</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="member757d.html?action=profile&amp;uid=228482">Awide</a> -  03.10.2018
+<br />
+<br />
+Show the code.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  04.10.2018
+<br />
+<br />
+This is not a proper bug report, you should have posted in the scripting help section.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="memberbd4c.html?action=profile&amp;uid=296925">Spoookymon</a> -  04.10.2018
+<br />
+<br />
+Sorry i was busy, example code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">#include &lt;a_samp&gt;
+
+forward TIMER_SetInterior( playerid );
+
+
+public OnGameModeInit()
+{
+    AddPlayerClass( 1, 207.737991, -109.019996, 1005.132812, 269.15, 26, 36, 28, 150, 0, 0 ); // CJ
+	return 1;
+}
+
+
+public OnPlayerConnect( playerid )
+{
+	ShowPlayerDialog( playerid, 1, DIALOG_STYLE_MSGBOX, "Enable spectating mode", "Click next to enable spectating mode.", "Next", "" );
+	return 1;
+}
+
+
+public OnDialogResponse( playerid, dialogid, response )
+{
+	if( dialogid == 1 )
+	{
+	    if( response )
+		{
+			TogglePlayerSpectating( playerid, 1 );
+			SetPlayerCameraPos( playerid, 207.737991, -109.019996, 1005.532812 ); // Binco interior
+			SetPlayerCameraLookAt( playerid, 207.4800, -103.9329, 1005.2578 );
+			SetTimerEx( "TIMER_SetInterior", 1000, true, "i", playerid );
+		}
+	    return 1;
+	}
+	return 1;
+}
+
+
+public TIMER_SetInterior( playerid )
+{
+	SendClientMessage( playerid, -1, "Trying to set interior..." );
+	
+	if( SetPlayerInterior( playerid, 15 ) ) print( "SetPlayerInterior returns 1" );
+	else print( "SetPlayerInterior returns 0" );
+	
+	printf( "GetPlayerInterior returns %i\n", GetPlayerInterior( playerid ) );
+	return 1;
+}
+
+
+public OnPlayerSpawn( playerid )
+{
+	SetPlayerPos( playerid, 207.737991, -109.019996, 1005.132812 );
+	return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> -  05.10.2018
+<br />
+<br />
+This probably doesn't get set correctly (by that I mean the data GetPlayerInterior fetches) because you're in a spectating state. However, you SHOULD be in the interior. Use /interior on the client side, it will tell what interior ID you're in.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="memberadf6.html?action=profile&amp;uid=263294">Variable™</a> -  05.10.2018
+<br />
+<br />
+Never encountered such bug. If you skip the class selection you'll be forced after next death unless you bypass it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="memberbd4c.html?action=profile&amp;uid=296925">Spoookymon</a> -  05.10.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>J0sh...</strong><br />
+<a href="showthread5483-2.html?pid=4056553#pid4056553" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This probably doesn't get set correctly (by that I mean the data GetPlayerInterior fetches) because you're in a spectating state. However, you SHOULD be in the interior. Use /interior on the client side, it will tell what interior ID you're in.</div>
+</td>
+</tr>
+</table>
+</div>Hmm, yes /interior is 15, but you can't see binco interior, which should be client sided ?<br />
+And, if you remove SetPlayerCam... GTA map and water disappears, so you are in interior.<br />
+<br />
+So it's GetPlayerInterior. It could be fixed with simple include, but plugins that use GetPlayerInterior ( like streamer ) would still return 0, so it's not an option, and should be fixed by Kal if possible.<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Variable™</strong><br />
+<a href="showthreadb5d9.html?pid=4056555#pid4056555" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Never encountered such bug. If you skip the class selection you'll be forced after next death unless you bypass it.</div>
+</td>
+</tr>
+</table>
+</div>Yes i'm bypass'ing it. I think that this class system should be removed, in most servers I've seen it's unused but you have to press "Spawn" to spawn in.<br />
+You don't have to remove it, just allow us to disable it. ( DisableClassSystem ? )
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [0.3.7] SetPlayerInterior bug - <a href="memberbd4c.html?action=profile&amp;uid=296925">Spoookymon</a> -  10.10.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreadcee5.html?pid=4057433#pid4057433" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Actually the bug is the fact that TogglePlayerSpectating skips class selection, which puts you in a bug state.  The fact that other things don't work from this point on isn't that surprising.</div>
+</td>
+</tr>
+</table>
+</div>Turning off spectating mode spawns and auto kicks player from server, but if you use SpawnInfo before turning off spectating mode you don't get kicked.<br />
+I have been using this "method" to skip class selection for many years now, and i haven't noticed any other problems.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

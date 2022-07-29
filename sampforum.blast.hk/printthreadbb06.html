@@ -1,0 +1,87 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> GetPlayerLastShotVector returns wrong information - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="The wiki states that &quot;If the player hit nothing, the hit positions will be 0. This means you can't currently calculate how far a bullet travels through open air. &quot;. While looking into the data, I foun" />
+<link rel="canonical" href="showthreadbb06.html?tid=661485" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadbb06.html?tid=661485">GetPlayerLastShotVector returns wrong information</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Bug Reports (<i>https://sampforum.blast.hk/forumdisplay.php?fid=20</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  GetPlayerLastShotVector returns wrong information (<em>/showthread.php?tid=661485</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+GetPlayerLastShotVector returns wrong information - <a href="member1c6d.html?action=profile&amp;uid=169426">Yashas</a> -  06.12.2018
+<br />
+<br />
+The wiki states that "If the player hit nothing, the hit positions will be 0. This means you can't currently calculate how far a bullet travels through open air. ".<br />
+<br />
+While looking into the data, I found that it does not always return (0, 0 ,0). Sometimes, it returns (X, 0, 0) where X appears to be some coordinate not anywhere close to the origin.<br />
+<br />
+Screenshots attached.<br />
+<br />
+UPDATE:<br />
+It returns a random hit position far away from origin sometimes. Screenshot attached.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 370px;
+		text-align: left;
+		overflow: auto">public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
+{
+	new data[E_SHOT_VECTOR];
+    CollectDataOPWS(data, playerid, weaponid, hittype, hitid, fX, fY, fZ);
+    
+    new buffer[1024];
+    EncodeShotVector(data, buffer);
+    
+    new Float:X, Float:Y, Float:Z, Float:x, Float:y, Float:z;
+     GetPlayerLastShotVectors(playerid, X, Y, Z, x, y, z);
+     
+    
+    fwrite(dataFile[playerid], buffer);
+    fwrite(dataFile[playerid], "\r\n");
+    
+    format(buffer, 1024, "O: %.2f %.2f %.2f H: %.2f %.2f %.2f", X, Y, Z, x, y, z);
+    SendClientMessageToAll(0x00FF00FF, buffer);
+    format(buffer, 1024, "O: %.2f %.2f %.2f H: %.2f %.2f %.2f", data[fOriginX], data[fOriginY], data[fOriginZ],
+ 								    data[fHitPosX], data[fHitPosY], data[fHitPosZ]);
+    SendClientMessageToAll(0x0000FFFF, buffer);
+    return 1;
+}</pre>
+</div>Please ignore the blue messages (they are expected to match exactly with the green messages).<br />
+<br />
+EDIT:<br />
+I checked the hittype and it's zero in both cases: (0, 0, 0) and the weird number case
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

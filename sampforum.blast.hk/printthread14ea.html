@@ -1,0 +1,271 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> SA-MP 0.3.7 R2-1 server update - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This update is for SA-MP server owners only - Adds protection against hackers who spam OnPlayerConnect messages. - Weapon ID checking after OnPlayerWeaponShot in case the script doesn't filter it. - A" />
+<link rel="canonical" href="showthread14ea.html?tid=581259" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread14ea.html?tid=581259">SA-MP 0.3.7 R2-1 server update</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP (<i>https://sampforum.blast.hk/forumdisplay.php?fid=3</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: News and Updates (<i>https://sampforum.blast.hk/forumdisplay.php?fid=74</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  SA-MP 0.3.7 R2-1 server update (<em>/showthread.php?tid=581259</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadc3dc.html?tid=581259&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread23c1.html?tid=581259&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3e06.html?tid=581259&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3449.html?tid=581259&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2c5e.html?tid=581259&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadd100.html?tid=581259&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread435e.html?tid=581259&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadd0df.html?tid=581259&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf5c9.html?tid=581259&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadfada.html?tid=581259&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread0de6.html?tid=581259&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1c51.html?tid=581259&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3a5d.html?tid=581259&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+SA-MP 0.3.7 R2-1 server update - <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> -  11.07.2015
+<br />
+<br />
+<u><b>This update is for SA-MP server owners only</b></u><br />
+<br />
+- Adds protection against hackers who spam OnPlayerConnect messages.<br />
+- Weapon ID checking after OnPlayerWeaponShot in case the script doesn't filter it.<br />
+- Actors now default to being invulnerable (this might be needed later for a bandaid rotation fix in the client).<br />
+- Adds console variable 'conncookies' (int) to disable the 0.3.7 connection cookie system.<br />
+- Adds console variable 'cookielogging' to disable logging of connection cookies requested by newly connecting players.<br />
+- Adds SHA256_PassHash() function for hashing player passwords.<br />
+<br />
+SQLite stuff:<br />
+- The sqlite functions db_open and db_query now return indexes (starting at 1) instead of memory handles. That means the server tracks the memory handles internally and won't crash if invalid handles are used.<br />
+- Several extra sqlite db_* functions have been added. Please see the a_sampdb.inc for a full list.<br />
+- Adds %q to format(). %q is the same as %s although the input will first be passed through sqlite's string escaping function.<br />
+- Adds console variable 'db_logging'. Logs sqlite db_* function errors to the main server_log.<br />
+- Adds console variable 'db_log_queries'. Logs all sqlite db_query() calls including the query string.<br />
+<br />
+Server variable system (SVars):<br />
+- The SVar system is the same as the <a href="https://sampwiki.blast.hk/wiki/Per-player_variable_system" target="_blank">PVars</a>, although the variables created are server-wide, not attached to any playerid, and persist through gamemode changes.<br />
+<br />
+The pawn functions intended to read console/config variables (GetServerVarAs*) have been deprecated due to a naming conflict with the SVar system. These functions will still work for the time being. Moving forward it's recommended you rename these functions as listed below:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">native GetConsoleVarAsString(const varname[], buffer[], len);
+native GetConsoleVarAsInt(const varname[]);
+native GetConsoleVarAsBool(const varname[]);</pre>
+</div><b><u>Update 0.3.7 R2-1:</u></b><br />
+<br />
+- Adds null value checks to sqlite db_get*. These functions would crash on invalid rows or field names.<br />
+- Updates SHA256_PassHash() sha256 implementation to fix a padding problem.<br />
+- Fixes an index problem with PVars and SVars where *GetUpperIndex would return 1 when all vars had been deleted.<br />
+<br />
+<b><u>Downloads:</u></b><br />
+<br />
+Please review the <a href="http://www.sa-mp.com/service_agreement.txt" target="_blank">SA-MP Services Agreement </a> if you wish to run a public SA-MP server.<br />
+<br />
+<u>SA-MP 0.3.7 R2-1 Linux Server:</u> <a href="http://files.sa-mp.com/samp037svr_R2-1.tar.gz" target="_blank">http://files.sa-mp.com/samp037svr_R2-1.tar.gz</a><br />
+<u>SA-MP 0.3.7 R2-1 Windows Server:</u> <a href="http://files.sa-mp.com/samp037_svr_R2-1-1_win32.zip" target="_blank">http://files.sa-mp.com/samp037_svr_R2-1-1_win32.zip</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member28e7.html?action=profile&amp;uid=98026">Danny</a> -  11.07.2015
+<br />
+<br />
+Seems nice, thanks! Personally I've always needed something like SVars.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> -  11.07.2015
+<br />
+<br />
+The native hash function was much needed so server owners finally have no excuse for not hashing their players' passwords, good work!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: SA-MP 0.3.7 R2 server update - <a href="member7b7f.html?action=profile&amp;uid=24631">Blokkmonsta</a> -  11.07.2015
+<br />
+<br />
+Thank you very much for this usefull functions.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: SA-MP 0.3.7 R2 server update - <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> -  11.07.2015
+<br />
+<br />
+Good work
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member147f.html?action=profile&amp;uid=233878">#Luca[S].</a> -  11.07.2015
+<br />
+<br />
+Nice! Thanks! =)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="memberbc04.html?action=profile&amp;uid=53564">Virtual1ty</a> -  11.07.2015
+<br />
+<br />
+Great new version, thanks for bug fixes and new functions.<br />
+Any hint on how and what for should I use the new SVar system?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="memberf4f0.html?action=profile&amp;uid=181032">[GY]Scientist</a> -  11.07.2015
+<br />
+<br />
+Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member101e.html?action=profile&amp;uid=204617">Sledgehammer</a> -  11.07.2015
+<br />
+<br />
+Thank you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - MacMillan_ -  11.07.2015
+<br />
+<br />
+Thank you, kyeman.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member63fe.html?action=profile&amp;uid=238262">D3sconn3ct</a> -  11.07.2015
+<br />
+<br />
+<b>Thank you. very good <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member62ad.html?action=profile&amp;uid=6790">eakwarp</a> -  11.07.2015
+<br />
+<br />
+<img alt="" border="0" src="http://orig13.deviantart.net/9073/f/2012/134/b/3/fap_fap_fap__by_stevesjobes-d4zpb0f.jpg"/><br/><br />
+Thanks kye.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : SA-MP 0.3.7 R2 server update - <a href="member0b04.html?action=profile&amp;uid=260883">Terrorizt</a> -  11.07.2015
+<br />
+<br />
+Awesome work! Hope to see SA-MP 0.4 soon <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member13d6.html?action=profile&amp;uid=173158">cm666</a> -  11.07.2015
+<br />
+<br />
+nice
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="memberd552.html?action=profile&amp;uid=72456">davve95</a> -  11.07.2015
+<br />
+<br />
+Thanks for the update!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> -  11.07.2015
+<br />
+<br />
+This one is pretty great, but the SVars pretty much dissapoint me, they should be made more like the GVar plugin. (maybe even with one more ID which defaults to 0)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member4d07.html?action=profile&amp;uid=215954">Carper</a> -  11.07.2015
+<br />
+<br />
+Very nice, thank you. <img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.gif" title="Roll Eyes"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> -  11.07.2015
+<br />
+<br />
+Neat update!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member4cdc.html?action=profile&amp;uid=244873">JaydenJason</a> -  11.07.2015
+<br />
+<br />
+nice
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: SA-MP 0.3.7 R2 server update - <a href="member12a2.html?action=profile&amp;uid=255963">Kqly</a> -  11.07.2015
+<br />
+<br />
+Nice update!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

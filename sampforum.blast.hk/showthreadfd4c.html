@@ -1,0 +1,898 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP 0.3.7 R3 client update (optional)</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "156ddbc2053d5a2558b2db61ff40621d";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="Quote: Originally Posted by SupperRobin6394 You can detect the client\'s version and do something with that info (kick, warn admins, etc...) https://sampwiki.blast.hk/wiki/GetPlayerVersion I\'m pretty" />
+<link rel="canonical" href="showthreadcda4.html?tid=661491" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="156ddbc2053d5a2558b2db61ff40621d" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadffe5.html?mode=linear&amp;tid=661491&amp;pid=4081117#pid4081117">Linear Mode</a></span>
+				</div>
+				
+					SA-MP 0.3.7 R3 client update (optional)
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid4081117"></a>
+<div class="post classic " style="" id="post_4081117">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member12e5.html?action=profile&amp;uid=259773"><img src="uploads/avatars/259773.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member12e5.html?action=profile&amp;uid=259773"><s>Logic_</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,506<br />
+	Threads: 13<br />
+	Joined: Jun 2015
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9e66.html?tid=661491&amp;pid=4081117#pid4081117" title="Re: SA-MP 0.3.7 R3 client update (optional)">#112</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 112 by Logic_" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">06.02.2019, 15:03 <span class="post_edit" id="edited_by_4081117"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_4081117">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SupperRobin6394</strong><br />
+<a href="showthread88f5.html?pid=4080785#pid4080785" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You can detect the client\'s version and do something with that info (kick, warn admins, etc...)<br />
+<a href="https://sampwiki.blast.hk/wiki/GetPlayerVersion" target="_blank">https://sampwiki.blast.hk/wiki/GetPlayerVersion</a></div>
+</td>
+</tr>
+</table>
+</div>I\'m pretty sure that prints the SA-MP server version that is either 0.3.7 or just 0.3.DL-R1 as mentioned in the Wiki and not mentions the build version...<br />
+<br/><br />
+---<br />
+<br/><br />
+@Kye, please add a function hide vehicle map icons <font face="Courier New"><font color="Blue">EnableVehicleMapIcons(false);</font></font>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_4081117">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search1256.html?action=finduser&amp;uid=259773" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply6afd.html?tid=661491&amp;replyto=4081117" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadcfc3.html?tid=661491&amp;action=nextoldest">Next Oldest</a> | <a href="showthreadbf16.html?tid=661491&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="661491" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread3905.html?tid=661491&amp;pid=4069448&amp;mode=threaded">SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 06.12.2018, 12:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc11c-3.html?tid=661491&amp;pid=4069450&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberdc9a.html?action=profile&amp;uid=217385">D1eSeL</a> - 06.12.2018, 13:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread03ae.html?tid=661491&amp;pid=4069452&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5a66.html?action=profile&amp;uid=313711">alexmarkel0v</a> - 06.12.2018, 13:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5850.html?tid=661491&amp;pid=4069453&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd679.html?action=profile&amp;uid=262801">aymel</a> - 06.12.2018, 13:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd735.html?tid=661491&amp;pid=4069454&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberebb1-2.html?action=profile&amp;uid=264586">TheMallard</a> - 06.12.2018, 13:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread52f3-2.html?tid=661491&amp;pid=4069455&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberee8b.html?action=profile&amp;uid=313762">Krass</a> - 06.12.2018, 13:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread96ca-3.html?tid=661491&amp;pid=4069458&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member0957.html?action=profile&amp;uid=324341">iggiz</a> - 06.12.2018, 13:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1cbc.html?tid=661491&amp;pid=4069459&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member705e.html?action=profile&amp;uid=193537">IllidanS4</a> - 06.12.2018, 13:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddec2.html?tid=661491&amp;pid=4069460&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 13:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade249-2.html?tid=661491&amp;pid=4069461&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member454c.html?action=profile&amp;uid=297828">Xenpai</a> - 06.12.2018, 13:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8136-2.html?tid=661491&amp;pid=4069462&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfd43.html?action=profile&amp;uid=298719">Cadilab</a> - 06.12.2018, 13:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade2d4.html?tid=661491&amp;pid=4069463&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf4c2.html?action=profile&amp;uid=5303">BeckzyBoi</a> - 06.12.2018, 13:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ded.html?tid=661491&amp;pid=4069465&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberadf6.html?action=profile&amp;uid=263294">Variable™</a> - 06.12.2018, 13:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc7d5.html?tid=661491&amp;pid=4069469&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 13:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread32e2-3.html?tid=661491&amp;pid=4069472&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberedcb.html?action=profile&amp;uid=308275">Temaminsky</a> - 06.12.2018, 13:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread10ab.html?tid=661491&amp;pid=4069474&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member0628.html?action=profile&amp;uid=324924">Gloweryt</a> - 06.12.2018, 13:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread77f7-2.html?tid=661491&amp;pid=4069477&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberedcb.html?action=profile&amp;uid=308275">Temaminsky</a> - 06.12.2018, 13:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada458-2.html?tid=661491&amp;pid=4069478&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member80bf.html?action=profile&amp;uid=211444">jakebat</a> - 06.12.2018, 13:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadca89.html?tid=661491&amp;pid=4069480&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberda68.html?action=profile&amp;uid=46764">Freaksken</a> - 06.12.2018, 13:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade666.html?tid=661491&amp;pid=4069482&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 13:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5719.html?tid=661491&amp;pid=4069483&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member524a.html?action=profile&amp;uid=252292">Oxsen</a> - 06.12.2018, 13:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9eb1.html?tid=661491&amp;pid=4069488&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberda68.html?action=profile&amp;uid=46764">Freaksken</a> - 06.12.2018, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada43f-2.html?tid=661491&amp;pid=4069490&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberedcb.html?action=profile&amp;uid=308275">Temaminsky</a> - 06.12.2018, 14:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbfa6.html?tid=661491&amp;pid=4069491&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberbb2e.html?action=profile&amp;uid=314808">TommyS</a> - 06.12.2018, 14:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8a3e.html?tid=661491&amp;pid=4069492&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 14:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4001.html?tid=661491&amp;pid=4069498&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member700f.html?action=profile&amp;uid=154099">Zhao</a> - 06.12.2018, 14:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadefe3.html?tid=661491&amp;pid=4069504&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 14:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaf3d.html?tid=661491&amp;pid=4069511&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> - 06.12.2018, 15:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread982a-2.html?tid=661491&amp;pid=4069520&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member49cb.html?action=profile&amp;uid=180787">Whyd</a> - 06.12.2018, 15:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c4e.html?tid=661491&amp;pid=4069524&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd82d.html?action=profile&amp;uid=324946">Koponer</a> - 06.12.2018, 15:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4eb1-2.html?tid=661491&amp;pid=4069528&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member3df7.html?action=profile&amp;uid=308162">coderkid</a> - 06.12.2018, 15:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade3a0.html?tid=661491&amp;pid=4069533&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member6e0a.html?action=profile&amp;uid=244590">waysemir</a> - 06.12.2018, 15:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1dfd.html?tid=661491&amp;pid=4069534&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member62a9.html?action=profile&amp;uid=324837">MartinIucky</a> - 06.12.2018, 15:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6849-2.html?tid=661491&amp;pid=4069542&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member644b.html?action=profile&amp;uid=321535">userid</a> - 06.12.2018, 16:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6edd.html?tid=661491&amp;pid=4069547&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member09f0.html?action=profile&amp;uid=203215">m1n1vv</a> - 06.12.2018, 16:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8cfa-2.html?tid=661491&amp;pid=4069549&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 06.12.2018, 17:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaf8f-2.html?tid=661491&amp;pid=4069552&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf4c2.html?action=profile&amp;uid=5303">BeckzyBoi</a> - 06.12.2018, 17:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread338c.html?tid=661491&amp;pid=4069589&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> - 06.12.2018, 19:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4db9-2.html?tid=661491&amp;pid=4069677&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberc1f9.html?action=profile&amp;uid=160507">ConnorW</a> - 07.12.2018, 13:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbcd5.html?tid=661491&amp;pid=4069707&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> - 07.12.2018, 15:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3fbf.html?tid=661491&amp;pid=4069735&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd3be.html?action=profile&amp;uid=254947">Autorojo</a> - 07.12.2018, 16:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2114-4.html?tid=661491&amp;pid=4069739&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberedcb.html?action=profile&amp;uid=308275">Temaminsky</a> - 07.12.2018, 17:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread702f.html?tid=661491&amp;pid=4069827&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member0393.html?action=profile&amp;uid=25572">niCe</a> - 08.12.2018, 01:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4e36.html?tid=661491&amp;pid=4069831&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 08.12.2018, 03:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf9e4.html?tid=661491&amp;pid=4069834&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member4bc0-2.html?action=profile&amp;uid=204640">liguanhua123</a> - 08.12.2018, 04:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread34d0.html?tid=661491&amp;pid=4069835&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5630.html?action=profile&amp;uid=320850">Alteh</a> - 08.12.2018, 04:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9010-2.html?tid=661491&amp;pid=4069843&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member22d6.html?action=profile&amp;uid=315452">Verc</a> - 08.12.2018, 05:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread838b.html?tid=661491&amp;pid=4069859&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberee8b.html?action=profile&amp;uid=313762">Krass</a> - 08.12.2018, 08:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread175e-2.html?tid=661491&amp;pid=4069898&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member6dd0.html?action=profile&amp;uid=119434">RoboN1X</a> - 08.12.2018, 12:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1b3e-3.html?tid=661491&amp;pid=4069916&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 13:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfedc.html?tid=661491&amp;pid=4069917&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member0393.html?action=profile&amp;uid=25572">niCe</a> - 08.12.2018, 13:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread293a.html?tid=661491&amp;pid=4069920&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 08.12.2018, 14:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread39a7.html?tid=661491&amp;pid=4069926&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberda68.html?action=profile&amp;uid=46764">Freaksken</a> - 08.12.2018, 14:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread71ba.html?tid=661491&amp;pid=4069932&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 08.12.2018, 14:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd52d-2.html?tid=661491&amp;pid=4069938&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 14:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread56ea-2.html?tid=661491&amp;pid=4069949&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> - 08.12.2018, 15:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5d43-2.html?tid=661491&amp;pid=4069952&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 15:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread13db.html?tid=661491&amp;pid=4069955&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 08.12.2018, 15:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb11a.html?tid=661491&amp;pid=4069964&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 15:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1e3f.html?tid=661491&amp;pid=4069967&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> - 08.12.2018, 16:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada8dc.html?tid=661491&amp;pid=4069973&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5f3f.html?action=profile&amp;uid=323692">KaliDobrev</a> - 08.12.2018, 16:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc735-2.html?tid=661491&amp;pid=4069978&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd3be.html?action=profile&amp;uid=254947">Autorojo</a> - 08.12.2018, 17:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread60ac.html?tid=661491&amp;pid=4069980&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 17:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread46f1.html?tid=661491&amp;pid=4069981&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 08.12.2018, 17:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9422.html?tid=661491&amp;pid=4069982&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 08.12.2018, 17:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada5ce-3.html?tid=661491&amp;pid=4069987&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member19a5.html?action=profile&amp;uid=321710">Extremac</a> - 08.12.2018, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcdda-2.html?tid=661491&amp;pid=4069988&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member094f.html?action=profile&amp;uid=287561">CharlieHalltheJustinThom</a> - 08.12.2018, 17:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc1e7.html?tid=661491&amp;pid=4069995&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd3be.html?action=profile&amp;uid=254947">Autorojo</a> - 08.12.2018, 17:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7a27.html?tid=661491&amp;pid=4070007&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 08.12.2018, 18:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2608.html?tid=661491&amp;pid=4070018&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberbc28.html?action=profile&amp;uid=304248">LukaJozo</a> - 08.12.2018, 18:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread14a5.html?tid=661491&amp;pid=4070037&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 08.12.2018, 20:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread53d9-2.html?tid=661491&amp;pid=4070062&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5e6a.html?action=profile&amp;uid=306502">NexyAG</a> - 08.12.2018, 22:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadebef.html?tid=661491&amp;pid=4070064&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 08.12.2018, 22:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0d68.html?tid=661491&amp;pid=4070066&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 08.12.2018, 22:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada344.html?tid=661491&amp;pid=4070154&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member4fdc.html?action=profile&amp;uid=251852">Panzehir</a> - 09.12.2018, 08:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf74a.html?tid=661491&amp;pid=4070168&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfb65.html?action=profile&amp;uid=3">Kalcor</a> - 09.12.2018, 10:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2ef3.html?tid=661491&amp;pid=4070170&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberc1f9.html?action=profile&amp;uid=160507">d3Pedro</a> - 09.12.2018, 10:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd160.html?tid=661491&amp;pid=4070175&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 09.12.2018, 11:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread83f6-2.html?tid=661491&amp;pid=4070177&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member705e.html?action=profile&amp;uid=193537">IllidanS4</a> - 09.12.2018, 11:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread33e8.html?tid=661491&amp;pid=4070200&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member3b41.html?action=profile&amp;uid=234263">Chilli9434</a> - 09.12.2018, 12:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada631.html?tid=661491&amp;pid=4070289&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberea65.html?action=profile&amp;uid=227550">CharlieSanchez</a> - 09.12.2018, 17:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5359-2.html?tid=661491&amp;pid=4070631&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberc8dc.html?action=profile&amp;uid=306630">KonnorBlack</a> - 11.12.2018, 01:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4659.html?tid=661491&amp;pid=4070645&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member8f56.html?action=profile&amp;uid=82218">Killa[DGZ]</a> - 11.12.2018, 04:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddac6.html?tid=661491&amp;pid=4070649&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberaffc.html?action=profile&amp;uid=180435">DrSlett</a> - 11.12.2018, 05:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2639-3.html?tid=661491&amp;pid=4070680&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member09f0.html?action=profile&amp;uid=203215">m1n1vv</a> - 11.12.2018, 12:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada024.html?tid=661491&amp;pid=4070732&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member8e20.html?action=profile&amp;uid=165618">ReshiramZekrom</a> - 11.12.2018, 17:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc997.html?tid=661491&amp;pid=4070733&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member1b66.html?action=profile&amp;uid=263469">Alyaan</a> - 11.12.2018, 17:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9db1.html?tid=661491&amp;pid=4070743&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member705e.html?action=profile&amp;uid=193537">IllidanS4</a> - 11.12.2018, 18:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7f9d.html?tid=661491&amp;pid=4070744&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="membere668.html?action=profile&amp;uid=287155">Preper</a> - 11.12.2018, 18:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadda2a.html?tid=661491&amp;pid=4070753&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member09f0.html?action=profile&amp;uid=203215">m1n1vv</a> - 11.12.2018, 18:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d37.html?tid=661491&amp;pid=4070836&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member62ad.html?action=profile&amp;uid=6790">eakwarp</a> - 12.12.2018, 08:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread45bd.html?tid=661491&amp;pid=4070838&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 12.12.2018, 08:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2cf8-2.html?tid=661491&amp;pid=4070849&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member98cc.html?action=profile&amp;uid=283979">Koplan</a> - 12.12.2018, 10:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7990.html?tid=661491&amp;pid=4070876&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member82ef.html?action=profile&amp;uid=317822">wearLy</a> - 12.12.2018, 12:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf71d.html?tid=661491&amp;pid=4070970&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5105.html?action=profile&amp;uid=308462">Gonzal</a> - 13.12.2018, 00:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread94ca.html?tid=661491&amp;pid=4071060&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberf108.html?action=profile&amp;uid=298297">DarkMythHunter</a> - 13.12.2018, 14:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5013.html?tid=661491&amp;pid=4071261&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberfc6c.html?action=profile&amp;uid=299368">Chams</a> - 14.12.2018, 16:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5dbf.html?tid=661491&amp;pid=4071359&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member1823.html?action=profile&amp;uid=296701">iLearner</a> - 15.12.2018, 12:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8c71.html?tid=661491&amp;pid=4071360&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member5df0.html?action=profile&amp;uid=313437">Mike861</a> - 15.12.2018, 13:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1223.html?tid=661491&amp;pid=4071366&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> - 15.12.2018, 13:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9fe2.html?tid=661491&amp;pid=4071386&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member3edd.html?action=profile&amp;uid=287278">SchokoBong</a> - 15.12.2018, 14:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread07e3.html?tid=661491&amp;pid=4071561&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member3885.html?action=profile&amp;uid=308040">Puchas</a> - 16.12.2018, 14:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread56b6.html?tid=661491&amp;pid=4071769&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member010a.html?action=profile&amp;uid=185071">DowDaw</a> - 17.12.2018, 17:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb9a4.html?tid=661491&amp;pid=4072003&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member4b33.html?action=profile&amp;uid=253162">FelipeAndres</a> - 18.12.2018, 23:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadef64-3.html?tid=661491&amp;pid=4072139&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberd4b5.html?action=profile&amp;uid=287164">RANGER44</a> - 19.12.2018, 19:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread90c7.html?tid=661491&amp;pid=4072193&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberb1b1.html?action=profile&amp;uid=105057">neropic</a> - 19.12.2018, 23:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf7cc-2.html?tid=661491&amp;pid=4072233&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberffb0.html?action=profile&amp;uid=305395">Knife015</a> - 20.12.2018, 05:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb7b9.html?tid=661491&amp;pid=4072275&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="member758f.html?action=profile&amp;uid=112217">][Noname][</a> - 20.12.2018, 13:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbf58-2.html?tid=661491&amp;pid=4076426&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberdb55.html?action=profile&amp;uid=322004">AdiPlayWell</a> - 09.01.2019, 19:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada3aa.html?tid=661491&amp;pid=4077871&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberbe52.html?action=profile&amp;uid=300302">T0Play</a> - 19.01.2019, 00:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread02ec.html?tid=661491&amp;pid=4080785&amp;mode=threaded">Re: SA-MP 0.3.7 R3 client update (optional)</a> <span class="smalltext">- by <a href="memberc5d5.html?action=profile&amp;uid=268872">SupperRobin6394</a> - 04.02.2019, 11:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: SA-MP 0.3.7 R3 client update (optional)</strong> <span class="smalltext">- by <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> - 06.02.2019, 15:03</span></div>
+<!-- end: showthread_threaded_bitactive --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthreadcda4.html?tid=661491">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" selected="selected">-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplaye15e.html?fid=3">SA-MP</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayecac.html?fid=74">News and Updates</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-661491.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=156ddbc2053d5a2558b2db61ff40621d" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="661491" />
+<input type="hidden" name="pid" value="4081117" />
+
+	<input type="hidden" name="my_post_key" value="156ddbc2053d5a2558b2db61ff40621d" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->
