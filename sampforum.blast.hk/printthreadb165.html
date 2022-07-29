@@ -1,0 +1,203 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Server is crashing everyday! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Code: *** Error in `./samp03svr': free(): invalid pointer: 0x0a2a8aa8 *** ======= Backtrace: ========= /lib/libc.so.6(+0x7963d) /lib/libstdc++.so.6(_ZdlPv+0x1f) plugins/mysql.so(+0x323d3) plugins/mysq" />
+<link rel="canonical" href="showthreadb165.html?tid=676984" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadb165.html?tid=676984">Server is crashing everyday!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Server is crashing everyday! (<em>/showthread.php?tid=676984</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Server is crashing everyday! - <a href="member8d8e.html?action=profile&amp;uid=263809">Pitstop</a> -  26.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">*** Error in `./samp03svr': free(): invalid pointer: 0x0a2a8aa8 ***
+======= Backtrace: =========
+/lib/libc.so.6(+0x7963d)[0xf74dd63d]
+/lib/libstdc++.so.6(_ZdlPv+0x1f)[0xf76d5aef]
+plugins/mysql.so(+0x323d3)[0xf73083d3]
+plugins/mysql.so(+0x34333)[0xf730a333]
+plugins/mysql.so(_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv+0x48)[0xf72f3b58]
+plugins/mysql.so(+0x434d5)[0xf73194d5]
+plugins/mysql.so(_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIM6CQueryFvvEESt10shared_ptrIS3_EEEE10_M_managerERSt9_Any_dataRKSC_St18_Manager_operation+0x120)[0xf72f3900]
+plugins/mysql.so(+0x1e50d)[0xf72f450d]
+plugins/mysql.so(ProcessTick+0x24)[0xf731d8b4]
+./samp03svr[0x80dd3d2]
+./samp03svr[0x80b7bea]
+./samp03svr[0x80b2d92]
+/lib/libc.so.6(__libc_start_main+0xf3)[0xf747e2a3]
+./samp03svr[0x804b4e1]
+======= Memory map: ========
+08048000-0809d000 r-xp 00000000 fd:01 386865 /home/samp03/samp03svr
+0809d000-0809f000 rwxp 00055000 fd:01 386865 /home/samp03/samp03svr
+0809f000-08161000 r-xp 00057000 fd:01 386865 /home/samp03/samp03svr
+08161000-08162000 rwxp 00119000 fd:01 386865 /home/samp03/samp03svr
+08162000-0818d000 r-xp 0011a000 fd:01 386865 /home/samp03/samp03svr
+0818d000-081af000 rw-p 00145000 fd:01 386865 /home/samp03/samp03svr
+081af000-081da000 rw-p 00000000 00:00 0
+0875e000-0875f000 rw-p 00000000 00:00 0 [heap]
+0875f000-08762000 rwxp 00000000 00:00 0 [heap]
+08762000-0badd000 rw-p 00000000 00:00 0 [heap]
+e2800000-e292f000 rw-p 00000000 00:00 0
+e292f000-e2a00000 ---p 00000000 00:00 0
+e2a00000-e2bc4000 rw-p 00000000 00:00 0
+e2bc4000-e2c00000 ---p 00000000 00:00 0
+e2c00000-e2d00000 rw-p 00000000 00:00 0
+e2dff000-e2e00000 ---p 00000000 00:00 0
+e2e00000-e3600000 rw-p 00000000 00:00 0
+e3600000-e3700000 rw-p 00000000 00:00 0
+e377e000-e37ff000 rw-p 00000000 00:00 0
+e37ff000-e3800000 ---p 00000000 00:00 0
+e3800000-e4000000 rw-p 00000000 00:00 0
+e4000000-e4100000 rw-p 00000000 00:00 0
+e417e000-e41ff000 rw-p 00000000 00:00 0
+e41ff000-e4200000 ---p 00000000 00:00 0
+e4200000-e4a00000 rw-p 00000000 00:00 0
+e4a00000-e4a21000 rw-p 00000000 00:00 0
+e4a21000-e4b00000 ---p 00000000 00:00 0
+e4b54000-e4bd5000 rw-p 00000000 00:00 0
+e4bd5000-e4bd6000 ---p 00000000 00:00 0
+e4bd6000-f5a49000 rw-p 00000000 00:00 0
+f5a49000-f5a4a000 ---p 00000000 00:00 0
+f5a4a000-f624a000 rw-p 00000000 00:00 0
+f624a000-f625f000 r-xp 00000000 fd:01 24905 /usr/lib/libresolv-2.17.so
+f625f000-f6260000 r--p 00014000 fd:01 24905 /usr/lib/libresolv-2.17.so
+f6260000-f6261000 rw-p 00015000 fd:01 24905 /usr/lib/libresolv-2.17.so
+f6261000-f6263000 rw-p 00000000 00:00 0
+f6263000-f6268000 r-xp 00000000 fd:01 24893 /usr/lib/libnss_dns-2.17.so
+f6268000-f6269000 r--p 00004000 fd:01 24893 /usr/lib/libnss_dns-2.17.so
+f6269000-f626a000 rw-p 00005000 fd:01 24893 /usr/lib/libnss_dns-2.17.so
+f626a000-f6306000 rw-p 00000000 00:00 0
+f6306000-f642f000 r-xp 00000000 fd:01 386127 /home/samp03/plugins/SKY.so
+f642f000-f6430000 ---p 00129000 fd:01 386127 /home/samp03/plugins/SKY.so
+f6430000-f6434000 r--p 00129000 fd:01 386127 /home/samp03/plugins/SKY.so
+f6434000-f6435000 rw-p 0012d000 fd:01 386127 /home/samp03/plugins/SKY.so
+f6435000-f64a6000 rw-p 00000000 00:00 0
+f64a6000-f64b0000 r-xp 00000000 fd:01 386117 /home/samp03/plugins/whirlpool.so
+f64b0000-f64b1000 r--p 00009000 fd:01 386117 /home/samp03/plugins/whirlpool.so
+f64b1000-f64b2000 rw-p 0000a000 fd:01 386117 /home/samp03/plugins/whirlpool.so
+f64b2000-f64bd000 r-xp 00000000 fd:01 24895 /usr/lib/libnss_files-2.17.so
+f64bd000-f64be000 r--p 0000a000 fd:01 24895 /usr/lib/libnss_files-2.17.so
+f64be000-f64bf000 rw-p 0000b000 fd:01 24895 /usr/lib/libnss_files-2.17.so
+f64bf000-f64c5000 rw-p 00000000 00:00 0
+f64c5000-f64c6000 ---p 00000000 00:00 0
+f64c6000-f6cc6000 rw-p 00000000 00:00 0
+f6cc6000-f71ce000 r-xp 00000000 fd:01 259347 /usr/lib/mysql/libmysqlclient.so.18.1.0
+f71ce000-f71eb000 r--p 00507000 fd:01 259347 /usr/lib/mysql/libmysqlclient.so.18.1.0
+f71eb000-f72ac000 rw-p 00524000 fd:01 259347 /usr/lib/mysql/libmysqlclient.so.18.1.0
+f72ac000-f72b3000 rw-p 00000000 00:00 0
+f72b3000-f72d3000 r-xp 00000000 fd:01 386133 /home/samp03/log-core.so
+f72d3000-f72d4000 ---p 00020000 fd:01 386133 /home/samp03/log-core.so
+f72d4000-f72d5000 r--p 00020000 fd:01 386133 /home/samp03/log-core.so
+f72d5000-f72d6000 rw-p 00021000 fd:01 386133 /home/samp03/log-core.so
+f72d6000-f7332000 r-xp 00000000 fd:01 389993 /home/samp03/plugins/mysql.so
+f7332000-f7333000 ---p 0005c000 fd:01 389993 /home/samp03/plugins/mysql.so
+f7333000-f7334000 r--p 0005c000 fd:01 389993 /home/samp03/plugins/mysql.so
+f7334000-f7335000 rw-p 0005d000 fd:01 389993 /home/samp03/plugins/mysql.so
+f7335000-f733c000 r-xp 00000000 fd:01 24907 /usr/lib/librt-2.17.so
+f733c000-f733d000 r--p 00006000 fd:01 24907 /usr/lib/librt-2.17.so
+f733d000-f733e000 rw-p 00007000 fd:01 24907 /usr/lib/librt-2.17.so
+f7345000-f7408000 r-xp 00000000 fd:01 389988 /home/samp03/plugins/streamer.so
+f7408000-f740a000 rw-p 000c2000 fd:01 389988 /home/samp03/plugins/streamer.so
+f740a000-f740b000 rw-p 00000000 00:00 0
+f740b000-f741b000 r-xp 00000000 fd:01 386118 /home/samp03/plugins/sscanf.so
+f741b000-f741c000 rw-p 0000f000 fd:01 386118 /home/samp03/plugins/sscanf.so
+f741c000-f745f000 r-xp 00000000 fd:01 389986 /home/samp03/plugins/crashdetect.so
+f745f000-f7460000 r--p 00042000 fd:01 389986 /home/samp03/plugins/crashdetect.so
+f7460000-f7461000 rw-p 00043000 fd:01 389986 /home/samp03/plugins/crashdetect.so</pre>
+</div>Server is crashing twice in one day. NOT using YSF and not SKY plugins.<br />
+What's the issue guys?<br />
+<br />
+I had some missing blocks of '%' bug in dialog but I fixed it.<br />
+Are there more bugs in dialogs that might crash the server ? apart of the '%' symbol.<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server is crashing everyday! - <a href="member8d8e.html?action=profile&amp;uid=263809">Pitstop</a> -  26.06.2020
+<br />
+<br />
+Anyone please?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server is crashing everyday! - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  27.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pitstop</strong><br />
+<a href="showthreadc333.html?pid=4153084#pid4153084" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">NOT using YSF and not SKY plugins.<br />
+What's the issue guys?</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				f6306000-f642f000 r-xp 00000000 fd:01 386127 /home/samp03/plugins/SKY.so<br />
+f642f000-f6430000 ---p 00129000 fd:01 386127 /home/samp03/plugins/SKY.so<br />
+f6430000-f6434000 r--p 00129000 fd:01 386127 /home/samp03/plugins/SKY.so<br />
+f6434000-f6435000 rw-p 0012d000 fd:01 386127 /home/samp03/plugins/SKY.so<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div><img alt="" border="0" class="inlineimg" src="images/smilies/confused.png" title="Confused"/> <img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server is crashing everyday! - <a href="member6d64.html?action=profile&amp;uid=331573">Rouge</a> -  27.06.2020
+<br />
+<br />
+<font color="DarkOrange"><u>mysql_escape_string</u></font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
