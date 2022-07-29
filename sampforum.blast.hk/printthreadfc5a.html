@@ -1,0 +1,103 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> New generation roleplay - tutorial bug - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="it registers my account but as soon as i enter my password it shows me tutorial again" />
+<link rel="canonical" href="showthreadfc5a.html?tid=676828" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadfc5a.html?tid=676828">New generation roleplay - tutorial bug</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  New generation roleplay - tutorial bug (<em>/showthread.php?tid=676828</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+New generation roleplay - tutorial bug - <a href="member5a21.html?action=profile&amp;uid=250175">Kursed</a> -  20.06.2020
+<br />
+<br />
+it registers my account but as soon as i enter my password it shows me tutorial again<br />
+<img alt="" border="0" src="https://i.ibb.co/t83tCQq/Capture.png"/><br />
+<img alt="" border="0" src="https://i.ibb.co/dQpBL2Q/Capture1.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New generation roleplay - tutorial bug - <a href="memberada6.html?action=profile&amp;uid=163732">Xlithan</a> -  21.06.2020
+<br />
+<br />
+Are you completing the tutorial fully?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New generation roleplay - tutorial bug - <a href="member5a21.html?action=profile&amp;uid=250175">Kursed</a> -  21.06.2020
+<br />
+<br />
+are you out of your mind?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New generation roleplay - tutorial bug - <a href="memberada6.html?action=profile&amp;uid=163732">Xlithan</a> -  21.06.2020
+<br />
+<br />
+Ok well I was going to help since I had this issue with NGRP script and fixed it, but now you can forget it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New generation roleplay - tutorial bug - <a href="member5a21.html?action=profile&amp;uid=250175">Kursed</a> -  22.06.2020
+<br />
+<br />
+how did you fix this issue?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New generation roleplay - tutorial bug - <a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> -  26.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">OnPlayerRegister(playerid)
+{
+    PlayerInfo[playerid][pTutorial] = 0;
+}
+OnPlayerLogin(playerid)
+{
+    PlayerInfo[playerid][pTutorial] = 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

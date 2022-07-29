@@ -1,0 +1,1373 @@
+<!DOCTYPE html><!-- start: search_results_posts -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP Forums Archive - Search Results</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme1/thread_status3388.css?t=1646848572" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "099fcdb384c2fb0c32139aa46b6ff015";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+</head>
+<body>
+<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="099fcdb384c2fb0c32139aa46b6ff015" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="search.html">Search</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+
+	
+
+<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (5):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="search238b.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search815a.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search3d88.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=4" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search0989.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="search238b.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=2" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage --><br class="clear" /><br />
+<div class="tborder">
+	
+		<div class="thead">
+			Search Results
+		</div>
+	
+	
+  
+	<div class="tcat rowbit">
+
+<span data-width="30%" class="threadbit_main"><a href="searchc27c.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=subject&amp;order=asc">Post</a> 
+</span>
+
+<span data-width="15%" class="threadbit_author align_center">
+<a href="searchb64d-2.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=starter&amp;order=asc">Author</a>
+</span>
+
+<span data-width="15%" class="threadbit_forum align_center">
+<a href="search7f71-2.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=forum&amp;order=asc">Forum</a>
+</span>
+
+
+<span class="threadbit_stats threadbit_replies align_center" data-width="10%"><a href="search61eb.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=replies&amp;order=asc">Replies</a></span>
+
+<span class="threadbit_stats threadbit_views align_center" data-width="10%">
+<a href="searchdd87-2.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=views&amp;order=asc">Views</a></span>
+
+
+<span class="threadbit_lastpost" data-width="20%"><span data-moderation=""><a href="searchd33d-2.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=asc">Posted</a></span></span>
+
+</div>
+	
+	
+	<!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread8fd1.html?tid=678280&amp;pid=4159868#pid4159868">Re: IsPlayerUsingAndroid</a></div>
+
+<div class="threadbit_content">Btw, lets we wait @Karcol angry</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay0bf6.html?fid=17">Filterscripts</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(678280);">7</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">1,303</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadb35f.html?tid=678280" data-lastpost-time="">25.08.2020, 01:52</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread1b22.html?tid=678280&amp;pid=4159707#pid4159707">Re: IsPlayerUsingAndroid</a></div>
+
+<div class="threadbit_content">There are impossible to detect the ANDROID user with mem because its always change with script.
+
+You can detect the ANDROID user with GPCI because 1 client (not user) = 1 GPCI</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay0bf6.html?fid=17">Filterscripts</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(678280);">7</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">1,303</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadb35f.html?tid=678280" data-lastpost-time="">23.08.2020, 13:52</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread0e5f.html?tid=676828&amp;pid=4153121#pid4153121">Re: New generation roleplay - tutorial bug</a></div>
+
+<div class="threadbit_content">
+Code:
+OnPlayerRegister(playerid)
+{
+    PlayerInfo[playerid][pTutorial] = 0;
+}
+OnPlayerLogin(playerid)
+{
+    PlayerInfo[playerid][pTutorial] = 1;
+}
+</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay1723.html?fid=19">Server Support</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(676828);">5</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">379</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadfc5a.html?tid=676828" data-lastpost-time="">26.06.2020, 11:19</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread577e.html?tid=675874&amp;pid=4147659#pid4147659">Re: DCC V2 - Discord Command Control</a></div>
+
+<div class="threadbit_content">Reedit done</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplayb87d.html?fid=83">Includes</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(675874);">4</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">534</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread3c79.html?tid=675874" data-lastpost-time="">24.05.2020, 01:04</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread29d0.html?tid=675868&amp;pid=4147539#pid4147539">Re: how to use IF</a></div>
+
+<div class="threadbit_content">new a = 1;
+new b = 0;
+
+OnMyFunction()
+{
+    if(a == b)
+    {
+         SendClientMessage(playerid, -1, "A and B is Same");
+    }
+    else if(a != b) //or you can use else
+    {
+         SendClientMessa...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(675868);">2</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">56</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread1a34.html?tid=675868" data-lastpost-time="">23.05.2020, 15:51</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreaddd44.html?tid=675874&amp;pid=4147535#pid4147535">DCC V2 - Discord Command Control</a></div>
+
+<div class="threadbit_content">DCC V2 - Discord Command Control
+Based from Innocent
+I remodeled all of this with the new function of discord connector 0.3.2 and it worked.
+
+How To Use?
+Still Same With DCC 
+Callback
+
+Code:
+OnDCComma...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplayb87d.html?fid=83">Includes</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(675874);">4</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">534</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread3c79.html?tid=675874" data-lastpost-time="">23.05.2020, 15:37</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread1f0f.html?tid=282860&amp;pid=4143173#pid4143173">Re: M-Server Control Panel 1.8 | VPS-Sftp/Shell Co...</a></div>
+
+<div class="threadbit_content">
+Code:
+Product Name:      M-Control Panel V1.9
+Product Version:   1.9.4.0
+
+OS Name:       Microsoft Windows 10 Pro
+OS Version:    6.2.9200.65536
+OS Platform:       x64
+Physical Memory:   247,45MB / 1,...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplayfc19.html?fid=82">Tools and Files </a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(282860);">78</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">1,862</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread60cb.html?tid=282860" data-lastpost-time="">01.05.2020, 14:59</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreadcaab-2.html?tid=673529&amp;pid=4136801#pid4136801">Re: MySQL save while Kick/Ban</a></div>
+
+<div class="threadbit_content">Maybe this can solved
+
+Code:
+new kickuser;
+CMD:kick(playerid, params[])
+{
+    if(params != INVALID_PLAYER_ID || params != playerid)
+    {
+        if(sscanf(params, "i", kickuser)){
+            //Your ...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(673529);">4</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">24</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadaa6a.html?tid=673529" data-lastpost-time="">30.03.2020, 12:41</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreade8a2-2.html?tid=665765&amp;pid=4117865#pid4117865">Re: Email confirmation script.</a></div>
+
+<div class="threadbit_content">You need webhost to host your mail SMTP.</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(665765);">3</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">35</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread1af4-2.html?tid=665765" data-lastpost-time="">20.10.2019, 14:03</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreadaca2.html?tid=665569&amp;pid=4093030#pid4093030">Re: Plugins do not load. 0.3.DL</a></div>
+
+<div class="threadbit_content">use windows or Linux?</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(665569);">5</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">15</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread91d6-2.html?tid=665569" data-lastpost-time="">09.04.2019, 11:13</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreadc43d.html?tid=665515&amp;pid=4092698#pid4092698">Re: Actor disapperars.</a></div>
+
+<div class="threadbit_content">put at gamemodeinit</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(665515);">3</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">19</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread770d-2.html?tid=665515" data-lastpost-time="">07.04.2019, 09:23</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread9559-4.html?tid=665399&amp;pid=4092695#pid4092695">Re: Explode vehicle immediately</a></div>
+
+<div class="threadbit_content">Try use this
+
+
+
+Quote:
+
+
+
+			
+				    new Float, Float:y, Float:z;
+    GetVehiclePos(vehicleid, x, y, z);
+    GetVehicleHealth(vehicleid, health)
+    if(health == 0)
+    {
+    CreateExplosion(x, y, z,...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(665399);">9</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">30</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadf100.html?tid=665399" data-lastpost-time="">07.04.2019, 09:04</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreade705.html?tid=665092&amp;pid=4089981#pid4089981">Some explanation</a></div>
+
+<div class="threadbit_content">Can we add some vehicle mod?</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay01d1.html?fid=90">SA-MP 0.3.DL</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(665092);">1</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">209</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread8189.html?tid=665092" data-lastpost-time="">22.03.2019, 10:35</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread7793-2.html?tid=664238&amp;pid=4085287#pid4085287">Re: Maps not loading with createobject?</a></div>
+
+<div class="threadbit_content">max object 1000. try convert to CreateDynamicObject()</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(664238);">7</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">59</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthreadaff6.html?tid=664238" data-lastpost-time="">23.02.2019, 09:15</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthreaddb47-2.html?tid=663958&amp;pid=4083651#pid4083651">Re: little problem</a></div>
+
+<div class="threadbit_content">oh thanks so much.</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663958);">8</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">19</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread36c1-3.html?tid=663958" data-lastpost-time="">16.02.2019, 10:14</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread0c21-3.html?tid=663958&amp;pid=4083627#pid4083627">Re: little problem</a></div>
+
+<div class="threadbit_content">plugin not loaded but I write like this.
+
+
+Quote:
+
+
+
+			
+				plugins crashdetect mysql ColAndreas streamer sscanf whirlpool nativechecker regex
+
+
+
+.
+
+Note RED=Not Loaded
+       GREEN=Stop Here</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663958);">8</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">19</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread36c1-3.html?tid=663958" data-lastpost-time="">16.02.2019, 05:30</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread9065.html?tid=663958&amp;pid=4083599#pid4083599">Re: little problem</a></div>
+
+<div class="threadbit_content">I already download it but same effect</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663958);">8</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">19</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread36c1-3.html?tid=663958" data-lastpost-time="">16.02.2019, 00:19</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread8471-5.html?tid=663958&amp;pid=4083593#pid4083593">little problem</a></div>
+
+<div class="threadbit_content">Error: Function not registered: 'regex_match'
+[debug] Run time error 19: "File or function is not found"
+[debug]  regex_match
+[debug] Run time error 19: "File or function is not found"
+[debug]  regex_...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663958);">8</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">19</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread36c1-3.html?tid=663958" data-lastpost-time="">16.02.2019, 00:10</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow1 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status folder"  title="No new posts."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread86f5-4.html?tid=663914&amp;pid=4083250#pid4083250">Re: Near House</a></div>
+
+<div class="threadbit_content">forward NearHouse(playerid, targetid, houseid);
+public NearHouse(playerid, targetid, houseid)
+{
+	if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT)
+        {
+		for(new i = 0; i &lt; sizeof(HouseInfo)...</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay696f.html?fid=12">Scripting Help</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663914);">5</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">17</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread4fe4-3.html?tid=663914" data-lastpost-time="">14.02.2019, 14:40</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post --><!-- start: search_results_posts_post -->
+<div class="inline_row trow2 rowbit">
+
+
+<div class="threadbit_main" data-width="30%">
+
+<div class="threadbit_folder"><span class="thread_status hotfolder"  title="No new posts. Hot thread."></span></div>
+<div class="threadbit_title">
+
+<div>&nbsp;<a href="showthread881b.html?tid=663702&amp;pid=4081721#pid4081721">Re: EL MALECON</a></div>
+
+<div class="threadbit_content">link?</div>
+  
+</div>
+
+</div>
+
+
+<div data-width="15%" class="threadbit_author smalltext align_center" data-lang="Author"><a href="member15c5.html?action=profile&amp;uid=314074">GeorgeLimit</a> </div>
+
+<div data-width="15%" class="threadbit_forum smalltext align_center" data-lang="Forum"><!-- start: search_results_posts_forumlink -->
+<a href="forumdisplay1fb9.html?fid=64">Maps</a>
+<!-- end: search_results_posts_forumlink --></div>
+
+
+
+
+<div class="threadbit_stats threadbit_replies align_center" data-width="10%" data-lang="Replies"><a href="javascript:MyBB.whoPosted(663702);">6</a></div>
+
+<div class="threadbit_stats threadbit_views align_center" data-width="10%" data-lang="Views">218</div>
+
+
+<div class="threadbit_lastpost smalltext" data-width="20%">
+
+<span data-moderation="">
+
+<a href="showthread14bd.html?tid=663702" data-lastpost-time="">09.02.2019, 08:56</a>
+		</span>
+	</div>
+
+
+</div>
+<!-- end: search_results_posts_post -->
+  
+  </div>
+  
+<br />
+	
+  <div class="float_left"><!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (5):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="search238b.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search815a.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search3d88.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=4" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="search0989.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="search238b.html?action=results&amp;sid=47cd4875b4fe490c18035948547c4556&amp;sortby=dateline&amp;order=desc&amp;uid=0&amp;page=2" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage --></div>
+
+	<br class="clear" /><br />
+
+<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="search.html">Search</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=099fcdb384c2fb0c32139aa46b6ff015" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/search.php" id="lang_select">
+	<input type="hidden" name="action" value="results" />
+<input type="hidden" name="sid" value="47cd4875b4fe490c18035948547c4556" />
+
+	<input type="hidden" name="my_post_key" value="099fcdb384c2fb0c32139aa46b6ff015" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+</body>
+</html>
+<!-- end: search_results_posts -->
