@@ -1,0 +1,355 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Saving weapon data (MySQL) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This is, in part, an extension on my previous tutorial regarding the general table structure and foreign keys. If you haven't read that one, I suggest you do that first. Weapon Information There are 1" />
+<link rel="canonical" href="showthread26cb.html?tid=505081" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread26cb.html?tid=505081">[Tutorial] Saving weapon data (MySQL)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Saving weapon data (MySQL) (<em>/showthread.php?tid=505081</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread92d1.html?tid=505081&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4844.html?tid=505081&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Saving weapon data (MySQL) - <a href="member8928.html?action=profile&amp;uid=13347">Vince</a> -  06.04.2014
+<br />
+<br />
+This is, in part, an extension on my previous tutorial regarding the general table structure and foreign keys. If you haven't read that one, I suggest you do that first.<br />
+<br />
+<u><font size="3">Weapon Information</font></u><br />
+There are 13 different weapon slots and thus a player can theoretically hold up to 13 different weapons. In practice, though, this is usually more like 4 or 5.<br />
+<br />
+<u><font size="3">Why this structure?</font></u><br />
+The table we will be creating will look like this:<br />
+<img alt="" border="0" src="http://puu.sh/7Y1My.png"/><br />
+This structure allows for a more compact view and allows for the use of aggregate functions such as COUNT(). This allows me to find out how many weapons each player has, how many players have an M4 or even the total amount of ammo currently circulating (for a specific weapon). This may all seem trivial but it is difficult, if not impossible, to achieve with your average non-normalized "weapon1, ammo1 ... weapon13, ammo13" approach.<br />
+<br />
+From the above screenshot we can deduct that the player 1 has 3 weapons: a nite stick (id 3) with 1 ammo, a desert eagle (id 24) with 21 ammo and an M4 (id 31) with 266 ammo.<br />
+<br />
+<u><font size="3">Creating the table</font></u><br />
+<b><font color="Blue">userid</font></b> is a reference to the player's unique ID which is stored in another table, along with their name, password, etc. Notice that phpMyAdmin conveniently makes the userid clickable if a foreign key exists. <b><font color="Blue">weaponid</font></b> is simply the weaponid as is returned from functions like GetPlayerWeapon and GetPlayerWeaponData. <b><font color="Blue">ammo</font></b> holds the ammunition associated with aforementioned weaponid.<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/4m11mSS.png"/><br />
+<br />
+The options you need to edit are marked in yellow. Note that the type and attributes of the userid may differ in your case: this field needs to be declared with the exact same definition as your main userid. This may mean that you do not need to set that field to <i>unsigned</i>. The userid does need to be declared as an index though. It is neither a primary key, nor an unique key. For the weaponid we choose an unsigned tinyint since we're only dealing with non-negative numbers up to 46. The ammo is declared unsigned as well since there's no such thing as negative ammunition. Lastly, don't forget to set the engine to InnoDB. Click Save to create the table.<br />
+<br />
+<u><font size="3">Setting limits</font></u><br />
+You should've been brought to the structures tab of the table you just created. Navigate there if this isn't the case.<br />
+Before continuing, we will first impose some extra limits to avoid cluttering the table with useless data later on. Each player (userid) can only hold exactly one specific weapon (weaponid) at once. This is a UNIQUE property. Therefore, tick the checkboxes in front of userid and weaponid. Then click on the UNIQUE button underneath the table.<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/UE8AFEO.png"/><br />
+Update 31/01/2016: click the PRIMARY KEY button instead. Each table should have a primary key.<br />
+<br />
+<u><font size="3">Creating the foreign key</font></u><br />
+You should've been brought back to the structures tab. Navigate there if this isn't the case. Underneath the structure definition you should see a link titled <i>Relation view</i>. Click this to be brought to the "relation creator".<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/76QZOqP.png"/><br />
+<br />
+I'm creating a link to the <i>id</i> field in the table <i>playerinfo</i> in the database <i>vcnr</i>. Your table and database will be called differently. Select the proper ID. Note that for fields to show up in this list, they need to be defined as a key! We also want any changes made in the main table to be CASCADED into this table. Click Save. This concludes the table creation part in phpMyAdmin. Now back to Pawn.<br />
+<br />
+<u><font size="3">Saving</font></u><br />
+For this table, we will only use SELECT, INSERT and DELETE queries. There will be no real UPDATE queries. Instead, we will only use a special insert query:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">INSERT INTO </span><span style="color: #007700">... </span><span style="color: #0000BB">ON DUPLICATE KEY UPDATE </span><span style="color: #007700">... 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>This query will try to insert the data as normal. If this fails because the data already exists (duplicate key) it will instead perform an update. In our context this means that we will merely update the ammo if a weaponid is already present for a specific user.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span><br/>    weaponid,<br/>    ammo;<br/>    <br/><span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> <span style="color: #000000;">13</span>; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">// looping through all weapon slots (0 - 12)</span><br/><span style="color: #000000;">{</span><br/>    GetPlayerWeaponData<span style="color: #000000;">(</span>playerid, i, weaponid, ammo<span style="color: #000000;">)</span>; <span style="color: #228822;">// get weaponid and ammo</span><br/><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>weaponid<span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>; <span style="color: #228822;">// don't insert if there's no weapon in this slot</span><br/>    <br/>    mysql_format<span style="color: #000000;">(</span>userDB, mysqlquery, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>mysqlquery<span style="color: #000000;">)</span>, <span style="color: #000066;">"INSERT INTO player_weapons VALUES (%d, %d, %d) ON DUPLICATE KEY UPDATE ammo = %d;"</span>, PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pSQLID<span style="color: #000000;">]</span>, weaponid, ammo, ammo<span style="color: #000000;">)</span>;<br/>    mysql_pquery<span style="color: #000000;">(</span>userDB, mysqlquery<span style="color: #000000;">)</span>; <span style="color: #228822;">// parallel queries</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+The above snippet will insert or update all the weapons the player currently has. I am using parallel queries for speed: the order in which the inserts are performed isn't at all important. You will need to substitute the userid variable with your own. The same query can also be used stand-alone in other places. You can, for example, write a hook for GivePlayerWeapon which immediately performs an insert as soon as the weapon is given.<br />
+<br />
+<u><font size="3">Loading</font></u><br />
+Now to retrieve this data and give the players their weapons back. Our standard select query;<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">SELECT weaponid</span><span style="color: #007700">, </span><span style="color: #0000BB">ammo FROM player_weapons WHERE userid </span><span style="color: #007700">= %</span><span style="color: #0000BB">d</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:359px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnLoadPlayerWeapons<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span><br/>        weaponid,<br/>        ammo;<br/>    <br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i, j <span style="color: #000000;">=</span> cache_get_row_count<span style="color: #000000;">(</span>userDB<span style="color: #000000;">)</span>; i <span style="color: #000000;">&lt;</span> j; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">// loop through all the rows that were found</span><br/>    <span style="color: #000000;">{</span><br/>        weaponid    <span style="color: #000000;">=</span> cache_get_row_int<span style="color: #000000;">(</span>i, <span style="color: #000000;">0</span>, userDB<span style="color: #000000;">)</span>;<br/>        ammo        <span style="color: #000000;">=</span> cache_get_row_int<span style="color: #000000;">(</span>i, <span style="color: #000000;">1</span>, userDB<span style="color: #000000;">)</span>;<br/>        <br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #000000;">(</span><span style="color: #000000;">0</span> <span style="color: #000000;">&lt;=</span> weaponid <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">46</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #228822;">// check if weapon is valid (should be)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"[info] Warning: OnLoadPlayerWeapons - Unknown weaponid '%d'. Skipping."</span>, weaponid<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">continue</span>;<br/>        <span style="color: #000000;">}</span><br/>        <br/>        GivePlayerWeapon<span style="color: #000000;">(</span>playerid, weaponid, ammo<span style="color: #000000;">)</span>; <br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<u><font size="3">Purging obsolete data</font></u><br />
+Whenever a weapon is taken away, do not forget to delete it from the database otherwise it will be returned to the player when they next join. You could write a hook for ResetPlayerWeapons. It may also be possible that weapons that have no ammo are left behind in the table. This doesn't affect anything in-game and can be cleaned up with a query (delete where ammo = 0) when the server starts, or on a cron job.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberf179.html?action=profile&amp;uid=71667">vassilis</a> -  06.04.2014
+<br />
+<br />
+Aha i got it.. Seems good and readable good job vince.. i wonder if you would make something similar for y_ini it would really help me <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> +rep though!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> -  06.04.2014
+<br />
+<br />
+Nice on Vince! Going to update my weapon system now!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="membera24d.html?action=profile&amp;uid=209690">Binx</a> -  06.04.2014
+<br />
+<br />
+This is really helpful! Thanks a lot!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  06.04.2014
+<br />
+<br />
+There need to be more tutorials like that related to MySQL optimization. Good job, I've read your previous thread it was good too, and it gave me knowledge about the structure alot.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> -  07.04.2014
+<br />
+<br />
+Each time i save my current weapons, none get inserted into the table, it just keeps updating the first row, any idea why?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member8928.html?action=profile&amp;uid=13347">Vince</a> -  07.04.2014
+<br />
+<br />
+Have you set the keys correctly? userid and weaponid need to be ticked simultaneously to create a composite key. It appears as if you've only created the unique key on the userid field. You can check this by going to the structure tab and clicking Details at the bottom.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberac66.html?action=profile&amp;uid=76903">Luis-</a> -  07.04.2014
+<br />
+<br />
+Ah right my mistake, just need to find out why im not getting a weapon when I spawn. Thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member15b0.html?action=profile&amp;uid=100574">Niko_boy</a> -  08.04.2014
+<br />
+<br />
+ok had to read it twice to get an idea about it! Nice tutorial and thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member55da.html?action=profile&amp;uid=33188">dusk</a> -  08.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">ON DUPLICATE KEY UPDATE ammo <span style="color: #000000;">=</span> <span style="color: #000000;">%</span>d;</div></div></pre>
+</div>This part is VERY useful for me... Until today I either send a DELETE query to delete all weapon records for a player and then INSERT new data, or send an UPDATE query and then checked for affected rows.<br />
+<br />
+Concerning the table structure, shouldn't the child table have some kind of unique column? I don't know why but I always add it to any table.. I guess it's for editing rows in pMA. Is that bad practice?<br />
+<br />
+And you should really continue these tutorials. I've seen MANY table structures that have over a hundred columns in one main "player" table.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member0f59.html?action=profile&amp;uid=228559">iRaiDeN</a> -  08.04.2014
+<br />
+<br />
+good job
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberf161.html?action=profile&amp;uid=120619">Type-R</a> -  08.08.2014
+<br />
+<br />
+how do i do this with old MySQL like R4? I put this on disconnect: <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:247px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span><br/>                weaponid,<br/>                MySQLQuery<span style="color: #000000;">[</span><span style="color: #000000;">300</span><span style="color: #000000;">]</span>,<br/>                ammo;<br/><br/>            <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> <span style="color: #000000;">13</span>; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">// looping through all weapon slots (0 - 12)</span><br/>            <span style="color: #000000;">{</span><br/>                GetPlayerWeaponData<span style="color: #000000;">(</span>playerid, i, weaponid, ammo<span style="color: #000000;">)</span>; <span style="color: #228822;">// get weaponid and ammo</span><br/><br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>weaponid<span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>; <span style="color: #228822;">// don't insert if there's no weapon in this slot</span><br/><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>MySQLQuery, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>MySQLQuery<span style="color: #000000;">)</span>, <span style="color: #000066;">"INSERT INTO ginklai VALUES (%d, %d, %d) ON DUPLICATE KEY UPDATE ammo = %d;"</span>, GetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"AccID"</span><span style="color: #000000;">)</span>, weaponid, ammo, ammo<span style="color: #000000;">)</span>;<br/>                mysql_query<span style="color: #000000;">(</span>MySQLQuery<span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span></div></div></pre>
+</div>
+I go to the server, give myself weapons then quit, and nothing appears in the database. and how could i redo, the loading for Queries? Thank you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> -  14.08.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Type-R</strong><br />
+<a href="showthread6d86.html?pid=3154112#pid3154112" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">how do i do this with old MySQL like R4? I put this on disconnect: <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:247px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span><br/>                weaponid,<br/>                MySQLQuery<span style="color: #000000;">[</span><span style="color: #000000;">300</span><span style="color: #000000;">]</span>,<br/>                ammo;<br/><br/>            <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> <span style="color: #000000;">13</span>; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">// looping through all weapon slots (0 - 12)</span><br/>            <span style="color: #000000;">{</span><br/>                GetPlayerWeaponData<span style="color: #000000;">(</span>playerid, i, weaponid, ammo<span style="color: #000000;">)</span>; <span style="color: #228822;">// get weaponid and ammo</span><br/><br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>weaponid<span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>; <span style="color: #228822;">// don't insert if there's no weapon in this slot</span><br/><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>MySQLQuery, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>MySQLQuery<span style="color: #000000;">)</span>, <span style="color: #000066;">"INSERT INTO ginklai VALUES (%d, %d, %d) ON DUPLICATE KEY UPDATE ammo = %d;"</span>, GetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"AccID"</span><span style="color: #000000;">)</span>, weaponid, ammo, ammo<span style="color: #000000;">)</span>;<br/>                mysql_query<span style="color: #000000;">(</span>MySQLQuery<span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span></div></div></pre>
+</div>
+I go to the server, give myself weapons then quit, and nothing appears in the database. and how could i redo, the loading for Queries? Thank you.</div>
+</td>
+</tr>
+</table>
+</div>That's outdated, use R33+, (R39-2)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberf161.html?action=profile&amp;uid=120619">Type-R</a> -  15.08.2014
+<br />
+<br />
+1. I dont know R33+<br />
+2. I dont have time<br />
+3. Its just kind of a free time thing, so for my likings R5 is enough, sorry i put R4..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="membere548.html?action=profile&amp;uid=183684">Sime30</a> -  08.02.2015
+<br />
+<br />
+Hey Vince.<br />
+<br />
+First off, good job!<br />
+<br />
+Second, I have a question. Why did you put a semicolon at the end of format ?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">ammo = %d<font color="Red">;</font></pre>
+</div>EDIT: Found an answer! If we put a semicolon that means the end of a query so we can put multiple queries that way, if anyone is wondering.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberdf0b.html?action=profile&amp;uid=225999">AndySedeyn</a> -  18.06.2015
+<br />
+<br />
+I thank you sincerely for the useful information in the database normalization series.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="membercc40.html?action=profile&amp;uid=260064">b3nz</a> -  07.07.2015
+<br />
+<br />
+Sorry for bumping this, but I'm really interested in this. Anyway, I have a question:<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Purging obsolete data<br />
+Whenever a weapon is taken away, do not forget to delete it from the database otherwise it will be returned to the player when they next join. You could write a hook for ResetPlayerWeapons. It may also be possible that weapons that have no ammo are left behind in the table. This doesn't affect anything in-game and can be cleaned up with a query (delete where ammo = 0) when the server starts, or on a cron job.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>Couldn't this be solved easily by deleting certain player's weapons info in the table before saving it again? This won't use much memory, as you obviously would save the player's weapons once per possesion (when the player disconnects).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member44f7.html?action=profile&amp;uid=261577">TenTen</a> -  10.07.2015
+<br />
+<br />
+Nice <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="memberef76.html?action=profile&amp;uid=151590">2KY</a> -  18.07.2015
+<br />
+<br />
+EDIT: Got it, thanks for the tutorial Vince. You saved me a lot of time and effort.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving weapon data (MySQL) - <a href="member44f7.html?action=profile&amp;uid=261577">TenTen</a> -  23.07.2015
+<br />
+<br />
+Great job Vince <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
