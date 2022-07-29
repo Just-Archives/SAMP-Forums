@@ -1,0 +1,211 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Ban System: Dealing with Dynamic IPs - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello SA-MP How do you deal with dynamic IPs that is provided by player's ISP ? For example a player yesterday's IP address is 85.54.6.70 and today is 74.92.44.8 How to deal in ban system in this situ" />
+<link rel="canonical" href="showthreadcb61.html?tid=676097" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadcb61.html?tid=676097">Ban System: Dealing with Dynamic IPs</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Ban System: Dealing with Dynamic IPs (<em>/showthread.php?tid=676097</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Ban System: Dealing with Dynamic IPs - <a href="member85f1.html?action=profile&amp;uid=236089">Juvanii</a> -  29.05.2020
+<br />
+<br />
+Hello SA-MP<br />
+<br />
+How do you deal with dynamic IPs that is provided by player's ISP ?<br />
+<br />
+For example a player yesterday's IP address is 85.54.6.70 and today is 74.92.44.8<br />
+<br />
+How to deal in ban system in this situation ?<br />
+<br />
+Thank you <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member7079.html?action=profile&amp;uid=349993">SharpenBlade</a> -  29.05.2020
+<br />
+<br />
+You could ban player serial(gpci). There could be some glitches, like two players with the same gpci, but it could work for you.<br />
+<a href="https://sampwiki.blast.hk/wiki/Gpci" target="_blank">https://sampwiki.blast.hk/wiki/Gpci</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="membere24f.html?action=profile&amp;uid=287146">cuber</a> -  29.05.2020
+<br />
+<br />
+And why exactly did you think it was a good idea to share your players IP address?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member85f1.html?action=profile&amp;uid=236089">Juvanii</a> -  31.07.2020
+<br />
+<br />
+Bump, i need more replies on this and how to use this GPCI thing !<br />
+<br />
+What if both players living in the same hood, does GPCI returns the same for them ?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  31.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Juvanii</strong><br />
+<a href="showthread1b45.html?pid=4157128#pid4157128" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Bump, i need more replies on this and how to use this GPCI thing !<br />
+<br />
+What if both players living in the same hood, does GPCI returns the same for them ?</div>
+</td>
+</tr>
+</table>
+</div>The GPCI is a result of multiple factor, on the wiki it says "hash derived from information about your San Andreas installation path", but I think you also would need to have the same 'computer name' and maybe other stuff for it to be the same. Like explained on the wiki, you should not ban only from that usually, unless your dealing with a special case, otherwise some random people might be banned for no reason if you rely on it too much.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member85f1.html?action=profile&amp;uid=236089">Juvanii</a> -  03.08.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Fetch the CI of a user, this is linked to their SAMP/GTA on their computer.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>What CI stands for ? and how couldn't GPCI be unique ? what path does it exactly hash ?<br />
+Is it the path where GTA installed ? or the path where SA-MP folder lives ?<br />
+<br />
+if it deals with where sa-mp folder lives, this would be unique unless two players have the same username in C:/Users<br />
+<br />
+I'm a lil bit confused <img alt="" border="0" class="inlineimg" src="images/smilies/confused.png" title="Confused"/>, any explaination would be appreciated <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member8074.html?action=profile&amp;uid=316750">Proxus</a> -  03.08.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Juvanii</strong><br />
+<a href="showthread703f.html?pid=4157506#pid4157506" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">What CI stands for ? and how couldn't GPCI be unique ? what path does it exactly hash ?<br />
+Is it the path where GTA installed ? or the path where SA-MP folder lives ?<br />
+<br />
+if it deals with where sa-mp folder lives, this would be unique unless two players have the same username in C:/Users<br />
+<br />
+I'm a lil bit confused <img alt="" border="0" class="inlineimg" src="images/smilies/confused.png" title="Confused"/>, any explaination would be appreciated <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>GPCI won't always be unique because people may have the same copy of GTA (if they've shared it) or if they have a cracked version of GTA.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member85f1.html?action=profile&amp;uid=236089">Juvanii</a> -  03.08.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Proxus</strong><br />
+<a href="showthread469f.html?pid=4157509#pid4157509" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">GPCI won't always be unique because people may have the same copy of GTA (if they've shared it) or if they have a cracked version of GTA.</div>
+</td>
+</tr>
+</table>
+</div>So it doesn't only hash the user path ?<br />
+C:\Users\<font color="Red">username</font>\Documents\GTA San Andreas User Files\SAMP<br />
+<br />
+How can i deal with bans then ? range bans won't work, sometimes the ISP provides a completely different start of IP than the previous one.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member8074.html?action=profile&amp;uid=316750">Proxus</a> -  03.08.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Juvanii</strong><br />
+<a href="showthread1005-2.html?pid=4157512#pid4157512" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">So it doesn't only hash the user path ?<br />
+C:\Users\<font color="Red">username</font>\Documents\GTA San Andreas User Files\SAMP<br />
+<br />
+How can i deal with bans then ? range bans won't work, sometimes the ISP provides a completely different start of IP than the previous one.</div>
+</td>
+</tr>
+</table>
+</div>Ban evading will always be an issue because of IP changes (incl. VPNs). The way we manage it is through human intervention. Admins can view the GPCI of the player and see if it was likely they evaded or not. If you have a way of searching for bans as well, you can log their IP at the time and if an admin banned them for ban evading before, they may being doing it again because even though the IP has changed, it may not have changed at the time of previous bans.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Ban System: Dealing with Dynamic IPs - <a href="member7a42.html?action=profile&amp;uid=129992">rt-2</a> -  03.08.2020
+<br />
+<br />
+If this guy switches IP 5 times a day for a month, now you have 150 IPs banned for 1 guy, someone else that never cheated could be ban if he receives one of those IPs...<br />
+<br />
+I really suggest you flush those regularly.<br />
+Personally I only kick.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

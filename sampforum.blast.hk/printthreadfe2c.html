@@ -1,0 +1,150 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Anyone running latest SA-MP server under CentOS 8? - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Bringing Everystuff back in a couple weeks, wanted to use the latest CentOS version. Anyone having issues under CentOS 8? Appreciate all answers, as long as they don't consist of &quot;Use {insert non-Cent" />
+<link rel="canonical" href="showthreadfe2c.html?tid=672203" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadfe2c.html?tid=672203">Anyone running latest SA-MP server under CentOS 8?</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Anyone running latest SA-MP server under CentOS 8? (<em>/showthread.php?tid=672203</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Anyone running latest SA-MP server under CentOS 8? - <a href="member852b.html?action=profile&amp;uid=1747">kaisersouse</a> -  31.01.2020
+<br />
+<br />
+Bringing Everystuff back in a couple weeks, wanted to use the latest CentOS version. Anyone having issues under CentOS 8? <br />
+<br />
+Appreciate all answers, as long as they don't consist of "Use {insert non-CentOS Linux distro} instead"<br />
+<br />
+Thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anyone running latest SA-MP server under CentOS 8? - <a href="memberfa66.html?action=profile&amp;uid=38525">Jeroen52</a> -  01.02.2020
+<br />
+<br />
+You should contact the management team of Red County Roleplay, especially fr0st.<br />
+<br />
+These are the announcements in their Discord about CentOS 8.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 194px;
+		text-align: left;
+		overflow: auto">[7:34 PM] TommyB: Hello @everyone,
+
+As I'm sure most of you are aware, RCRP and other SA-MP servers we host have been experiencing periodic player disconnections. After a bit of investigating, we've discovered that this is in fact a flaw in how the SA-MP server process itself runs on newer Linux distributions.
+
+When we moved over to our new dedicated server, we also upgraded the operating system from CentOS 7.x to CentOS 8.x. These player drops started happening as soon as we launched on the new server. I first thought the server itself was crashing, but noticed the process was never actually killed. Originally, this lead me to believe that someone may have been attacking the server, but I couldn't find anything out of the ordinary in our server monitoring software either. That's when I drew parallels to an issue that some server owners experienced when trying to run SA-MP servers on Debian 9, another Linux distro. 
+
+Unfortunately, the cause of this issue has never been identified, nor has a fix ever been discovered. fr0st is currently in the process of troubleshooting what the problem could be, so I hope we'll have good news to share soon! Until then, the server will likely continue to experience these random drops. I apologize for the convenience, but we're very much aware of the issue and are actively trying to work out a solution. 
+
+Thanks!!
+[9:11 PM] TommyB: @here We're gonna be restarting everything in about 10 minutes. I apologize for the inconvenience since it's peak hours and all, but we'd rather try and get to the bottom of the connection issues as soon as possible
+[2:00 AM] fr0st: The fix implemented yesterday appears to have resolved the issue so far. Thanks for your patience.</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anyone running latest SA-MP server under CentOS 8? - <a href="member852b.html?action=profile&amp;uid=1747">kaisersouse</a> -  03.02.2020
+<br />
+<br />
+Interesting. Did they say what the fix was?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anyone running latest SA-MP server under CentOS 8? - <a href="memberc734.html?action=profile&amp;uid=187350">Kcrimlen</a> -  15.07.2020
+<br />
+<br />
+Try installing these:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 418px;
+		text-align: left;
+		overflow: auto">yum -y groupinstall "Compatibility libraries"
+yum -y install zlib.i686 #Y already present
+yum -y install libpng.i686 #N
+yum -y install fontconfig.i686 #N
+yum -y install libpng12-1.2.50-10.el7.i686 #N
+yum -y install libjpeg-turbo.i686 #N
+yum -y install libXau.i686 #N #N
+yum -y install libXdmcp.i686 #N
+yum -y install libXpm.i686 #N
+yum -y install libxml2.i686 #N
+yum -y install gd.i686 #N
+yum -y install libXmu.i686 #N
+yum -y install motif.i686 #N
+yum -y install libunwind.i686 #N
+yum -y install mesa-libGLU.i686 #N
+yum -y install libXaw.i686 libXi.i686 #N #N
+yum -y install libcom_err.i686 keyutils-libs.i686 libverto.i686 #N #N #N
+yum -y install krb5-libs.i686 #N
+yum -y install openssl-libs.i686 #Y (by preceding)
+yum -y install ncurses-libs.i686 #N
+yum -y install pcre-devel.i686 #N
+yum -y install freeglut #N
+yum -y install freeglut.i686 #for /usr/lib/libglut.so.3 #N
+yum -y install glib2.i686 #N
+yum -y install compat-libtiff3.i686 #N</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anyone running latest SA-MP server under CentOS 8? - <a href="memberc480.html?action=profile&amp;uid=234551">XGreen</a> -  15.07.2020
+<br />
+<br />
+Hmmm interesting thing to know. <br />
+<br />
+Currently, what are the most stable OS for running a server?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anyone running latest SA-MP server under CentOS 8? - <a href="memberd7ed.html?action=profile&amp;uid=210074">Inspiron</a> -  15.07.2020
+<br />
+<br />
+I tried Centos 8 to run my samp server, but it was missing lots of stuff I didn't care to look into. Simply downgraded to Centos 7 and its fine.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

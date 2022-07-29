@@ -1,0 +1,115 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> problem with database SQLite - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Heyy, I have a problem with my database (SQLite). When I register an account, everything works fine, the system saves the name and its respective password, but, when I log back in, it asks me to enter" />
+<link rel="canonical" href="showthread144c.html?tid=677146" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread144c.html?tid=677146">problem with database SQLite</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  problem with database SQLite (<em>/showthread.php?tid=677146</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+problem with database SQLite - <a href="membera720.html?action=profile&amp;uid=350662">votati</a> -  01.07.2020
+<br />
+<br />
+Heyy, I have a problem with my database (SQLite). When I register an account, everything works fine, the system saves the name and its respective password, but, when I log back in, it asks me to enter my account password, right? Well, when I enter the password, it tells me that it is WRONG (and I have entered the correct password), and it is a problem that I have still been able to solve (the game mode is made from 0 for my, forgive my ignorance, I am learning).<br />
+<br />
+Code:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 450px;
+		text-align: left;
+		overflow: auto">		case D_LOGIN:
+		{
+			if(!response) return Kick(playerid);
+			{
+				new DBResult:resultado, l_sQuery[350];
+				format(l_sQuery, sizeof(l_sQuery), "SELECT * FROM `USUARIOS` WHERE Nick = '%q' COLLATE NOCASE AND Password = '%q'", GetPlayerNameEx(playerid), PI[playerid][e_sPassword]);
+				resultado = db_query(edb, l_sQuery);
+				if(db_num_rows(resultado))
+				{
+					new l_sString[70];
+					
+					CargarCuenta(playerid);
+
+					PI[playerid][e_bSesion] = true;
+
+					PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
+
+					format(l_sString, sizeof(l_sString), "Welcome!, %s", GetPlayerNameEx(playerid));
+					Mensaje(playerid, -1, l_sString);
+				}
+				else
+				{
+					ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, "{FFFFFF}Log In", "{FFBF00}* {FF6262}ERROR: {FFFFFF}The entered password is incorrect.\n{FFBF00}* {FFFFFF}Please re-enter the account password to log in.", "Join", "Leave");
+				}
+				db_free_result(resultado);
+			}
+		}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: problem with database SQLite - <a href="memberb8a9.html?action=profile&amp;uid=354579">TomHarper</a> -  12.08.2020
+<br />
+<br />
+In this particular line of code<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">format(l_sQuery, sizeof(l_sQuery), "SELECT * FROM `USUARIOS` WHERE Nick = '%q' COLLATE NOCASE AND Password = '%q'", GetPlayerNameEx(playerid), PI[playerid][e_sPassword]);</pre>
+</div>You seem to be using an already loaded password here. You need to get the password value from the "inputtext" variable which contains the value of the responded dialog. Which would go like this.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">format(l_sQuery, sizeof(l_sQuery), "SELECT * FROM `USUARIOS` WHERE Nick = '%q' COLLATE NOCASE AND Password = '%q'", GetPlayerNameEx(playerid), inputtext);</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

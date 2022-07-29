@@ -1,0 +1,131 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Transferring to another host - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi everyone, Currently I host my gameservers and my webservers at Hetzner Hosting with CentOS7 as the operating system. I am thinking of transferring to another hosting services. However it's gonna be" />
+<link rel="canonical" href="showthread880c.html?tid=677129" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread880c.html?tid=677129">Transferring to another host</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Transferring to another host (<em>/showthread.php?tid=677129</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Transferring to another host - <a href="memberd1f0.html?action=profile&amp;uid=166275">Uberanwar</a> -  01.07.2020
+<br />
+<br />
+Hi everyone,<br />
+Currently I host my gameservers and my webservers at Hetzner Hosting with CentOS7 as the operating system. I am thinking of transferring to another hosting services. However it's gonna be tiring to do all things over and over again. Is there a way I could have a snapshot myself and then install the snapshot to new host?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Transferring to another host - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  03.07.2020
+<br />
+<br />
+I wouldn't do that if I were you. Atleast not a full snapshot, because of links/data to/about system hardware and hostkeys. It's not that hard to set up samp and a webhost from a clean installation. You do might want to backup configuration files.<br />
+Alternatively you can follow this: <a href="https://www.digitalocean.com/community/tutorials/how-to-migrate-linux-servers-part-1-system-preparation" target="_blank">https://www.digitalocean.com/communi...em-preparation</a><br />
+However I find it handier to just use a clean installation (and eventually use some backed up configuration files). It's more fail-proof and is possibly even faster than transfering one system to another.<br />
+<br />
+This doesn't count off course if it's a huge system with alot of data/services.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Transferring to another host - <a href="memberc95a.html?action=profile&amp;uid=210455">BoOob</a> -  03.07.2020
+<br />
+<br />
+Try to create a snapshot and download it, and contact sales before ordering a server from them to check if their host allow to boot a custom iso file or not and upload it to them, also take a normal backup of your files/config files as Kwarde said to make sure you have a backup if anything goes wrong.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Transferring to another host - <a href="membera428.html?action=profile&amp;uid=156645">Sonu Rozario Simon</a> -  09.07.2020
+<br />
+<br />
+Samp does not need much Installations. You can do it manually. Its more better.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Transferring to another host - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  09.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Sonu Rozario Simon</strong><br />
+<a href="showthread4973-2.html?pid=4154690#pid4154690" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Samp does not need much Installations. You can do it manually. Its more better.</div>
+</td>
+</tr>
+</table>
+</div>1:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Currently I host my gameservers and my webservers at(...)<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>2:<br />
+There's more than just installing dependencies for samp and runnin samp. Think of system configuration, configuration of mysql, eventually phpmyadmin, setting up accounts, the firewall, if multiple users have access eventually chroot jail.<br />
+<br />
+But, your statement is indeed correct. It's just not applicable to the OP's question.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Try to create a snapshot and download it, and contact sales before ordering a server from them to check if their host allow to boot a custom iso file or not and upload it to them, also take a normal backup of your files/config files as Kwarde said to make sure you have a backup if anything goes wrong.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>Yes, but make sure you don't restore stuff like this on the new server unless if it's exactly the same (which it isn't, eg. your fstab file. UUID aren't the same):<br />
+hostkeys, fstab file, information/configuration files for hardware. You can't just create a full snapshot of the entire system and place it in another one, you can count on trouble if you do that.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Transferring to another host - <a href="memberc95a.html?action=profile&amp;uid=210455">BoOob</a> -  10.07.2020
+<br />
+<br />
+Mostly important folders is "/home" in case if you store the servers over there, "/var/www/html" in case of website folder or /home at case of mostly the used on different webhosting panels check if you use different location to store websites data also the panel configurations, "/var/lib/mysql" in case of mysql server, that you should take care of them.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,214 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Server offline - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I've set the permission of whole folder to 755 including all files and subdirectories. I'm stuck at Code: 1194 $ nohup: ignoring input and appending output to 'nohup.out' I followed this tutorial and" />
+<link rel="canonical" href="showthread09aa.html?tid=676996" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread09aa.html?tid=676996">Server offline</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Server offline (<em>/showthread.php?tid=676996</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Server offline - <a href="memberd7ed.html?action=profile&amp;uid=210074">Inspiron</a> -  26.06.2020
+<br />
+<br />
+I've set the permission of whole folder to 755 including all files and subdirectories. I'm stuck at<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto"> [1] 1194
+[samp@uhfgamin samp03]&#36; nohup: ignoring input and appending output to 'nohup.out'</pre>
+</div>I followed <a href="https://shadowhosting.net/blog/install-samp-server-on-centos-7/" target="_blank">this</a> tutorial and also installed the extra needed binaries/packages that were needed.<br />
+Its saving log in the server_log.txt and nohup.out also says server started. But its still offline on client.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> -  26.06.2020
+<br />
+<br />
+./samp03svr &amp;
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="memberd7ed.html?action=profile&amp;uid=210074">Inspiron</a> -  26.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>PaulinSAMP</strong><br />
+<a href="showthreade005.html?pid=4153157#pid4153157" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">./samp03svr &amp;</div>
+</td>
+</tr>
+</table>
+</div>Tried that too. Same thing. Saves the log but doesn't show in client
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> -  26.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">chmod 777 announce - samp-npc - samp03svr
+setenforce 0</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="memberc95a.html?action=profile&amp;uid=210455">BoOob</a> -  01.07.2020
+<br />
+<br />
+Check if port is closed or open, maybe its closed by the host.<br />
+Also check top command to see if its running or not, also post server_log.txt here or check it if its running well or not.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Inspiron</strong><br />
+<a href="showthread292a.html?pid=4153139#pid4153139" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I've set the permission of whole folder to 755 including all files and subdirectories.</div>
+</td>
+</tr>
+</table>
+</div>Depending what user and group own the file, I always setup permissions as: owner root:dev (dev being used by the developers and to start the server), all files as 770 (rwxrwx---) and samp03svr and announce as 775 (using a restarter file, other needs read and execute permissions).<br />
+<br />
+Quote from SAMP Wiki:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				NOTE: Be sure you set permissions for samp03svr and announce if you want to run an internet server! If you don't do this, you'll get a permission denied error. To set permissions, execute chmod 700 * in the SA:MP server directory. It's NOT a good idea to run the server (or any other program for that matter) under root.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>^ for the person that recommended 777, nope<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto"> [1] 1194
+[samp@uhfgamin samp03]&#36; nohup: ignoring input and appending output to 'nohup.out'</pre>
+</div>
+</td>
+</tr>
+</table>
+</div>That is perfectly normal. <br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Its saving log in the server_log.txt and nohup.out also says server started. But its still offline on client.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>Check:<br />
+1- If (announce and) query is 1 in server.cfg<br />
+2- I f you used the correct IP and port (both server.cfg and your cliet)<br />
+3- If the firewall allows your port (udp)<br />
+4- If there aren't errors in the server log (guessing not since you said it's up according to the server log)<br />
+<br />
+<br />
+If you wish to follow the server log on your SSH screen (it doesn't by default unless if you start ./samp03svr (and thus not "nohup samp03svr &amp;" or even "samp03svr &amp;"), and if 'output' in server.cfg is 0, which is by default):<br />
+<br />
+tail -f server_log.txt<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Also check top command to see if its running or not<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>I can even recommend htop
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server offline - <a href="memberd7ed.html?action=profile&amp;uid=210074">Inspiron</a> -  10.07.2020
+<br />
+<br />
+It was a problem with the operating system. My host just provided the basic nodes/binaries with the operating system which caused this. I switched the host and server runs fine. Thank you everyone.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
