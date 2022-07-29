@@ -1,0 +1,574 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Login and Register System - Dialogs - Using Y_INI - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Login and Register System - Dialogs - Using Y_INI What is this?A simple tutorial on how to make a Login and Register system using Y_INI. What is Y_INI?Y_INI is an extensive .INI based file reader and" />
+<link rel="canonical" href="showthread5e7c.html?tid=273088" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread5e7c.html?tid=273088">[Tutorial] Login and Register System - Dialogs - Using Y_INI</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Login and Register System - Dialogs - Using Y_INI (<em>/showthread.php?tid=273088</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadec97.html?tid=273088&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadeb71.html?tid=273088&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1a09.html?tid=273088&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2142.html?tid=273088&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2e6b.html?tid=273088&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8a62.html?tid=273088&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadbd9d.html?tid=273088&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4faf.html?tid=273088&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2b5e.html?tid=273088&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread79b6.html?tid=273088&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4356.html?tid=273088&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread5f4f.html?tid=273088&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread00d7.html?tid=273088&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Login and Register System - Dialogs - Using Y_INI - <a href="memberb80f.html?action=profile&amp;uid=128387">Kush</a> -  31.07.2011
+<br />
+<br />
+<b><div align="center"><font color="DarkOrchid"><font size="4">Login and Register System - Dialogs - Using Y_INI</font></font></div></b><br />
+<br />
+<b><div align="center"><font color="DarkOrchid">What is this?</font></div></b><div align="center"><b>A simple tutorial on how to make a Login and Register system using Y_INI.</b><br />
+<br />
+<b><font color="DarkOrchid">What is Y_INI?</font></b></div><b><div align="center">Y_INI is an extensive .INI based file reader and writer, also known as a 'File Management System' created by <font color="Purple">******.</font> This is included in the YSI Library/Directory along with other useful includes such as y_commands (YCMD) and y_groups.</div></b><br />
+<br />
+<b><div align="center"><font color="DarkOrchid"><div align="center">What's the difference between this and my file writer?</div></font></div></b><b><div align="center">Y_INI has not only been said, but has been proven to be one of the <u>fastest</u> and most <u>efficient</u> .INI file readers and writers created. You can read more by visiting: <a href="showthread3ccb.html?tid=175565" target="_blank">https://sampforum.blast.hk/showthread.php?tid=175565</a></div></b><br />
+<br />
+<div align="center"><b><font color="DarkOrchid">How to 'install' y_ini?</font></b></div><b><div align="center">You must first download y_INI ----&gt; <a href="showthread3ccb.html?tid=175565" target="_blank">https://sampforum.blast.hk/showthread.php?tid=175565</a>. Once the download has finished, place the <u>YSI</u> folder in your <u>includes</u> folder.</div></b><br />
+<br />
+<div align="center"><b><font color="DarkOrchid">Step I</font></b><br />
+<b>Add the Y_INI Include at the beginning of the script.</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;YSI\y_ini&gt;</span></div></div></pre>
+</div></div><b><div align="center">This include contains all necessary functions needed to create our Login and Register system.</div></b><br />
+<br />
+<div align="center"><b><font color="DarkOrchid">Step II</font></b></div><b><div align="center">Lets define some Dialogs.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define DIALOG_REGISTER 1</span><br/><span style="color: #2222AA;">#define DIALOG_LOGIN 2</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_1 3</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_2 4</span></div></div></pre>
+</div>
+<br />
+<b><font color="DarkOrchid">Step III</font></b></div><b><div align="center">Defining the 'PATH' of the .INI file.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define PATH "/Users/%s.ini"</span></div></div></pre>
+</div>
+<b><font color="DarkOrchid">Step IV</font></b><br />
+<b><div align="center">Lets add some colors.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define COL_WHITE "{FFFFFF}"</span><br/><span style="color: #2222AA;">#define COL_RED "{F81414}"</span><br/><span style="color: #2222AA;">#define COL_GREEN "{00FF22}"</span><br/><span style="color: #2222AA;">#define COL_LIGHTBLUE "{00CED1}"</span></div></div></pre>
+</div></div>
+<b><font color="DarkOrchid">Step V</font></b></div><b><div align="center">We're going to use an enum, to store our variables.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> pInfo<br/><span style="color: #000000;">{</span><br/>    pPass,<br/>    pCash,<br/>    pAdmin,<br/>    pKills,<br/>    pDeaths<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">new</span> PlayerInfo<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pInfo<span style="color: #000000;">]</span>;</div></div></pre>
+</div></div>
+<b><div align="center"><font color="DarkOrchid">Step VI</font></div></b><b><div align="center">Now, we're going to create a function to Load the User's data.</div></b><br />
+<br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:183px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> LoadUser_data<span style="color: #000000;">(</span>playerid,name<span style="color: #000000;">[</span><span style="color: #000000;">]</span>,value<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">public</span> LoadUser_data<span style="color: #000000;">(</span>playerid,name<span style="color: #000000;">[</span><span style="color: #000000;">]</span>,value<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    INI_Int<span style="color: #000000;">(</span><span style="color: #000066;">"Password"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pPass<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_Int<span style="color: #000000;">(</span><span style="color: #000066;">"Cash"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pCash<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_Int<span style="color: #000000;">(</span><span style="color: #000066;">"Admin"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_Int<span style="color: #000000;">(</span><span style="color: #000066;">"Kills"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pKills<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_Int<span style="color: #000000;">(</span><span style="color: #000066;">"Deaths"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pDeaths<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+<br />
+<b><div align="center"><font color="DarkOrchid">Step VII</font></div></b><b><div align="center">Lets create a simple stock function.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>,playername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>playerid,playername,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>playername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>,PATH,playername<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> string;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div><b>The stock function 'UserPath' is merely going to 'grab' the 'PATH' of the User's file.</b></div>
+<br />
+<b><div align="center"><font color="DarkOrchid">Step VIII</font></div></b><div align="center"><b>Add this code below your previous stock function.</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">/*Credits to Dracoblue*/</span><br/><span style="color: #2222BB;">stock</span> udb_hash<span style="color: #000000;">(</span>buf<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> length<span style="color: #000000;">=</span><span style="color: #222222;">strlen</span><span style="color: #000000;">(</span>buf<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> s1 <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #2222BB;">new</span> s2 <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/>    <span style="color: #2222BB;">new</span> n;<br/>    <span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span>n<span style="color: #000000;">=</span><span style="color: #000000;">0</span>; n<span style="color: #000000;">&lt;</span>length; n<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>       s1 <span style="color: #000000;">=</span> <span style="color: #000000;">(</span>s1 <span style="color: #000000;">+</span> buf<span style="color: #000000;">[</span>n<span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">%</span> <span style="color: #000000;">65521</span>;<br/>       s2 <span style="color: #000000;">=</span> <span style="color: #000000;">(</span>s2 <span style="color: #000000;">+</span> s1<span style="color: #000000;">)</span>     <span style="color: #000000;">%</span> <span style="color: #000000;">65521</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">(</span>s2 <span style="color: #000000;">&lt;&lt;</span> <span style="color: #000000;">16</span><span style="color: #000000;">)</span> <span style="color: #000000;">+</span> s1;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+<b><div align="center">The stock above is a simple 'hasher', and will be used to hash passwords, Credits to Dracoblue.</div></b><br />
+<br />
+<b><div align="center"><font color="DarkOrchid">Step IX</font></div></b><div align="center"><b>We're going to now use the 'OnPlayerConnect' callback to check whether the player is registered or not.</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">fexist</span><span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>;<br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div><b><div align="center">We'll be using the native 'fexist' function to search for our file. Parameters are set to our stock function which we've created. If the file exists, you will receive a 'Login' dialog. If it doesn't, you will receive a register dialog.</div></b><br />
+<br />
+<b><div align="center"><font color="DarkOrchid">Step X</font></div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnDialogResponse<span style="color: #000000;">(</span>playerid, dialogid, response, listitem, inputtext<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span> dialogid <span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">case</span> DIALOG_REGISTER<span style="color: #000000;">:</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>response<span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> Kick<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>response<span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #222222;">strlen</span><span style="color: #000000;">(</span>inputtext<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, <span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_RED<span style="color: #000066;">"You have entered an invalid password.<span style="color: #000099; font-weight: bold;">\n</span>"</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #2222BB;">new</span> <span style="color: #000000;">INI</span><span style="color: #000000;">:</span>File <span style="color: #000000;">=</span> INI_Open<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                INI_SetTag<span style="color: #000000;">(</span>File,<span style="color: #000066;">"data"</span><span style="color: #000000;">)</span>;<br/>                INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Password"</span>,udb_hash<span style="color: #000000;">(</span>inputtext<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Cash"</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>                INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Admin"</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>                INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Kills"</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>                INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Deaths"</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>                INI_Close<span style="color: #000000;">(</span>File<span style="color: #000000;">)</span>;<br/><br/>                SetSpawnInfo<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">1958.33</span>, <span style="color: #000000;">1343.12</span>, <span style="color: #000000;">15.36</span>, <span style="color: #000000;">269.15</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span>, <span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>                SpawnPlayer<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/>                ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_SUCCESS_1, DIALOG_STYLE_MSGBOX,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Success!"</span>,<span style="color: #000066;">""</span>COL_GREEN<span style="color: #000066;">"Great! Your Y_INI system works perfectly. Relog to save your stats!"</span>,<span style="color: #000066;">"Ok"</span>,<span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/><br/>        <span style="color: #2222BB;">case</span> DIALOG_LOGIN<span style="color: #000000;">:</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span> <span style="color: #000000;">!</span>response <span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> Kick <span style="color: #000000;">(</span> playerid <span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span> response <span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>udb_hash<span style="color: #000000;">(</span>inputtext<span style="color: #000000;">)</span> <span style="color: #000000;">==</span> PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pPass<span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>                <span style="color: #000000;">{</span><br/>                    INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>;<br/>                    GivePlayerMoney<span style="color: #000000;">(</span>playerid, PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pCash<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_SUCCESS_2, DIALOG_STYLE_MSGBOX,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Success!"</span>,<span style="color: #000066;">""</span>COL_GREEN<span style="color: #000066;">"You have successfully logged in!"</span>,<span style="color: #000066;">"Ok"</span>,<span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #000000;">}</span><br/>                <span style="color: #2222BB;">else</span><br/>                <span style="color: #000000;">{</span><br/>                    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_RED<span style="color: #000066;">"You have entered an incorrect password.<span style="color: #000099; font-weight: bold;">\n</span>"</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #000000;">}</span><br/>                <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<b>Instead of using the 'if' statement to define my dialogs, I've used cases as they seem to take less space and are supposedly 'faster'. The (!response) is the function if the first Button hasn't been clicked, it will then kick the player. <br />
+<br />
+The if(!strlen(inputtext)) explains if nothing has been entered into the dialog (input), you would then be prompted to another dialog which shows you 'Incorrect Password'.<br />
+<br />
+If all goes well, the function INI_Open is then 'executed' which loads and opens the Userfile. Once open, the function 'INI_WriteInt' is then called and starts writing the data into the userfile. The udb_hash would generate a hash code from the player's inputtext (what you've typed). And after all this is completed, it is then closed by 'INI_Close' function.<br />
+<br />
+Once finished, you will then be prompted to the 'Login' dialog.</b><br />
+<br />
+<b>In 'DIALOG_LOGIN', if the response is false (you have clicked 'QUIT), you would then be kicked. If given the correct information (password provided), the INI_Parsefile function would then scan and load your player's data.</b></div>
+<br />
+<b><div align="center"><font color="DarkOrchid">Step XI</font></div></b><div align="center"><b>Don't forget, you would need a way to save those variables. The OnPlayerDisconnect callback simply re-opens the files, write what-ever values which has been stored and then closes it.</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:199px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> <span style="color: #000000;">INI</span><span style="color: #000000;">:</span>File <span style="color: #000000;">=</span> INI_Open<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    INI_SetTag<span style="color: #000000;">(</span>File,<span style="color: #000066;">"data"</span><span style="color: #000000;">)</span>;<br/>    INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Cash"</span>,GetPlayerMoney<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Admin"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Kills"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pKills<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_WriteInt<span style="color: #000000;">(</span>File,<span style="color: #000066;">"Deaths"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pDeaths<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    INI_Close<span style="color: #000000;">(</span>File<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+<b><div align="center"><font color="DarkOrchid">Step XII</font></div></b><b><div align="center">Finally, add this to OnPlayerDeath to add value(s) to kills and deaths.</div></b><br />
+<div align="center"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerDeath<span style="color: #000000;">(</span>playerid, killerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    PlayerInfo<span style="color: #000000;">[</span>killerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pKills<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>    PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pDeaths<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<b><font color="DarkOrchid"><font size="3">Downloads:</font></font></b></div><b><div align="center"><font size="3"><b>y_ini - <a href="showthread3ccb.html?tid=175565" target="_blank">https://sampforum.blast.hk/showthread.php?tid=175565</a></b></font></div></b><b><div align="center"><font size="3">Pastebin - <a href="http://pastebin.com/r4htbbcJ" target="_blank">http://pastebin.com/r4htbbcJ</a></font></div></b><b><br />
+<div align="center"><font size="2">Full Package - <a href="http://www.sendspace.com/file/ca1jvf" target="_blank">http://www.sendspace.com/file/ca1jvf</a></font></div></b><br />
+<br />
+<b><font size="3"><div align="center"><b><font color="DarkOrchid">Credits:</font></b></div></font></b><div align="center">
+<font size="3"><b>****** - y_ini.</b></font></div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member08c9.html?action=profile&amp;uid=89865">Black_Death</a> -  31.07.2011
+<br />
+<br />
+Great job <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member59ac.html?action=profile&amp;uid=123328">Tyler_Cordwell</a> -  31.07.2011
+<br />
+<br />
+nice guide i will learn it right now <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberb80f.html?action=profile&amp;uid=128387">Kush</a> -  31.07.2011
+<br />
+<br />
+Thanks!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member9ad3.html?action=profile&amp;uid=115194">kingchandio</a> -  31.07.2011
+<br />
+<br />
+wow very nice i was looking for easy tutorial now i can learn y_ini thank you so much you are helpul guy... how can up ur repu?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member76bf.html?action=profile&amp;uid=102284">Basicz</a> -  31.07.2011
+<br />
+<br />
+@kingchandio, just press the star button at below of his avatar ( below : Reputation: 10 ).<br />
+<br />
+NICE, now I got my script working again after I used my sucky stock :\<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">reputation<span style="color: #000000;">[</span> Kush <span style="color: #000000;">]</span> <span style="color: #000000;">++</span>;</div></div></pre>
+</div>
+TIP: Explain more parts!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberb80f.html?action=profile&amp;uid=128387">Kush</a> -  31.07.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Basicz</strong><br />
+<a href="showthread5cd3.html?pid=1320092#pid1320092" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">@kingchandio, just press the star button at below of his avatar ( below : Reputation: 10 ).<br />
+<br />
+NICE, now I got my script working again after I used my sucky stock :\<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">reputation<span style="color: #000000;">[</span> Kush <span style="color: #000000;">]</span> <span style="color: #000000;">++</span>;</div></div></pre>
+</div>
+TIP: Explain more parts!</div>
+</td>
+</tr>
+</table>
+</div>I've done them in the previous tutorial, no one cares but to download the .pwn file.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member9ad3.html?action=profile&amp;uid=115194">kingchandio</a> -  31.07.2011
+<br />
+<br />
+one little problem i have added /kill cmd and i entered 5 times but still my data on dissconnect looks<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				[data]<br />
+Password = 104268307<br />
+Cash = 0<br />
+Admin = 0<br />
+Kills = 0<br />
+Deaths = 0<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberb80f.html?action=profile&amp;uid=128387">Kush</a> -  31.07.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>kingchandio</strong><br />
+<a href="showthread54eb.html?pid=1320121#pid1320121" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">one little problem i have added /kill cmd and i entered 5 times but still my data on dissconnect looks</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">kill</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">params</span><span style="color: #007700">[])
+<br/>{
+<br/>    </span><span style="color: #0000BB">PlayerInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">pDeaths</span><span style="color: #007700">]++;
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>You have to be killed by a player in order for the value to change.<br />
+<br />
+The command given would be an example of being killed by a player, only in command form <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.gif" title="Grin"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member9ad3.html?action=profile&amp;uid=115194">kingchandio</a> -  31.07.2011
+<br />
+<br />
+oh i see thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member13e3.html?action=profile&amp;uid=132958">Dan.</a> -  01.08.2011
+<br />
+<br />
+Huh, hello again Kush, I keep having problems with your REGISTER/LOGIN scripts, take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">(</span><span style="color: #000000;">242</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">244</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"DIALOG_LOGIN"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">";"</span>, but found <span style="color: #000066;">"-string-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">"-string end-"</span>, but found <span style="color: #000066;">"-identifier-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> fatal error <span style="color: #000000;">107</span><span style="color: #000000;">:</span> too many error messages on one line</div></div></pre>
+</div>
+And here are the lines:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">fexist</span><span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #228822;">// 242</span><br/>    <span style="color: #000000;">{</span><br/>        INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>; <span style="color: #228822;">// 244</span><br/>       ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//245</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+I guess the errors are because DIALOG_LOGIN and UserPath are not defined, but take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Register system things</span><br/><span style="color: #2222AA;">#define DIALOG_REGISTER 1</span><br/><span style="color: #2222AA;">#define DIALOG_LOGIN 2</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_1 3</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_2 4</span><br/><br/><span style="color: #2222AA;">#define UserPath "/Users/%s.ini"</span></div></div></pre>
+</div>
+The #define UserPath was "PATH" before.. changed it but still the same thing, so maybe you could help. And dont offer me your pastebin version, not going to copy my whole script into there, so some help, please.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="member7d92.html?action=profile&amp;uid=116494">Snowman12</a> -  01.08.2011
+<br />
+<br />
+Nice tutorial but i dont know if i missed anything but when the player registers he can play once logged in but when he goes t login a second time the password come up wrong time and time again can you help?<br />
+<br />
+Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="membere824.html?action=profile&amp;uid=133200">Shockey HD</a> -  01.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Snowman12</strong><br />
+<a href="showthreadacbe.html?pid=1322328#pid1322328" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Nice tutorial but i dont know if i missed anything but when the player registers he can play once logged in but when he goes t login a second time the password come up wrong time and time again can you help?<br />
+<br />
+Thanks</div>
+</td>
+</tr>
+</table>
+</div>Are you sure you have your scriptfile correctly?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="membere824.html?action=profile&amp;uid=133200">Shockey HD</a> -  01.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dan.</strong><br />
+<a href="showthreade05f.html?pid=1322241#pid1322241" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Huh, hello again Kush, I keep having problems with your REGISTER/LOGIN scripts, take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">(</span><span style="color: #000000;">242</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">244</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"DIALOG_LOGIN"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">";"</span>, but found <span style="color: #000066;">"-string-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">"-string end-"</span>, but found <span style="color: #000066;">"-identifier-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> fatal error <span style="color: #000000;">107</span><span style="color: #000000;">:</span> too many error messages on one line</div></div></pre>
+</div>
+And here are the lines:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">fexist</span><span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #228822;">// 242</span><br/>    <span style="color: #000000;">{</span><br/>        INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>; <span style="color: #228822;">// 244</span><br/>       ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//245</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+I guess the errors are because DIALOG_LOGIN and UserPath are not defined, but take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Register system things</span><br/><span style="color: #2222AA;">#define DIALOG_REGISTER 1</span><br/><span style="color: #2222AA;">#define DIALOG_LOGIN 2</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_1 3</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_2 4</span><br/><br/><span style="color: #2222AA;">#define UserPath "/Users/%s.ini"</span></div></div></pre>
+</div>
+The #define UserPath was "PATH" before.. changed it but still the same thing, so maybe you could help. And dont offer me your pastebin version, not going to copy my whole script into there, so some help, please.</div>
+</td>
+</tr>
+</table>
+</div>
+I will show you mine.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define DIALOG_REGISTER 1</span><br/><span style="color: #2222AA;">#define DIALOG_LOGIN 2</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_1 3</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_2 4</span><br/><br/><span style="color: #2222AA;">#define PATH "/Users/%s.ini"</span><br/><br/><span style="color: #2222AA;">#define COL_WHITE "{FFFFFF}"</span><br/><span style="color: #2222AA;">#define COL_RED "{F81414}"</span><br/><span style="color: #2222AA;">#define COL_GREEN "{00FF22}"</span><br/><span style="color: #2222AA;">#define COL_LIGHTBLUE "{00CED1}"</span><br/><span style="color: #2222AA;">#define COLOR_RED 0xAA3333AA</span><br/><span style="color: #2222AA;">#define COLOR_LIGHTBLUE 0x00BFFFFF</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">fexist</span><span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>;<br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Make sure you have your includes correct.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;YSI\y_ini&gt;</span></div></div></pre>
+</div>
+Only an idiot cant fuck this up.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberb80f.html?action=profile&amp;uid=128387">Kush</a> -  01.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dan.</strong><br />
+<a href="showthreade05f.html?pid=1322241#pid1322241" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Huh, hello again Kush, I keep having problems with your REGISTER/LOGIN scripts, take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">(</span><span style="color: #000000;">242</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">244</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"UserPath"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"DIALOG_LOGIN"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">";"</span>, but found <span style="color: #000066;">"-string-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> warning <span style="color: #000000;">215</span><span style="color: #000000;">:</span> expression has no effect<br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> error 001<span style="color: #000000;">:</span> expected token<span style="color: #000000;">:</span> <span style="color: #000066;">"-string end-"</span>, but found <span style="color: #000066;">"-identifier-"</span><br/><span style="color: #000000;">(</span><span style="color: #000000;">245</span><span style="color: #000000;">)</span> <span style="color: #000000;">:</span> fatal error <span style="color: #000000;">107</span><span style="color: #000000;">:</span> too many error messages on one line</div></div></pre>
+</div>
+And here are the lines:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">fexist</span><span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #228822;">// 242</span><br/>    <span style="color: #000000;">{</span><br/>        INI_ParseFile<span style="color: #000000;">(</span>UserPath<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000066;">"LoadUser_%s"</span>, .bExtra <span style="color: #000000;">=</span> true, .extra <span style="color: #000000;">=</span> playerid<span style="color: #000000;">)</span>; <span style="color: #228822;">// 244</span><br/>       ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to login."</span>,<span style="color: #000066;">"Login"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//245</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Registering..."</span>,<span style="color: #000066;">""</span>COL_WHITE<span style="color: #000066;">"Type your password below to register a new account."</span>,<span style="color: #000066;">"Register"</span>,<span style="color: #000066;">"Quit"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+I guess the errors are because DIALOG_LOGIN and UserPath are not defined, but take a look at this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Register system things</span><br/><span style="color: #2222AA;">#define DIALOG_REGISTER 1</span><br/><span style="color: #2222AA;">#define DIALOG_LOGIN 2</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_1 3</span><br/><span style="color: #2222AA;">#define DIALOG_SUCCESS_2 4</span><br/><br/><span style="color: #2222AA;">#define UserPath "/Users/%s.ini"</span></div></div></pre>
+</div>
+The #define UserPath was "PATH" before.. changed it but still the same thing, so maybe you could help. And dont offer me your pastebin version, not going to copy my whole script into there, so some help, please.</div>
+</td>
+</tr>
+</table>
+</div>The main idea for this tutorial was to explain the uses of each method used, including the different callbacks, functions, and responses. This is the same tutorial as my SII, only it's done in Y_INI and a few things has been changed. Either download the .pwn and see how everything is placed, or actually READ what I have written.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberc429.html?action=profile&amp;uid=123146">jot16</a> -  02.08.2011
+<br />
+<br />
+I got this error.<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				C:\Users\Jot\Desktop\SAMP Server\gamemodes\Banda.pwn(4) : fatal error 100: cannot read from file: "YSI\y_ini"<br />
+<br />
+Compilation aborted.Pawn compiler 3.2.3664	 	 	Copyright &copy; 1997-2006, ITB CompuPhase<br />
+<br />
+<br />
+1 Error.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>here are my includes.<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/7z3mE.jpg"/><br />
+<img alt="" border="0" src="http://i.imgur.com/sEffX.jpg"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="membere824.html?action=profile&amp;uid=133200">Shockey HD</a> -  02.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>jot16</strong><br />
+<a href="showthreadc966.html?pid=1323567#pid1323567" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I got this error.<br />
+<br />
+<br />
+here are my includes.<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/7z3mE.jpg"/><br />
+<img alt="" border="0" src="http://i.imgur.com/sEffX.jpg"/></div>
+</td>
+</tr>
+</table>
+</div>Make sure you open the .pwn file from the correct Compiler. So instead of double clicking .pwn go to Pawno.exe then open the .pwn
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberc429.html?action=profile&amp;uid=123146">jot16</a> -  02.08.2011
+<br />
+<br />
+I don't want to open but fix my error.i just showed the pic's to show my includes.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="membere824.html?action=profile&amp;uid=133200">Shockey HD</a> -  02.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>jot16</strong><br />
+<a href="showthread77d2.html?pid=1323580#pid1323580" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I don't want to open but fix my error.i just showed the pic's to show my includes.</div>
+</td>
+</tr>
+</table>
+</div>Did i just tell you a way to fix it?<br />
+<br />
+Make sure you open the .pwn file from the correct Compiler. So instead of double clicking .pwn go to Pawno.exe then open the .pwn
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Login and Register System - Dialogs - Using Y_INI - <a href="memberc429.html?action=profile&amp;uid=123146">jot16</a> -  02.08.2011
+<br />
+<br />
+i want u to fix my warnings.plz
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
