@@ -1,0 +1,200 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] How to make a simple discord bot, In Javascript. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="_________________ Introduction Hey there! I released a moderation bot here in the forums today and a lot of people were asking on how I made it, so here I am making a tutorial for everyone. To make a" />
+<link rel="canonical" href="showthread558a.html?tid=675430" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread558a.html?tid=675430">[Tutorial] How to make a simple discord bot, In Javascript.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] How to make a simple discord bot, In Javascript. (<em>/showthread.php?tid=675430</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+How to make a simple discord bot, In Javascript. - <a href="member3e28.html?action=profile&amp;uid=347725">JasonTheMan</a> -  12.05.2020
+<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/4lePkpX.png"/></div>_________________<br />
+<br />
+<font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">Introduction</div></font></b></font></font><br />
+<br />
+<div align="center"><font face="Arial Narrow">Hey there! I released a moderation bot here in the forums today and a lot of people were asking on how I made it, so here I am making a tutorial for everyone. To make a discord bot you can use python or javascript, in this case, we will be using javascript as it is easier (I think so at least). So, I am sure most of you know this but just to make sure ill say it again. Discord is a real-time messaging platform that bills itself as an “all-in-one voice and text chat for gamers.” Due to its slick interface, ease of use, and extensive features, Discord has experienced rapid growth and is becoming increasingly popular even among those with little interest in video games, including the SAMP community. For this bot you can use any kind of editor you want, i recommend Visual Studio Code. Let's start making our bot.</font></div>
+<br />
+<font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">1 -Create an application in the developer portal</div></font></b></font></font><br />
+<br />
+<div align="center">Go to - <a href="https://discord.com/developers/applications" target="_blank">https://discord.com/developers/applications</a><br />
+After you, Login/Signup create an application.<br />
+<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/3cRl33P.png"/></div>
+<font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">2 - Create a bot for your application</div></font></b></font></font><br />
+<div align="center">Go to your new application and create a bot for it, after that copy the token from it.<br />
+<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/ubcqTEW.png"/><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/vPGgxfi.png"/></div>
+<br />
+<font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">3 - Copy the client ID and invite the bot</div></font></b></font></font><br />
+<br />
+<div align="center">Go to - <a href="https://discordapi.com/permissions.html" target="_blank">https://discordapi.com/permissions.html</a><br />
+Enter your Client ID and enable all permissions, then click the link to invite the bot to the desired server.<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/U1tsIqj.png"/></div>
+<br />
+<font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">4 - Making the actual bot</div></font></b></font></font><br />
+<br />
+<div align="center">Now read carefully. First of all, you need to download Node.js - <a href="https://nodejs.org/en/download/" target="_blank">https://nodejs.org/en/download/</a><br />
+Then you create a folder in your desktop and using the command prompt use "cd" to go to the folder you created.<br />
+Then you can do "npm init", you may skip all the steps by pressing enter if you want. This will create a son file.<br />
+After that we need to install the discord.js modules, we can do that by typing "npm install discord.js" in the command prompt. Now you will find a folder named "node_modules" in your discord bot's folder. (Ignore the warnings that it will show)<br />
+Next, we need to create a new file in our folder called index.js. now we can start making the actual script.<br />
+I will only give you the basics, the rest you will have to learn by yourself (I can assist at any time if you need help). Try to write it instead of just copy/pasting, it really helps.<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 194px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">const </span><span style="color: #0000BB">Discord </span><span style="color: #007700">= require(</span><span style="color: #DD0000">"discord.js"</span><span style="color: #007700">) </span><span style="color: #FF8000">// We require discord.js’s library
+<br/></span><span style="color: #007700">const </span><span style="color: #0000BB">client </span><span style="color: #007700">= new </span><span style="color: #0000BB">Discord</span><span style="color: #007700">.</span><span style="color: #0000BB">Client</span><span style="color: #007700">() </span><span style="color: #FF8000">// We initialize it by calling Client()
+<br/></span><span style="color: #0000BB">client</span><span style="color: #007700">.</span><span style="color: #0000BB">on</span><span style="color: #007700">(</span><span style="color: #DD0000">"ready"</span><span style="color: #007700">, () =&gt; { </span><span style="color: #FF8000">// Then we listen for the ready event via the on method and we tell how to handle this event with a callback function.
+<br/>  </span><span style="color: #0000BB">console</span><span style="color: #007700">.</span><span style="color: #0000BB">log</span><span style="color: #007700">(`</span><span style="color: #DD0000">Logged in as </span><span style="color: #007700">&#36;{</span><span style="color: #0000BB">client</span><span style="color: #007700">.</span><span style="color: #0000BB">user</span><span style="color: #007700">.</span><span style="color: #0000BB">tag</span><span style="color: #007700">}</span><span style="color: #DD0000">!</span><span style="color: #007700">`) </span><span style="color: #FF8000">// Send's a message in the console when the bot starts
+<br/></span><span style="color: #007700">})
+<br/></span><span style="color: #0000BB">client</span><span style="color: #007700">.</span><span style="color: #0000BB">on</span><span style="color: #007700">(</span><span style="color: #DD0000">"message"</span><span style="color: #007700">, </span><span style="color: #0000BB">msg </span><span style="color: #007700">=&gt; { </span><span style="color: #FF8000">// // Now we listen for the message event via the on method and we tell how to handle this event with a callback function again.
+<br/>  </span><span style="color: #007700">if (</span><span style="color: #0000BB">msg</span><span style="color: #007700">.</span><span style="color: #0000BB">content </span><span style="color: #007700">=== </span><span style="color: #DD0000">"ping"</span><span style="color: #007700">) { </span><span style="color: #FF8000">// This tells the bot that if a user types "ping", he should respond with "Pong!"
+<br/>    </span><span style="color: #0000BB">msg</span><span style="color: #007700">.</span><span style="color: #0000BB">reply</span><span style="color: #007700">(</span><span style="color: #DD0000">"Pong!"</span><span style="color: #007700">)
+<br/>  }
+<br/>})
+<br/></span><span style="color: #0000BB">client</span><span style="color: #007700">.</span><span style="color: #0000BB">login</span><span style="color: #007700">(</span><span style="color: #DD0000">"token-goes-here"</span><span style="color: #007700">)</span><span style="color: #FF8000">// Here you should put the token you copied from the discord's developer website. 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>To start the bot you can do "node index.js"(or any other name u used), or you can create a .bat file and put in it the following code: <br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">echo </span><span style="color: #0000BB">off
+<br/>cls
+<br/></span><span style="color: #007700">echo </span><span style="color: #0000BB">Starting Bot
+<br/>node index</span><span style="color: #007700">.</span><span style="color: #0000BB">js
+<br/>pause 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div></div><font face="Impact"><font size="6"><b><font color="RoyalBlue"><div align="center">Enjoy!</div></font></b></font></font><br />
+<br />
+<div align="center">Now this is the most basic bot you may create, there are a lot of other features you may add, economy systems, new commands, etc. No-one was born as a developer It only takes concentration, put some time into it and you will reach perfection. Feel free to ask me any questions you have, ill be glad to respond and assist you.</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How to make a simple discord bot, In Javascript. - <a href="member8074.html?action=profile&amp;uid=316750">Proxus</a> -  12.05.2020
+<br />
+<br />
+By recommending VSCode, do you have any real reason for recommending it or is it just because you use it? It'd be good for you to explain why you recommend certain editors. Personally, I prefer to use VSC as well, but I know a great amount of people like to use other editors like Sublime, etc. <br />
+<br />
+Also, this isn't necessarily a major issue but a nitpick. Most of this tutorial is text, which makes it less of a convenience to read through it and therefore, I'd suggest using more screenshots. <br />
+<br />
+Furthermore, some lines are poorly explained for people new to this.<br />
+Major offenders such as:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">const Discord = require("discord.js") // We require discord.js’s library
+const client = new Discord.Client() // We initialize it by calling Client()</pre>
+</div>There's absolutely no reason for comments here as they say nothing at all: either make them useful or not at all.<br />
+<br />
+I'd recommend adding a section about commands as most bots aren't going to be this simple.<br />
+For anyone who wants to know how to make a basic command:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">const Prefix = "!"
+
+if(msg.content === `&#36;{Prefix}cmdhere`)</pre>
+</div>Finally, you should be splitting your message if you're going to use arguments (which most bots are going to use, otherwise it's pretty pointless).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">let array = message.content.split(" ");
+let command = array[0]; // changed from your msg
+let args = array.slice(1); // slice it again as there may be multiple arguments</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How to make a simple discord bot, In Javascript. - <a href="member3e28.html?action=profile&amp;uid=347725">JasonTheMan</a> -  12.05.2020
+<br />
+<br />
+Got it, will add more things, and repost it. Thank you - in fact, instead of just making the thread longer and longer, ill just make a youtube video with a detailed guide, giving information about commands, etc.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

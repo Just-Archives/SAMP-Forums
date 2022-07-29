@@ -1,0 +1,350 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] An In-Depth philosophy to creating a SA-MP Server. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Introduction Hello, for those of you who do not know me, I've been here for quite a while. I have created several gamemodes and scripts, some of them I published here, and some of them had laid waste" />
+<link rel="canonical" href="showthread2c17.html?tid=675439" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2c17.html?tid=675439">[Tutorial] An In-Depth philosophy to creating a SA-MP Server.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] An In-Depth philosophy to creating a SA-MP Server. (<em>/showthread.php?tid=675439</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+An In-Depth philosophy to creating a SA-MP Server. - <a href="member2cbf.html?action=profile&amp;uid=167414">XStormiest</a> -  12.05.2020
+<br />
+<br />
+<font face="Arial"><br />
+<font color="Red">Introduction</font><br />
+<font color="Black">Hello, for those of you who do not know me, I've been here for quite a while. I have created several gamemodes and scripts, some of them I published here, and some of them had laid waste in my computer. So far from past years of experience. I have came to the conclusion that I want to share my knowledge with you so you will be able to create a server for your own.<br />
+<br />
+This tutorial is aimed towards an introduction to simple programming scope and learning how to use simple things like methods, events and variables to attain what you want.<br />
+Even though you many deny, most of the time you use only 20% of the programming language to deliver 80%. We use simple things like, ifs, for, while, methods, variable, macros and functions to create that awesome dynamic house system that we so want for our server. While is true that more advanced things like plugins to be able to store data in a database on the internet (MySQL), or be able to use great functions to check if player is colliding with a building (MapAndreeas) or even use simple but powerfull cryptic plugins like Whirlpool. In the end, we still use the same toys but with new power.<br />
+</font><br />
+<br />
+<font color="Red">Content</font><ol style="list-style-type: decimal"><li>Methods</li>
+<li>Events</li>
+<li>Variables</li>
+<li>Redefinitions</li>
+</ol>
+<font color="Red">Methods</font><br />
+<font color="Black">When coming across the internet, you may see a lot of name interpretations, some will those functions, some will call them methods. Methods are just a quick way to deliver a sample of code throughout the code without having to repeat it. We don't want to have to write a 500 line code each time we want to add a new system.<br />
+Methods can be used for simple things like, creating a car at the player's position<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">CreateCarAtPlayerPosition(playerid, modelid, Float: rotation, color1, color2, siren)
+{
+     new Float: X, Float: Y,  Float: Z;
+     GetPlayerPos(playerid, X, Y, Z);
+     new carid = CreateVehicle(modelid, X, Y, Z, rotation, color1, color2, siren);
+     PutPlayerInVehicle(playerid, carid, 0);
+     return carid;
+}</pre>
+</div>You don't have to worry about what these things mean, as they are simply self-explanatory, we are creating three float variables that store numerical value with decimal points, we are getting the player's position with a method called GetPlayerPoss, that requires the three variables we just declared previously. We then create a new variable that stores the id of a car that we are creating. The variable carid stores informations about a vehicle that has a modelid given by the method, the current position of the player, the colors, rotation and siren properties that are given by the method.  We then proceed at the end by putting the player in the vehicle we just created in the seat of the passenger, seat 0. Afer that, we return the id of the vehicle that we created for later code uses.<br />
+We do this so next time we want to create a new vehicle we will just do this<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">public OnPlayerSpawn(playerid)
+{
+    CreateCarAtPlayerPosition(playerid, 411, 0.0, 0, 0, 0);
+    return 1;
+}</pre>
+</div>What this code does is creating an infernus for the player with a rotation of 0, black and without a siren at it's current position when the player spawns. <br />
+<br />
+Let's say we don't want to specify the rotation each time, or the color, we just want our code to spawn a red vehicle at the player's position that has no sirens and for that we just need to create a new method<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">CreateRedVehicleAtPlayerPosition(playerid, modelid)
+{
+    return CreateCarAtPlayerPosition(playerid, modelid, 0.0, 3, 0, 0);
+}</pre>
+</div>See how super-simplified this method got? Now with a simple function we can create any red vehicle we want and at the player's position<br />
+The above code and explanation is a philosophy and also a simple guide of how most of the scripts work at their core. Simple methods, that do simple things. It is said, that a method should not do more than just one thing.<br />
+We don't want a method that creates the entirety of the server, we create a method for each thing that we want to do.<br />
+For example, we can have methods like:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">CreatePlayerVehicleInRangeOf(playerid, Float:range, Float: X, Float: Y, Float: Z);
+CreateShopInRangeOf(Float:range, Float: X, Float: Y, Float: Z, interior, virtual_world);
+CreatePickupBehindPlayer(playerid, pickupid, type);</pre>
+</div>And many more uses as well.  Methods should allow code reuse.<br />
+</font><br />
+<br />
+<font color="red">Events</font><br />
+We describe an event as something that occurs when an entity x is influenced by an exterior force that has some kind of effect on the given entity. Thus, we can see, that sa-mp servers has in fact, many events, for example, we have an event that handles what happens when the player joins a server: OnPlayerConnect or when player types on the main chat: OnPlayerText, when types a command: OnPlayerCommandText, so far and so forth. <br />
+We can also create events of our own by using timers. Timers allow the posibility of calling a method to act as an event every x amount of time, where x can be any amount of time we want, yes, even years (don't know why you would want that). You can use timers to check if something happens: example -&gt; player is using the minigun. In the timer main method you can make so that if the player indeed uses a minigun and the player is not an admin, a new event is called: OnPlayerCheating(cheaterid)<br />
+<br />
+A simple example of the explanation above would be this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">...bla bla #include... blala
+
+public OnGameModeInit()
+{
+    SetTimer("CheckCheaters", 1000, true);
+    return 0;
+}
+
+forward CheckCheaters();
+public CheckCheaters()
+{
+    for(new i = 0; i &lt; MAX_PLAYERS; i++)
+    {
+         if(IsPlayerConnected(i))
+         {
+              new weapon[13][2];
+              for(j = 0; j &lt;= 12; j++)
+             {
+                  GetPlayerWeaponData(i, j, weapon[j][0], weapon[j][1]);
+             }
+             
+              for(j = 0; j &lt;= 12; j++)
+             { 
+                  if(weapon[j][0] == 46 &amp;&amp; !IsPlayerAdmin(playerid) ) OnPlayerCheating(i);
+             }
+         }
+    }
+    return 1;
+}
+
+forward OnPlayerCheating(cheaterid);
+public OnPlayerCheating(cheaterid)
+{
+    new cheater_name[MAX_PLAYER_NAME];
+    GetPlayerName(cheaterid, cheater_name, sizeof(cheater_name));
+    new message[50];
+    format(message, sizeof(message), "%s has been found cheating. Banned", cheater_name);
+    SendClientMessageToAll(-1,  message);
+    BanEx(cheaterid, "Hacks");
+    return 1;
+}</pre>
+</div>Why use it likes this? Because now you can create multiple checks in the timer for other hacks, example if player is flying and is not in a car or an admin, like this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">...bla bla #include... blala
+
+public OnGameModeInit()
+{
+    SetTimer("CheckCheaters", 1000, true);
+    return 0;
+}
+
+forward CheckCheaters();
+public CheckCheaters()
+{
+    for(new i = 0; i &lt; MAX_PLAYERS; i++)
+    {
+         if(IsPlayerConnected(i))
+         { 
+              // weapon check, you can also create a method like: CheckHackWeapon(playerid, weaponid) and use that instead of this whole code
+              new weapon[13][2];
+              for(j = 0; j &lt;= 12; j++)
+             {
+                  GetPlayerWeaponData(i, j, weapon[j][0], weapon[j][1]);
+             }
+             
+              for(j = 0; j &lt;= 12; j++)
+             { 
+                  if(weapon[j][0] == 46 &amp;&amp; !IsPlayerAdmin(playerid) ) OnPlayerCheating(i);
+             }
+
+             //flying hack - not in a vehicle check + in a vehicle check
+            new Float: X, Float: Y, Float: Z;
+            GetPlayerPos(playerid, X, Y, Z);
+            new Float: velocityX, Float: velocityY, Float: velocityZ;
+            new Float: vehiclevX, Float: vehiclevY, Float: vehiclevZ;
+            GetVehicleVelocity(GetPlayerVehicleID(i), vehiclevX, vehiclevY, vehiclevZ);
+            GetPlayerVelocity(playerid, X, Y, Z);
+            if(!IsPlayerInAnyVehicle(i)) {
+            new Float: speed = (( velocityX*velocityX ) + (velocityY * velocityY) + (velocityZ*velocityZ));
+                 if(speed &gt; 100) {
+                      if(!IsPlayerAdmin(playerid)) OnPlayerCheating(i);
+                 }
+            }
+           else {
+               new speed = ( (vehiclevX*vehiclevX) + (vehiclevY*vehiclevY) + (vehiclevZ*vehiclevZ) );
+               if(speed &gt; 100) {
+                   if(!IsPlayerAdmin(playerid)) OnPlayerCheating(i);
+               }
+          }
+         }
+    }
+    return 1;
+}
+
+forward OnPlayerCheating(cheaterid);
+public OnPlayerCheating(cheaterid)
+{
+    new cheater_name[MAX_PLAYER_NAME];
+    GetPlayerName(cheaterid, cheater_name, sizeof(cheater_name));
+    new message[50];
+    format(message, sizeof(message), "%s has been found cheating. Banned", cheater_name);
+    SendClientMessageToAll(-1,  message);
+    BanEx(cheaterid, "Hacks");
+    return 1;
+}</pre>
+</div>This is not a tutorial to teach you how to do those things that I just explained and some of the things that I have explained myself, maybe wrong to the ideea that some things may not be precise. There are plenty of great tutorials on this website to teach you on how to create the ideal" anti-flying hack or just direct scripts that let's you add them into your server without much struggle. This is tutorial is not meant to teach you how to do those things, but to give you an ideea about the philosophy of programming language and how to use this philosophy to create great code that can be re-used at any time without having to create a new gamemode just because you forgot what is in your gamemode after not scripting for a while.<br />
+<br />
+As you can see in the code above, both uses the same method as an event. If the player is passing through this checks in this timer, the method will be called each time, if not, it will not be called<br />
+<br />
+This is an excellent example, of how we could create an event to handle something, let's say for instance, we want an event that handles what happens when the player creates a new account, or what happens when the player is doing something that is worth creating an event for.<br />
+<br />
+Yes, some of you may say that timers are not necesarily needed always, that is true, they consume a lot of power and are quite laggy at times. You can also call the method that acts as an event in certain situations. Example, you have an event that handles what happens when the player levels up on an rpg server. In this case you would create for example a method called: AdvancePlayerLevel:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">AdvancePlayerLevel(playerid)
+{
+     PLAYER_ACCOUNT[playerid][pLevel]++;
+     OnPlayerHadLevelUp(playerid, PLAYER_ACCOUNT[playerid][pLevel]);
+}</pre>
+</div>and thus, we can declare the event method like this.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">forward OnPlayerHadLevelUp(playerid, level);
+public OnPlayerHadLevelUp(playerid, level)
+{
+    new name[MAX_PLAYER_NAME];
+    GetPlayerName(playerid, name, sizeof(name));
+    new message[256];
+    format(message, sizeof(message), "%s has advanced to level %d. Congratiolations!",  name, level);
+    SendClientMessageToAll(-1, message);
+}</pre>
+</div>And now we have an event that handles what happens after the player reaches a new level, you can use this new event in any shape you want it. Why not give him ability to use new commands when he levels up to level 10? Or give him a new car at level 15, your imagination is the sky now.<br />
+<br />
+<font color="Red">[TO-BE-CONTINUED]</font><br />
+<br />
+<font color="Red">Conclusions</font><br />
+Well, as an end, I want to say, I am sorry for any gramatical errors that I may had made in this post, I'll come from time to time to update this post and make it better. Also why I made this post? Well, while it makes perfect sense what I just wrote, it's a great mindset to start with when programming, and not just a sa-mp server. We want to be able to create includes, plugins and scripts that allow us to be able to re-use code without having to write the same thing 500 times over the whole sa-mp server project. We also want code that can handle any situation and events or methods that can come to our aid when want to create a simple method that update's a player's password or deletes or creates an account. <br />
+<br />
+What's your own tips and advice? <br />
+How do you use methods in your script?<br />
+How do you use events in your script?<br />
+How do you use timers in your scripts?<br />
+How do you use variables in your script, or redefinitions?<br />
+<br />
+Those are simple and good questions, because a great way of creating scripts can save up a long time of struggling to get over an ugly, big and unordered chunk of 27.000 lines code gamemode where everything is shuffled randomly everywhere.<br />
+</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: An In-Depth philosophy to creating a SA-MP Server. - <a href="membereafe.html?action=profile&amp;uid=336308">l0gic</a> -  12.05.2020
+<br />
+<br />
+new message[256];<br />
+so much string space for such a message?<br />
+<br />
+<br />
+new Float: X, Float: Y, Float: Z;<br />
+            GetPlayerPos(playerid, X, Y, Z);<br />
+            new Float: velocityX, Float: velocityY, Float: velocityZ;<br />
+            new Float: vehiclevX, Float: vehiclevY, Float: vehiclevZ;<br />
+            GetVehicleVelocity(GetPlayerVehicleID(i), vehiclevX, vehiclevY, vehiclevZ);<br />
+            GetPlayerVelocity(playerid, X, Y, Z);<br />
+            if(!IsPlayerInAnyVehicle(i)) {<br />
+            new Float: speed = (( velocityX*velocityX ) + (velocityY * velocityY) + (velocityZ*velocityZ));<br />
+                 if(speed &gt; 100) {<br />
+                      if(!IsPlayerAdmin(playerid)) OnPlayerCheating(i);<br />
+                 }<br />
+            }<br />
+           else {<br />
+               new speed = ( (vehiclevX*vehiclevX) + (vehiclevY*vehiclevY) + (vehiclevZ*vehiclevZ) );<br />
+               if(speed &gt; 100) {<br />
+                   if(!IsPlayerAdmin(playerid)) OnPlayerCheating(i);<br />
+               }<br />
+          }<br />
+<br />
+wtf is this code?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: An In-Depth philosophy to creating a SA-MP Server. - <a href="member2cbf.html?action=profile&amp;uid=167414">XStormiest</a> -  12.05.2020
+<br />
+<br />
+As I said, the idea of this tutorial is not the code itself but the concept of how to implement the code. There are many great tutorials out there for a way better code for flying hack check, this is just another way of how to use events in order to have great re-usable code. Although, I will make changes, thanks for the correction.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
