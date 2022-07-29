@@ -1,0 +1,456 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Stop the abuse of stock! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="What is stock? The stock keyword, like const, is a modifier that tells the compiler to hide a variable or a function if it is not used. Contrary to popular believe in the SA-MP community, stock is not" />
+<link rel="canonical" href="showthreadbd40.html?tid=570635" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadbd40.html?tid=570635">[Tutorial] Stop the abuse of stock!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Stop the abuse of stock! (<em>/showthread.php?tid=570635</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread630b.html?tid=570635&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadecb0.html?tid=570635&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread9134.html?tid=570635&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Stop the abuse of stock! - <a href="member8928.html?action=profile&amp;uid=13347">Vince</a> -  12.04.2015
+<br />
+<br />
+<b><font color="Sienna"><font size="4">What is stock?</font></font></b><br />
+The stock keyword, like const, is a <b><font color="Sienna">modifier</font></b> that tells the compiler to hide a variable or a function if it is not used. Contrary to popular believe in the SA-MP community, <font size="3"><b><font color="Sienna">stock is not a requirement</font></b></font>. Functions do not require a special keyword in Pawn. The word "stock" is not interchangeable with the word "function" either.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>random scripting help topic</strong><br />
+</div>
+<div style="font-style:italic">Hi, I'm writing this stock ...</div>
+</td>
+</tr>
+</table>
+</div>No, you're writing a function!<br />
+<br />
+<b><font color="Sienna"><font size="4">When to use stock?</font></font></b><ul><li><font color="Sienna"><b>I am writing a gamemode.</b></font><ul><li>You don't need the <font face="Courier New">stock</font> keyword!</li>
+</ul></li>
+</ul><ul><li><font color="Sienna"><b>I am writing a filterscript.</b></font><ul><li>You don't need the <font face="Courier New">stock</font> keyword!</li>
+</ul></li>
+</ul><ul><li><font color="Sienna"><b>I am writing an include.</b></font><ul><li>Is the function or variable <b>required</b> to be used in a gamemode or filterscript? If yes, do not use the <font face="Courier New">stock</font> keyword. Do not use any keyword at all.</li>
+<li>Is the function or variable for internal use only? If yes, use <font face="Courier New"><font color="Blue">static</font></font>.</li>
+<li>Is the function or variable for internal use only, but is there a chance that it may not be used (conditional compiling)? If yes, use <font face="Courier New"><font color="Blue">static</font> stock</font></li>
+<li>If none of the above are met, only <i>then</i> is it appropriate to use <font face="Courier New">stock</font>.</li>
+</ul></li>
+</ul>
+Removing the stock modifier from ALL functions in your gamemode or filterscript is a good way to start. If you receive a few "symbol is never used" warnings after doing so then that means your gamemode is cluttered. It means you have functions which do nothing but waste your scroll wheel. Consider removing those functions or move them to an appropriate include file.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a> -  12.04.2015
+<br />
+<br />
+Nice, didn't knew<img alt="" border="0" class="inlineimg" src="images/smilies/surprised.gif" title="Shocked"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member7fcc.html?action=profile&amp;uid=251236">FernandoLight</a> -  12.04.2015
+<br />
+<br />
+lool <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - Emmet_ -  12.04.2015
+<br />
+<br />
+Nicely written. Hopefully people can understand that "stock" is not a keyword for "function". I used to spam it in my scripts myself, so I am guilty of doing this. I read over the documentation again and came to a conclusion that I don't even need it!<br />
+<br />
+I guess you could say the same thing for global static variables in a gamemode - it's not needed.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: Stop the abuse of stock! - <a href="member1854.html?action=profile&amp;uid=149189">Mellnik</a> -  12.04.2015
+<br />
+<br />
+Stop stock abuse, NOW!<br />
+<br />
+Sign the petition:<br />
+stopstockkeywordabuseinpawnscripts.com
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - Patrick -  12.04.2015
+<br />
+<br />
+Amen!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> -  12.04.2015
+<br />
+<br />
+Why isn't this a sticky yet
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  12.04.2015
+<br />
+<br />
+They STILL won't understand the true meaning of that keyword. I stopped bothering with the current community members since most of them are not learning, they're on Scripting Help board to get an quick answer, and resolve their issues without even looking what that answer holds.<br />
+<br />
+Nice of you to actually post something like that, good piece of advice.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Vince</strong><br />
+<a href="showthreadccd9.html?pid=3428616#pid3428616" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">No, you're writing a function! <img alt="" border="0" class="inlineimg" src="images/smilies/evil.gif" title="Angry"/></div>
+</td>
+</tr>
+</table>
+</div>stock angryface(jpg) {}
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="memberaa83.html?action=profile&amp;uid=113523">Michael@Belgium</a> -  12.04.2015
+<br />
+<br />
+I like to use stock, it's short to write and easy to use. Don't tell me what to do. <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/> If it works .. it works.<br />
+So you're basicly saying to always write publics and forward them ? I don't like to type much.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member8928.html?action=profile&amp;uid=13347">Vince</a> -  12.04.2015
+<br />
+<br />
+Did you actually read what I wrote? Stock is not a requirement. It is merely a modifier.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">myFunction<span style="color: #000000;">(</span>parameter<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"the parameter is %d"</span>, parameter<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+This works. Nothing else required.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  12.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Michael@Belgium</strong><br />
+<a href="showthreadb0a4.html?pid=3429367#pid3429367" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I like to use stock, it's short to write and easy to use. Don't tell me what to do. <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/> If it works .. it works.<br />
+So you're basicly saying to always write publics and forward them ? I don't like to type much.</div>
+</td>
+</tr>
+</table>
+</div>You got him all wrong, he basically meant, you could simply do like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">whateverFunction<span style="color: #000000;">(</span>with, whatever, parameters <span style="color: #000000;">=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span></div></div></pre>
+</div>
+So basically, you're not required to use "stock", you could leave it naked or the other ways of using "static" keyword if it's used locally/internally.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="memberaa83.html?action=profile&amp;uid=113523">Michael@Belgium</a> -  12.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Vince</strong><br />
+<a href="showthreadb573.html?pid=3429370#pid3429370" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Did you actually read what I wrote? Stock is not a requirement. It is merely a modifier.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">myFunction<span style="color: #000000;">(</span>parameter<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"the parameter is %d"</span>, parameter<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+This works. Nothing else required.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>iZN</strong><br />
+<a href="showthread49a9.html?pid=3429371#pid3429371" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You got him all wrong, he basically meant, you could simply do like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">whateverFunction<span style="color: #000000;">(</span>with, whatever, parameters <span style="color: #000000;">=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span></div></div></pre>
+</div>
+So basically, you're not required to use "stock", you could leave it naked or the other ways of using "static" keyword if it's used locally/internally.</div>
+</td>
+</tr>
+</table>
+</div>Alright, i deserve -rep now tbh. I always learned to use stock because those damn tutorials ..<br />
+And yes Vince, i did read. But too fast.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="memberc4bc.html?action=profile&amp;uid=69550">yugecin</a> -  12.04.2015
+<br />
+<br />
+I always wondered why people would put stock before every function. I would think most scripters know what they're doing, or perhaps "because it looks pretty with a keyword" (the stock keyword is ugly imho).<br />
+Just write functions and if you don't use one, the compiler will kindly remember you and then refactor your code instead of filling it with stock modifiers.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="membercb66.html?action=profile&amp;uid=197509">EiresJason</a> -  12.04.2015
+<br />
+<br />
+I find it much easier putting 'stock' in front of a function to find a particular function though.<br />
+<br />
+Like, I want to edit the function (for example)<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">//..code</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>But let's say I actually call it 15 times in my script. Pressing CTRL+F and searching for "SetPlayerLevel" may need to me to skip past a good few calls before I get to the actual function, but having..<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">//..code</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>lets me just search for "k SetPlayerLevel" and I'm at it right away.<br />
+<br />
+If that makes sense xD
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="membercd4a.html?action=profile&amp;uid=152224">Onfroi</a> -  13.04.2015
+<br />
+<br />
+I thought stock is faster as well, more optimized, it's not?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  13.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Onfroi</strong><br />
+<a href="showthreadc119.html?pid=3429479#pid3429479" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I thought stock is faster as well, more optimized, it's not?</div>
+</td>
+</tr>
+</table>
+</div>No, i think bit slower than a function.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> -  13.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>EiresJason</strong><br />
+<a href="showthreade08b.html?pid=3429475#pid3429475" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I find it much easier putting 'stock' in front of a function to find a particular function though.<br />
+<br />
+Like, I want to edit the function (for example)<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">//..code</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>But let's say I actually call it 15 times in my script. Pressing CTRL+F and searching for "SetPlayerLevel" may need to me to skip past a good few calls before I get to the actual function, but having..<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">//..code</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>lets me just search for "k SetPlayerLevel" and I'm at it right away.<br />
+<br />
+If that makes sense xD</div>
+</td>
+</tr>
+</table>
+</div>This isn't a good enough reason to use stock, you can even simply do something such as this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define SetPlayerLevelEx FUNC_SetPlayerLevel</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">FUNC_SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">// .. code</span></div></div></pre>
+</div>
+Then you can just search for "FUNC_Functionname", - calling the function throughout the script as "SetPlayerLevelEx".<br />
+<br />
+If it gets on your nerves so much try this or another method, but as I said this is NOT A GOOD REASON TO USE STOCK!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="membercb66.html?action=profile&amp;uid=197509">EiresJason</a> -  13.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Abagail</strong><br />
+<a href="showthread91dc.html?pid=3429517#pid3429517" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This isn't a good enough reason to use stock, you can even simply do something such as this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define SetPlayerLevelEx FUNC_SetPlayerLevel</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">FUNC_SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">// .. code</span></div></div></pre>
+</div>
+Then you can just search for "FUNC_Functionname", - calling the function throughout the script as "SetPlayerLevelEx".<br />
+<br />
+If it gets on your nerves so much try this or another method, but as I said this is NOT A GOOD REASON TO USE STOCK!</div>
+</td>
+</tr>
+</table>
+</div>Could you explain why it isn't good enough though? At the moment though , when I'm going to compile my GM, I just replace all instances of "stock " with "" so it removes the stock modifier at compile time and I have the easy search functionality when I'm scripting.<br />
+<br />
+Thanks for the suggestion but it doesn't seem reasonable to do that for every single function I use <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
+<br />
+EDIT: So yeah.. it literally makes no difference? XD
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  13.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Abagail</strong><br />
+<a href="showthread91dc.html?pid=3429517#pid3429517" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This isn't a good enough reason to use stock, you can even simply do something such as this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define SetPlayerLevelEx FUNC_SetPlayerLevel</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">FUNC_SetPlayerLevel<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>   <span style="color: #228822;">// .. code</span></div></div></pre>
+</div>
+Then you can just search for "FUNC_Functionname", - calling the function throughout the script as "SetPlayerLevelEx".<br />
+<br />
+If it gets on your nerves so much try this or another method, but as I said this is NOT A GOOD REASON TO USE STOCK!</div>
+</td>
+</tr>
+</table>
+</div>Why even do that? Just put #define Function at the top of your script then.<br />
+<br />
+Ex.<br />
+Function Test();
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Stop the abuse of stock! - <a href="member407a.html?action=profile&amp;uid=222108">Abagail</a> -  13.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthread2b1f.html?pid=3429525#pid3429525" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why even do that? Just put #define Function at the top of your script then.<br />
+<br />
+Ex.<br />
+Function Test();</div>
+</td>
+</tr>
+</table>
+</div>What do you mean by #define function? What I am saying is he should look into internally using a function name for the actual function, while within the .pwn file using another one for within the script(calling the function), however in compilation, everything will be the same.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
