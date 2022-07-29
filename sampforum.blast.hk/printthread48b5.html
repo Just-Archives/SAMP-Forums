@@ -1,0 +1,91 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> EC2 Free tier - PacketLoss - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello there, I've been facing some issues regarding packet-loss in my server hosted on a humble free tier EC2 instance, with Ubuntu 18 with no GUI, t2.micro size which presumably has a single core Xeo" />
+<link rel="canonical" href="showthread48b5.html?tid=676668" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread48b5.html?tid=676668">EC2 Free tier - PacketLoss</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Server (<i>https://sampforum.blast.hk/forumdisplay.php?fid=6</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Server Support (<i>https://sampforum.blast.hk/forumdisplay.php?fid=19</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  EC2 Free tier - PacketLoss (<em>/showthread.php?tid=676668</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+EC2 Free tier - PacketLoss - <a href="membercbe6.html?action=profile&amp;uid=175120">SuperSpeed52</a> -  16.06.2020
+<br />
+<br />
+Hello there, I've been facing some issues regarding packet-loss in my server hosted on a humble free tier EC2 instance, with Ubuntu 18 with no GUI, t2.micro size which presumably has a single core Xeon and 1gb ram, and the gigantic amazon network infrastructure.<br />
+<br />
+The context here is that I want to host some samp server's with a well known and tested A/D gamemode for my friends' private matches, its been alright with 3 servers running in different ports.<br />
+<br />
+The only problem I'm facing is that the packet-loss function, shortly after going ingame, starts reading values ranging 0.2 ~ 1.0 for myself, and steadily increasing to 2 or 3% for the players known to lag.<br />
+<br />
+I didn't code the gamemode myself, but in my community it is pretty known that some servers with the same opensource gamemode are pretty stable in that regard, and the packetloss function reads 0.0% for me 95% of the time.<br />
+<br />
+I don't think its bandwidth related, cpu usage is just as low as it can get due to the nature of the gamemode, and ram usage is never above 40%, <br />
+<br />
+Any help is appreciated, thanks!!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: EC2 Free tier - PacketLoss - <a href="member814c.html?action=profile&amp;uid=252258">perfectboy</a> -  16.06.2020
+<br />
+<br />
+Its normal to have a packet loss 1-2% even till 5%. Since the free tier you are using t2.micro is basically for testing not great for having actual live deployments its network performance is not that great. But still, 1-2% packet loss is fine, for what you are expecting from a t2.micro instance . Also, your network stability and geographical location also matter.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: EC2 Free tier - PacketLoss - <a href="membercbe6.html?action=profile&amp;uid=175120">SuperSpeed52</a> -  20.06.2020
+<br />
+<br />
+I've just read that small parragraph at the end of the t2 type, at <a href="https://aws.amazon.com/ec2/instance-types/?nc1=h_ls" target="_blank">Amazon EC2 Instance Types</a><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<b>Use Cases</b><br />
+<br />
+Websites and web applications, development environments, build servers, code repositories, micro services, test and staging environments, and line of business applications.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>It just makes me think that if download and upload speeds are close to 1gbps, that would suggest that network performance is just great for programs with small requirements, like samp.<br />
+Given that cpu and ram usage is acceptable, I would expect perfect like performance; no user in my server will have 0.0 packetloss for long though.<br />
+<br />
+I will have to find a better ec2 instance type for live deployments, possibly out of free tier plan if I actually wanted to pursue perfect networking for gaming, but I will just deal with it as it is, my goal was just to be able to play and give people free servers to use while I satisfy my career assignments.<br />
+<br />
+Edit: the most fitting type would be the newest M6g, but it is only available with ARM processors, good for most modern software but not samp.<br />
+<br />
+The other alternative would be M5 type with intel cpus, oh well
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
