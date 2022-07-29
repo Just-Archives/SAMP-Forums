@@ -1,0 +1,517 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Today I learned - Share your newly found knowledge! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="OK, I didn't mention that I'm not allocating small blocks from the heap - I just allocate one huge (several Mb) block once, then allocate from within there. I don't have benchmarks; I can get some but" />
+<link rel="canonical" href="showthread8b69.html?tid=359953&amp;page=5" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread964f.html?tid=359953">Today I learned - Share your newly found knowledge!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Today I learned - Share your newly found knowledge! (<em>/showthread.php?tid=359953</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page -->
+<a href="printthread19ba.html?tid=359953&amp;page=1">1</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf80e.html?tid=359953&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2102.html?tid=359953&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4c3d.html?tid=359953&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page_current -->
+5
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread0f1f.html?tid=359953&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc388.html?tid=359953&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreada82c.html?tid=359953&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7428.html?tid=359953&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4cd5.html?tid=359953&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc3e0.html?tid=359953&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread9e7f.html?tid=359953&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadeeb4.html?tid=359953&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1904.html?tid=359953&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3cda.html?tid=359953&amp;page=15">15</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf7a6.html?tid=359953&amp;page=16">16</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread745f.html?tid=359953&amp;page=17">17</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread39fa.html?tid=359953&amp;page=18">18</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  18.04.2013
+<br />
+<br />
+OK, I didn't mention that I'm not allocating small blocks from the heap - I just allocate one huge (several Mb) block once, then allocate from within there.  I don't have benchmarks; I can get some but I'm not sure what you want benchmarking - the "malloc" function?  Because of the way the code works, actually using the allocated memory is just the same as a standard array access and an addition.<br />
+<br />
+As for fragmentation, that is an issue I've not been able to deal with because I'm currently using direct pointers rather than indirect ones.  I could change model and then I could do compression and just update the indirection array, but obviously then you have more code involved (I could make it an option I suppose).  The allocation algorithm is the most basic one too - it just allocates from the first free block of sufficient size, there is also "smallest" and "largest", which allocate from the closest matching or most free blocks - it would be interesting to see how they affect fragmentation.  "free" is clever though and can merge adjacent blocks when they are both free to give a larger block from which to allocate.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membercec9.html?action=profile&amp;uid=23640">Slice</a> -  18.04.2013
+<br />
+<br />
+Very crafty. Nice!<br />
+<br />
+I'd suggest you make it so each library could tell y_malloc how much memory it wants, then it'd be added up and "stolen" on startup.<br />
+That way each library could worry about its own, and get all the memory it wants.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define MALLOC_SPACE_WANTED 10485760</span><br/><span style="color: #2222AA;">#include &lt;ysi\y_malloc&gt;</span><br/><span style="color: #2222AA;">#define MALLOC_SPACE_WANTED (MAX_SOMETHING * 1024)</span><br/><span style="color: #2222AA;">#include &lt;ysi\y_malloc&gt;</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberf571.html?action=profile&amp;uid=170638">Dan..</a> -  18.04.2013
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreadb3e0-3.html?pid=2487557#pid2487557" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">OK, I didn't mention that I'm not allocating small blocks from the heap - I just allocate one huge (several Mb) block once, then allocate from within there.  I don't have benchmarks; I can get some but I'm not sure what you want benchmarking - the "malloc" function?  Because of the way the code works, actually using the allocated memory is just the same as a standard array access and an addition.<br />
+<br />
+As for fragmentation, that is an issue I've not been able to deal with because I'm currently using direct pointers rather than indirect ones.  I could change model and then I could do compression and just update the indirection array, but obviously then you have more code involved (I could make it an option I suppose).  The allocation algorithm is the most basic one too - it just allocates from the first free block of sufficient size, there is also "smallest" and "largest", which allocate from the closest matching or most free blocks - it would be interesting to see how they affect fragmentation.  "free" is clever though and can merge adjacent blocks when they are both free to give a larger block from which to allocate.</div>
+</td>
+</tr>
+</table>
+</div>Benchmarks with the older version of `malloc`. Anyway, I think this is one is a little slower than the older one.<br />
+<br />
+Can people allocate more memory than those "several Mb"?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  18.04.2013
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Slice</strong><br />
+<a href="showthreadc164.html?pid=2487559#pid2487559" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Very crafty. Nice!<br />
+<br />
+I'd suggest you make it so each library could tell y_malloc how much memory it wants, then it'd be added up and "stolen" on startup.<br />
+That way each library could worry about its own, and get all the memory it wants.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define MALLOC_SPACE_WANTED 10485760</span><br/><span style="color: #2222AA;">#include &lt;ysi\y_malloc&gt;</span><br/><span style="color: #2222AA;">#define MALLOC_SPACE_WANTED (MAX_SOMETHING * 1024)</span><br/><span style="color: #2222AA;">#include &lt;ysi\y_malloc&gt;</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>I'm not sure that's possible when using "#pragma dynamic".<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dan..</strong><br />
+<a href="showthread3dc8-3.html?pid=2487570#pid2487570" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Benchmarks with the older version of `malloc`. Anyway, I think this is one is a little slower than the older one.<br />
+<br />
+Can people allocate more memory than those "several Mb"?</div>
+</td>
+</tr>
+</table>
+</div>No, but you can tell it to allocate more initially.<br />
+<br />
+Edit: It turns out I missed something very important.  Once I was done with the code I removed all the debug prints and it instantly stopped working!  I'm still not 100% sure of the issue, but I think it might be this in amx.c:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">case</span> <span style="color: #000000;">OP_SYSREQ</span><span style="color: #000000;">:</span><br/>    GETPARAM<span style="color: #000000;">(</span>offs<span style="color: #000000;">)</span>;<br/>    <span style="color: #228822;">/* save a few registers */</span><br/>    amx<span style="color: #000000;">-&gt;</span>cip<span style="color: #000000;">=</span><span style="color: #000000;">(</span>cell<span style="color: #000000;">)</span><span style="color: #000000;">(</span><span style="color: #000000;">(</span>unsigned <span style="color: #2222BB;">char</span> <span style="color: #000000;">*</span><span style="color: #000000;">)</span>cip<span style="color: #000000;">-</span>amx<span style="color: #000000;">-&gt;</span>code<span style="color: #000000;">)</span>;<br/>    amx<span style="color: #000000;">-&gt;</span>hea<span style="color: #000000;">=</span>hea;<br/>    amx<span style="color: #000000;">-&gt;</span>frm<span style="color: #000000;">=</span>frm;<br/>    amx<span style="color: #000000;">-&gt;</span>stk<span style="color: #000000;">=</span>stk;</div></div></pre>
+</div>
+Pretty sure that saves something important for my code, and once I removed "print" I removed the call to it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member60ea.html?action=profile&amp;uid=122057">Basssiiie</a> -  18.04.2013
+<br />
+<br />
+Today I learned that if you add OnGameModeInit() and OnGameModeExit() to your filterscript, and you load this script as a filterscript, both those callbacks will be called at the appropriate times when using /rcon gmx.<br />
+<br />
+I always thought these callbacks only worked inside a gamemode. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberdc9e.html?action=profile&amp;uid=103048">Sinner</a> -  22.04.2013
+<br />
+<br />
+Today I learned how you can easily check if a variable being used to loop through an array has reached the end of the array, and reset it if it has.<br />
+<br />
+Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">index<span style="color: #000000;">++</span>;<br/><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>index <span style="color: #000000;">&gt;=</span> <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>array<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    index <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/><span style="color: #000000;">}</span><br/><span style="color: #228822;">// do something with array[index]</span></div></div></pre>
+</div>
+would become:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">index<span style="color: #000000;">++</span>;<br/>index <span style="color: #000000;">%=</span> <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>array<span style="color: #000000;">)</span>;<br/><br/><span style="color: #228822;">// do something with array[index]</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  22.04.2013
+<br />
+<br />
+Today I learned why this problem exists:<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreadae4f-3.html?pid=2487612#pid2487612" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">
+Edit: It turns out I missed something very important.  Once I was done with the code I removed all the debug prints and it instantly stopped working!  I'm still not 100% sure of the issue, but I think it might be this in amx.c:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">case</span> <span style="color: #000000;">OP_SYSREQ</span><span style="color: #000000;">:</span><br/>    GETPARAM<span style="color: #000000;">(</span>offs<span style="color: #000000;">)</span>;<br/>    <span style="color: #228822;">/* save a few registers */</span><br/>    amx<span style="color: #000000;">-&gt;</span>cip<span style="color: #000000;">=</span><span style="color: #000000;">(</span>cell<span style="color: #000000;">)</span><span style="color: #000000;">(</span><span style="color: #000000;">(</span>unsigned <span style="color: #2222BB;">char</span> <span style="color: #000000;">*</span><span style="color: #000000;">)</span>cip<span style="color: #000000;">-</span>amx<span style="color: #000000;">-&gt;</span>code<span style="color: #000000;">)</span>;<br/>    amx<span style="color: #000000;">-&gt;</span>hea<span style="color: #000000;">=</span>hea;<br/>    amx<span style="color: #000000;">-&gt;</span>frm<span style="color: #000000;">=</span>frm;<br/>    amx<span style="color: #000000;">-&gt;</span>stk<span style="color: #000000;">=</span>stk;</div></div></pre>
+</div>
+Pretty sure that saves something important for my code, and once I removed "print" I removed the call to it.</div>
+</td>
+</tr>
+</table>
+</div>I was basing all my code on the source code for the 3.2.3664 build of PAWN as that's what the compiler reports.  However, I had a brainwave and remembered that I had upgraded the compiler independently from the VM when I was a dev, so I got the 3.0.3367 source code and discovered that it was missing these two important lines from the "op_halt" code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">amx<span style="color: #000000;">-&gt;</span>frm<span style="color: #000000;">=</span>frm;<br/>amx<span style="color: #000000;">-&gt;</span>stk<span style="color: #000000;">=</span>stk;</div></div></pre>
+</div>
+Which entirely explains why it broke when I didn't call "SYSREQ" first.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  29.09.2013
+<br />
+<br />
+"," and ";" mean different things - make sure you read the documentation on what the differences actually are or your code may not do what you think.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - Emmet_ -  29.09.2013
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>pds2012</strong><br />
+<a href="showthreadc543-2.html?pid=2716793#pid2716793" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>Today I learned that function could be divided with ,(comma) without using spaces, Example code below.</b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">TogglePlayerSpectating<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">1</span><span style="color: #000000;">)</span>, SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, <span style="color: #000066;">"Spectating Mode"</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<b>Instead of</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">TogglePlayerSpectating<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, <span style="color: #000066;">"Spectating Mode"</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<i>I've been scripting since December 2011, I just knew this <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/></i></div>
+</td>
+</tr>
+</table>
+</div>It's called having multiple functions in one line, so it appears as one statement.<br />
+<br />
+<a href="showthreadc20c.html?tid=216730" target="_blank">https://sampforum.blast.hk/showthread.php?tid=216730</a><br />
+<br />
+TIL that:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> myEnum<br/><span style="color: #000000;">{</span><br/>    propertyA,<br/>    propertyB,<br/>    propertyC<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">new</span> MyEnum<span style="color: #000000;">[</span>myEnum<span style="color: #000000;">]</span>;</div></div></pre>
+</div>
+myEnum equals 3 (propertyA = 0, propertyB = 1, propertyC = 2). 2 + 1 = 3.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> myEnum <span style="color: #000000;">(</span><span style="color: #000000;">+=</span> <span style="color: #000000;">4</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    propertyA,<br/>    propertyB,<br/>    propertyC<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">new</span> MyEnum<span style="color: #000000;">[</span>myEnum<span style="color: #000000;">]</span>;</div></div></pre>
+</div>
+myEnum equals 12 (propertyA = 0, propertyB = 4, propertyC = 8). 8 + 4 = 12.<br />
+<br />
+Pretty interesting stuff, I'm still learning the basics of #emit, but I didn't know this. :D
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4199.html?action=profile&amp;uid=55934">Misiur</a> -  29.09.2013
+<br />
+<br />
+Not quite. Try this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;a_samp&gt;</span><br/><br/><span style="color: #2222BB;">enum</span> A<span style="color: #000000;">(</span><span style="color: #000000;">+=</span><span style="color: #000000;">4</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    B,<br/>    C,<br/>    D,<br/>    E,<br/>    F<br/><span style="color: #000000;">}</span><br/><br/>main<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"%d"</span>, <span style="color: #000000;">_</span><span style="color: #000000;">:</span>A<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member947d.html?action=profile&amp;uid=72005">Edix</a> -  29.09.2013
+<br />
+<br />
+Today I learned how to craete an "inverted" loop by that I mean it starts for example from 300 and goes down.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i<span style="color: #000000;">=</span><span style="color: #000000;">2</span>;i<span style="color: #000000;">&lt;</span><span style="color: #000000;">13</span>;i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>FdStr<span style="color: #000000;">[</span>i<span style="color: #000000;">-</span><span style="color: #000000;">12</span><span style="color: #000000;">]</span>,<span style="color: #000000;">55</span>,<span style="color: #000066;">"%s"</span>,FdStr<span style="color: #000000;">[</span>i<span style="color: #000000;">-</span><span style="color: #000000;">11</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>        TextDrawSetString<span style="color: #000000;">(</span>FeedBox<span style="color: #000000;">[</span>i<span style="color: #000000;">-</span><span style="color: #000000;">12</span><span style="color: #000000;">]</span>,FdStr<span style="color: #000000;">[</span>i<span style="color: #000000;">-</span><span style="color: #000000;">12</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  29.09.2013
+<br />
+<br />
+Err - no you didn't!<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; i <span style="color: #000000;">!=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">--</span>i<span style="color: #000000;">)</span></div></div></pre>
+</div>
+Or as most people would write it:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; i <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">0</span>; i<span style="color: #000000;">--</span><span style="color: #000000;">)</span></div></div></pre>
+</div>
+Note that you have to be MUCH more careful with OBOEs (Off By One Errors) with downwards loops - that code above will run 11 times, including for index 10, which will cause errors if any arrays re of size 10.  An alternate way that avoids this issue is:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; <span style="color: #000000;">--</span>i <span style="color: #000000;">!=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; <span style="color: #000000;">--</span>i <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; i<span style="color: #000000;">--</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div>
+Those are all equivalent, and will run from 9 to 0 (inclusive).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member947d.html?action=profile&amp;uid=72005">Edix</a> -  29.09.2013
+<br />
+<br />
+I didnt even think about mkaing it that way :/ well I still learned something <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> learned that I make quite a lot of mistakes.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  29.09.2013
+<br />
+<br />
+Your way doesn't even work - it counts up from -10 to 0.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> -  29.09.2013
+<br />
+<br />
+Today I learnt how to deal with OBOEs thanks to Y_Less.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreadf036.html?pid=2717456#pid2717456" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Note that you have to be MUCH more careful with OBOEs (Off By One Errors) with downwards loops - that code above will run 11 times, including for index 10, which will cause errors if any arrays re of size 10.  An alternate way that avoids this issue is:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; <span style="color: #000000;">--</span>i <span style="color: #000000;">!=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; <span style="color: #000000;">--</span>i <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">10</span>; i<span style="color: #000000;">--</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">)</span></div></div></pre>
+</div>
+Those are all equivalent, and will run from 9 to 0 (inclusive).</div>
+</td>
+</tr>
+</table>
+</div>Awesome, I like this. <br />
+<br />
+Today I really learnt some stuff about queue's (not really pawn related)<br />
+<br />
+<a href="http://en.wikipedia.org/wiki/Queue_management_system" target="_blank">http://en.wikipedia.org/wiki/Queue_management_system</a><br />
+<a href="http://en.wikipedia.org/wiki/Queueing_theory" target="_blank">http://en.wikipedia.org/wiki/Queueing_theory</a><br />
+<a href="http://en.wikipedia.org/wiki/Queueing_delay" target="_blank">http://en.wikipedia.org/wiki/Queueing_delay</a><br />
+<br />
+<a href="http://en.wikibooks.org/wiki/A-level_Computing/AQA/Problem_Solving,_Programming,_Operating_Systems,_Databases_and_Networking/Programming_Concepts/Queues" target="_blank">http://en.wikibooks.org/wiki/A-level...oncepts/Queues</a><br />
+<br />
+I don't think this is what I really wanted though.<br />
+<br />
+I couldn't really find much other sites other than wikipedia.. hopefully someone can link me.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  29.09.2013
+<br />
+<br />
+You could try the STL queue documentation:<br />
+<br />
+<a href="http://www.cplusplus.com/reference/queue/queue/" target="_blank">http://www.cplusplus.com/reference/queue/queue/</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membercec9.html?action=profile&amp;uid=23640">Slice</a> -  14.10.2013
+<br />
+<br />
+<b>Today I learned</b> that you can do some numeric operations on arrays, which alters the address given. So far I haven't found anything useful with it, but you can do this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000000;">-</span>~~<span style="color: #000000;">-</span><span style="color: #000066;">"hello"</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<b>Edit</b>:<br />
+This could be used to make pointers:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:183px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> g_ptrarr<span style="color: #000000;">[</span><span style="color: #000000;">1000</span><span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222AA;">#define @ptr[%1] \</span><br/>    <span style="color: #000000;">(</span><span style="color: #000000;">!</span>~g_ptrarr<span style="color: #000000;">)</span><span style="color: #000000;">[</span><span style="color: #000000;">%</span>1 <span style="color: #000000;">/</span> <span style="color: #000000;">4</span><span style="color: #000000;">]</span><br/><br/>main<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> address <span style="color: #000000;">=</span> ref<span style="color: #000000;">(</span><span style="color: #000066;">"hello"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// ref gets the address of the argument</span><br/>    <br/>    <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000000;">@</span>ptr<span style="color: #000000;">[</span>address<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+The only remaining problem is runtime BOUNDS checks, which can be NOPed at startup!!<br />
+<br />
+BTW, thanks to Emmet_ for accidentally find this: <a href="showthreadf30a.html?pid=2738320#pid2738320" target="_blank">http://forum.sa-mp.com/showthread.ph...20#post2738320</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - Patrick -  14.10.2013
+<br />
+<br />
+<i>Today I learned how to reset an enum easily, and using <b>@</b> to declare public functions:<br />
+<br />
+Easy <b>Enumerator</b> reset<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:247px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> EnumeratorInformation<br/><span style="color: #000000;">{</span><br/>    EnumNum1,   EnumNum2, <br/>    EnumNum3,   EnumNum4<br/><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">new</span> <br/>    EnumInfo <span style="color: #000000;">[</span> EnumeratorInformation <span style="color: #000000;">]</span><br/>;<br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>easyenumreset<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; <span style="color: #000000;">EnumeratorInformation</span><span style="color: #000000;">:</span>i <span style="color: #000000;">&lt;</span> EnumeratorInformation; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span>  <span style="color: #000000;">{</span> EnumInfo <span style="color: #000000;">[</span> <span style="color: #000000;">EnumeratorInformation</span><span style="color: #000000;">:</span>s <span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+declaring public functions using <b>@</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #000000;">@</span>GetTodaysDate<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">@</span>GetTodaysDate<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span><br/>        dString<span style="color: #000000;">[</span> <span style="color: #000000;">18</span><span style="color: #000000;">+</span><span style="color: #000000;">2</span> <span style="color: #000000;">]</span>,<br/>        Date<span style="color: #000000;">[</span> <span style="color: #000000;">6</span> <span style="color: #000000;">]</span><br/>    ;<br/>            <span style="color: #228822;">//Year      //Month     //Day</span><br/>    <span style="color: #222222;">getdate</span><span style="color: #000000;">(</span>Date<span style="color: #000000;">[</span> <span style="color: #000000;">0</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">1</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">2</span> <span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #228822;">//Hour      //Minutes   //Seconds</span><br/>    <span style="color: #222222;">gettime</span><span style="color: #000000;">(</span>Date<span style="color: #000000;">[</span> <span style="color: #000000;">3</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">4</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">5</span> <span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>dString, <span style="color: #2222BB;">sizeof</span> <span style="color: #000000;">(</span>dString<span style="color: #000000;">)</span>, <span style="color: #000066;">"%d/%d/%d %d:%d:%d"</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">2</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">1</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">0</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">3</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">4</span> <span style="color: #000000;">]</span>, Date<span style="color: #000000;">[</span> <span style="color: #000000;">5</span> <span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> dString;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></i>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member1d4e.html?action=profile&amp;uid=157225">SsHady</a> -  22.10.2013
+<br />
+<br />
+<b>Today I learned</b> how to use the '%' operator!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membercec9.html?action=profile&amp;uid=23640">Slice</a> -  22.10.2013
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SsHady</strong><br />
+<a href="showthread5253-3.html?pid=2750828#pid2750828" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>Today I learned</b> how to use the '%' operator!</div>
+</td>
+</tr>
+</table>
+</div>Come on, man, I even made a red arrow.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>FIRST POST</strong><br />
+</div>
+<div style="font-style:italic"><font size="4"><b>Please</b></font>:<ul><li>Explain what it is you learned, don't just say you learned something. <b><font color="Red">&lt;----</font></b></li>
+</ul></div>
+</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

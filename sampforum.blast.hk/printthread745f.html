@@ -1,0 +1,649 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Today I learned - Share your newly found knowledge! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="TIL that passing the params (1, 1) to the function below returns weird (expected?) results! pawn Код: RandomInt(min, max){ new r = random(max - min) + min; return r;} I then went on the SA:MP wiki" />
+<link rel="canonical" href="showthread745f.html?tid=359953&amp;page=17" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread964f.html?tid=359953">Today I learned - Share your newly found knowledge!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Today I learned - Share your newly found knowledge! (<em>/showthread.php?tid=359953</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page -->
+<a href="printthread19ba.html?tid=359953&amp;page=1">1</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf80e.html?tid=359953&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2102.html?tid=359953&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4c3d.html?tid=359953&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8b69.html?tid=359953&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread0f1f.html?tid=359953&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc388.html?tid=359953&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreada82c.html?tid=359953&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7428.html?tid=359953&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4cd5.html?tid=359953&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc3e0.html?tid=359953&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread9e7f.html?tid=359953&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadeeb4.html?tid=359953&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1904.html?tid=359953&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3cda.html?tid=359953&amp;page=15">15</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf7a6.html?tid=359953&amp;page=16">16</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page_current -->
+17
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread39fa.html?tid=359953&amp;page=18">18</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5975.html?action=profile&amp;uid=310838">GRiMMREAPER</a> -  22.06.2018
+<br />
+<br />
+TIL that passing the params (1, 1) to the function below returns weird (expected?) results!<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">RandomInt<span style="color: #000000;">(</span><span style="color: #222222;">min</span>, <span style="color: #222222;">max</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">new</span> r <span style="color: #000000;">=</span> <span style="color: #222222;">random</span><span style="color: #000000;">(</span><span style="color: #222222;">max</span> <span style="color: #000000;">-</span> <span style="color: #222222;">min</span><span style="color: #000000;">)</span> <span style="color: #000000;">+</span> <span style="color: #222222;">min</span>;<br/>  <span style="color: #2222BB;">return</span> r;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+I then went on the SA:MP wiki and saw that was documented. I was excited for a minute.<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/iFZn3Dn.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> -  24.06.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>GRiMMREAPER</strong><br />
+<a href="showthread0723.html?pid=4030675#pid4030675" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">TIL that passing the params (1, 1) to the function below returns weird (expected?) results!<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">RandomInt<span style="color: #000000;">(</span><span style="color: #222222;">min</span>, <span style="color: #222222;">max</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">new</span> r <span style="color: #000000;">=</span> <span style="color: #222222;">random</span><span style="color: #000000;">(</span><span style="color: #222222;">max</span> <span style="color: #000000;">-</span> <span style="color: #222222;">min</span><span style="color: #000000;">)</span> <span style="color: #000000;">+</span> <span style="color: #222222;">min</span>;<br/>  <span style="color: #2222BB;">return</span> r;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+I then went on the SA:MP wiki and saw that was documented. I was excited for a minute.<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/iFZn3Dn.png"/></div>
+</td>
+</tr>
+</table>
+</div>Out of bounds integer value. random(0) would do the same.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5975.html?action=profile&amp;uid=310838">GRiMMREAPER</a> -  26.06.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Logic_</strong><br />
+<a href="showthread44e4.html?pid=4031231#pid4031231" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Out of bounds integer value. random(0) would do the same.</div>
+</td>
+</tr>
+</table>
+</div>Evidently, because 1-1=0. The thing with this is that I did not check the <font face="Courier New">random</font> function article on the Wikipedia page and thought I discovered something. <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> -  10.07.2018
+<br />
+<br />
+Today I learnt how I can cut the second for loop and strcmp in this code:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 274px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">checkips</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">params</span><span style="color: #007700">[])<br/>{<br/>    for(new </span><span style="color: #0000BB">i</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)<br/>    {<br/>        new </span><span style="color: #0000BB">pIP</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];<br/>        </span><span style="color: #0000BB">GetPlayerIP</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">));<br/>        for(new </span><span style="color: #0000BB">k</span><span style="color: #007700">; </span><span style="color: #0000BB">k </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">; </span><span style="color: #0000BB">k</span><span style="color: #007700">++)<br/>        {<br/>            new </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];<br/>            </span><span style="color: #0000BB">GetPlayerIP</span><span style="color: #007700">(</span><span style="color: #0000BB">k</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP2</span><span style="color: #007700">));<br/>            if(!</span><span style="color: #0000BB">strcmp</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">))<br/>            </span><span style="color: #FF8000">//IPs matched inform them<br/>        </span><span style="color: #007700">}<br/>    }<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Think if you can work around and cut the 2nd 'for' loop and strcmp. note: checking IPs at OnPlayerConnect is not the solution...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  11.07.2018
+<br />
+<br />
+Generally you write the thing you learned, not just that you did. How will other people learn if you don't explain?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> -  11.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>coool</strong><br />
+<a href="showthreadfeac.html?pid=4035663#pid4035663" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Today I learnt how I can cut the second for loop and strcmp in this code:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 274px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">checkips</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">params</span><span style="color: #007700">[])
+<br/>{
+<br/>    for(new </span><span style="color: #0000BB">i</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)
+<br/>    {
+<br/>        new </span><span style="color: #0000BB">pIP</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];
+<br/>        </span><span style="color: #0000BB">GetPlayerIP</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">));
+<br/>        for(new </span><span style="color: #0000BB">k</span><span style="color: #007700">; </span><span style="color: #0000BB">k </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">; </span><span style="color: #0000BB">k</span><span style="color: #007700">++)
+<br/>        {
+<br/>            new </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];
+<br/>            </span><span style="color: #0000BB">GetPlayerIP</span><span style="color: #007700">(</span><span style="color: #0000BB">k</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP2</span><span style="color: #007700">));
+<br/>            if(!</span><span style="color: #0000BB">strcmp</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP2</span><span style="color: #007700">))
+<br/>            </span><span style="color: #FF8000">//IPs matched inform them
+<br/>        </span><span style="color: #007700">}
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Think if you can work around and cut the 2nd 'for' loop and strcmp. note: checking IPs at OnPlayerConnect is not the solution...</div>
+</td>
+</tr>
+</table>
+</div>The above code can be worked around and written like this <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 194px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">checkips</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">params</span><span style="color: #007700">[])
+<br/>{
+<br/>    for(new </span><span style="color: #0000BB">i</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)
+<br/>    {
+<br/>        new </span><span style="color: #0000BB">pIP</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];
+<br/>        </span><span style="color: #0000BB">GetPlayerIP</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">, </span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">));
+<br/>        
+<br/>        if(</span><span style="color: #0000BB">GetSVarInt</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">)) </span><span style="color: #FF8000">//IPs matched inform them.
+<br/>        </span><span style="color: #0000BB">SetSVarInt</span><span style="color: #007700">(</span><span style="color: #0000BB">pIP</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">);
+<br/>    }
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div> cutting down the second 'for' loop and strcmp!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> -  19.07.2018
+<br />
+<br />
+<b>TIL</b><br />
+This works<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">] = {</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">};<br/>if(</span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0 </span><span style="color: #007700">|| </span><span style="color: #0000BB">1</span><span style="color: #007700">])<br/>    print(</span><span style="color: #DD0000">"Yea, it works."</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Got the above when lurking my old threads <a href="showthreadeb9d.html?tid=624112" target="_blank">https://sampforum.blast.hk/showthread.php?tid=624112</a><br />
+People are saying that if(arr[1 || 2]) is invalid syntax... But today I checked it works.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member2114.html?action=profile&amp;uid=301649">xMoBi</a> -  19.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>coool</strong><br />
+<a href="showthread9cc2.html?pid=4037962#pid4037962" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>TIL</b><br />
+This works<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">] = {</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">};
+<br/>if(</span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0 </span><span style="color: #007700">|| </span><span style="color: #0000BB">1</span><span style="color: #007700">])
+<br/>    print(</span><span style="color: #DD0000">"Yea, it works."</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Got the above when lurking my old threads <a href="showthreadeb9d.html?tid=624112" target="_blank">https://sampforum.blast.hk/showthread.php?tid=624112</a><br />
+People are saying that if(arr[1 || 2]) is invalid syntax... But today I checked it works.</div>
+</td>
+</tr>
+</table>
+</div>What if it's:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">new array[2] = {0, 0};
+if (array[0 || 1]) {
+    print("Yeah, it works.");
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member76e2.html?action=profile&amp;uid=268427">SyS</a> -  19.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>coool</strong><br />
+<a href="showthread9cc2.html?pid=4037962#pid4037962" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>TIL</b><br />
+This works<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">] = {</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">};
+<br/>if(</span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0 </span><span style="color: #007700">|| </span><span style="color: #0000BB">1</span><span style="color: #007700">])
+<br/>    print(</span><span style="color: #DD0000">"Yea, it works."</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Got the above when lurking my old threads <a href="showthreadeb9d.html?tid=624112" target="_blank">https://sampforum.blast.hk/showthread.php?tid=624112</a><br />
+People are saying that if(arr[1 || 2]) is invalid syntax... But today I checked it works.</div>
+</td>
+</tr>
+</table>
+</div>It is syntactically correct but it won't wont give the result what you expect to get. || is logical OR operator it returns true (1) if one of the  operands is true (not 0) and returns false (0) if both operands are 0. arr[0 || 1] is evaluated to arr[1] in this case.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  19.07.2018
+<br />
+<br />
+0||1 is 1<br />
+2||3 is 1<br />
+55||56 is 1<br />
+<br />
+So yes, that is valid syntax, but I doubt it does what you think it does.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> -  19.07.2018
+<br />
+<br />
+Thank you for correcting me..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5975.html?action=profile&amp;uid=310838">GRiMMREAPER</a> -  26.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>coool</strong><br />
+<a href="showthread9cc2.html?pid=4037962#pid4037962" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>TIL</b><br />
+This works<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP код:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">] = {</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">};
+<br/>if(</span><span style="color: #0000BB">arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0 </span><span style="color: #007700">|| </span><span style="color: #0000BB">1</span><span style="color: #007700">])
+<br/>    print(</span><span style="color: #DD0000">"Yea, it works."</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Got the above when lurking my old threads <a href="showthreadeb9d.html?tid=624112" target="_blank">https://sampforum.blast.hk/showthread.php?tid=624112</a><br />
+People are saying that if(arr[1 || 2]) is invalid syntax... But today I checked it works.</div>
+</td>
+</tr>
+</table>
+</div>For <font face="Courier New"> x || y</font>, provided both <font face="Courier New">x</font> and <font face="Courier New">y</font> are numbers, will always return <font face="Courier New">1</font>. You are then accessing <font face="Courier New">arr[1]</font>, which indeed exists and is 3.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> arr<span style="color: #000000;">[</span><span style="color: #000000;">2</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">{</span><span style="color: #000000;">1</span><span style="color: #000000;">}</span>;<br/><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>arr<span style="color: #000000;">[</span><span style="color: #000000;">0</span> || <span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"It works!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span> <span style="color: #2222BB;">else</span> <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"It doesn't work."</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// Expected output, because arr[0 || 1] returns true (1) and arr[1] doesn't exist.</span><br/>    <span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member0e5e.html?action=profile&amp;uid=260190">Spmn</a> -  26.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>GRiMMREAPER</strong><br />
+<a href="showthread2972-2.html?pid=4039896#pid4039896" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">For <font face="Courier New"> x || y</font>, provided both <font face="Courier New">x</font> and <font face="Courier New">y</font> are numbers, will always return <font face="Courier New">1</font>. You are then accessing <font face="Courier New">arr[1]</font>, which indeed exists and is 3.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> arr<span style="color: #000000;">[</span><span style="color: #000000;">2</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">{</span><span style="color: #000000;">1</span><span style="color: #000000;">}</span>;<br/><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>arr<span style="color: #000000;">[</span><span style="color: #000000;">0</span> || <span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"It works!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span> <span style="color: #2222BB;">else</span> <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"It doesn't work."</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// Expected output, because arr[0 || 1] returns true (1) and arr[1] doesn't exist.</span><br/>    <span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>What about <font face="Courier New">arr[0 || 0]</font>?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  01.08.2018
+<br />
+<br />
+0 || 0 returns 0
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberafb4.html?action=profile&amp;uid=296846">Wreeper</a> -  11.08.2018
+<br />
+<br />
+<b><font color="Red">Today i learned that sscanf is not installable <img alt="" border="0" class="inlineimg" src="images/smilies/neutral.gif" title="undecided"/><br />
+<br />
+By the way i learned &amp; understanded fully HTML &amp; CSS &amp; JavaScript for websites today too. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+You are not interested in this, but i am.</font></b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member6f6b.html?action=profile&amp;uid=268322">iKarim</a> -  11.08.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Wreeper</strong><br />
+<a href="showthread5533.html?pid=4043960#pid4043960" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b><font color="Red">Today i learned that sscanf is not installable <img alt="" border="0" class="inlineimg" src="images/smilies/neutral.gif" title="undecided"/><br />
+<br />
+By the way i learned &amp; understanded fully HTML &amp; CSS &amp; JavaScript for websites today too. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+You are not interested in this, but i am.</font></b></div>
+</td>
+</tr>
+</table>
+</div>holy fuck
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5975.html?action=profile&amp;uid=310838">GRiMMREAPER</a> -  11.08.2018
+<br />
+<br />
+Today I learned but I also almost lost my mind trying to figure what I was doing wrong before I finally realized the fuckup.<br />
+<br />
+<font face="Courier New">a.pwn</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> <span style="color: #000000;">{</span><br/>    D_LOGIN,<br/>    D_REGISTER<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #228822;">// Handle response with OnDialogResponse hook</span></div></div></pre>
+</div>
+<font face="Courier New">b.pwn</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Код:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> <span style="color: #000000;">{</span><br/>    D_CLICKEDPLAYER<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #228822;">// Handle response with OnDialogResponse hook</span></div></div></pre>
+</div>
+I was wondering why everytime I was handling a response of <font face="Courier New">D_CLICKEDPLAYER</font>, I'd get a popup with the authentication (specifically, <font face="Courier New">D_LOGIN</font>) dialog. Didn't take me ages to figure out the fuckup, but I was losing my mind over something as simple as this. The most obvious solution (and the only one I could think of) is to keep the dialogs in an unique file.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberda68.html?action=profile&amp;uid=46764">Freaksken</a> -  11.08.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>GRiMMREAPER</strong><br />
+<a href="showthread7848.html?pid=4044046#pid4044046" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">...</div>
+</td>
+</tr>
+</table>
+</div>You didn't really explain why it occurs, you just said that it occurs.<br />
+<br />
+So for those who don't know, both <b>D_LOGIN</b> and <b>D_CLICKEDPLAYER</b> are equal to 0, which is why the code can't distinguish between the 2. There are 2 ways I can come up with to fix this.<br />
+<br />
+<b><u>Method 1:</u></b><br />
+Offset one enum with a given value.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">enum {
+    D_LOGIN, <b>//Starts at 0</b>
+    D_REGISTER
+}
+enum {
+    D_CLICKEDPLAYER = 2 <b>//Starts at 2</b>
+}</pre>
+</div>This method is not futureproof when you add more elements to the first enum in the future, because you might forget to adjust the offset of the second enum.<br />
+<br />
+<b><u>Method 2:</u></b><br />
+Use a single enum with all dialogs in it and put the enum in a <b>.inc</b> file that you include in both scripts.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="member5975.html?action=profile&amp;uid=310838">GRiMMREAPER</a> -  11.08.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Freaksken</strong><br />
+<a href="showthreadf2b3.html?pid=4044053#pid4044053" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You didn't really explain why it occurs, you just said that it occurs.<br />
+<br />
+So for those who don't know, both <b>D_LOGIN</b> and <b>D_CLICKEDPLAYER</b> are equal to 0, which is why the code can't distinguish between the 2. There are 2 ways I can come up with to fix this.<br />
+<br />
+<b><u>Method 1:</u></b><br />
+Offset one enum with a given value.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">enum {
+    D_LOGIN, <b>//Starts at 0</b>
+    D_REGISTER
+}
+enum {
+    D_CLICKEDPLAYER = 2 <b>//Starts at 2</b>
+}</pre>
+</div>This method is not futureproof when you add more elements to the first enum in the future, because you might forget to adjust the offset of the second enum.<br />
+<br />
+<b><u>Method 2:</u></b><br />
+Use a single enum with all dialogs in it and put the enum in a <b>.inc</b> file that you include in both scripts.</div>
+</td>
+</tr>
+</table>
+</div>Well, I really should've added an explanation as to why it happened.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Today I learned - Share your newly found knowledge! - <a href="memberb6a7.html?action=profile&amp;uid=70808">faxxe</a> -  18.08.2018
+<br />
+<br />
+For huge arrays nowadays i stopped using loops to iterate. Now i use heapsort as well as binary search algorithm.<br />
+Furthermore i stopped the use of strtok and replaced it by sscanf.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
