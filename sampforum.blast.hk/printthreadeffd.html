@@ -1,0 +1,242 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Socket has failed to bind on port - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi, im using a socket for a small application i made for the server. Now the problem: First time when i run the server, all is fine, socket is connected and working. When i restart the server, on my l" />
+<link rel="canonical" href="showthreadeffd.html?tid=675870" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadeffd.html?tid=675870">Socket has failed to bind on port</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Socket has failed to bind on port (<em>/showthread.php?tid=675870</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  23.05.2020
+<br />
+<br />
+Hi, im using a socket for a small application i made for the server.<br />
+<br />
+Now the problem:<br />
+First time when i run the server, all is fine, socket is connected and working.<br />
+When i restart the server, on my linux for testing im using: kill process id, then restarting it.<br />
+But then suddenly when i restart the server again i get this error in the log:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">socket_listen</span><span style="color: #007700">(): </span><span style="color: #0000BB">Socket has failed to bind on port XXXX 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> -  23.05.2020
+<br />
+<br />
+Looks like process is not killed and still running, hence still using given port and when you try to start new process, that port is already taken by previous instance.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  23.05.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>DRIFT_HUNTER</strong><br />
+<a href="showthread2614.html?pid=4147521#pid4147521" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Looks like process is not killed and still running, hence still using given port and when you try to start new process, that port is already taken by previous instance.</div>
+</td>
+</tr>
+</table>
+</div>My server doesn't work when i kill him with Linux command, and my socket is unloaded.<br />
+I read on goo gle that I have to open the port on my machine..<br />
+"Open a TCP port on your firewall (9014 is the default one)."<br />
+My server use 7777 port..<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">public </span><span style="color: #0000BB">OnGameModeExit</span><span style="color: #007700">()
+<br/>{
+<br/>    if(</span><span style="color: #0000BB">is_socket_valid</span><span style="color: #007700">(</span><span style="color: #0000BB">SocketID</span><span style="color: #007700">))
+<br/>    {
+<br/>        </span><span style="color: #0000BB">socket_stop_listen</span><span style="color: #007700">(</span><span style="color: #0000BB">SocketID</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">socket_destroy</span><span style="color: #007700">(</span><span style="color: #0000BB">SocketID</span><span style="color: #007700">);
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  25.05.2020
+<br />
+<br />
+BUMP
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  27.05.2020
+<br />
+<br />
+BUMP
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  28.06.2020
+<br />
+<br />
+Refresh, the problem is not solved..<br />
+socket_listen(): Socket has failed to bind on port 9295<br />
+I tried different port, but again same problem.<br />
+Is there anybody who have experience with the socket??
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+Use:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">lsof -i:port</pre>
+</div>To see what process(es) use a certain port (replace port with the actual port, ofc). Maybe it somehow is still used.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  28.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kwarde</strong><br />
+<a href="showthread154d.html?pid=4153450#pid4153450" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Use:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">lsof -i:port</pre>
+</div>To see what process(es) use a certain port (replace port with the actual port, ofc). Maybe it somehow is still used.</div>
+</td>
+</tr>
+</table>
+</div>See Attachment<br />
+<br />
+<br />
+When i restart the server, sometimes this work..<br />
+But then suddenly when i restart the server again i get this error in the log
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+Yes, it shows that port 7780 is used by samp03svr. After closing the server (killing the process) you should use that command to see if it's somehow still used.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Socket has failed to bind on port - <a href="member5f0b.html?action=profile&amp;uid=283099">OsmanMalagic</a> -  28.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kwarde</strong><br />
+<a href="showthread6727.html?pid=4153471#pid4153471" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Yes, it shows that port 7780 is used by samp03svr. After closing the server (killing the process) you should use that command to see if it's somehow still used.</div>
+</td>
+</tr>
+</table>
+</div>Now when i restart the server using panel, this message pop out in server.log<br />
+And also i tried again lsof -i:7780 and nothing happens
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
