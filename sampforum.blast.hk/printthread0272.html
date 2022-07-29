@@ -1,0 +1,199 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> what is wrong with create faction command - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello ,i create this command : PHP Code: CMD:fcreate(playerid, params[]) { new string, query, fname; if(sscanf(params, &quot;s&quot;, fname)) return SendClientMessage(playerid, -1, &quot;USAGE: /fcreate factionname&quot;" />
+<link rel="canonical" href="showthread0272.html?tid=677058" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread0272.html?tid=677058">what is wrong with create faction command</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  what is wrong with create faction command (<em>/showthread.php?tid=677058</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+what is wrong with create faction command - <a href="membera3de.html?action=profile&amp;uid=212344">xAlecsu</a> -  28.06.2020
+<br />
+<br />
+Hello ,i create this command :<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">fcreate</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">params</span><span style="color: #007700">[])
+<br/>{
+<br/>    new </span><span style="color: #0000BB">string</span><span style="color: #007700">[</span><span style="color: #0000BB">128</span><span style="color: #007700">], </span><span style="color: #0000BB">query</span><span style="color: #007700">[</span><span style="color: #0000BB">400</span><span style="color: #007700">], </span><span style="color: #0000BB">fname</span><span style="color: #007700">[</span><span style="color: #0000BB">32</span><span style="color: #007700">];
+<br/>    if(</span><span style="color: #0000BB">sscanf</span><span style="color: #007700">(</span><span style="color: #0000BB">params</span><span style="color: #007700">, </span><span style="color: #DD0000">"s[32]"</span><span style="color: #007700">, </span><span style="color: #0000BB">fname</span><span style="color: #007700">)) return </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, -</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #DD0000">"USAGE: /fcreate factionname"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #FF8000">// GETTING ALL THE FACTIONS CREATED, THEN ADDING 1 TO MAKE THE NEW ONE
+<br/>    </span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">++;
+<br/>    </span><span style="color: #FF8000">//=====================================================================
+<br/>    
+<br/>    // THIS SETS THE FACTIONS NAME TO WHATEVER YOU JUST NAMED IT, PLUS SETS THE ID FOR THE FACTION
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">FactionName</span><span style="color: #007700">], </span><span style="color: #0000BB">64</span><span style="color: #007700">, </span><span style="color: #DD0000">"%s"</span><span style="color: #007700">, </span><span style="color: #0000BB">fname</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">] = </span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">;
+<br/>    </span><span style="color: #FF8000">//==============================================================================================
+<br/>    
+<br/>    // THIS IS JUST TELLING YOU CREATED A FACTION, WITH THE NAME
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">string</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(string), </span><span style="color: #DD0000">"You have created a faction named: %s(ID:%d)."</span><span style="color: #007700">,</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">FactionName</span><span style="color: #007700">], </span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">]);
+<br/>    </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, -</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">string</span><span style="color: #007700">);
+<br/>    </span><span style="color: #FF8000">//================================================================================================
+<br/>    
+<br/>    // THIS IS SETTING ALL THE FACTION NAMES, WILL BE USED LATER FOR EDITTING AROUND
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank1</span><span style="color: #007700">], </span><span style="color: #0000BB">32</span><span style="color: #007700">, </span><span style="color: #DD0000">"Rank 1 - Lowest"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank2</span><span style="color: #007700">], </span><span style="color: #0000BB">32</span><span style="color: #007700">, </span><span style="color: #DD0000">"Rank 2"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank3</span><span style="color: #007700">], </span><span style="color: #0000BB">32</span><span style="color: #007700">, </span><span style="color: #DD0000">"Rank 3"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank4</span><span style="color: #007700">], </span><span style="color: #0000BB">32</span><span style="color: #007700">, </span><span style="color: #DD0000">"Rank 4"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank5</span><span style="color: #007700">], </span><span style="color: #0000BB">32</span><span style="color: #007700">, </span><span style="color: #DD0000">"Rank 5"</span><span style="color: #007700">);
+<br/>    </span><span style="color: #FF8000">//================================================================================
+<br/>    
+<br/>    // THIS IS FOR SAVING ALL THE DATA INTO THE MYSQL DATABASE
+<br/>    </span><span style="color: #0000BB">mysql_format</span><span style="color: #007700">(</span><span style="color: #0000BB">MySQL</span><span style="color: #007700">:</span><span style="color: #0000BB">Database</span><span style="color: #007700">, </span><span style="color: #0000BB">query</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">query</span><span style="color: #007700">), </span><span style="color: #DD0000">"INSERT INTO 'factions' ('ID', 'FactionName', 'FactionLeader', 'Rank1name', 'Rank2name', 'Rank3name', 'Rank4name', 'Rank5name'"</span><span style="color: #007700">, 
+<br/>        </span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">FactionName</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">FactionLeader</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank1</span><span style="color: #007700">],
+<br/>        </span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank2</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank3</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank4</span><span style="color: #007700">],</span><span style="color: #0000BB">Factions</span><span style="color: #007700">[</span><span style="color: #0000BB">Total_Factions_Created</span><span style="color: #007700">][</span><span style="color: #0000BB">Rank5</span><span style="color: #007700">]);
+<br/>    </span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">MySQL</span><span style="color: #007700">:</span><span style="color: #0000BB">Database</span><span style="color: #007700">, </span><span style="color: #0000BB">query</span><span style="color: #007700">);
+<br/>    </span><span style="color: #FF8000">//=================================================================================
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>But when i create a faction , my database is still blank...<br />
+Mysql: <a href="https://imgur.com/LFB0zJC.png" target="_blank">https://imgur.com/LFB0zJC.png</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: what is wrong with create faction command - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+I only looked at the query:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">INSERT INTO 'factions' ('ID', 'FactionName', 'FactionLeader', 'Rank1name', 'Rank2name', 'Rank3name', 'Rank4name', 'Rank5name'</pre>
+</div>1- For table names, you either have to use no tips or backtips (``). So:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">INSERT INTO factions
+//or
+INSERT INTO `factions`</pre>
+</div>Backtips are only required if it interferes with a MySQL keyword.<br />
+<br />
+2- After using INSER INTO table_name you tell the query what columns a value should be inserted to, then you add the values:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">INSERT INTO table_name (some_column, another_column, this_column) VALUES ('value_some_column', 'value_another_column', 'value_this_column');</pre>
+</div>If you insert data to all columns available<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">INSERT INTO table_name VALUES (...)</pre>
+</div>3- Check your mysql errors (SAMP_ROOT/logs/plugins/mysql.log) -You'll see there that the query failed.<br />
+<br />
+I haven't looked at the rest of the script, more might be wrong. For now, focus on that query.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: what is wrong with create faction command - <a href="membera3de.html?action=profile&amp;uid=212344">xAlecsu</a> -  28.06.2020
+<br />
+<br />
+I solve first problem<br />
+But i have a question ,i create 3 factions ,with 1, 2,3 ID .<br />
+If i delete faction with id 2 from database , and i create again another faction , new faction id is 4. <br />
+When i delete faction with id 2 ,and i create a new faction i want to be ID 2 , and next faction  id 4 ...5...6 <br />
+And if i make restart to server , and i try to create another faction . It start from 1 again. how i can solve this?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: what is wrong with create faction command - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+Using AUTO_INCREMENT, the only way to do that (as far as I know) is by manually setting the ID after inserting a row.<br />
+If you want to start all over you'd have to clear the entire table<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">TRUNCATE factions;</pre>
+</div>This will delete all rows and also reset the AUTO_INCREMENT value.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: what is wrong with create faction command - <a href="membera3de.html?action=profile&amp;uid=212344">xAlecsu</a> -  28.06.2020
+<br />
+<br />
+yea i use auto-increment.it's ok on database.<br />
+but i want see the corect id when i use command (in game).<br />
+<br />
+<br />
+EDIT: I delete all factions from database ,and now when i create a faction ,in game id is 1 and in database is 4 not 1....
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

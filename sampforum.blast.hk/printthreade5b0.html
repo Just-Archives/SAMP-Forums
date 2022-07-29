@@ -1,0 +1,398 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Help /admins - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi. I don't remember how you could do it that the administrators show up in the window. I have made the PlayerInfo variable." />
+<link rel="canonical" href="showthreade5b0.html?tid=677022" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreade5b0.html?tid=677022">Help /admins</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Help /admins (<em>/showthread.php?tid=677022</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Help /admins - <a href="member3a7c.html?action=profile&amp;uid=279669">KamilPolska</a> -  27.06.2020
+<br />
+<br />
+Hi. I don't remember how you could do it that the administrators show up in the window. I have made the PlayerInfo[playerid][pRank] variable.<br />
+<br />
+<img alt="" border="0" src="https://imgur.com/Ist2x6k.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member2dc1.html?action=profile&amp;uid=346291">ilogbc</a> -  27.06.2020
+<br />
+<br />
+use <a href="https://sampwiki.blast.hk/wiki/Strcat" target="_blank">https://sampwiki.blast.hk/wiki/Strcat</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="memberb46f.html?action=profile&amp;uid=350880">Lexless</a> -  27.06.2020
+<br />
+<br />
+Here's mine, change it to your liking.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:439px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>admins<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"--- | Online Administrators | ---"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> count <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>pInfo<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>;<br/>        <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">90</span><span style="color: #000000;">]</span>, playersname<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>        GetPlayerName<span style="color: #000000;">(</span>i, playersname, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>playersname<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span>pInfo<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">1</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"Trial Administrator: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">2</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"Server Administrator: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">3</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"Senior Administrator: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">4</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"General Administrator: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">5</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"Head Administrator: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">6</span><span style="color: #000000;">:</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"Server Director: {FFFFFF}%s (%i)"</span>, playersname, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">default</span><span style="color: #000000;">:</span> <span style="color: #2222BB;">continue</span>;<br/>        <span style="color: #000000;">}</span><br/>        SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, string<span style="color: #000000;">)</span>;<br/>        count<span style="color: #000000;">++</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>count<span style="color: #000000;">)</span> SendClientMessage<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">-</span><span style="color: #000000;">1</span>, <span style="color: #000066;">""</span>COL_ORANGE<span style="color: #000066;">"There are no Administrators Online"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member3a7c.html?action=profile&amp;uid=279669">KamilPolska</a> -  28.06.2020
+<br />
+<br />
+After entering the /semi1 command in /admins, it displays that there is no administrator. After entering /rank1 it is displayed in the dialogue that I am the administrator. Why after entering /semi1 does not appear to me that I am a semi-administrator?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">#include "a_samp"
+#include "Pawn.CMD"
+
+main(){}
+
+new SemiAdmin[MAX_PLAYERS];
+new Rank[MAX_PLAYERS];
+
+public OnGameModeInit()
+{
+	return 1;
+}
+public OnGameModeExit()
+{
+	return 1;
+}
+CMD:admins(playerid, params[])
+{
+	new count = 0;
+
+	for(new i = 0; i &lt; MAX_PLAYERS; i++)
+	{
+		if(!IsPlayerConnected(i)) continue;
+		if(!SemiAdmin[i]) continue;
+		if(!Rank[i]) continue;
+
+		new string[128];
+		new pName[24];
+
+		GetPlayerName(i, pName, sizeof(pName));
+
+		switch(SemiAdmin[i])
+		{
+			case 1: format(string, sizeof(string), "Semi Administrator [Level 1]: %s (ID: %d)", pName, i);
+			case 2: format(string, sizeof(string), "Semi Administrator [Level 2]: %s (ID: %d)", pName, i);
+			case 3: format(string, sizeof(string), "Semi Administrator [Level 3]: %s (ID: %d)", pName, i);
+			default: return false;
+		}
+		switch(Rank[i])
+		{
+			case 1: format(string, sizeof(string), "Administrator: %s (ID: %d)", pName, i);
+			case 2: format(string, sizeof(string), "Vice Head Admin: %s (ID: %d)", pName, i);
+			case 3: format(string, sizeof(string), "Head Admin: %s (ID: %d)", pName, i);
+			default: return false;
+		}
+
+		ShowPlayerDialog(playerid, 7777, DIALOG_STYLE_MSGBOX, "Online Administrators", string, "OK", "");
+
+		count++;
+	}
+	if(!count) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "No Administrators", "There are no Administrators Online", "OK", "");
+	return 1;
+}
+CMD:rank1(playerid)
+{
+	Rank[playerid] = 1;
+	return 1;
+}
+CMD:rank2(playerid)
+{
+	Rank[playerid] = 2;
+	return 1;
+}
+CMD:rank3(playerid)
+{
+	Rank[playerid] = 3;
+	return 1;
+}
+CMD:semi1(playerid)
+{
+	SemiAdmin[playerid] = 1;
+	Rank[playerid] = 0;
+	return 1;
+}
+CMD:semi2(playerid)
+{
+	SemiAdmin[playerid] = 2;
+	Rank[playerid] = 0;
+	return 1;
+}
+CMD:semi3(playerid)
+{
+	SemiAdmin[playerid] = 3;
+	Rank[playerid] = 0;
+	return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+Some notices:<br />
+- That script would only show the admin with the highest playerid.<br />
+- If SemiAdmin for someone is not 1,2 or 3, it would:<br />
+* Show nothing at all if the lowest playerid has that level<br />
+* Show the last admin with SemiAdmin or Rank having value 1,2 or 3<br />
+- ^ Same goes for array Rank<br />
+- Since SemiAdmin and Rank only hold value 0, 1, 2 or 3, you might wanna pack those arrays / accessing a single byte instead of a whole cell to save some space (x4 per array).<br />
+- Instead of switching between Rank/SemiAdmin and then formatting the string, you might aswell create arrays holding the names of the levels.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Why after entering /semi1 does not appear to me that I am a semi-administrator?<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				- If SemiAdmin for someone is not 1,2 or 3, it would:<br />
+* Show nothing at all if the lowest playerid has that level<br />
+* Show the last admin with SemiAdmin or Rank having value 1,2 or 3<br />
+- ^ Same goes for array Rank<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>It first formats the string if SemiAdmin is 1,2 or 3. Then, it checks Rank. If it is not 1, 2 or 3 (default) you use 'return false'. When using return, you break the entire function (in this case, the command). SemiAdmin is 1, 2 or 3 but Rank is 0 so it breaks the entire command, and probably shows you a "SERVER: Unknown command" aswell since you returned false (= 0).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member3a7c.html?action=profile&amp;uid=279669">KamilPolska</a> -  28.06.2020
+<br />
+<br />
+Is this the best way?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">#include "a_samp"
+#include "Pawn.CMD"
+
+main(){}
+
+new Admin[MAX_PLAYERS];
+new SemiAdminLVL[MAX_PLAYERS];
+
+public OnGameModeInit()
+{
+	return 1;
+}
+public OnGameModeExit()
+{
+	return 1;
+}
+CMD:admins(playerid, params[])
+{
+	new count = 0;
+
+	for(new i = 0; i &lt; MAX_PLAYERS; i++)
+	{
+		if(!IsPlayerConnected(i)) continue;
+		if(!Admin[i]) continue;
+
+		new string[128];
+		new pName[24];
+
+		GetPlayerName(i, pName, sizeof(pName));
+
+		switch(Admin[i])
+		{
+			case 1: format(string, sizeof(string), "Semi-Administrator [Level %d]: %s (ID: %d)", SemiAdminLVL, pName, i);
+			case 2: format(string, sizeof(string), "Administrator: %s (ID: %d)", pName, i);
+			case 3: format(string, sizeof(string), "Vice Head Admin: %s (ID: %d)", pName, i);
+			case 4: format(string, sizeof(string), "Head Admin: %s (ID: %d)", pName, i);
+			default: continue;
+		}
+
+		ShowPlayerDialog(playerid, 7777, DIALOG_STYLE_MSGBOX, "Online Administrators", string, "OK", "");
+
+		count++;
+	}
+	if(!count) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "No Administrators", "There are no Administrators Online", "OK", "");
+	return 1;
+}
+CMD:rank1(playerid)
+{
+	Admin[playerid] = 2;
+	return 1;
+}
+CMD:rank2(playerid)
+{
+	Admin[playerid] = 3;
+	return 1;
+}
+CMD:rank3(playerid)
+{
+	Admin[playerid] = 4;
+	return 1;
+}
+CMD:semi1(playerid)
+{
+	Admin[playerid] = 1;
+	SemiAdminLVL[playerid] = 1;
+	return 1;
+}
+CMD:semi2(playerid)
+{
+	Admin[playerid] = 1;
+	SemiAdminLVL[playerid] = 2;
+	return 1;
+}
+CMD:semi3(playerid)
+{
+	Admin[playerid] = 1;
+	SemiAdminLVL[playerid] = 3;
+	return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  28.06.2020
+<br />
+<br />
+This is how I would do it:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:471px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> <span style="color: #2222BB;">const</span> AdminLevelName<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">{</span><br/>    <span style="color: #000066;">"User"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 1]"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 2]"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 3]"</span>,<br/>    <span style="color: #000066;">"Administrator"</span>,<br/>    <span style="color: #000066;">"Vice Head Admin"</span>,<br/>    <span style="color: #000066;">"Head Admin"</span><br/><span style="color: #000000;">}</span>;<br/><span style="color: #2222BB;">new</span> AdminLevel<span style="color: #000000;">[</span>MAX_PLAYERS <span style="color: #2222BB;">char</span><span style="color: #000000;">]</span>;<br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>admins<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> admins_string<span style="color: #000000;">[</span><span style="color: #000000;">500</span><span style="color: #000000;">]</span>, count;<br/>    <span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">//I would actually use foreach, but sticking to your way for now</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> || IsPlayerNPC<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> || <span style="color: #000000;">!</span>AdminLevel<span style="color: #000000;">{</span>i<span style="color: #000000;">}</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>;<br/>        <br/>        <span style="color: #2222BB;">new</span> pName<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>        GetPlayerName<span style="color: #000000;">(</span>i, pName, MAX_PLAYER_NAME<span style="color: #000000;">)</span>;<br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>admins_string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>admins_string<span style="color: #000000;">)</span>, <span style="color: #000066;">"%s%s: %s (ID: %d)<span style="color: #000099; font-weight: bold;">\n</span>"</span>, admins_string, AdminLevelName<span style="color: #000000;">[</span>AdminLevel<span style="color: #000000;">{</span>i<span style="color: #000000;">}</span><span style="color: #000000;">]</span>, pName, i<span style="color: #000000;">)</span>;<br/>        count<span style="color: #000000;">++</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>count<span style="color: #000000;">)</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">7777</span>, DIALOG_STYLE_MSGBOX, <span style="color: #000066;">"Online Administrators"</span>, <span style="color: #000066;">"There are currently no administrators online"</span>, <span style="color: #000066;">"OK"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span> ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">7777</span>, DIALOG_STYLE_MSGBOX, <span style="color: #000066;">"Online Administrators"</span>, admins_string, <span style="color: #000066;">"OK"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>I would not actually do it exactly like that, but according to your code, I would change it to something like this.<br />
+Note the next few things:<br />
+<br />
+1) There is an array named "AdminLevelName". By using AdminLevelName[0] it would return "User", AdminLevelName[1] would return "Semi Administrator [Level 1]" etcetera. Rather than switching between two variables, you can now get the level name from the array.<br />
+2) Note how I used "const" for AdminLevelName; because of this, you can't alter the array after creating it to prevent problems<br />
+3) I use 'AdminLevel' to hold someone's level. Note how I used 'MAX_PLAYERS char' instead of 'MAX_PLAYERS'. This decreases the array size by 4 (what it basically does is MAX_PLAYERS / 4)<br />
+4) As an addition to 3), I use {playerid} (or {i}, in this scenario) instead of [playerid] (or [i]).<br />
+By using curly brackets ({}) instead of the regular ones ([]) you access a single byte instead of a whole cell.<br />
+One cell uses 4 bytes. Whereas 1 byte, well, uses 1 byte. When accessing a single byte you can only use values from 0 up to 255. Since AdminLevel is, in this scenario, is 0 up to 6, I'm accessing a single byte instead of a whole cell. This saves 4 times the space it otherwise would use.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="memberfc6c.html?action=profile&amp;uid=299368">Chams</a> -  28.06.2020
+<br />
+<br />
+Hello, does anybody know how could I do the command /admins like this one?<br />
+<img alt="" border="0" src="https://imgur.com/a/VZJFqqC"/><br />
+If picture is not showing see here: <a href="https://imgur.com/a/VZJFqqC" target="_blank">https://imgur.com/a/VZJFqqC</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member3a7c.html?action=profile&amp;uid=279669">KamilPolska</a> -  05.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kwarde</strong><br />
+<a href="showthreadce0f.html?pid=4153491#pid4153491" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This is how I would do it:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:471px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> <span style="color: #2222BB;">const</span> AdminLevelName<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">{</span><br/>    <span style="color: #000066;">"User"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 1]"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 2]"</span>,<br/>    <span style="color: #000066;">"Semi Administrator [Level 3]"</span>,<br/>    <span style="color: #000066;">"Administrator"</span>,<br/>    <span style="color: #000066;">"Vice Head Admin"</span>,<br/>    <span style="color: #000066;">"Head Admin"</span><br/><span style="color: #000000;">}</span>;<br/><span style="color: #2222BB;">new</span> AdminLevel<span style="color: #000000;">[</span>MAX_PLAYERS <span style="color: #2222BB;">char</span><span style="color: #000000;">]</span>;<br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>admins<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> admins_string<span style="color: #000000;">[</span><span style="color: #000000;">500</span><span style="color: #000000;">]</span>, count;<br/>    <span style="color: #2222BB;">for</span> <span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #228822;">//I would actually use foreach, but sticking to your way for now</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> || IsPlayerNPC<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> || <span style="color: #000000;">!</span>AdminLevel<span style="color: #000000;">{</span>i<span style="color: #000000;">}</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">continue</span>;<br/>        <br/>        <span style="color: #2222BB;">new</span> pName<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>        GetPlayerName<span style="color: #000000;">(</span>i, pName, MAX_PLAYER_NAME<span style="color: #000000;">)</span>;<br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>admins_string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>admins_string<span style="color: #000000;">)</span>, <span style="color: #000066;">"%s%s: %s (ID: %d)<span style="color: #000099; font-weight: bold;">\n</span>"</span>, admins_string, AdminLevelName<span style="color: #000000;">[</span>AdminLevel<span style="color: #000000;">{</span>i<span style="color: #000000;">}</span><span style="color: #000000;">]</span>, pName, i<span style="color: #000000;">)</span>;<br/>        count<span style="color: #000000;">++</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>count<span style="color: #000000;">)</span><br/>        ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">7777</span>, DIALOG_STYLE_MSGBOX, <span style="color: #000066;">"Online Administrators"</span>, <span style="color: #000066;">"There are currently no administrators online"</span>, <span style="color: #000066;">"OK"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span> ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">7777</span>, DIALOG_STYLE_MSGBOX, <span style="color: #000066;">"Online Administrators"</span>, admins_string, <span style="color: #000066;">"OK"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>I would not actually do it exactly like that, but according to your code, I would change it to something like this.<br />
+Note the next few things:<br />
+<br />
+1) There is an array named "AdminLevelName". By using AdminLevelName[0] it would return "User", AdminLevelName[1] would return "Semi Administrator [Level 1]" etcetera. Rather than switching between two variables, you can now get the level name from the array.<br />
+2) Note how I used "const" for AdminLevelName; because of this, you can't alter the array after creating it to prevent problems<br />
+3) I use 'AdminLevel' to hold someone's level. Note how I used 'MAX_PLAYERS char' instead of 'MAX_PLAYERS'. This decreases the array size by 4 (what it basically does is MAX_PLAYERS / 4)<br />
+4) As an addition to 3), I use {playerid} (or {i}, in this scenario) instead of [playerid] (or [i]).<br />
+By using curly brackets ({}) instead of the regular ones ([]) you access a single byte instead of a whole cell.<br />
+One cell uses 4 bytes. Whereas 1 byte, well, uses 1 byte. When accessing a single byte you can only use values from 0 up to 255. Since AdminLevel is, in this scenario, is 0 up to 6, I'm accessing a single byte instead of a whole cell. This saves 4 times the space it otherwise would use.</div>
+</td>
+</tr>
+</table>
+</div>Did not works. All the time it shows that there is no administrator.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help /admins - <a href="member0b3e.html?action=profile&amp;uid=352023">DarkMaster</a> -  09.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>KamilPolska</strong><br />
+<a href="showthreadaee5.html?pid=4154281#pid4154281" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Did not works. All the time it shows that there is no administrator.</div>
+</td>
+</tr>
+</table>
+</div>I made this dialog thanks to Kwarde, are you using MySQL Database ?<br />
+<br />
+<img alt="" border="0" src="https://i.ibb.co/xX57zpS/Untitled.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

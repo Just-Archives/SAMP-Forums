@@ -1,0 +1,102 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> RegEx plugin does not load - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Code: Loading plugin: libRegEx Failed. regex_exmatch regex_exsearch regex_exreplace what's the solution? All other plugins load well and have no problems. I have onig.dll in the root folder. Regular E" />
+<link rel="canonical" href="showthreadf79d.html?tid=677124" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadf79d.html?tid=677124">RegEx plugin does not load</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  RegEx plugin does not load (<em>/showthread.php?tid=677124</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+RegEx plugin does not load - <a href="member9e1f.html?action=profile&amp;uid=298276">xRadical3</a> -  30.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">Loading plugin: libRegEx
+  Failed.
+
+[DEBUG] regex_exmatch
+[DEBUG] regex_exsearch
+[DEBUG] regex_exreplace</pre>
+</div>what's the solution? <br />
+All other plugins load well and have no problems.<br />
+I have onig.dll in the root folder.<br />
+<a href="showthread71a9-2.html?tid=526725" target="_blank">Regular Expressions Plugin v0.2 (RegEx)</a><br />
+<br />
+I just wanted regex for a anti adv system.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RegEx plugin does not load - <a href="membercc78.html?action=profile&amp;uid=341901">IZenta</a> -  01.07.2020
+<br />
+<br />
+Go download VC Redist 2013 or VC Redist x86 2015-2019 or you can use Pawn.Regex
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RegEx plugin does not load - <a href="member9e1f.html?action=profile&amp;uid=298276">xRadical3</a> -  01.07.2020
+<br />
+<br />
+Solved.<br />
+I just put MSVCP100D.dll and MSVCR100D.dll in my root folder.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RegEx plugin does not load - <a href="member4da0.html?action=profile&amp;uid=264255">Salik</a> -  03.07.2020
+<br />
+<br />
+Use Pawn.Regex, in your plugin have bug - crash server.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: RegEx plugin does not load - <a href="member9e1f.html?action=profile&amp;uid=298276">xRadical3</a> -  03.07.2020
+<br />
+<br />
+I don't know how to replace this code from LibRegEx to Pawn.RegEx.  ^( '-' )^<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:455px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #000000;">bool</span><span style="color: #000000;">:</span>IsAdvertisement<span style="color: #000000;">(</span>text<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">public</span> <span style="color: #000000;">bool</span><span style="color: #000000;">:</span>IsAdvertisement<span style="color: #000000;">(</span>text<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> message<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>, build, expression<span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)<span style="color: #000099; font-weight: bold;">\\</span>.+){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"</span>, start, end;<br/>    strcpy<span style="color: #000000;">(</span>message, text, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>message<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>, j <span style="color: #000000;">=</span> <span style="color: #222222;">strlen</span><span style="color: #000000;">(</span>message<span style="color: #000000;">)</span>; i <span style="color: #000000;">&lt;</span> j; i <span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span>message<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">case</span> <span style="color: #000066;">'0'</span>..<span style="color: #000066;">'9'</span><span style="color: #000000;">:</span> <span style="color: #2222BB;">continue</span>;<br/>            <span style="color: #2222BB;">case</span> <span style="color: #000066;">'.'</span><span style="color: #000000;">:</span> <span style="color: #2222BB;">continue</span>;<br/>            <span style="color: #2222BB;">default</span><span style="color: #000000;">:</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">strdel</span><span style="color: #000000;">(</span>message, i, i <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">strins</span><span style="color: #000000;">(</span>message, <span style="color: #000066;">"."</span>, i<span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/><br/>    build <span style="color: #000000;">=</span> regex_exbuild<span style="color: #000000;">(</span>expression<span style="color: #000000;">)</span>;<br/>    regex_exmatch<span style="color: #000000;">(</span>message, build<span style="color: #000000;">)</span>;<br/>    regex_exsearch<span style="color: #000000;">(</span>message, build, start, end<span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>start <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> true;<br/>    <span style="color: #2222BB;">return</span> false;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>Are you sure LibRegEx plugin crash my server?<img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.png" title="Roll Eyes (Sarcastic)"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

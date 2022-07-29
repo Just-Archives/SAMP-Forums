@@ -1,0 +1,134 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Run time error 4 - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I always got this error in my server console Code: Parameter count corrections: The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;1 arguments&gt;` Run time error 4: &quot;Array inde" />
+<link rel="canonical" href="showthread0704.html?tid=677158" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread0704.html?tid=677158">Run time error 4</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Run time error 4 (<em>/showthread.php?tid=677158</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Run time error 4 - <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> -  02.07.2020
+<br />
+<br />
+I always got this error in my server console<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 226px;
+		text-align: left;
+		overflow: auto">[22:05:28] [debug] Parameter count corrections:
+[22:05:28] [debug]
+[22:05:28] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;1 arguments&gt;`
+[22:05:28] [debug]
+[22:05:28] [debug] Run time error 4: "Array index out of bounds"
+[22:05:28] [debug]  Attempted to read/write array element at index 60 in array of size 50
+[22:05:28] [debug] AMX backtrace:
+[22:05:28] [debug] #0 003dd368 in public _y_utils_OnPlayerConnect (60) in roleplay.amx
+[22:05:28] [debug] #1 00016738 in public SSCANF_OnPlayerConnect (60) in roleplay.amx
+[22:05:28] [debug] #2 00008a64 in public MP_OPC (60) in roleplay.amx
+[22:05:28] [debug] #3 native CallLocalFunction () in samp03svr
+[22:05:28] [debug] #4 00006650 in ?? (60) in roleplay.amx
+[22:05:28] [debug] #5 00025cc4 in public OnPlayerConnect (60) in roleplay.amx</pre>
+</div>I dont know how to fix it<br />
+<br />
+here's my onplayerconnect codes<br />
+its quite long thats why I put in pastebin<br />
+<a href="https://pastebin.com/FaxLDbUz" target="_blank">https://pastebin.com/FaxLDbUz</a><br />
+<br />
+Thanks in advance
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Run time error 4 - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  02.07.2020
+<br />
+<br />
+Runtime error 4: Array index out of bounds.<br />
+<br />
+It means it tries to get data from an array from an index that does not exist. It literally says that:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">[22:05:28] [debug] Run time error 4: "Array index out of bounds"
+[22:05:28] [debug]  Attempted to read/write array element at index 60 in array of size 50</pre>
+</div>One of your arrays has a size of 50 cells, but it attempts to access index 60.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> myArray<span style="color: #000000;">[</span><span style="color: #000000;">50</span><span style="color: #000000;">]</span>;<br/>myArray<span style="color: #000000;">[</span><span style="color: #000000;">60</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Run time error 4 - <a href="membereb54.html?action=profile&amp;uid=283689">ShadowMortar</a> -  02.07.2020
+<br />
+<br />
+1) Download crashdetect.dll or crashdetect.so.<br />
+2) Edit pawn.cfg, add "-d3", or use #pragma option -d3 on top of the script, then compile it.<br />
+3) Run server.exe, when it breaks, you will see the EXACT line where the error has occurred.<br />
+4) Profit.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Run time error 4 - <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> -  02.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ShadowMortar</strong><br />
+<a href="showthreaddd52.html?pid=4153937#pid4153937" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">1) Download crashdetect.dll or crashdetect.so.<br />
+2) Edit pawn.cfg, add "-d3", or use #pragma option -d3 on top of the script, then compile it.<br />
+3) Run server.exe, when it breaks, you will see the EXACT line where the error has occurred.<br />
+4) Profit.</div>
+</td>
+</tr>
+</table>
+</div>I already fixed it using -d3 method.. thanks <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

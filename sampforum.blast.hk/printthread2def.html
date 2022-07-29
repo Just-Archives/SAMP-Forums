@@ -1,0 +1,130 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Timer error - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi guys, this is info, that I see in my server_log: Code: Run time error 4: &quot;Array index out of bounds&quot; Attempted to read/write array element at index 65535 in array of size 100 AMX backtrace: #0 0004" />
+<link rel="canonical" href="showthread2def.html?tid=677088" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2def.html?tid=677088">Timer error</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Timer error (<em>/showthread.php?tid=677088</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Timer error - <a href="memberbaad.html?action=profile&amp;uid=108281">_GHT_MarK445</a> -  29.06.2020
+<br />
+<br />
+Hi guys, this is info, that I see in my server_log:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">[18:46:08] [debug] Run time error 4: "Array index out of bounds"
+[18:46:08] [debug]  Attempted to read/write array element at index 65535 in array of size 100
+[18:46:08] [debug] AMX backtrace:
+[18:46:08] [debug] #0 0004e060 in public miniguntimer () in jb.amx</pre>
+</div>And this is the code:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 258px;
+		text-align: left;
+		overflow: auto">forward miniguntimer();
+public miniguntimer()
+{
+	new string[128], mostkills = INVALID_PLAYER_ID;
+	for(new i = 0; i &lt; MAX_PLAYERS; i++)
+	{
+	    if(IsPlayerConnected(i) &amp;&amp; InEvent[i] == true)
+	    {
+			if(MgKills[i] &gt; MgKills[mostkills]) mostkills = i;
+		}
+	}
+	format(string, sizeof(string), "The player with Most Kills is %s with %d kills.", GetName(mostkills), MgKills[mostkills]);
+	SendClientMessageToAll(MGDM, string);
+	return 1;
+}</pre>
+</div>Do you guys have any idea, what could be the problem?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer error - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  29.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto"><b>mostkills = INVALID_PLAYER_ID</b>
+if(MgKills[i] &gt; MgKills[<b>mostkills</b>])</pre>
+</div>If you still didnt understand the problem just repost I'll explain...<br />
+<br />
+Here you go, I guess its a mistake<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 274px;
+		text-align: left;
+		overflow: auto">forward miniguntimer();
+public miniguntimer()
+{
+    new string[128], mostkills = INVALID_PLAYER_ID;
+    for(new i = 0; i &lt; MAX_PLAYERS; i++)
+    {
+        if(IsPlayerConnected(i) &amp;&amp; InEvent[i] == true)
+        {
+            <b>if(mostkills == INVALID_PLAYER_ID) mostkills = i;</b>
+            if(MgKills[i] &gt; MgKills[mostkills]) mostkills = i;
+        }
+    }
+    format(string, sizeof(string), "The player with Most Kills is %s with %d kills.", GetName(mostkills), MgKills[mostkills]);
+    SendClientMessageToAll(MGDM, string);
+    return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

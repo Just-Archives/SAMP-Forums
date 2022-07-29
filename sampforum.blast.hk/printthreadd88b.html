@@ -1,0 +1,174 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> New to Loops such as these ones, any advice? - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This function is to get the Free Biz ID in my Database... (well actually it doesnt read the database) Ex: I have BIZ ids 1,2,3,5: Output: Biz ID 4 is free. This is what the loop looks like and I am ju" />
+<link rel="canonical" href="showthreadd88b.html?tid=677520" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadd88b.html?tid=677520">New to Loops such as these ones, any advice?</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  New to Loops such as these ones, any advice? (<em>/showthread.php?tid=677520</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+New to Loops such as these ones, any advice? - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  18.07.2020
+<br />
+<br />
+This function is to get the Free Biz ID in my Database... (well actually it doesnt read the database)<br />
+Ex: I have BIZ ids 1,2,3,5: Output: Biz ID 4 is free.<br />
+This is what the loop looks like and I am just wondering if there's a smarter way to do this, it works right now though.<br />
+<br />
+But I don't think it'll work if I change it in realtime, as the Array's ID's will change if I add ID 4 in, and delete ID 2, my result may not output 2.... <br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 466px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetFreeBizID</span><span style="color: #007700">()
+<br/>{
+<br/>    new </span><span style="color: #0000BB">Result</span><span style="color: #007700">, </span><span style="color: #0000BB">LastID</span><span style="color: #007700">;
+<br/>    for(new </span><span style="color: #0000BB">i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_BIZS</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++)
+<br/>    {
+<br/>        if(</span><span style="color: #0000BB">i </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">)
+<br/>        {
+<br/>            </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Iteration [%i]"</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">);</span><span style="color: #FF8000">//Result 0
+<br/>            </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"DynamicBizs[i][ID]: [%i]"</span><span style="color: #007700">, </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">]);</span><span style="color: #FF8000">// Result 1
+<br/>            </span><span style="color: #0000BB">LastID </span><span style="color: #007700">= </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">];
+<br/>            continue;
+<br/>        }
+<br/>        if(</span><span style="color: #0000BB">LastID </span><span style="color: #007700">== </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">]-</span><span style="color: #0000BB">1 </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">] == </span><span style="color: #0000BB">LastID </span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">)
+<br/>        {
+<br/>            </span><span style="color: #0000BB">LastID </span><span style="color: #007700">= </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">];
+<br/>            </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Iteration [%i]"</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">);</span><span style="color: #FF8000">//Result 0
+<br/>            </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"DynamicBizs[i][ID]: [%i]"</span><span style="color: #007700">, </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">]);</span><span style="color: #FF8000">// Result 1
+<br/>            </span><span style="color: #007700">continue;
+<br/>        }
+<br/>        if(</span><span style="color: #0000BB">LastID </span><span style="color: #007700">== </span><span style="color: #0000BB">DynamicBizs</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">ID</span><span style="color: #007700">]-</span><span style="color: #0000BB">2</span><span style="color: #007700">)
+<br/>        {
+<br/>            </span><span style="color: #0000BB">Result </span><span style="color: #007700">= </span><span style="color: #0000BB">i</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>            break;
+<br/>        }
+<br/>    }
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"GetFreeBizID Result: %i"</span><span style="color: #007700">, </span><span style="color: #0000BB">Result</span><span style="color: #007700">);
+<br/>    return </span><span style="color: #0000BB">Result</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New to Loops such as these ones, any advice? - <a href="member824f.html?action=profile&amp;uid=205283">grymtn</a> -  18.07.2020
+<br />
+<br />
+I dont exactly understand what you are trying to do but if you are just trying to get one id, something like below should work. If you remove break you will see all ids.<br />
+<br />
+Important edit: You should never match database id with in game object id that your script gives. Just create another variable called dbid in your enum and do your database jobs on that id. Its fool proof and less resource requiring since you are taking down your loop workload.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">for(new i=0; i&lt;maxbiz; i++)
+{
+    if(biz[i][taken]==free)
+    {
+        //The id you want is i. i is free. Do your action here.
+        Break;
+    }
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New to Loops such as these ones, any advice? - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  18.07.2020
+<br />
+<br />
+This isn't the way to do it. You should consider array as the ID. do what grymton told. make a seperate token called <b>taken</b> and make it true when taken and false when its removed then loop through all and take the array index which taken is false using break;
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New to Loops such as these ones, any advice? - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  18.07.2020
+<br />
+<br />
+Welp, doesn't matter I totally forgot about Y_Iterate
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New to Loops such as these ones, any advice? - <a href="member9e1f.html?action=profile&amp;uid=298276">xRadical3</a> -  18.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SkyFlare</strong><br />
+<a href="showthread2d54.html?pid=4155763#pid4155763" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Welp, doesn't matter I totally forgot about Y_Iterate</div>
+</td>
+</tr>
+</table>
+</div>Create a iter variable.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> <span style="color: #000000;">Iterator</span><span style="color: #000000;">:</span>Business<span style="color: #000000;">&lt;</span>MAX_BUSINESS<span style="color: #000000;">&gt;</span>;</div></div></pre>
+</div>
+When you load or create new business, do this for add to iter:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Iter_Add<span style="color: #000000;">(</span>Business, id<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Now you can only get the free slot with this function:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Iter_Free<span style="color: #000000;">(</span>Business<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

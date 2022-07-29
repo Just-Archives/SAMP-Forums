@@ -1,0 +1,529 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Server Sided Health/Armour Functions. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="So I am making my own Server Sided Health / Armour in Textdraws, which is complete. Just looking to upgrade my script a little bit. in a bonestock standard Script, using GetPlayerHealth(playerid, Play" />
+<link rel="canonical" href="showthreadc6b0.html?tid=677133" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadc6b0.html?tid=677133">Server Sided Health/Armour Functions.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  Server Sided Health/Armour Functions. (<em>/showthread.php?tid=677133</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Server Sided Health/Armour Functions. - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  01.07.2020
+<br />
+<br />
+So I am making my own Server Sided Health / Armour in Textdraws, which is complete.<br />
+<br />
+Just looking to upgrade my script a little bit.<br />
+<br />
+in a bonestock standard Script, using GetPlayerHealth(playerid, Player[playerid][Health]);<br />
+would get the players Health, and in return save the value into the float specified.<br />
+how can I create a function myself like this.. here's what I am doing so far.<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) </span><span style="color: #0000BB">HpAmount </span><span style="color: #007700">= </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">GetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) </span><span style="color: #0000BB">ArmorAmount </span><span style="color: #007700">= </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">SetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">SetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">] = </span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Note I am moving right away from the whole standard Get/Set PlayerHealth standard CMDS as they are now useless, because every players HP will be infinite in that value.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member7079.html?action=profile&amp;uid=349993">SharpenBlade</a> -  01.07.2020
+<br />
+<br />
+Seems ok, but I don't think you can set player's health without using SetPlayerHealth.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 242px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">GetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">SetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) 
+<br/>{
+<br/>    </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">;
+<br/>    </span><span style="color: #0000BB">SetPlayerHealth</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">]);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+<br/></span><span style="color: #0000BB">SetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) 
+<br/>{
+<br/>    </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">] = </span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">;
+<br/>    </span><span style="color: #0000BB">SetPlayerArmor</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">]);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Or check this: <a href="showthread4e1c.html?pid=2893761#pid2893761" target="_blank">https://forum.sa-mp.com/showpost.php...61&amp;postcount=6</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SharpenBlade</strong><br />
+<a href="showthread03e0.html?pid=4153811#pid4153811" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Seems ok, but I don't think you can set player's health without using SetPlayerHealth.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 242px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">GetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">SetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) 
+<br/>{
+<br/>    </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">;
+<br/>    </span><span style="color: #0000BB">SetPlayerHealth</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">]);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+<br/></span><span style="color: #0000BB">SetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) 
+<br/>{
+<br/>    </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">] = </span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">;
+<br/>    </span><span style="color: #0000BB">SetPlayerArmor</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">]);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Or check this: <a href="showthread4e1c.html?pid=2893761#pid2893761" target="_blank">https://forum.sa-mp.com/showpost.php...61&amp;postcount=6</a></div>
+</td>
+</tr>
+</table>
+</div>Yeah, I see your point but the only time ill use SetPlayerHealth Code is upon initial spawn, to set them to infinite Health, other than that, the only data for health im using is from MySQL, the enumerator where the MySQL Data is stored, and the Textdraw where the players health is displayed.<br />
+<br />
+I only want to get players health from the TD now, not the old values from GetPlayerHealth, so I want to mimic the functions that i used to have.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member7079.html?action=profile&amp;uid=349993">SharpenBlade</a> -  01.07.2020
+<br />
+<br />
+Well, then I think your code could work.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">GetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">SetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">SetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">] = </span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SharpenBlade</strong><br />
+<a href="showthreaddef3.html?pid=4153815#pid4153815" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well, then I think your code could work.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">GetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">];
+<br/></span><span style="color: #0000BB">SetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">SetPlayerArmorEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Armor</span><span style="color: #007700">] = </span><span style="color: #0000BB">ArmorAmount</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Do you think this would work?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">)
+<br/>{
+<br/>    </span><span style="color: #0000BB">HpAmount </span><span style="color: #007700">= </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>in theory this would be how i use it<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">healthdying</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">healthdying</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member7079.html?action=profile&amp;uid=349993">SharpenBlade</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SkyFlare</strong><br />
+<a href="showthread3f8b.html?pid=4153816#pid4153816" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Do you think this would work?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">)
+<br/>{
+<br/>    </span><span style="color: #0000BB">HpAmount </span><span style="color: #007700">= </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>in theory this would be how i use it<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">new </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">healthdying</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">healthdying</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Well, HpAmount = Player[playerid][Health]; means that you are setting HPAmount value to Player[playerid][Health]. If you want to change Player[playerid][Health] value (you set player health value to the value of HpAmount) use this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SharpenBlade</strong><br />
+<a href="showthread307d.html?pid=4153820#pid4153820" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well, HpAmount = Player[playerid][Health]; means that you are setting HPAmount value to Player[playerid][Health]. If you want to change Player[playerid][Health] value (you set player health value to the value of HpAmount) use this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">] = </span><span style="color: #0000BB">HpAmount</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Yeah but that's GetPlayerHealth, not SetPlayerHealth :P
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member7079.html?action=profile&amp;uid=349993">SharpenBlade</a> -  01.07.2020
+<br />
+<br />
+Yes, sorry, I have read it wrong. I am not sure about it... Why don't you use it like this?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+
+<br/></span><span style="color: #FF8000">//in command:
+<br/></span><span style="color: #007700">new </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">health </span><span style="color: #007700">= </span><span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>You are already storing health value in a variable, just use it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> -  01.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SharpenBlade</strong><br />
+<a href="showthread2c3f.html?pid=4153830#pid4153830" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Yes, sorry, I have read it wrong. I am not sure about it... Why don't you use it like this?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) return </span><span style="color: #0000BB">Player</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">Health</span><span style="color: #007700">];
+
+<br/></span><span style="color: #FF8000">//in command:
+<br/></span><span style="color: #007700">new </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">health </span><span style="color: #007700">= </span><span style="color: #0000BB">GetPlayerHealthEx</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>You are already storing health value in a variable, just use it.</div>
+</td>
+</tr>
+</table>
+</div>Server Sided Damage &amp; values associated will make it quite hard, will be a lot of new variables created and it'll get confusing once i dive in deep with different damage types, so im trying to make a framework which benefits of simplicity from the beginning, if its extra code behind the function, I dont mind, so long as the other side of it is a lot easier to understand.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Server Sided Health/Armour Functions. - <a href="membereb54.html?action=profile&amp;uid=283689">ShadowMortar</a> -  01.07.2020
+<br />
+<br />
+ALS hook SetPlayerHealth/Armour, GetPlayerHealth/Armour, and under OnPlayerTakeDamage do the thing.<br />
+Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 354px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">SetPlayerArmourEx</span><span style="color: #007700">( </span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">armour </span><span style="color: #007700">) {
+<br/>    </span><span style="color: #0000BB">PlayerInfo</span><span style="color: #007700">[ </span><span style="color: #0000BB">playerid </span><span style="color: #007700">] [ </span><span style="color: #0000BB">pArmor </span><span style="color: #007700">] = </span><span style="color: #0000BB">armour</span><span style="color: #007700">;
+<br/>    return </span><span style="color: #0000BB">SetPlayerArmour</span><span style="color: #007700">( </span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">PlayerInfo</span><span style="color: #007700">[ </span><span style="color: #0000BB">playerid </span><span style="color: #007700">] [ </span><span style="color: #0000BB">pArmor </span><span style="color: #007700">] );
+<br/>}
+
+<br/></span><span style="color: #0000BB">GetPlayerArmourEx</span><span style="color: #007700">( </span><span style="color: #0000BB">playerid</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">armour </span><span style="color: #007700">) {
+<br/>    return </span><span style="color: #0000BB">PlayerInfo</span><span style="color: #007700">[ </span><span style="color: #0000BB">playerid </span><span style="color: #007700">] [ </span><span style="color: #0000BB">pArmor </span><span style="color: #007700">];
+<br/>}
+<br/></span><span style="color: #FF8000">#if defined _ALS_SetPlayerHealth
+<br/>    #undef SetPlayerArmour 
+<br/>#else 
+<br/>    #define _ALS_SetPlayerArmour
+<br/>#endif
+<br/>#define SetPlayerArmour SetPlayerArmourEx
+
+<br/>#if defined _ALS_GetPlayerArmour
+<br/>    #undef GetPlayerArmour 
+<br/>#else 
+<br/>    #define _ALS_GetPlayerArmour
+<br/>#endif
+<br/>#define GetPlayerArmour GetPlayerArmourEx 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

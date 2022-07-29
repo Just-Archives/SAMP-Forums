@@ -1,0 +1,177 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> samp.ban and temporary banning - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello guys, When some one gets ban i transfer his ip range to samp.ban so he cant connect again with that range but samp.ban even doesnt even allow server to call OnPlayerConnect for the banned player" />
+<link rel="canonical" href="showthreadfcb4.html?tid=677190" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadfcb4.html?tid=677190">samp.ban and temporary banning</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  samp.ban and temporary banning (<em>/showthread.php?tid=677190</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+samp.ban and temporary banning - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  03.07.2020
+<br />
+<br />
+Hello guys,<br />
+<br />
+When some one gets ban i transfer his ip range to <b>samp.ban</b> so he cant connect again with that range but <b>samp.ban </b>even doesnt even allow server to call OnPlayerConnect for the banned player when connecting... so the problem is if the ban is a temporary one, how can i unban him?<br />
+<br />
+What i did before is.. Instead of using <b>samp.ban</b> i used a seperate table for banned ranges in the database so when player connects I can check weather his ban is expired.. but still I wanna use this <b>samp.ban </b>as cheaters still can affect the server if i used that server side method.<br />
+<br />
+Is there any callback or smth which respond this connection?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="member3012.html?action=profile&amp;uid=331085">Symon</a> -  03.07.2020
+<br />
+<br />
+I found using the samp.ban is a more effective way to ban cheaters and "isolate" them from the server. In my old CNR server i had multiple attacks from kids and adding their IP to samp.ban resolved the situation as they can't even connect.<br />
+<br />
+My suggestion is to merge your ban system with default samp.ban file, i mean when banning an IP from server side, use "banip XXX.XXX.XXX" after that, so it gets banned in both places and you'll have to not worry about anything anymore.<br />
+<br />
+Eventually, if you want to unban an IP, if you have a command like /unbanip, you can use unbanip and reloadbans rcon command after to flush samp.ban file.<br />
+<br />
+If you're worried about OnPlayerConnect, you can try to use fread to read samp.ban file (never tried tbh) and check if that IP is banned.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  03.07.2020
+<br />
+<br />
+Yeah, thanks for the reply! thats the reason im switching to samp.ban but the problem is I cant check weather any temporary ban is expired. I mean like if i ban a player for 3 days i save that timestamp but as I use samp.ban there's no way to compare that timestamp with the current timestamp.<br />
+<br />
+So... is it impossible? that making temporary bans along with samp.ban
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="member3012.html?action=profile&amp;uid=331085">Symon</a> -  03.07.2020
+<br />
+<br />
+No it's not possible. However i suggest you to use samp.ban as a method to block attackers/flooders, just ban their IP. For "normal" bans you can use your server side ban system.<br />
+<br />
+If you have a temporary ban system a workaround that i can only think is when the ban time expires just use unbanip and reloadbans to unban that IP.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> -  03.07.2020
+<br />
+<br />
+Use database for bans, but also ban them on samp sever (samp.ban). Check for expired bans every few minutes and when ban expires also unban that ip on samp server (i think you can just call rcon command from server).<br />
+<br />
+EDIT: fixed stupid typo <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  04.07.2020
+<br />
+<br />
+Thank you so much for both of you! <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> <br />
+Another timer xD
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="member3012.html?action=profile&amp;uid=331085">Symon</a> -  04.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>GameOvr</strong><br />
+<a href="showthread2f84.html?pid=4154125#pid4154125" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thank you so much for both of you! <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> <br />
+Another timer xD</div>
+</td>
+</tr>
+</table>
+</div>You don't need to create another timer, just add unbanip and reloadbans rcon commands when you unban the player after the ban expires.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  04.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Symon</strong><br />
+<a href="showthread9331.html?pid=4154130#pid4154130" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">You don't need to create another timer, just add unbanip and reloadbans rcon commands when you unban the player after the ban expires.</div>
+</td>
+</tr>
+</table>
+</div>Actually you didnt get me, how can i unban him at the exact time when he is in <b>samp.ban</b>? That's my problem <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a> -  04.07.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>GameOvr</strong><br />
+<a href="showthread2401.html?pid=4154154#pid4154154" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Actually you didnt get me, how can i unban him at the exact time when he is in <b>samp.ban</b>? That's my problem <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/></div>
+</td>
+</tr>
+</table>
+</div>To unban him at the exбct timestamp is nearly impossible. This would have to be achieved by using a timer, and you don't want to check for expired bans every second.<br />
+Keep in mind that SAMP is single threaded and thus can only do one thing at a time.<br />
+You're better off checking every few minutes (eg. every 30 minutes) to see if there are expired bans.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: samp.ban and temporary banning - <a href="memberbdb6.html?action=profile&amp;uid=317673">GameOvr</a> -  04.07.2020
+<br />
+<br />
+Thanks for the ideas.. REP for all <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
