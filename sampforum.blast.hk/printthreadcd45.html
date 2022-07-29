@@ -1,0 +1,94 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Help me, please /a chat - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="So, I'm trying to make an admin chat, basically admins can speak with eachother using the command /a But, I got this command: pawn Code: CMD:a(playerid, params[]){ new sendername, result, string; if(!" />
+<link rel="canonical" href="showthreadcd45.html?tid=278881" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadcd45.html?tid=278881">Help me, please /a chat</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Help me, please /a chat (<em>/showthread.php?tid=278881</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Help me, please /a chat - <a href="memberbe48.html?action=profile&amp;uid=134757">Jafet_Macario</a> -  24.08.2011
+<br />
+<br />
+So, I'm trying to make an admin chat, basically admins can speak with eachother using the command /a [text]<br />
+But, I got this command:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>a<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>, result<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>, string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #000000;">(</span>PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_GREY,<span style="color: #000066;">"You are not authorized to use this command"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>sscanf<span style="color: #000000;">(</span>params,<span style="color: #000066;">"s[128]"</span>, result<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_GOLD,<span style="color: #000066;">"USAGE: /a [chat]"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>,<span style="color: #000066;">"*%d Admin %s: %s"</span>, PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span>, sendername, result<span style="color: #000000;">)</span>;<br/>        SendAdminMessage<span style="color: #000000;">(</span>COLOR_GOLD, string<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>Every time I type for example: /a hello, or anything, I'm getting always this message: "USAGE: /a [chat]", any help, please?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help me, please /a chat - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:183px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>a<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_GREY,<span style="color: #000066;">"You are not authorized to use this command"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>params<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid,COLOR_GOLD,<span style="color: #000066;">"USAGE: /a [chat]"</span><span style="color: #000000;">)</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>playerid,sendername,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>sendername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">160</span>,<span style="color: #000066;">"*%d Admin %s: %s"</span>,PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span>,sendername,params<span style="color: #000000;">)</span>;<br/>    SendAdminMessage<span style="color: #000000;">(</span>COLOR_GOLD, string<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help me, please /a chat - <a href="memberbe48.html?action=profile&amp;uid=134757">Jafet_Macario</a> -  24.08.2011
+<br />
+<br />
+Damn thanks, noticed that I got the same problem on this command:<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>kick<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> id, sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>, string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>, reason<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_GREY,<span style="color: #000066;">"  you are not authorized to use this command"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>sscanf<span style="color: #000000;">(</span>params,<span style="color: #000066;">"us[128]"</span>,id, reason<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_WHITE,<span style="color: #000066;">"USAGE: /kick [playerid/partofname] [reason]"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>id <span style="color: #000000;">==</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_WHITE,<span style="color: #000066;">"Player is not connected"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        GetPlayerName<span style="color: #000000;">(</span>playerid, sendername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>sendername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"AdmCmd: %s was kicked by %s, reason: %s"</span>, id, sendername, reason<span style="color: #000000;">)</span>;<br/>        SendClientMessageToAll<span style="color: #000000;">(</span>COLOR_LIGHTRED,string<span style="color: #000000;">)</span>;<br/>        Kick<span style="color: #000000;">(</span>id<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>But I think I can't check if is null because there are 2 parameters? How to make here?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help me, please /a chat - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+sscanf have isnull in-build code.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>kick<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> id,name1<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>name2<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pAdmin<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_GREY,<span style="color: #000066;">"  you are not authorized to use this command"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>sscanf<span style="color: #000000;">(</span>params,<span style="color: #000066;">"us[128]"</span>,id,params<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_WHITE,<span style="color: #000066;">"USAGE: /kick [playerid/partofname] [reason]"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>IsPlayerConnected<span style="color: #000000;">(</span>id<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SCM<span style="color: #000000;">(</span>playerid, COLOR_WHITE,<span style="color: #000066;">"Player is not connected"</span><span style="color: #000000;">)</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>playerid,name1,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>name1<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>id,name2,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>name2<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>params,<span style="color: #000000;">129</span>, <span style="color: #000066;">"AdmCmd: %s was kicked by %s, reason: %s"</span>,name2,name1,params<span style="color: #000000;">)</span>;<br/>    SendClientMessageToAll<span style="color: #000000;">(</span>COLOR_LIGHTRED,params<span style="color: #000000;">)</span>;<br/>    Kick<span style="color: #000000;">(</span>id<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help me, please /a chat - <a href="memberbe48.html?action=profile&amp;uid=134757">Jafet_Macario</a> -  24.08.2011
+<br />
+<br />
+^^ thanks again<img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

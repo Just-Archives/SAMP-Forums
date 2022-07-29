@@ -1,0 +1,113 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Wreck Car After Respawn [Easily] - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I am New developer, And I have Low skill for sa-mp. I am open a server for real life. But sometimes players often seize the opportunity to Spawn car, such as Drive the car fall water without Mechanic'" />
+<link rel="canonical" href="showthread73e0.html?tid=677255" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread73e0.html?tid=677255">[Tutorial] Wreck Car After Respawn [Easily]</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Wreck Car After Respawn [Easily] (<em>/showthread.php?tid=677255</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Wreck Car After Respawn [Easily] - <a href="memberc64d.html?action=profile&amp;uid=164432">supermember</a> -  07.07.2020
+<br />
+<br />
+I am New developer, And I have Low skill for sa-mp.<br />
+<i>[I am weak english]</i><br />
+<br />
+I am open a server for real life. But sometimes players often seize the opportunity to Spawn car, such as Drive the car fall water without Mechanic's repair. I try to fix this problems but I am new developer [weak developer]<br />
+<br />
+First : I try to make Save health's Car into Mysql but I can't make it. <br />
+Second : I am think to easy make and I tried not related to the database.<br />
+<br />
+Yep! I choose the second method.  and I think it basic for all gamemode.<br />
+<br />
+<b>Begin</b> : make it<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new Float:VehicleDamage[MAX_VEHICLES];</pre>
+</div><b>Next : </b> <b>Find to : </b><font color="Blue">public OnVehicleDeath(vehicleid)</font><br />
+<b>Describe : </b><i>When The Vehicle was damage by something such as Fall the water, Weapon or Crash</i><br />
+<i>It's Check = 1.</i><br />
+<b>Type : </b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">VehicleDamage[vehicleid] = 1;</pre>
+</div><b>Next : Find </b><font color="blue">public OnVehicleSpawn(vehicleid)</font><br />
+<b>Describe :</b> <i>If the vehicledamage = 1 ,  It will determine what the vehicle will look like.</i><br />
+<b>TYPE:</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">if(VehicleDamage[vehicleid] == 1)
+    {
+	UpdateVehicleDamageStatus(vehicleid, panels, doors, lights, 15);//If want to Show look the car's damage
+        SetVehicleHealth(vehicleid, 300);//Set Health After Respawn
+        VehicleDamage[vehicleid] = 0; // Back Check this car to 0
+    }</pre>
+</div>This is working, But If you're Restart Server Or Vehicle's Respawn. The Car is comeback to Full hp.<br />
+-----------------------------------------------------------------------------------------------------------------<br />
+<br />
+I developed knowledge from...<br />
+<br />
+Credit : SharpenBlade<br />
+<a href="showthread907e.html?tid=676775" target="_blank">https://sampforum.blast.hk/showthread.php?tid=676775</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Wreck Car After Respawn [Easily] - <a href="member1c7d.html?action=profile&amp;uid=331621">YouShootIDodge</a> -  16.07.2020
+<br />
+<br />
+Is this a troll ? If not then Good Effort.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
