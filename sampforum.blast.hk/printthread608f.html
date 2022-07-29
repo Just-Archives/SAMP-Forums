@@ -1,0 +1,231 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Simple Team Setup + Player Data Template - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Preface Before we begin this tutorial, there's some things you should know. This doesn't cover how to actually save the data. Why it doesn't is simply because...Many people use different systems to sa" />
+<link rel="canonical" href="showthread608f.html?tid=331290" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread608f.html?tid=331290">[Tutorial] Simple Team Setup + Player Data Template</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Simple Team Setup + Player Data Template (<em>/showthread.php?tid=331290</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Simple Team Setup + Player Data Template - <a href="member3979.html?action=profile&amp;uid=139976">[ABK]Antonio</a> -  04.04.2012
+<br />
+<br />
+<b><font color="Navy"><font size="5"><u>Preface</u></font></font></b><br />
+<br />
+Before we begin this tutorial, there's some things you should know. This doesn't cover how to actually save the data. Why it doesn't is simply because...Many people use different systems to save their player's data. There's also many, many tutorials based on those systems. <br />
+Some may not be able to follow my simplifications of certain things inside this tutorial. <br />
+You should know at LEAST...a few things...such as control structures. If you don't..don't worry, I'll cover a LITTLE of that. The reason I'm showing how to do player data structures is because..It's a LOT more useful than just a team based tutorial. It opens many doors to the scripter who learns it.<br />
+<br />
+At the bottom there will be an example of the admin level system. If you have sscanf &amp; zcmd and don't know how to make a setlevel command for example.. That will teach you how.<br />
+<br />
+<b><font color="Navy"><font size="5"><u>What You Will Learn</u></font></font></b><br />
+<ul><li>How to structure your players data</li>
+<li>How to create multiple teams</li>
+<li>How to use arrays and why to use arrays</li>
+</ul>What you MIGHT learn<ul><li>How to do simple control structures</li>
+</ul>
+<br />
+<br />
+<b><font color="Navy"><font size="5"><u>Player Data Structure</u></font></font></b><br />
+<br />
+So we'll start of with our structure for the players data.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> PlayerInfo<br/><span style="color: #000000;">{</span><br/>    aLevel, <span style="color: #228822;">//short for adminLevel (0)</span><br/>    Kills, <span style="color: #228822;">//1</span><br/>    Deaths, <span style="color: #228822;">//2</span><br/>    Team <span style="color: #228822;">//3</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+So what we have here is our enum. What does this do? Well, I'll have to show you the array to better explain.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> Info<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span><span style="color: #000000;">[</span>PlayerInfo<span style="color: #000000;">]</span>;</div></div></pre>
+</div>
+Right that's simple enough isn't it?<br />
+Let's think of this something like a box with slots in it...How many slots are in this box you ask? Well, we've defined it as MAX_PLAYERS. So by default there's 500 slots. So we have this box with 500 slots...We can put separate things in each one of those slots...We can ALSO put slots...INSIDE of slots! That's the basics of a 2-dimensional array. That's pretty easy to understand isn't it?<br />
+<br />
+So when we want to put something in those slots...With our enum it makes things more readable and easier to change things in the long run.<br />
+<br />
+Say I want to set the players Kills to 7...Well we'll do this<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Kills<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">7</span>;</div></div></pre>
+</div>
+That's pretty simple right? What is it actually doing though? Well, it's like taking a piece of paper...Putting it into the slot equivalent to the players ID...Then placing that piece of paper inside of our other slot which is Kills.<br />
+<br />
+Let's say our players ID is 4<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Kills<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">7</span>;<br/>Info<span style="color: #000000;">[</span><span style="color: #000000;">4</span><span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">7</span>; <span style="color: #228822;">//it will be 1 instead of 2 as we start counting with 0 in computer language</span></div></div></pre>
+</div>That's basically what it's doing. Inserting something into these little slots in the box.<br />
+<br />
+SO what is an enum? It's basically just a place-holder for these numbered slots (how we're using it here at least).<br />
+<br />
+Now we should set their info to 0 when they connect.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Kills<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; <span style="color: #228822;">//We'll set all of our players things to 0 when they connect.</span><br/>    Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Deaths<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/>    Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>aLevel<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+What can we do with this...I'm sure you've found some uses in your head, if not...Here's an example.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:327px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerDeath<span style="color: #000000;">(</span>playerid, killerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">//The != operator means NOT equal to.</span><br/>    <span style="color: #228822;">//This is one of the simplest forms of control structures.</span><br/>    <span style="color: #228822;">//INVALID_PLAYER_ID is a define inside of a_players (or a_samp) to detect, well if they're not a real player...Or not connected</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>killerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #228822;">//So if they ARE a valid player, let's continue our code.</span><br/>        <span style="color: #228822;">//Here we INCREMENT our player's Kills variable...or array slot.</span><br/>        <span style="color: #228822;">//What incrementing does is adds 1 to whatever the previous value is.</span><br/>        <span style="color: #228822;">//It's like doing...Info[killerid][Kills]+=1;</span><br/>        Info<span style="color: #000000;">[</span>killerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Kills<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #228822;">//Even if the killer is an invalid player...We'll still give our player a death.</span><br/>    Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Deaths<span style="color: #000000;">]</span><span style="color: #000000;">++</span>; <span style="color: #228822;">//we increment again, this time using playerid instead of killerid (playerid = the one who died | killerid = the one who killed the player)</span><br/><br/>    <span style="color: #228822;">//So basically, it will check our if statement... REGARDLESS of whether the player is a valid player we'll give the dead guy a death</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<font color="Navy"><font size="5"><b><u>Creating Teams</u></b></font></font><br />
+<br />
+First, we'll start off by creating an enum.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span><br/><span style="color: #000000;">{</span><br/>    Grove,<br/>    Ballas,<br/>    Vagos,<br/>    Nameless<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+As you've probably noticed..It's nameless..Why is that? Well, this way we don't need to define those numbers..It's much cleaner than doing this<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define Grove   0</span><br/><span style="color: #2222AA;">#define Ballas  1</span><br/><span style="color: #2222AA;">#define Vagos   2</span><br/><span style="color: #2222AA;">#define Namess  3</span></div></div></pre>
+</div>
+So.. How do we assign them to a team...Well, it's quite simple actually.<br />
+<br />
+First we need to create our <b>classes</b>.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:343px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnGameModeInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">//I'm not going to fill these in..If you want to know more about AddPlayerClass</span><br/>    <span style="color: #228822;">//Go here - <a href="https://sampwiki.blast.hk/wiki/AddPlayerClass" target="_blank" rel="noopener" class="mycode_url">https://sampwiki.blast.hk/wiki/AddPlayerClass</a></span><br/>    <span style="color: #228822;">//=======[Grove]=======</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">105</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//0</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">106</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//1</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">107</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//2</span><br/>    <span style="color: #228822;">//=======[Ballas]======</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">102</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//3</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">103</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//4</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">104</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//5</span><br/>    <span style="color: #228822;">//=======[Vagos]=======</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">108</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//6</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">109</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//7</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">110</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//8</span><br/>    <span style="color: #228822;">//=====[Nameless]======</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">264</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//9</span><br/>    AddPlayerClass<span style="color: #000000;">(</span><span style="color: #000000;">259</span>, x, y, z, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3<span style="color: #000000;">)</span>; <span style="color: #228822;">//10</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+So we've got our classes..What do we do with them though? We do this...<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:455px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerRequestClass<span style="color: #000000;">(</span>playerid, classid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">//We can set their camera positions and stuff..I'm not really going to get into that. Just the teams</span><br/>    <br/>    <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span>classid<span style="color: #000000;">)</span> <span style="color: #228822;">//A switch is basically an if statement on steroids.</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">0</span>..<span style="color: #000000;">2</span><span style="color: #000000;">:</span> Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Team<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> Grove; <span style="color: #228822;">//If the class ID is 0, 1, or 2 this will set their team to grove.</span><br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">3</span>..<span style="color: #000000;">5</span><span style="color: #000000;">:</span> Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Team<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> Ballas;<br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">6</span>..<span style="color: #000000;">8</span><span style="color: #000000;">:</span> Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Team<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> Vagos;<br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">9</span>, <span style="color: #000000;">10</span><span style="color: #000000;">:</span> Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Team<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> Nameless; <span style="color: #228822;">//The comma is like...if the classid is 9 or 10.</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #228822;">//So we've set their teams now what do we do?</span><br/>    <span style="color: #228822;">//Let's actually create a function (just for easy reading)</span><br/>    AssortTeam<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222BB;">stock</span> AssortTeam<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> <span style="color: #228822;">//Please note that you can put this on the bottom of your script (very nice for organization)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span>Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Team<span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #228822;">//We do another switch here</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">Grove</span><span style="color: #000000;">:</span> SetPlayerTeam<span style="color: #000000;">(</span>playerid, Grove<span style="color: #000000;">)</span>; <span style="color: #228822;">//We then set their team corresponding to their team ID.</span><br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">Ballas</span><span style="color: #000000;">:</span> SetPlayerTeam<span style="color: #000000;">(</span>playerid, Ballas<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">Vagos</span><span style="color: #000000;">:</span> SetPlayerTeam<span style="color: #000000;">(</span>playerid, Vagos<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">case</span> <span style="color: #000000;">Nameless</span><span style="color: #000000;">:</span> SetPlayerTeam<span style="color: #000000;">(</span>playerid, NO_TEAM<span style="color: #000000;">)</span>; <span style="color: #228822;">//No team is a built in define that will make them teamless.</span><br/>    <span style="color: #000000;">}</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+So that's the basics of creating teams. <br />
+<br />
+<br />
+<b><font color="Navy"><font size="5"><u>Learning More</u></font></font></b><br />
+<ul><li> The sa-mp wiki covers so many things that can help you in the long run - <a href="https://sampwiki.blast.hk/wiki/Main_Page" target="_blank">https://sampwiki.blast.hk/wiki/Main_Page</a></li>
+<li> Control structures are important - <a href="https://sampwiki.blast.hk/wiki/Control_Structures" target="_blank">https://sampwiki.blast.hk/wiki/Control_Structures</a></li>
+<li> Initialisers are a good thing to know - <a href="https://sampwiki.blast.hk/wiki/Keywords:Initialisers" target="_blank">https://sampwiki.blast.hk/wiki/Keywords:Initialisers</a></li>
+<li> Here you can find resources like skin IDs, model ids, etc. - <a href="https://sampwiki.blast.hk/wiki/Category:Scripting_Documentation" target="_blank">https://sampwiki.blast.hk/wiki/Category:..._Documentation</a></li>
+<li> You can get familiar with functions here - <a href="https://sampwiki.blast.hk/wiki/Category:Scripting_Functions" target="_blank">https://sampwiki.blast.hk/wiki/Category:Scripting_Functions</a></li>
+</ul>
+If you've encountered a problem or anything...Feel free to post in this thread. If you find that something could be better in here, feel free to post too.<br />
+<br />
+Here's that setlevel example.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:471px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>setlevel<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsAdmin<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">4</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #228822;">//we check if they're an rcon admin or above level 4</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">new</span> target, level; <span style="color: #228822;">//create our variables to store our parameters in</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>sscanf<span style="color: #000000;">(</span>params, <span style="color: #000066;">"ri"</span>, target, level<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xCC0000AA, <span style="color: #000066;">"USAGE: /setlevel [playerid] [level]"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>level <span style="color: #000000;">&gt;</span> <span style="color: #000000;">5</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xCC0000AA, <span style="color: #000066;">"The maximum level is 5!"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//if it's above 5 it's a no no</span><br/>        Info<span style="color: #000000;">[</span>target<span style="color: #000000;">]</span><span style="color: #000000;">[</span>aLevel<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> level; <span style="color: #228822;">//we set the level of our target to what the player enters</span><br/>        <br/>        <span style="color: #2222BB;">new</span> aName<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>, tName<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>; <span style="color: #228822;">//we create 2 string so we can store names in them.</span><br/>        GetPlayerName<span style="color: #000000;">(</span>playerid, aName, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>aName<span style="color: #000000;">)</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//we get the players name then store it</span><br/>        GetPlayerName<span style="color: #000000;">(</span>target, tName, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>tName<span style="color: #000000;">)</span><span style="color: #000000;">)</span>; <span style="color: #228822;">//like above but for target</span><br/>        <br/>        <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>; <span style="color: #228822;">//create a string so we can store our formatted message in it</span><br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"You set %s to admin level %d!"</span>, tName, level<span style="color: #000000;">)</span>; <span style="color: #228822;">//format our message...enables us to add the targets name &amp; new level</span><br/>        SendClientMessage<span style="color: #000000;">(</span>playerid, 0x00CCCCAA, string<span style="color: #000000;">)</span>; <span style="color: #228822;">//we send the string to the player</span><br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"%s set your admin level to %d!"</span>, aName, level<span style="color: #000000;">)</span>; <span style="color: #228822;">//like above</span><br/>        SendClientMessage<span style="color: #000000;">(</span>target, 0x00CCCCAA, string<span style="color: #000000;">)</span>; <span style="color: #228822;">//we send it to the target</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xCC0000AA, <span style="color: #000066;">"You aren't the required admin level!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222BB;">stock</span> IsAdmin<span style="color: #000000;">(</span>playerid, level<span style="color: #000000;">)</span> <span style="color: #228822;">//What I usually do is something simple like this..just for ease of access for RCON admins.</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>aLevel<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> level || IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> true; <span style="color: #228822;">//checks if they're level is greater than or equal to the input level, or if they're logged into rcon</span><br/>    <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> false; <span style="color: #228822;">//returns true if they are, false if not.</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div><font size="0">the reason i created 2 name strings is for easier reading</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="memberf0bf.html?action=profile&amp;uid=97695">spedico</a> -  07.04.2012
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:327px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerDeath<span style="color: #000000;">(</span>playerid, killerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">//The != operator means NOT equal to.</span><br/>    <span style="color: #228822;">//This is one of the simplest forms of control structures.</span><br/>    <span style="color: #228822;">//INVALID_PLAYER_ID is a define inside of a_players (or a_samp) to detect, well if they're not a real player...Or not connected</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>killerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #228822;">//So if they ARE a valid player, let's continue our code.</span><br/>        <span style="color: #228822;">//Here we INCREMENT our player's Kills variable...or array slot.</span><br/>        <span style="color: #228822;">//What incrementing does is adds 1 to whatever the previous value is.</span><br/>        <span style="color: #228822;">//It's like doing...Info[playerid][Kills]+=1;</span><br/>        Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Kills<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #228822;">//Even if the killer is an invalid player...We'll still give our player a death.</span><br/>    Info<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Deaths<span style="color: #000000;">]</span><span style="color: #000000;">++</span>; <span style="color: #228822;">//we increment again, this time using playerid instead of killerid (playerid = the one who died | killerid = the one who killed the player)</span><br/><br/>    <span style="color: #228822;">//So basically, it will check our if statement... REGARDLESS of whether the player is a valid player we'll give the dead guy a death</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>You're giving the player who died a kill.. instead of "playerid" use "killerid"
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="member6dd9.html?action=profile&amp;uid=98231">DBan</a> -  07.04.2012
+<br />
+<br />
+Very good explanations +rep
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : Simple Team Setup + Player Data Template - <a href="memberebe8.html?action=profile&amp;uid=114770">Vukilore</a> -  07.04.2012
+<br />
+<br />
+Good tutorial for newbies <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="memberc475.html?action=profile&amp;uid=157120">Jonny5</a> -  09.04.2012
+<br />
+<br />
+very well explained!! this will help alot of users!<br />
+<br />
+9/10!!!<br />
++rep
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="member28c3-2.html?action=profile&amp;uid=153510">Twisted_Insane</a> -  11.05.2012
+<br />
+<br />
+At least one good tutorial which is step-by-step 'n fairly explained. It'll be useful for sure...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="member8902.html?action=profile&amp;uid=191462">Sellize</a> -  19.01.2013
+<br />
+<br />
+Thanks! Good grammar and good explaining
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="member727f.html?action=profile&amp;uid=191787">Jear</a> -  20.01.2013
+<br />
+<br />
+Thanks !
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="membere5ed.html?action=profile&amp;uid=158436">michaelcosyns</a> -  17.04.2013
+<br />
+<br />
+Good tut. and very good explenation!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Simple Team Setup + Player Data Template - <a href="member7044.html?action=profile&amp;uid=351374">STORIEL000</a> -  26.06.2020
+<br />
+<br />
+And how do we invite a player to a team? I am new to scripting, and i became a developer on a friend's server. It's a roleplay, and we want to make teams like Paramedic, Police, Taxi ect. Could you please help me?  ^_^
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
