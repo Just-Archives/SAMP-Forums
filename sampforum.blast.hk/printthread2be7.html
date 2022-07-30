@@ -1,0 +1,176 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Discord Rich Presence for SAMP server! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Rich Presence allows users to give more information about the game they're playing. Since GTA SA is abandoned by Rockstar, we probably won't be getting Rich Presence for GTA SA. That's where I come, m" />
+<link rel="canonical" href="showthread2be7.html?tid=645613" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2be7.html?tid=645613">[Tutorial] Discord Rich Presence for SAMP server!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tools and Files  (<i>https://sampforum.blast.hk/forumdisplay.php?fid=82</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Discord Rich Presence for SAMP server! (<em>/showthread.php?tid=645613</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Discord Rich Presence for SAMP server! - <a href="memberd903.html?action=profile&amp;uid=255015">sowad</a> -  30.11.2017
+<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://discordapp.com/assets/fc0b01fe10a0b8c602fb0106d8189d9b.png"/></div><b><a href="https://discordapp.com/rich-presence" target="_blank">Rich Presence</a></b> allows users to give more information about the game they're playing. Since GTA SA is abandoned by Rockstar, we probably won't be getting Rich Presence for GTA SA. That's where I come, making this thing.<br />
+<br />
+The rich presence looks like this:<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/EvZW59j.gif"/></div>
+(You can fully customize this)<br />
+<br />
+<b>REQUIREMENTS</b>:<br />
+• NodeJS (available here <a href="https://nodejs.org/en/download/" target="_blank">https://nodejs.org/en/download/</a> )<br />
+• (Optional) Git <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a><br />
+<br />
+1) Go to <b><a href="https://github.com/justdotJS/EasyRPC" target="_blank">this GitHub Repo</a></b> and clone it somewhere. Then in the folder do <b><a href="https://i.imgur.com/kE7t9ti.gif" target="_blank">this</a></b> (If not on Windows then open a console or command center and navigate it to the folder where you cloned the GitHub Repo) and type <b><i>npm i</i></b> to install dependencies of EasyRPC. You will get some "npm warn discord" errors, ignore those.<br />
+<br />
+2) Go to <a href="https://discordapp.com/developers/docs/intro" target="_blank">https://discordapp.com/developers/docs/intro</a> (and login to your Discord account if you haven't already {You might have to click on the URL again after logging in}).<br />
+<br />
+3) Create an application (in discord). Give it a name (the name will be the text which will be shown after "Playing" in your Discord Status {Thats why you should name it GTA: SA-MP or something like that})<br />
+<br />
+4) Then scroll down and enable Rich Presence <br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/D9Kn2Lb.png"/></div>
+5) Upload a large asset (which will be the server logo)<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/UDMkm6i.png"/></div>
+(non-transparent background suggested)<br />
+ and after uploading don't forget to hit save changes. Take note of the image name (for example it was hero_mercy in discord)<br />
+<br />
+6) Then upload a small image with any player skin <br />
+Let's say I want to upload this skin<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/EGzdhZX.png"/></div>
+You must be wondering, what the heck is the logo doing in the player image, well I added a part of the logo to blend it a bit more with the big image as the skin might take a part of the logo (as seen on the example rich presence image). Take note of the image name (for example it was hero_mercy in discord)<br />
+<br />
+Then after you're all set, edit the config.json.example and replace the client ID from 340755371629215744 to the client ID of the app you created on discord (scroll up on the API page to get the client ID). See the example rich presence image and then edit the "details", "state", "smallText" and "largeText" as shown here;<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/VPT3zZh.png"/></div>
+The "smallKey" is the name of the skin image and the "largeKey" is the name of the logo. Edit it out according to the name you uploaded them as. Then save the <b><i>config.json.example</i></b> file as <b><i>config.json</i></b> in the folder where you cloned the GitHub Repo. <br />
+<br />
+After all that is done, type <b><i>npm start</i></b> in the command prompt or console. <br />
+<br />
+You can follow <a href="https://salobby.eu/showthread.php?tid=143" target="_blank">https://salobby.eu/showthread.php?tid=143</a> this tutorial if you are a player.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="member692d.html?action=profile&amp;uid=287452">aoky</a> -  30.11.2017
+<br />
+<br />
+Wow amazing.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="memberd903.html?action=profile&amp;uid=255015">sowad</a> -  30.11.2017
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>[HLF]Southclaw</strong><br />
+<a href="showthread4d8f.html?pid=3961582#pid3961582" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Nice work! I was wondering how long it would be before someone uses the Rich Presence API for SA:MP! I'm excited to see how servers use this feature in the future.</div>
+</td>
+</tr>
+</table>
+</div> Would've been nice if SA-MP itself could implement it for the game. But it won't be fully perfect considering the fact of image limit of discord.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="member97bd.html?action=profile&amp;uid=288573">paukart</a> -  04.03.2018
+<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/tFlHAno.png"/><br />
+I get this((
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="memberd04f.html?action=profile&amp;uid=293379">Zeth</a> -  04.03.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>paukart</strong><br />
+<a href="showthread9a95-2.html?pid=3999769#pid3999769" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><img alt="" border="0" src="https://i.imgur.com/tFlHAno.png"/><br />
+I get this((</div>
+</td>
+</tr>
+</table>
+</div>Just use this <a href="showthread5639.html?tid=650275" target="_blank">https://sampforum.blast.hk/showthread.php?tid=650275</a><br />
+No need of nodejs and all, just put the .asi(make sure to have a asi loader) in your gta sa root folder and you are ready to go.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="memberf79e.html?action=profile&amp;uid=319637">Xadr</a> -  19.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>paukart</strong><br />
+<a href="showthread9a95-2.html?pid=3999769#pid3999769" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><img alt="" border="0" src="https://i.imgur.com/tFlHAno.png"/><br />
+I get this((</div>
+</td>
+</tr>
+</table>
+</div>I also get this. What's the issue?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Discord Rich Presence for SAMP server! - <a href="member4aea.html?action=profile&amp;uid=327668">Jesh</a> -  12.05.2019
+<br />
+<br />
+Ok, maybe i din't understand NOTHING AAAAAAAAAAAAAAAAAAAAA
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
