@@ -1,0 +1,52 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> synchronizing information sent by clients - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="At IRL time T, player A shot player B. The player A sends information to the server about the shot (and other information) which is received by the server at time X. Player B keeps sending information" />
+<link rel="canonical" href="showthread5dc5.html?tid=662325" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread5dc5.html?tid=662325">synchronizing information sent by clients</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  synchronizing information sent by clients (<em>/showthread.php?tid=662325</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+synchronizing information sent by clients - <a href="member1c6d.html?action=profile&amp;uid=169426">Yashas</a> -  29.12.2018
+<br />
+<br />
+At IRL time T, player A shot player B. The player A sends information to the server about the shot (and other information) which is received by the server at time X. Player B keeps sending information every now and then.<br />
+<br />
+In IRL time T, the player A had some state information (includes player B's state based on which B is rendered on A's screen). Player A's state at IRL time T is received at the server at IRL time X. I somehow need to find out the state of player B as seen by A.<br />
+<br />
+<b>What are the approaches to solving this problem of synchronization?</b><br />
+<br />
+The player B continuously informs B's state to the server which is relayed to other nearby players based on which things are rendered on their screen. If I were to store the state information relayed by B in an array. How can I efficiently pick the correct state information of B that corresponds to the event that happened at T on A's screen?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

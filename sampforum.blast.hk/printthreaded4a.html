@@ -1,0 +1,57 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Moving Icon on textdraw - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Essentially id like to make an area display on the screen showing a map using a textdraw. From this textdraw I would like to live update the player's location on the minimap. I already know how id lik" />
+<link rel="canonical" href="showthreaded4a.html?tid=660810" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreaded4a.html?tid=660810">Moving Icon on textdraw</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Moving Icon on textdraw (<em>/showthread.php?tid=660810</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Moving Icon on textdraw - <a href="memberc7a7.html?action=profile&amp;uid=155575">Craft.</a> -  14.11.2018
+<br />
+<br />
+Essentially id like to make an area display on the screen showing a map using a textdraw. From this textdraw I would like to live update the player's location on the minimap. I already know how id like to display the map I just don't know if its possible to update the player's position like that on the minimap textdraw. Any tips are appreciated!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Moving Icon on textdraw - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  14.11.2018
+<br />
+<br />
+You'll need to calculate the player position on the Map TextDraw, which depends on the Map's size and position.<br />
+The SA Map is 6000.0m x 6000.0m, the TD grid is 640 x 480, and the map is just a part of that grid (eg. 200 x 200 at a specific position on the TD grid) so the player's coords must be transformed to that grid.<br />
+<br />
+When you calculated the point on the TD grid you can create a (player) textdraw there for the icon, then keep updating it by destroying and recreating the icon.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

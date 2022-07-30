@@ -1,0 +1,196 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> New hooks (stocks, natives, improved publics) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="OK, question: I’ve been thinking about extensions to y_hooks for a while now (I’ve mentioned this a few times already). Namely the ability to hook regular and native functions. In theory the code" />
+<link rel="canonical" href="showthreadede4.html?tid=653528" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadede4.html?tid=653528">New hooks (stocks, natives, improved publics)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  New hooks (stocks, natives, improved publics) (<em>/showthread.php?tid=653528</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+New hooks (stocks, natives, improved publics) - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  06.05.2018
+<br />
+<br />
+OK, question:<br />
+<br />
+I’ve been thinking about extensions to y_hooks for a while now (I’ve mentioned this a few times already).  Namely the ability to hook regular and native functions.  In theory the code would look something like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto"><font face="courier new">
+<font color="DeepSkyBlue">hook</font> <font color="DeepSkyBlue">native</font> SetPlayerPos(playerid, Float:x, Float:y, Float:z)
+{
+    <font color="Green">// What goes in here?</font>
+}
+</font></pre>
+</div>There are two options:<br />
+<ol style="list-style-type: decimal"><li>Explicit chaining.  So your hook would look like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto"><font face="courier new">
+<font color="DeepSkyBlue">hook</font> <font color="DeepSkyBlue">native</font> SetPlayerPos(playerid, Float:x, Float:y, Float:z)
+{
+    printf(<font color="Red">"cool"</font>);
+    return SetPlayerPos(playerid, x, y z); <font color="Green">// NOT recursive, calls the next hook, or the native.</font>
+}
+</font></pre>
+</div>This has several advantages:<br />
+<ul><li>Control flow is obvious and explicit.<br/></li>
+<li>Preventing and manipulating when the next function is called is easy.<br/></li>
+<li>Return values are easy to deal with.  This wasn’t an issue with publics, because they only return <font face="courier new">0</font> or <font face="courier new">1</font>, but other function types can return anything.<br/></li>
+<li>The generated code is MUCH simpler.<br/></li>
+<li>Compile-time errors if the original function you are hooking (for <font face="courier new">hook stock</font>) doesn’t exist.  You can hook publics that don’t exist, but not natives and stocks.</li>
+</ul></li>
+<li>Implicit chaining.<br />
+<br />
+So within the hook you don’t call the original <font face="courier new">SetPlayerPos</font>, all hooks and the original are called one after the other.  I really don’t like this idea - it makes writing hook code almost impossible.  HOWEVER, this is how hooked publics currently work, and I’m a big fan of consistency.  On the other hand, since you can hook publics that don’t actually exist, requiring them to exist breaks the whole situation entirely.</li>
+</ol>
+I’m thinking about having both methods available for publics.  The legacy code will continue to operate exactly as it did before:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto"><font face="courier new">
+<font color="DeepSkyBlue">hook</font> OnPlayerConnect(playerid)
+{
+    printf(<font color="Red">"cool"</font>);
+    <font color="Blue">return</font> <font color="Orange">1</font>;
+}
+</font></pre>
+</div>Or using the newer syntax will require explicit chaining, but would also require that the next callback exists already:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto"><font face="courier new">
+<font color="DeepSkyBlue">hook</font> <font color="DeepSkyBlue">public</font> OnPlayerConnect(playerid)
+{
+    printf(<font color="Red">"cool"</font>);
+    <font color="Blue">return</font> OnPlayerConnect(playerid);
+}
+</font></pre>
+</div>Thoughts?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="member705e-2.html?action=profile&amp;uid=315833">IS4</a> -  06.05.2018
+<br />
+<br />
+Using implicit chaining, you would have to add syntax for both prehooks and posthooks, in case you needed to check the returned value of the actual function. You might also need to pass the arguments by reference, since a prehook could also want to change their value.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="member9c17.html?action=profile&amp;uid=315405">Gr00t</a> -  17.05.2018
+<br />
+<br />
+This would make easier script anticheat include, debug include, player config include for example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">hook native PlayAudioStreamForPlayer(playerid, url[], Float:posX = 0.0, Float:posY = 0.0, Float:posZ = 0.0, Float:distance = 50.0, usepos = 0)
+{
+	if(pAudioEnabled[playerid]) return PlayAudioStreamForPlayer(playerid, url, posX, posY, posZ, distance, usepos);
+	return 0;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="member587e.html?action=profile&amp;uid=198674">Graber</a> -  20.05.2018
+<br />
+<br />
+This would be very useful. Libraries such as anticheats and so on could benefit a lot from this. Besides, it allows for cleaner code when applying, like Gr00t said, custom configs and such. It would allow to write code like that and rely on the hooks you make.<br />
+<br />
+Regarding the proposed new explicit syntax for public functions, it would allow a more obvious and probably even more powerful control flow. It would be great to see this implemented.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="member9c17.html?action=profile&amp;uid=315405">Gr00t</a> -  24.07.2018
+<br />
+<br />
+Finally?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> -  13.09.2018
+<br />
+<br />
+Explicit chaining method seems very useful.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: New hooks (stocks, natives, improved publics) - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  03.12.2018
+<br />
+<br />
+Explicit chaining looks good, but in that case I would substitute the word <b><font color="blue">hook</font></b> with the word <b><font color="Blue">override</font></b>, this eliminates the code readers' wrong assumption about recursion.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

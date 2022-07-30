@@ -1,0 +1,456 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Saving players stats on changes or in timer? [MySQL] - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi guys, I want to start an discussion about saving player stats.What you think,is better to save player stats immediately(When there is any change in player stats) or in timer(For example every 10 mi" />
+<link rel="canonical" href="showthread7c92.html?tid=659965" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread7c92.html?tid=659965">Saving players stats on changes or in timer? [MySQL]</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Saving players stats on changes or in timer? [MySQL] (<em>/showthread.php?tid=659965</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Saving players stats on changes or in timer? [MySQL] - <a href="memberab85.html?action=profile&amp;uid=307928">GospodinX</a> -  21.10.2018
+<br />
+<br />
+Hi guys,<br />
+<br />
+I want to start an discussion about saving player stats.What you think,is better to save player stats immediately(When there is any change in player stats) or in timer(For example every 10 minutes to save all player stats).<br />
+<br />
+1) Save accounts in timer<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">UPDATE `users` SET `column1` = '%i',`column2` = '%i', `column3` = '%i', `column4` = '%i',`column5` = '%i' WHERE `ID`='%i'</pre>
+</div>2) Save column on which we have changes..<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">UPDATE `users` SET `column1` = '%i' WHERE `ID`='%i'
+
+UPDATE `users` SET `column2` = '%i' WHERE `ID`='%i'
+
+UPDATE `users` SET `column3` = '%i' WHERE `ID`='%i'
+
+UPDATE `users` SET `column4` = '%i' WHERE `ID`='%i'
+
+UPDATE `users` SET `column5` = '%i' WHERE `ID`='%i'</pre>
+</div>Now I'm use both option :/ .Half of player stats I save in timer(for example money which changes more often) and half I save on changes(Which changes rarely;for example Level which changes very rarely). <br />
+I have Roleplay mode.<br />
+<br />
+What you use? (Sorry for my bad english)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="memberc908.html?action=profile&amp;uid=317319">KinderClans</a> -  22.10.2018
+<br />
+<br />
+I use a timer which saves players stats every 10 minutes with the UPDATE query. I prefer to do in this way.<br />
+<br />
+I don't care if something changes every second or very rarely, you can never know when server/player will crash (if he will). Also i don't see any increase of memory usage while doing this, so, it's ok for me.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> -  22.10.2018
+<br />
+<br />
+Using a timer is inefficient. Imagine a timer running every 10 minutes on a 100 pb server.<br />
+<br />
+Save when you change something in the script.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member6ae1.html?action=profile&amp;uid=155081">Beckett</a> -  22.10.2018
+<br />
+<br />
+Save spontaneously.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="memberd4ba.html?action=profile&amp;uid=227040">Garr</a> -  30.10.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dignity</strong><br />
+<a href="showthread8285.html?pid=4059984#pid4059984" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Using a timer is inefficient. Imagine a timer running every 10 minutes on a 100 pb server.<br />
+<br />
+Save when you change something in the script.</div>
+</td>
+</tr>
+</table>
+</div>it would be better to have per player timers instead of looping through everyone connected. timers are not resource hogging features lol they work well and you can have a lot of them. heck, thousands of timers doesn't have much of a performance hit.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member0797.html?action=profile&amp;uid=114061">BlackBank</a> -  31.10.2018
+<br />
+<br />
+The best way is to just save the results immediately when you change the value of any stats (money, weapons, etc) via a threaded query that doesn't cache any results of the query, so the script doesn't have to 'wait' to finish the query function or even 'watch' it through a callback.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dignity</strong><br />
+<a href="showthread8285.html?pid=4059984#pid4059984" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Using a timer is inefficient. Imagine a timer running every 10 minutes on a 100 pb server.<br />
+<br />
+Save when you change something in the script.</div>
+</td>
+</tr>
+</table>
+</div>If you are doing it the right it way, using threaded queries without caching the results, it doesn't matter that you sync 100 players every 10mins with just one loop.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Garr</strong><br />
+<a href="showthreadf3b5.html?pid=4061949#pid4061949" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">it would be better to have per player timers instead of looping through everyone connected. timers are not resource hogging features lol they work well and you can have a lot of them. heck, thousands of timers doesn't have much of a performance hit.</div>
+</td>
+</tr>
+</table>
+</div>It doesn't matter if you loop through them when you use threaded queries without caching the results, as i also stated above.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member7a11.html?action=profile&amp;uid=261301">TheToretto</a> -  31.10.2018
+<br />
+<br />
+Why don't you save the data once OnPlayerDisconnect is called? I don't get the point of all this..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member0797.html?action=profile&amp;uid=114061">BlackBank</a> -  31.10.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>TheToretto</strong><br />
+<a href="showthread223f.html?pid=4062003#pid4062003" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why don't you save the data once OnPlayerDisconnect is called? I don't get the point of all this..</div>
+</td>
+</tr>
+</table>
+</div>Well, it would be horrible if you lose money or any other stats when the server crash... With this method the change of losing data is minimized. Also stats are more up-to-date on your stats pages or your User Control Panel, if you have one of those running.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member7a11.html?action=profile&amp;uid=261301">TheToretto</a> -  31.10.2018
+<br />
+<br />
+Just use this.. <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>   <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>        OnPlayerDisconnect<span style="color: #000000;">(</span>i, <span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member0797.html?action=profile&amp;uid=114061">BlackBank</a> -  31.10.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>TheToretto</strong><br />
+<a href="showthread1eca.html?pid=4062010#pid4062010" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Just use this.. <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>   <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>        OnPlayerDisconnect<span style="color: #000000;">(</span>i, <span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>That won't work when the server crash or you force close the server, OnGameModeExit won't be called.<br />
+<br />
+Also described on the wiki of OnGameModeExit (<a href="https://sampwiki.blast.hk/wiki/OnGameModeExit" target="_blank">https://sampwiki.blast.hk/wiki/OnGameModeExit</a>)<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				This callback will NOT be called if the server crashes or the process is killed by other means, such as using the Linux kill command or pressing the close-button on the Windows console.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member7a11.html?action=profile&amp;uid=261301">TheToretto</a> -  31.10.2018
+<br />
+<br />
+Well your server isn\'t going to crash the whole day, just add a command for the server owner to save all players\' stats. Without kicking them or calling OnPlayerDisconnect, then... Shutdown your server; <br />
+<br />
+If your server is really really unstable, just put a global timer, not per player, which saves players data every 20 minutes, or less. Who give a fuck if you lose 10&#36; because you bought a condom in the 24/7, I mean, you won\'t lose much data, you can\'t get &#36;2.000.000 in 10/20 minutes...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="memberef54.html?action=profile&amp;uid=278552">Ermanhaut</a> -  02.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>TheToretto</strong><br />
+<a href="showthread373c-2.html?pid=4062067#pid4062067" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well your server isn\'t going to crash the whole day, just add a command for the server owner to save all players\' stats. Without kicking them or calling OnPlayerDisconnect, then... Shutdown your server; <br />
+<br/><br />
+If your server is really really unstable, just put a global timer, not per player, which saves players data every 20 minutes, or less. Who give a fuck if you lose 10&#36; because you bought a condom in the 24/7, I mean, you won\'t lose much data, you can\'t get &#36;2.000.000 in 10/20 minutes...</div>
+</td>
+</tr>
+</table>
+</div>Lottery.<br />
+<br />
+<br/><br />
+Regarding the topic:<br/><br />
+I would create a ten minute timer after the player logs in and also update the database whenever it\'s necessary.<br/><br />
+i.e. The player unlocked an achievement. Or he got into a new job. Or he wins the lottery.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member7a11.html?action=profile&amp;uid=261301">TheToretto</a> -  02.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Ermanhaut</strong><br />
+<a href="showthread5d37-2.html?pid=4062528#pid4062528" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Lottery.<br />
+<br />
+<br/><br />
+Regarding the topic:<br/><br />
+I would create a ten minute timer after the player logs in and also update the database whenever it\'s necessary.<br/><br />
+i.e. The player unlocked an achievement. Or he got into a new job. Or he wins the lottery.</div>
+</td>
+</tr>
+</table>
+</div>The lottery isn\'t ran every minute, at a maximum it\'ll be twice a day, regarding the script you\'re using, plus, for the lottery, it\'s something obvious, so if you connect, it\'ll be the first thing that you notice, then ask for a refund. Concrete things may need queries.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member5ba7.html?action=profile&amp;uid=173463">AmigaBlizzard</a> -  02.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>TheToretto</strong><br />
+<a href="showthread373c-2.html?pid=4062067#pid4062067" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well your server isn\'t going to crash the whole day, just add a command for the server owner to save all players\' stats. Without kicking them or calling OnPlayerDisconnect, then... Shutdown your server; <br />
+<br/><br />
+If your server is really really unstable, just put a global timer, not per player, which saves players data every 20 minutes, or less. Who give a fuck if you lose 10&#36; because you bought a condom in the 24/7, I mean, you won\'t lose much data, you can\'t get &#36;2.000.000 in 10/20 minutes...</div>
+</td>
+</tr>
+</table>
+</div>I would, and alot of other players.<br/><br />
+Because in 10 minutes, you could buy a house, apply a different interior, buy some furniture and place it, buy a house-vehicle, repaint it and apply tuning components.<br/><br />
+Whenever that\'s done and something happens before your timer saves the data, all that is lost.<br/><br />
+By the time you relog, someone else might have bought that house.<br/><br />
+I would never come back to your server because I know playing there doesn\'t guarantee proper data-saving.<br/><br />
+Players don\'t know if you save every 10 minutes, only on disconnect or if you save whenever data changes.<br/><br />
+They DO care if they lose data and some will be furious and never come back, even if you reimburse them.<br/><br />
+They just see that some data hasn\'t been saved properly and will distrust your server because of unreliable saving functions.<br />
+<br />
+<br/><br />
+In every MMORPG I\'ve played, data is saved whenever something changes.<br/><br />
+I\'ve never lost alot of progress, even when timing out, server crashes, lagging followed by a disconnect, whatever reason, simply because they save whenever data changes.<br/><br />
+You could gain a level or 2, do some quests or turn them in, go to another map, all that in less than 10 minutes.<br/><br />
+I\'ve never respawned in the previous map, having to turn in quests for the second time or regain my 2 levels I gained right before the crash/timeout/whatever.<br />
+<br />
+<br/><br />
+Also, only saving when the player disconnects will also guarantee you\'ll lose players.<br />
+<br/><br />
+Some players play for hours at a time and if something unexpected happens, his entire progress hasn\'t been saved.<br/><br />
+A stupid hacker can mess up your server, making it crash and you\'ll have no data saved for hours on end for multiple players.<br />
+<br/><br />
+Even a timer which saves everything at once is usually not done.<br/><br />
+This timer would save EVERYTHING, even sex, class, skin, name (if you allow name-changes), email, ... (things that very rarely change, if they ever do).<br/><br />
+Would you really generate a huge query with hundreds of values that must be saved, even when the possibility exists that some players afk for hours? Then you would send a huge query to MySQL which in the end does absolutely nothing, because there is nothing to be updated/changed.<br />
+<br/><br />
+This is a pure waste of processing power, both for your server which must construct the entire query, but mostly for MySQL, which must break down the entire query, find every value in the database, check if the provided value is valid (you can\'t store an int in a float column so MySQL checks that), and eventually overwrite the value one by one (it won\'t overwrite the value if it hasn\'t changed).<br />
+<br/><br />
+Surely pc\'s nowadays have fast processors, but that\'s no excuse to be a lazy programmer.<br/><br />
+Creating a huge query that covers all values and put it in a timer seems a smart thing to do (it\'s at least convenient), but it\'s just being lazy.<br />
+<br/><br />
+Having alot of smaller queries which are executed whenever something changes save you alot of trouble.<br />
+<br/><br />
+One bug in your huge query and NOTHING gets saved.<br/><br />
+One bug in one small query only messes up that single query while keeping everything else intact.<br />
+<br/><br />
+One huge query is also alot more difficult to bug-fix and find the problem.<br />
+<br/><br />
+Also, saving only when something changes prevents queries to be sent when they\'re not even needed, saving alot of processing power.<br />
+<br/><br />
+A game\'s render engine also only renders whatever is being displayed on the screen.<br/><br />
+What if that engine would render the entire game world at once, from which only 5% would be shown on your screen? It would also be convenient for the programmer and it would guarantee the required models would be rendered, but it\'s not the proper way to create a game.<br/><br />
+Your game would lag immensely and is impossible to play.<br />
+<br/><br />
+Only do whatever needs to be done at the time it needs to be done.<br/><br />
+Don\'t do unneccessary stuff.<br/><br />
+This applies for everything you do, not only programming.<br />
+<br />
+<br />
+<br/><br />
+Do you paint your living room every month just in case there "might" be a spot, crack, some dirt, whatever on your wall, wasting expensive paint and alot of time in the process?<br/><br />
+Or do you just repaint your living room when it\'s really time to paint it (you don\'t like it anymore, or there are too many spots/cracks/whatever), which would be every 10 years or so?<br />
+<br/><br />
+Do you dismantle your car\'s engine every month to prevent wear and tear, applying new grease to every moving part to prevent anything happening soon, even when nothing\'s wrong?<br/><br />
+Or do you only do the required maintenance as told by the manufacturer (change oil every year) and go to the garage whenever something\'s broken?<br />
+<br/><br />
+If your teacher requires you to read page 55 (in a 200-page book), do you read the entire book, including page 55, just to be sure you\'ve read it, even when the class for that day only handles page 55?<br/><br />
+Or do you simply do whatever she wants you to do, and read only page 55?<br />
+<br/><br />
+Do you go to the toilet every 10 minutes and sit down, waiting for 2 minutes just in case you would need to build a huge pile of brown stuff, making you sit on the toilet over 100 times a day without even the need to do poopoo?<br/><br />
+Or do you only go to the toilet when nature calls?<br />
+<br/><br />
+In all cases, I\'m pretty sure you do the second option.<br/><br />
+Why would you do the first option in programming?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member636f-2.html?action=profile&amp;uid=290161">IdonTmiss</a> -  07.11.2018
+<br />
+<br />
+Damn, he said it all, don\'t use Timers, I mean they\'re bad atleast for me and he said everything ( the post above )
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  12.11.2018
+<br />
+<br />
+Now, instead of saving player data only when player disconnects, why not save it whenever the player DIES.<br />
+<br/><br />
+I mean, in most servers, player\'s data is significantly changed when they die (maybe not for RP servers). So when the player dies, save their data.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerDeath<span style="color: #000000;">(</span>playerid, killerid, reason<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// add kills and change variables\' data</span><br/><br/>    <span style="color: #228822;">// save data in the end</span><br/>    mysql_tquery<span style="color: #000000;">(</span>...<span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div><br/><br />
+Moreover, for security reasons its better to have a interval check between two deaths, so if a Cheater spams your OnPlayerDeath for fake kills/deaths, your server won\'t crash from MySQL query overload!<br />
+<br />
+<b>gettime()</b> would do it for you. Before saving data, check if last save was not very recently and then forward.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> lastSaveTimestamp<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerDeath<span style="color: #000000;">(</span>playerid, killerid, reason<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/><br/>    <span style="color: #2222BB;">new</span> currentTimestamp <span style="color: #000000;">=</span> <span style="color: #222222;">gettime</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>currentTimestamp <span style="color: #000000;">-</span> lastSaveTimestamp<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">600</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #228822;">// 10 minutes interval</span><br/><br/>        <span style="color: #228822;">// save data if last update was 10 minutes atleast</span><br/>        mysql_tquery<span style="color: #000000;">(</span>...<span style="color: #000000;">)</span>;<br/><br/>        lastSaveTimestamp<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> currentTimestamp; <span style="color: #228822;">// update player\'s last save time to current timestamp</span><br/>    <span style="color: #000000;">}</span><br/><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br/><br />
+But the above case is only for data which is significantly changed, other data like "AdminLevel" doesn\'t require to be updated in OnPlayerDeath. You should update AdminLevel whenever its changed in script, i.e. Update query for AdminLevel in your /setadmin command.<br />
+<br/><br />
+The whole idea about using Timer to save stats is nonsense.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="member5630.html?action=profile&amp;uid=320850">Alteh</a> -  13.11.2018
+<br />
+<br />
+my opinion it better to save data when value is modified
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Saving players stats on changes or in timer? [MySQL] - <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> -  16.11.2018
+<br />
+<br />
+Usually you want to save on each change, even money. But some things like online time, i would save on timer basis and call single query (well a few queries are not problem as long they are not for each player at same time).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
