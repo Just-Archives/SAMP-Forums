@@ -1,0 +1,661 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [FilterScript] IRC (Internet Relay Chat) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="IRC (Internet Relay Chat) WARNING: If you're someone who don't like to read a lot, you can scroll to the bottom of this thread for the Pastebin link of the Filterscript. Questions concerning the filte" />
+<link rel="canonical" href="showthread86a5.html?tid=671657" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread86a5.html?tid=671657">[FilterScript] IRC (Internet Relay Chat)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [FilterScript] IRC (Internet Relay Chat) (<em>/showthread.php?tid=671657</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+IRC (Internet Relay Chat) - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  06.01.2020
+<br />
+<br />
+<font face="Trebuchet MS"><div align="center"><img alt="" border="0" src="https://i.imgur.com/DNiML2O.png"/><br />
+<b><u><font size="5">IRC (Internet Relay Chat)</font></u></b><br />
+<br />
+<font size="3"><b><font color="Red">WARNING</font>: If you're someone who don't like to read a lot, you can scroll to the bottom of this thread for the Pastebin link of the Filterscript. Questions concerning the filterscript will be answered in the discord server and in the comments section of this thread!</b></font></div>
+<font size="5"><u><b>Introduction</b></u></font><br />
+This IRC Filterscript and its simple tutorial was created for both new and old members to the field of San Andreas Multiplayer Development. It can be used for any type of gamemode, especially <b>Roleplay </b>and <b>Freeroam</b>. It's detailed with the steps to guide you on setting up the filterscript, and the functions of each part within it. Before I created this, I've looked through the present filterscripts that relates to the IRC plugin, and majority of them are too plain, while the others are spoon fed to the new developers instead of showing them what goes where, one at a time.<br />
+<br />
+<b><u><font size="5">Explanation of the Filterscript's Usage</font></u></b><br />
+<br />
+<b><u><font size="3">Step One</font></u></b><br />
+First thing's first, you'll have to identify and include the plugins needed for this FS to actually work. Without them, a FS isn't a FS.<br />
+<br />
+With that being said, the includes which we'll be adding are <b>a_samp </b>(mandatory), <b>irc </b>(the backbone), <b>foreach </b>(to send a message to each player with a common player feature), and <b>sscanf </b>(used to split the strings).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">#include <span style="color:#000080">&lt;a_samp&gt;</span>
+#include <span style="color:#000080">&lt;irc&gt;</span>
+#include <span style="color:#000080">&lt;foreach&gt;</span>
+#include <span style="color:#000080">&lt;sscanf2&gt;</span></pre>
+</div><b><u><font size="3">Step Two</font></u></b><br />
+After the includes were identified and added to the top of the script, we'll move on to defining the <b>hostname </b>of the IRC server, the <b>port </b>attached to it, and of course, a <b>channel </b>in your IRC server for messages to be sent to, when things are done in-game.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">#define IRC_MAIN_SERVER "host.name.net"
+#define IRC_PORT (1111)
+#define IRC_CHANNEL "name"</pre>
+</div><b><u><font size="3">Step Three</font></u></b><br />
+After the IRC hostname and its affiliated resources have been defined, the color which we'll be using for sending Admin messages in-game will be <b><font color="Red">Red</font></b>, so define it:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">#define COLOR_ADMIN   (0xFF6347FF)</pre>
+</div><b><u><font size="3">Step Four</font></u></b><br />
+The next thing to do is define <b>GroupID </b>and <b>BotAdmin</b>. The GroupID will be used for creating a group within the IRC server, and the BotAdmin will be used to connect your bot to the server after it's creation, and make it an Admin.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new GroupID, BotAdmin;</pre>
+</div><b><u><font size="3">Step Five</font></u></b><br />
+If you're aware of how SAMP works, you should understand that <b>OnGameModeInit </b>is called when the server starts or restarts, and it is used for changes to be effective, such as mappings within the gamemode, loading data from the SQL database, and what not. This is where BotAdmin becomes beneficial, because it connects to the IRC server, using the <b>IRC_Connect</b> function, hostname from <b>IRC_MAIN_SERVER</b>, port from <b>IRC_PORT</b>, <b>nickname</b>, <b>realname</b>, and <b>username</b>.<br />
+<br />
+<b>NOTE:</b> The "nickname", "realname", and "username" must be changed before you compile this FS.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">public OnGameModeInit()
+{
+	BotAdmin = IRC_Connect(IRC_MAIN_SERVER, IRC_PORT, "nickname", "realname", "username");
+	IRC_SetIntData(BotAdmin, E_IRC_CONNECT_DELAY, 5);
+
+	GroupID = IRC_CreateGroup();
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Six</font></u></b><br />
+After this, the bot will join the defined IRC channel (<b>IRC_CHANNEL</b>) IF it's an Admin (<b>BotAdmin</b>, as identified above). If it's not an Admin bot (<b>BotAdmin</b>), it won't connect. The bot is then added to the group (<b>GroupID</b>) as well.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">public IRC_OnConnect(botid, ip[], port)
+{
+	if(botid == BotAdmin)
+	{
+		IRC_JoinChannel(botid, IRC_CHANNEL, "key");
+		IRC_AddToGroup(GroupID, botid);
+	}
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Seven</font></u></b><br />
+After the IRC channel is <b>disconnected </b>from the SAMP server <b>OR </b>the gamemode stops running, causing the server to stop too, it'll call this function shown below (IRC_OnDisconnect). It basically removes the bot from the group (defined by <b>GroupID</b>)<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">public IRC_OnDisconnect(botid, ip[], port, reason[])
+{
+	IRC_RemoveFromGroup(GroupID, botid);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Eight</font></u></b><br />
+The next thing you'll want to do is add the <b>IRC_OnConnectAttempt </b>function. As the name says, it's called when the <b>connection is attempted</b>. This basically prints the attempt message to <b>server_log.txt</b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">public IRC_OnConnectAttempt(botid, ip[], port)
+{
+	printf("AdmWarn: IRC_OnConnectAttempt: Bot ID %d is now attempting to connect to IRC Server with Hostname (IP): %s, attached to port: %d", botid, ip, port);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Nine</font></u></b><br />
+This function (<b>IRC_OnConnectAttemptFail</b>) below must be added to print an error message to the <b>server_log.txt</b> file if the IRC connection was attempted and unfortunately <b>failed</b>. <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">public IRC_OnConnectAttemptFail(botid, ip[], port, reason[])
+{
+	printf("AdmWarn: IRC_OnConnectAttemptFail: Bot ID %d has failed to connect to IRC server with hostname (IP): %s, attached to port %d. The reason for this is %s", botid, ip, port, reason);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Ten</font></u></b><br />
+After the gamemode stops running, and the server stops or shuts down, this common function to SAMP developers (<b>OnGameModeExit</b>) will be called. It will send a message to the channel from the bot, then destroy the group which was created earlier with (<b>GroupID</b>).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">public OnGameModeExit()
+{
+	IRC_Quit(BotAdmin, "AdmWarn: The server has shut down and the gamemode will stop running.");
+	IRC_DestroyGroup(GroupID);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Eleven</font></u></b><br />
+When a player <b>connects </b> (<b>OnPlayerConnect</b>) to the server, it'll send a message to the defined IRC channel (<b>IRC_CHANNEL</b>), notifying others who are viewing the channel at the same time.<br />
+<br />
+<b>NOTE:</b> You'll see the new <b>ReturnName</b> and <b>SendAdminMessage</b> functions from this point onwards, but do not worry because their functions will be provided at the end of this thread.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">public OnPlayerConnect(playerid)
+{
+	new string[128];
+
+	format(string, sizeof(string), "AdmWarn: Character %s (ID: %d) joined the server.", ReturnName(playerid), playerid);
+	IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Twelve</font></u></b><br />
+In contrast, if a player <b>disconnects </b> (<b>OnPlayerDisconnect</b>) from the server, this function is commonly called, and as a result, the disconnect message is sent to the IRC channel.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">public OnPlayerDisconnect(playerid, reason)
+{
+	new string[200];
+	
+	format(string, sizeof(string), "AdmWarn: Character %s (ID: %d) disconnected from the server.", ReturnName(playerid), playerid);
+	IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Thirteen</font></u></b><br />
+The <b>OnPlayerDeath</b> function is called when a player dies, and must be added to your FS afterwards. If a player is <b>killed </b>by <b>another player</b>, it sends a message to both the SAMP and IRC servers. On the other hand, if the player dies naturally, it'll state that.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 354px;
+		text-align: left;
+		overflow: auto">public OnPlayerDeath(playerid, killerid, reason)
+{
+	new string[200];
+	if(killerid != INVALID_PLAYER_ID)
+	{
+		format(string, sizeof(string), "AdmWarn: %s (ID: %d) died (Killer: %s ID: %d).", ReturnName(playerid), playerid, ReturnName(killerid), killerid);
+		SendAdminMessage(COLOR_ADMIN, string);
+
+		format(string, sizeof(string), "AdmWarn: %s (ID: %d) died (Killer: %s ID: %d).", ReturnName(playerid), playerid, ReturnName(killerid), killerid);
+		IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+	}
+	else
+	{
+		format(string, sizeof(string), "AdmWarn: %s (ID: %d) died.", ReturnName(playerid), playerid);
+		SendAdminMessage(COLOR_ADMIN, string);
+
+		format(string, sizeof(string), "AdmWarn: %s (ID: %d) died.", ReturnName(playerid), playerid);
+		IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+	}
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Fourteen</font></u></b><br />
+Similarly to how a player dies, a vehicle can be destroyed too. When a vehicle is destroyed by a player, their ID and character name can be identified by this function (<b>OnVehicleDeath</b>), and called to send a message.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">public OnVehicleDeath(vehicleid, killerid)
+{
+	new string[200];
+	format(string, sizeof(string), "AdmWarn: Vehicle ID %d was destroyed by %s.", vehicleid, ReturnName(killerid));
+	IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+	return 1;
+}</pre>
+</div><b><u><font size="3">Step Fifteen</font></u></b><br />
+Remember those two things which you read about? The ReturnName and SendAdminMessage functions/stocks. Well, here they are:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 322px;
+		text-align: left;
+		overflow: auto">stock ReturnName(playerid)
+{
+	new name[90], character[MAX_PLAYER_NAME];
+	GetPlayerName(playerid, character, sizeof(character));
+	name = character;
+	return name;
+}
+
+stock SendAdminMessage(color, const str[])
+{
+	foreach(new i : Player)
+	{
+		if(IsPlayerAdmin(i))
+		{
+			SendClientMessage(i, color, str);
+		}
+	}
+	return 1;
+}</pre>
+</div><b>ReturnName</b>: This stock gets the <b>actual </b>and <b>FULL </b>name which was used by the player to connect to the server, no matter what the size is (I doubt anyone would use a name which has 20+ characters), and returns it. <br />
+<br />
+<b>NOTE</b>: The underscore can be removed anytime, but I made this tutorial a bit simple.<br />
+<br />
+<b>SendAdminMessage</b>: This checks for all players who are connected to the server and are RCON Admins at the same time, then sends the message to them.<br />
+<br />
+<b><u><font size="3">Step Sixteen</font></u></b><br />
+The Commands! (Yeap, I added two commands for you, <i>FOR NOW</i> <img alt="" border="0" class="inlineimg" src="images/smilies/cool.png" title="cool"/>)<br />
+One command is used for communicating with RCON admins from IRC to in-game, while the other is used for kicking players from IRC.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">IRCCMD:a(botid, channel[], user[], host[], params[])
+{
+	if (IRC_IsOp(botid, channel, user))
+	{
+	    new	string[200];
+	    
+		if(isnull(params))
+		{
+                        format(string, sizeof(string), "Usage: !a [Admin Message]");
+			IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+		}
+		else
+  		{
+			format(string, sizeof(string), "IRC Admin: %s: %s", user, params);
+			SendAdminMessage(0x6CEFF0FF, string);
+		}
+	}
+	return 1;
+}
+
+IRCCMD:kick(botid, channel[], user[], host[], params[])
+{
+	if(IRC_IsOp(botid, channel, user))
+	{
+		new playerid, reason[64];
+
+		if(sscanf(params, "ds[64]", playerid, reason))
+		{
+			IRC_Say(botid, user, "Usage: !kick [playerid] [reason]");
+			return 1;
+		}
+
+		if(IsPlayerConnected(playerid))
+		{
+			new	string[128];
+
+			format(string, sizeof(string), "AdmCmd: %s was kicked by %s (IRC), Reason: %s", ReturnName(playerid), user, reason);
+			IRC_GroupSay(GroupID, IRC_CHANNEL, string);
+			Kick(playerid);
+		}
+	}
+	return 1;
+}</pre>
+</div><font size="5"><u><b>Download Links</b></u></font><br />
+<b>IRC Include:</b> <a href="https://falcon-host.org/uploads/irc.rar" target="_blank">https://falcon-host.org/uploads/irc.rar</a><br />
+<b>IRC Plugin:</b> <a href="https://falcon-host.org/uploads/irc-plugin.rar" target="_blank">https://falcon-host.org/uploads/irc-plugin.rar</a><br />
+<br />
+<b>sscanf Include:</b> <a href="https://falcon-host.org/uploads/sscanf.rar" target="_blank">https://falcon-host.org/uploads/sscanf.rar</a><br />
+<b>sscanf Plugin:</b> <a href="https://falcon-host.org/uploads/sscanf-plugin.rar" target="_blank">https://falcon-host.org/uploads/sscanf-plugin.rar</a><br />
+<br />
+<b>foreach Include:</b> <a href="https://falcon-host.org/uploads/foreach.rar" target="_blank">https://falcon-host.org/uploads/foreach.rar</a><br />
+<br />
+<b>a_samp Include:</b> <a href="https://falcon-host.org/uploads/a_samp.rar" target="_blank">https://falcon-host.org/uploads/a_samp.rar</a><br />
+<br />
+<b>YouTube Video of what I just did:</b> <a href="https://www.youtube.com/watch?v=jtMGBsTtcVo&amp;t=11s" target="_blank">https://www.youtube.com/watch?v=jtMGBsTtcVo&amp;t=11s</a> (It's my new YouTube channel, so can you please like the video, subscribe to my channel and comment? Your comment doesn't have to be good, it can be bad or based on criticism. I like to work while criticizing and challenging myself.)<br />
+<br />
+<b>Discord Server for Support:</b> <a href="https://discordapp.com/invite/jr5Ywkm" target="_blank">https://discordapp.com/invite/jr5Ywkm</a> <a href="https://discord.io/ChaoticTheDev" target="_blank">https://discord.io/ChaoticTheDev</a><br />
+<br />
+<b>Pastebin (If you're LAZY and just want the actual thing <img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.png" title="Roll Eyes (Sarcastic)"/>)</b> <a href="https://pastebin.com/Ap0JXBZh" target="_blank">https://pastebin.com/Ap0JXBZh</a><br />
+<br />
+</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  06.01.2020
+<br />
+<br />
+This isn't a release! It's a lousy tutorial and a basic filterscript that anyone could write in a short period of time.<br />
+<br />
+1-Star from me.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  06.01.2020
+<br />
+<br />
+If it's lousy, why did you reply to it? Kudos to you.<br />
+<br />
+I said I can take criticism but being an asshole isn't a good way to positively criticize something or someone. We all started from the bottom. You did, ALL developers did and I did, so I don't see the reason for seeking attention by acting foolish. I bet you'll reply to this, just to make yourself look more stupid than you already are.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member2b91.html?action=profile&amp;uid=336714">TheDiego</a> -  07.01.2020
+<br />
+<br />
+Great!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  07.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>KevTheJoker</strong><br />
+<a href="showthread7aca.html?pid=4127287#pid4127287" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">If it's lousy, why did you reply to it? Kudos to you.<br />
+<br />
+I said I can take criticism but being an asshole isn't a good way to positively criticize something or someone. We all started from the bottom. You did, ALL developers did and I did, so I don't see the reason for seeking attention by acting foolish. I bet you'll reply to this, just to make yourself look more stupid than you already are.</div>
+</td>
+</tr>
+</table>
+</div>I can't help it..... The only constructive criticism I can come up with is do something that does something in a way no one has seen before and save tutorials for the tutorial section.<br />
+<br />
+This is simply too basic to be a release.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  07.01.2020
+<br />
+<br />
+I'm not gonna continue arguing with you. No one found this to be an issue, except you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="membera707.html?action=profile&amp;uid=317258">Hazon</a> -  07.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthread4169.html?pid=4127401#pid4127401" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">This is simply too basic to be a release.</div>
+</td>
+</tr>
+</table>
+</div>As we are talking about a something is "too basic to be a release", let's go back in 2013 and your "basic" releases.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member52d2-2.html?action=profile&amp;uid=332379">Maxwell</a> -  07.01.2020
+<br />
+<br />
+What a douche. KevinTheJoker's correct. Pottus acts as if he was born a developer. No wonder why new SAMP developers are demotivated to continue coding.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  07.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Hazon</strong><br />
+<a href="showthread2042-2.html?pid=4127442#pid4127442" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">As we are talking about a something is "too basic to be a release", let's go back in 2013 and your "basic" releases.</div>
+</td>
+</tr>
+</table>
+</div>At least I did stuff that was rare and made joke scripts. Anyways how can I support a release when it is so bare bones anyone could do it? My point is this is so basic there is absolutely no creativity not trying to be an asshole but if something sucks ass it sucks ass. This release sucks ass so what? I would be happy hearing that at least then I know what isn't right so I can fix it. If everyone said "nice", "good" you would never know what is fucked up right?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  07.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dignity</strong><br />
+<a href="showthread0e3f.html?pid=4127459#pid4127459" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Imagine writing a release and moaning when someone criticizes your post<br />
+<br />
+How will you ever improve?<br />
+<br />
+Jesus lmfao this community, yall need to get a thicker skin u forget ur on the internet</div>
+</td>
+</tr>
+</table>
+</div>Skin is so thin these hemophiliac's are bleeding to death from a pin prick.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  07.01.2020
+<br />
+<br />
+Yup, whats the big deal anyways? Learn to love what people don't like!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  07.01.2020
+<br />
+<br />
+Oh, the two of you are still here making love? Jeez, find a room.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member2b91.html?action=profile&amp;uid=336714">TheDiego</a> -  07.01.2020
+<br />
+<br />
+Hey bella, go find yourself a new fella.. This is the wrong section plebs
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  08.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>KevTheJoker</strong><br />
+<a href="showthread089d.html?pid=4127484#pid4127484" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Oh, the two of you are still here making love? Jeez, find a room.</div>
+</td>
+</tr>
+</table>
+</div>You know we always get love from the homies.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="membera0d4.html?action=profile&amp;uid=314713">Huzaif</a> -  09.01.2020
+<br />
+<br />
+Great Brother
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member4be1.html?action=profile&amp;uid=322799">Flofey</a> -  09.01.2020
+<br />
+<br />
+Mate this is a tutorial why putting it in this section?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IRC (Internet Relay Chat) - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  09.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Flofey</strong><br />
+<a href="showthread25c6.html?pid=4127665#pid4127665" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Mate this is a tutorial why putting it in this section?</div>
+</td>
+</tr>
+</table>
+</div>How dumber can you be?<br />
+<br />
+At the top of this thread, I said:<br />
+<br />
+<b>WARNING: If you're someone who don't like to read a lot, you can scroll to the bottom of this thread for the Pastebin link of the FILTERSCRIPT. Questions concerning the FILTERSCRIPT will be answered in the discord server and in the comments section of this thread!</b><br />
+<br />
+Plus, it's more of a GUIDE, than a filterscript. So again, what's your point?<br />
+<br />
+In case you didn't get that, lemme echo it for you: <img alt="" border="0" class="inlineimg" src="images/smilies/cool.png" title="cool"/><br />
+<br />
+<font size="7"><b>FILTERSCRIPT</b></font><br />
+<font size="6"><b>FILTERSCRIPT</b></font><br />
+<font size="5"><b>FILTERSCRIPT</b></font><br />
+<font size="4"><b>FILTERSCRIPT</b></font><br />
+<font size="3"><b>FILTERSCRIPT</b></font><br />
+<font size="2"><b>FILTERSCRIPT</b></font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

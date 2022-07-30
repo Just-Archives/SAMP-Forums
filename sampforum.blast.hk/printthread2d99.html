@@ -1,0 +1,579 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Inline file loading - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Inline file loading Introduction This is just a quick experimental include that I've came up with, that allows you to load files and save the data in local variables. How does it work? Imagine we have" />
+<link rel="canonical" href="showthread2d99.html?tid=497670" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2d99.html?tid=497670">[Include] Inline file loading</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Inline file loading (<em>/showthread.php?tid=497670</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadb0fa.html?tid=497670&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Inline file loading - Emmet_ -  28.02.2014
+<br />
+<br />
+<font size="3"><font color="green"><b><u>Inline file loading</u></b></font></font><br />
+<br />
+<font color="green"><b>Introduction</b></font><br />
+This is just a quick experimental include that I've came up with, that allows you to load files and save the data in local variables.<br />
+<br />
+<font color="green"><b>How does it work?</b></font><br />
+Imagine we have this file (test.ini):<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">// test.ini
+
+Level = 5
+Money = 50000
+Score = 100</pre>
+</div>We can simply use this code to fetch the data:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:183px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnFilterScriptInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    import File<span style="color: #000000;">(</span><span style="color: #000066;">"test.ini"</span>, level, money, score<span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"Level: %d"</span>, level<span style="color: #000000;">)</span>;<br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"Money: %d"</span>, money<span style="color: #000000;">)</span>;<br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"Score: %d"</span>, score<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+And the specifiers are automatically assumed. The variables are then destroyed after the code block ends.<br />
+<br />
+It works for strings, too:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnGameModeInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    import File<span style="color: #000000;">(</span><span style="color: #000066;">"mysql.ini"</span>, host<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span>, user<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span>, database<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span>, password<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        mysql_connect<span style="color: #000000;">(</span>host, user, database, password<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Basically, you can have as many parameters as you would like! Do not exceed 128 parameters, though, since that is a PAWN limitation and I have no control over it.<br />
+<br />
+<font color="green"><b>Searching method</b></font><br />
+First, the file is opened and a common non-alphanumeric delimiter is searched for:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">1000|2000|This|is|my|file</pre>
+</div>If there is no line after that one, then it is automatically assumed the only line in the file, and uses '|' as the delimiter. I figured it would fit in since most people save files using this method (don't ask me why, it's confusing!).<br />
+<br />
+After that, it detects if sscanf2 is included, and if so, forwards the parameters and the specifiers over to the native function. This also works without sscanf, but it's recommended that you use it for more reliability.<br />
+<br />
+If no delimiter is found, the file is automatically assumed to be an INI file.<br />
+<br />
+<font color="green"><b>Specifiers</b></font><br />
+The specifier system is very clever, and has been built to be reliable as much as possible. Say we have this file:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">1000|2000|This|is|my|string|3000|4000</pre>
+</div>We can simply do this to fetch the entire string:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">import File<span style="color: #000000;">(</span><span style="color: #000066;">"file.ini"</span>, str<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// ...</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Outputs:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">1000|2000|This|is|my|string|3000|4000</pre>
+</div>This code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">import File<span style="color: #000000;">(</span><span style="color: #000066;">"file.ini"</span>, str<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span>, str2<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// ...</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Outputs:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">1000
+2000|This|is|my|string|3000|4000</pre>
+</div>This code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">import File<span style="color: #000000;">(</span><span style="color: #000066;">"file.ini"</span>, str<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span>, str2<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span>, str3<span style="color: #000000;">[</span><span style="color: #000000;">64</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// ...</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Outputs:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">1000
+2000
+This|is|my|string|3000|4000</pre>
+</div>When the last parameter is a string, it will try to append any remaining file data into that string, depending if the size is sufficient or not.<br />
+<br />
+<font color="green"><b>Exporting</b></font><br />
+You can also use the "export" keyword, which is exactly the same as "import" but saves the values inside global variables, instead of creating and saving them locally:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span><br/>    a,<br/>    <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>b,<br/>    c<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222BB;">public</span> OnFilterScriptInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    export File<span style="color: #000000;">(</span><span style="color: #000066;">"file.ini"</span>, a, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>b, c<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"%d, %.4f, %s"</span>, a, b, c<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<font color="green"><b>Parsing notes</b></font><br />
+The delimiter search is not always that reliable. For example, we could have this file:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">1000|2000|This<b>|</b>is<b>|</b>my<b>|</b>string|3000|4000</pre>
+</div>But what if the highlighted characters are PART of the string, and not delimiters? We can simply workaround this by escaping them:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">1000|2000|This\|is\|my\|string|3000|4000</pre>
+</div>However, if you are using sscanf2 with this system then this is not a problem:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;sscanf2&gt;</span><br/><span style="color: #2222AA;">#include &lt;file-import&gt;</span></div></div></pre>
+</div>
+<font color="green"><b>Credits</b></font><br />
+<b>******:</b> Macro used to determine parameter types, and sscanf2 (took me 2 days of tweaking to write the "import" macro lol).<br />
+<b>Pastebin:</b> FOR KILLING MY INDENTATION <img alt="" border="0" class="inlineimg" src="images/smilies/evil.gif" title="Angry"/><br />
+<br />
+<font color="green"><b>Downloads</b></font><br />
+<a href="http://pastebin.com/pN7b6NRj" target="_blank">Pastebin</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member8cd8.html?action=profile&amp;uid=227804">Gnabry</a> -  28.02.2014
+<br />
+<br />
+amazing man...<br />
+U r just a genious
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> -  28.02.2014
+<br />
+<br />
+Looks great! I'll give it a try when I get home, nice work EMMAT.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member750b.html?action=profile&amp;uid=227777">ARamsey</a> -  28.02.2014
+<br />
+<br />
+this wll save loads of my time
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member0f0e.html?action=profile&amp;uid=175818">Sky™</a> -  28.02.2014
+<br />
+<br />
+Congratulations for the work<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Emmet_</strong><br />
+<a href="showthreadf398.html?pid=2933093#pid2933093" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">FOR KILLING MY INDENTATION <img alt="" border="0" class="inlineimg" src="images/smilies/evil.gif" title="Angry"/></div>
+</td>
+</tr>
+</table>
+</div>is good anyway <img alt="" border="0" class="inlineimg" src="images/smilies/mrgreen.gif" title="afro"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  28.02.2014
+<br />
+<br />
+Great work as always Emmet <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="memberdaee-2.html?action=profile&amp;uid=200248">CriticalRP</a> -  28.02.2014
+<br />
+<br />
+It seem not working. Am I doing something wrong by testing it out with your test.ini's sample?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member1708.html?action=profile&amp;uid=184410">PT</a> -  28.02.2014
+<br />
+<br />
+Very, very usefull nice job.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member8f14.html?action=profile&amp;uid=15786">Whitetiger</a> -  28.02.2014
+<br />
+<br />
+I can do all these things BETTER with sscanf!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - Emmet_ -  28.02.2014
+<br />
+<br />
+Thanks guys.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>CriticalRP</strong><br />
+<a href="showthread64ca.html?pid=2933579#pid2933579" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It seem not working. Am I doing something wrong by testing it out with your test.ini's sample?</div>
+</td>
+</tr>
+</table>
+</div>Works fine for me, what code are you trying to use?<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Whitetiger</strong><br />
+<a href="showthread2396.html?pid=2933594#pid2933594" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I can do all these things BETTER with sscanf!</div>
+</td>
+</tr>
+</table>
+</div>As I said, this is an experimental include, just to test out if the concept would actually work. I was thinking about adding support for sscanf2, but I would need to pass referenced parameters to a native function, but for some reason I can't get it working!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member83b7-2.html?action=profile&amp;uid=217949">SkittlesAreFalling</a> -  28.02.2014
+<br />
+<br />
+How would you save to the file?<br />
+Normal file functions or are you planning on making a similar inline macro?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - Emmet_ -  28.02.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SkittlesAreFalling</strong><br />
+<a href="showthread3b4f.html?pid=2933921#pid2933921" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">How would you save to the file?<br />
+Normal file functions or are you planning on making a similar inline macro?</div>
+</td>
+</tr>
+</table>
+</div>Normal file functions, for now. I suppose I can develop a syntax such as:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span><br/>    value,<br/>    <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fValue,<br/>    str<span style="color: #000000;">[</span><span style="color: #000000;">32</span><span style="color: #000000;">]</span>;<br/><br/>append File<span style="color: #000000;">(</span><span style="color: #000066;">"file.ini"</span>, <span style="color: #000066;">"Field"</span>, value, <span style="color: #000066;">"Float"</span>, fValue, <span style="color: #000066;">"String"</span>, str<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #222222;">print</span><span style="color: #000000;">(</span><span style="color: #000066;">"File saved!"</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+But that's what y_ini is designed to do. This is designed to work with INI files and special syntax files (e.g. "files|like|this").
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member83b7-2.html?action=profile&amp;uid=217949">SkittlesAreFalling</a> -  28.02.2014
+<br />
+<br />
+Okay.<br />
+I think it'll be a good idea to make an append, really helpful for lazy people! lol<br />
+<br />
+Great work man.<br />
+<br />
+Edit:<br />
+Looking over your function, I believe I can make the append for you if you want.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member3ba9.html?action=profile&amp;uid=203830">Scaleta</a> -  28.02.2014
+<br />
+<br />
+Don't you mean eInline File Loading? Jokes.<br />
+<br />
+This could be useful for small things like quick config files. Awesome!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="membered47.html?action=profile&amp;uid=201158">Ada32</a> -  28.02.2014
+<br />
+<br />
+don't just have an idea and implement so loosely.. the concept itself is bad. and why is import a keyword?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - Emmet_ -  28.02.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SkittlesAreFalling</strong><br />
+<a href="showthreadddb5.html?pid=2933963#pid2933963" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Okay.<br />
+I think it'll be a good idea to make an append, really helpful for lazy people! lol<br />
+<br />
+Great work man.<br />
+<br />
+Edit:<br />
+Looking over your function, I believe I can make the append for you if you want.</div>
+</td>
+</tr>
+</table>
+</div>Sure thing, but it might be a bit complicated (e.g. it might require a few assembly instructions).<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Scaleta</strong><br />
+<a href="showthread8bb1.html?pid=2933964#pid2933964" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Don't you mean eInline File Loading? Jokes.<br />
+<br />
+This could be useful for small things like quick config files. Awesome!</div>
+</td>
+</tr>
+</table>
+</div>Haha, thanks! I was thinking of adding the "e" in there, like I did with my previous libraries <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Ada32</strong><br />
+<a href="showthread785c.html?pid=2933978#pid2933978" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">don't just have an idea and implement so loosely.. the concept itself is bad. and why is import a keyword?</div>
+</td>
+</tr>
+</table>
+</div>I've actually been working on the idea for a while. At first it was a global keyword:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;a_samp&gt;</span><br/><br/><span style="color: #2222BB;">new</span> <br/>    a, <br/>    <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>b, <br/>    c<span style="color: #000000;">[</span><span style="color: #000000;">24</span><span style="color: #000000;">]</span>;<br/><br/>fload LoadFile<span style="color: #000000;">[</span><span style="color: #000066;">"test.ini"</span><span style="color: #000000;">]</span><span style="color: #000000;">(</span>a, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>b, c<span style="color: #000000;">[</span><span style="color: #000000;">24</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">public</span> OnFilterScriptInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+But it just looked too tacky. I resorted to creating an inline "keyword" so it can all be controlled in a single compound block. I chose "import" because it was the only appropriate word for it (think of it as a way.. "importing" a file and read the data). Some other previous keywords were "Load_File", "File_Load" and "loadfile" but they all looked weird.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="memberdaee-2.html?action=profile&amp;uid=200248">CriticalRP</a> -  28.02.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Emmet_</strong><br />
+<a href="showthread83b6.html?pid=2933903#pid2933903" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Works fine for me, what code are you trying to use?</div>
+</td>
+</tr>
+</table>
+</div>I'm using your code. The one with test.ini
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - Emmet_ -  01.03.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>CriticalRP</strong><br />
+<a href="showthread2058.html?pid=2934056#pid2934056" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I'm using your code. The one with test.ini</div>
+</td>
+</tr>
+</table>
+</div>I've updated the link, try now.<br />
+<br />
+I also need to know which OS you're running.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto"><b>Updates:</b>
+- The delimiter parser now detects the sscanf2 plugin and uses it accordingly!
+- Fixed a few minor bugs with the parser.</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="memberdaee-2.html?action=profile&amp;uid=200248">CriticalRP</a> -  01.03.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Emmet_</strong><br />
+<a href="showthread146c.html?pid=2934345#pid2934345" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I've updated the link, try now.<br />
+<br />
+I also need to know which OS you're running.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto"><b>Updates:</b>
+- The delimiter parser now detects the sscanf2 plugin and uses it accordingly!
+- Fixed a few minor bugs with the parser.</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Windows 7 Home Premium 64bit
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inline file loading - <a href="member2e83.html?action=profile&amp;uid=121260">fiki574</a> -  02.03.2014
+<br />
+<br />
+Jesus Christ, this is sick! Awesome work.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

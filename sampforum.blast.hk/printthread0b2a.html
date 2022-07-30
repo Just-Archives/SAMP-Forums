@@ -1,0 +1,205 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Optidraw - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="General Addon for Incognito's streamer. This include will help you with map optimization. Download: https://github.com/algorhitmically/optidraw Required dependencies OR Methods These are optimization" />
+<link rel="canonical" href="showthread0b2a.html?tid=672784" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread0b2a.html?tid=672784">[Include] Optidraw</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Optidraw (<em>/showthread.php?tid=672784</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Optidraw - <a href="member1f32.html?action=profile&amp;uid=344184">algorhitmically</a> -  29.02.2020
+<br />
+<br />
+<div align="center"><font face="Arial Black"><font size="5"><font color="DarkOrchid">General</font></font></font><br />
+<br />
+<font color="darkorchid">Addon for Incognito's streamer.<br />
+This include will help you with map optimization.<br />
+Download: <a href="https://github.com/algorhitmically/optidraw" target="_blank">https://github.com/algorhitmically/optidraw</a><br />
+</font><br />
+<br />
+<font face="Arial Black"><font color="darkorchid"><font size="5">Required dependencies</font></font></font><br />
+<br />
+<font color="darkorchid">[<a href="https://github.com/samp-incognito/samp-streamer-plugin" target="_blank">Streamer</a>]<br />
+[<a href="https://github.com/Crayder/Model-Sizes-Plus" target="_blank">Model-Sizes-Plus</a>]<br />
+OR<br />
+[<a href="https://github.com/algorhitmically/modelsizes-sql" target="_blank">Model-Sizes-SQL</a>]</font><br />
+<br />
+<font face="Arial Black"><font color="darkorchid"><font size="5">Methods</font></font></font><br />
+<br />
+<font color="darkorchid">These are optimization methods that you need to define before including optidraw:<br />
+<br />
+METHOD_BOX<br />
+METHOD_SPHERE<br />
+</font><br />
+<font face="Arial Black"><font color="DarkOrchid"><font size="5">Use</font></font></font><br />
+<br />
+<font color="DarkOrchid">#define OD_METHOD your_method</font><br />
+<br />
+<font face="Arial Black"><font size="5"><font color="darkorchid">Tips</font></font></font><br />
+<br />
+<font color="darkorchid">Choose optimization method. Example: #define OD_METHOD METHOD_BOX<br />
+Include optidraw below streamer!<br />
+You can disable static objects with: #define OD_DISABLE_STATIC_OBJECTS<br />
+You can disable startup messages with: #define OD_DISABLE_STARTUP_MESSAGE</font></div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="memberb946.html?action=profile&amp;uid=13213">Chaprnks</a> -  01.03.2020
+<br />
+<br />
+90% of the time, I see a new post on the RSS feed from SA-MP forums &amp; I think "yet another useless filterscript that should have been a snippet" or a mapping without the download link.. but I was pleasantly surprised! I'm glad someone took another stab at making a dynamic draw distance (the previous dates way back to 2013 I think, and has bugs.. like objects that are small only show within a foot of you). Going to test this out and get some good feedback on how well it works! Thanks again for the release!<br />
+<br />
+<br />
+<b>EDIT:</b><br />
+I know that this plugin uses chunk based streaming, but is there a way to put a hard limit on the number of objects streamed in? Like having like 10 or so object slots reserved (for those invisible "player objects" like seen in /flymode filtercript)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="member1f32.html?action=profile&amp;uid=344184">algorhitmically</a> -  01.03.2020
+<br />
+<br />
+Thank you for your feedback - I really appreciate it. There is no warranty that this will work properly on every server but it's good to try both methods and there are few servers that are already using this and it's doing great job.<br />
+About the invisible objects, I think that there is no way to do that without doing data manipulation through streamer plugin itself. Maybe, you can create so-called player objects when the player connects and attach them to player or do whatever you want to do so they stay streamed for that player.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  04.03.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Chaprnks</strong><br />
+<a href="showthread930d.html?pid=4132935#pid4132935" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><b>EDIT:</b><br />
+I know that this plugin uses chunk based streaming, but is there a way to put a hard limit on the number of objects streamed in? Like having like 10 or so object slots reserved (for those invisible "player objects" like seen in /flymode filtercript)</div>
+</td>
+</tr>
+</table>
+</div>The streamer only uses 500 of 1000 player objects by default. You can change that limit with Streamer_VisibleItems for all or specific players if needed.<br />
+<br />
+Ontopic: Nice include. I'm using the diameter from CA_GetBoundingBox and multiply it by a value relative to the maximum diameter of all the object models that were used (which seems to give pretty similar results). I also use lower streaming priorities for non-collidables so they pop in last but that can bring some issues when a place gets too stuffed.<br />
+<br />
+You could add an optional define to disable the static objects though, since on some maps you might use a lot of large flat objects in one place which would automatically prioritize those over other objects even though they may not be used as ground surface. If I use for example 250 large planes as invisible barriers, those 250 objects will exist permanently and lower the free slots available for streaming all other objects for no good reason.<br />
+You could additionally check rx/ry to see if they are used as ground or wall (in which case they don't need to be static).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="member1f32.html?action=profile&amp;uid=344184">algorhitmically</a> -  04.03.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthread6aa9.html?pid=4133253#pid4133253" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">The streamer only uses 500 of 1000 player objects by default. You can change that limit with Streamer_VisibleItems for all or specific players if needed.<br />
+<br />
+Ontopic: Nice include. I'm using the diameter from CA_GetBoundingBox and multiply it by a value relative to the maximum diameter of all the object models that were used (which seems to give pretty similar results). I also use lower streaming priorities for non-collidables so they pop in last but that can bring some issues when a place gets too stuffed.<br />
+<br />
+You could add an optional define to disable the static objects though, since on some maps you might use a lot of large flat objects in one place which would automatically prioritize those over other objects even though they may not be used as ground surface. If I use for example 250 large planes as invisible barriers, those 250 objects will exist permanently and lower the free slots available for streaming all other objects for no good reason.<br />
+You could additionally check rx/ry to see if they are used as ground or wall (in which case they don't need to be static).</div>
+</td>
+</tr>
+</table>
+</div><font color="Purple"><br />
+Thank you for advice! I have added an option in Update v1.0.1 so you can disable static objects in this include.<br />
+More info at: <a href="https://github.com/algorhitmically/optidraw" target="_blank">https://github.com/algorhitmically/optidraw</a></font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="memberd1f0.html?action=profile&amp;uid=166275">Uberanwar</a> -  07.03.2020
+<br />
+<br />
+What are the benefits of using this include?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="member1f32.html?action=profile&amp;uid=344184">algorhitmically</a> -  07.03.2020
+<br />
+<br />
+Well, if you have problems with object loading or you don't have time to optimize maps you can use this include and the job will be done for you. You don't need to care about cars and other items falling through the lining objects. Your objects will be drawn almost the same as default GTA objects.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="membercc2a.html?action=profile&amp;uid=287837">Mobtiesgangsa</a> -  07.03.2020
+<br />
+<br />
+Like'd the concept you wrote it OnYSIStandart();
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="memberd1f0.html?action=profile&amp;uid=166275">Uberanwar</a> -  08.03.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>algorhitmically</strong><br />
+<a href="showthreade47a-3.html?pid=4133525#pid4133525" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well, if you have problems with object loading or you don't have time to optimize maps you can use this include and the job will be done for you. You don't need to care about cars and other items falling through the lining objects. Your objects will be drawn almost the same as default GTA objects.</div>
+</td>
+</tr>
+</table>
+</div>Well done! Just tried it out yesterday, works flawlessly.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Optidraw - <a href="member783e.html?action=profile&amp;uid=329444">VasicFTW</a> -  04.06.2020
+<br />
+<br />
+Good job! Keep it up. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

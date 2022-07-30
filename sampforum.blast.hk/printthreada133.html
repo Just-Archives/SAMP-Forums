@@ -1,0 +1,90 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [FilterScript] Hyperion Mega Ship Battle - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello, I would like to present you the Hyperion Mega Ship Battle. It is a war of two large warships in which between 6 and 42 players can participate (21 per ship) Video: https://www.youtube.com/watch" />
+<link rel="canonical" href="showthreada133.html?tid=669917" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreada133.html?tid=669917">[FilterScript] Hyperion Mega Ship Battle</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [FilterScript] Hyperion Mega Ship Battle (<em>/showthread.php?tid=669917</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Hyperion Mega Ship Battle - <a href="memberc439.html?action=profile&amp;uid=255806">AbyssMorgan</a> -  10.10.2019
+<br />
+<br />
+Hello, I would like to present you the Hyperion Mega Ship Battle.<br/><br />
+It is a war of two large warships in which between 6 and 42 players can participate (21 per ship)<br />
+<br />
+<img alt="" border="0" src="https://cdn.discordapp.com/attachments/628121602894200832/631118355729743885/unknown.png"/><br />
+<br />
+<b>Video:</b><br />
+<a href="https://www.youtube.com/watch?v=Ut7iBj7SRGk" target="_blank">https://www.youtube.com/watch?v=Ut7iBj7SRGk</a><br />
+<br />
+<b>Installation:</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">#include &lt;streamer&gt;<br/>#include &lt;colandreas&gt;<br/>#include &lt;3DTryg&gt;<br/>#include &lt;Missile&gt;<br/>#include &lt;progress&gt;<br/> <br/>//#define HYPERION_START_TIME 90<br/>//#define HYPERION_VW 0<br/>#include &lt;Hyperion&gt;<br/> <br/></span><span style="color: #007700">public </span><span style="color: #0000BB">IsAllowedToJoinHyperion</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">){<br/>    <br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnHyperionPlayerDeath</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">killerid</span><span style="color: #007700">){<br/>    </span><span style="color: #0000BB">SendDeathMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">killerid</span><span style="color: #007700">,</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">51</span><span style="color: #007700">);<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnHyperionHelpPresented</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">){<br/>    </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">DIALOG_STYLE_MSGBOX</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Mega Ship"</span><span style="color: #007700">,</span><span style="color: #DD0000">"Control:\nUse your mouse to aim\nUse LMB or Ctrl to shot"</span><span style="color: #007700">,</span><span style="color: #DD0000">"OK"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">);<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnPlayerEnteringHyperion</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">teamid</span><span style="color: #007700">){<br/>    </span><span style="color: #FF8000">//player teleported to Hyperion Battle<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnPlayerExitHyperion</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">){<br/>    </span><span style="color: #FF8000">//player death on hyperion or battle is finished<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnHyperionStateChange</span><span style="color: #007700">(</span><span style="color: #0000BB">hyperion_state</span><span style="color: #007700">){<br/>    switch(</span><span style="color: #0000BB">hyperion_state</span><span style="color: #007700">){<br/>        case </span><span style="color: #0000BB">HYPERION_STATE_OFF</span><span style="color: #007700">: { </span><span style="color: #FF8000">//attention this state cannot call when Hyperion battle finish<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Battle cannot start due to lack of players."</span><span style="color: #007700">);<br/>        }<br/>        case </span><span style="color: #0000BB">HYPERION_STATE_STARTING</span><span style="color: #007700">: {<br/>            new </span><span style="color: #0000BB">buffer</span><span style="color: #007700">[</span><span style="color: #0000BB">128</span><span style="color: #007700">];<br/>            </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">buffer</span><span style="color: #007700">,</span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">buffer</span><span style="color: #007700">),</span><span style="color: #DD0000">"Hyperion Battle will start in %d seconds."</span><span style="color: #007700">,</span><span style="color: #0000BB">HYPERION_START_TIME</span><span style="color: #007700">);<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #0000BB">buffer</span><span style="color: #007700">);<br/>        }<br/>        case </span><span style="color: #0000BB">HYPERION_STATE_ON</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Battle has been started."</span><span style="color: #007700">);<br/>        }<br/>    }<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnHyperionBattleFinished</span><span style="color: #007700">(</span><span style="color: #0000BB">teamid</span><span style="color: #007700">){<br/>    switch(</span><span style="color: #0000BB">teamid</span><span style="color: #007700">){<br/>        case </span><span style="color: #0000BB">HYPERION_TEAM_BLUE</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Battle was finished the blue team wins."</span><span style="color: #007700">);<br/>        }<br/>        case </span><span style="color: #0000BB">HYPERION_TEAM_GREEN</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Battle was finished the green team wins."</span><span style="color: #007700">);<br/>        }<br/>        case </span><span style="color: #0000BB">HYPERION_TEAM_INTERRUPT</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessageToAll</span><span style="color: #007700">(</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hyperion Battle was interrupted due to a lack of players."</span><span style="color: #007700">);<br/>        }<br/>    }<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/>public </span><span style="color: #0000BB">OnHyperionBattleResults</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">isdead</span><span style="color: #007700">,</span><span style="color: #0000BB">iswinner</span><span style="color: #007700">){<br/>    switch(</span><span style="color: #0000BB">iswinner</span><span style="color: #007700">){<br/>        case </span><span style="color: #0000BB">0</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You team lose the Hyperion Battle."</span><span style="color: #007700">);<br/>        }<br/>        case </span><span style="color: #0000BB">1</span><span style="color: #007700">: {<br/>            </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You team win the Hyperion Battle."</span><span style="color: #007700">);<br/>        }<br/>    }<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/></span><span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">hyperion</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">){<br/>    if(!</span><span style="color: #0000BB">CallLocalFunction</span><span style="color: #007700">(</span><span style="color: #DD0000">"IsAllowedToJoinHyperion"</span><span style="color: #007700">,</span><span style="color: #DD0000">"d"</span><span style="color: #007700">,</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)) return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>    if(</span><span style="color: #0000BB">Hyperion</span><span style="color: #007700">::</span><span style="color: #0000BB">IsPlayerSaved</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)) return </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You are already queued for Hyperion Battle."</span><span style="color: #007700">);<br/>    if(</span><span style="color: #0000BB">Hyperion</span><span style="color: #007700">::</span><span style="color: #0000BB">CountPlayers</span><span style="color: #007700">() &gt;= </span><span style="color: #0000BB">HYPERION_MAX_QUEUE</span><span style="color: #007700">) return </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"Queue for Hyperion Battle is already full."</span><span style="color: #007700">);<br/>    </span><span style="color: #0000BB">Hyperion</span><span style="color: #007700">::</span><span style="color: #0000BB">SavePlayer</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br/>    </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You have signed up for Hyperion Battle Queue."</span><span style="color: #007700">);<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>}<br/> <br/></span><span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">hyperionexit</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">){<br/>    if(!</span><span style="color: #0000BB">Hyperion</span><span style="color: #007700">::</span><span style="color: #0000BB">IsPlayerSaved</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)) return </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You are not queued for Hyperion Battle."</span><span style="color: #007700">);<br/>    </span><span style="color: #0000BB">Hyperion</span><span style="color: #007700">::</span><span style="color: #0000BB">SavePlayer</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br/>    </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">,</span><span style="color: #0000BB">0xFFFFFFFF</span><span style="color: #007700">,</span><span style="color: #DD0000">"You left the Hyperion Battle queue."</span><span style="color: #007700">);<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br/>} <br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>Download:</b><br />
+<a href="http://adm.ct8.pl/d/Hyperion.inc" target="_blank">Hyperion.inc</a><br />
+<a href="http://adm.ct8.pl/d/3DTryg.inc" target="_blank">3DTryg.inc</a> <a href="https://adm.ct8.pl/r/3DTryg" target="_blank"><font color="#003D00"><b>Thread</b></font></a><br />
+<a href="http://adm.ct8.pl/d/Missile.inc" target="_blank">Missile.inc</a> <a href="https://adm.ct8.pl/r/Missile" target="_blank"><font color="#003D00"><b>Thread</b></font></a><br />
+<a href="https://pastebin.com/8pv7LCPv" target="_blank">progress.inc</a><br />
+<a href="https://github.com/Pottus/ColAndreas/releases" target="_blank">ColAndreas Plugin</a><br />
+<br />
+<i><b>Notice:</b><br/><br />
+Filterscript not exist because filterscripts have <b>limits.</b><br/><br />
+This has been replaced by include, having <b>automatic installation</b>, efficient GameMode/FilterScript.</i><br />
+<br />
+<i><b>Non-Registered Users:</b><br />
+<a href="http://adm.ct8.pl/report/?title=Hyperion%20Bug" target="_blank">Bug Report</a></i>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Hyperion Mega Ship Battle - <a href="member4571.html?action=profile&amp;uid=297331">StevenLV</a> -  12.10.2019
+<br />
+<br />
+Great script, loved it
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

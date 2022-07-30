@@ -1,0 +1,411 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [FilterScript] Chaotic's Custom Emergency Siren - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This filterscript allows players who are driving emergency vehicles to play an Audio for all other nearby players (both, in vehicles and standing upright). If you'd like to make your server a bit simi" />
+<link rel="canonical" href="showthread8b2a.html?tid=671672" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread8b2a.html?tid=671672">[FilterScript] Chaotic's Custom Emergency Siren</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [FilterScript] Chaotic's Custom Emergency Siren (<em>/showthread.php?tid=671672</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Chaotic's Custom Emergency Siren - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  06.01.2020
+<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/2Rstr4u.png"/></div><img alt="" border="0" src="https://i.imgur.com/Tybk0E4.png"/><br />
+<font face="Trebuchet MS">This filterscript allows players who are driving emergency vehicles to play an Audio for all other nearby players (both, in vehicles and standing upright). If you'd like to make your server a bit similar to the way GTA 5 functions, you can use this. I haven't added my credits to it, so do what you want with it, fine by me. I've released this filterscript, because I've noticed some persons are having difficulties using the <b><u>PlayAudioStreamForPlayer</u></b> function. Before you continue to read the body of this thread, I must inform you that this script isn't configured to check if the player is in an emergency vehicle or not. You can configure it to suit that requirement. If you're unable to do it, I'll gladly assist after you comment with the issue(s) you have. Enjoy! <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/></font><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/bVS0rRa.png"/><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">#define FILTERSCRIPT // This is to define the script as a FS
+#include &lt;a_samp&gt;
+#include &lt;zcmd&gt;
+#include &lt;sscanf2&gt;
+#include &lt;foreach&gt;
+
+#define MAX_DYNAMIC_CARS 500 // If this isn't already in your script, add it
+
+enum VehicleSirenInfo
+{
+	EmergencyCopSiren
+}
+
+new VehicleInfo[MAX_DYNAMIC_CARS][VehicleSirenInfo];
+
+// If a player moves out of the area, the siren will turn off (not fade out), and if they enter the zone with the siren again, it'll
+// start the siren audio over again.
+
+stock InAreaWithCopSiren(playerid) // This is to check if a player is in the area with the siren audio
+{
+	new Float:x, Float:y, Float:z;
+	for(new i = 0; i &lt; MAX_DYNAMIC_CARS; i ++)
+	{
+		GetVehiclePos(i, x, y, z);
+		if(IsPlayerInRangeOfPoint(playerid, 100.0, x, y, z))
+		{
+			if(VehicleInfo[i][EmergencyCopSiren] != 0)
+			{
+				SetPVarFloat(playerid, "CopSirenX", x);
+				SetPVarFloat(playerid, "CopSirenY", y);
+				SetPVarFloat(playerid, "CopSirenZ", z);
+				return 1;
+			}
+		}
+	}
+	return false;
+}
+
+public OnPlayerUpdate(playerid)
+{
+	if(InAreaWithCopSiren(playerid))
+	{
+			if(!GetPVarInt(playerid, "CopSiren"))
+			{
+				SetPVarInt(playerid,"CopSiren", 1);
+				new link[128];
+				format(link, 128, "https://falcon-host.org/uploads/siren.mp3"); // This is the siren which I made and merged, but you can change it.
+				PlayAudioStreamForPlayer(playerid, link, GetPVarFloat(playerid, "CopSirenX"), GetPVarFloat(playerid, "CopSirenY"), GetPVarFloat(playerid, "CopSirenZ"), 100.0 , 0);
+			}
+	}
+	else
+	{
+		if(GetPVarInt(playerid, "CopSiren") != 0)
+		{
+			DeletePVar(playerid, "CopSiren");
+			StopAudioStreamForPlayer(playerid);
+		}
+	}
+	return 1;
+}
+
+// This is mandatory because if several emergency cars are in the area at the same time, and the player disconnects, the siren will be turned off.
+// It is also added to prevent bugs from occurring, to restart the server over and over.
+public OnPlayerDisconnect(playerid, reason)
+{											
+	if(IsPlayerInAnyVehicle(playerid))
+	{
+		new Float:x, Float:y, Float:z;
+		new VehicleID = GetPlayerVehicleID(playerid);
+		if(VehicleInfo[VehicleID][EmergencyCopSiren] != 0)
+		{
+			GetVehiclePos(VehicleID, x, y, z);
+			VehicleInfo[VehicleID][EmergencyCopSiren] = 0;
+			foreach(new i : Player)
+			{
+				if(IsPlayerInRangeOfPoint(i, 100.0, x, y, z))
+				{
+					if(GetPVarInt(i, "CopSiren") != 0) 
+                                        {
+						StopAudioStreamForPlayer(i);
+						SetPVarInt(i, "CopSiren", 0);
+					}
+				}
+			}
+		}
+	}
+	return 1;
+}
+
+public OnVehicleDeath(vehicleid, killerid)
+{
+	if(VehicleInfo[vehicleid][EmergencyCopSiren] != 0)
+	{ 
+		new Float:x, Float:y, Float:z;
+		GetVehiclePos(vehicleid, x, y, z);
+		foreach(new i : Player)
+		{
+			if(IsPlayerInRangeOfPoint(i, 100.0, x, y, z))
+			{
+				if(GetPVarInt(i,"CopSiren") != 0)
+				{
+					StopAudioStreamForPlayer(i);
+					SetPVarInt(i, "CopSiren", 0);
+				}
+			}
+		}
+		VehicleInfo[vehicleid][EmergencyCopSiren] = 0;
+	}
+	return 1;
+}
+
+// This is the command to be used: /siren on = turns on the siren, and /siren off = turns it off.
+CMD:siren(playerid, params[])
+{
+	new Float:x, Float:y, Float:z, VehicleID, option[16];
+	if(sscanf(params, "s[16]", option))
+	{
+		SendClientMessage(playerid, 0xFF6347FF, "Usage: /siren [parameter]");
+		SendClientMessage(playerid, 0xFF6347FF, "Parameters: {FFFFFF}on, off");
+		return true;
+	}
+	if(strcmp(option, "on", true) == 0)
+	{
+		VehicleID = GetPlayerVehicleID(playerid);
+		GetVehiclePos(VehicleID, x, y, z);
+		new link[128];
+		format(link, 128, "https://falcon-host.org/uploads/siren.mp3");
+		foreach(new i : Player)
+		{
+			if(IsPlayerInRangeOfPoint(i, 100.0, x, y, z))
+			{
+				PlayAudioStreamForPlayer(i, link, x, y, z, 100.0, 0);
+				SetPVarInt(i, "CopSiren", 1);
+			}
+		}
+		VehicleInfo[VehicleID][EmergencyCopSiren] = 1; // 1 = true
+	}
+	if(strcmp(option, "off", true) == 0)
+	{
+		VehicleID = GetPlayerVehicleID(playerid);
+		GetVehiclePos(VehicleID, x, y, z);
+		foreach(new i : Player)
+		{
+			if(IsPlayerInRangeOfPoint(i, 100.0, x, y, z))
+			{
+				if(GetPVarInt(i,"CopSiren") != 0)
+				{
+					StopAudioStreamForPlayer(i);
+					SetPVarInt(i, "CopSiren", 0);
+				}
+			}
+		}
+		VehicleInfo[VehicleID][EmergencyCopSiren] = 0; // 0 = not true
+	}
+	return 1;
+}</pre>
+</div><img alt="" border="0" src="https://i.imgur.com/dtPxKZv.png"/><br />
+<font face="Trebuchet MS"><b>Links: <a href="https://discordapp.com/invite/jr5Ywkm" target="_blank">https://discordapp.com/invite/jr5Ywkm</a></b> OR <b><a href="https://discord.io/ChaoticTheDev" target="_blank">https://discord.io/ChaoticTheDev</a></b><br />
+</font><br />
+<img alt="" border="0" src="https://i.imgur.com/iYS5XOC.png"/><br />
+<font face="Trebuchet MS"><b>sscanf Include:</b> <a href="https://falcon-host.org/uploads/sscanf.rar" target="_blank">https://falcon-host.org/uploads/sscanf.rar</a><br />
+<b>sscanf Plugin:</b> <a href="https://falcon-host.org/uploads/sscanf-plugin.rar" target="_blank">https://falcon-host.org/uploads/sscanf-plugin.rar</a><br />
+<br />
+<b>foreach Include:</b> <a href="https://falcon-host.org/uploads/foreach.rar" target="_blank">https://falcon-host.org/uploads/foreach.rar</a><br />
+<br />
+<b>a_samp Include:</b> <a href="https://falcon-host.org/uploads/a_samp.rar" target="_blank">https://falcon-host.org/uploads/a_samp.rar</a><br />
+<br />
+<b>zcmd Include:</b> <a href="https://falcon-host.org/uploads/zcmd.rar" target="_blank">https://falcon-host.org/uploads/zcmd.rar</a></font><br />
+<br />
+<font size="5"><font color="Red"><b><font face="Arial Black">Please Rep me if you like this filterscript <img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.png" title="Roll Eyes (Sarcastic)"/></font></b></font></font><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/3zkYyjk.png"/><br />
+I'll upload a video in the future to let you see what it looks like.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="memberbd19.html?action=profile&amp;uid=338209">KensPTV</a> -  06.01.2020
+<br />
+<br />
+where demo?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  06.01.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				where demo?<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>Working on it, but you can try it out in your server if you want to. Be sure to leave a rep if it's handy in your projects. You can also use it to play other audios from URLs, instead of the siren only. Good Luck! <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member4ac1.html?action=profile&amp;uid=335721">Z3nx31L</a> -  06.01.2020
+<br />
+<br />
+Good job..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="membera0d4.html?action=profile&amp;uid=314713">Huzaif</a> -  06.01.2020
+<br />
+<br />
+Niceone.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member83b7.html?action=profile&amp;uid=279221">AjaxM</a> -  06.01.2020
+<br />
+<br />
+I like how your release is beautifully detailed and presented.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="membera707.html?action=profile&amp;uid=317258">Hazon</a> -  06.01.2020
+<br />
+<br />
+Yes, presentation is good, can't say the same for the code.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member2b91.html?action=profile&amp;uid=336714">TheDiego</a> -  07.01.2020
+<br />
+<br />
+Looks amazing, well done!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  11.01.2020
+<br />
+<br />
+1.)  <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">#define MAX_DYNAMIC_CARS 500 // If this isn't already in your script, add it</pre>
+</div>There are 2000 vehicles max this should be MAX_VEHICLES.<br />
+<br />
+2.)<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto"> enum VehicleSirenInfo
+{
+	EmergencyCopSiren
+}</pre>
+</div>No need for an enum here at all.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 322px;
+		text-align: left;
+		overflow: auto">stock InAreaWithCopSiren(playerid) // This is to check if a player is in the area with the siren audio
+{
+	new Float:x, Float:y, Float:z;
+	for(new i = 0; i &lt; MAX_DYNAMIC_CARS; i ++)
+	{
+		GetVehiclePos(i, x, y, z);
+		if(IsPlayerInRangeOfPoint(playerid, 100.0, x, y, z))
+		{
+			if(VehicleInfo[i][EmergencyCopSiren] != 0)
+			{
+				SetPVarFloat(playerid, "CopSirenX", x);
+				SetPVarFloat(playerid, "CopSirenY", y);
+				SetPVarFloat(playerid, "CopSirenZ", z);
+				return 1;
+			}
+		}
+	}
+	return false;
+}</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><a href="https://sampwiki.blast.hk/wiki/IsVehicleStreamedIn" target="_blank" rel="noopener" class="mycode_url">https://sampwiki.blast.hk/wiki/IsVehicleStreamedIn</a></pre>
+</div>Wouldn't checking if the vehicle is actually streamed in first be a good idea before doing anything?<br />
+Use of pvars is never recommended and should not be used here.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">public OnPlayerUpdate(playerid)</pre>
+</div>This system is NOT a use case for OnPlayerUpdate() WHY? you ask. Instead of having the players check let the vehicles with sirens on do the checking! It boils down to if you have 100 players and 3 vehicles with sirens on you are having all 100 players check all vehicles each update. It makes a heck of a lot more sense to have 3 vehicles check 100 players every second since 100 meters is such a relatively wide distance +/- 20 meters when it comes to activation should give unnoticeable differentiation when it comes to performance. Even in the best case scenario that all players are standing still so OPU is only called once a second.<br />
+<br />
+Assume 2000 vehicles<br />
+Assume 100 players<br />
+Assume 3 vehicles activated<br />
+<br />
+Current method - 2000 x 100 = 200,000 iterations<br />
+Revised method - 3 x 100 = 300 iterations<br />
+<br />
+That is a massive difference so if you are going to use OPU make sure it is absolutely necessary.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">format(link, 128, "https://falcon-host.org/uploads/siren.mp3"); // This is the siren which I made and merged, but you can change it.</pre>
+</div>I really don't like hardcoded links in FS you have to assume that any kind of link has expired before the script is even released. Yes this can be changed but if you are going to have hardcoded links define them at the top of the script so the user knows right away this is a configurable option.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Chaotic's Custom Emergency Siren - <a href="member9ff9.html?action=profile&amp;uid=353583">realdiegopoptart</a> -  19.08.2020
+<br />
+<br />
+@KevTheJoker I am getting a Error when I compiled
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

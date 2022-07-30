@@ -1,0 +1,1851 @@
+<!DOCTYPE html><!-- start: forumdisplay -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>SA-MP Forums Archive - Includes</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme1/thread_status3388.css?t=1646848572" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "a229fdaf94293e31c5d4681a1a693494";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<!-- start: forumdisplay_rssdiscovery -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads in Includes (RSS 2.0)" href="syndicationb87d.php?fid=83" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads in Includes (Atom 1.0)" href="syndication81d6.php?type=atom1.0&amp;fid=83" />
+<!-- end: forumdisplay_rssdiscovery -->
+<script>
+<!--
+	lang.no_new_posts = "Forum Contains No New Posts";
+	lang.click_mark_read = "Click to mark this forum as read";
+	lang.inline_edit_description = "(Click and hold to edit)";
+	lang.post_fetch_error = "There was an error fetching the posts.";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/inline_editc4a7.js?ver=1821"></script>
+<meta name="description" content="Script includes releases." />
+<link rel="canonical" href="forumdisplayb87d.html?fid=83" />
+</head>
+<body>
+<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="a229fdaf94293e31c5d4681a1a693494" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+
+
+
+
+
+<!-- start: forumdisplay_threadlist -->
+<div class="float_left">
+	<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (73):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="forumdisplayce4e.html?fid=83&amp;page=2&amp;sortby=replies" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplaycb2f.html?fid=83&amp;page=3&amp;sortby=replies" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplayd07f.html?fid=83&amp;page=4&amp;sortby=replies" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplay3407.html?fid=83&amp;page=5&amp;sortby=replies" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&hellip;  <a href="forumdisplayf145.html?fid=83&amp;page=73&amp;sortby=replies" class="pagination_last">73</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="forumdisplayce4e.html?fid=83&amp;page=2&amp;sortby=replies" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage --><!-- start: multipage_jump_page -->
+<div class="popup_menu drop_go_page" style="display: none;">
+	<form action="https://sampforum.blast.hk/forumdisplay.php?fid=83&amp;sortby=replies" method="post">
+		<label>Jump to page:</label> <input type="number" class="textbox" name="page" value="1" size="4" min="1" max="73" />
+		<input type="submit" class="button" value="Go" />
+	</form>
+</div>
+<a href="javascript:;" class="go_page" title="Jump to page"><i class="fa fa-sort-down"></i></a>&nbsp;
+<script type="text/javascript">
+	var go_page = 'go_page_' + $(".go_page").length;
+	$(".go_page").last().attr('id', go_page);
+	$(".drop_go_page").last().attr('id', go_page + '_popup');
+	$('#' + go_page).popupMenu(false).on('click', function() {
+		var drop_go_page = $(this).prev('.drop_go_page');
+		if (drop_go_page.is(':visible')) {
+			drop_go_page.find('.textbox').trigger('focus');
+		}
+	});
+</script>
+<!-- end: multipage_jump_page -->
+</div>
+<!-- end: multipage -->
+</div>
+<div class="float_right">
+	
+</div>
+<br class="clear" /> <br />
+
+<div class="tborder">
+	<div class="thead">
+		<nav role="navigation" class="navbar navbar-forumhead">
+     		<div class="container">
+			  	<div class="pull-left navbar-header">
+					Includes
+			 	</div>
+				<div class="pull-right navbar-header">
+					<button type="button" data-toggle="collapse" data-target=".navbar-ex2-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>								</button>
+		 		</div>
+		 		<div class="visible-xs-block clearfix"></div>
+				<div class="collapse navbar-collapse navbar-ex2-collapse navbar-right pull-right">
+					<ul class="nav navbar-nav pull-right">
+            			<li><a href="syndicationb87d.php?fid=83"><span>RSS Feed</span></a></li>
+            			<li><a href="forumdisplayb87d.html?action=markread&amp;fid=83" title="Mark this forum read"><span>Mark this forum read</span></a></li>
+						<li></li>
+          			</ul>
+				</div>
+			</div>
+		</nav>	
+	</div>
+	
+	
+	
+		<div class="tcat rowbit">
+
+<span data-width="60%" class="threadbit_main" data-rate-thread="1">
+	
+
+	<a href="forumdisplay8a7c.html?fid=83&amp;datecut=9999&amp;prefix=0&amp;sortby=subject&amp;order=asc">Thread</a>  / <a href="forumdisplay41b4.html?fid=83&amp;datecut=9999&amp;prefix=0&amp;sortby=starter&amp;order=asc">Author</a></span>
+
+
+<span class="threadbit_stats threadbit_replies align_center" data-width="7.5%"><a href="forumdisplay265a.html?fid=83&amp;datecut=9999&amp;prefix=0&amp;sortby=replies&amp;order=asc">Replies</a></span>
+
+<!-- remove Views column --> 
+<span class="threadbit_stats threadbit_views align_center" data-width="7.5%">		
+<a href="forumdisplaybec4.html?fid=83&amp;datecut=9999&amp;prefix=0&amp;sortby=views&amp;order=asc">Views</a></span>
+<!-- end remove Views column -->
+
+
+
+<span class="threadbit_lastpost" data-width="25%"><span data-moderation=""><a href="forumdisplaye61b.html?fid=83&amp;datecut=9999&amp;prefix=0&amp;sortby=lastpost&amp;order=asc">Last Post</a></span></span>
+
+</div>
+	
+
+	
+
+
+<!-- start: forumdisplay_sticky_sep -->
+<div class="trow_sep smalltext">Important Threads</div>
+<!-- end: forumdisplay_sticky_sep --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_sticky rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread8181.html?tid=504244&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_504244">
+					<a href="showthread554c.html?tid=504244">[Include] Southclaw's &amp; Pottus's Anti-cheat patches</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a>, </span>
+				<span class="thread_start_datetime smalltext">02.04.2014, 23:54</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread554c.html?tid=504244">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadc20a.html?tid=504244&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread3669.html?tid=504244&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(504244);">52</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+2,071</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread8181.html?tid=504244&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member1708.html?action=profile&amp;uid=184410">PT</a>
+			<br />
+			14.01.2017, 19:48
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_threads_sep -->
+<div class="trow_sep smalltext">Normal Threads</div>
+<!-- end: forumdisplay_threads_sep --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread38a6.html?tid=579963&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_579963">
+					<a href="showthread5aae.html?tid=579963">[Include] Nex-AC - Anticheat system</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a>, </span>
+				<span class="thread_start_datetime smalltext">01.07.2015, 12:02</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread5aae.html?tid=579963">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadda14.html?tid=579963&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreada41a.html?tid=579963&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread53ed.html?tid=579963&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread5653.html?tid=579963&amp;page=31">31</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(579963);">610</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+10,606</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread38a6.html?tid=579963&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by SkyHDTV
+			<br />
+			06.09.2020, 11:45
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread4f44.html?tid=563387&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_563387">
+					<a href="showthread1ec9.html?tid=563387">[Include] weapon-config.inc - Damage system with many features</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a>, </span>
+				<span class="thread_start_datetime smalltext">15.02.2015, 17:05</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1ec9.html?tid=563387">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1aa5.html?tid=563387&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread84bb.html?tid=563387&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread5406.html?tid=563387&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread7101.html?tid=563387&amp;page=24">24</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(563387);">463</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+5,166</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread4f44.html?tid=563387&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberfd38.html?action=profile&amp;uid=248931">Penguin1997</a>
+			<br />
+			14.08.2020, 07:43
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthreada0a8.html?tid=570213&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_570213">
+					<a href="showthread4d8d.html?tid=570213">[Include] Dialogs include - Adding new styles to SAMP GUI</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member5756.html?action=profile&amp;uid=249500">Gammix</a>, </span>
+				<span class="thread_start_datetime smalltext">06.04.2015, 06:34</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread4d8d.html?tid=570213">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreada76f.html?tid=570213&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread387a.html?tid=570213&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread4a63.html?tid=570213&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthreadef3f.html?tid=570213&amp;page=17">17</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(570213);">325</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+4,034</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthreada0a8.html?tid=570213&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a>
+			<br />
+			10.06.2020, 13:45
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthreadadd8-5.html?tid=490436&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_490436">
+					<a href="showthreada111.html?tid=490436">[Include] New SA-MP callbacks!</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext">Emmet_, </span>
+				<span class="thread_start_datetime smalltext">26.01.2014, 16:01</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreada111.html?tid=490436">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread2373-3.html?tid=490436&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadc829-7.html?tid=490436&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread02b6.html?tid=490436&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthreadde2b-3.html?tid=490436&amp;page=9">9</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(490436);">174</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+905</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthreadadd8-5.html?tid=490436&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member26e2.html?action=profile&amp;uid=279768">RxErT</a>
+			<br />
+			25.05.2017, 07:29
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread8cf5.html?tid=611399&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_611399">
+					<a href="showthread655e.html?tid=611399">[Include] dini2.inc - Improved dini file processor with amazing benchmarks (aka. gini)!</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member5756.html?action=profile&amp;uid=249500">Gammix</a>, </span>
+				<span class="thread_start_datetime smalltext">05.07.2016, 23:13</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread655e.html?tid=611399">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadb2ad-4.html?tid=611399&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread3b9d.html?tid=611399&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread4293-3.html?tid=611399&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthreadf49d-2.html?tid=611399&amp;page=7">7</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(611399);">134</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+1,251</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread8cf5.html?tid=611399&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberbdfe.html?action=profile&amp;uid=271490">Exhibit</a>
+			<br />
+			28.03.2018, 15:46
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthreadf4aa.html?tid=591010&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_591010">
+					<a href="showthread3b85.html?tid=591010">[Include] 3DTryg Functions</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="memberc439.html?action=profile&amp;uid=255806">AbyssMorgan</a>, </span>
+				<span class="thread_start_datetime smalltext">06.10.2015, 20:19</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread3b85.html?tid=591010">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread7a2e.html?tid=591010&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread8727.html?tid=591010&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread9c18.html?tid=591010&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread2080-2.html?tid=591010&amp;page=7">7</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(591010);">124</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+1,194</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthreadf4aa.html?tid=591010&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="membera707.html?action=profile&amp;uid=317258">Hazon</a>
+			<br />
+			23.02.2019, 18:54
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread7b9d-4.html?tid=117920&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_117920">
+					<a href="showthreadb0cf.html?tid=117920">[Include] [INC/FS] Fallout's Object Streamer v1.2 for 0.3e (updated on 20-09-'12 ~ new features!)</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membercd8c.html?action=profile&amp;uid=22897">ғαιιοцт</a>, </span>
+				<span class="thread_start_datetime smalltext">02.01.2010, 12:51</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadb0cf.html?tid=117920">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadcb3e.html?tid=117920&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadf6bb-2.html?tid=117920&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadb55b-2.html?tid=117920&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthreada79a-4.html?tid=117920&amp;page=7">7</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(117920);">122</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+781</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread7b9d-4.html?tid=117920&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberc439.html?action=profile&amp;uid=255806">AbyssMorgan</a>
+			<br />
+			18.06.2016, 13:23
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthreadf0d9-2.html?tid=407045&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_407045">
+					<a href="showthread7899.html?tid=407045">[Include] [0.3X] mSelection 1.1 R3 - Create Model Preview Menus with a few lines of code</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member173a.html?action=profile&amp;uid=14916">d0</a>, </span>
+				<span class="thread_start_datetime smalltext">12.01.2013, 14:42</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread7899.html?tid=407045">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadc3cb-3.html?tid=407045&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread4298-5.html?tid=407045&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreaddcdd.html?tid=407045&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread85b2-5.html?tid=407045&amp;page=6">6</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(407045);">117</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+892</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthreadf0d9-2.html?tid=407045&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberf85a.html?action=profile&amp;uid=264972">zsoolt997</a>
+			<br />
+			13.01.2018, 18:26
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread4bdc-6.html?tid=323777&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_323777">
+					<a href="showthread3ce3-2.html?tid=323777">[Include] rCmd.inc - Easiest way to create commands!</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member4c5f.html?action=profile&amp;uid=46049">RyDeR`</a>, </span>
+				<span class="thread_start_datetime smalltext">06.03.2012, 22:24</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread3ce3-2.html?tid=323777">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread599a-2.html?tid=323777&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread0295-2.html?tid=323777&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread63e0-3.html?tid=323777&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread0b76-4.html?tid=323777&amp;page=6">6</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(323777);">111</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+512</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread4bdc-6.html?tid=323777&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member2a33.html?action=profile&amp;uid=211594">KingServerIRAN</a>
+			<br />
+			08.07.2015, 12:30
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread7577.html?tid=91354&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_91354">
+					<a href="showthreadb4e1.html?tid=91354">[Include] [INC] zcmd 0.3.1 | Fast &amp; Simple Command Processor (updated 30/10/2009)</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext">Zeex, </span>
+				<span class="thread_start_datetime smalltext">14.08.2009, 12:59</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadb4e1.html?tid=91354">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread99dc.html?tid=91354&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread9c3a.html?tid=91354&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread397b.html?tid=91354&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread90c6.html?tid=91354&amp;page=6">6</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(91354);">110</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+2,841</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread7577.html?tid=91354&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberf381.html?action=profile&amp;uid=349588">bielgera1</a>
+			<br />
+			11.05.2020, 06:34
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread0cc3-2.html?tid=303682&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_303682">
+					<a href="showthread93d4-2.html?tid=303682">[Include] SQLite Improved</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a>, </span>
+				<span class="thread_start_datetime smalltext">14.12.2011, 20:28</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread93d4-2.html?tid=303682">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadf8bf-2.html?tid=303682&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1fa0-3.html?tid=303682&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadf27b-3.html?tid=303682&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_more -->
+... <a href="showthread1fc4-4.html?tid=303682&amp;page=6">6</a>
+<!-- end: forumdisplay_thread_multipage_more -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(303682);">101</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+2,279</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread0cc3-2.html?tid=303682&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a>
+			<br />
+			03.06.2018, 11:27
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread2c73-5.html?tid=39836&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_39836">
+					<a href="showthreadd3c0-4.html?tid=39836">[Include] MidoStream -  Flexible Object Streamer</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member2015.html?action=profile&amp;uid=19649">MidoBan</a>, </span>
+				<span class="thread_start_datetime smalltext">14.06.2008, 21:02</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadd3c0-4.html?tid=39836">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreada96c-5.html?tid=39836&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread9e63-4.html?tid=39836&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread91de-3.html?tid=39836&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread102c.html?tid=39836&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(39836);">93</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+665</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread2c73-5.html?tid=39836&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by Riddy
+			<br />
+			21.02.2014, 17:05
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread1a1e.html?tid=197755&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_197755">
+					<a href="showthreade0f7.html?tid=197755">[Include] My Mailer Include</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a>, </span>
+				<span class="thread_start_datetime smalltext">10.12.2010, 07:21</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreade0f7.html?tid=197755">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread9619-2.html?tid=197755&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1e86.html?tid=197755&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreada504.html?tid=197755&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread73f0.html?tid=197755&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(197755);">89</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+815</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread1a1e.html?tid=197755&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member42c0.html?action=profile&amp;uid=312758">playstores</a>
+			<br />
+			19.10.2018, 09:23
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread1d38-5.html?tid=343172&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_343172">
+					<a href="showthreadb511-2.html?tid=343172">[Include] Sort multi-dimensional arrays (enums supported)</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a>, </span>
+				<span class="thread_start_datetime smalltext">16.05.2012, 14:23</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadb511-2.html?tid=343172">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread5625-4.html?tid=343172&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadfcfb.html?tid=343172&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1985-3.html?tid=343172&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread7066-5.html?tid=343172&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(343172);">84</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+514</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread1d38-5.html?tid=343172&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member1c30.html?action=profile&amp;uid=145183">JR_Junior</a>
+			<br />
+			10.02.2016, 13:41
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthreadd4bf-3.html?tid=619862&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_619862">
+					<a href="showthread3be6-3.html?tid=619862">[Include] Smart Command Processor (Scripter-friendly, feature rich and fast) (aka iZCMD+)</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member1c6d.html?action=profile&amp;uid=169426">Yashas</a>, </span>
+				<span class="thread_start_datetime smalltext">23.10.2016, 06:59</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread3be6-3.html?tid=619862">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreade8f5.html?tid=619862&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread81d4-2.html?tid=619862&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreade13e.html?tid=619862&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread7881-2.html?tid=619862&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(619862);">81</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+258</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthreadd4bf-3.html?tid=619862&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member22d6.html?action=profile&amp;uid=315452">Verc</a>
+			<br />
+			18.05.2018, 11:55
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread6297-6.html?tid=296171&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_296171">
+					<a href="showthread271e.html?tid=296171">[Include] GeoIP (ISP, Country, City)</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member8f14.html?action=profile&amp;uid=15786">Whitetiger</a>, </span>
+				<span class="thread_start_datetime smalltext">10.11.2011, 07:56</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread271e.html?tid=296171">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread61e2-3.html?tid=296171&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread7278-4.html?tid=296171&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread8e9b-4.html?tid=296171&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread189d.html?tid=296171&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(296171);">80</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+514</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread6297-6.html?tid=296171&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member365b-2.html?action=profile&amp;uid=301709">Kushh</a>
+			<br />
+			16.08.2018, 00:26
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread05db-2.html?tid=570884&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_570884">
+					<a href="showthread8803.html?tid=570884">[Include] YSI 4</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="member4199.html?action=profile&amp;uid=55934">Misiur</a>, </span>
+				<span class="thread_start_datetime smalltext">14.04.2015, 14:22</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread8803.html?tid=570884">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadaccf-2.html?tid=570884&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadce2f-2.html?tid=570884&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread607a.html?tid=570884&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread6799-2.html?tid=570884&amp;page=5">5</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(570884);">80</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+1,001</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread05db-2.html?tid=570884&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member30bb.html?action=profile&amp;uid=178207">James Bob</a>
+			<br />
+			27.01.2019, 22:33
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow1 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread9200-2.html?tid=31653&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_31653">
+					<a href="showthreadfdc7.html?tid=31653">[Include] [INC]Property-System  [V 1.6.8]  =&gt;Update 2nd of April 2008&lt;=</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="memberc805.html?action=profile&amp;uid=9586">Sandra18[NL]</a>, </span>
+				<span class="thread_start_datetime smalltext">25.03.2008, 01:10</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadfdc7.html?tid=31653">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadee22-4.html?tid=31653&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread1418-3.html?tid=31653&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadc46d.html?tid=31653&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(31653);">77</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+394</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread9200-2.html?tid=31653&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="member2bdb.html?action=profile&amp;uid=196183">lsreskjn</a>
+			<br />
+			12.06.2013, 18:02
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread --><!-- start: forumdisplay_thread -->
+<div class="inline_row trow2 forumdisplay_regular rowbit">
+	<div class="threadbit_main" data-width="60%" data-rate-thread="1">
+		<div class="threadbit_folder"><span class="thread_status newhotfolder"  title="New posts. Hot thread."></span></div>
+		<div class="threadbit_title">
+			<div>
+    			<div class="float_left"></div>
+				<!-- start: forumdisplay_thread_gotounread -->
+<a href="showthread5c6e.html?tid=446286&amp;action=newpost"><img src="images/bootbb/jump.png" alt="Go to first unread post" title="Go to first unread post" /></a> 
+<!-- end: forumdisplay_thread_gotounread -->&nbsp; 
+				<span class=" subject_new" id="tid_446286">
+					<a href="showthreadee9b.html?tid=446286">[Include] [alpha] Objects Physics - Handle objects collisions and more.</a>
+				</span>
+				
+			</div>
+
+			<div class="responsive_hide">
+				<span class="author smalltext"><a href="membera963.html?action=profile&amp;uid=206297">PeppeAC</a>, </span>
+				<span class="thread_start_datetime smalltext">25.06.2013, 12:14</span>
+				<!-- start: forumdisplay_thread_multipage -->
+ <span class="smalltext threadbit_pagination">(Pages: <!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthreadee9b.html?tid=446286">1</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread8daa.html?tid=446286&amp;page=2">2</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread642d.html?tid=446286&amp;page=3">3</a> 
+<!-- end: forumdisplay_thread_multipage_page --><!-- start: forumdisplay_thread_multipage_page -->
+<a href="showthread8115.html?tid=446286&amp;page=4">4</a> 
+<!-- end: forumdisplay_thread_multipage_page -->)</span>
+<!-- end: forumdisplay_thread_multipage -->
+			</div>
+		</div>
+	</div>
+	<div class="threadbit_stats threadbit_replies align_center smalltext" data-width="7.5%" data-lang="Replies">
+		<a href="javascript:MyBB.whoPosted(446286);">76</a>
+	</div>
+
+	<!-- remove Views column -->
+	<div class="threadbit_stats threadbit_views align_center smalltext" data-width="7.5%" data-lang="Views">
+1,604</div>
+	<!-- end remove Views column -->
+	
+	
+
+	<div class="threadbit_lastpost smalltext" data-width="25%">
+		
+		<span data-moderation="">
+			<a href="showthread5c6e.html?tid=446286&amp;action=lastpost" data-lastpost-time="Last Post">Last Post</a>
+			by <a href="membercc78.html?action=profile&amp;uid=341901">IZenta</a>
+			<br />
+			02.07.2020, 11:33
+		</span>
+	</div>
+</div>
+<!-- end: forumdisplay_thread -->
+<!-- start: forumdisplay_forumsort -->
+<div class="tfoot">
+	<div class="forumdisplay_sorting_options">
+		<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+				<input type="hidden" name="selectall" value="" />
+				<input type="hidden" name="fid" value="83" />
+				<select name="sortby">
+					<option value="subject" >Sort by: Subject</option>
+					<option value="lastpost" >Sort by: Last Post</option>
+					<option value="starter" >Sort by: Author</option>
+					<option value="started" >Sort by: Creation Time</option>
+					
+					<option value="replies"  selected="selected">Sort by: Replies</option>
+					<option value="views" >Sort by: Views</option>
+				</select>
+				<select name="order">
+					<option value="asc" >Order: Ascending</option>
+					<option value="desc"  selected="selected">Order: Descending</option>
+				</select>
+				<select name="datecut">
+					<option value="1" >From: Today</option>
+					<option value="5" >From: 5 Days Ago</option>
+					<option value="10" >From: 10 Days Ago</option>
+					<option value="20" >From: 20 Days Ago</option>
+					<option value="50" >From: 50 Days Ago</option>
+					<option value="75" >From: 75 Days Ago</option>
+					<option value="100" >From: 100 Days Ago</option>
+					<option value="365" >From: The Last Year</option>
+					<option value="9999"  selected="selected">From: The Beginning</option>
+				</select>
+				<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+		</form>
+	</div>
+</div>
+<!-- end: forumdisplay_forumsort -->	
+</div>
+
+<br />
+
+<div class="float_left">
+	<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (73):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="forumdisplayce4e.html?fid=83&amp;page=2&amp;sortby=replies" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplaycb2f.html?fid=83&amp;page=3&amp;sortby=replies" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplayd07f.html?fid=83&amp;page=4&amp;sortby=replies" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forumdisplay3407.html?fid=83&amp;page=5&amp;sortby=replies" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&hellip;  <a href="forumdisplayf145.html?fid=83&amp;page=73&amp;sortby=replies" class="pagination_last">73</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="forumdisplayce4e.html?fid=83&amp;page=2&amp;sortby=replies" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage --><!-- start: multipage_jump_page -->
+<div class="popup_menu drop_go_page" style="display: none;">
+	<form action="https://sampforum.blast.hk/forumdisplay.php?fid=83&amp;sortby=replies" method="post">
+		<label>Jump to page:</label> <input type="number" class="textbox" name="page" value="1" size="4" min="1" max="73" />
+		<input type="submit" class="button" value="Go" />
+	</form>
+</div>
+<a href="javascript:;" class="go_page" title="Jump to page"><i class="fa fa-sort-down"></i></a>&nbsp;
+<script type="text/javascript">
+	var go_page = 'go_page_' + $(".go_page").length;
+	$(".go_page").last().attr('id', go_page);
+	$(".drop_go_page").last().attr('id', go_page + '_popup');
+	$('#' + go_page).popupMenu(false).on('click', function() {
+		var drop_go_page = $(this).prev('.drop_go_page');
+		if (drop_go_page.is(':visible')) {
+			drop_go_page.find('.textbox').trigger('focus');
+		}
+	});
+</script>
+<!-- end: multipage_jump_page -->
+</div>
+<!-- end: multipage -->
+</div>
+<div class="float_right">
+	
+</div>
+
+<br style="clear: both" /> <br />
+
+
+<div class="float_left">
+	<div class="float_left">
+		<ul class="thread_legend smalltext">
+			<li><span class="thread_status newfolder" title="New Posts"></span> New Posts</li>
+			<li><span class="thread_status newhotfolder" title="Hot Thread (New)"></span> Hot Thread (New)</li>
+			<li><span class="thread_status hotfolder" title="Hot Thread (No New)"></span> Hot Thread (No New)</li>
+		</ul>
+	</div>
+
+	<div class="float_left">
+		<ul class="thread_legend smalltext">
+			<li><span class="thread_status folder" title="No New Posts"></span> No New Posts</li>
+			<li><span class="thread_status dot_folder" title="Contains Posts by You"></span> Contains Posts by You</li>
+			<li><span class="thread_status closefolder" title="Closed Thread"></span> Closed Thread</li>
+		</ul>
+	</div>
+	<br style="clear: both" />
+</div>
+
+<div class="float_right" style="text-align: right;">
+<!-- start: forumdisplay_searchforum -->
+<form action="https://sampforum.blast.hk/search.php">
+	<span class="smalltext">Search this Forum:</span>
+	<input type="text" class="textbox" name="keywords" /> <!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+	<input type="hidden" name="action" value="do_search" />
+	<input type="hidden" name="forums[]" value="83" />
+	<input type="hidden" name="postthread" value="1" />
+	</form><br />
+<!-- end: forumdisplay_searchforum -->
+	
+	<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" selected="selected">---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+</div>
+
+<br class="clear" />
+<!-- start: forumdisplay_usersbrowsing -->
+<span class="smalltext">Users browsing this forum: 5 Guest(s)</span><br />
+<!-- end: forumdisplay_usersbrowsing -->
+
+
+<!-- end: forumdisplay_threadlist -->
+
+<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?forum-83.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=a229fdaf94293e31c5d4681a1a693494" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/forumdisplay.php" id="lang_select">
+	<input type="hidden" name="fid" value="83" />
+<input type="hidden" name="datecut" value="9999" />
+<input type="hidden" name="prefix" value="0" />
+<input type="hidden" name="sortby" value="replies" />
+<input type="hidden" name="order" value="desc" />
+
+	<input type="hidden" name="my_post_key" value="a229fdaf94293e31c5d4681a1a693494" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+</body>
+</html>
+<!-- end: forumdisplay -->

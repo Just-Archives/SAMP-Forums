@@ -1,0 +1,371 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] [INC] zcmd 0.3.1 | Fast &amp; Simple Command Processor (updated 30/10/2009) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Description This is just a little include that uses OnPlayerCommandText() to process players' commands. Each command has a separate function like in dcmd, but zcmd calls them directly via CallLocalFun" />
+<link rel="canonical" href="showthreadb4e1.html?tid=91354" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadb4e1.html?tid=91354">[Include] [INC] zcmd 0.3.1 | Fast &amp; Simple Command Processor (updated 30/10/2009)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] [INC] zcmd 0.3.1 | Fast &amp; Simple Command Processor (updated 30/10/2009) (<em>/showthread.php?tid=91354</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread99dc.html?tid=91354&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread9c3a.html?tid=91354&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread397b.html?tid=91354&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7b53.html?tid=91354&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread90c6.html?tid=91354&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[INC] zcmd 0.3.1 | Fast &amp; Simple Command Processor (updated 30/10/2009) - Zeex -  14.08.2009
+<br />
+<br />
+<font size="4"><font color="brown"><b><u><font color="teal">Description</font></u></b></font></font><br />
+<br />
+This is just a little include that uses <i>OnPlayerCommandText()</i> to process players' commands. Each command has a separate function like in dcmd, but <i>zcmd calls them directly via CallLocalFunction()</i>. Such method is much faster than when you successively compare the text player entered to each command you have in your script (especially if he send a nonexistent cmd, you pass though all then) and its superiority over the old way is proportional to the number of commands. I did a speed test when I've just statrted thinking about this approach, you can find its results <a href="http://forum.sa-mp.com/index.php?topic=79810.msg716153#msg716153" target="_blank">here</a>. <br />
+<br />
+<br />
+<font size="4"><font color="brown"><b><u><font color="teal">Usage</font></u></b></font></font><br />
+<br />
+All you need to add a command is just make a public function using special pre-defined macro, like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">COMMAND</span><span style="color: #000000;">:</span>mycommand<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #228822;">// or CMD:mycommand(playerid, params[]) </span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #228822;">// Do something</span><br/>  <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>; <br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+or (old style):<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">command<span style="color: #000000;">(</span>mycommand, playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #228822;">// or cmd(mycommand, playerid, params[])</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #228822;">// Do something</span><br/>  <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>; <br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Here <b>params[]</b> is the parameters string, <b>playerid</b> is an ID of the player who send this command.<br />
+That's all! Very easy, isn't it?<br />
+<br />
+<br />
+<font color="red">Important:</font> Since v0.3 OnPlayerCommandText cannot be used anymore (also ZCMD_NO_CALLBACK option has been removed), but there are two new callbacks instead:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">OnPlayerCommandReceived<span style="color: #000000;">(</span>playerid, cmdtext<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span></div></div></pre>
+</div>
+This one is called when someone sends a command. If you return 0 here, the command won't be performed.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">OnPlayerCommandPerformed<span style="color: #000000;">(</span>playerid, cmdtext<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, success<span style="color: #000000;">)</span></div></div></pre>
+</div>
+And this one gets called after command execution, here if you do "return 0" the player will see standard "Unknown command" message. The "success" parameter is equal to value returned by command function returns (if it doesn't exist success will be 0).<br />
+<br />
+<i>Note that it's not necessary to add these callbacks to your script if you don't use them.</i><br />
+<br />
+<br />
+<font size="3"><font color="green"><b>How to make two different commands doing the same thing</b></font></font><br />
+<br />
+For example, you have <i>/something</i> cmd:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">COMMAND</span><span style="color: #000000;">:</span>something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #228822;">// some stuff here</span><br/>  <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+and you want to create another one such as /another that does what /something does. The simpliest way of doing that is:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">COMMAND</span><span style="color: #000000;">:</span>another<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">return</span> cmd_something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<font size="3"><font color="brown"><b>Note #1:</b></font></font> If you want to use zcmd in a filterscript, put this define before including:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define FILTERSCRIPT</span></div></div></pre>
+</div>
+<font size="3"><font color="brown"><b>Note #2:</b></font></font> If you want to check whether parameters string is empty you should not do it like:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #222222;">strlen</span><span style="color: #000000;">(</span>params<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #228822;">// no parameters </span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+or :<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>params<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span></div></div></pre>
+</div>
+because its length is never null (read more <a href="http://forum.sa-mp.com/index.php?topic=79810.0#post_empty" target="_blank">here</a>), simply use <i>isnull()</i> included into zcmd:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>params<span style="color: #000000;">)</span><span style="color: #000000;">)</span></div></div></pre>
+</div><i>Actually, if you use <a href="https://sampwiki.blast.hk/wiki/Sscanf" target="_blank">sscanf</a> you don't need to do this as it has built-in isnull checking. </i><br />
+<br />
+Here is an example of how you can make /givemoney command using zcmd with sscanf:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:423px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">COMMAND</span><span style="color: #000000;">:</span>givemoney<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">new</span><br/>          toplayerid, <span style="color: #228822;">// the player we want to give money to</span><br/>          amount;<br/>        <span style="color: #228822;">// extracting player's ID and amount from params</span><br/>        <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!</span>sscanf<span style="color: #000000;">(</span>params, <span style="color: #000066;">"ii"</span>, toplayerid, amount<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>          <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>toplayerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>          <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">new</span><br/>              message<span style="color: #000000;">[</span><span style="color: #000000;">40</span><span style="color: #000000;">]</span>;<br/>            GivePlayerMoney<span style="color: #000000;">(</span>toplayerid, amount<span style="color: #000000;">)</span>;<br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>message, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>message<span style="color: #000000;">)</span>, <span style="color: #000066;">"You got &#36;%d from admin!"</span>, amount<span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>toplayerid, 0x00FF00FF, message<span style="color: #000000;">)</span>;<br/>          <span style="color: #000000;">}</span><br/>          <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFF0000FF, <span style="color: #000066;">"That player is not connected"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFFFFFFFF, <span style="color: #000066;">"Usage: /givemoney &lt;playerid&gt; &lt;amount&gt;"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFF0000FF, <span style="color: #000066;">"Only admins can use this command!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<font size="4"><font color="brown"><b><u><font color="teal">Download</font></u></b></font></font><br />
+<ul><li><a href="http://pastebin.com/SbJc7iXa" target="_blank">Pastebin</a><br />
+</li>
+</ul>
+<br />
+<font size="3"><b>Special thanks to:</b></font><br />
+   - ******
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system - <a href="memberf7bf.html?action=profile&amp;uid=58717">MatrixBoY</a> -  14.08.2009
+<br />
+<br />
+nice work, this good for newbie pawners <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system - <a href="member4017.html?action=profile&amp;uid=54884">nuriel8833</a> -  14.08.2009
+<br />
+<br />
+Great job <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system - Zeex -  14.08.2009
+<br />
+<br />
+Thanks <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system - <a href="memberf784.html?action=profile&amp;uid=32717">Agent_Smith</a> -  14.08.2009
+<br />
+<br />
+Good for new scripters
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system - <a href="member8988.html?action=profile&amp;uid=52368">.::: Ecko :::.</a> -  14.08.2009
+<br />
+<br />
+This is some kind,similar to dcmd,isn't it?!<br />
+Anyway,nice work.<br />
+<br />
+Ecko
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - Zeex -  15.08.2009
+<br />
+<br />
+<b>Updated! Current version is 0.2</b><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>.::: [E</strong><br />
+</div>
+<div style="font-style:italic">Ecko :::. ]<br />
+This is some kind,similar to dcmd,isn't it?!</div>
+</td>
+</tr>
+</table>
+</div>Maybe they are similar, but zcmd works much faster.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member20ad.html?action=profile&amp;uid=50012">Gappy</a> -  15.08.2009
+<br />
+<br />
+nvm I worked it out.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member20ad.html?action=profile&amp;uid=50012">Gappy</a> -  15.08.2009
+<br />
+<br />
+Sorry for double post, I have a new problem. This is my code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">zcmd<span style="color: #000000;">(</span>setrank, playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> idx;<br/>    <span style="color: #2222BB;">new</span> tmp<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> giveplayername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    <br/>  <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>AccountInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>AdminLevel<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">3</span> || IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        tmp <span style="color: #000000;">=</span> strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"USAGE: /giverank [playername/id] [rank 1-8]"</span><span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"FUNCTION: Will give selected player selective rank."</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">new</span> giveplayerid <span style="color: #000000;">=</span> ReturnUser<span style="color: #000000;">(</span>tmp, playerid<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">new</span> rank <span style="color: #000000;">=</span> <span style="color: #222222;">strval</span><span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>giveplayerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>          <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">(</span>rank <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> <span style="color: #000000;">(</span>rank <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">8</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>          <span style="color: #000000;">{</span><br/>                GetPlayerName<span style="color: #000000;">(</span>giveplayerid, giveplayername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>giveplayername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                GetPlayerName<span style="color: #000000;">(</span>playerid, sendername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>sendername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"ADMIN: %s gave %s rank %s."</span>, sendername, giveplayername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"Admin %s has set your rank to %s."</span>, sendername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessage<span style="color: #000000;">(</span>giveplayerid, COLOR_LIGHTBLUE, string<span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"ADMIN: Administrator %s has given %s rank %s."</span>, sendername,giveplayername,RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessageToAll<span style="color: #000000;">(</span>COLOR_LIGHTRED, string<span style="color: #000000;">)</span>;<br/>                AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"You have given %s rank %s."</span>, giveplayername,RankNames<span style="color: #000000;">[</span>AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_LIGHTBLUE, string<span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span><br/>            <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_RED, <span style="color: #000066;">"Invalid Rank!"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_GREY, <span style="color: #000066;">"You are not authorized to use that command!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+It compiles fine and all, but when I use the command it always returns rank as 0. If I type /setrank 0 5 it would say "Invalid Rank".
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member20ad.html?action=profile&amp;uid=50012">Gappy</a> -  15.08.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ZeeX </strong><br />
+</div>
+<div style="font-style:italic">I think you placed first else statement where "Invalid rank" message is sent not to where it should be and also strtok should be called for rank too.<br />
+Try this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">zcmd<span style="color: #000000;">(</span>setrank, playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> idx;<br/>    <span style="color: #2222BB;">new</span> tmp<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">new</span> giveplayername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/><br/>  <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>AccountInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>AdminLevel<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">3</span> || IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        tmp <span style="color: #000000;">=</span> strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"USAGE: /giverank [playername/id] [rank 1-8]"</span><span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"FUNCTION: Will give selected player selective rank."</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">new</span> giveplayerid <span style="color: #000000;">=</span> ReturnUser<span style="color: #000000;">(</span>tmp, playerid<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">new</span> rank <span style="color: #000000;">=</span> <span style="color: #222222;">strval</span><span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>giveplayerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>          <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">(</span>rank <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> <span style="color: #000000;">(</span>rank <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">8</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>          <span style="color: #000000;">{</span><br/>                GetPlayerName<span style="color: #000000;">(</span>giveplayerid, giveplayername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>giveplayername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                GetPlayerName<span style="color: #000000;">(</span>playerid, sendername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>sendername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"ADMIN: %s gave %s rank %s."</span>, sendername, giveplayername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"Admin %s has set your rank to %s."</span>, sendername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessage<span style="color: #000000;">(</span>giveplayerid, COLOR_LIGHTBLUE, string<span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"ADMIN: Administrator %s has given %s rank %s."</span>, sendername,giveplayername,RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessageToAll<span style="color: #000000;">(</span>COLOR_LIGHTRED, string<span style="color: #000000;">)</span>;<br/>                AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span>;<br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"You have given %s rank %s."</span>, giveplayername,RankNames<span style="color: #000000;">[</span>AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_LIGHTBLUE, string<span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_RED, <span style="color: #000066;">"Invalid Rank!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_GREY, <span style="color: #000066;">"You are not authorized to use that command!"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><span style="color: #2222AA;">#else</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>That would say "Invalid Rank" if I tried to set the rank of a person that isn't connected to the server.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - Zeex -  15.08.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">zcmd<span style="color: #000000;">(</span>setrank, playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>  <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>AccountInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>AdminLevel<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">3</span> || IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>  <span style="color: #000000;">{</span><br/>     <span style="color: #2222BB;">new</span> tmp<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>, idx;<br/>      <br/>     <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>params<span style="color: #000000;">)</span> || isnull<span style="color: #000000;">(</span><span style="color: #000000;">(</span>tmp <span style="color: #000000;">=</span> strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>     <span style="color: #000000;">{</span><br/>        SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"USAGE: /giverank [playername/id] [rank 1-8]"</span><span style="color: #000000;">)</span>;<br/>        SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_WHITE, <span style="color: #000066;">"FUNCTION: Will give selected player selective rank."</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>     <span style="color: #000000;">}</span><br/>        <br/>     <span style="color: #2222BB;">new</span> giveplayerid <span style="color: #000000;">=</span> ReturnUser<span style="color: #000000;">(</span>tmp, playerid<span style="color: #000000;">)</span>;<br/>     <span style="color: #2222BB;">new</span> rank <span style="color: #000000;">=</span> <span style="color: #222222;">strval</span><span style="color: #000000;">(</span>strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>        <br/>     <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>giveplayerid <span style="color: #000000;">!=</span> INVALID_PLAYER_ID<span style="color: #000000;">)</span><br/>     <span style="color: #000000;">{</span><br/>       <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">(</span>rank <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> <span style="color: #000000;">(</span>rank <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">8</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>       <span style="color: #000000;">{</span><br/>         <span style="color: #2222BB;">new</span> sendername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>         <span style="color: #2222BB;">new</span> giveplayername<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>          <br/>         GetPlayerName<span style="color: #000000;">(</span>giveplayerid, giveplayername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>giveplayername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>         GetPlayerName<span style="color: #000000;">(</span>playerid, sendername, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>sendername<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>         <span style="color: #222222;">printf</span><span style="color: #000000;">(</span><span style="color: #000066;">"ADMIN: %s gave %s rank %s."</span>, sendername, giveplayername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>         <span style="color: #222222;">format</span><span style="color: #000000;">(</span>tmp, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span>, <span style="color: #000066;">"Admin %s has set your rank to %s."</span>, sendername, RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>         SendClientMessage<span style="color: #000000;">(</span>giveplayerid, COLOR_LIGHTBLUE, tmp<span style="color: #000000;">)</span>;<br/>         <span style="color: #222222;">format</span><span style="color: #000000;">(</span>tmp, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span>, <span style="color: #000066;">"ADMIN: Administrator %s has given %s rank %s."</span>, sendername,giveplayername,RankNames<span style="color: #000000;">[</span>rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>         SendClientMessageToAll<span style="color: #000000;">(</span>COLOR_LIGHTRED, tmp<span style="color: #000000;">)</span>;<br/>         AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> rank<span style="color: #000000;">-</span><span style="color: #000000;">1</span>;<br/>         <span style="color: #222222;">format</span><span style="color: #000000;">(</span>tmp, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span>, <span style="color: #000066;">"You have given %s rank %s."</span>, giveplayername,RankNames<span style="color: #000000;">[</span>AccountInfo<span style="color: #000000;">[</span>giveplayerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Rank<span style="color: #000000;">]</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>         SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_LIGHTBLUE, tmp<span style="color: #000000;">)</span>;<br/>      <span style="color: #000000;">}</span><br/>      <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_RED, <span style="color: #000066;">"Invalid Rank!"</span><span style="color: #000000;">)</span>;<br/>     <span style="color: #000000;">}</span><br/>     <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_RED, <span style="color: #000066;">"Invalid Player ID!"</span><span style="color: #000000;">)</span>;<br/>  <span style="color: #000000;">}</span><br/>  <span style="color: #2222BB;">else</span> SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_GREY, <span style="color: #000066;">"You are not authorized to use that command!"</span><span style="color: #000000;">)</span>;<br/>  <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member20ad.html?action=profile&amp;uid=50012">Gappy</a> -  15.08.2009
+<br />
+<br />
+The command doesn't work at all now, it just get "Unknown Command"
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - Zeex -  15.08.2009
+<br />
+<br />
+hm... replace<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>params<span style="color: #000000;">)</span> || isnull<span style="color: #000000;">(</span><span style="color: #000000;">(</span>tmp <span style="color: #000000;">=</span> strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span></div></div></pre>
+</div>with<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">tmp <span style="color: #000000;">=</span> strtok<span style="color: #000000;">(</span>params, idx<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span>isnull<span style="color: #000000;">(</span>tmp<span style="color: #000000;">)</span><span style="color: #000000;">)</span></div></div></pre>
+</div>It should work.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member20ad.html?action=profile&amp;uid=50012">Gappy</a> -  15.08.2009
+<br />
+<br />
+Thanks it works now.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member0c46-2.html?action=profile&amp;uid=59579">[MeTalgEaR]</a> -  15.08.2009
+<br />
+<br />
+i do recommend u use dcmd instead its all out easier and more efficient for this type of thing although zcmd is good too
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member18d4.html?action=profile&amp;uid=34926">GTA_Rules</a> -  15.08.2009
+<br />
+<br />
+Except for the parameter thingy, this is really nice. Good job.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member8988.html?action=profile&amp;uid=52368">.::: Ecko :::.</a> -  15.08.2009
+<br />
+<br />
+I WILL use this definitely.<br />
+<br />
+Ecko
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member79fe.html?action=profile&amp;uid=54755">RayPoda</a> -  16.08.2009
+<br />
+<br />
+Nice release, ZeeX. Going to use this, bro.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="member838c.html?action=profile&amp;uid=31101">Google63</a> -  16.08.2009
+<br />
+<br />
+I really recommend you to use "zcmd" combined with "sscanf" function to check params; because strtok is really pieace of shit <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [INC] zcmd - simple command system [updated] - <a href="memberab0b.html?action=profile&amp;uid=12959">kc</a> -  16.08.2009
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>[MeTalgEaR</strong><br />
+</div>
+<div style="font-style:italic"> ]<br />
+i do recommend u use dcmd instead its all out easier and more efficient for this type of thing although zcmd is good too</div>
+</td>
+</tr>
+</table>
+</div>Err... no? The main reason to switch from dcmd to zcmd is that zcmd is MORE efficient than dcmd in a large percentage of cases.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

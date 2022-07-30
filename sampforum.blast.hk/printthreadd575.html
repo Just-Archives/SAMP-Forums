@@ -1,0 +1,802 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Admin System - admin system with many features - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Admin System This is the administration system that has a lot of opportunities and very simple and clear in use at the same time. Features: * Multi-level spectate system * Panel for administrators whe" />
+<link rel="canonical" href="showthreadd575.html?tid=605397" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadd575.html?tid=605397">[Include] Admin System - admin system with many features</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Admin System - admin system with many features (<em>/showthread.php?tid=605397</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadbafd.html?tid=605397&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  18.04.2016
+<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><div align="center"><font size="7"><b>Admin System</b></font></div></font></font><br />
+<br />
+This is the administration system that has a lot of opportunities and very simple and clear in use at the same time.<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><font size="4"><b>Features:</b></font></font></font><br />
+* Multi-level spectate system<br />
+* Panel for administrators when you click on a player in Tab<br />
+* General admin panel with items depending on the level<br />
+* Ability to specify several players in one command at once<br />
+* Messages of administration's actions are displayed only for administrators and the specified player<br />
+* Interaction with RCon (logged into RCon become administrators)<br />
+* Ability to cancel the last typed command<br />
+* Dynamic panel with suspected players<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><font size="4"><b>Commands:</b></font></font></font><br />
+Some commands allow you to enter keywords instead of parameters, for example, "/spec off" will do the same as the command "/specoff".<br />
+Also you can omit the parameters in some commands, so then the command will work on the one who typed it.<br />
+The commands will work on any cmd processor! (except rCmd).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">HTML Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">/report [text] - send an question/complaint to administration
+
+Level 1:
+/achat [text] - Admin chat
+/ahelp - Help with admin commands
+/showstats [id] - Show player's statistics
+/answer [id] [text] - Respond on player's report
+/apanel - Admin panel with all available commands
+/admins - List of online administrators
+/eject [id] - Remove player from vehicle
+
+Level 2:
+/spec [id] - Begin spectate player
+/spawnveh [vehicle id] - Teleport vehicle to respawn
+/(un)mute [id] [time] [reason] - Mute/unmute player
+/asay [text] - Message: "Administrator: [text]"
+/warn [id] [reason] - Give warn to player
+/kick [id] [reason] - Kick player from the server
+/(un)freeze [id] - Freeze/unfreeze player
+/slap [id] [reason] - Slap player
+/goto [id] - Teleport to player
+
+Level 3:
+/suspectlist - List of suspected players
+/gethere [id] - Teleport player to yourself
+/gotoveh [vehicle id] - Teleport to vehicle
+/ban [id] [reason] - Ban player's account
+/gmtest [id] - Check for infinite health
+/spawn [id] - Teleport player to respawn
+/unwarn [id] - Remove warn from player
+/banip [IP] - Block IP address
+/cc - Clear chat
+
+Level 4:
+/sethealth [id] [health] - Set health to player
+/setarmour [id] [armour] - Set armour to player
+/setmoney [id] [money] - Set money to player
+/setskin [id] [skin id] - Set skin to player
+/setint [id] [interior] - Set interior to player
+/setvw [id] [number] - Set virtual world to player
+/giveweapon [id] [weapon] [ammo] - Give weapon to player
+/repairveh [vehicle id] - Repair vehicle
+/unbanip [IP] - Unblock IP address
+
+Level 5:
+/getall - Teleport all to yourself
+/setweather [number] - Set weather
+/settime [hour] - Set time of day
+/destroyveh [vehicle id] - Destroy vehicle
+/veh [vehicle id] [color 1] [color 2] - Create vehicle
+/sban [id] - Silent ban
+/skick [id] - Silent kick</pre>
+</div><font color="#ff4141"><font face="Arial Black"><font size="4"><b>Functions:</b></font></font></font><br />
+If you have an accounts system, some functions below will be useful.<br />
+<br />
+<b>public OnPlayerBan(playerid, gaveid, bool:sban)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who will be banned
+<br/>gaveid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who gave a ban
+<br/>sban </span><span style="color: #007700">- If </span><span style="color: #0000BB">the ban is silent </span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">) or </span><span style="color: #0000BB">not </span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">)
+
+<br/></span><span style="color: #0000BB">This callback does not </span><span style="color: #007700">return </span><span style="color: #0000BB">any values 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>public OnPlayerKick(playerid, gaveid, bool:skick)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who will be kicked
+<br/>gaveid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who gave a kick
+<br/>skick </span><span style="color: #007700">- If </span><span style="color: #0000BB">the kick is silent </span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">) or </span><span style="color: #0000BB">not </span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">)
+
+<br/></span><span style="color: #0000BB">This callback does not </span><span style="color: #007700">return </span><span style="color: #0000BB">any values 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>public OnPlayerWarn(playerid, gaveid, count)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who will be warned
+<br/>gaveid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player who gave a warn
+<br/>count </span><span style="color: #007700">- </span><span style="color: #0000BB">The amount of warnings that </span><span style="color: #DD0000">'playerid' </span><span style="color: #0000BB">have at the moment </span><span style="color: #007700">(</span><span style="color: #0000BB">including last given</span><span style="color: #007700">)
+
+<br/></span><span style="color: #0000BB">This callback does not </span><span style="color: #007700">return </span><span style="color: #0000BB">any values 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>IsPlayerAdminEx(playerid, lvl = 1)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player whose admin level we want to check
+<br/>lvl </span><span style="color: #007700">- </span><span style="color: #0000BB">Players admin level we check </span><span style="color: #007700">(if </span><span style="color: #0000BB">not specified</span><span style="color: #007700">, </span><span style="color: #0000BB">will be equal to 1</span><span style="color: #007700">)
+
+<br/></span><span style="color: #0000BB">Returns 1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the player have the admin level equal to </span><span style="color: #007700">or </span><span style="color: #0000BB">greater than specified in the </span><span style="color: #DD0000">'lvl'
+<br/></span><span style="color: #0000BB">Returns 0 </span><span style="color: #007700">if </span><span style="color: #0000BB">the player does not have this admin level 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>GetPlayerAdminLevel(playerid)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player whose admin level we want to get
+
+<br/>Returns the admin level of the specified player 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>SetPlayerAdminLevel(playerid, lvl)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player </span><span style="color: #007700">for </span><span style="color: #0000BB">which you need to set the admin level
+<br/>lvl </span><span style="color: #007700">- </span><span style="color: #0000BB">The admin level you want to set the player
+
+<br/>Returns 1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the </span><span style="color: #007700">function </span><span style="color: #0000BB">executed successfully
+<br/>Returns 0 </span><span style="color: #007700">if </span><span style="color: #0000BB">the specified player is not connected
+<br/>Returns </span><span style="color: #007700">-</span><span style="color: #0000BB">1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the level is entered incorrectly 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>SendMessageToAdmins(lvl, color, const msg[])</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">lvl </span><span style="color: #007700">- </span><span style="color: #0000BB">The admin level required to obtain this message
+<br/>color </span><span style="color: #007700">- </span><span style="color: #0000BB">The color of the message which will be sent
+<br/>msg </span><span style="color: #007700">- </span><span style="color: #0000BB">The string with the message
+
+<br/>Always returns 1 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>GetPlayerMuteTime(playerid)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player whose remaining mute time you want to know
+
+<br/>Returns the remained time of mute </span><span style="color: #007700">for </span><span style="color: #0000BB">the specified player in seconds </span><span style="color: #007700">(</span><span style="color: #0000BB">0 </span><span style="color: #007700">- </span><span style="color: #0000BB">is not muted</span><span style="color: #007700">) 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>SetPlayerMuteTime(playerid, time)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player </span><span style="color: #007700">for </span><span style="color: #0000BB">which you need to set the mute time
+<br/>time </span><span style="color: #007700">- </span><span style="color: #0000BB">The mute time </span><span style="color: #007700">(</span><span style="color: #0000BB">in seconds</span><span style="color: #007700">) </span><span style="color: #0000BB">you need to set the player
+
+<br/>Returns 1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the </span><span style="color: #007700">function </span><span style="color: #0000BB">executed successfully
+<br/>Returns 0 </span><span style="color: #007700">if </span><span style="color: #0000BB">the specified player is not connected
+<br/>Returns </span><span style="color: #007700">-</span><span style="color: #0000BB">1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the time is entered incorrectly 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>AddPlayerInSuspectList(playerid)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player which you want to add to the </span><span style="color: #007700">list </span><span style="color: #0000BB">of suspects
+
+<br/>Returns 1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the </span><span style="color: #007700">function </span><span style="color: #0000BB">executed successfully
+<br/>Returns 0 </span><span style="color: #007700">if </span><span style="color: #0000BB">the specified player is not connected 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>RemovePlayerFromSuspectList(playerid)</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Parameters</span><span style="color: #007700">:
+<br/></span><span style="color: #0000BB">playerid </span><span style="color: #007700">- </span><span style="color: #0000BB">The ID of the player which should be removed from the </span><span style="color: #007700">list </span><span style="color: #0000BB">of suspects
+
+<br/>Returns 1 </span><span style="color: #007700">if </span><span style="color: #0000BB">the </span><span style="color: #007700">function </span><span style="color: #0000BB">executed successfully
+<br/>Returns 0 </span><span style="color: #007700">if </span><span style="color: #0000BB">the specified player is not connected 
+<br/></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b>UpdateSuspectList()</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Returns the number of removed players from the </span><span style="color: #007700">list 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font color="#ff4141"><font face="Arial Black"><font size="4"><b>Installation and use:</b></font></font></font><br />
+1. Download <font color="#ff4141">admsys.inc</font> on the links below and copy in pawno\include<br />
+2. Open your gamemode and add to the beginning: "#include &lt;admsys&gt;", compile changed script<br />
+3. Optionally, you can add delivery of the admin rights to all administrators when they login (in the account load)<br />
+<br />
+If you want to add saving of the admin rights after disconnecting, use <i>SetPlayerAdminLevel</i> function (see "Functions"), add it to your account load and <i>GetPlayerAdminLevel</i> function to account save.<br />
+<br />
+If you want to add some actions when a player gets ban, kick or warn, add in your gamemode publics <i>OnPlayerBan</i>, <i>OnPlayerKick</i> and <i>OnPlayerWarn</i>.<br />
+<br />
+If you want to see "the suspected players" in the panel with these suspects players, use the <i>AddPlayerInSuspectList</i> function to add the player to the list of suspects, and <i>RemovePlayerFromSuspectList</i> to remove.<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><font size="4"><b>Download:</b></font></font></font><br />
+<a href="http://www.mediafire.com/file/a74ec81ckj4yu8p/admsys.inc/file" target="_blank">MediaFire</a> <a href="https://pastebin.com/Q5dYAN4c" target="_blank">Pastebin</a> (v2.6)<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><font size="4"><b>Changelog:</b></font></font></font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">v2.6
+* Added a shorter alternative names for several commands
+
+v2.5
+* Added an ability to display player connection messages for admins
+* Added an ability to display kill list for admins (enabled by default)
+* Define "SEND_ACTION_MSGS_TO_ALL" renamed to "ADMSYS_SEND_ACTION_MSGS_TO_ALL"
+* Added alternative names for "/banip" and "/unbanip" commands ("/blockip" and "/unblockip")
+
+v2.4
+* Ability to define the settings before the include
+* OnPlayerBan, OnPlayerKick and OnPlayerWarn are now called from all filterscripts
+* Removed additional y_hooks support
+* Minor improvements and bug fixes
+
+v2.3
+* SetPlayerAdminLevel and SetPlayerMuteTime functions now return -1 if the second argument is specified incorrectly
+
+v2.2
+* Fixed return values in some callback functions
+
+v2.1
+* Now when you spectate dead player you will still see him
+* Chat cleaning now cleans chat for 30 messages
+* Minor improvements
+
+v2.0
+* Added SetPlayerMuteTime function
+* Added check of the admin level argument for SetPlayerAdminLevel function
+* Fixed return values in some functions
+
+v1.9
+* Now administrator can apply the punishments to himself
+* Added a prohibition of certain actions if the player is in spectator mode
+
+v1.8
+* Fixed bug with calling dialogs
+
+v1.7
+* Reduced the likelihood of coincidence dialog ids with ids in other fs/gm
+* Fixed compilation error that occurred when trying to use it together with izcmd
+
+v1.6
+* Compatibility with y_hooks
+* Compatibility with foreach
+* Minor improvements
+
+v1.5
+* Added check for some commands (you can't give warn/kick/ban admins higher level)
+
+v1.4
+* Compatible with Nexius's Update Checker
+
+v1.3
+* Small optimization
+
+v1.2
+* "/kick" command is available for admin level 2
+* Added the ability to display the administration's actions messages to all players
+* Minor corrections in the localization
+
+v1.1
+* Minor improvements
+
+v1.0
+* Initial release</pre>
+</div><font color="#ff4141"><font face="Arial Black"><font size="4"><b>Bugs:</b></font></font></font><br />
+They are not found at the moment. If you find any bug - please let me know.<br />
+<br />
+<font color="#ff4141"><font face="Arial Black"><font size="4"><b>Thanks:</b></font></font></font><br />
+DeimoS, _leon_lacartez_ - ideas and suggestions<br />
+Magic_York, Vitalik_Gonsor, RobertoYork, TheHero, Error4o4 - testing<br />
+<br />
+Enjoy using :)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  18.04.2016
+<br />
+<br />
+Nice job keep it up <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  18.04.2016
+<br />
+<br />
+Better to be placed in Filterscripts section if you want more people to watch this. The only reason why i would create an admin system as an include is to let the user decide what dialogs they want to have. Create their own admin commands with the interface provided with the include and etc etc.<br />
+<br />
+Also, the reason why we use ZCMD is to eliminate the use of strcmp, but your code does it wrong:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span>cmd, <span style="color: #000066;">"/report"</span>, true<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> admsys_cmd_report<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">)</span>;</div></div></pre>
+</div>Instead you make it more slower than before by using strcmp and a callback both.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  18.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Gammix</strong><br />
+<a href="showthread720b-2.html?pid=3687790#pid3687790" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Better to be placed in Filterscripts section if you want more people to watch this.<br />
+<br />
+Also, the reason why we use ZCMD is to eliminate the use of strcmp, but your code does it wrong:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span>cmd, <span style="color: #000066;">"/report"</span>, true<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> admsys_cmd_report<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">)</span>;</div></div></pre>
+</div>Instead you make it more slower than before by using strcmp and a callback both.</div>
+</td>
+</tr>
+</table>
+</div>It is made specifically to the commands could work both with cmd processor, and without<br />
+Nevertheless, thanks for the tip)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  18.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>OstGot</strong><br />
+<a href="showthread4ac1.html?pid=3687792#pid3687792" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It is made specifically to the commands could work both with cmd processor, and without<br />
+Nevertheless, thanks for the tip)</div>
+</td>
+</tr>
+</table>
+</div>So why not do it like ZCMD does? (literally copy and paste)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  18.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Gammix</strong><br />
+<a href="showthreadb98b.html?pid=3687799#pid3687799" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">So why not do it like ZCMD does? (literally copy and paste)</div>
+</td>
+</tr>
+</table>
+</div>If you do so, then everything will be even slower..<br />
+Why: zcmd calls commands isn't directly but through CallLocalFunction that is much slower than a normal function call
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  18.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>OstGot</strong><br />
+<a href="showthreada9cc-2.html?pid=3687805#pid3687805" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">If you do so, then everything will be even slower..<br />
+Why: zcmd calls commands isn't directly but through CallLocalFunction that is much slower than a normal function call</div>
+</td>
+</tr>
+</table>
+</div>Actually you are right, all time i though strcmp was slower than CallLocalFunction <img alt="" border="0" class="inlineimg" src="images/smilies/picard2.png" title="Picard"/><br />
+Well but it won't stop people using ZCMD because it's easier than strcmp <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+<br />
+There is no saving system, i won't recommend using SAMP's ban system since its so old, ugly and glitchy. Use your own BAN script. Its really easy to code a custom IP range ban using <a href="showthread004d.html?pid=3680518#pid3680518" target="_blank"><u>this </u></a>maybe.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: Admin System - admin system with many features - <a href="memberaf31.html?action=profile&amp;uid=220269">aoEXE</a> -  18.04.2016
+<br />
+<br />
+your "include" concept is wrong...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member90a8.html?action=profile&amp;uid=245435">HydraHumza</a> -  18.04.2016
+<br />
+<br />
+Nice one..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  25.04.2016
+<br />
+<br />
+New version v1.1<br />
+<br />
+Changes:<br />
+Minor improvements
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  25.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Gammix</strong><br />
+<a href="showthread0da4.html?pid=3687827#pid3687827" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Actually you are right, all time i though strcmp was slower than CallLocalFunction <img alt="" border="0" class="inlineimg" src="images/smilies/picard2.png" title="Picard"/><br />
+Well but it won't stop people using ZCMD because it's easier than strcmp <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+<br />
+There is no saving system, i won't recommend using SAMP's ban system since its so old, ugly and glitchy. Use your own BAN script. Its really easy to code a custom IP range ban using <a href="showthread004d.html?pid=3680518#pid3680518" target="_blank"><u>this </u></a>maybe.</div>
+</td>
+</tr>
+</table>
+</div>strcmp IS slower when it's being called hundreds of times per command call. Imagine having like 200 commands and calling the very last one in the callback. ZCMD, YCMD, and iZCMD all call CallLocalFunction a single time!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member9d3f.html?action=profile&amp;uid=238067">codectile</a> -  25.04.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Crayder</strong><br />
+<a href="showthreada38a.html?pid=3690461#pid3690461" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">strcmp IS slower when it's being called hundreds of times per command call. Imagine having like 200 commands and calling the very last one in the callback. ZCMD, YCMD, and iZCMD all call CallLocalFunction a single time!</div>
+</td>
+</tr>
+</table>
+</div>It is not only strcmp which makes command processing slow, the main culprit behind it, is the if statements. People don't realize if-elseif could really reduce extra unnecessary checks on the following commands. But the performance is same of, "if" and "if-elseif" when the last coded command is executed.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  25.04.2016
+<br />
+<br />
+Actually my point/argument was that instead of creating a callback and using strcmp all together, only use strcmp and code in the if/elseif statements in case you no longer want to use ZCMD's method.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member1c6d.html?action=profile&amp;uid=169426">Yashas</a> -  29.04.2016
+<br />
+<br />
+To add more to Crayder's &amp; codectile's point, the CallLocalFunction code runs on the lower level unlike if...else and repeated function calls which add more AMX assembly code which means more instructions to be interpreted by the AMX machine which is why PAWN code is slower.<br />
+<br />
+In fact, CallLocalFunction uses lot of strcmps (does a binary search). Still CallLocalFunction is faster because it isn't PAWN code. The code in CallLocalFunction (amx_FindPublic in the pawn source) is directly executed in the computer unlike PAWN code which is interpreted by the AMX Machine first then executed on the computer.<br />
+<br />
+<b><a href="https://github.com/Zeex/pawn/blob/b261bacfa490b4e381ec9f76e1046f709d6ba6f7/source/amx/amx.c#L1467-L1492" target="_blank">amx_FindPublic from PAWN Source</a></b><br />
+<br />
+@Gammix I want you to check how strcmp is used there and do the necessary corrections to your strcmp FIX in your fixer include. The "&lt;" and "&gt;" symbols used to compare the value returned by strcmp might surprise you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  03.06.2016
+<br />
+<br />
+v1.2<br />
+<br />
+Changes:<br />
+"/kick" command is available for admin level 2<br />
+Added the ability to display the administration's actions messages to all players<br />
+Minor corrections in the localization
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  13.06.2016
+<br />
+<br />
+New version 1.3<br />
+<br />
+Changes:<br />
+Small optimization
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  19.06.2016
+<br />
+<br />
+v1.4<br />
+<br />
+Changes:<br />
+Compatible with Nexius's Update Checker
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  19.06.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>OstGot</strong><br />
+<a href="showthreadf03a.html?pid=3719779#pid3719779" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">v1.4<br />
+<br />
+Changes:<br />
+Compatible with <a href="https://vk.com/doc175785824_437613225" target="_blank">Nexius's Update Checker</a></div>
+</td>
+</tr>
+</table>
+</div>Add this in nex ac.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="member1a7b.html?action=profile&amp;uid=268755">Alnadhiry</a> -  21.06.2016
+<br />
+<br />
+Great work Keep it up.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Admin System - admin system with many features - <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> -  27.06.2016
+<br />
+<br />
+v1.5<br />
+<br />
+Changes:<br />
+Added check for some commands (you can't give warn/kick/ban admins higher level)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

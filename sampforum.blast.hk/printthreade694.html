@@ -1,0 +1,140 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] 3D Speedometer v0.2 - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="An easy-to-implement 3D Speedometer. - Include with y_hooks and it will work inmediatly. - If you don't have y_hooks then making it work is as simple as pasting a few lines of code in 4 callbacks. - W" />
+<link rel="canonical" href="showthreade694.html?tid=672391" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreade694.html?tid=672391">[Include] 3D Speedometer v0.2</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] 3D Speedometer v0.2 (<em>/showthread.php?tid=672391</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+3D Speedometer v0.3 - <a href="member1a51.html?action=profile&amp;uid=257195">Markski</a> -  10.02.2020
+<br />
+<br />
+An easy-to-implement 3D Speedometer.<br />
+<br />
+- Include with y_hooks and it will work inmediatly.<br />
+- If you don't have y_hooks then making it work is as simple as pasting a few lines of code in 4 callbacks.<br />
+- Works automatically by taking it's own measurements, or you can give it your own numbers if preferred, your choise.<br />
+- Optional parameter for providing fuel readings.<br />
+- Allows to choose between KMH or MPH at compile time with a define.<br />
+- Allows to choose english or spanish with a define.<br />
+<br />
+Screenshots:<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/IekbUKn.png"/><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/28Hrrv5.png"/><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/LfNwr0O.png"/><br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/EXxxQlj.png"/><br />
+<br />
+- TODO:<br />
+Allow scripters to provide more personalization such as colour and sizes to their players.<br />
+<br />
+- Known issues<br />
+Doesn't work correctly with Planes and other vehicles which are too wide.<br />
+<br />
+- How to contribute<br />
+Just open a Pull Request m8<br />
+<br />
+Download, install and usage instructions available <a href="https://github.com/markski1/MRKS-3D-Speedometer/" target="_blank">at the repository.</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="member3012.html?action=profile&amp;uid=331085">Symon</a> -  10.02.2020
+<br />
+<br />
+Always loved this type of speedometers, good job.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="memberf9d4.html?action=profile&amp;uid=332441">Fuzzy</a> -  10.02.2020
+<br />
+<br />
+That's a nice one, good release.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="member7fd6.html?action=profile&amp;uid=268837">m4karow</a> -  11.02.2020
+<br />
+<br />
+If you using y_hooks why don't you use y_vehicledata instead creating another array for vehicle names?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="member1a51.html?action=profile&amp;uid=257195">Markski</a> -  11.02.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>m4karow</strong><br />
+<a href="showthreadedef.html?pid=4131027#pid4131027" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">If you using y_hooks why don't you use y_vehicledata instead creating another array for vehicle names?</div>
+</td>
+</tr>
+</table>
+</div>y_hooks is optional, hence the compiler checks on _INC_y_hooks, so having that array there is necesary one way or the other.<br />
+<br />
+Also, 0.3:<br />
+<br />
+- Added Spanish option<br />
+- Added option to disable vehicle names and only show stats
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="member1ffa.html?action=profile&amp;uid=309269">RogueDrifter</a> -  16.03.2020
+<br />
+<br />
+nice
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: 3D Speedometer v0.2 - <a href="member0e89.html?action=profile&amp;uid=270150">Dainteresebuli</a> -  20.03.2020
+<br />
+<br />
+Time to test it , thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

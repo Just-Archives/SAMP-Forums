@@ -1,0 +1,381 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Southclaw's &amp; Pottus's Anti-cheat patches - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Anti-cheat patches Objective: Southclaw and I have decided to keep a resource of anti-hack patches which can be easily integrated into your script. Every patch will follow some basic guidelines for im" />
+<link rel="canonical" href="showthread554c.html?tid=504244" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread554c.html?tid=504244">[Include] Southclaw's &amp; Pottus's Anti-cheat patches</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Southclaw's &amp; Pottus's Anti-cheat patches (<em>/showthread.php?tid=504244</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreadc20a.html?tid=504244&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3669.html?tid=504244&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  02.04.2014
+<br />
+<br />
+<font size="7"><font color="Cyan"><div align="center">Anti-cheat patches</div></font></font><br />
+<br />
+<font size="5"><font color="MediumTurquoise">Objective:</font></font><br />
+Southclaw and I have decided to keep a resource of anti-hack patches which can be easily integrated into your script. Every patch will follow some basic guidelines for implementation, as well as a description of the cheat which the patch prevents. Please keep in mind these are not designed to be an anti-cheat system addressing a complete system is really on an individual basis and often directly needs to be integrated into the gamemode it's self instead this patches are meant to build on your anti-cheat system by providing a means of quick implementation.<br />
+<br />
+<font size="5"><font color="MediumTurquoise">Guidelines:</font></font><br />
+- Patches are to be designed to be included BEFORE YSI <br />
+- Patches will contain ALS hooking only<br />
+- Patches will contain a callback with the following prefix OnAntiCheat ..... () ex OnAntiCheatAutoAim(playerid)<br />
+- Patches will have a description outlining the anticheat<br />
+- Patches can use y_iterate<br />
+<br />
+<font size="5"><font color="Red"><div align="center">__________________________________________________  ________________________________________________</div></font></font><br />
+<div align="center"><font size="5"><font color="Red">Patches</font></font></div><font size="5"><font color="Red"><div align="center">__________________________________________________  ________________________________________________</div></font></font><br />
+<br />
+<b>Name: Autobullet<br />
+Type: Animation / Weapon exploit<br />
+Description: Modifies the behavior of walking weapons allowing them to be used like running weapons it also skips the reload animations.<br />
+Detection Method: There is a velocity range in which this exploit happens however it is also possible to achieve the same velocity in some circumstances by using the slide-shoot-run bug that is why there is player key checks in place to make sure that does not happen. A player receiving 3 infractions will result in OnAntiCheatAutoBullet() being called.<br />
+Callback: <font color="Red">public OnAntiCheatAutoBullet(playerid, weaponid)</font></b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Anti autobullet exploit detection by [uL]Pottus</span><br/><span style="color: #2222AA;">#define             MAX_AUTOBULLET_INFRACTIONS          3</span><br/><span style="color: #2222AA;">#define             AUTOBULLET_RESET_DELAY              30</span><br/><br/><span style="color: #2222BB;">static</span> AutoBulletInfractions<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><span style="color: #2222BB;">static</span> LastInfractionTime<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222BB;">forward</span> OnAntiCheatAutoBullet<span style="color: #000000;">(</span>playerid, weaponid<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerWeaponShot<span style="color: #000000;">(</span>playerid, weaponid, hittype, hitid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fX, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fZ<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>IsPlayerInAnyVehicle<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">switch</span><span style="color: #000000;">(</span>weaponid<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">case</span> <span style="color: #000000;">27</span>, <span style="color: #000000;">23</span>, <span style="color: #000000;">25</span>, <span style="color: #000000;">29</span>, <span style="color: #000000;">30</span>, <span style="color: #000000;">31</span>, <span style="color: #000000;">33</span>, <span style="color: #000000;">24</span>, <span style="color: #000000;">38</span><span style="color: #000000;">:</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>CheckSpeed<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>                <span style="color: #000000;">{</span><br/>                    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">gettime</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">-</span> LastInfractionTime<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> AUTOBULLET_RESET_DELAY<span style="color: #000000;">)</span> AutoBulletInfractions<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>;<br/>                    <span style="color: #2222BB;">else</span> AutoBulletInfractions<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>                    LastInfractionTime<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #222222;">gettime</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><br/>                    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>AutoBulletInfractions<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">==</span> MAX_AUTOBULLET_INFRACTIONS<span style="color: #000000;">)</span><br/>                    <span style="color: #000000;">{</span><br/>                        AutoBulletInfractions<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/>                        CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"OnAntiCheatAutoBullet"</span>, <span style="color: #000066;">"ii"</span>, playerid, weaponid<span style="color: #000000;">)</span>;<br/>                        <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>;<br/>                    <span style="color: #000000;">}</span><br/>                <span style="color: #000000;">}</span><br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"ACAutoB_OnPlayerWeaponShot"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"ACAutoB_OnPlayerWeaponShot"</span>, <span style="color: #000066;">"iiiifff"</span>, playerid, weaponid, hittype, hitid, fX, fY, fZ<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerWeaponShot</span><br/>    <span style="color: #2222AA;">#undef OnPlayerWeaponShot</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerWeaponShot</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerWeaponShot ACAutoB_OnPlayerWeaponShot</span><br/><br/><span style="color: #2222BB;">forward</span> ACAutoB_OnPlayerWeaponShot<span style="color: #000000;">(</span>playerid, weaponid, hittype, hitid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fX, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>fZ<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    AutoBulletInfractions<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>;<br/><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"ACAutoB_OnPlayerDisconnect"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"ACAutoB_OnPlayerDisconnect"</span>, <span style="color: #000066;">"ii"</span>, playerid, reason<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerDisconnect</span><br/>    <span style="color: #2222AA;">#undef OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerDisconnect ACAutoB_OnPlayerDisconnect</span><br/><br/><span style="color: #2222BB;">forward</span> ACAutoB_OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span>;<br/><br/><br/><span style="color: #2222BB;">static</span> CheckSpeed<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> Keys,ud,lr;<br/>    GetPlayerKeys<span style="color: #000000;">(</span>playerid,Keys,ud,lr<span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>ud <span style="color: #000000;">==</span> KEY_UP <span style="color: #000000;">&amp;&amp;</span> lr <span style="color: #000000;">!=</span> KEY_LEFT <span style="color: #000000;">&amp;&amp;</span> lr <span style="color: #000000;">!=</span> KEY_RIGHT<span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">new</span> <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">3</span><span style="color: #000000;">]</span>;<br/>        GetPlayerVelocity<span style="color: #000000;">(</span>playerid, Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span>, Velocity<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span>, Velocity<span style="color: #000000;">[</span><span style="color: #000000;">2</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>        Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #222222;">floatsqroot</span><span style="color: #000000;">(</span> <span style="color: #000000;">(</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span><span style="color: #000000;">*</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><span style="color: #000000;">+</span><span style="color: #000000;">(</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">*</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><span style="color: #000000;">+</span><span style="color: #000000;">(</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">2</span><span style="color: #000000;">]</span><span style="color: #000000;">*</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">2</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">0.11</span> <span style="color: #000000;">&amp;&amp;</span> Velocity<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">0.13</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<b>Name: Connection spoofing<br />
+Type: Server exploit<br />
+Description: It was possible in 0.3x to spoof a connection to a server when a player is already connected, this will result in the players name being changed to the spoofed name unprotected servers could potentially have player accounts overwritten. It is currently unknown if this exploit exists in 0.3z however it assumed that it still could potentially happen in any case this patch provides protection by preventing OnPlayerConnect() from being called to the rest of the script. <u>IMPORTANT</u> Make sure this is placed before any other includes that use OnPlayerConnect!!!!<br />
+Detection Method: When a player connects a variable is set that they are connected, if another connection happens on the same ID while they are still connected this is considered a spoof.<br />
+Callback: <font color="Red">public OnAntiCheatPlayerSpoof(playerid)</font></b><br />
+<b><font size="4">Edit - I have confirmed this as still possible.</font></b><br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Anti connection spoofing patch by [uL]Pottus</span><br/><br/><span style="color: #2222BB;">forward</span> OnAntiCheatPlayerSpoof<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">static</span> <span style="color: #000000;">bool</span><span style="color: #000000;">:</span>PlayerConnected<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><span style="color: #2222BB;">static</span> PlayerNames<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span><span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// User was already connected cheat detected</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>PlayerConnected<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        SetPlayerName<span style="color: #000000;">(</span>playerid, PlayerNames<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>        CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"OnAntiCheatPlayerSpoof"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        GetPlayerName<span style="color: #000000;">(</span>playerid, PlayerNames<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span>, MAX_PLAYER_NAME<span style="color: #000000;">)</span>;<br/>        PlayerConnected<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> true;<br/>    <span style="color: #000000;">}</span><br/><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"AntiSpoof_OnPlayerConnect"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"AntiSpoof_OnPlayerConnect"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222BB;">public</span> OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    PlayerConnected<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> false;<br/><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"AntiSpoof_OnPlayerDisconnect"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"AntiSpoof_OnPlayerDisconnect"</span>, <span style="color: #000066;">"ii"</span>, playerid, reason<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerConnect</span><br/>    <span style="color: #2222AA;">#undef OnPlayerConnect</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerConnect</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerConnect AntiSpoof_OnPlayerConnect</span><br/><br/><span style="color: #2222BB;">forward</span> AntiSpoof_OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerDisconnect</span><br/>    <span style="color: #2222AA;">#undef OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerDisconnect AntiSpoof_OnPlayerDisconnect</span><br/><br/><span style="color: #2222BB;">forward</span> AntiSpoof_OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<b>Name: NPC Connection spoofing<br />
+Type: Server exploit<br />
+Description: This is very similar to connection spoofing and was an issue in 0.3x it is assumed that it is still possible in the new SAMP version. It will result in faked NPC connections to the server. <u>IMPORTANT</u> Make sure this is placed before any other includes that use OnPlayerConnect!!!!<br />
+Detection Method: All real NPC connections can only occur on IP: 127.0.0.1 if the IP is different then it is a spoofed NPC connection<br />
+Callback: <font color="Red">public OnAntiCheatNPCSpoof(playerid)</font></b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Anti NPC spoof by [uL]Pottus</span><br/><br/><span style="color: #2222BB;">forward</span> OnAntiCheatNPCSpoof<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerNPC<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">new</span> ip<span style="color: #000000;">[</span><span style="color: #000000;">16</span><span style="color: #000000;">]</span>;<br/>        GetPlayerIp<span style="color: #000000;">(</span>playerid, ip, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ip<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #000000;">!!</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span>ip, <span style="color: #000066;">"127.0.0.1"</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">new</span> name<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>;<br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>name, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>name<span style="color: #000000;">)</span>, <span style="color: #000066;">"%i"</span>, <span style="color: #222222;">gettime</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>            SetPlayerName<span style="color: #000000;">(</span>playerid, name<span style="color: #000000;">)</span>;<br/>            CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"OnAntiCheatNPCSpoof"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"AntiNPC_OnPlayerConnect"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"AntiNPC_OnPlayerConnect"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerConnect</span><br/>    <span style="color: #2222AA;">#undef OnPlayerConnect</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerConnect</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerConnect AntiNPC_OnPlayerConnect</span><br/><br/><span style="color: #2222BB;">forward</span> AntiNPC_OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<b>Name: Lag Troll<br />
+Type: Vehicle Cheat<br />
+Description: This cheat appears to send fake packets to the server in rapid succession by copying the position of the targeted vehicle the result is a lag type effect.<br />
+Callback: <font color="Red">public OnAntiCheatLagTroll(playerid)</font></b><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define         MAX_VEHICLE_ID_CHANGES          5</span><br/><br/><span style="color: #2222BB;">static</span> LastVehicleID<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><span style="color: #2222BB;">static</span> VehicleIDChanges<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><span style="color: #2222BB;">static</span> VehicleIDChangeTime<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><br/><span style="color: #2222BB;">forward</span> OnAntiCheatLagTroll<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><br/><span style="color: #2222BB;">public</span> OnPlayerUpdate<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> vid <span style="color: #000000;">=</span> GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>vid <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>vid <span style="color: #000000;">!=</span> LastVehicleID<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GetTickCount<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">-</span> VehicleIDChangeTime<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">5000</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                VehicleIDChanges<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">++</span>;<br/>                <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>VehicleIDChanges<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> MAX_VEHICLE_ID_CHANGES<span style="color: #000000;">)</span><br/>                <span style="color: #000000;">{</span><br/>                    CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"OnAntiCheatLagTroll"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>                    <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>;<br/>                <span style="color: #000000;">}</span><br/>            <span style="color: #000000;">}</span><br/>            <span style="color: #2222BB;">else</span> VehicleIDChanges<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>;<br/>        <span style="color: #000000;">}</span><br/>        LastVehicleID<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> vid;<br/>        VehicleIDChangeTime<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> GetTickCount<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">funcidx</span><span style="color: #000000;">(</span><span style="color: #000066;">"AntiLT_OnPlayerUpdate"</span><span style="color: #000000;">)</span> <span style="color: #000000;">!=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> CallLocalFunction<span style="color: #000000;">(</span><span style="color: #000066;">"AntiLT_OnPlayerUpdate"</span>, <span style="color: #000066;">"i"</span>, playerid<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerUpdate</span><br/>    <span style="color: #2222AA;">#undef OnPlayerUpdate</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerUpdate</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerUpdate AntiLT_OnPlayerUpdate</span><br/><br/><span style="color: #2222BB;">forward</span> AntiLT_OnPlayerUpdate<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<br />
+<b>Name: Server Freezer - Obsolete download the new SAMP server update</b><br />
+<a href="showthread14a6.html?tid=506214" target="_blank">https://sampforum.blast.hk/showthread.php?tid=506214</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member86db.html?action=profile&amp;uid=172362">RenovanZ</a> -  03.04.2014
+<br />
+<br />
+Really Nice! Good Job, Southclaw &amp; Pottus!<br />
+Gonna use this.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member8f14.html?action=profile&amp;uid=15786">Whitetiger</a> -  03.04.2014
+<br />
+<br />
+you should make this a community driven solution on github, with changes encouraged by the community (see fixes.Inc). can make a quick include to patch a bunch of hacks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  03.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Whitetiger</strong><br />
+<a href="showthread1bd9.html?pid=2977081#pid2977081" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">you should make this a community driven solution on github, with changes encouraged by the community (see fixes.Inc). can make a quick include to patch a bunch of hacks</div>
+</td>
+</tr>
+</table>
+</div>That is a good idea, but the issue with that is implementation, were not really releasing a full AC system rather patches to integrate into gamemodes. It will be up to the scripter to determine how they want to handle specific events. I still have a lot of patches to put up yet <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="memberb930.html?action=profile&amp;uid=142377">awsomedude</a> -  03.04.2014
+<br />
+<br />
+Good job both of you
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member15b0.html?action=profile&amp;uid=100574">Niko_boy</a> -  03.04.2014
+<br />
+<br />
+Nice work guys.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member059a.html?action=profile&amp;uid=78223">Lorenc_</a> -  03.04.2014
+<br />
+<br />
+Nice job!<br />
+<br />
+Never encountered the second one, but that's a strange but effective fix.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="memberbc54.html?action=profile&amp;uid=96708">iZN</a> -  03.04.2014
+<br />
+<br />
+Ah, you were discussing at the IRC about the patches. Nice work!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> -  03.04.2014
+<br />
+<br />
+Sorry guys, the first one has ALOT of false alarms.<br />
+<br />
+All you have to do to throw the auto bullet thing<br />
+<br />
+is keep firing your weapon and move left and right around constantly and it throws the autobullet detection<br />
+<br />
+Tested with deagle and combat shotgun
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  03.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kar</strong><br />
+<a href="showthread7dc6.html?pid=2977366#pid2977366" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Sorry guys, the first one has ALOT of false alarms.<br />
+<br />
+All you have to do to throw the auto bullet thing<br />
+<br />
+is keep firing your weapon and move left and right around constantly and it throws the autobullet detection<br />
+<br />
+Tested with deagle and combat shotgun</div>
+</td>
+</tr>
+</table>
+</div>Thanks, I'll test it out again and see if I can get it to happen going to comment it out for the time being. Okay now I see how that happens <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="memberdc85.html?action=profile&amp;uid=199378">shittt</a> -  03.04.2014
+<br />
+<br />
+Nice , protects against rapid fire? <br />
+<br />
+if so I'm not seeing is blurred, Linux does not help :/<br />
+<br />
+OFF: 666 Posts o_O.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member8da4.html?action=profile&amp;uid=217452">MugiwaraNoLuffy</a> -  05.04.2014
+<br />
+<br />
+Good job, keep it up
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="memberede6.html?action=profile&amp;uid=47313">Kyle</a> -  08.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>******</strong><br />
+<a href="showthread8986.html?pid=2983302#pid2983302" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Could I make a request (partially a suggestion).  You explicitly mention that this should be included before YSI, and I agree, but there are a few things to be aware of with that:<br />
+<br />
+1) You say you can use y_iterate, but if you include these patches before YSI the "foreach" macro won't yet exist and that code will never be used even if it is included later.<br />
+<br />
+2) y_hooks in YSI 4.0 is awkward to deal with in terms of orderings.  Currently y_hooks hooks always come before ALS hooks, even if they appear later in source code, the ordering is changed (or, more accurately, set) at run-time, not compile-time.  I have a solution to this that will be released shortly (I am now back home), but the solution requires some co-operation from other library developers that want their code to come before any y_hooks code.  "Breaking" an ALS chain is tricky as you need to be able to detect the chain, but this can be done.  I want to try and figure out an even better way of specifying ordering, but for now this is the best I have come up with.  Instead of your current hooking method use:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:487px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// This function has two purposes - defines 3 states, and declares your ALS prefix.</span><br/><span style="color: #228822;">// You seem to use different prefixes for each callback though, I'm not sure that's a</span><br/><span style="color: #228822;">// good idea and will make detection MUCH harder.</span><br/><span style="color: #2222BB;">forward</span> <span style="color: #000000;">@@@</span>_AC<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #228822;">// The function is never called, but can be found by the "@@@_" prefix.</span><br/><span style="color: #2222BB;">public</span> <span style="color: #000000;">@@@</span>_AC<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">&lt;</span><span style="color: #000000;">AC_state</span> <span style="color: #000000;">:</span> AC_state1<span style="color: #000000;">&gt;</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">public</span> <span style="color: #000000;">@@@</span>_AC<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">&lt;</span><span style="color: #000000;">AC_state</span> <span style="color: #000000;">:</span> AC_state2<span style="color: #000000;">&gt;</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span><br/><span style="color: #2222BB;">public</span> <span style="color: #000000;">@@@</span>_AC<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">&lt;</span><span style="color: #000000;">AC_state</span> <span style="color: #000000;">:</span> AC_state3<span style="color: #000000;">&gt;</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#define AC_FORWARD%0(%1) \</span><br/>    forward<span style="color: #000000;">%</span>0<span style="color: #000000;">(</span><span style="color: #000000;">%</span>1<span style="color: #000000;">)</span>; \<br/>    public<span style="color: #000000;">%</span>0<span style="color: #000000;">(</span><span style="color: #000000;">%</span>1<span style="color: #000000;">)</span><span style="color: #000000;">&lt;&gt;</span> <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>; \<br/>    public<span style="color: #000000;">%</span>0<span style="color: #000000;">(</span><span style="color: #000000;">%</span>1<span style="color: #000000;">)</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">AC_state</span> <span style="color: #000000;">:</span> AC_state1<span style="color: #000000;">&gt;</span> <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span><br/><br/><span style="color: #228822;">// Now this is a normal callback.</span><br/><span style="color: #2222BB;">public</span> OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// And this is the hook, no wrapping of any kind required.</span><br/>    <span style="color: #2222BB;">return</span> AC_OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222AA;">#if defined _ALS_OnPlayerDisconnect</span><br/>    <span style="color: #2222AA;">#undef OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#else</span><br/>    <span style="color: #2222AA;">#define _ALS_OnPlayerDisconnect</span><br/><span style="color: #2222AA;">#endif</span><br/><span style="color: #2222AA;">#define OnPlayerDisconnect(%0) AC_OnPlayerDisconnect(%0) &lt;AC_state : AC_state2&gt;</span><br/><br/>AC_FORWARD AC_OnPlayerDisconnect<span style="color: #000000;">(</span>playerid, reason<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Using that, the order hooks are done in becomes:<br />
+<br />
+- State-based hooks.<br />
+- y_hooks.<br />
+- ALS hooks.<br />
+- Public function.<br />
+<br />
+If you need me to explain the issues in more depth, or would like to discuss alternate solutions (I would), feel free to contact me here or on IRC.  This is a VERY brief post on the issue, and I wish there was a better way.  Note that you also need:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">state</span> <span style="color: #000000;">AC_state</span> <span style="color: #000000;">:</span> AC_state2;</div></div></pre>
+</div>
+Somewhere to make the whole thing work, but you could add that to every callback, I just prefer doing it in OnGameModeInit (etc).<br />
+<br />
+Other than that, nice.</div>
+</td>
+</tr>
+</table>
+</div>They already did when they first posted: "- Patches are to be designed to be included BEFORE YSI"
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member13fe.html?action=profile&amp;uid=108398">Admigo</a> -  08.04.2014
+<br />
+<br />
+Very usefull. Good job<img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="memberba0a.html?action=profile&amp;uid=173364">Kyra</a> -  08.04.2014
+<br />
+<br />
+Very usefull post if the community contribute on this post, i think it's important with the massive cheat created.<br />
+<br />
+I don't understand the Autobullet, it's for detect shoot player on slide bug?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  09.04.2014
+<br />
+<br />
+I was reviewing the rapid fire cheat Southclaw and I think it needs to be revised because it doesn't take in account c-bugging at all.<br />
+<br />
+@Edit - It's also probably a good idea to run ammo lock checking first since the rapid fire cheats seem to usually lock ammo it would be easier to bust someone this way as a first line of defense.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member8da4.html?action=profile&amp;uid=217452">MugiwaraNoLuffy</a> -  09.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>[uL]Pottus</strong><br />
+<a href="showthread8d10.html?pid=2984722#pid2984722" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I was reviewing the rapid fire cheat Southclaw and I think it needs to be revised because it doesn't take in account c-bugging at all.<br />
+<br />
+@Edit - It's also probably a good idea to run ammo lock checking first since the rapid fire cheats seem to usually lock ammo it would be easier to bust someone this way as a first line of defense.</div>
+</td>
+</tr>
+</table>
+</div>Every weapon should have its own shooting max rate if you know what I mean.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member435a.html?action=profile&amp;uid=169274">kristo</a> -  13.04.2014
+<br />
+<br />
+Raise the limit of MessagesRecvPerSecond. Me and my friend got kicked by it because we used miniguns.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  13.04.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>kvann</strong><br />
+<a href="showthreadb256-2.html?pid=2990961#pid2990961" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Raise the limit of MessagesRecvPerSecond. Me and my friend got kicked by it because we used miniguns.</div>
+</td>
+</tr>
+</table>
+</div>That check is going to be removed it is obsolete with the new SAMP version.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Southclaw's &amp; Pottus's Anti-cheat patches - <a href="member83b7-2.html?action=profile&amp;uid=217949">SkittlesAreFalling</a> -  14.04.2014
+<br />
+<br />
+Why is this stickied?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

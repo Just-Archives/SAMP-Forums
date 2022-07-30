@@ -1,0 +1,716 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Dialogs include - Adding new styles to SAMP GUI - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="PreviewModelDialog.inc Version: 4.7.2 || Last Updated: 14 October, 2019 This include introduces you to a new dialog style: &quot;DIALOG_STYLE_PREVIEW_MODEL&quot;. A SA-MP looking like dialog with both standard" />
+<link rel="canonical" href="showthread4d8d.html?tid=570213" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread4d8d.html?tid=570213">[Include] Dialogs include - Adding new styles to SAMP GUI</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Dialogs include - Adding new styles to SAMP GUI (<em>/showthread.php?tid=570213</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreada76f.html?tid=570213&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread387a.html?tid=570213&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread4a63.html?tid=570213&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3fad.html?tid=570213&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf598.html?tid=570213&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread5e57.html?tid=570213&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadd8de.html?tid=570213&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread1525.html?tid=570213&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7d3b.html?tid=570213&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadc2e2.html?tid=570213&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread17cb.html?tid=570213&amp;page=12">12</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread6880.html?tid=570213&amp;page=13">13</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadf012.html?tid=570213&amp;page=14">14</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8c84.html?tid=570213&amp;page=15">15</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadfac4.html?tid=570213&amp;page=16">16</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadef3f.html?tid=570213&amp;page=17">17</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+PreviewModelDialog.inc - SAMP looking like dialog for preview models list - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  06.04.2015
+<br />
+<br />
+<div align="center">
+<b><font size="7">PreviewModelDialog.inc</font></b><br />
+<br />
+<font face="Courier New"><font size="5">Version: <font color="OrangeRed">4.7.2</font> || Last Updated: <font color="OrangeRed">14 October, 2019</font></font></font><br />
+</div>
+This include introduces you to a new dialog style: "<b>DIALOG_STYLE_PREVIEW_MODEL</b>". A SA-MP looking like dialog with both standard buttons but with preview models in a list form!<br />
+<br />
+For preview of dialogs, skip down to examples for photos.<br />
+<br />
+<font size="5"><b>Functionality:</b></font><br />
+<ul><li><font face="Courier New"><b>No size limits</b></font><br />
+Because of Pawn-Memory, all listitems are allocated dynamically, that means you can have as many listitems a you want!<br />
+<br/></li>
+<li><font face="Courier New"><b>No pre-allocation of memory</b></font><br />
+The memory for storing player dialog's listitems data is done during run-time, no pre-allocated memory at all! So no big .amx sizes!<br />
+<br/></li>
+<li><font face="Courier New"><b>Big enough preview</b></font><br />
+A fairly large and intractable preview model listitem textdraw/button allowing you to clearly view models! <br />
+<br/></li>
+<li><font face="Courier New"><b>Rotation and Zoom buttons</b></font><br />
+You can rotate Z-angle of each listitem while you are viewing the dialog, this is an in-game feature accessed by the player viewing the dialog.<br />
+<br />
+Similarly, you have another couple buttons for increasing/decreasing model's zoom.<br />
+<br />
+Preview:<br />
+<img alt="" border="0" src="https://i.imgur.com/yfpmx9G.png"/><br />
+<br/></li>
+<li><font face="Courier New"><b>A perfect scroll bar</b></font><br />
+Scrollbar is made of Sprite (<i>LD_SPAC:WHITE</i>) allowing a perfect measurement of length according to page size!<br />
+<br/></li>
+<li><font face="Courier New"><b>GameText codes in listitems</b></font><br />
+Since the dialog is made with pure textdraws, you can use label codes (e.g. <i>~n~</i> - switch line or <i>~r~</i> - red color) in preview model's labeltext.<br />
+<br/></li>
+<li><font face="Courier New"><b>Hooked ShowPlayerDialog</b></font><br />
+Support samp dialog function "ShowPlayerDialog" and you can handle response under "OnDialogResponse". Check the examples for how to use.<br />
+<br/></li>
+<li><font face="Courier New"><b>Adding custom rotation/color</b></font><br />
+You can set each model rotation using a simple string pattern while making the dialog's list.<br />
+<br />
+<u>Example:</u><br />
+We will make a list of 3 cars each set to rotation(0.0, 0.0, -50.0, 1.0). <br />
+Notice: The highlighted bracketed string, that's how you set rotation.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">400<font face="Courier New">(0.0, 0.0, -50.0, 1.0)</font>\tLandstalker\n\
+401<font face="Courier New">(0.0, 0.0, -50.0, 1.0)</font>\tBravura\n\
+402<font face="Courier New">(0.0, 0.0, -50.0, 1.0)</font>\tBuffalo</pre>
+</div><u>Example2:</u><br />
+Here we will only modify the first car with rotation(0.0, 0.0, 0.0, 0.75) and also colors(0, 6).<br />
+Notice: The rest models will have default values for rotation(0.0, 0.0, -45.0, 1.0) and colors(-1, -1).<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">522<font face="Courier New">(0.0, 0.0, 0.0, 0.75, 0, 6)</font>\tNRG-500\n\
+523\tHPV1000\n\
+521\tFCR-900</pre>
+</div><u>Conclusion:</u><br />
+So basically this is the pattern for making listitems:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><b>modelid</b><font face="Courier New">(</font>ROTX, ROTY, ROTZ, ZOOM, COLOR1, COLOR2<font face="Courier New">)</font><b>\t</b>TEXT</pre>
+</div>* CAPS: capital parameters are optional!</li>
+</ul>
+<b><font size="5">Example: Basic ShowPlayerDialog</font></b><br />
+<br />
+A simple skin selection dialog with all samp skins as listitems.<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/qyoC3Gi.png"/><br />
+<br />
+<u>Source:</u><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 402px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">skins</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) {
+<br/>    const </span><span style="color: #0000BB">MAX_SKINS </span><span style="color: #007700">= </span><span style="color: #0000BB">312</span><span style="color: #007700">;
+<br/>    new </span><span style="color: #0000BB">subString</span><span style="color: #007700">[</span><span style="color: #0000BB">16</span><span style="color: #007700">];
+<br/>    static </span><span style="color: #0000BB">string</span><span style="color: #007700">[</span><span style="color: #0000BB">MAX_SKINS </span><span style="color: #007700">* </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">)];
+
+<br/>    if (</span><span style="color: #0000BB">string</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">] == </span><span style="color: #0000BB">EOS</span><span style="color: #007700">) {
+<br/>        for (new </span><span style="color: #0000BB">i</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">MAX_SKINS</span><span style="color: #007700">; </span><span style="color: #0000BB">i</span><span style="color: #007700">++) {
+<br/>            </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">), </span><span style="color: #DD0000">"%i\tID: %i\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">, </span><span style="color: #0000BB">i</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">strcat</span><span style="color: #007700">(</span><span style="color: #0000BB">string</span><span style="color: #007700">, </span><span style="color: #0000BB">subString</span><span style="color: #007700">);
+<br/>        }
+<br/>    }
+
+<br/>    return </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PREVIEW_MODEL</span><span style="color: #007700">, </span><span style="color: #DD0000">"Skin Selection Dialog"</span><span style="color: #007700">, </span><span style="color: #0000BB">string</span><span style="color: #007700">, </span><span style="color: #DD0000">"Select"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Cancel"</span><span style="color: #007700">);
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnDialogResponse</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">dialogid</span><span style="color: #007700">, </span><span style="color: #0000BB">response</span><span style="color: #007700">, </span><span style="color: #0000BB">listitem</span><span style="color: #007700">, </span><span style="color: #0000BB">inputtext</span><span style="color: #007700">[]) {
+<br/>    if (</span><span style="color: #0000BB">dialogid </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) {
+<br/>        if (</span><span style="color: #0000BB">response</span><span style="color: #007700">) {
+<br/>            </span><span style="color: #0000BB">SetPlayerSkin</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">listitem</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">GameTextForPlayer</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #DD0000">"~g~Skin Changed!"</span><span style="color: #007700">, </span><span style="color: #0000BB">3000</span><span style="color: #007700">, </span><span style="color: #0000BB">3</span><span style="color: #007700">);
+<br/>        }
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><b><font size="5">Example: Modified Rotations in ShowPlayerDialog</font></b><br />
+<br />
+A simple weapon shop dialog, you can modify the array, add/delete weapons from it and the dialog shape itself!<br />
+You can also see i used custom rotations for each listitem in this dialog.<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/NY6Lo6y.png"/><br />
+<br />
+<u>Source:</u><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">enum E_WEAPON_SHOP_DATA </span><span style="color: #007700">{
+<br/>    </span><span style="color: #0000BB">WEAPON_MODELID</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">WEAPON_NAME</span><span style="color: #007700">[</span><span style="color: #0000BB">35</span><span style="color: #007700">],
+<br/>    </span><span style="color: #0000BB">WEAPON_PRICE</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">WEAPON_AMMO</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">WEAPON_ID
+<br/></span><span style="color: #007700">};
+
+<br/>new const </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[][</span><span style="color: #0000BB">E_WEAPON_SHOP_DATA</span><span style="color: #007700">] = {
+<br/>    {</span><span style="color: #0000BB">335</span><span style="color: #007700">, </span><span style="color: #DD0000">"Knife"</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_KNIFE</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">341</span><span style="color: #007700">, </span><span style="color: #DD0000">"Chainsaw"</span><span style="color: #007700">, </span><span style="color: #0000BB">1500</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_CHAINSAW</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">342</span><span style="color: #007700">, </span><span style="color: #DD0000">"Grenade"</span><span style="color: #007700">, </span><span style="color: #0000BB">1545</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_GRENADE</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">343</span><span style="color: #007700">, </span><span style="color: #DD0000">"Moltove"</span><span style="color: #007700">, </span><span style="color: #0000BB">1745</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_MOLTOV</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">347</span><span style="color: #007700">, </span><span style="color: #DD0000">"Silenced 9mm"</span><span style="color: #007700">, </span><span style="color: #0000BB">1500</span><span style="color: #007700">, </span><span style="color: #0000BB">150</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SILENCED</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">348</span><span style="color: #007700">, </span><span style="color: #DD0000">"Desert Eagle"</span><span style="color: #007700">, </span><span style="color: #0000BB">3199</span><span style="color: #007700">, </span><span style="color: #0000BB">150</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_DEAGLE</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">350</span><span style="color: #007700">, </span><span style="color: #DD0000">"Sawed Off Shotgun"</span><span style="color: #007700">, </span><span style="color: #0000BB">4999</span><span style="color: #007700">, </span><span style="color: #0000BB">100</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SAWEDOFF</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">351</span><span style="color: #007700">, </span><span style="color: #DD0000">"Spas12 Shotgun"</span><span style="color: #007700">, </span><span style="color: #0000BB">3870</span><span style="color: #007700">, </span><span style="color: #0000BB">100</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SHOTGSPA</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">352</span><span style="color: #007700">, </span><span style="color: #DD0000">"Micro-UZI"</span><span style="color: #007700">, </span><span style="color: #0000BB">3500</span><span style="color: #007700">, </span><span style="color: #0000BB">300</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_UZI</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">353</span><span style="color: #007700">, </span><span style="color: #DD0000">"MP5"</span><span style="color: #007700">, </span><span style="color: #0000BB">2999</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_MP5</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">372</span><span style="color: #007700">, </span><span style="color: #DD0000">"Tec-9"</span><span style="color: #007700">, </span><span style="color: #0000BB">3500</span><span style="color: #007700">, </span><span style="color: #0000BB">300</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_TEC9</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">358</span><span style="color: #007700">, </span><span style="color: #DD0000">"Sniper Rifle"</span><span style="color: #007700">, </span><span style="color: #0000BB">4999</span><span style="color: #007700">, </span><span style="color: #0000BB">50</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SNIPER</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">355</span><span style="color: #007700">, </span><span style="color: #DD0000">"Ak47"</span><span style="color: #007700">, </span><span style="color: #0000BB">2999</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_AK47</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">356</span><span style="color: #007700">, </span><span style="color: #DD0000">"M4"</span><span style="color: #007700">, </span><span style="color: #0000BB">3155</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_M4</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">359</span><span style="color: #007700">, </span><span style="color: #DD0000">"RPG"</span><span style="color: #007700">, </span><span style="color: #0000BB">1999</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_ROCKETLAUNCHER</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">361</span><span style="color: #007700">, </span><span style="color: #DD0000">"Flamethrower"</span><span style="color: #007700">, </span><span style="color: #0000BB">3500</span><span style="color: #007700">, </span><span style="color: #0000BB">350</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_FLAMETHROWER</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">362</span><span style="color: #007700">, </span><span style="color: #DD0000">"Minigun"</span><span style="color: #007700">, </span><span style="color: #0000BB">10000</span><span style="color: #007700">, </span><span style="color: #0000BB">350</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_MINIGUN</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">363</span><span style="color: #007700">, </span><span style="color: #DD0000">"Satchel Charge"</span><span style="color: #007700">, </span><span style="color: #0000BB">1999</span><span style="color: #007700">, </span><span style="color: #0000BB">2</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SATCHEL</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">365</span><span style="color: #007700">, </span><span style="color: #DD0000">"Spray Can"</span><span style="color: #007700">, </span><span style="color: #0000BB">800</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SPRAYCAN</span><span style="color: #007700">},
+<br/>    {</span><span style="color: #0000BB">366</span><span style="color: #007700">, </span><span style="color: #DD0000">"Fire Extinguisher"</span><span style="color: #007700">, </span><span style="color: #0000BB">855</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_FIREEXTINGUISHER</span><span style="color: #007700">}
+<br/>};
+
+<br/></span><span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">weapons</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) {
+<br/>    new </span><span style="color: #0000BB">subString</span><span style="color: #007700">[</span><span style="color: #0000BB">64</span><span style="color: #007700">];
+<br/>    static </span><span style="color: #0000BB">string</span><span style="color: #007700">[</span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">) * </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">)];
+
+<br/>    if (</span><span style="color: #0000BB">string</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">] == </span><span style="color: #0000BB">EOS</span><span style="color: #007700">) {
+<br/>        for (new </span><span style="color: #0000BB">i</span><span style="color: #007700">; </span><span style="color: #0000BB">i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">); </span><span style="color: #0000BB">i</span><span style="color: #007700">++) {
+<br/>            </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">subString</span><span style="color: #007700">), </span><span style="color: #DD0000">"%i(0.0, 0.0, -50.0, 1.5)\t%s~n~~g~~h~&#36;%i\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_MODELID</span><span style="color: #007700">], </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_NAME</span><span style="color: #007700">], </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">i</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_PRICE</span><span style="color: #007700">]);
+<br/>            </span><span style="color: #0000BB">strcat</span><span style="color: #007700">(</span><span style="color: #0000BB">string</span><span style="color: #007700">, </span><span style="color: #0000BB">subString</span><span style="color: #007700">);
+<br/>        }
+<br/>    }
+
+<br/>    return </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PREVIEW_MODEL</span><span style="color: #007700">, </span><span style="color: #DD0000">"Weapon Shop Dialog"</span><span style="color: #007700">, </span><span style="color: #0000BB">string</span><span style="color: #007700">, </span><span style="color: #DD0000">"Purchase"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Cancel"</span><span style="color: #007700">);
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnDialogResponse</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">dialogid</span><span style="color: #007700">, </span><span style="color: #0000BB">response</span><span style="color: #007700">, </span><span style="color: #0000BB">listitem</span><span style="color: #007700">, </span><span style="color: #0000BB">inputtext</span><span style="color: #007700">[]) {
+<br/>    if (</span><span style="color: #0000BB">dialogid </span><span style="color: #007700">== </span><span style="color: #0000BB">1</span><span style="color: #007700">) {
+<br/>        if (</span><span style="color: #0000BB">response</span><span style="color: #007700">) {
+<br/>            if (</span><span style="color: #0000BB">GetPlayerMoney</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">) &lt; </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">listitem</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_PRICE</span><span style="color: #007700">]) {
+<br/>                </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">0xAA0000FF</span><span style="color: #007700">, </span><span style="color: #DD0000">"Not enough money to purchase this gun!"</span><span style="color: #007700">);
+<br/>                return </span><span style="color: #0000BB">cmd_weapons</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">);
+<br/>            }
+<br/>            
+<br/>            </span><span style="color: #0000BB">GivePlayerMoney</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, -</span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">listitem</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_PRICE</span><span style="color: #007700">]);
+<br/>            </span><span style="color: #0000BB">GivePlayerWeapon</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">listitem</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_ID</span><span style="color: #007700">], </span><span style="color: #0000BB">WEAPON_SHOP</span><span style="color: #007700">[</span><span style="color: #0000BB">listitem</span><span style="color: #007700">][</span><span style="color: #0000BB">WEAPON_AMMO</span><span style="color: #007700">]);
+<br/>            
+<br/>            </span><span style="color: #0000BB">GameTextForPlayer</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #DD0000">"~g~Gun Purchased!"</span><span style="color: #007700">, </span><span style="color: #0000BB">3000</span><span style="color: #007700">, </span><span style="color: #0000BB">3</span><span style="color: #007700">);
+<br/>        }
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="5"><b>Download:</b></font><br />
+<br />
+<font size="3"><font face="Courier New">PreviewModelDialog.inc</font></font>: <a href="https://github.com/Agneese-Saini/SA-MP/blob/master/pawno/include/PreviewModelDialog/MemoryPluginVersion.inc" target="_blank">https://github.com/Agneese-Saini/SA-...ginVersion.inc</a><br />
+<br />
+<font size="3"><font face="Courier New">PreviewModelDialog.inc (plugin-free-version)</font></font>: <a href="https://github.com/Agneese-Saini/SA-MP/blob/master/pawno/include/PreviewModelDialog/PluginFreeVersion.inc" target="_blank">https://github.com/Agneese-Saini/SA-...reeVersion.inc</a><br />
+<br />
+If you are using the recommended version i.e. memory plugin version, you'll need to download and install Pawn-Memory plugin, link below.<br />
+<font size="3"><font face="Courier New">pawn-memory.dll/.so</font></font>: <a href="showthread4a0c.html?tid=645166" target="_blank">https://sampforum.blast.hk/showthread.php?tid=645166</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member2f46.html?action=profile&amp;uid=247850">RaeF</a> -  06.04.2015
+<br />
+<br />
+Great job man!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  06.04.2015
+<br />
+<br />
+Thanks^<br />
+<br />
+<u><b>UPDATE R2 - 6th April, 2015</b></u><ul><li>Fixed NEXT and PREVIOUS buttons</li>
+<li>Fixed Selecting bug</li>
+<li>Fixed Buttons configurations</li>
+<li>STABLE Version released!</li>
+</ul>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member3ba5.html?action=profile&amp;uid=238168">Kapersky™</a> -  06.04.2015
+<br />
+<br />
+Nice work! Looks sick! *appreciated*.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member78a2.html?action=profile&amp;uid=234369">R0</a> -  06.04.2015
+<br />
+<br />
+Nice,btw i was working on an include like this to release too.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  08.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>        Dialog_Reset<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Why bother? It's done in OnPlayerDisconnect().<br />
+<br />
+Line 189:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #222222;">format</span><span style="color: #000000;">(</span>gPlayerList<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>E_desc<span style="color: #000000;">]</span>, <span style="color: #000000;">28</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/><span style="color: #228822;">// Do this</span><br/>gPlayerList<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>E_desc<span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">'<span style="color: #000099; font-weight: bold;">\0</span>'</span>;</div></div></pre>
+</div>
+You for got to clean up playerdraws in OnGameModeExit() / OnFilterScriptExit()
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member2f46.html?action=profile&amp;uid=247850">RaeF</a> -  08.04.2015
+<br />
+<br />
+Sorry, but it's look neat
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  08.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthreadc11c-2.html?pid=3425724#pid3425724" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>        Dialog_Reset<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Why bother? It's done in OnPlayerDisconnect().</div>
+</td>
+</tr>
+</table>
+</div>Maybe because my dialog functions don't check if player is connected!<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthreadc11c-2.html?pid=3425724#pid3425724" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Line 189:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #222222;">format</span><span style="color: #000000;">(</span>gPlayerList<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>E_desc<span style="color: #000000;">]</span>, <span style="color: #000000;">28</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/><span style="color: #228822;">// Do this</span><br/>gPlayerList<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>E_desc<span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">'<span style="color: #000099; font-weight: bold;">\0</span>'</span>;</div></div></pre>
+</div>
+You for got to clean up playerdraws in OnGameModeExit() / OnFilterScriptExit()</div>
+</td>
+</tr>
+</table>
+</div>Player textdraws must be cleaned up when player disconnects.<br />
+<br />
+<b><u>R3 - 8th April, 2015</u></b><ul><li>Fixed header disappearing</li>
+<li>Converted 3D array system to 2D array, really affect the file's output size</li>
+<li>Reduced lines, short code!</li>
+<li>NEW DESIGN</li>
+</ul>
+Please download the latest version.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member7310.html?action=profile&amp;uid=173406">Excel™</a> -  08.04.2015
+<br />
+<br />
+Nice job buddy. I will use it!<br />
+<br />
+When will this come out:<br />
+<img alt="" border="0" src="http://i.imgur.com/9c8h16r.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  10.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>******</strong><br />
+<a href="showthreada319.html?pid=3425947#pid3425947" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">They should!  Currently most of those will crash as they don't even check if the player is VALID, let alone connected:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">GetPlayerDialogID<span style="color: #000000;">(</span><span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// Crash</span><br/>Dialog_TotalPages<span style="color: #000000;">(</span>INVALID_PLAYER_ID<span style="color: #000000;">)</span>; <span style="color: #228822;">// Crash</span><br/><span style="color: #228822;">// etc...</span></div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Why would anyone even perform that function on id -1.<br />
+AND, i personally think people have habit to perform such checks like IsPlayerConnected, or maybe a range check... So i didn't bothered to add that! Though now it is done in R4.<br />
+<br />
+All the functions having <b>Dialog_</b> as prefix are internal functions, i don't recommend people to use them!<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>******</strong><br />
+<a href="showthreada319.html?pid=3425947#pid3425947" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> Dialog_TotalPages<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">(</span>gPlayerTotalModels<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;=</span> MODELS_PER_PAGE<span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> <span style="color: #000000;">(</span>gPlayerTotalModels<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">%</span> MODELS_PER_PAGE<span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>                <span style="color: #2222BB;">return</span> <span style="color: #000000;">(</span>gPlayerTotalModels<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">/</span> MODELS_PER_PAGE<span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> <span style="color: #000000;">(</span>gPlayerTotalModels<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">/</span> MODELS_PER_PAGE<span style="color: #000000;">)</span> <span style="color: #000000;">+</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+That is much more simply expressed as:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> Dialog_TotalPages<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">return</span> ceildiv<span style="color: #000000;">(</span>gPlayerTotalModels<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span>, MODELS_PER_PAGE<span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<a href="https://github.com/Y-Less/YSI-Includes/blob/938050884431b70284c93b1f267611f83b9b5afd/YSI_Core/y_utils.inc#L329" target="_blank"><u>ceildiv</u></a><br />
+<br />
+Obviously with adequate connection checks.</div>
+</td>
+</tr>
+</table>
+</div>Thats nice &amp; short.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>******</strong><br />
+<a href="showthreada319.html?pid=3425947#pid3425947" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why are "Dialog_CreateGlobalTD()" and "Dialog_CreateGlobalButtonsTD()" stock and global?  They shouldn't be stock because they are always used (they aren't API functions), and they shouldn't be global because they are purely internal (again, they aren't API functions).</div>
+</td>
+</tr>
+</table>
+</div>Ok, that can be an alternative. <br />
+Why they shouldn't be global, i don't think so you need player textdraws for just a static display.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>******</strong><br />
+<a href="showthreada319.html?pid=3425947#pid3425947" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Also, there are much better ways to hook the init functions now - both in terms of being script type agnostic, and using more modern ALS methods (applicable for your other callbacks too).</div>
+</td>
+</tr>
+</table>
+</div>I don't know those new methods, And their benifits?<br />
+<br />
+<br />
+<b><u>R4 - 10th April, 2015</u></b><ul><li>Add player connection check within the external functions</li>
+<li>Add double click feature for selecting models directly</li>
+<li>More shorter code!</li>
+</ul>
+Please download the latest version.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="memberdbe9.html?action=profile&amp;uid=154111">$$inSane</a> -  15.04.2015
+<br />
+<br />
+Pretty epic, nice one!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member6dd2.html?action=profile&amp;uid=180279">Q_Lite</a> -  16.04.2015
+<br />
+<br />
+Thats awesome, I will surely use this for making few selectable stuff.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member0914.html?action=profile&amp;uid=178884">Qu3esL</a> -  17.04.2015
+<br />
+<br />
+Very nice textdraw work there bro!<br />
+You surely get some rep+!<br />
+<br />
+BTW, what happens when you run the Prevmodel dialog from a gamemode as well as from a filterscript?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  18.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Qu3esL</strong><br />
+<a href="showthread5769.html?pid=3433887#pid3433887" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Very nice textdraw work there bro!<br />
+You surely get some rep+!<br />
+<br />
+BTW, what happens when you run the Prevmodel dialog from a gamemode as well as from a filterscript?</div>
+</td>
+</tr>
+</table>
+</div>I have never tried that but maybe that can cause bugs. Cause the textdraws will be made in both the scripts. I think i must create textdraws only in gamemode(init). So it will become necessary to use the include in gamemode and for compatibility between other scripts, you have to include it in them too.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> -  19.04.2015
+<br />
+<br />
+Hello,<br />
+<br />
+I've got a bug. I tried with 0.3z-R2 and 0.3.7-RC3 (client &amp; server) and this happened.<br />
+<br />
+<a href="http://i.imgur.com/QkmdORv.jpg" target="_blank"><img alt="" border="0" src="http://i.imgur.com/QkmdORvt.jpg"/></a><br />
+<br />
+I used the example script you gave in the initial post with the lastest include release you made.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  19.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ArchB42</strong><br />
+<a href="showthread60c2.html?pid=3435126#pid3435126" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Hello,<br />
+<br />
+I've got a bug. I tried with 0.3z-R2 and 0.3.7-RC3 (client &amp; server) and this happened.<br />
+<br />
+<a href="http://i.imgur.com/QkmdORv.jpg" target="_blank"><img alt="" border="0" src="http://i.imgur.com/QkmdORvt.jpg"/></a><br />
+<br />
+I used the example script you gave in the initial post with the lastest include release you made.</div>
+</td>
+</tr>
+</table>
+</div>Show your code and do you use player textdraws in your scripts?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member090b.html?action=profile&amp;uid=177821">Cassy_</a> -  20.04.2015
+<br />
+<br />
+Its awesome. <br />
+<br />
+Its working fine for me!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member4233.html?action=profile&amp;uid=253512">eXtaz36</a> -  20.04.2015
+<br />
+<br />
+Можно код данного диалога?<br />
+<img alt="" border="0" src="http://i.imgur.com/9c8h16r.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> -  20.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Gammix</strong><br />
+<a href="showthread488f.html?pid=3435186#pid3435186" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Show your code and do you use player textdraws in your scripts?</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ArchB42</strong><br />
+<a href="showthread60c2.html?pid=3435126#pid3435126" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I used the example script you gave in the initial post with the lastest include release you made.</div>
+</td>
+</tr>
+</table>
+</div>I changed nothing in the script, just compiled it with SA-MP 0.3.7 RC3, wasn't working, then with SA-MP 0.3z RC2, wasn't working either. Seems like a texture problem since the blocks you see are the skins with a huge zoom on them.<br />
+<br />
+Maybe I've done something wrong in the process, but as I said, I copy-pasted the example script given in the first post (and used it in a filterscript). I called the filterscript after the server was already launched, I'll try to call it during the launch process to see what happens.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL) - <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> -  20.04.2015
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ArchB42</strong><br />
+<a href="showthreadb9c6.html?pid=3436045#pid3436045" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I changed nothing in the script, just compiled it with SA-MP 0.3.7 RC3, wasn't working, then with SA-MP 0.3z RC2, wasn't working either. Seems like a texture problem since the blocks you see are the skins with a huge zoom on them.<br />
+<br />
+Maybe I've done something wrong in the process, but as I said, I copy-pasted the example script given in the first post (and used it in a filterscript). I called the filterscript after the server was already launched, I'll try to call it during the launch process to see what happens.</div>
+</td>
+</tr>
+</table>
+</div>Strange, it worked fine for me and other users. If you are using this in filterscript, make sure you have defined this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define FILTERSCRIPT</span></div></div></pre>
+</div>at the top of the script.<br />
+<br />
+I'll ask you again, do you use Prevmodel Textdraws in your gamemode or other filterscripts?<br />
+<br />
+And about the model sizes, its default zoom is 0.0, thats why they are appearing like that. Try out <br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetupPrevModelDialog<span style="color: #000000;">(</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>mx, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>my, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>mz, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>mzoom <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, mbgcolor <span style="color: #000000;">=</span> 0x4A5A6BFF, hovercolor <span style="color: #000000;">=</span> 0x8B0000FF, selectcolor <span style="color: #000000;">=</span> 0x8B0000FF<span style="color: #000000;">)</span>;</div></div></pre>
+</div>.<br />
+<br />
+set the mzoom param to 1.0 or whatever you suits.<br />
+<br />
+<br />
+<br />
+<b>EDIT: There will be a new update for the include where the base of dialogs will completely support Player textdraws rather than global textdraws. This will make the system compatible in multi platforms and more efficient.</b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

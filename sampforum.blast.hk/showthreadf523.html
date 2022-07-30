@@ -1,0 +1,1335 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>[Include] Dialogs include - Adding new styles to SAMP GUI</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "7e75d04f4b1b30c5dd772991b90303d9";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="Quote: Originally Posted by LatinZ Lines of problem in the include: return Dialog_OnPlayerClickTextDraw(playerid, _:clickedid); return Dialog_OnPlayerClickPlayerTD(playerid, _layertextid); Sorry, thos" />
+<link rel="canonical" href="showthread4d8d.html?tid=570213" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="7e75d04f4b1b30c5dd772991b90303d9" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb87d.html?fid=83">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadc569-4.html?mode=linear&amp;tid=570213&amp;pid=3472496#pid3472496">Linear Mode</a></span>
+				</div>
+				
+					[Include] Dialogs include - Adding new styles to SAMP GUI
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3472496"></a>
+<div class="post classic " style="" id="post_3472496">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member5756.html?action=profile&amp;uid=249500"><img src="uploads/avatars/249500.png" alt="" width="49" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member5756.html?action=profile&amp;uid=249500">Gammix</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,773<br />
+	Threads: 47<br />
+	Joined: Jan 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationc686.html?uid=249500"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread90c0.html?tid=570213&amp;pid=3472496#pid3472496" title="Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)">#61</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 61 by Gammix" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">29.05.2015, 05:10 <span class="post_edit" id="edited_by_3472496"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3472496">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>LatinZ</strong><br />
+<a href="showthread3813-2.html?pid=3472488#pid3472488" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Lines of problem in the include:<br />
+<br />
+return Dialog_OnPlayerClickTextDraw(playerid, _:clickedid);<br />
+<br />
+return Dialog_OnPlayerClickPlayerTD(playerid, _<img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/>layertextid);</div>
+</td>
+</tr>
+</table>
+</div>Sorry, those errors only occurred when you declared them in your mode. Because of the mismatch i made with <b>_: </b>instead i should have added <b>Text:</b>.<br />
+<br />
+<b><u>Fixed in R5 for both dialogs.inc and dialogs2.inc</u></b>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3472496">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchbaa2.html?action=finduser&amp;uid=249500" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyf2b8.html?tid=570213&amp;replyto=3472496" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadb61a.html?tid=570213&amp;action=nextoldest">Next Oldest</a> | <a href="showthreadb4bf.html?tid=570213&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="570213" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	<!-- start: showthread_threadedbox -->
+<br />
+<div class="tborder">
+
+<div class="thead">Messages In This Thread</div>
+
+
+<div class="trow1"><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 0px;"><a href="showthread2ab7.html?tid=570213&amp;pid=3425028&amp;mode=threaded">PreviewModelDialog.inc - SAMP looking like dialog for preview models list</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 06.04.2015, 06:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread82b3-4.html?tid=570213&amp;pid=3425032&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member2f46.html?action=profile&amp;uid=247850">RaeF</a> - 06.04.2015, 06:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9f02-4.html?tid=570213&amp;pid=3425167&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 06.04.2015, 10:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4675-5.html?tid=570213&amp;pid=3425168&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member3ba5.html?action=profile&amp;uid=238168">Kapersky™</a> - 06.04.2015, 10:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4f4f-3.html?tid=570213&amp;pid=3425171&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member78a2.html?action=profile&amp;uid=234369">R0</a> - 06.04.2015, 10:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread11f6-2.html?tid=570213&amp;pid=3425724&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> - 08.04.2015, 01:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb547-5.html?tid=570213&amp;pid=3425729&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member2f46.html?action=profile&amp;uid=247850">RaeF</a> - 08.04.2015, 01:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade0a0-6.html?tid=570213&amp;pid=3425852&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 08.04.2015, 11:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7090-4.html?tid=570213&amp;pid=3425924&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member7310.html?action=profile&amp;uid=173406">Excel™</a> - 08.04.2015, 12:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8bea-2.html?tid=570213&amp;pid=3426964&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 10.04.2015, 06:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb5b7.html?tid=570213&amp;pid=3431267&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberdbe9.html?action=profile&amp;uid=154111">$$inSane</a> - 15.04.2015, 05:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5eeb-5.html?tid=570213&amp;pid=3432191&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6dd2.html?action=profile&amp;uid=180279">Q_Lite</a> - 16.04.2015, 04:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4c8f-4.html?tid=570213&amp;pid=3433887&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member0914.html?action=profile&amp;uid=178884">Qu3esL</a> - 17.04.2015, 23:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread89b3-3.html?tid=570213&amp;pid=3434006&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 18.04.2015, 02:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread63e5-3.html?tid=570213&amp;pid=3435126&amp;mode=threaded">Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> - 19.04.2015, 08:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf453-3.html?tid=570213&amp;pid=3435186&amp;mode=threaded">Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 19.04.2015, 10:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfc8a-2.html?tid=570213&amp;pid=3436004&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member090b.html?action=profile&amp;uid=177821">Cassy_</a> - 20.04.2015, 05:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread485c-2.html?tid=570213&amp;pid=3436035&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member4233.html?action=profile&amp;uid=253512">eXtaz36</a> - 20.04.2015, 07:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb68a-2.html?tid=570213&amp;pid=3436045&amp;mode=threaded">Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> - 20.04.2015, 09:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9b49-2.html?tid=570213&amp;pid=3436059&amp;mode=threaded">Re: Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 20.04.2015, 09:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread99e5.html?tid=570213&amp;pid=3436347&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member41c3.html?action=profile&amp;uid=242724">Airblog</a> - 20.04.2015, 17:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread13cd-4.html?tid=570213&amp;pid=3436689&amp;mode=threaded">Re: Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member090b.html?action=profile&amp;uid=177821">Cassy_</a> - 21.04.2015, 00:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf19e-5.html?tid=570213&amp;pid=3436828&amp;mode=threaded">Re : Re: Re : Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> - 21.04.2015, 07:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf202-3.html?tid=570213&amp;pid=3436837&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberf12c.html?action=profile&amp;uid=244681">De4dpOol</a> - 21.04.2015, 07:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread80dc-4.html?tid=570213&amp;pid=3436839&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 21.04.2015, 07:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread996a-4.html?tid=570213&amp;pid=3437030&amp;mode=threaded">Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6055.html?action=profile&amp;uid=253170">ArchB42</a> - 21.04.2015, 14:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4bea-4.html?tid=570213&amp;pid=3437089&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membercb1d.html?action=profile&amp;uid=242561">Victory</a> - 21.04.2015, 14:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc4d3-3.html?tid=570213&amp;pid=3437142&amp;mode=threaded">Re: Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> - 21.04.2015, 15:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ee7-3.html?tid=570213&amp;pid=3440430&amp;mode=threaded">Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberf1ce.html?action=profile&amp;uid=111607">DexX39</a> - 25.04.2015, 10:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2d8b-3.html?tid=570213&amp;pid=3463430&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 19.05.2015, 13:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4bee.html?tid=570213&amp;pid=3463441&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 19.05.2015, 14:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd416-3.html?tid=570213&amp;pid=3463467&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 19.05.2015, 14:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadacde-5.html?tid=570213&amp;pid=3463470&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 19.05.2015, 14:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread478d-4.html?tid=570213&amp;pid=3463492&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 19.05.2015, 15:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread62e3-3.html?tid=570213&amp;pid=3463494&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 19.05.2015, 15:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadef53-8.html?tid=570213&amp;pid=3463520&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 19.05.2015, 15:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada498-2.html?tid=570213&amp;pid=3463563&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 19.05.2015, 16:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadffd0-5.html?tid=570213&amp;pid=3463589&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 19.05.2015, 16:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeda4-2.html?tid=570213&amp;pid=3464103&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 20.05.2015, 03:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2dc0-5.html?tid=570213&amp;pid=3464108&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 20.05.2015, 04:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb419.html?tid=570213&amp;pid=3464132&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberf37e.html?action=profile&amp;uid=183218">Excips</a> - 20.05.2015, 05:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread55ba-3.html?tid=570213&amp;pid=3464139&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberaca1.html?action=profile&amp;uid=243888">Neufox</a> - 20.05.2015, 05:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread37aa-5.html?tid=570213&amp;pid=3464226&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 20.05.2015, 09:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4689-5.html?tid=570213&amp;pid=3464524&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member7310.html?action=profile&amp;uid=173406">Excel™</a> - 20.05.2015, 15:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3d2b-2.html?tid=570213&amp;pid=3467727&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6dd2.html?action=profile&amp;uid=180279">Q_Lite</a> - 24.05.2015, 05:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2f7d-3.html?tid=570213&amp;pid=3471897&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 28.05.2015, 14:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5485-3.html?tid=570213&amp;pid=3471904&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member3ba5.html?action=profile&amp;uid=238168">Kapersky™</a> - 28.05.2015, 14:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8a4a-2.html?tid=570213&amp;pid=3471905&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 28.05.2015, 14:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada410-3.html?tid=570213&amp;pid=3471918&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 28.05.2015, 14:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf492-4.html?tid=570213&amp;pid=3471932&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 28.05.2015, 14:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread55bf.html?tid=570213&amp;pid=3471943&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 28.05.2015, 15:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3155-4.html?tid=570213&amp;pid=3472140&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member101c.html?action=profile&amp;uid=191628">DanLore</a> - 28.05.2015, 18:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4158.html?tid=570213&amp;pid=3472149&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member78ed.html?action=profile&amp;uid=149753">Konstantinos</a> - 28.05.2015, 18:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1a21-4.html?tid=570213&amp;pid=3472157&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member101c.html?action=profile&amp;uid=191628">DanLore</a> - 28.05.2015, 18:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade1e7-5.html?tid=570213&amp;pid=3472162&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member78ed.html?action=profile&amp;uid=149753">Konstantinos</a> - 28.05.2015, 18:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbc63-3.html?tid=570213&amp;pid=3472180&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 28.05.2015, 19:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeeaa-7.html?tid=570213&amp;pid=3472433&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.05.2015, 01:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4003-4.html?tid=570213&amp;pid=3472480&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 29.05.2015, 04:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread505d.html?tid=570213&amp;pid=3472483&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.05.2015, 04:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1bae-5.html?tid=570213&amp;pid=3472488&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 29.05.2015, 04:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bitactive -->
+<div style="margin-left: 13px;"><strong>Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</strong> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.05.2015, 05:10</span></div>
+<!-- end: showthread_threaded_bitactive --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade15a-2.html?tid=570213&amp;pid=3472502&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 29.05.2015, 05:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddfce-4.html?tid=570213&amp;pid=3472605&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 29.05.2015, 10:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bb1-2.html?tid=570213&amp;pid=3472647&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.05.2015, 11:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread44aa-3.html?tid=570213&amp;pid=3472676&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 29.05.2015, 12:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadae9c-3.html?tid=570213&amp;pid=3472678&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.05.2015, 12:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread261c.html?tid=570213&amp;pid=3472690&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberd963.html?action=profile&amp;uid=163559">iWhite</a> - 29.05.2015, 13:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1be8-3.html?tid=570213&amp;pid=3473090&amp;mode=threaded">Re : Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member8fe9.html?action=profile&amp;uid=217708">AlexBlack</a> - 29.05.2015, 20:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7db9.html?tid=570213&amp;pid=3473321&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 30.05.2015, 02:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0cd-2.html?tid=570213&amp;pid=3473330&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 30.05.2015, 02:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7a26-2.html?tid=570213&amp;pid=3473360&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 30.05.2015, 03:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8873-2.html?tid=570213&amp;pid=3473849&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> - 30.05.2015, 14:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread90d3-3.html?tid=570213&amp;pid=3474453&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 30.05.2015, 22:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf790-3.html?tid=570213&amp;pid=3474574&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 31.05.2015, 02:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada51f-3.html?tid=570213&amp;pid=3474577&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 31.05.2015, 03:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread60d6-3.html?tid=570213&amp;pid=3489752&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberdd1a.html?action=profile&amp;uid=254696">ExTaZZ69</a> - 14.06.2015, 08:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0f29-4.html?tid=570213&amp;pid=3489771&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 14.06.2015, 09:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9345-2.html?tid=570213&amp;pid=3492267&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membercc40.html?action=profile&amp;uid=260064">b3nz</a> - 16.06.2015, 19:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ae6-2.html?tid=570213&amp;pid=3492584&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 17.06.2015, 04:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf401-2.html?tid=570213&amp;pid=3503171&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.06.2015, 12:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3e78-3.html?tid=570213&amp;pid=3503175&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member56a7.html?action=profile&amp;uid=225565">LazyB0y</a> - 27.06.2015, 12:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6a84-2.html?tid=570213&amp;pid=3503222&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberaca1.html?action=profile&amp;uid=243888">Neufox</a> - 27.06.2015, 13:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6905-3.html?tid=570213&amp;pid=3503521&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 27.06.2015, 18:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade387-3.html?tid=570213&amp;pid=3503785&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member19c5.html?action=profile&amp;uid=220982">Su37Erich</a> - 27.06.2015, 22:42</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd3a2-4.html?tid=570213&amp;pid=3503840&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 27.06.2015, 23:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbf5b-2.html?tid=570213&amp;pid=3504087&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 28.06.2015, 04:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread16ca.html?tid=570213&amp;pid=3511470&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member70f5.html?action=profile&amp;uid=193948">hussinhfny</a> - 05.07.2015, 19:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb169-3.html?tid=570213&amp;pid=3511865&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 06.07.2015, 09:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9f53-2.html?tid=570213&amp;pid=3512025&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberad7e.html?action=profile&amp;uid=141587">liquor</a> - 06.07.2015, 12:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread093c-5.html?tid=570213&amp;pid=3512036&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 06.07.2015, 12:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0f8-4.html?tid=570213&amp;pid=3512166&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member435a.html?action=profile&amp;uid=169274">kristo</a> - 06.07.2015, 14:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread15af-7.html?tid=570213&amp;pid=3516423&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membere05a.html?action=profile&amp;uid=250673">hamzajaved780</a> - 10.07.2015, 16:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread35be-3.html?tid=570213&amp;pid=3516453&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 10.07.2015, 16:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada40c-2.html?tid=570213&amp;pid=3517392&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membere05a.html?action=profile&amp;uid=250673">hamzajaved780</a> - 11.07.2015, 15:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread58ca-2.html?tid=570213&amp;pid=3518035&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberb4d0.html?action=profile&amp;uid=235424">TheRaGeLord</a> - 12.07.2015, 03:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade9ad-2.html?tid=570213&amp;pid=3518069&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.07.2015, 04:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadace6-5.html?tid=570213&amp;pid=3518413&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membere05a.html?action=profile&amp;uid=250673">hamzajaved780</a> - 12.07.2015, 13:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread39e6-3.html?tid=570213&amp;pid=3521110&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 14.07.2015, 23:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread78f8-4.html?tid=570213&amp;pid=3522492&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 16.07.2015, 02:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6e46-2.html?tid=570213&amp;pid=3522838&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 16.07.2015, 14:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadecc0-3.html?tid=570213&amp;pid=3529058&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membercd4a.html?action=profile&amp;uid=152224">Onfroi</a> - 22.07.2015, 21:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c30-2.html?tid=570213&amp;pid=3529569&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.07.2015, 09:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1f29-3.html?tid=570213&amp;pid=3530049&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membercd4a.html?action=profile&amp;uid=152224">Onfroi</a> - 23.07.2015, 17:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4f90-4.html?tid=570213&amp;pid=3573800&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member4d85.html?action=profile&amp;uid=220781">SickAttack</a> - 11.09.2015, 04:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread314e-3.html?tid=570213&amp;pid=3573818&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 11.09.2015, 04:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaeaf-3.html?tid=570213&amp;pid=3573914&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="member56a7.html?action=profile&amp;uid=225565">LazyB0y</a> - 11.09.2015, 08:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf2f8-3.html?tid=570213&amp;pid=3573920&amp;mode=threaded">Re: Dialogs Include (new dialog functions and DIALOG_STYLE_PREVMODEL)</a> <span class="smalltext">- by <a href="membere72f.html?action=profile&amp;uid=235955">Ritzy2K</a> - 11.09.2015, 09:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7a34-5.html?tid=570213&amp;pid=3577207&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.09.2015, 04:32</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread46e1-2.html?tid=570213&amp;pid=3577211&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 15.09.2015, 04:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9c6e-4.html?tid=570213&amp;pid=3577213&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.09.2015, 05:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread36a3-2.html?tid=570213&amp;pid=3577214&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member83b7-2.html?action=profile&amp;uid=217949">SkittlesAreFalling</a> - 15.09.2015, 05:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada51a-2.html?tid=570213&amp;pid=3579965&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 19.09.2015, 07:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread540d.html?tid=570213&amp;pid=3580448&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 19.09.2015, 19:18</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread031c-3.html?tid=570213&amp;pid=3580793&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 20.09.2015, 06:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfc7c-3.html?tid=570213&amp;pid=3583059&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member10e8.html?action=profile&amp;uid=219121">Karolukas123</a> - 23.09.2015, 07:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc1fa-3.html?tid=570213&amp;pid=3583064&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member4ba3.html?action=profile&amp;uid=240708">J0sh...</a> - 23.09.2015, 08:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread71de-7.html?tid=570213&amp;pid=3583362&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member10e8.html?action=profile&amp;uid=219121">Karolukas123</a> - 23.09.2015, 18:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2bbd-2.html?tid=570213&amp;pid=3583564&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 24.09.2015, 01:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread772e-2.html?tid=570213&amp;pid=3608139&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 03.11.2015, 22:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread10cc-4.html?tid=570213&amp;pid=3608248&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 04.11.2015, 07:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadca8f.html?tid=570213&amp;pid=3610794&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 08.11.2015, 13:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada2b2-7.html?tid=570213&amp;pid=3611068&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberba36.html?action=profile&amp;uid=250020">Yarik1995</a> - 08.11.2015, 20:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2ae9-5.html?tid=570213&amp;pid=3614598&amp;mode=threaded">Re: Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.11.2015, 02:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread82f7.html?tid=570213&amp;pid=3617642&amp;mode=threaded">Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member2c65.html?action=profile&amp;uid=235050">Minikole</a> - 21.11.2015, 19:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3ab8-3.html?tid=570213&amp;pid=3617699&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member24a3.html?action=profile&amp;uid=116269">Eloctro</a> - 21.11.2015, 21:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0b12-4.html?tid=570213&amp;pid=3617792&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 22.11.2015, 02:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaddebd-4.html?tid=570213&amp;pid=3618040&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1e10.html?action=profile&amp;uid=208276">Sioux</a> - 22.11.2015, 14:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8348-3.html?tid=570213&amp;pid=3618216&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.11.2015, 00:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7900-3.html?tid=570213&amp;pid=3618289&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberaa04.html?action=profile&amp;uid=264881">malikmna</a> - 23.11.2015, 07:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9df3.html?tid=570213&amp;pid=3618362&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 23.11.2015, 12:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6131-2.html?tid=570213&amp;pid=3618372&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.11.2015, 13:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4594.html?tid=570213&amp;pid=3618463&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member24a3.html?action=profile&amp;uid=116269">Eloctro</a> - 23.11.2015, 17:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5a72-3.html?tid=570213&amp;pid=3621302&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member4d07.html?action=profile&amp;uid=215954">Carper</a> - 30.11.2015, 13:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6150-4.html?tid=570213&amp;pid=3625089&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd640.html?action=profile&amp;uid=229761">vegaltasendai</a> - 09.12.2015, 19:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3631-5.html?tid=570213&amp;pid=3625122&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> - 09.12.2015, 21:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadee59-2.html?tid=570213&amp;pid=3625849&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdd1a.html?action=profile&amp;uid=254696">ExTaZZ69</a> - 11.12.2015, 13:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeb69-4.html?tid=570213&amp;pid=3625878&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 11.12.2015, 13:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3666-3.html?tid=570213&amp;pid=3625891&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 11.12.2015, 14:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bd0-3.html?tid=570213&amp;pid=3625933&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> - 11.12.2015, 15:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread560d-3.html?tid=570213&amp;pid=3626126&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.12.2015, 01:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread87a8-5.html?tid=570213&amp;pid=3636570&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member181d.html?action=profile&amp;uid=233562">TakeiT</a> - 05.01.2016, 00:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf066-3.html?tid=570213&amp;pid=3636581&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 05.01.2016, 01:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ce8-3.html?tid=570213&amp;pid=3677304&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberad8c.html?action=profile&amp;uid=197022">OstGot</a> - 27.03.2016, 17:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4927-2.html?tid=570213&amp;pid=3677311&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.03.2016, 17:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread71b5-2.html?tid=570213&amp;pid=3677330&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member4ccc.html?action=profile&amp;uid=165533">Sanady</a> - 27.03.2016, 18:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread793f-3.html?tid=570213&amp;pid=3677340&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.03.2016, 18:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5055-4.html?tid=570213&amp;pid=3723777&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 26.06.2016, 16:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1532-2.html?tid=570213&amp;pid=3730198&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9a91.html?action=profile&amp;uid=204586">maraz1987</a> - 07.07.2016, 20:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaafc-2.html?tid=570213&amp;pid=3730230&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 07.07.2016, 21:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread15f2-5.html?tid=570213&amp;pid=3730241&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 07.07.2016, 21:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc6b9-6.html?tid=570213&amp;pid=3730264&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9a91.html?action=profile&amp;uid=204586">maraz1987</a> - 07.07.2016, 23:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread60a5-2.html?tid=570213&amp;pid=3730265&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 08.07.2016, 00:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd6a4.html?tid=570213&amp;pid=3730266&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9a91.html?action=profile&amp;uid=204586">maraz1987</a> - 08.07.2016, 00:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4a7c.html?tid=570213&amp;pid=3730269&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 08.07.2016, 00:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread145f-2.html?tid=570213&amp;pid=3730271&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9a91.html?action=profile&amp;uid=204586">maraz1987</a> - 08.07.2016, 00:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread94b5-4.html?tid=570213&amp;pid=3730352&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 08.07.2016, 06:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadace5-3.html?tid=570213&amp;pid=3730593&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9a91.html?action=profile&amp;uid=204586">maraz1987</a> - 08.07.2016, 16:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc081-3.html?tid=570213&amp;pid=3730596&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 08.07.2016, 16:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0efa-3.html?tid=570213&amp;pid=3751296&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membera3f1.html?action=profile&amp;uid=232033">Jensenn</a> - 11.08.2016, 17:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf733-3.html?tid=570213&amp;pid=3751395&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> - 11.08.2016, 21:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9713-3.html?tid=570213&amp;pid=3751683&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member69fe.html?action=profile&amp;uid=283435">TheBigFive</a> - 12.08.2016, 14:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2a14-3.html?tid=570213&amp;pid=3751685&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.08.2016, 15:08</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0a7e-2.html?tid=570213&amp;pid=3751810&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere031.html?action=profile&amp;uid=273648">Shinja</a> - 12.08.2016, 20:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread70ca.html?tid=570213&amp;pid=3751812&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.08.2016, 20:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread52b7-5.html?tid=570213&amp;pid=3751998&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 13.08.2016, 12:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0a89-4.html?tid=570213&amp;pid=3752118&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 13.08.2016, 16:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread33c5.html?tid=570213&amp;pid=3752151&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 13.08.2016, 17:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade15b-4.html?tid=570213&amp;pid=3752211&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member69fe.html?action=profile&amp;uid=283435">TheBigFive</a> - 13.08.2016, 19:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadea9c-3.html?tid=570213&amp;pid=3773358&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> - 27.09.2016, 19:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcd8a-2.html?tid=570213&amp;pid=3773453&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.09.2016, 23:03</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0098-4.html?tid=570213&amp;pid=3773457&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1708.html?action=profile&amp;uid=184410">PT</a> - 27.09.2016, 23:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfcd5-2.html?tid=570213&amp;pid=3773460&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.09.2016, 23:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6002-2.html?tid=570213&amp;pid=3773498&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> - 28.09.2016, 04:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadacce-2.html?tid=570213&amp;pid=3773511&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 28.09.2016, 05:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5399-4.html?tid=570213&amp;pid=3773541&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> - 28.09.2016, 09:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade439-4.html?tid=570213&amp;pid=3773603&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member37b3.html?action=profile&amp;uid=238036">Dutheil</a> - 28.09.2016, 12:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread07a4-3.html?tid=570213&amp;pid=3774038&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere33c-2.html?action=profile&amp;uid=76375">godless_phoenix</a> - 29.09.2016, 14:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread05f1-2.html?tid=570213&amp;pid=3776218&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberfa80.html?action=profile&amp;uid=240970">OneHitWonder</a> - 04.10.2016, 06:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4395-2.html?tid=570213&amp;pid=3778815&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member00f3.html?action=profile&amp;uid=284536">iamjems</a> - 08.10.2016, 23:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf49a-7.html?tid=570213&amp;pid=3808502&amp;mode=threaded">Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member073d.html?action=profile&amp;uid=280655">HidroDF</a> - 02.12.2016, 19:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd63a-3.html?tid=570213&amp;pid=3808529&amp;mode=threaded">Re: Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 02.12.2016, 21:07</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf9d8-3.html?tid=570213&amp;pid=3808530&amp;mode=threaded">Respuesta: Re: Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member073d.html?action=profile&amp;uid=280655">HidroDF</a> - 02.12.2016, 21:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc8ca-6.html?tid=570213&amp;pid=3811458&amp;mode=threaded">Re: Respuesta: Re: Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 10.12.2016, 00:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbfa8-4.html?tid=570213&amp;pid=3812040&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 11.12.2016, 14:20</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf44a-2.html?tid=570213&amp;pid=3812056&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 11.12.2016, 15:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1193-3.html?tid=570213&amp;pid=3812057&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 11.12.2016, 15:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5617-4.html?tid=570213&amp;pid=3840313&amp;mode=threaded">Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9117-2.html?action=profile&amp;uid=69501">lDarkeen</a> - 05.02.2017, 22:35</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0ef0-2.html?tid=570213&amp;pid=3840355&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member2209.html?action=profile&amp;uid=287764">CantBeJohn</a> - 06.02.2017, 01:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1721-2.html?tid=570213&amp;pid=3860106&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.03.2017, 00:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1817-3.html?tid=570213&amp;pid=3860112&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd57b-2.html?action=profile&amp;uid=295258">Imbalo</a> - 25.03.2017, 01:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9997-5.html?tid=570213&amp;pid=3860113&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.03.2017, 01:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf776-3.html?tid=570213&amp;pid=3860114&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd57b-2.html?action=profile&amp;uid=295258">Imbalo</a> - 25.03.2017, 01:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd6b7-2.html?tid=570213&amp;pid=3860115&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.03.2017, 01:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7de3-2.html?tid=570213&amp;pid=3860116&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd57b-2.html?action=profile&amp;uid=295258">Imbalo</a> - 25.03.2017, 01:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5261-2.html?tid=570213&amp;pid=3860119&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.03.2017, 02:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread270c.html?tid=570213&amp;pid=3860124&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd57b-2.html?action=profile&amp;uid=295258">Imbalo</a> - 25.03.2017, 02:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb20b-3.html?tid=570213&amp;pid=3860130&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd57b-2.html?action=profile&amp;uid=295258">Imbalo</a> - 25.03.2017, 03:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaa72-3.html?tid=570213&amp;pid=3861727&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7341-2.html?action=profile&amp;uid=239469">Sparkie</a> - 29.03.2017, 12:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8352-6.html?tid=570213&amp;pid=3861859&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.03.2017, 18:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd8f6-2.html?tid=570213&amp;pid=3867927&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 13.04.2017, 14:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread16da-4.html?tid=570213&amp;pid=3867962&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 13.04.2017, 16:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf5b0-2.html?tid=570213&amp;pid=3867964&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 13.04.2017, 16:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread32ba-3.html?tid=570213&amp;pid=3867967&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 13.04.2017, 16:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada26a-2.html?tid=570213&amp;pid=3874182&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 29.04.2017, 11:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcb32-5.html?tid=570213&amp;pid=3874195&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdc2c.html?action=profile&amp;uid=292250">crukk11</a> - 29.04.2017, 12:25</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1da1-3.html?tid=570213&amp;pid=3890954&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberbbb6.html?action=profile&amp;uid=244073">Juand</a> - 15.06.2017, 02:41</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6899-5.html?tid=570213&amp;pid=3891013&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.06.2017, 08:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread697c-2.html?tid=570213&amp;pid=3893505&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member33b0.html?action=profile&amp;uid=127071">Hansrutger</a> - 22.06.2017, 23:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf792-2.html?tid=570213&amp;pid=3902994&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member6864.html?action=profile&amp;uid=274629">Shaheen</a> - 17.07.2017, 16:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5a88-2.html?tid=570213&amp;pid=3903004&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 17.07.2017, 16:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfc7e-3.html?tid=570213&amp;pid=3909160&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 01.08.2017, 19:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9bd0-2.html?tid=570213&amp;pid=3909162&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1823.html?action=profile&amp;uid=296701">iLearner</a> - 01.08.2017, 19:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread285b-4.html?tid=570213&amp;pid=3909164&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 01.08.2017, 19:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf606-5.html?tid=570213&amp;pid=3909276&amp;mode=threaded">Re: Respuesta: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 02.08.2017, 03:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4118-4.html?tid=570213&amp;pid=3909692&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 03.08.2017, 06:45</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread52b1-6.html?tid=570213&amp;pid=3912952&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> - 11.08.2017, 15:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada669-2.html?tid=570213&amp;pid=3912988&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 11.08.2017, 17:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb66b-3.html?tid=570213&amp;pid=3913120&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.08.2017, 01:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread665c-2.html?tid=570213&amp;pid=3913146&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 12.08.2017, 03:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread843a-7.html?tid=570213&amp;pid=3913150&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 12.08.2017, 03:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2ac0-3.html?tid=570213&amp;pid=3913160&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.08.2017, 04:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf70c-4.html?tid=570213&amp;pid=3913168&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 12.08.2017, 05:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread964f-5.html?tid=570213&amp;pid=3913603&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 13.08.2017, 04:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4480-3.html?tid=570213&amp;pid=3913671&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd04f.html?action=profile&amp;uid=293379">Debjit</a> - 13.08.2017, 09:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread551c-2.html?tid=570213&amp;pid=3929364&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member0af5.html?action=profile&amp;uid=274689">oMa37</a> - 15.09.2017, 13:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7752-3.html?tid=570213&amp;pid=3929365&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> - 15.09.2017, 13:21</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1e77-4.html?tid=570213&amp;pid=3929389&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.09.2017, 14:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8f3a-3.html?tid=570213&amp;pid=3929417&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member0af5.html?action=profile&amp;uid=274689">oMa37</a> - 15.09.2017, 15:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread77e1-7.html?tid=570213&amp;pid=3929584&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere265.html?action=profile&amp;uid=162246">hottabych1607</a> - 15.09.2017, 19:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9a3f-3.html?tid=570213&amp;pid=3929588&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.09.2017, 19:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadbec8-3.html?tid=570213&amp;pid=3929591&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere265.html?action=profile&amp;uid=162246">hottabych1607</a> - 15.09.2017, 20:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread788c-4.html?tid=570213&amp;pid=3929610&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 15.09.2017, 20:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9ceb-2.html?tid=570213&amp;pid=3932514&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1a0d.html?action=profile&amp;uid=249268">Fungi</a> - 21.09.2017, 00:15</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1772-2.html?tid=570213&amp;pid=3933044&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1a0d.html?action=profile&amp;uid=249268">Fungi</a> - 21.09.2017, 20:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread490d-3.html?tid=570213&amp;pid=3933153&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 22.09.2017, 04:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada2cf.html?tid=570213&amp;pid=3946317&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.10.2017, 06:47</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade65d-3.html?tid=570213&amp;pid=3946338&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5b8a.html?action=profile&amp;uid=306441">GamezCEO</a> - 25.10.2017, 09:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5112-4.html?tid=570213&amp;pid=3946344&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> - 25.10.2017, 10:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadea43.html?tid=570213&amp;pid=3954482&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member824f.html?action=profile&amp;uid=205283">grymtn</a> - 12.11.2017, 16:50</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd530.html?tid=570213&amp;pid=3954507&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.11.2017, 17:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3a0d.html?tid=570213&amp;pid=3954528&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member824f.html?action=profile&amp;uid=205283">grymtn</a> - 12.11.2017, 18:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread46ca-5.html?tid=570213&amp;pid=3954644&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.11.2017, 21:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread400f-4.html?tid=570213&amp;pid=3954674&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member824f.html?action=profile&amp;uid=205283">grymtn</a> - 12.11.2017, 21:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf07d-2.html?tid=570213&amp;pid=3990652&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member0de2.html?action=profile&amp;uid=310379">dani18</a> - 09.02.2018, 17:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread36a7-3.html?tid=570213&amp;pid=3990702&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member916a-2.html?action=profile&amp;uid=288864">StRaphael</a> - 09.02.2018, 18:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade842-4.html?tid=570213&amp;pid=3990822&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd4bf.html?action=profile&amp;uid=304289">webby</a> - 10.02.2018, 00:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb306.html?tid=570213&amp;pid=3992766&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberef4a.html?action=profile&amp;uid=296864">Adiiti</a> - 14.02.2018, 20:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1dc4-4.html?tid=570213&amp;pid=3992811&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 14.02.2018, 23:40</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadeae4-3.html?tid=570213&amp;pid=3995921&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member583a.html?action=profile&amp;uid=301690">Nokia17Rocks</a> - 22.02.2018, 00:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcf1a.html?tid=570213&amp;pid=3996162&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9ee2-2.html?action=profile&amp;uid=284981">Koblic</a> - 22.02.2018, 19:24</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc7ba-5.html?tid=570213&amp;pid=3997639&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.02.2018, 03:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada66a-3.html?tid=570213&amp;pid=3997643&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere94c.html?action=profile&amp;uid=224659">AroseKhanNiazi</a> - 27.02.2018, 03:26</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6723-4.html?tid=570213&amp;pid=3997649&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.02.2018, 04:06</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2aa5-3.html?tid=570213&amp;pid=4000889&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberbdde.html?action=profile&amp;uid=293871">JecOffice</a> - 08.03.2018, 05:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb901-4.html?tid=570213&amp;pid=4001757&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member57a1.html?action=profile&amp;uid=141762">dannypanda05</a> - 10.03.2018, 19:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd824-3.html?tid=570213&amp;pid=4001778&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 10.03.2018, 20:30</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1850-7.html?tid=570213&amp;pid=4001784&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member9ab8.html?action=profile&amp;uid=134882">BGTrucker</a> - 10.03.2018, 21:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2e3c-2.html?tid=570213&amp;pid=4001796&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member57a1.html?action=profile&amp;uid=141762">dannypanda05</a> - 10.03.2018, 21:28</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3dd7-2.html?tid=570213&amp;pid=4002187&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 11.03.2018, 22:34</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1c1f-4.html?tid=570213&amp;pid=4002206&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member57a1.html?action=profile&amp;uid=141762">dannypanda05</a> - 12.03.2018, 00:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade7d3-4.html?tid=570213&amp;pid=4002261&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member6f6b.html?action=profile&amp;uid=268322">iKarim</a> - 12.03.2018, 08:10</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade5cb-4.html?tid=570213&amp;pid=4002320&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 12.03.2018, 13:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb23e-3.html?tid=570213&amp;pid=4002431&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 12.03.2018, 20:12</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3a73-4.html?tid=570213&amp;pid=4002506&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member6f6b.html?action=profile&amp;uid=268322">iKarim</a> - 13.03.2018, 05:56</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread8328-3.html?tid=570213&amp;pid=4005839&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 23.03.2018, 18:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread903e-5.html?tid=570213&amp;pid=4005843&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.03.2018, 18:29</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9167.html?tid=570213&amp;pid=4005862&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 23.03.2018, 20:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2c62-7.html?tid=570213&amp;pid=4005888&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.03.2018, 21:39</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread310d-3.html?tid=570213&amp;pid=4005973&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member946a.html?action=profile&amp;uid=171517">Locky_</a> - 24.03.2018, 11:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadef5c-4.html?tid=570213&amp;pid=4006098&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 24.03.2018, 16:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada4df-2.html?tid=570213&amp;pid=4006232&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 25.03.2018, 01:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread52dd-4.html?tid=570213&amp;pid=4006245&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> - 25.03.2018, 02:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadcaf4-6.html?tid=570213&amp;pid=4006711&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5091.html?action=profile&amp;uid=296080">Lucas0303</a> - 26.03.2018, 17:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3b13-2.html?tid=570213&amp;pid=4006713&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberb567.html?action=profile&amp;uid=204784">F1N4L</a> - 26.03.2018, 17:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb89e.html?tid=570213&amp;pid=4006732&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 26.03.2018, 18:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf0d1-3.html?tid=570213&amp;pid=4007082&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.03.2018, 19:38</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread7bb8-2.html?tid=570213&amp;pid=4007091&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 27.03.2018, 20:17</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf514.html?tid=570213&amp;pid=4007097&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.03.2018, 20:49</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread731e-2.html?tid=570213&amp;pid=4007114&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberf62b.html?action=profile&amp;uid=206521">Romz</a> - 27.03.2018, 21:23</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfb5c.html?tid=570213&amp;pid=4007116&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 27.03.2018, 21:33</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada211-3.html?tid=570213&amp;pid=4007750&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 30.03.2018, 04:01</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread223c-5.html?tid=570213&amp;pid=4007817&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member84d8.html?action=profile&amp;uid=84376">BigETI</a> - 30.03.2018, 12:31</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread82ff-5.html?tid=570213&amp;pid=4007899&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 30.03.2018, 15:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3b89-3.html?tid=570213&amp;pid=4033286&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member8992.html?action=profile&amp;uid=202420">Dignity</a> - 30.06.2018, 22:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf0fe-2.html?tid=570213&amp;pid=4040202&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7b38.html?action=profile&amp;uid=275898">MRM</a> - 28.07.2018, 10:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb0dd-2.html?tid=570213&amp;pid=4040397&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 29.07.2018, 00:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread47a9-4.html?tid=570213&amp;pid=4040520&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7b38.html?action=profile&amp;uid=275898">MRM</a> - 29.07.2018, 15:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0622.html?tid=570213&amp;pid=4042777&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 06.08.2018, 17:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0d5d-4.html?tid=570213&amp;pid=4042946&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 07.08.2018, 02:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc0b8-6.html?tid=570213&amp;pid=4043104&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member22d6.html?action=profile&amp;uid=315452">Verc</a> - 07.08.2018, 15:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread94d4-3.html?tid=570213&amp;pid=4043151&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7b38.html?action=profile&amp;uid=275898">MRM</a> - 07.08.2018, 18:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada265-2.html?tid=570213&amp;pid=4043160&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 07.08.2018, 18:55</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreaded18-2.html?tid=570213&amp;pid=4043166&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member84d8.html?action=profile&amp;uid=84376">BigETI</a> - 07.08.2018, 19:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd85b-4.html?tid=570213&amp;pid=4047312&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member2209.html?action=profile&amp;uid=287764">CantBeJohn</a> - 27.08.2018, 01:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf11d-3.html?tid=570213&amp;pid=4070819&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member84d8.html?action=profile&amp;uid=84376">BigETI</a> - 12.12.2018, 04:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread040d-3.html?tid=570213&amp;pid=4072220&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberb1b1.html?action=profile&amp;uid=105057">neropic</a> - 20.12.2018, 04:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread063a-2.html?tid=570213&amp;pid=4072444&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd4a0.html?action=profile&amp;uid=280807">tuantruoq</a> - 21.12.2018, 04:48</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9d84-2.html?tid=570213&amp;pid=4072446&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member3abb.html?action=profile&amp;uid=325433">qanddstairs</a> - 21.12.2018, 05:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadb397-4.html?tid=570213&amp;pid=4072590&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere69b.html?action=profile&amp;uid=247206">Stefhan</a> - 21.12.2018, 21:46</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread057d-3.html?tid=570213&amp;pid=4073737&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 26.12.2018, 19:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread1603-3.html?tid=570213&amp;pid=4076245&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member1d10.html?action=profile&amp;uid=310564">Awakend</a> - 08.01.2019, 16:13</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread803f-5.html?tid=570213&amp;pid=4076471&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 10.01.2019, 05:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd5f3.html?tid=570213&amp;pid=4084159&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member12e7.html?action=profile&amp;uid=312940">CherryMond</a> - 18.02.2019, 09:02</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada0ff-6.html?tid=570213&amp;pid=4084441&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberb30f.html?action=profile&amp;uid=181467">Value18</a> - 19.02.2019, 16:57</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadac72-4.html?tid=570213&amp;pid=4085057&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member12e7.html?action=profile&amp;uid=312940">CherryMond</a> - 21.02.2019, 21:00</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread58a2-2.html?tid=570213&amp;pid=4085389&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member29c3.html?action=profile&amp;uid=320890">Tavbe</a> - 23.02.2019, 16:51</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreada8b3-4.html?tid=570213&amp;pid=4085390&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member29c3.html?action=profile&amp;uid=320890">Tavbe</a> - 23.02.2019, 16:54</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread0452-4.html?tid=570213&amp;pid=4085434&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 23.02.2019, 20:37</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreade6fc-2.html?tid=570213&amp;pid=4085633&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberb30f.html?action=profile&amp;uid=181467">Value18</a> - 24.02.2019, 20:04</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread83d4.html?tid=570213&amp;pid=4087718&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberc0b8.html?action=profile&amp;uid=321660">PoniStar</a> - 07.03.2019, 21:09</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadfaef-5.html?tid=570213&amp;pid=4087719&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberc0b8.html?action=profile&amp;uid=321660">PoniStar</a> - 07.03.2019, 21:11</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd089-4.html?tid=570213&amp;pid=4087824&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberc0b8.html?action=profile&amp;uid=321660">PoniStar</a> - 08.03.2019, 16:59</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadd69b-2.html?tid=570213&amp;pid=4087852&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberc0b8.html?action=profile&amp;uid=321660">PoniStar</a> - 08.03.2019, 18:44</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread5255-6.html?tid=570213&amp;pid=4087922&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membera480-2.html?action=profile&amp;uid=323175">Agus12348</a> - 09.03.2019, 06:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadaeb8-5.html?tid=570213&amp;pid=4092240&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> - 04.04.2019, 15:36</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadc9f4-5.html?tid=570213&amp;pid=4092260&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberdeef.html?action=profile&amp;uid=322066">Kasichok</a> - 04.04.2019, 18:43</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthreadf888-2.html?tid=570213&amp;pid=4092294&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> - 05.04.2019, 00:53</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3569-3.html?tid=570213&amp;pid=4143424&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="memberd8ba.html?action=profile&amp;uid=266967">Fairuz</a> - 02.05.2020, 18:05</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread3653-3.html?tid=570213&amp;pid=4143682&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member5756.html?action=profile&amp;uid=249500">Gammix</a> - 03.05.2020, 21:58</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread6881.html?tid=570213&amp;pid=4144187&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="membere69b.html?action=profile&amp;uid=247206">Stefhan</a> - 05.05.2020, 21:14</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread772b-2.html?tid=570213&amp;pid=4148212&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> - 26.05.2020, 21:16</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread9bbd-3.html?tid=570213&amp;pid=4148613&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> - 29.05.2020, 17:52</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread637e-2.html?tid=570213&amp;pid=4148674&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> - 30.05.2020, 00:22</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4ce0-2.html?tid=570213&amp;pid=4149090&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member7f18.html?action=profile&amp;uid=348452">PaulinSAMP</a> - 01.06.2020, 19:19</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread4646.html?tid=570213&amp;pid=4149577&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member93af.html?action=profile&amp;uid=350831">Denss</a> - 04.06.2020, 04:27</span></div>
+<!-- end: showthread_threaded_bit --><!-- start: showthread_threaded_bit -->
+<div style="margin-left: 13px;"><a href="showthread2536.html?tid=570213&amp;pid=4150635&amp;mode=threaded">Re: Dialogs include - Adding new styles to SAMP GUI</a> <span class="smalltext">- by <a href="member4be0.html?action=profile&amp;uid=255802">SkyFlare</a> - 10.06.2020, 13:45</span></div>
+<!-- end: showthread_threaded_bit --></div>
+
+</div>
+<!-- end: showthread_threadedbox -->
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread4d8d.html?tid=570213">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" selected="selected">---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb87d.html?fid=83">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-570213.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=7e75d04f4b1b30c5dd772991b90303d9" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="mode" value="threaded" />
+<input type="hidden" name="tid" value="570213" />
+<input type="hidden" name="pid" value="3472496" />
+
+	<input type="hidden" name="my_post_key" value="7e75d04f4b1b30c5dd772991b90303d9" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

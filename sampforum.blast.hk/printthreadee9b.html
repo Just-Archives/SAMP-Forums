@@ -1,0 +1,295 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] [alpha] Objects Physics - Handle objects collisions and more. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Objects Physics This include handles via script collisions and other physics of the objects. Open physics.inc to view the list of functions. Required: modelsizes.inc by ****** foreach.inc by ****** Co" />
+<link rel="canonical" href="showthreadee9b.html?tid=446286" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadee9b.html?tid=446286">[Include] [alpha] Objects Physics - Handle objects collisions and more.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] [alpha] Objects Physics - Handle objects collisions and more. (<em>/showthread.php?tid=446286</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread8daa.html?tid=446286&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread642d.html?tid=446286&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8115.html?tid=446286&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Objects Physics - Handle objects 3D/2D physics (collisions, gravity, ...) - <a href="membera963.html?action=profile&amp;uid=206297">PeppeAC</a> -  25.06.2013
+<br />
+<br />
+<font size="5"><font color="RoyalBlue"><b>Objects Physics</b></font></font><br />
+<br />
+This include handles via script collisions and other physics of the objects.<br />
+Open physics.inc to view the list of functions.<br />
+<br />
+<font color="RoyalBlue"><font size="4">Required:</font></font><br />
+<a href="https://gist.githubusercontent.com/Y-Less/4543512/raw/modelsizes.inc" target="_blank">modelsizes.inc</a> by ******<br />
+<a href="https://github.com/Kar2k/SAMP-foreach/blob/master/foreach.inc" target="_blank">foreach.inc</a> by ******<br />
+<a href="showthread451e.html?tid=560218" target="_blank">ColAndreas</a> by Pottus<br />
+<br />
+<font color="RoyalBlue"><font size="4">Github:</font></font><br />
+<a href="https://github.com/uPeppe/physics.inc" target="_blank">https://github.com/uPeppe/physics.inc</a><br />
+<br />
+<font color="RoyalBlue"><font size="4">Examples:</font></font><ul><li><a href="showthreaddb5f-2.html?pid=2591471#pid2591471" target="_blank">Throw a deagle</a></li>
+<li><a href="showthread31b4.html?pid=2688713#pid2688713" target="_blank">Soccer game</a></li>
+<li><a href="showthread4acc.html?tid=600413" target="_blank">Pool game</a></li>
+</ul>
+<font color="RoyalBlue"><font size="4">Changelogs:</font></font><br />
+<font color="RoyalBlue">Objects Physics 0.1</font><ul><li>Added support to 3D physics.</li>
+<li>Some functions edited tu support 3D features.</li>
+<li>Some improvements and bug fixes.</li>
+</ul><font color="RoyalBlue">Objects Physics 0.2</font><ul><li>PHY_ObjectDelate renamed to PHY_DeleteObject.</li>
+<li>Wall collisions fixed and improved.</li>
+<li>Added optional "constant" parameter to PHY_CreateWall, like in PHY_SetObjectZBound.</li>
+<li>Failed attempt to make a better ball rolling using quaternions. See the internal function PHY_Rall if you want to try to fix it.</li>
+</ul><font color="RoyalBlue">Objects Physics 0.2 R2</font><ul><li>Use of foreach.inc to optimize the script.</li>
+<li>Added PHY_ApplyRotation (can be used in PHY_OnObjectUpdate to make a manual rotation), PHY_GetObjectSpeed and PHY_GetObjectMoveAngle.</li>
+</ul><font color="RoyalBlue">Objects Physics 0.3</font><ul><li>PHY_MoveObject renamed to PHY_SetObjectVelocity.</li>
+<li>Added PHY_SetObjectAcceleration and PHY_GetObjectAcceleration.</li>
+<li>Added PHY_SetObjectAirResistance and PHY_GetObjectAirResistance (similar to friction, but proportional to velocity).</li>
+<li>Script improvements and optimizations.</li>
+</ul><font color="RoyalBlue">Objects Physics 0.4</font><ul><li>Added ColAndreas support, put #define COLANDREAS before including physics.inc to activate it. Related function: PHY_UseColAndreas(objectid, mode).</li>
+<li>New callbacks: OnObjectCollideWithZBound(objectid, lowhigh), OnObjectCollideWithSAWorld(objectid, Float:cx, Float:cy, Float:cz).</li>
+<li>New algorithm for object to object 3D collisions.</li>
+<li>Added a new demo gamemode (colandreas.pwn), that uses ColAndreas and implements a little dog system.</li>
+</ul><font color="RoyalBlue">physics.inc v0.5</font><ul><li>More realistic rolling of the objects, through calculations made by using quaternions instead of Euler angles. This can be activated by selecting PHY_ROLLING_MODE_ADVANCED in PHY_RollObject.</li>
+</ul>
+<font color="RoyalBlue"><font size="4">Documentation:</font></font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">PHY_InitObject<span style="color: #000000;">(</span>objectid, modelid <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>mass <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>size <span style="color: #000000;">=</span> FLOAT_NAN, mode <span style="color: #000000;">=</span> PHY_MODE_3D<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Starts using physics for objectid.<br/>modelid - object's modelid, used to get its size with modelsizes include.<br/>mass - object's mass, it is like its weight and is used in collisions.<br/>size - object's sphere radius, taken from modelsizes.inc by default.<br/>mode - PHY_MODE_3D or PHY_MODE_2D.*/</span><br/><br/>PHY_GetObjectMode<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_DeleteObject<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Stops using physics for objectid (doesn't destroy it).*/</span><br/><br/>PHY_SetObjectVelocity<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vx, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vy, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vz <span style="color: #000000;">=</span> <span style="color: #000000;">0.0</span><span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Moves the object with vx, vy, vz velocities.*/</span><br/><br/>PHY_GetObjectVelocity<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vx, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vy, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>vz<span style="color: #000000;">)</span><br/><br/>PHY_IsObjectMoving<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_SetObjectAcceleration<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>ax, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>ay, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>az <span style="color: #000000;">=</span> <span style="color: #000000;">0.0</span><span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Sets the object's acceleration.*/</span><br/><br/>PHY_GetObjectAcceleration<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>ax, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>ay, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>az<span style="color: #000000;">)</span><br/><br/>PHY_GetObjectSpeed<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>speed, _3D <span style="color: #000000;">=</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/><br/>PHY_GetObjectMoveAngle<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">&amp;</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>moveangle<span style="color: #000000;">)</span><br/><br/><span style="color: #2222BB;">stock</span> PHY_RollObject<span style="color: #000000;">(</span>objectid, toggle <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>, rollingmode <span style="color: #000000;">=</span> PHY_ROLLING_MODE_DEFAULT<span style="color: #000000;">)</span><br/><span style="color: #228822;">/* Starts rolling the object when it moves of toggle = 1 or stops if toggle = 0.<br/>rollingmode = PHY_ROLLING_MODE_DEFAULT (Euler angles) or PHY_ROLLING_MODE_ADVANCED (Quaternions)<br/>When using advanced rolling mode, if you manually use SetObjectRot in your script, it is adviced to<br/>call PHY_RollObject again, in order to recalculate its quaternion angles.*/</span><br/><br/>PHY_IsObjectRolling<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_SetObjectFriction<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>friction<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Applies friction to the object when it moves on the floor (at its lowest Z). If friction is applied, the object gradually slows down.*/</span><br/><br/><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>PHY_GetObjectFriction<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_SetObjectAirResistance<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>resistance<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Applies air resistance to the object when it moves. The difference between friction and air resistance is that the former works only if the object is on the floor and the letter is also slows down the object proportionally to its velocity.*/</span><br/><br/><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>PHY_GetObjectAirResistance<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_SetObjectZBound<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>low <span style="color: #000000;">=</span> FLOAT_NAN, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>high <span style="color: #000000;">=</span> FLOAT_NAN, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>constant <span style="color: #000000;">=</span> <span style="color: #000000;">0.0</span><span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Limits the object's Z position.<br/>low - The lowest Z that the object can have (you can use FLOAT_NEG_INFINITY). If it is set to NaN it doesn't change.<br/>high - The highest Z that the object can have (you can use FLOAT_INFINITY). If it is set to NaN it doesn't change.<br/>(When you use PHY_InitObject lowest Z is set to the current object's Z and highest Z to FLOAT_INFINITY.<br/>constant - It should be from 0.0 to 1.0. If it is 1.0 the object doesn't lose velocity,<br/>if it is 0.0 the object stops when it bounces. It could be a middle ground.*/</span><br/><br/>PHY_SetObjectGravity<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>gravity<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Sets the gravity's acceleration that the object is subjected to.*/</span><br/><br/><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>PHY_GetObjectGravity<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span><br/><br/>PHY_SetObjectWorld<span style="color: #000000;">(</span>objectid, world<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Object and walls collide only if the are in the same world or one of them is in the world 0 (default).*/</span><br/><br/>PHY_ToggleObjectPlayerColls<span style="color: #000000;">(</span>objectid, toggle <span style="color: #000000;">=</span> <span style="color: #000000;">1</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>constant <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>distoffset <span style="color: #000000;">=</span> <span style="color: #000000;">0.8</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>zoffsetlow <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>zoffsethigh <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span><span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Toggles object's collisions with players.<br/>- constant - It should be from 0.0 to 1.0. If it is 1.0 the object doesn't lose velocity,<br/>if it is 0.0 the object stops when it bounces. It could be a middle ground.<br/>- distoffset - The distance at which the object collides with the player.<br/>- zoffsetlow/zoffsethigh - The max Z distance (downward/upward) at which the object collides with the player.*/</span><br/><br/>PHY_ApplyRotation<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>speed, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>moveangle<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Function used internally to rotate the objects.*/</span><br/><br/>PHY_CreateWall<span style="color: #000000;">(</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>x1, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>y1, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>x2, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>y2, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>constant <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>low <span style="color: #000000;">=</span> FLOAT_NEG_INFINITY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>high <span style="color: #000000;">=</span> FLOAT_INFINITY<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Creates a collision wall (straight line) from A(x1, y1) to B(x2, y2).<br/>constant should be from 0.0 to 1.0. If it is 1.0 the object doesn't lose velocity,<br/>if it is 0.0 the object stops when it collides.<br/>low is the lowest wall's Z, high is the highest. If they're set to default the wall is like infinitely high. */</span><br/><br/>PHY_CreateArea<span style="color: #000000;">(</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>minX, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>minY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>maxX, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>maxY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>constant <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>low <span style="color: #000000;">=</span> FLOAT_NEG_INFINITY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>high <span style="color: #000000;">=</span> FLOAT_INFINITY<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Creates four walls that form an area. Works like IsPlayerInArea.*/</span><br/><br/>PHY_DestroyWall<span style="color: #000000;">(</span>wallid<span style="color: #000000;">)</span><br/><br/>PHY_SetWallWorld<span style="color: #000000;">(</span>wallid, world<span style="color: #000000;">)</span><br/><br/>PHY_CreateCylinder<span style="color: #000000;">(</span><span style="color: #000000;">Float</span><span style="color: #000000;">:</span>x, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>y, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>size, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>constant <span style="color: #000000;">=</span> <span style="color: #000000;">1.0</span>, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>low <span style="color: #000000;">=</span> FLOAT_NEG_INFINITY, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>high <span style="color: #000000;">=</span> FLOAT_INFINITY<span style="color: #000000;">)</span><br/><span style="color: #228822;">/*Creates a collision cylinder at position x, y.<br/>constant should be from 0.0 to 1.0. If it is 1.0 the object doesn't lose velocity,<br/>if it is 0.0 the object stops when it collides.<br/>low is the lowest cylinder's Z, high is the highest. If they're set to default the cylinder is like infinitely high.*/</span><br/><br/>PHY_DestroyCylinder<span style="color: #000000;">(</span>cylinderid<span style="color: #000000;">)</span><br/><br/>PHY_SetCylinderWorld<span style="color: #000000;">(</span>cylinderid, world<span style="color: #000000;">)</span><br/><br/>PHY_SetPlayerWorld<span style="color: #000000;">(</span>playerid, world<span style="color: #000000;">)</span><br/><br/>PHY_UseColAndreas<span style="color: #000000;">(</span>objectid, mode <span style="color: #000000;">=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/><span style="color: #228822;">/* Sets ColAndreas mode for the object. Modes: 0 none, 1 collisions + z bounds, 2 collisions only, 3 z bounds only */</span><br/><br/><span style="color: #228822;">/* Callbacks */</span><br/><span style="color: #2222BB;">forward</span> PHY_OnObjectUpdate<span style="color: #000000;">(</span>objectid<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithObject<span style="color: #000000;">(</span>object1, object2<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithZBound<span style="color: #000000;">(</span>objectid, lowhigh<span style="color: #000000;">)</span>; <span style="color: #228822;">// low bound = 0, high bound = 1</span><br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithSAWorld<span style="color: #000000;">(</span>objectid, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>cx, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>cy, <span style="color: #000000;">Float</span><span style="color: #000000;">:</span>cz<span style="color: #000000;">)</span>; <span style="color: #228822;">// Only with ColAndreas</span><br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithWall<span style="color: #000000;">(</span>objectid, wallid<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithCylinder<span style="color: #000000;">(</span>objectid, cylinderid<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> PHY_OnObjectCollideWithPlayer<span style="color: #000000;">(</span>objectid, playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<font color="RoyalBlue"><font size="4">ColAndreas support:</font></font><br />
+ColAndreas plugin by Pottus allows to calculate collisions with every object in San Andreas map and to constantly update the low and high Z bound of the object that uses physics. <br />
+If you want to use ColAndreas features (PHY_UseColAndreas and PHY_OnObjectCollideWithSAWorld), put "#define COLANDREAS" before including "physics.inc". <br />
+<br />
+<font color="RoyalBlue"><font size="4">Possible usages:</font></font><ul><li>Creating a game played with balls, like pool, soccer, volleyball, tennis, etc.</li>
+<li>Throwing an object with 3D physics.</li>
+</ul>
+<font color="RoyalBlue"><font size="4">Videos:</font></font><ul><li><a href="https://www.youtube.com/watch?v=Kbkm4fXaB7Q" target="_blank">Old demo</a></li>
+<li><a href="https://www.youtube.com/watch?v=yOtlNQvgJ6Q" target="_blank">Pool physics</a></li>
+<li><a href="https://www.youtube.com/watch?v=ISTebVTMYog" target="_blank">Soccer gamemode</a></li>
+<li><a href="https://www.youtube.com/watch?v=QKHDK_vogYE" target="_blank">ColAndreas first testings</a></li>
+</ul>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member0d5b.html?action=profile&amp;uid=73170">TheArcher</a> -  25.06.2013
+<br />
+<br />
+Ohooo, really useful, after I've seen the video, I was thinking about the pool. Really good job! <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a> -  25.06.2013
+<br />
+<br />
+Great work !
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberf571.html?action=profile&amp;uid=170638">Dan..</a> -  25.06.2013
+<br />
+<br />
+Wonderful!<br />
+<br />
+I noticed a small bug. In your movie, at 0:31 in the left part of the screen there is a ball colliding with a stationary ball and the second ball starts rotating awkwardly.<br />
+<br />
+EDIT: It looks like there are more balls that are not moving, but rotating.<br />
+<br />
+Sugestion: Make objects collide with players and vehicles.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member4d73.html?action=profile&amp;uid=145974">Littlehelper</a> -  25.06.2013
+<br />
+<br />
+Nice!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberd66a.html?action=profile&amp;uid=47276">Black Wolf</a> -  25.06.2013
+<br />
+<br />
+OMG Awesome Awesome Awesome.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="membera963.html?action=profile&amp;uid=206297">PeppeAC</a> -  25.06.2013
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dan..</strong><br />
+<a href="showthread03da-2.html?pid=2585029#pid2585029" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Wonderful!<br />
+<br />
+I noticed a small bug. In your movie, at 0:31 in the left part of the screen there is a ball colliding with a stationary ball and the second ball starts rotating awkwardly.<br />
+<br />
+EDIT: It looks like there are more balls that are not moving, but rotating.<br />
+<br />
+Sugestion: Make objects collide with players and vehicles.</div>
+</td>
+</tr>
+</table>
+</div>Thanks to all.<br />
+<br />
+However this happens due to an inappropriate rotation system. That should use more complex maths (like matrixes), but I don't know how.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> -  25.06.2013
+<br />
+<br />
+Great work.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberfe3a.html?action=profile&amp;uid=97007">KingHual</a> -  25.06.2013
+<br />
+<br />
+Really good work!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member4a7e.html?action=profile&amp;uid=189789">IPrototypeI</a> -  25.06.2013
+<br />
+<br />
+great work thanks for the release
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member435a.html?action=profile&amp;uid=169274">kristo</a> -  25.06.2013
+<br />
+<br />
+Waiting for gravity + optional bouncing when falling on the ground. Very nice job <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member2c30.html?action=profile&amp;uid=76525">[DOG]irinel1996</a> -  25.06.2013
+<br />
+<br />
+This really rocks, nice.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member1d0c.html?action=profile&amp;uid=58418">vyper</a> -  25.06.2013
+<br />
+<br />
+Great include, good job !
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member936b.html?action=profile&amp;uid=114165">Stylock</a> -  25.06.2013
+<br />
+<br />
+Very impressive!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberb389.html?action=profile&amp;uid=121190">Johnson_boy</a> -  25.06.2013
+<br />
+<br />
+Thumbs up, great release
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="member3e96.html?action=profile&amp;uid=196304">n0minal</a> -  25.06.2013
+<br />
+<br />
+Very good job, I love it! +REP
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> -  26.06.2013
+<br />
+<br />
+I'm going haywire! Awesome!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberf6db.html?action=profile&amp;uid=60174">QuaTTrO</a> -  26.06.2013
+<br />
+<br />
+WOW ! This is awesome Good Job! <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="membera963.html?action=profile&amp;uid=206297">PeppeAC</a> -  26.06.2013
+<br />
+<br />
+[ame]http://www.youtube.com/watch?v=Kbkm4fXaB7Q[/ame]<br />
+<br />
+<b>Version 0.1 released</b><br />
+Added support to 3D physics.<br />
+Some functions edited tu support 3D features.<br />
+Some improvements and bug fixes.<br />
+<br />
+I created a Github repository and uploaded there the new version of the include and a demo gamemode.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [alpha] Objects Physics - Handle objects collisions and more. - <a href="memberd66a.html?action=profile&amp;uid=47276">Black Wolf</a> -  26.06.2013
+<br />
+<br />
+Thanks for the demo gamemode.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

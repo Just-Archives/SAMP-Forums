@@ -1,0 +1,468 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] [MySQL R41-2] vlang - Create Messages for Multiple Languages - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="vlang Build 2 - Beta Release - Last Update: 11/6/2020 Sometimes I wanted to translate my game script in multiple languages and for all the features I have, not for client messages, game texts or dialo" />
+<link rel="canonical" href="showthread62d8.html?tid=676467" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread62d8.html?tid=676467">[Include] [MySQL R41-2] vlang - Create Messages for Multiple Languages</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] [MySQL R41-2] vlang - Create Messages for Multiple Languages (<em>/showthread.php?tid=676467</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="memberadf6.html?action=profile&amp;uid=263294">Variable™</a> -  09.06.2020
+<br />
+<br />
+<font face="Tahoma"><font size="8"><font color="RoyalBlue">vlang</font></font><br />
+<font size="2"><font color="SandyBrown">Build 2 - Beta Release - Last Update: 11/6/2020</font></font><br />
+<br />
+Sometimes I wanted to translate my game script in multiple languages and for all the features I have, not for client messages, game texts or dialogues only but for other features, too.<br />
+<br />
+I didn't really try to search for one because I had some ideas and I wanted to apply them nonetheless, so, anyway, I thought to share it with you guys and see what you think about it too.<br />
+<br />
+<font size="4"><font color="RoyalBLue">Additional Requirements</font></font><ul><li>y_va - <a href="https://github.com/pawn-lang/YSI-Includes" target="_blank">https://github.com/pawn-lang/YSI-Includes</a></li>
+<li>y_hooks - A YSI include for hooking functions - <a href="https://github.com/pawn-lang/YSI-Includes" target="_blank">https://github.com/pawn-lang/YSI-Includes</a></li>
+<li>MySQL Plugin - I tested this on R41-2 - <a href="https://github.com/pBlueG/SA-MP-MySQL/releases" target="_blank">https://github.com/pBlueG/SA-MP-MySQL/releases</a></li>
+<li>GVar - By Incognito - <a href="http://[https://sampforum.blast.hk/showthread.php?tid=151076" target="_blank">[https://sampforum.blast.hk/showthread.php?tid=151076</a></li>
+</ul>
+<font size="4"><font color="RoyalBLue">Information</font></font><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">    +---------------------------------------------------------------------------------------------------------+
+
+    File information
+    ----------------
+
+    vlang - Create &amp; Manage server langauge(s) and server messages
+    Build 2 - Beta (11/6/2020)
+
+    Author: H2O
+    Licensed under GNU GPLv3
+
+    &copy; 2018-2020 H2O Multiplayer. All rights reserved.
+    Website: h2omultiplayer.com
+
+    Table Structure
+    ---------------
+
+    The following tables has to exist in your database for vlang to work.
+    If ever asked to provide a MySQL handle, use your gamemode's.
+
+    * Languages
+        + ID ( Language ID - Primary key - Auto increment - INT(11) )
+        + LanguageName ( The name of created language - Unique key - TINYTEXT(25) )
+    * Messages
+        + ID ( Message - Primary - INT(11) )
+        + LanguageId ( The language ID that this message is created for - INT(11) )
+        + Identifier ( The identifier used to search for the message, short description - VARCHAR(255) )
+        + Message ( The actual long message we want to send :) - VARCHAR(1024) )
+
+    * is table, + is column
+
+    Dependencies
+    ------------
+
+    * a_mysql - The MySQL Plugin (Recommended version: R41-2) - Originally made by BlueG and maintained later by maddinat0r
+    * y_hooks - included in the YSI library [Useful for hooking functions/callbacks/natives] - Original Author: ******
+    * y_va - also included in the YSI library [We use this to format our messages using arguments] - Original Author: ******
+    * GVar - Made by Incognito - We will use this instead of using array to return data directly.
+    * a_samp - Made by the SA-MP team
+
+    Remarks
+    -------
+
+    * You need to define 'FILTERSCRIPT' in case this script is to be used in a filterscript and not a gamemode.
+    * This include uses threaded MySQL queries, which do not run in the server's main thread.
+    * As a result of the above remark, the following precautions should be considered:
+        - Language creation and message loading isn't instant and depends on how fast the query is excuted.
+        - Rest of code already processes without pausing till the query is executed.
+        - That means you can't return a message straight after loading/creating it.
+    * Language has to be created first before returning any message coming from it.
+    * All the messages for a specific language get automatically loaded once the language itself is loaded.
+    * Do not use vL_CreateMessage if the messages for specific language already exist, they will get loaded automatically.
+
+    Configuration
+    -------------
+
+    * MAX_VLANGS - The system will be told to stop creating languages after it meets this value
+    * MAX_VMESSAGES - The system will stop creating messages ahead of this value
+    * (define before including) VLANG_PLAYER_FUNCS - Only if you wish to use the per-player language functions
+    * (define before including) VLANG_ALIAS - Only if you wish to use function aliases (look down for info)
+
+    Errors
+    ------
+
+    #define VL_ERROR_INVALID_HANDLE         (-2) // If the MySQL connection isn't valid
+    #define VL_ERROR_OUT_OF_LIMIT           (-3) // If you exceeded the configuration limits
+    #define VL_ERROR_UNABLE_TO_PROCEED      (-4) // If the function failed for some reason to do what is expected
+    #define VL_ERROR_DUPLICATE              (-5) // If you try to create a message that ALREADY exists
+
+    The include's debug messages can be useful to troubleshoot issues, not to mention you can create yours!
+
+    Aliases
+    -------
+
+    Following aliases can be used if enabled in configuration:
+    #define AddLanguage                 vL_CreateLanguage
+    #define AddMessage                  vL_CreateMessage
+    #define GetLanguagePrefixByName     vL_GetLanguage
+    #define GetMessage                  vL_ReturnMessage
+
+    Installation
+    ------------
+
+    1. Download and prepare all the dependencies
+    2. Create all the tables in the table structure above
+    3. Make sure your gamemode or filterscript have a MySQL connection handle
+    4. Configure the include to fit your needs
+    5. Populate your database with languages/messages data.
+    6. Add your language and the messages should be loaded already.
+    7. Use your message identifier and language name to simply return the message!
+
+    Functions
+    ---------
+
+    Some functions are designed for internal usage, below are list of usable functions:
+
+    - General Functions
+         - vL_GetLanguage(const LangName[25])
+            Returns: Language Id if the language name exists - or otherwise returns 0
+
+        - vL_CreateLanguage(MySQL: Handle, const LangName[25])
+            Parameters:
+                - Handle: Your MySQL handle
+                - LangName: Language name to create or load
+            Returns:
+                - An error value if something happened, check errors ^
+                - 1 if there was no error
+            Notes:
+                - Any messages found in the database will AUTOMATICALLY get loaded!
+
+        - vL_ReturnMessage(const LangName[25], const Identifier[255], va_args&lt;&gt;)
+            Parameters:
+                - LangName: The language (that should be existent) to return messages for
+                - Identifier: The unique identifier for this message
+                - (optional) va_args: Any arguments needed for your message (specifier args)
+            Returns:
+                - A null string if language is invalid, or the actual message if succesful (or identifier if message didn't exist!)
+
+    - (if defined) Per player language functions
+        - SetPlayerLanguage(playerid, const LangName[25])
+            Description: Set a player's language (if exists ONLY) to the specified LangName value
+
+        - GetPlayerLanguage(playerid)
+            Description: Returns the player's language name that was assigned to them beforehand (null by default)
+
+    Example Usage
+
+    - Add on initialization
+        vL_CreateLanguage(Database, "English");
+        vL_CreateLanguage(Database, "Spanish");
+
+    - Add somewhere else
+        vL_CreateMessage(Database, "English", "COMMON_IDENT", "Testing...");
+    	vL_CreateMessage(Database, "Spanish", "COMMON_IDENT", "Pruebas...");
+
+    - Display somewhere else
+        print(vL_ReturnMessage("English", "COMMON_IDENT"));
+    	print(vL_ReturnMessage("Spanish", "COMMON_IDENT"));
+
+    - Expected output
+        Both messages should be displayed in the two languages
+
+    It's worth to mention that if you create the messages once, they are stored in the database.
+    That means you don't need to keep creating them every time, even if it won't hurt!
+
+    +---------------------------------------------------------------------------------------------------------+</pre>
+</div><font size="4"><font color="RoyalBLue">Repository (GitHub)</font></font><br />
+<br />
+Before giving the link, please keep the credits and contribute if you can. Share your opinion in replies below, too.<br />
+I thank anyone that I used their work to create this include (MySQL plugin maintainers, YSI maintainers, Incognito for GVar and SA-MP team).<br />
+<br />
+You can find it here <a href="https://github.com/h2o-variable/samp-releases/blob/master/includes/vlang.inc" target="_blank">https://github.com/h2o-variable/samp...udes/vlang.inc</a><br />
+<br />
+Thanks!<br />
+</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="member3475.html?action=profile&amp;uid=40144">Shadow_</a> -  09.06.2020
+<br />
+<br />
+Looks great my brother - expect nothing less.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="member0583.html?action=profile&amp;uid=334813">AkiraR</a> -  10.06.2020
+<br />
+<br />
+Phenomenal and well done.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> -  10.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Variable™</strong><br />
+<a href="showthreadfba0.html?pid=4150544#pid4150544" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><font face="Tahoma"><font size="8"><font color="RoyalBlue">vlang</font></font><br />
+<font size="2"><font color="SandyBrown">Initial Release - Last Update: 9/6/2020</font></font><br />
+<br />
+Sometimes I wanted to translate my game script in multiple languages and for all the features I have, not for client messages, game texts or dialogues only but for other features, too.<br />
+<br />
+I didn't really try to search for one because I had some ideas and I wanted to apply them nonetheless, so, anyway, I thought to share it with you guys and see what you think about it too.<br />
+<br />
+<font size="4"><font color="RoyalBLue">Additional Requirements</font></font><ul><li>y_va - <a href="https://github.com/pawn-lang/YSI-Includes" target="_blank">https://github.com/pawn-lang/YSI-Includes</a></li>
+<li>y_hooks - A YSI include for hooking functions (only needed if you enable player languages) - <a href="https://github.com/pawn-lang/YSI-Includes" target="_blank">https://github.com/pawn-lang/YSI-Includes</a></li>
+<li>MySQL Plugin - I tested this on R41-2 - <a href="https://github.com/pBlueG/SA-MP-MySQL/releases" target="_blank">https://github.com/pBlueG/SA-MP-MySQL/releases</a></li>
+</ul>
+<font size="4"><font color="RoyalBLue">Settings</font></font><br />
+<br />
+It's pretty much plug and play, just create a MySQL database using the following table structure:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">    Table Structure
+        - database
+            * Languages
+                + ID ( Language ID - Primary key - Auto increment - INT(11) )
+                + LanguageName ( The name of created language - Unique key - TINYTEXT(25) )
+            * Messages
+                + ID ( Message - Primary key - INT(11) )
+                + LanguageId ( The language ID that this message is created for - INT(11) )
+                + Identifier ( The identifier used to search for the message, short description - VARCHAR(255) )
+                + Message ( The actual long message we want to send :) - VARCHAR(1024) )</pre>
+</div>Created the tables 'Languages' and 'Messages'? You can now configure the include a bit more:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">    Configuration
+        If you want to enable per player language functions - define PVLANG before including this.
+        You can define MAX_VLANGS and MAX_VMESSAGES as you like, by default they're 100 and 1024 if you don't manually define them before including this.</pre>
+</div><font size="4"><font color="RoyalBLue">Functions</font></font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">Functions
+
+    - vL_CreateLanguage(MySQL: vLangDB, const LangName[25])
+        Description: Create a new language - or load it if already exists
+        Parameters:
+            vLangDB - Your gamemode's handle for MySQL connection
+            LangName - Your langauge name
+        Returns:
+            -2 if the MySQL handle is invalid
+            0 if the number of languages created exceeded the limitation
+            1 if else
+
+    - vL_CreateMessage(MySQL: vLangDB, const LangName[25], const Identifier[255], const Message[1024])
+        Description: Create a new message for the specified language, or load it if already exists
+        Parameters:
+            vLangDB - The MySQL handle
+            LangName - The Language name to create this message for
+            Identifier - The common definition for this message to be used when returning a message
+            Message - The long text behind this identifier
+        Returns:
+            -2 if the MySQL handle is invalid
+            -1 if the language ID was not found based on the specified LangName
+            1 if else
+
+    - vL_LoadMessages(MySQL: vLangDB, const LangName[25])
+        Description: Load all messages found in database for the specified language
+        Parameters:
+            vLangDB - The MySQL connection handle
+            LangName - The language name to load all existing messages for
+        Returns:
+            -2 if MySQL handle is invalid
+            1 if else
+
+    - vL_ReturnMessage(const LangName[25], const Identifier[255], va_args&lt;&gt;)
+        Description: Return a message
+        Parameters:
+            LangName - The language to look for the message in
+            Identifier - The identifier of the message
+            va_args - If the message has specifiers, add their values here
+        Returns:
+            The message - null if it fails to find it for any reason
+
+    PVLANG FUNCTIONS:
+
+    - SetPlayerLanguage(playerid, const LangName[25])
+        Description: Set the language for said player ID, doesn't need to exist at all
+
+    - GetPlayerLanguage(playerid)
+        Description: Returns the language name of this player ID
+
+    INTERNAL:
+
+    - vL_LoadMessage(MySQL: vLangDB, const LangId, const Identifier[255])
+        Description: This function is only used internally to load a message created with vL_CreateMessage</pre>
+</div><font size="4"><font color="RoyalBLue">Usage</font></font><br />
+<br />
+Just read the functions above, you have to create a language first, after your server is connected to MySQL, use your own MySQL handle for the functions above.<br />
+<br />
+You can either manually create languages and messages from the database, if you know what you're doing, that way you don't need the '<b>vL_CreateMessage</b>' function but simply use '<b>vL_LoadMessages</b>' for the language you want. If you want the server to do this you need to use '<b>vL_CreateMessage</b>' after you create the language, and then you can simply use '<b>vL_ReturnMessage</b>' to return the message.<br />
+<br />
+Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">    vL_CreateLanguage(Database, "English");
+    vL_CreateMessage(Database, "English", "TEST_IDENT", "Let's count %d %d .. %d!");
+    print(vL_ReturnMessage("English", "TEST_IDENT", 1, 2, 10));</pre>
+</div>Output (if the MySQL handle is valid):<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">Let's count 1 2 .. 10!</pre>
+</div><font size="4"><font color="RoyalBLue">Repository (GitHub)</font></font><br />
+<br />
+Before giving the link, please keep the credits and contribute if you can. Share your opinion in replies below, too.<br />
+I thank anyone that I used their work to create this include (MySQL plugin maintainers, YSI maintainers and SA-MP team).<br />
+<br />
+You can find it here <a href="https://github.com/h2o-variable/samp-releases/blob/master/includes/vlang.inc" target="_blank">https://github.com/h2o-variable/samp...udes/vlang.inc</a><br />
+<br />
+Thanks!<br />
+</font></div>
+</td>
+</tr>
+</table>
+</div>Why use MySQL for storing messages?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="member6f9c.html?action=profile&amp;uid=145281">denNorske</a> -  10.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Eoussama</strong><br />
+<a href="showthread9c9a.html?pid=4150609#pid4150609" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why use MySQL for storing messages?</div>
+</td>
+</tr>
+</table>
+</div>Why wouldn't you use MySQL to store messages? Messages are, as user stats, also data. Messages can change, new languages can be added.<br />
+<br />
+It allows for dynamic storing and modification - and this is also common outside of sa-mp. <br />
+<br />
+You can stay fairly organized - if your argument is that it's "too static" you can easily just dump everything in on runtime, and keep it in memory, but still have the organizing using tables.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="memberadf6.html?action=profile&amp;uid=263294">Variable™</a> -  11.06.2020
+<br />
+<br />
+Thanks for all your opinions!<br />
+<br />
+Build 2 - Beta Release<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">- Revamped the code
+- Lesser use of strcmp now (not used to return messages anymore)
+- Using gvar to facilitate the process of handling languages and messages
+- Fixed various bugs
+- Better documentation
+- Threaded queries now
+- Added error definitions</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-2] vlang - Create Messages for Multiple Languages - <a href="memberb8e6.html?action=profile&amp;uid=354028">Mergevos</a> -  29.07.2020
+<br />
+<br />
+Can I use this in dialog?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,402 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] GeoLite - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="GeoLite (SQLite) It is based on the free product GeoLite2 by MaxMind. I was updating the country database every month for MySQL and decided to update the GeoIp databases by Whitetiger's include as man" />
+<link rel="canonical" href="showthread4e5e.html?tid=660723" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread4e5e.html?tid=660723">[Include] GeoLite</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] GeoLite (<em>/showthread.php?tid=660723</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreade52a.html?tid=660723&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  11.11.2018
+<br />
+<br />
+<font color="#FF4700"><font size="7"><b>GeoLite</b> (SQLite)</font></font><br />
+<br />
+It is based on the free product <a href="https://dev.maxmind.com/geoip/geoip2/geolite2/" target="_blank">GeoLite2</a> by <a href="https://www.maxmind.com/en/home" target="_blank">MaxMind</a>.<br />
+<br />
+I was updating the country database every month for MySQL and decided to update the GeoIp databases by Whitetiger's include as many people requested. It turned out I was unable to, the way the databases were structured. I converted my version to SQLite and started comparing the two includes with geolite.inc being victorious. But this was to be expected with not only the good database structure and the use of indexes but also the appropriate queries to avoid range scans. Even though latest database provide more data than last year, it did not affect the performance in any way.<br />
+<br />
+The past days, I managed to import Autonomous System (AS) and City databases with the original databases having big flows.<br />
+<ul><li>Certain organizations in Autonomous System list did have many unique identifiers (ASN - Autonomous System Number) registered to IANA. All duplicates were removed and kept only their initial ASN.</li>
+<li>Certain ip ranges in City database:<ul><li>did not provide a city name. Country name was used in replacement.</li>
+<li>did not provide a city name, nor a country name. Continent name was used in replacement.</li>
+</ul></li>
+</ul>
+The above issue arose another problem related to time zones.<ul><li>Antarctica, Asia and Europe have time zone set as +00:00</li>
+<li>Cities with country name as replacement have central standard time set mostly, with few exceptions. Some examples are:<ul><li>United States is set to have UTC -05:00 (Washington, DC) whereas Central Standard Time is in Chicago (-06:00)</li>
+<li>Russia is set to Moscow Standard Time (+03:00)</li>
+</ul></li>
+</ul>
+I initially posted these changes and improvements in Whitetiger's thread but due to their absence, I decided to create a new thread. I was also unaware if Whitetiger would accept the changes, nor how the updates would be done.<br />
+<br />
+<font color="RoyalBlue"><font size="6"><b>Installation</b></font></font><br />
+<br />
+Repository: <a href="https://github.com/George480/geolite" target="_blank">https://github.com/George480/geolite</a><br />
+Releases: <a href="https://github.com/George480/geolite/releases" target="_blank">https://github.com/George480/geolite/releases</a><br />
+Include: <a href="https://raw.githubusercontent.com/George480/geolite/master/geolite.inc" target="_blank">https://raw.githubusercontent.com/Ge...er/geolite.inc</a><br />
+<br />
+Save as geolite.inc into <i>pawno\include</i> folder. Include in your code and begin using the library:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><font color="Blue">#include &lt;geolite&gt;</font></pre>
+</div>Place the database you want to use into <i>scriptfiles</i> folder.<br />
+<br />
+<font color="RoyalBlue"><font size="6"><b>Functions</b></font></font><br />
+IP-Based Functions:<ul><li><font face="courier new">GetIpAutonomousSystem(const geolite_ip[], geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the Autonomous System organization (ISP is an Autonomous System) according to given IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetIpCountry(const geolite_ip[], geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the Country name according to given IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetIpCity(const geolite_ip[], geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the City name according to given IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetIpUTC(const geolite_ip[], geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the UTC offset according to given IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">IsIpProxy(const geolite_ip[])</font><ul><li>Requires country database.</li>
+<li>Returns 1 if the given ip is public proxy otherwise 0. It will also return 0 if database file does not exist in scriptfiles folder.</li>
+</ul></li>
+</ul>Player-Based Functions:<ul><li><font face="courier new">GetPlayerAutonomousSystem(playerid, geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the Autonomous System organization (ISP is an Autonomous System) according to given player's IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder and player is connected) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetPlayerCountry(playerid, geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the Country name according to given player's IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder and player is connected) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetPlayerCity(playerid, geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the City name according to given player's IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder and player is connected) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">GetPlayerUTC(playerid, geolite_dest[], geolite_len = sizeof (geolite_dest))</font><ul><li>Stores the UTC offset according to given player's IP, passed by reference.</li>
+<li>Returns 1 on success (database file exists in <i>scriptfiles</i> folder and player is connected) or 0 on failure.</li>
+</ul></li>
+<li><font face="courier new">IsPlayerUsingProxy(playerid)</font><ul><li>Requires country database.</li>
+<li>Returns 1 if the ip of the given player is public proxy otherwise 0. It will also return 0 if database file does not exist in scriptfiles folder.</li>
+</ul></li>
+</ul>
+<font color="RoyalBlue"><font size="6"><b>Usage</b></font></font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:295px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;a_samp&gt;</span><br/><span style="color: #2222AA;">#include &lt;sscanf2&gt;</span><br/><span style="color: #2222AA;">#include &lt;geolite&gt;</span><br/><br/>main<span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><span style="color: #000000;">}</span><br/><br/><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> player_name<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">]</span>, player_country<span style="color: #000000;">[</span>MAX_COUNTRY_LENGTH<span style="color: #000000;">]</span>, connection_text<span style="color: #000000;">[</span><span style="color: #000000;">80</span><span style="color: #000000;">]</span>;<br/>        <br/>    GetPlayerName<span style="color: #000000;">(</span>playerid, player_name, MAX_PLAYER_NAME<span style="color: #000000;">)</span>;<br/>    GetPlayerCountry<span style="color: #000000;">(</span>playerid, player_country, MAX_COUNTRY_LENGTH<span style="color: #000000;">)</span>;<br/><br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>connection_text, <span style="color: #2222BB;">sizeof</span> <span style="color: #000000;">(</span>connection_text<span style="color: #000000;">)</span>, <span style="color: #000066;">"%s joined from %s"</span>, player_name, player_country<span style="color: #000000;">)</span>;<br/>    SendClientMessageToAll<span style="color: #000000;">(</span>0xFFFF00FF, connection_text<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<font color="RoyalBlue"><font size="6"><b>Extra Notes</b></font></font><br />
+127.0.0.1 is given as "Unknown" as it is a private IP.<br />
+<br />
+Country, City and ASN databases will be updated every first Wednesday of every month.<br />
+<br />
+It opens the databases on startup according to which database exists in <i>scriptfiles</i> folder, therefore if you prefer to use the Country database only, place maxmind_country.db into <i>scriptfiles</i> folder and not the other two databases.<br />
+<br />
+It only detects public proxies and not VPNs.<br />
+<br />
+A MySQL version would require non-threaded queries to keep the same usage of functions. If you have any suggestion, please inform me.<br />
+<br />
+Constants:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define MAX_AUTONOMOUS_SYSTEM_LENGTH    95</span><br/><span style="color: #2222AA;">#define MAX_COUNTRY_LENGTH              45</span><br/><span style="color: #2222AA;">#define MAX_CITY_LENGTH                 109</span><br/><span style="color: #2222AA;">#define MAX_UTC_LENGTH                  7</span></div></div></pre>
+</div>
+<font color="RoyalBlue"><font size="6"><b>Requirements</b></font></font><br />
+sscanf: <a href="https://github.com/maddinat0r/sscanf/releases" target="_blank">https://github.com/maddinat0r/sscanf/releases</a><br />
+<br />
+<font color="RoyalBlue"><font size="6"><b>Credits</b></font></font><br />
+<ul><li><a href="https://www.maxmind.com/en/home" target="_blank">MaxMind</a> - <a href="https://dev.maxmind.com/geoip/geoip2/geolite2/" target="_blank">GeoLite2</a></li>
+<li><a href="https://timezonedb.com/" target="_blank">TimeZoneDB.com</a> - time zones</li>
+<li><a href="https://github.com/Y-Less" target="_blank">Alex "Y-Less" Cole</a> - <a href="https://github.com/maddinat0r/sscanf/releases" target="_blank">sscanf</a></li>
+<li><a href="https://andy.wordpress.com/author/andy/" target="_blank">Andy Skelton</a> - ordering by `ip_to` (avoidance of range scan)</li>
+<li>Nikolay Bachiyski - ordering by `ip_to` (avoidance of range scan)</li>
+<li>Mark Robson - highest `ip_from` which is less than or equal to the given IP (avoidance of next country returned due to gaps)</li>
+</ul>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  12.11.2018
+<br />
+<br />
+It only feels like half the picture, you should look at taking the plugin route to auto-update the databases.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  05.12.2018
+<br />
+<br />
+<i>New version released!</i><br />
+<br />
+Added <i>IsIpProxy</i> and <i>IsPlayerUsingProxy</i> functions.<br />
+Restructured tables for better compression.<br />
+Include: <a href="https://raw.githubusercontent.com/George480/geolite/master/geolite.inc" target="_blank">https://raw.githubusercontent.com/Ge...er/geolite.inc</a><br />
+<br />
+Note: The free product of MaxMind can only detect public proxies, not VPNs.<br />
+<br />
+Databases were updated for <b>December 2018</b>: <a href="https://github.com/George480/geolite/releases/tag/v2.0" target="_blank">https://github.com/George480/geolite/releases/tag/v2.0</a><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Pottus</strong><br />
+<a href="showthread2e2f.html?pid=4064502#pid4064502" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It only feels like half the picture, you should look at taking the plugin route to auto-update the databases.</div>
+</td>
+</tr>
+</table>
+</div>The way databases are distributed to fix duplicates and other issues mentioned, it requires <i>mysql, a table for time zones, a procedure to re-assign ids for ASN and a set of queries to execute</i>. I simply download, extract and move .CSV files to be able to use LOAD FILE from mysql. I paste a handful amount of queries and they are updated on their own but it takes 45 minutes. Exporting data and importing to the respective databases is the last step.<br />
+<br />
+I cannot think of a way to do it but manually.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member84d8.html?action=profile&amp;uid=84376">BigETI</a> -  05.12.2018
+<br />
+<br />
+You could start versioning your database and implement a web interface, where this library could do a web request to download the changes for its database.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  03.01.2019
+<br />
+<br />
+Databases were updated for <b>January 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v3.0" target="_blank">https://github.com/George480/geolite/releases/tag/v3.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  06.02.2019
+<br />
+<br />
+Databases were updated for <b>February 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v4.0" target="_blank">https://github.com/George480/geolite/releases/tag/v4.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="membera554.html?action=profile&amp;uid=161134">ToiletDuck</a> -  07.02.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Calisthenics</strong><br />
+<a href="showthread9464.html?pid=4081091#pid4081091" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Databases were updated for <b>February 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v4.0" target="_blank">https://github.com/George480/geolite/releases/tag/v4.0</a></div>
+</td>
+</tr>
+</table>
+</div>Thanks for updating it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member8e20.html?action=profile&amp;uid=165618">ReshiramZekrom</a> -  05.03.2019
+<br />
+<br />
+Thank you really much!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  06.03.2019
+<br />
+<br />
+Databases were updated for <b>March 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v5.0" target="_blank">https://github.com/George480/geolite/releases/tag/v5.0</a><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ToiletDuck</strong><br />
+<a href="showthread2804.html?pid=4081307#pid4081307" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thanks for updating it.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ReshiramZekrom</strong><br />
+<a href="showthreadd57a.html?pid=4087426#pid4087426" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thank you really much!</div>
+</td>
+</tr>
+</table>
+</div>Thank you for using it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  04.04.2019
+<br />
+<br />
+<i>IsIpProxy</i> and <i>IsPlayerUsingProxy</i> functions were only working with country database. It is now possible to use them with city database in case the country database is not used. Re-download at: <a href="https://raw.githubusercontent.com/George480/geolite/master/geolite.inc" target="_blank">https://raw.githubusercontent.com/Ge...er/geolite.inc</a><br />
+<br />
+Databases were updated for <b>April 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v6.0" target="_blank">https://github.com/George480/geolite/releases/tag/v6.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  08.05.2019
+<br />
+<br />
+Databases were updated for <b>May 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v7.0" target="_blank">https://github.com/George480/geolite/releases/tag/v7.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  05.06.2019
+<br />
+<br />
+Databases were updated for <b>June 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v8.0" target="_blank">https://github.com/George480/geolite/releases/tag/v8.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  03.07.2019
+<br />
+<br />
+Databases were updated for <b>July 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v9.0" target="_blank">https://github.com/George480/geolite/releases/tag/v9.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  07.08.2019
+<br />
+<br />
+Databases were updated for <b>August 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v10.0" target="_blank">https://github.com/George480/geolite/releases/tag/v10.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  04.09.2019
+<br />
+<br />
+Databases were updated for <b>September 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v11.0" target="_blank">https://github.com/George480/geolite/releases/tag/v11.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member81ee.html?action=profile&amp;uid=219564">FinStar</a> -  04.09.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Calisthenics</strong><br />
+<a href="showthread7786.html?pid=4112396#pid4112396" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Databases were updated for <b>September 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v11.0" target="_blank">https://github.com/George480/geolite/releases/tag/v11.0</a></div>
+</td>
+</tr>
+</table>
+</div>Thanks for updating database.  😉
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  02.10.2019
+<br />
+<br />
+Databases were updated for <b>October 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v12.0" target="_blank">https://github.com/George480/geolite/releases/tag/v12.0</a><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>FinStar</strong><br />
+<a href="showthread52aa.html?pid=4112417#pid4112417" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thanks for updating database.  ��</div>
+</td>
+</tr>
+</table>
+</div>You are welcome.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  06.11.2019
+<br />
+<br />
+Databases were updated for <b>November 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v13.0" target="_blank">https://github.com/George480/geolite/releases/tag/v13.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  04.12.2019
+<br />
+<br />
+Databases were updated for <b>December 2019</b>: <a href="https://github.com/George480/geolite/releases/tag/v14.0" target="_blank">https://github.com/George480/geolite/releases/tag/v14.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: GeoLite - <a href="member4a9a.html?action=profile&amp;uid=316507">Calisthenics</a> -  08.01.2020
+<br />
+<br />
+Databases were updated for <b>January 2020</b>: <a href="https://github.com/George480/geolite/releases/tag/v15.0" target="_blank">https://github.com/George480/geolite/releases/tag/v15.0</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

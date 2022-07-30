@@ -1,0 +1,250 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [FilterScript] beckzy's mod shops - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This is a filterscript for server side mod shops. It requires Incognito's streamer plugin for the use of dynamic checkpoints. There are pros and cons to using scripted mod shops: Pros: - Most land veh" />
+<link rel="canonical" href="showthread381d.html?tid=673712" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread381d.html?tid=673712">[FilterScript] beckzy's mod shops</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [FilterScript] beckzy's mod shops (<em>/showthread.php?tid=673712</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+beckzy's mod shops - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  02.04.2020
+<br />
+<br />
+This is a filterscript for server side mod shops. It requires <a href="showthread4d54.html?tid=102865" target="_blank">Incognito's streamer plugin</a> for the use of dynamic checkpoints. There are pros and cons to using scripted mod shops:<br />
+<br />
+Pros:<br />
+- Most land vehicles can be modded<br />
+- Front/rear bumpers AND front/rear bullbars can be applied together<br />
+- All wheels are listed for all moddable vehicles<br />
+- You can change the paintjob of Camper<br />
+- OnVehicleRespray2, OnVehiclePaintjob2, and OnVehicleMod2 are used. OnVehicleRespray2 isn't called when you view a component or when you leave a mod shop (unlike OnVehicleRespray) , and OnVehiclePaintjob2 isn't called when you view a paintjob (unlike OnVehiclePaintjob)<br />
+- As all valid components are stored for each vehicle model, OnVehicleMod filters out any invalid components added through hacks<br />
+<br />
+Cons:<br />
+- You can't choose the vehicle color, though you can still Respray the vehicle to the next default color<br />
+<br />
+Notes:<br />
+- OnVehicleRespray2, OnVehiclePaintjob2, and OnVehicleMod2 are called through all scripts<br />
+- You might want to move the following into an include if you're restoring paintjobs/components in other scripts:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">new vpaintjob[MAX_VEHICLES] = {3, ...};
+new vcompids[MAX_VEHICLES][MAX_COMPONENT_TYPES];</pre>
+</div>as well as AddVehicleComponent2, RemoveVehicleComponent2, and the vehiclemodinfo array.<br />
+<br />
+- When destroying a vehicle (DestroyVehicle) you should reset the paintjob/components. Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">vpaintjob[vehicleid-1] = 3;
+
+for (new c = 0; c &lt; MAX_COMPONENT_TYPES; c++)
+{
+	vcompids[vehicleid-1][c] = 0;
+}</pre>
+</div>Edit - 03/04/2020:<br />
+<br />
+- Fixed Dumper being allowed in Transfender (it isn't moddable)<br />
+- Fixed invalid components not being filtered on aircraft and trailers<br />
+<br />
+Edit2 - 03/04/2020:<br />
+<br />
+- Fixed entering Loco Low Co and Wheel Arch Angels setting the wrong mod shop ID<br />
+<br />
+Edit - 25/04/2020:<br />
+<br />
+- When the mod shop menu is destroyed pmodshopmenu is set to Menu:INVALID_MENU instead of Menu:0<br />
+- Sound ID 1055 "SOUND_SHOP_BUY_DENIED" is played with the "You don't have enough money to buy this item." text when you try to respray, buy a paint job, or buy a component without enough money<br />
+- Added a second text draw displaying "You have already bought this item!" if you try to select a one type component that you've already bought (e.g. Hydraulics) . Sound ID 1055 "SOUND_SHOP_BUY_DENIED" will also be played when this text shows<br />
+<br />
+Video (thanks Deadsh0ty) - <a href="https://www.youtube.com/watch?v=VZQgn5SkWo4" target="_blank">https://www.youtube.com/watch?v=VZQgn5SkWo4</a><br />
+<br />
+Download - <a href="https://mega.nz/file/P24TAKxS#_Jv6Q4qVMCLBR-8iWoYFcrVDqmbFGv2qx5sAzBO3dso" target="_blank">click</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="membere599.html?action=profile&amp;uid=300291">SonnyGamer</a> -  03.04.2020
+<br />
+<br />
+Nice filterscript, <br />
+I downloaded it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="membereafe.html?action=profile&amp;uid=336308">l0gic</a> -  03.04.2020
+<br />
+<br />
+////
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="memberb946.html?action=profile&amp;uid=13213">Chaprnks</a> -  03.04.2020
+<br />
+<br />
+I like the script, but I just noticed one major flaw: AFAIK, Kalcor removed CreateMenu function from SA-MP recently.. I remember reading a reply in Everything &amp; Nothing about how its rarely used on servers or something.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  03.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Chaprnks</strong><br />
+<a href="showthread29c4.html?pid=4137381#pid4137381" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I like the script, but I just noticed one major flaw: AFAIK, Kalcor removed CreateMenu function from SA-MP recently.. I remember reading a reply in Everything &amp; Nothing about how its rarely used on servers or something.</div>
+</td>
+</tr>
+</table>
+</div>CreateMenu was patched, not removed. It still exists.<br />
+<br />
+Edit - 03/04/2020:<br />
+<br />
+- Fixed Dumper being allowed in Transfender (it isn't moddable)<br />
+- Fixed invalid components not being filtered on aircraft and trailers
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="memberd8ba.html?action=profile&amp;uid=266967">Fairuz</a> -  03.04.2020
+<br />
+<br />
+Github? <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="membercc2a.html?action=profile&amp;uid=287837">Mobtiesgangsa</a> -  03.04.2020
+<br />
+<br />
+one question! do you have a menu editor?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  03.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Dice_</strong><br />
+<a href="showthread3f9b.html?pid=4137480#pid4137480" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Github? <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>It's 1 file lol.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Mobtiesgangsa</strong><br />
+<a href="showthread41e9-2.html?pid=4137497#pid4137497" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">one question! do you have a menu editor?</div>
+</td>
+</tr>
+</table>
+</div>No sorry. I got the menu info from main.scm to make them identical to the default mod shops.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="member3012.html?action=profile&amp;uid=331085">Symon</a> -  03.04.2020
+<br />
+<br />
+I don't know if this is a bug but when selecting an option from Wheel Arch Angels (tried that modshop only), such as Respray or Exaust or anything in that menu, the interior is not visible anymore aswell the vehicle. (Blank screen)<br />
+<br />
+But the menu is still visibile.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: beckzy's mod shops - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  03.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Symon</strong><br />
+<a href="showthread100d.html?pid=4137511#pid4137511" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I don't know if this is a bug but when selecting an option from Wheel Arch Angels (tried that modshop only), such as Respray or Exaust or anything in that menu, the interior is not visible anymore aswell the vehicle. (Blank screen)<br />
+<br />
+But the menu is still visibile.</div>
+</td>
+</tr>
+</table>
+</div>It's fixed now, please re-download. Thanks for reporting.<br />
+<br />
+Edit: Video (Thanks Deadsh0ty) - <a href="https://www.youtube.com/watch?v=VZQgn5SkWo4" target="_blank">https://www.youtube.com/watch?v=VZQgn5SkWo4</a><br />
+<br />
+Edit - 25/04/2020:<br />
+<br />
+- When the mod shop menu is destroyed pmodshopmenu is set to Menu:INVALID_MENU instead of Menu:0<br />
+- Sound ID 1055 "SOUND_SHOP_BUY_DENIED" is played with the "You don't have enough money to buy this item." text when you try to respray, buy a paint job, or buy a component without enough money<br />
+- Added a second text draw displaying "You have already bought this item!" if you try to select a one type component that you've already bought (e.g. Hydraulics) . Sound ID 1055 "SOUND_SHOP_BUY_DENIED" will also be played when this text shows
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

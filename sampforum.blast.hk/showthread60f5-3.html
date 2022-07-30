@@ -1,0 +1,2015 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>[Include] [alpha] Objects Physics - Handle objects collisions and more.</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "fe38daf5fb99da528c240448ad9a3f97";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="I think I should consider doing another test maybe tomorrow or after tomorrow! Thanks Crayder." />
+<link rel="canonical" href="showthread8115.html?tid=446286&amp;page=4" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="fe38daf5fb99da528c240448ad9a3f97" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb87d.html?fid=83">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (4):</span>
+<!-- start: multipage_prevpage -->
+<a href="showthread642d.html?tid=446286&amp;page=3" class="pagination_previous">&laquo; Previous</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_page -->
+<a href="showthreadee9b.html?tid=446286" class="pagination_page">1</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread8daa.html?tid=446286&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread642d.html?tid=446286&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+ <span class="pagination_current">4</span>
+<!-- end: multipage_page_current -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreada96a-2.html?mode=threaded&amp;tid=446286&amp;pid=3800001#pid3800001">Threaded Mode</a></span>
+				</div>
+				
+					[Include] [alpha] Objects Physics - Handle objects collisions and more.
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3644229"></a>
+<div class="post classic " style="" id="post_3644229">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member080e.html?action=profile&amp;uid=155364"><img src="uploads/avatars/155364.png" alt="" width="55" height="28" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member080e.html?action=profile&amp;uid=155364">Stanford</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 983<br />
+	Threads: 98<br />
+	Joined: Feb 2012
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationcf5d.html?uid=155364"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread11ae.html?tid=446286&amp;pid=3644229#pid3644229" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#61</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 61 by Stanford" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">19.01.2016, 19:23 <span class="post_edit" id="edited_by_3644229"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3644229">
+		I think I should consider doing another test maybe tomorrow or after tomorrow!<br />
+Thanks Crayder.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3644229">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search2e30.html?action=finduser&amp;uid=155364" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply6681.html?tid=446286&amp;replyto=3644229" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3654875"></a>
+<div class="post classic " style="" id="post_3654875">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membera963.html?action=profile&amp;uid=206297"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membera963.html?action=profile&amp;uid=206297">PeppeAC</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 89<br />
+	Threads: 9<br />
+	Joined: Jun 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation8c29.html?uid=206297"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadf114.html?tid=446286&amp;pid=3654875#pid3654875" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#62</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 62 by PeppeAC" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">09.02.2016, 13:21 <span class="post_edit" id="edited_by_3654875"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3654875">
+		I have released a better version of Pool game:<br />
+<a href="showthread4acc.html?tid=600413" target="_blank">https://sampforum.blast.hk/showthread.php?tid=600413</a>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3654875">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searche592.html?action=finduser&amp;uid=206297" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply9775.html?tid=446286&amp;replyto=3654875" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3662521"></a>
+<div class="post classic " style="" id="post_3662521">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member7e78.html?action=profile&amp;uid=173204"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member7e78.html?action=profile&amp;uid=173204">Speiki2208</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 21<br />
+	Threads: 0<br />
+	Joined: Jul 2012
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationa1ca.html?uid=173204"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreaddbad.html?tid=446286&amp;pid=3662521#pid3662521" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#63</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 63 by Speiki2208" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">24.02.2016, 14:20 <span class="post_edit" id="edited_by_3662521"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3662521">
+		Very nice plugin, which creates multiple possibilities. Can you add a default support for Incognitos Streamer (for CreateDynamicObject) ?<br />
+<br />
+Edit: Ah, some people already argumented that Streaner would be too slow.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3662521">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search616e.html?action=finduser&amp;uid=173204" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply990c-2.html?tid=446286&amp;replyto=3662521" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3698491"></a>
+<div class="post classic " style="" id="post_3698491">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberdb81.html?action=profile&amp;uid=217871"><img src="uploads/avatars/217871.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 318<br />
+	Threads: 21<br />
+	Joined: Oct 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation8c82.html?uid=217871"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9e6e.html?tid=446286&amp;pid=3698491#pid3698491" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#64</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 64 by Max_Andolini" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">11.05.2016, 14:43 <span class="post_edit" id="edited_by_3698491"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3698491">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>PeppeAC</strong><br />
+<a href="showthreadf114.html?pid=3654875#pid3654875" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I have released a better version of Pool game:<br />
+<a href="showthread4acc.html?tid=600413" target="_blank">https://sampforum.blast.hk/showthread.php?tid=600413</a></div>
+</td>
+</tr>
+</table>
+</div>Update the ColAndreas<br />
+<br />
+<a href="showthread941d.html?tid=586068" target="_blank">https://sampforum.blast.hk/showthread.php?tid=586068</a><br />
+<br />
+Use foreach instead y_iterate<br />
+<br />
+<a href="https://github.com/Misiur/YSI-Includes" target="_blank">https://github.com/Misiur/YSI-Includes</a><br />
+<br />
+And improve the object pyhysics soon <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3698491">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9dcc.html?action=finduser&amp;uid=217871" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply9e81.html?tid=446286&amp;replyto=3698491" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3698533"></a>
+<div class="post classic " style="" id="post_3698533">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberbf87.html?action=profile&amp;uid=214776"><img src="uploads/avatars/214776.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberbf87.html?action=profile&amp;uid=214776"><s>Crayder</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 3,324<br />
+	Threads: 96<br />
+	Joined: Sep 2013
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc976.html?tid=446286&amp;pid=3698533#pid3698533" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#65</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 65 by Crayder" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">11.05.2016, 15:55 <span class="post_edit" id="edited_by_3698533"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3698533">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>eco1999</strong><br />
+<a href="showthread9e6e.html?pid=3698491#pid3698491" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Update the ColAndreas<br />
+<br />
+<a href="showthread941d.html?tid=586068" target="_blank">https://sampforum.blast.hk/showthread.php?tid=586068</a></div>
+</td>
+</tr>
+</table>
+</div>He doesn't need to do anything to update ColAndreas. It's completely on the user's end.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>eco1999</strong><br />
+<a href="showthread9e6e.html?pid=3698491#pid3698491" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Use foreach instead y_iterate<br />
+<br />
+<a href="https://github.com/Misiur/YSI-Includes" target="_blank">https://github.com/Misiur/YSI-Includes</a></div>
+</td>
+</tr>
+</table>
+</div>I think you meant to say "use y_iterate instead foreach". In my opinion, this too should be up to the user.<br />
+@PeppeAC you should just verify either foreach or y_iterate were included. They both have definitions for this. They both have the same exact functions. One is more recently updated than the other, y_iterate. <br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>eco1999</strong><br />
+<a href="showthread9e6e.html?pid=3698491#pid3698491" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">And improve the object pyhysics soon <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>How exactly do you think they can be improved?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3698533">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchd546.html?action=finduser&amp;uid=214776" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyfc84.html?tid=446286&amp;replyto=3698533" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3698550"></a>
+<div class="post classic " style="" id="post_3698550">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberdb81.html?action=profile&amp;uid=217871"><img src="uploads/avatars/217871.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 318<br />
+	Threads: 21<br />
+	Joined: Oct 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation8c82.html?uid=217871"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadbca8.html?tid=446286&amp;pid=3698550#pid3698550" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#66</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 66 by Max_Andolini" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">11.05.2016, 16:14 <span class="post_edit" id="edited_by_3698550"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3698550">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Crayder</strong><br />
+<a href="showthreadc976.html?pid=3698533#pid3698533" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">He doesn't need to do anything to update ColAndreas. It's completely on the user's end.<br />
+<br />
+<br />
+<br />
+I think you meant to say "use y_iterate instead foreach". In my opinion, this too should be up to the user.<br />
+@PeppeAC you should just verify either foreach or y_iterate were included. They both have definitions for this. They both have the same exact functions. One is more recently updated than the other, y_iterate. <br />
+<br />
+<br />
+<br />
+How exactly do you think they can be improved?</div>
+</td>
+</tr>
+</table>
+</div>Bug or something like that.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3698550">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9dcc.html?action=finduser&amp;uid=217871" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply3ac3.html?tid=446286&amp;replyto=3698550" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3716904"></a>
+<div class="post classic " style="" id="post_3716904">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member336c.html?action=profile&amp;uid=276018"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member336c.html?action=profile&amp;uid=276018">ScIrUsna</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 285<br />
+	Threads: 154<br />
+	Joined: Mar 2016
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationdc26.html?uid=276018"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread5f91.html?tid=446286&amp;pid=3716904#pid3716904" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#67</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 67 by ScIrUsna" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">14.06.2016, 15:26 <span class="post_edit" id="edited_by_3716904"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3716904">
+		I get argument warning in this line in this include:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">CA_RayCastLineAngle(x, y, z, x, y, z - 1000.0, unused, unused, bound);</pre>
+</div>Colandreas inc.:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">native CA_RayCastLineAngle(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &amp;Float:x, &amp;Float:y, &amp;Float:z, &amp;Float:rx, &amp;Float:ry, &amp;Float:rz);</pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3716904">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search1fed.html?action=finduser&amp;uid=276018" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply6726.html?tid=446286&amp;replyto=3716904" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3717711"></a>
+<div class="post classic " style="" id="post_3717711">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberdb81.html?action=profile&amp;uid=217871"><img src="uploads/avatars/217871.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 318<br />
+	Threads: 21<br />
+	Joined: Oct 2013
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation8c82.html?uid=217871"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc879-2.html?tid=446286&amp;pid=3717711#pid3717711" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#68</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 68 by Max_Andolini" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">16.06.2016, 02:33 <span class="post_edit" id="edited_by_3717711"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3717711">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ScIrUsna</strong><br />
+<a href="showthread5f91.html?pid=3716904#pid3716904" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I get argument warning in this line in this include:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">CA_RayCastLineAngle(x, y, z, x, y, z - 1000.0, unused, unused, bound);</pre>
+</div>Colandreas inc.:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">native CA_RayCastLineAngle(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &amp;Float:x, &amp;Float:y, &amp;Float:z, &amp;Float:rx, &amp;Float:ry, &amp;Float:rz);</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>+++1
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3717711">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9dcc.html?action=finduser&amp;uid=217871" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplybfbd.html?tid=446286&amp;replyto=3717711" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3717990"></a>
+<div class="post classic " style="" id="post_3717990">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member735e.html?action=profile&amp;uid=255412"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member735e.html?action=profile&amp;uid=255412">Greggu</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 29<br />
+	Threads: 5<br />
+	Joined: Mar 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation3416.html?uid=255412"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread760e.html?tid=446286&amp;pid=3717990#pid3717990" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#69</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 69 by Greggu" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">16.06.2016, 14:49 <span class="post_edit" id="edited_by_3717990"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3717990">
+		Could this include handle objects that's hinged to a surface?<br />
+For example, a pole falling over, or do physics apply only to objects that are indipendent?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3717990">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search8c71.html?action=finduser&amp;uid=255412" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc424.html?tid=446286&amp;replyto=3717990" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3718380"></a>
+<div class="post classic " style="" id="post_3718380">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberbf87.html?action=profile&amp;uid=214776"><img src="uploads/avatars/214776.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberbf87.html?action=profile&amp;uid=214776"><s>Crayder</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 3,324<br />
+	Threads: 96<br />
+	Joined: Sep 2013
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8165-2.html?tid=446286&amp;pid=3718380#pid3718380" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#70</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 70 by Crayder" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">17.06.2016, 06:16 <span class="post_edit" id="edited_by_3718380"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3718380">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ScIrUsna</strong><br />
+<a href="showthread5f91.html?pid=3716904#pid3716904" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I get argument warning in this line in this include:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">CA_RayCastLineAngle(x, y, z, x, y, z - 1000.0, unused, unused, bound);</pre>
+</div>Colandreas inc.:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">native CA_RayCastLineAngle(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &amp;Float:x, &amp;Float:y, &amp;Float:z, &amp;Float:rx, &amp;Float:ry, &amp;Float:rz);</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Remove "Angle", leave everything up to it.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3718380">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchd546.html?action=finduser&amp;uid=214776" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplye1cd.html?tid=446286&amp;replyto=3718380" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3733105"></a>
+<div class="post classic " style="" id="post_3733105">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member93fe.html?action=profile&amp;uid=234935"><img src="uploads/avatars/234935.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member93fe.html?action=profile&amp;uid=234935">VincenzoDrift</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 47<br />
+	Threads: 12<br />
+	Joined: Jun 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation0bf6.html?uid=234935"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc4a1.html?tid=446286&amp;pid=3733105#pid3733105" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#71</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 71 by VincenzoDrift" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.07.2016, 14:42 <span class="post_edit" id="edited_by_3733105"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3733105">
+		Hi, i'm trying to make a basic drop/loot system with ColAndreas and this include. I used Peppe's example to make a function that creates an onbject to throw. If I use the function CreateObject (native) it works perfectly, but if use the streamer of ColAndreas or Incognito's streamer the object spawns, but it doesn't move. I need to use streamer due to objects limit. Any solution?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 354px;
+		text-align: left;
+		overflow: auto">public DropInventoryItem(playerid, modelid)
+{
+	#define SPEED 	(10.0)
+	#define Z_SPEED (4.0)
+	#define GRAVITY (13.0)
+	
+        new Float:posx, Float:posy, Float:posz, Float:posa;		
+	GetPlayerPos(playerid, posx, posy, posz);
+	GetPlayerFacingAngle(playerid, posa);
+		
+	Streamer_Update(playerid);
+	new obj = CA_CreateDynamicObject_DC(modelid, posx, posy - 0.5 * floatcos(-(posa + 90.0), degrees), posz, 93.7, 120.0, posa + 60.0, -1, -1, -1, 300.0, 300.0);
+		
+	PHY_InitObject();
+	PHY_UseColAndreas(obj, 1);
+	PHY_SetObjectVelocity(obj, SPEED * floatsin(-posa, degrees), SPEED * floatcos(-posa, degrees), Z_SPEED);
+	PHY_SetObjectFriction(obj, 100);
+	PHY_SetObjectGravity(obj, GRAVITY);
+	ApplyAnimation(playerid, "GRENADE", "WEAPON_throwu", 3.0, 0, 0, 0, 0, 0);
+	return 1;
+}</pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3733105">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchdd25.html?action=finduser&amp;uid=234935" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplye851.html?tid=446286&amp;replyto=3733105" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3733234"></a>
+<div class="post classic " style="" id="post_3733234">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberbf87.html?action=profile&amp;uid=214776"><img src="uploads/avatars/214776.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberbf87.html?action=profile&amp;uid=214776"><s>Crayder</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 3,324<br />
+	Threads: 96<br />
+	Joined: Sep 2013
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadcd40-2.html?tid=446286&amp;pid=3733234#pid3733234" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#72</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 72 by Crayder" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.07.2016, 18:40 <span class="post_edit" id="edited_by_3733234"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3733234">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>VincenzoDrift</strong><br />
+<a href="showthreadc4a1.html?pid=3733105#pid3733105" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Hi, i'm trying to make a basic drop/loot system with ColAndreas and this include. I used Peppe's example to make a function that creates an onbject to throw. If I use the function CreateObject (native) it works perfectly, but if use the streamer of ColAndreas or Incognito's streamer the object spawns, but it doesn't move. I need to use streamer due to objects limit. Any solution?<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Код:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 354px;
+		text-align: left;
+		overflow: auto">public DropInventoryItem(playerid, modelid)
+{
+	#define SPEED 	(10.0)
+	#define Z_SPEED (4.0)
+	#define GRAVITY (13.0)
+	
+        new Float:posx, Float:posy, Float:posz, Float:posa;		
+	GetPlayerPos(playerid, posx, posy, posz);
+	GetPlayerFacingAngle(playerid, posa);
+		
+	Streamer_Update(playerid);
+	new obj = CA_CreateDynamicObject_DC(modelid, posx, posy - 0.5 * floatcos(-(posa + 90.0), degrees), posz, 93.7, 120.0, posa + 60.0, -1, -1, -1, 300.0, 300.0);
+		
+	PHY_InitObject();
+	PHY_UseColAndreas(obj, 1);
+	PHY_SetObjectVelocity(obj, SPEED * floatsin(-posa, degrees), SPEED * floatcos(-posa, degrees), Z_SPEED);
+	PHY_SetObjectFriction(obj, 100);
+	PHY_SetObjectGravity(obj, GRAVITY);
+	ApplyAnimation(playerid, "GRENADE", "WEAPON_throwu", 3.0, 0, 0, 0, 0, 0);
+	return 1;
+}</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>You could just use CreateObject for these temporarily. Don't use the CA dynamic objects. Plus, there is a callback in this include for when objects collide with the CA world.<br />
+<br />
+Use CreateObject.<br />
+Activate it's physics.<br />
+Wait for the world collided callback.<br />
+Get the objects information and add the drop.<br />
+Add the streamer object.<br />
+Destroy the object.<br />
+Deactivate it's physics.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3733234">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchd546.html?action=finduser&amp;uid=214776" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply2ca6.html?tid=446286&amp;replyto=3733234" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3733593"></a>
+<div class="post classic " style="" id="post_3733593">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member93fe.html?action=profile&amp;uid=234935"><img src="uploads/avatars/234935.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member93fe.html?action=profile&amp;uid=234935">VincenzoDrift</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 47<br />
+	Threads: 12<br />
+	Joined: Jun 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation0bf6.html?uid=234935"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadde09.html?tid=446286&amp;pid=3733593#pid3733593" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#73</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 73 by VincenzoDrift" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">13.07.2016, 11:59 <span class="post_edit" id="edited_by_3733593"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3733593">
+		Thanks a lot <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3733593">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchdd25.html?action=finduser&amp;uid=234935" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply3622.html?tid=446286&amp;replyto=3733593" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3800001"></a>
+<div class="post classic " style="" id="post_3800001">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member707b.html?action=profile&amp;uid=281915"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member707b.html?action=profile&amp;uid=281915"><s>MerryDeer</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 723<br />
+	Threads: 366<br />
+	Joined: Jun 2016
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread60f5-3.html?tid=446286&amp;pid=3800001#pid3800001" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#74</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 74 by MerryDeer" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">16.11.2016, 12:15 <span class="post_edit" id="edited_by_3800001"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3800001">
+		How to make psysic object follow player and will by bouncing? it's for basketball system
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3800001">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchba48.html?action=finduser&amp;uid=281915" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply3087.html?tid=446286&amp;replyto=3800001" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3801867"></a>
+<div class="post classic " style="" id="post_3801867">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membera485.html?action=profile&amp;uid=242544"><img src="uploads/avatars/242544.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membera485.html?action=profile&amp;uid=242544">GoldenLion</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 944<br />
+	Threads: 128<br />
+	Joined: Sep 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation36cf.html?uid=242544"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreade257.html?tid=446286&amp;pid=3801867#pid3801867" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#75</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 75 by GoldenLion" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">19.11.2016, 22:58 <span class="post_edit" id="edited_by_3801867"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3801867">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Billpilot</strong><br />
+<a href="showthread3591.html?pid=3801861#pid3801861" rel="nofollow"><img alt="Посмотреть сообщение" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Looks nice!</div>
+</td>
+</tr>
+</table>
+</div>Lmao, are you posting in literally every thread saying it's nice just to get post count? For example if you scroll through the gamemodes page you can see that in almost every thread the last post was made by you.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3801867">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search401d.html?action=finduser&amp;uid=242544" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply4657.html?tid=446286&amp;replyto=3801867" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid4026086"></a>
+<div class="post classic " style="" id="post_4026086">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member6d35.html?action=profile&amp;uid=249718"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member6d35.html?action=profile&amp;uid=249718">NeamPojma</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 67<br />
+	Threads: 23<br />
+	Joined: Jan 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation547d.html?uid=249718"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8884.html?tid=446286&amp;pid=4026086#pid4026086" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#76</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 76 by NeamPojma" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.06.2018, 22:44 <span class="post_edit" id="edited_by_4026086"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_4026086">
+		Im trying to use PHY_UseColAndreas(objectid, mode = 1)  but it give me following error<br />
+C:\Users\Самп\Desktop\0.3.7\pawno\include\physics.  inc(730) : error 017: undefined symbol "PHY_UpdateBounds"
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_4026086">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchfc78.html?action=finduser&amp;uid=249718" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyef20.html?tid=446286&amp;replyto=4026086" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid4153916"></a>
+<div class="post classic " style="" id="post_4153916">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercc78.html?action=profile&amp;uid=341901"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercc78.html?action=profile&amp;uid=341901"><s>IZenta</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 24<br />
+	Threads: 0<br />
+	Joined: Jan 2020
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread5c6e.html?tid=446286&amp;pid=4153916#pid4153916" title="Re: [alpha] Objects Physics - Handle objects collisions and more.">#77</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 77 by IZenta" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">02.07.2020, 11:33 <span class="post_edit" id="edited_by_4153916"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by IZenta; 02/07/2020 at 12:21 PM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_4153916">
+		Why we can only use CreateObject? i have lot object on my gamemode wtf
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_4153916">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search75f8.html?action=finduser&amp;uid=341901" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply10d3.html?tid=446286&amp;replyto=4153916" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthreadb475.html?tid=446286&amp;action=nextoldest">Next Oldest</a> | <a href="showthreadf4de.html?tid=446286&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="446286" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (4):</span>
+<!-- start: multipage_prevpage -->
+<a href="showthread642d.html?tid=446286&amp;page=3" class="pagination_previous">&laquo; Previous</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_page -->
+<a href="showthreadee9b.html?tid=446286" class="pagination_page">1</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread8daa.html?tid=446286&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread642d.html?tid=446286&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+ <span class="pagination_current">4</span>
+<!-- end: multipage_page_current -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthreadee9b.html?tid=446286">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" selected="selected">---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb87d.html?fid=83">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-446286.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=fe38daf5fb99da528c240448ad9a3f97" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="tid" value="446286" />
+<input type="hidden" name="pid" value="3800001" />
+
+	<input type="hidden" name="my_post_key" value="fe38daf5fb99da528c240448ad9a3f97" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

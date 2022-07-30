@@ -1,0 +1,382 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [FilterScript] JaKe's House System - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="JaKe's House System v1 Introduction When i began scripting, i started off using GarHouse it was great and cool. It is rare to find GarHouse these days, so i decided to make a similar script to GarHous" />
+<link rel="canonical" href="showthread8239.html?tid=550690" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread8239.html?tid=550690">[FilterScript] JaKe's House System</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [FilterScript] JaKe's House System (<em>/showthread.php?tid=550690</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthreada550.html?tid=550690&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread3273.html?tid=550690&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+JaKe's House System - <a href="memberb499.html?action=profile&amp;uid=163141">JaKe Elite</a> -  14.12.2014
+<br />
+<br />
+<div align="center"><font color="Green"><font size="6">JaKe's House System v1</font></font></div>
+<b><u><font size="5"><font color="SeaGreen">I</font>ntroduction</font></u></b><br />
+<br />
+When i began scripting, i started off using GarHouse it was great and cool. It is rare to find GarHouse these days,<br />
+so i decided to make a similar script to GarHouse, Note i never copied any codes from GarHouse, just an idea and stuffs. JakHouse has been scripted a while ago back in October, it has been in my PC long time ago, lazy to release it, now here it is. JakHouse is currently used in my server and pOS (Creed's server - modification has been done.) The house system doesn't support House Vehicles unlike to the other house system, This is just one simple house system with house storage, house note and a basic house system features. Feel free to edit it, PM (Consult) me first before releasing it, Took me 3 days to script it and fix the bugs before finally taking it's final BETA test on pOS.<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">N</font>otes</font></u></b><br />
+<br />
+There are no bugs found during the testing at pOS however, If you found one please post it on this topic or PM me about it, So i can fix it. All the commands has been tested. <br />
+<br />
+If the dialogs doesn't work properly (the /hmenu), Make sure the OnDialogResponse is on return 0 or return 1, try them if it worked. So far no conflictions found during the testing on pOS and on my local server.<br />
+<br />
+Notes from the source code, Read them, I don't need to explain it since i already explain them on the comment (//).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:423px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">// Configuartions</span><br/><br/><span style="color: #2222AA;">#define             MAX_HOUSE_NAME              256</span><br/><span style="color: #2222AA;">#define             MAX_HOUSES                  350</span><br/><br/><span style="color: #2222AA;">#define             FREEZE_LOAD                 true</span><br/><span style="color: #228822;">//If enable, Freezes you once entered the house, freezes you aswell once exited the house</span><br/><span style="color: #228822;">//The freeze lifts off in 5 seconds, depends on FREEZE_TIME</span><br/><br/><span style="color: #2222AA;">#define             FREEZE_TIME                 5   //In seconds</span><br/><br/><span style="color: #2222AA;">#define             FORCE_SPAWNHOME             true</span><br/><span style="color: #228822;">//Once the FORCE_SPAWNHOME is set to true, a timer will be run for 2.5 seconds when you spawn.</span><br/><span style="color: #228822;">//Once that timer is called, Player will be forced spawn in his home if he has the spawn settings on.</span><br/><span style="color: #228822;">//This define is created as the spawnhome feature we had doesn't work, as instead of spawning at home, it spawns at the gamemode's spawnpoint.</span><br/><br/><span style="color: #228822;">//You can change this [Just make sure you know what you are doing].</span><br/><br/><span style="color: #2222AA;">#define             SALE_PICKUP                 1273</span><br/><span style="color: #2222AA;">#define             NOTSALE_PICKUP              1272</span><br/><span style="color: #2222AA;">#define             NOTSALE_ICON                32</span><br/><span style="color: #2222AA;">#define             SALE_ICON                   31</span><br/><br/><span style="color: #2222AA;">#define             STREAM_DISTANCES            35.0</span><br/><span style="color: #228822;">//Do not make it higher, or else it will conflict with the other stream objects etc.</span></div></div></pre>
+</div>
+<b><u><font size="5"><font color="SeaGreen">I</font>nstalling</font></u></b><br />
+<br />
+Open the JakHouse zip file, Now open the folder called "JaKe's House System", Open up the filterscript there are 2 folders, compiled and source. If you want to edit the script, Open the source folder, there'll be a .pwn name jakhouse, Move it to your server's filterscript then recompile it. If you don't want to edit the script and decided to stick with the default way of my scripting, Choose the Compiled folder, there'll be a .amx name jakhouse, Move it to your server's filterscript. Moving on, Head to pawno/includes, Place all the includes to your server's pawno/includes folder. Head back to the first page, Click plugins, There'll be two folders on it, One is Linux (CentOS) and Windows OS, if you are using a Windows Operating System, choose the folder Windows OS, there'll be two files (sscanf.dll and streamer.dll), Import them to your server's plugins folder. If you are using a Linux Operating System, choose the folder Linux (CentOS), there'll be a plugin similar to mentioned above but with the format of .so, Import them to your plugins folder. Now go to your server's scriptfiles, Create a folder name JakHouse, inside the folder JakHouse create 2 folders name 'Houses' and 'User'.<br />
+<br />
+Now on loading the filterscript, It's basically easy. Open server.cfg and add the following.<br />
+<br />
+filterscript jakhouse<br />
+plugins sscanf streamer<br />
+<br />
+(Add .so in the end on the plugins' name if you are using Linux)<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">C</font>ommands</font></u></b><br />
+<br />
+/hcmds - For the house commands<br />
+/buyint - To buy interior (Works only when you choose interior on /hmenu)<br />
+/cancelint - To cancel the preview interior (Same like /buyint)<br />
+/buyhouse - /sellhouse (Buys/Sells house, Works only when in-range of the pickup)<br />
+/hlock - To lock the house (Works only when in-range of pickup/Inside)<br />
+/hmenu - Player's House Configuration Menu")<br />
+/henter - Enters inside the house (If not locked).<br />
+/hnote - Adds a note to your house.<br />
+/hcnote - Checks a note on someones house<br />
+For RCONs, /ahcmds for RCON House commands.<br />
+<br />
+RCON Commands<br />
+/addhouse - Adds a house<br />
+/removehouse - Removes a house<br />
+/gotohouse - Teleports to the house<br />
+/hinteriors - Lists all the available interior<br />
+/hmove - Moves the specific houseid to your current location.<br />
+/asellhouse - Sells the house without doing the actual command.<br />
+/hnear - Lists all nearby houses within 35 meters.<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">E</font>xplanation</font></u></b><br />
+<br />
+• Level - Score needed by the player to buy the house, for E.G. 999 level, You need 999 score and above to buy the house. (Cannot be edited, only at /addhouse and .ini editing)<br />
+• Price - Cash needed by the player to buy the house, for E.G. 999 cash, You need &#36;999 cash (or above) to buy the house. (Can be edited throughout /hmenu, /addhouse and .ini editing)<br />
+• HouseID - HouseID assigned to the house for editing.<br />
+♦ Owner - Owner of the house (Default is None)<br />
+• Description - Name of the house (E.G. JaKe's house)<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">S</font>creenshot</font></u></b><br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/WF9tpPB.png"/><br />
+(For sale house)<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/NYpA3cT.png"/><br />
+(House bought by the Player JaKe)<br />
+<br />
+<img alt="" border="0" src="http://i.imgur.com/Wr3Vfbz.png"/><br />
+(House menus)<br />
+<br />
+NOTE: I am using a modified JakHouse so it's a little bit different from the released version, I am using a modified one (Implemented to my Gamemode)<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">C</font>redits</font></u></b><br />
+<br />
+JaKe for scripting JakHouse.<br />
+Zeex for zcmd, ****** for both foreach and sscanf, Incognito for streamer, DracoBlue for dini.<br />
+<br />
+Creed, Anna and pOS staffs for testing JakHouse - They have the original copy.<br />
+<br />
+<b><u><font size="5"><font color="SeaGreen">D</font>ownload</font></u></b><br />
+<br />
+<a href="http://pastebin.com/1VXkWRCA" target="_blank">v1 - Pastebin (Manual Installation/Downloading)</a><br />
+<a href="http://www.solidfiles.com/d/deb0ebbf25/JaKes_House_System_v1.rar" target="_blank">v1 - Solidfiles (Manual Installation/Automatic Download incs.)</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member1a27.html?action=profile&amp;uid=196409">MrCreed</a> -  14.12.2014
+<br />
+<br />
+Really Awesome house system, it works well in my server <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+You've done a good job Jake, thanks for everything.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member4a30.html?action=profile&amp;uid=244733">Glossy42O</a> -  14.12.2014
+<br />
+<br />
+Awesome work!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberf396.html?action=profile&amp;uid=244744">M4D</a> -  14.12.2014
+<br />
+<br />
+Nice job bro<br />
+Keep it up<br />
+Try to update it to Y_Ini or MySQL next version (if you want update it)<br />
++rep
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberd5f7.html?action=profile&amp;uid=240057">Ox1gEN</a> -  14.12.2014
+<br />
+<br />
+Very /<u>VERY</u>/ talented scripter.<br />
+I enjoy reading your code.<br />
+Nice job.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member7e70.html?action=profile&amp;uid=236638">Arastair</a> -  14.12.2014
+<br />
+<br />
+Good job Jake
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member6f0c.html?action=profile&amp;uid=211253">JeaSon</a> -  14.12.2014
+<br />
+<br />
+really nice work jake
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member584b.html?action=profile&amp;uid=226396">xStunt</a> -  14.12.2014
+<br />
+<br />
+Nice work Jake!<br />
+<br />
+<br />
+Do you remember me? it's me Apex
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member2321.html?action=profile&amp;uid=206543">iAnonymous</a> -  14.12.2014
+<br />
+<br />
+Good Job son.<br />
+<br />
+Dini, really?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a> -  14.12.2014
+<br />
+<br />
+Good job Jake keep it up!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberbe7a.html?action=profile&amp;uid=217358">Younes44</a> -  15.12.2014
+<br />
+<br />
+Awesome Work JaKe <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
++Rep
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member29f2.html?action=profile&amp;uid=158660">Lordzy</a> -  15.12.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>_Jake_</strong><br />
+<a href="showthread6540-2.html?pid=3288051#pid3288051" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Converting it to Y_INI soon. <br />
+<br />
+Thanks for the positive feedbacks by the way.</div>
+</td>
+</tr>
+</table>
+</div>Why INI? You could use SQL which can provide new features with fast performance.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberb499.html?action=profile&amp;uid=163141">JaKe Elite</a> -  15.12.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Lordzy</strong><br />
+<a href="showthread492c-2.html?pid=3288064#pid3288064" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why INI? You could use SQL which can provide new features with fast performance.</div>
+</td>
+</tr>
+</table>
+</div>I am having problems figuring it out on how to work it on SQL, Mind helping me out? (PM me)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member864e.html?action=profile&amp;uid=244910">UltraScripter</a> -  15.12.2014
+<br />
+<br />
+Good Job!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberbfd0.html?action=profile&amp;uid=124094">Terror9921</a> -  15.12.2014
+<br />
+<br />
+It works great!<br />
+<br />
+The only problem that i got is that i cant see a icon on the map?<br />
+do  i need any setting for that or?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberbfd0.html?action=profile&amp;uid=124094">Terror9921</a> -  15.12.2014
+<br />
+<br />
+oke i think i got a bug or something<br />
+<br />
+<br />
+i made a few houses now as  soon as i go in my house and my friend goes in his house <br />
+we go in to the same house<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/><img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberb499.html?action=profile&amp;uid=163141">JaKe Elite</a> -  16.12.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Terror9921</strong><br />
+<a href="showthread9b14-2.html?pid=3288201#pid3288201" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It works great!<br />
+<br />
+The only problem that i got is that i cant see a icon on the map?<br />
+do  i need any setting for that or?</div>
+</td>
+</tr>
+</table>
+</div>The range is in 35, yes you have to edit it, Check the script for more info.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Terror9921</strong><br />
+<a href="showthread0332.html?pid=3288253#pid3288253" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">oke i think i got a bug or something<br />
+<br />
+<br />
+i made a few houses now as  soon as i go in my house and my friend goes in his house <br />
+we go in to the same house<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/><img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??</div>
+</td>
+</tr>
+</table>
+</div>Change the virtual world to other numbers instead of zero.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="memberbfd0.html?action=profile&amp;uid=124094">Terror9921</a> -  16.12.2014
+<br />
+<br />
+Oke that works thank you,<br />
+<br />
+now i got 1 small problem left as soon i go in to the  house menu to change name or something<br />
+the  menu doesnt work, i hate the house system thats  in my gamemode atm, and  maybe it doesnt work because  of that i cant figure it  out atm i use  UFF new vegas cops and robbers gamemode<br />
+<br />
+<br />
+would you be able to help me out with  this! <br />
+<br />
+<br />
+<br />
+i realy enjoy the script!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: JaKe's House System - <a href="membercbbc.html?action=profile&amp;uid=243467">Flori</a> -  16.12.2014
+<br />
+<br />
+Great job. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: JaKe's House System - <a href="member5dcb.html?action=profile&amp;uid=246093">Wolverine1996</a> -  16.12.2014
+<br />
+<br />
+Yea,<br />
+Fantastic Work.<br />
+Big Claps<br />
+<br />
+Now my mind lighted up,Lucas was telling about this future SV which you two are working.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

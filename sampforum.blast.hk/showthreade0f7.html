@@ -1,0 +1,2218 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>[Include] My Mailer Include</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "11235e3bced12354543f2cd943bb742f";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="Hey, I noticed there are a couple of functions for sending e-mails on the forums and none of them really work properly (no offence). This, I believe, should be able to handle most charsets (I'm not su" />
+<link rel="canonical" href="showthreade0f7.html?tid=197755" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="11235e3bced12354543f2cd943bb742f" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayc89b.html?fid=83&amp;page=5">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (5):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="showthread9619-2.html?tid=197755&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread1e86.html?tid=197755&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthreada504.html?tid=197755&amp;page=4" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread73f0.html?tid=197755&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="showthread9619-2.html?tid=197755&amp;page=2" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadab0e-4.html?mode=threaded&amp;tid=197755&amp;pid=950402#pid950402">Threaded Mode</a></span>
+				</div>
+				
+					[Include] My Mailer Include
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid950402"></a>
+<div class="post classic " style="" id="post_950402">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercec9.html?action=profile&amp;uid=23640"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,831<br />
+	Threads: 69<br />
+	Joined: Mar 2008
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputatione133.html?uid=23640"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadfdaf-3.html?tid=197755&amp;pid=950402#pid950402" title="My Mailer Include">#1</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 1 by Slice" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 07:21 <span class="post_edit" id="edited_by_950402"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by Slice; 15/04/2019 at 01:23 PM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950402">
+		Hey,<br />
+I noticed there are a couple of functions for sending e-mails on the forums and none of them really work properly (no offence).<br />
+This, I believe, should be able to handle most charsets (I'm not sure about multi-byte, please let me know how it goes).<br />
+<b>It can handle quotes, slashes, special characters, etc.</b><br />
+It also runs relatively fast:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">Bench for SendMail: executes, by average, 32 times/ms.</pre>
+</div><font size="1">That doesn't mean you should send mails 32 times in a millisecond!</font><br />
+<br />
+<font size="5">Usage</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">SendMail</span><span style="color: #007700">( </span><span style="color: #0000BB">to</span><span style="color: #007700">[], </span><span style="color: #0000BB">sender_email</span><span style="color: #007700">[], </span><span style="color: #0000BB">sender_name</span><span style="color: #007700">[], </span><span style="color: #0000BB">subject</span><span style="color: #007700">[], </span><span style="color: #0000BB">message</span><span style="color: #007700">[] ); 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="5">Example</font><br />
+Create a filterscript with the contents below and load it.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define MAILER_URL "my-server.com/mailer.php" // This has to be defined BEFORE you include mailer.</span><br/><br/><span style="color: #2222AA;">#include &lt;mailer&gt;</span><br/><br/><span style="color: #2222BB;">public</span> OnFilterScriptInit<span style="color: #000000;">(</span> <span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    SendMail<span style="color: #000000;">(</span> <span style="color: #000066;">"your.email@here.ok"</span>, <span style="color: #000066;">"roleplay.server@example.com"</span>, <span style="color: #000066;">"Roleplay <span style="color: #000099; font-weight: bold;">\"</span>Server<span style="color: #000099; font-weight: bold;">\"</span>"</span>, <span style="color: #000066;">"My <span style="color: #000099; font-weight: bold;">\"</span>mепlлr<span style="color: #000099; font-weight: bold;">\"</span> &amp; it's sьbjйct!"</span>, <span style="color: #000066;">"Hиllц hцw еrл yoь? I'm <span style="color: #000099; font-weight: bold;">\"</span>writing<span style="color: #000099; font-weight: bold;">\"</span> weird simply to test if my mailer script can handle it without any problems. Gцt е prуblлm wпth thдt?"</span> <span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<font size="5">Download</font><br />
+Put mailer.inc in your pawno\include folder and upload mailer.php to a web server that has PHP (you may need to configure it's SMTP server).<br />
+<br />
+mailer.php:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 354px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br/>    ini_set</span><span style="color: #007700">( </span><span style="color: #DD0000">'html_errors'</span><span style="color: #007700">, </span><span style="color: #0000BB">false </span><span style="color: #007700">);
+
+<br/>    if ( empty( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'t' </span><span style="color: #007700">] ) || empty( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'f' </span><span style="color: #007700">] ) || empty( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'n' </span><span style="color: #007700">] ) || empty( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'s' </span><span style="color: #007700">] ) || empty( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'m' </span><span style="color: #007700">] ) )
+<br/>        die( </span><span style="color: #DD0000">'Error: Missing parameters.' </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">mail</span><span style="color: #007700">(
+<br/>        </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'t' </span><span style="color: #007700">],
+<br/>        </span><span style="color: #0000BB">utf8_encode</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'s' </span><span style="color: #007700">] ),
+<br/>        </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'m' </span><span style="color: #007700">],
+<br/>        </span><span style="color: #0000BB">implode</span><span style="color: #007700">(
+<br/>            </span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">,
+<br/>            array
+<br/>            (
+<br/>                </span><span style="color: #DD0000">'From: "' </span><span style="color: #007700">. </span><span style="color: #0000BB">addslashes</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'f' </span><span style="color: #007700">] ) . </span><span style="color: #DD0000">"\" &lt;</span><span style="color: #007700">{</span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[ </span><span style="color: #DD0000">'n' </span><span style="color: #007700">]}</span><span style="color: #DD0000">&gt;"</span><span style="color: #007700">,
+<br/>                </span><span style="color: #DD0000">"Reply-To: </span><span style="color: #007700">{</span><span style="color: #0000BB">&#36;_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'f'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">,
+<br/>                </span><span style="color: #DD0000">"X-Mailer: PHP/" </span><span style="color: #007700">. </span><span style="color: #0000BB">phpversion</span><span style="color: #007700">( ),
+<br/>            )
+<br/>        )
+<br/>    );
+<br/></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>mailer.inc:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">#include &lt;a_samp&gt;
+#include &lt;a_http&gt;
+
+#if ( !defined MAILER_MAX_MAIL_SIZE )
+	#define MAILER_MAX_MAIL_SIZE  (1024)
+#endif
+
+#if ( !defined MAILER_URL )
+	#error Please define MAILER_URL before including the mailer include.
+#endif
+
+stock SendMail( const szReceiver[ ], const szSenderMail[ ], const szSenderName[ ], const szSubject[ ], const szMessage[ ] )
+{
+	new
+		szBuffer[ MAILER_MAX_MAIL_SIZE ] = "t=",
+		iPos    = strlen( szBuffer ),
+		iLength = strlen( szReceiver )
+	;
+	
+	memcpy( szBuffer, szReceiver, iPos * 4, ( iLength + 1 ) * 4 );
+	
+	StringURLEncode( szBuffer[ iPos ], 1024 - iPos );
+	
+	strcat( szBuffer, "&amp;f=" );
+	
+	iPos    = strlen( szBuffer );
+	iLength = strlen( szSenderName );
+	
+	memcpy( szBuffer, szSenderName, iPos * 4, ( iLength + 1 ) * 4 );
+	
+	StringURLEncode( szBuffer[ iPos ], 1024 - iPos );
+	
+	strcat( szBuffer, "&amp;n=" );
+	
+	iPos    = strlen( szBuffer );
+	iLength = strlen( szSenderMail );
+	
+	memcpy( szBuffer, szSenderMail, iPos * 4, ( iLength + 1 ) * 4 );
+	
+	StringURLEncode( szBuffer[ iPos ], 1024 - iPos );
+	
+	strcat( szBuffer, "&amp;s=" );
+	
+	iPos    = strlen( szBuffer );
+	iLength = strlen( szSubject );
+	
+	memcpy( szBuffer, szSubject, iPos * 4, ( iLength + 1 ) * 4 );
+	
+	StringURLEncode( szBuffer[ iPos ], 1024 - iPos );
+	
+	strcat( szBuffer, "&amp;m=" );
+	
+	iPos    = strlen( szBuffer );
+	iLength = strlen( szMessage );
+	
+	memcpy( szBuffer, szMessage, iPos * 4, ( iLength + 1 ) * 4 );
+	
+	StringURLEncode( szBuffer[ iPos ], 1024 - iPos );
+	
+	HTTP( 0xD00D, HTTP_POST, MAILER_URL, szBuffer, "OnMailScriptResponse" );
+}
+
+forward OnMailScriptResponse( iIndex, iResponseCode, const szData[ ] );
+public  OnMailScriptResponse( iIndex, iResponseCode, const szData[ ] )
+{
+	if ( szData[ 0 ] )
+		printf( "Mailer script says: %s", szData );
+}
+
+stock StringURLEncode( szString[ ], iSize = sizeof( szString ) )
+{
+	for ( new i = 0, l = strlen( szString ); i &lt; l; i++ )
+	{
+		switch ( szString[ i ] )
+		{
+			case '!', '(', ')', '\'', '*',
+			     '0' .. '9',
+			     'A' .. 'Z',
+			     'a' .. 'z':
+			{
+				continue;
+			}
+			
+			case ' ':
+			{
+				szString[ i ] = '+';
+				
+				continue;
+			}
+		}
+		
+		new
+			s_szHex[ 8 ]
+		;
+		
+		if ( i + 3 &gt;= iSize )
+		{
+			szString[ i ] = EOS;
+			
+			break;
+		}
+		
+		if ( l + 3 &gt;= iSize )
+			szString[ iSize - 3 ] = EOS;
+		
+		format( s_szHex, sizeof( s_szHex ), "%02h", szString[ i ] );
+		
+		szString[ i ] = '%';
+		
+		strins( szString, s_szHex, i + 1, iSize );
+		
+		l += 2;
+		i += 2;
+		
+		if ( l &gt; iSize - 1 )
+			l = iSize - 1;
+	}
+}</pre>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950402">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search023a.html?action=finduser&amp;uid=23640" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply24b5.html?tid=197755&amp;replyto=950402" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950404"></a>
+<div class="post classic " style="" id="post_950404">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberf2e7.html?action=profile&amp;uid=109573"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberf2e7.html?action=profile&amp;uid=109573">__</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 232<br />
+	Threads: 4<br />
+	Joined: Nov 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation92b8.html?uid=109573"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadf5c3-5.html?tid=197755&amp;pid=950404#pid950404" title="Re: My Mailer Include">#2</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 2 by __" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 07:28 <span class="post_edit" id="edited_by_950404"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950404">
+		A lot better, nice one.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950404">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchb076.html?action=finduser&amp;uid=109573" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply21be-2.html?tid=197755&amp;replyto=950404" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950420"></a>
+<div class="post classic " style="" id="post_950420">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere33c.html?action=profile&amp;uid=105308"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere33c.html?action=profile&amp;uid=105308">Gh0sT_</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 704<br />
+	Threads: 118<br />
+	Joined: Sep 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationdea6.html?uid=105308"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread38d8-2.html?tid=197755&amp;pid=950420#pid950420" title="Re: My Mailer Include">#3</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 3 by Gh0sT_" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 08:11 <span class="post_edit" id="edited_by_950420"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950420">
+		Amazing, like always! Thank you so much. ;&gt;
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950420">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc5d0.html?action=finduser&amp;uid=105308" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplye988.html?tid=197755&amp;replyto=950420" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950551"></a>
+<div class="post classic " style="" id="post_950551">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere36c.html?action=profile&amp;uid=109390"><img src="uploads/avatars/109390.png" alt="" width="55" height="42" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere36c.html?action=profile&amp;uid=109390">Gavibro</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 55<br />
+	Threads: 1<br />
+	Joined: Nov 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationf88e.html?uid=109390"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread6042-3.html?tid=197755&amp;pid=950551#pid950551" title="Re: My Mailer Include">#4</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 4 by Gavibro" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 11:17 <span class="post_edit" id="edited_by_950551"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950551">
+		Yeah,thanks much,now I can flood a mail from sa-mp <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
+just joking,nice script <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950551">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searche206-2.html?action=finduser&amp;uid=109390" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyb599-2.html?tid=197755&amp;replyto=950551" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950584"></a>
+<div class="post classic " style="" id="post_950584">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member754f.html?action=profile&amp;uid=59625"><img src="uploads/avatars/59625.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member754f.html?action=profile&amp;uid=59625">HyperZ</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,341<br />
+	Threads: 17<br />
+	Joined: Aug 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationdcf8.html?uid=59625"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread16fe-4.html?tid=197755&amp;pid=950584#pid950584" title="Re: My Mailer Include">#5</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 5 by HyperZ" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 11:56 <span class="post_edit" id="edited_by_950584"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950584">
+		Nice Work. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950584">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search31e3.html?action=finduser&amp;uid=59625" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyd1b5.html?tid=197755&amp;replyto=950584" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950814"></a>
+<div class="post classic " style="" id="post_950814">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercc8f.html?action=profile&amp;uid=106617"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercc8f.html?action=profile&amp;uid=106617">Yagoda</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 22<br />
+	Threads: 3<br />
+	Joined: Oct 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationd5db.html?uid=106617"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9899-3.html?tid=197755&amp;pid=950814#pid950814" title="Re: My Mailer Include">#6</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 6 by Yagoda" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 14:10 <span class="post_edit" id="edited_by_950814"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950814">
+		<b>Very good !!!</b>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950814">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search24cf-2.html?action=finduser&amp;uid=106617" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply6989-2.html?tid=197755&amp;replyto=950814" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid950903"></a>
+<div class="post classic " style="" id="post_950903">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member8052-3.html?action=profile&amp;uid=112008"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member8052-3.html?action=profile&amp;uid=112008">..</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 9<br />
+	Threads: 1<br />
+	Joined: Dec 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation285a.html?uid=112008"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9c85.html?tid=197755&amp;pid=950903#pid950903" title="Re: My Mailer Include">#7</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 7 by .." style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">10.12.2010, 15:11 <span class="post_edit" id="edited_by_950903"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_950903">
+		nice job <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_950903">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search3598.html?action=finduser&amp;uid=112008" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyfd1c.html?tid=197755&amp;replyto=950903" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid954840"></a>
+<div class="post classic " style="" id="post_954840">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere8bd.html?action=profile&amp;uid=79823"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere8bd.html?action=profile&amp;uid=79823">anonymousx</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 146<br />
+	Threads: 8<br />
+	Joined: Feb 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation5e2e.html?uid=79823"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc501-4.html?tid=197755&amp;pid=954840#pid954840" title="Respuesta: My Mailer Include">#8</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 8 by anonymousx" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 17:20 <span class="post_edit" id="edited_by_954840"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_954840">
+		Nice work man, i gonna use it.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_954840">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search416c.html?action=finduser&amp;uid=79823" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc28e.html?tid=197755&amp;replyto=954840" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid954852"></a>
+<div class="post classic " style="" id="post_954852">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member4017.html?action=profile&amp;uid=54884"><img src="uploads/avatars/54884.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member4017.html?action=profile&amp;uid=54884">nuriel8833</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,157<br />
+	Threads: 176<br />
+	Joined: Jun 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation97c2.html?uid=54884"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread55a5-4.html?tid=197755&amp;pid=954852#pid954852" title="Re: My Mailer Include">#9</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 9 by nuriel8833" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 17:24 <span class="post_edit" id="edited_by_954852"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_954852">
+		Great Job! <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_954852">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search3d2e.html?action=finduser&amp;uid=54884" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply058e.html?tid=197755&amp;replyto=954852" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid954978"></a>
+<div class="post classic " style="" id="post_954978">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member10ab.html?action=profile&amp;uid=97250"><img src="uploads/avatars/97250.png" alt="" width="46" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member10ab.html?action=profile&amp;uid=97250">WillyP</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,027<br />
+	Threads: 139<br />
+	Joined: Jul 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationdd4a.html?uid=97250"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9741-2.html?tid=197755&amp;pid=954978#pid954978" title="Re: My Mailer Include">#10</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 10 by WillyP" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 18:10 <span class="post_edit" id="edited_by_954978"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_954978">
+		Sweet, but can someone test it for me? <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_954978">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9abb.html?action=finduser&amp;uid=97250" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply87ae.html?tid=197755&amp;replyto=954978" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid954988"></a>
+<div class="post classic " style="" id="post_954988">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercec9.html?action=profile&amp;uid=23640"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,831<br />
+	Threads: 69<br />
+	Joined: Mar 2008
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputatione133.html?uid=23640"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadc516-4.html?tid=197755&amp;pid=954988#pid954988" title="Re: My Mailer Include">#11</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 11 by Slice" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 18:15 <span class="post_edit" id="edited_by_954988"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_954988">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>[FU]Victious</strong><br />
+<a href="showthread9741-2.html?pid=954978#pid954978" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Sweet, but can someone test it for me? <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>Well I tested it and it works. What exactly do you mean by test it for you?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_954988">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search023a.html?action=finduser&amp;uid=23640" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplycf15-3.html?tid=197755&amp;replyto=954988" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid954993"></a>
+<div class="post classic " style="" id="post_954993">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member10ab.html?action=profile&amp;uid=97250"><img src="uploads/avatars/97250.png" alt="" width="46" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member10ab.html?action=profile&amp;uid=97250">WillyP</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,027<br />
+	Threads: 139<br />
+	Joined: Jul 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationdd4a.html?uid=97250"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread47da-2.html?tid=197755&amp;pid=954993#pid954993" title="Re: My Mailer Include">#12</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 12 by WillyP" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 18:17 <span class="post_edit" id="edited_by_954993"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_954993">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Slice</strong><br />
+<a href="showthreadc516-4.html?pid=954988#pid954988" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Well I tested it and it works. What exactly do you mean by test it for you?</div>
+</td>
+</tr>
+</table>
+</div>I havn't got any money in my paypal atm and if you could use your own website to send me a email =D
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_954993">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9abb.html?action=finduser&amp;uid=97250" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplya681-2.html?tid=197755&amp;replyto=954993" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid955013"></a>
+<div class="post classic " style="" id="post_955013">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberdcdc.html?action=profile&amp;uid=54423"><img src="uploads/avatars/54423.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberdcdc.html?action=profile&amp;uid=54423">Haji</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 192<br />
+	Threads: 7<br />
+	Joined: Jun 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationae65.html?uid=54423"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread4c10-4.html?tid=197755&amp;pid=955013#pid955013" title="Re: My Mailer Include">#13</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 13 by Haji" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 18:25 <span class="post_edit" id="edited_by_955013"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_955013">
+		Man, that's nice. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_955013">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchd1ac.html?action=finduser&amp;uid=54423" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply6224.html?tid=197755&amp;replyto=955013" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid955046"></a>
+<div class="post classic " style="" id="post_955046">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member5cfc.html?action=profile&amp;uid=48194"><img src="uploads/avatars/48194.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member5cfc.html?action=profile&amp;uid=48194">IstuntmanI</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,801<br />
+	Threads: 27<br />
+	Joined: Mar 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationadcd.html?uid=48194"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread2fd0-4.html?tid=197755&amp;pid=955046#pid955046" title="Re: My Mailer Include">#14</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 14 by IstuntmanI" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">12.12.2010, 18:41 <span class="post_edit" id="edited_by_955046"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_955046">
+		Nice Include ... but: Why i get "Error: Missing parameters." in the <b>.php</b> file ?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_955046">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchcc96.html?action=finduser&amp;uid=48194" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply7744.html?tid=197755&amp;replyto=955046" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid960969"></a>
+<div class="post classic " style="" id="post_960969">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member9f19.html?action=profile&amp;uid=13300"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member9f19.html?action=profile&amp;uid=13300">Nibblet</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 104<br />
+	Threads: 3<br />
+	Joined: Sep 2007
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation410c.html?uid=13300"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadfb38-2.html?tid=197755&amp;pid=960969#pid960969" title="Re: My Mailer Include">#15</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 15 by Nibblet" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">16.12.2010, 13:58 <span class="post_edit" id="edited_by_960969"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by Nibblet; 16/12/2010 at 03:43 PM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_960969">
+		This is a Very Useful include! thanks <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_960969">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchb44e.html?action=finduser&amp;uid=13300" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply679f.html?tid=197755&amp;replyto=960969" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid975477"></a>
+<div class="post classic " style="" id="post_975477">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberc5dc.html?action=profile&amp;uid=78222"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberc5dc.html?action=profile&amp;uid=78222">r3k1lLz_</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 89<br />
+	Threads: 19<br />
+	Joined: Jan 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation1585.html?uid=78222"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread6cbd-4.html?tid=197755&amp;pid=975477#pid975477" title="Re: My Mailer Include">#16</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 16 by r3k1lLz_" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">24.12.2010, 04:03 <span class="post_edit" id="edited_by_975477"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_975477">
+		C:\Users\Tom\Desktop\samp03bsvr_R2_win32\pawno\inc  lude\mailer.inc(9) : fatal error 111: user error: Please define MAILER_URL before including the mailer include.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_975477">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchd093.html?action=finduser&amp;uid=78222" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc970-2.html?tid=197755&amp;replyto=975477" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid1016198"></a>
+<div class="post classic " style="" id="post_1016198">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membera2f8.html?action=profile&amp;uid=10237"><img src="uploads/avatars/10237.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membera2f8.html?action=profile&amp;uid=10237">Mauzen</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 4,878<br />
+	Threads: 85<br />
+	Joined: Jun 2007
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation6c70.html?uid=10237"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread1c9d-2.html?tid=197755&amp;pid=1016198#pid1016198" title="Re: My Mailer Include">#17</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 17 by Mauzen" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">13.01.2011, 19:22 <span class="post_edit" id="edited_by_1016198"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_1016198">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>r3k1lLz_</strong><br />
+<a href="showthread6cbd-4.html?pid=975477#pid975477" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">C:\Users\Tom\Desktop\samp03bsvr_R2_win32\pawno\inc  lude\mailer.inc(9) : fatal error 111: user error: Please define MAILER_URL before including the mailer include.</div>
+</td>
+</tr>
+</table>
+</div>...no words, just <img alt="" border="0" class="inlineimg" src="images/smilies/picard2.png" title="Picard"/><br />
+<br />
+Bump because this is underrated, great work!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_1016198">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchef86.html?action=finduser&amp;uid=10237" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply78da-2.html?tid=197755&amp;replyto=1016198" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid1041104"></a>
+<div class="post classic " style="" id="post_1041104">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member35a4.html?action=profile&amp;uid=70717"><img src="uploads/avatars/70717.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,863<br />
+	Threads: 99<br />
+	Joined: Nov 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation7d19.html?uid=70717"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread0e13-3.html?tid=197755&amp;pid=1041104#pid1041104" title="Re: My Mailer Include">#18</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 18 by Kwarde" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">28.01.2011, 13:02 <span class="post_edit" id="edited_by_1041104"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_1041104">
+		It's nice 'Slice' ! (ej, that rhymes xD).<br />
+I'm gonna use it for my server. Do you mind if I edit it? (Yes I'll keep credits in the CREDITS.txt)<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>SAMP/MafiaRP/gamemodes/CREDITS.txt</strong><br />
+</div>
+<div style="font-style:italic">Slice:<br />
+	* Hold studio - For the weapon holdster script<br />
+	* Mailer include (converted into GM) [<a href="showthreadf9cd-2.html?tid=197755]" target="_blank">https://sampforum.blast.hk/showthread.php?tid=197755]</a><br />
+	* Some tutorials</div>
+</td>
+</tr>
+</table>
+</div>Thanks,<br />
+Kevin
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_1041104">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search5d71.html?action=finduser&amp;uid=70717" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply5698.html?tid=197755&amp;replyto=1041104" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid1041115"></a>
+<div class="post classic " style="" id="post_1041115">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercec9.html?action=profile&amp;uid=23640"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercec9.html?action=profile&amp;uid=23640">Slice</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,831<br />
+	Threads: 69<br />
+	Joined: Mar 2008
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputatione133.html?uid=23640"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadb7e8-3.html?tid=197755&amp;pid=1041115#pid1041115" title="Re: My Mailer Include">#19</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 19 by Slice" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">28.01.2011, 13:11 <span class="post_edit" id="edited_by_1041115"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_1041115">
+		Cool. Let me know if you run into any problems.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_1041115">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search023a.html?action=finduser&amp;uid=23640" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply7df2-2.html?tid=197755&amp;replyto=1041115" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid1041158"></a>
+<div class="post classic " style="" id="post_1041158">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member35a4.html?action=profile&amp;uid=70717"><img src="uploads/avatars/70717.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member35a4.html?action=profile&amp;uid=70717">Kwarde</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,863<br />
+	Threads: 99<br />
+	Joined: Nov 2009
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation7d19.html?uid=70717"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread3fef-2.html?tid=197755&amp;pid=1041158#pid1041158" title="Re: My Mailer Include">#20</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 20 by Kwarde" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">28.01.2011, 13:35 <span class="post_edit" id="edited_by_1041158"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_1041158">
+		It's working <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+Thank you.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_1041158">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search5d71.html?action=finduser&amp;uid=70717" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplycb14.html?tid=197755&amp;replyto=1041158" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthread3ed4.html?tid=197755&amp;action=nextoldest">Next Oldest</a> | <a href="showthread9529.html?tid=197755&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="197755" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (5):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="showthread9619-2.html?tid=197755&amp;page=2" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread1e86.html?tid=197755&amp;page=3" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthreada504.html?tid=197755&amp;page=4" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="showthread73f0.html?tid=197755&amp;page=5" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="showthread9619-2.html?tid=197755&amp;page=2" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthreade0f7.html?tid=197755">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" selected="selected">---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" >---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayc89b.html?fid=83&amp;page=5">Includes</a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-197755.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=11235e3bced12354543f2cd943bb742f" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="tid" value="197755" />
+
+	<input type="hidden" name="my_post_key" value="11235e3bced12354543f2cd943bb742f" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

@@ -1,0 +1,367 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Player country lookup - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Player country lookup This include uses this API service to retrieve a player's country, city and region name. There are no external databases required, just plug-n-play! Usage Simply include it at th" />
+<link rel="canonical" href="showthread2526.html?tid=521843" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2526.html?tid=521843">[Include] Player country lookup</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Player country lookup (<em>/showthread.php?tid=521843</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread4af9.html?tid=521843&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreade161.html?tid=521843&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Player country lookup - Emmet_ -  24.06.2014
+<br />
+<br />
+<font color="navy"><font size="4"><b>Player country lookup</b></font></font><br />
+This include uses <u><a href="http://www.realip.info/" target="_blank">this</a></u> API service to retrieve a player's country, city and region name. There are no external databases required, just plug-n-play!<br />
+<br />
+<font color="navy"><font size="4"><b>Usage</b></font></font><br />
+Simply include it at the top of your script:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;country&gt;</span></div></div></pre>
+</div>
+And then use the following callback:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnLookupComplete<span style="color: #000000;">(</span>playerid, country<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, region<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, city<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+"country" is the player's country, and "city" is the player's city. "region" differs from country (in USA, it would be the state, in Canada it would be the province, etc).<br />
+<br />
+There are also 3 functions:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> GetPlayerCountry<span style="color: #000000;">(</span>playerid, country<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, size <span style="color: #000000;">=</span> <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>country<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> GetPlayerRegion<span style="color: #000000;">(</span>playerid, region<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, size <span style="color: #000000;">=</span> <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>region<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">forward</span> GetPlayerCity<span style="color: #000000;">(</span>playerid, city<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, size <span style="color: #000000;">=</span> <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>city<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+The functions will only work after the lookup is complete.<br />
+<br />
+<font color="navy"><font size="4"><b>Test script</b></font></font><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;a_samp&gt;</span><br/><span style="color: #2222AA;">#include &lt;country&gt;</span><br/><br/><span style="color: #2222BB;">public</span> OnLookupComplete<span style="color: #000000;">(</span>playerid, country<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, region<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, city<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span><br/>        string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>        <br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"Hello there, you're from <span style="color: #000099; font-weight: bold;">\"</span>%s<span style="color: #000099; font-weight: bold;">\"</span> and currently live in <span style="color: #000099; font-weight: bold;">\"</span>%s<span style="color: #000099; font-weight: bold;">\"</span>."</span>, country, city<span style="color: #000000;">)</span>;<br/>    SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFFFFFFFF, string<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Works under any operating system (doesn't work for localhost).<br />
+<br />
+<font color="navy"><font size="4"><b>Accuracy</b></font></font><br />
+I am not sure about the accuracy, but it seemed to be very accurate when I was running it on my public server. The lookup will not be conducted if the player is running on localhost, or if the IP is unknown.<br />
+<br />
+I highly doubt that the site will become unavailable any time soon, since I've been using it for years without any issues. If I absolutely need to, I'll host it under my own domain.<br />
+<br />
+<font color="navy"><font size="4"><b>Download</b></font></font><br />
+<u><a href="http://pastebin.com/rScAHfWC" target="_blank">Pastebin</a></u>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  24.06.2014
+<br />
+<br />
+Will be useful for a lot of people but I have a suggestion for you next include, integrate the radio yellow pages.<br />
+<br />
+<a href="http://dir.xiph.org/yp.xml" target="_blank">http://dir.xiph.org/yp.xml</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="member1708.html?action=profile&amp;uid=184410">PT</a> -  24.06.2014
+<br />
+<br />
+Nice, i recommend to next update the function:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">native</span> IsProxyIP<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="member0f59.html?action=profile&amp;uid=228559">iRaiDeN</a> -  25.06.2014
+<br />
+<br />
+Upload to pastebin..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Respuesta: Player country lookup - <a href="memberc0f3.html?action=profile&amp;uid=205131">Swedky</a> -  25.06.2014
+<br />
+<br />
+LoLz nice <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/> I'll use this in my public server <img alt="" border="0" class="inlineimg" src="images/smilies/rolleyes.png" title="Roll Eyes (Sarcastic)"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="member7310.html?action=profile&amp;uid=173406">Excel™</a> -  27.06.2014
+<br />
+<br />
+Nice!<br />
+Is it possible to get player time zone ??
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - Emmet_ -  28.06.2014
+<br />
+<br />
+Pastebin, cause I said so.<br />
+<br />
+<a href="http://pastebin.com/V6ekVfFj" target="_blank">http://pastebin.com/V6ekVfFj</a><br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Excel™</strong><br />
+<a href="showthread2de7.html?pid=3097215#pid3097215" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Nice!<br />
+Is it possible to get player time zone ??</div>
+</td>
+</tr>
+</table>
+</div>There is a possible method, but it would require additional code.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="membera3ba.html?action=profile&amp;uid=224040">iFarbod</a> -  28.06.2014
+<br />
+<br />
+Nice one, <b>Emmet_</b>. No need using GeoIP And that databases for uploading!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  01.10.2014
+<br />
+<br />
+Hmm, now to implement a time system that goes by a players location!<br />
+<br />
+EDIT: Please merge, double posted!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  01.10.2014
+<br />
+<br />
+Emmet, this is more correct, yours got my location wrong! Tested a few ips, found another one that was incorrect too...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - Emmet_ -  01.10.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Crayder</strong><br />
+<a href="showthread93e4.html?pid=3214899#pid3214899" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Emmet, this is more correct, yours got my location wrong! Tested a few ips, found another one that was incorrect too...</div>
+</td>
+</tr>
+</table>
+</div>City/region detection might be a little off, did it return the correct country?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="memberfb72.html?action=profile&amp;uid=158547">PinEvil</a> -  01.10.2014
+<br />
+<br />
+I like it, I'll use it for my up-coming server!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  02.10.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Emmet_</strong><br />
+<a href="showthread280d.html?pid=3214990#pid3214990" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">City/region detection might be a little off, did it return the correct country?</div>
+</td>
+</tr>
+</table>
+</div>Yea it returns the right state on most of them, I ran about 50, only 4 had the wrong us state, all ip's were from US only...<br />
+BTW, do you plan on making any type of GMT returns for this, or do you think you  can help me find an api that returns the gmt?<br />
+<br />
+EDIT: Found this, but it would require each server owner to register :/, I found a few more but most have very low limts, ******'s API has a limit of 2500 queries per day which would be ok if we saved each players timezone and didnt send queries each time they connect...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re : Player country lookup - <a href="member38a2.html?action=profile&amp;uid=204251">streetpeace</a> -  03.10.2014
+<br />
+<br />
+It doesn't work for me, Country : Unknown, City and Region : Unknown.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Re : Player country lookup - <a href="member0c35.html?action=profile&amp;uid=159849">Neil.</a> -  07.10.2014
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>streetpeace</strong><br />
+<a href="showthread6533.html?pid=3216732#pid3216732" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">It doesn't work for me, Country : Unknown, City and Region : Unknown.</div>
+</td>
+</tr>
+</table>
+</div>On first post:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				The lookup will not be conducted if the player is running on localhost, or if the IP is unknown.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>It's practically the same on my side where everything on the lookup returns an 'Unknown' when hosting it locally.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="member5d55.html?action=profile&amp;uid=193820">daniscape</a> -  08.10.2014
+<br />
+<br />
+Good job like allways emmet! Also great work on the infinity gaming's script unfornatly alex closed down but ye the script was awesome
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="membere9e3.html?action=profile&amp;uid=90884">Kar</a> -  22.03.2015
+<br />
+<br />
+Private Paste ID: rScAHfWC<br />
+This is a private paste. If you created this paste, please login to view it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - Emmet_ -  22.03.2015
+<br />
+<br />
+Updated! Please re-download as I've fixed a few bugs.<br />
+<br />
+This include will not work on older versions due to an update in the API.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kar</strong><br />
+<a href="showthreadc898.html?pid=3410104#pid3410104" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Private Paste ID: rScAHfWC<br />
+This is a private paste. If you created this paste, please login to view it.</div>
+</td>
+</tr>
+</table>
+</div>Fixed. I actually thought that Private pastes were viewable only for those who had the link. Sorry haha.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  22.03.2015
+<br />
+<br />
+Now we're back!<br />
+<br />
+I think you should add the "country_code" to this.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Player country lookup - Emmet_ -  22.03.2015
+<br />
+<br />
+Country code would be useful too. I could also add conversion functions, e.g:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">country <span style="color: #000000;">=</span> GetCountryName<span style="color: #000000;">(</span>COUNTRY_US<span style="color: #000000;">)</span>;<br/><br/><span style="color: #222222;">print</span><span style="color: #000000;">(</span>country<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Would output:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">United States</pre>
+</div>Country codes can also save space. I can store the country code instead of the full country name.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

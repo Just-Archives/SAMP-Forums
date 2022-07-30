@@ -1,0 +1,472 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] NDIALOG-PAGES - Split dialog lists into multiple pages! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="About Include: NDialog-Pages is basically an addon that adds 3 additional options to the &quot;ShowPlayerDialog&quot; function. It will add a feature so that you can split the dialog list into multiple pages! I" />
+<link rel="canonical" href="showthread44d9.html?tid=662089" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread44d9.html?tid=662089">[Include] NDIALOG-PAGES - Split dialog lists into multiple pages!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] NDIALOG-PAGES - Split dialog lists into multiple pages! (<em>/showthread.php?tid=662089</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+NDIALOG-PAGES 2.0 - Split dialog lists into multiple pages! - <a href="member9617.html?action=profile&amp;uid=141982">Nickk888</a> -  23.12.2018
+<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://raw.githubusercontent.com/Nickk888SAMP/Dialog-Pages/master/preview.png"/><br />
+<br />
+<b><font color="DeepSkyBlue">About Include:</font></b><br />
+NDialog-Pages is basically an addon that adds 3 additional options to the "ShowPlayerDialog" function. It will add a feature so that you can split the dialog list into multiple pages!<br />
+It will basically calculate how many items will fit into one page and generate the "Next" button if there are too many. It will also add a "Back" button if you go to the second page etc. It will calculate the "listitem" in such way, like a normal list would work, so you don't need to make some calculation yourself, everything is automatic and it will return the correct "listitem".<br />
+It is VERY easy to use, because everything is fully automatic.<br />
+<br />
+<b><font color="DeepSkyBlue">Features:</font></b><ul><li>Adds 3 new parameters to "ShowPlayerDialog"</li>
+<li>Easy to use!</li>
+<li>Fully customable.</li>
+<li>Fully automatic, no need to script page change.</li>
+</ul>
+<b><font color="DeepSkyBlue">Functions:</font></b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">AddDialogListitem(playerid, const itemstring[]);</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">ClearDialogListitems(playerid);</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">ShowPlayerDialog(playerid, dialogid, style, caption[], #, button1[], button2[], items_per_page = 0, nextbutton[] = "{FF0000}&gt;&gt;&gt;", backbutton[] = "{FF0000}&lt;&lt;&lt;");</pre>
+</div><b><font color="DeepSkyBlue">Parameters:</font></b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">items_per_page - Items inside a page
+nextbutton[] - "Next" button string
+backbutton[] - "Back" button string</pre>
+</div><b><font color="DeepSkyBlue">How to use it(Examples):</font></b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 482px;
+		text-align: left;
+		overflow: auto">#include &lt;a_samp&gt;
+#include &lt;zcmd&gt;
+#define MAX_DIALOG_ITEMS 		500
+#include &lt;ndialog-pages&gt;
+
+new string[256];
+CMD:dialogtest(playerid, params[])
+{
+	for(new i; i &lt; MAX_DIALOG_ITEMS; i++)
+	{
+		format(string, sizeof string, "{FFFFFF}List Item {FF00FF}%i", i);
+		AddDialogListitem(playerid, string);
+	}
+	ShowPlayerDialog(playerid, 586, DIALOG_STYLE_LIST, "{FFFFFF}Test Dialog ID {FF00FF}586", #, "Button 1", "Button 2", 25);
+	return 1;
+}
+
+public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
+{
+	if(dialogid == 586 &amp;&amp; response)
+	{
+		if(listitem != INVALID_LISTITEM)
+		{
+			format(string, sizeof string, "{FFFFFF}[NDialog-Pages] {FFFF00}You have selected listitem ID: %i", listitem);
+			SendClientMessage(playerid, -1, string);
+		}
+	}
+	return 0;
+}</pre>
+</div><b><font color="DeepSkyBlue">Defines:</font></b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">#define INVALID_LISTITEM -1</pre>
+</div><b><font color="DeepSkyBlue">Download:</font></b><br />
+V2.0: <a href="https://github.com/Nickk888SAMP/Dialog-Pages" target="_blank">https://github.com/Nickk888SAMP/Dialog-Pages</a><br />
+<br />
+<b><font color="DeepSkyBlue">Credits:</font></b><br />
+a_samp: SAMP Team<br />
+Y_Hooks: Y-Less<br />
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member17a7.html?action=profile&amp;uid=308315">Zyzol</a> -  23.12.2018
+<br />
+<br />
+Nice
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member76e2.html?action=profile&amp;uid=268427">SyS</a> -  23.12.2018
+<br />
+<br />
+Nice idea
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member1ffa.html?action=profile&amp;uid=309269">RogueDrifter</a> -  23.12.2018
+<br />
+<br />
+Nicely done c:
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="membere24f.html?action=profile&amp;uid=287146">cuber</a> -  23.12.2018
+<br />
+<br />
+I will definetly be using this in the future, nice release.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member3898.html?action=profile&amp;uid=162420">Smith.</a> -  23.12.2018
+<br />
+<br />
+works with easyDialog?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member9617.html?action=profile&amp;uid=141982">Nickk888</a> -  23.12.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Smith.</strong><br />
+<a href="showthreadaa0d-2.html?pid=4072918#pid4072918" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">works with easyDialog?</div>
+</td>
+</tr>
+</table>
+</div>I have no idea, probably? You would have to check it. The problem with Easy Dialog is, it doesn't support the 3 additional parameters, so you would need to modify Easy Dialog for your needs.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member3898.html?action=profile&amp;uid=162420">Smith.</a> -  23.12.2018
+<br />
+<br />
+Thanks, good work
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member9617.html?action=profile&amp;uid=141982">Nickk888</a> -  04.06.2020
+<br />
+<br />
+BUMP - Code has been rewritten, version 2.0<br />
+Download &gt;&gt;&gt; <a href="https://github.com/Nickk888SAMP/Dialog-Pages" target="_blank">https://github.com/Nickk888SAMP/Dialog-Pages</a> &lt;&lt;&lt;
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="membera554.html?action=profile&amp;uid=161134">ToiletDuck</a> -  04.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Nickk888</strong><br />
+<a href="showthread2c4d.html?pid=4149633#pid4149633" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">BUMP - Code has been rewritten, version 2.0<br />
+Download &gt;&gt;&gt; <a href="https://github.com/Nickk888SAMP/Dialog-Pages" target="_blank">https://github.com/Nickk888SAMP/Dialog-Pages</a> &lt;&lt;&lt;</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">include\ndialog-pages.inc(131) : error 035: argument type mismatch (argument 4)
+\ndialog-pages.inc(154) : error 035: argument type mismatch (argument 4)
+
+line 131: ShowPlayerDialog(playerid, dialogid, style, caption, info, button1, button2);</pre>
+</div>I wonder why const variable in parameter make this error.<br />
+<br />
+@EDIT: Working fine tho but then I check my server.log it shows me this.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">[02:30:26] [debug]
+[02:30:26] [debug] Parameter count corrections:
+[02:30:26] [debug]
+[02:30:26] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:26] [debug]
+[02:30:26] [debug] Run time error 4: "Array index out of bounds"
+[02:30:26] [debug]  Attempted to read/write array element at negative index -2
+[02:30:26] [debug] AMX backtrace:
+[02:30:26] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:26] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:31] [debug]
+[02:30:31] [debug] Parameter count corrections:
+[02:30:31] [debug]
+[02:30:31] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:31] [debug]
+[02:30:31] [debug] Run time error 4: "Array index out of bounds"
+[02:30:31] [debug]  Attempted to read/write array element at negative index -2
+[02:30:31] [debug] AMX backtrace:
+[02:30:31] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:31] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:36] [debug]
+[02:30:36] [debug] Parameter count corrections:
+[02:30:36] [debug]
+[02:30:36] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:36] [debug]
+[02:30:36] [debug] Run time error 4: "Array index out of bounds"
+[02:30:36] [debug]  Attempted to read/write array element at negative index -2
+[02:30:36] [debug] AMX backtrace:
+[02:30:36] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:36] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:40] [debug]
+[02:30:40] [debug] Parameter count corrections:
+[02:30:40] [debug]
+[02:30:40] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:40] [debug]
+[02:30:40] [debug] Run time error 4: "Array index out of bounds"
+[02:30:40] [debug]  Attempted to read/write array element at negative index -2
+[02:30:40] [debug] AMX backtrace:
+[02:30:40] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:40] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:48] [debug]
+[02:30:48] [debug] Parameter count corrections:
+[02:30:48] [debug]
+[02:30:48] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="member9617.html?action=profile&amp;uid=141982">Nickk888</a> -  04.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ToiletDuck</strong><br />
+<a href="showthreade8cb.html?pid=4149674#pid4149674" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">include\ndialog-pages.inc(131) : error 035: argument type mismatch (argument 4)
+\ndialog-pages.inc(154) : error 035: argument type mismatch (argument 4)
+
+line 131: ShowPlayerDialog(playerid, dialogid, style, caption, info, button1, button2);</pre>
+</div>I wonder why const variable in parameter make this error.<br />
+<br />
+@EDIT: Working fine tho but then I check my server.log it shows me this.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">[02:30:26] [debug]
+[02:30:26] [debug] Parameter count corrections:
+[02:30:26] [debug]
+[02:30:26] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:26] [debug]
+[02:30:26] [debug] Run time error 4: "Array index out of bounds"
+[02:30:26] [debug]  Attempted to read/write array element at negative index -2
+[02:30:26] [debug] AMX backtrace:
+[02:30:26] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:26] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:31] [debug]
+[02:30:31] [debug] Parameter count corrections:
+[02:30:31] [debug]
+[02:30:31] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:31] [debug]
+[02:30:31] [debug] Run time error 4: "Array index out of bounds"
+[02:30:31] [debug]  Attempted to read/write array element at negative index -2
+[02:30:31] [debug] AMX backtrace:
+[02:30:31] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:31] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:36] [debug]
+[02:30:36] [debug] Parameter count corrections:
+[02:30:36] [debug]
+[02:30:36] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:36] [debug]
+[02:30:36] [debug] Run time error 4: "Array index out of bounds"
+[02:30:36] [debug]  Attempted to read/write array element at negative index -2
+[02:30:36] [debug] AMX backtrace:
+[02:30:36] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:36] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:40] [debug]
+[02:30:40] [debug] Parameter count corrections:
+[02:30:40] [debug]
+[02:30:40] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[02:30:40] [debug]
+[02:30:40] [debug] Run time error 4: "Array index out of bounds"
+[02:30:40] [debug]  Attempted to read/write array element at negative index -2
+[02:30:40] [debug] AMX backtrace:
+[02:30:40] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=-2, inputtext[]=@4fd59dd0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[02:30:40] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 1339399632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[02:30:48] [debug]
+[02:30:48] [debug] Parameter count corrections:
+[02:30:48] [debug]
+[02:30:48] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>I have probably fixed that error in my code, please consider redownloading the include from the github page!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: NDIALOG-PAGES - Split dialog lists into multiple pages! - <a href="membera554.html?action=profile&amp;uid=161134">ToiletDuck</a> -  05.06.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Nickk888</strong><br />
+<a href="showthreadd0ee.html?pid=4149712#pid4149712" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I have probably fixed that error in my code, please consider redownloading the include from the github page!</div>
+</td>
+</tr>
+</table>
+</div>&gt; Did you negate the listitem before using the index in your script? Looks like you didn't do that so even though you press the Next and Back button, it will still call OnDialogResponse using -2 as the listitem. I have changed the Value inside the include so give it a try, check if you negate the dialog! Look at the example script i provided.<br />
+<br />
+Hi still I downloaded your latest the error still occurs. Whenever I press Next or Prev.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 338px;
+		text-align: left;
+		overflow: auto">[09:18:12] [debug]
+[09:18:12] [debug] Parameter count corrections:
+[09:18:12] [debug]
+[09:18:12] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[09:18:12] [debug]
+[09:18:12] [debug] Run time error 4: "Array index out of bounds"
+[09:18:12] [debug]  Attempted to read/write array element at index 65535 in array of size 50
+[09:18:12] [debug] AMX backtrace:
+[09:18:12] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=65535, inputtext[]=@1e9ff5d0 "&gt;&gt;&gt;") at ./includes/OnDialogResponse.pwn:3233
+[09:18:12] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 10, 513799632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127
+[09:18:13] [debug]
+[09:18:13] [debug] Parameter count corrections:
+[09:18:13] [debug]
+[09:18:13] [debug] The 1st mangled argments (e.g. `&lt;1073741823 arguments&gt;`) below should read `&lt;5 arguments&gt;`
+[09:18:13] [debug]
+[09:18:13] [debug] Run time error 4: "Array index out of bounds"
+[09:18:13] [debug]  Attempted to read/write array element at index 65535 in array of size 50
+[09:18:13] [debug] AMX backtrace:
+[09:18:13] [debug] #0 006f791c in OnDialogResponse (playerid=0, dialogid=6182, response=1, listitem=65535, inputtext[]=@1e9ff5d0 "&lt;&lt;&lt;") at ./includes/OnDialogResponse.pwn:3233
+[09:18:13] [debug] #1 0001789c in public OnDialogResponse (0, 6182, 1, 8, 513799632) at D:\05_Desktop\EGRP-master\pawno\include\YSI_Coding\y_timers\..\..\YSI_Data\y_foreach\..\..\YSI_Coding\y_hooks\..\y_cgen\y_cgen.inc:127</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

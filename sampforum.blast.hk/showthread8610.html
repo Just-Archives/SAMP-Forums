@@ -1,0 +1,2660 @@
+<!DOCTYPE html><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>[Tool/Web/Other] SAMP Server Status PHP (AJAX/NON-AJAX)</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="syndication9896.php?type=atom1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="jscripts/jquery7e70.js?ver=1823"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery.plugins.minc4a7.js?ver=1821"></script>
+<script type="text/javascript" src="jscripts/generalad07.js?ver=1827"></script>
+<script type="text/javascript" src="images/bootbb/js/tooltip.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" / -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/global982f.css?t=1628341445" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/css378d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/responsive78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/star_ratings78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/showthread78d5.css?t=1625923460" />
+<link type="text/css" rel="stylesheet" href="cache/themes/theme3/greyfa7b.css?t=1628447859" />
+
+
+
+
+<script type="text/javascript">
+jQuery(document).on('click', '.panel-heading span.clickable', function(e){
+    var jQuerythis = jQuery(this);
+	if(!jQuerythis.hasClass('panel-collapsed')) {
+		jQuerythis.parents('.panel').find('.panel-body').slideUp();
+		jQuerythis.addClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		jQuerythis.parents('.panel').find('.panel-body').slideDown();
+		jQuerythis.removeClass('panel-collapsed');
+		jQuerythis.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+
+
+
+<script type="text/javascript">
+	lang.unknown_error = "An unknown error has occurred.";
+	lang.confirm_title = "Please Confirm";
+	lang.expcol_collapse = "[-]";
+	lang.expcol_expand = "[+]";
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+	
+	var cookieSecureFlag = "0";
+	var cookieDomain = ".sampforum.blast.hk";
+	var cookiePath = "index.html";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "0cf074806b26d972988c92d761ffd9a7";
+	var rootpath = "index.html";
+	var imagepath = "images/bootbb/index.html";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "images/bootbb/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+</script>
+
+<!-- Make videos responsive - https://github.com/davatron5000/FitVids.js (additional video sites added for MyBB) -->
+<script type="text/javascript" src="images/bootbb/js/jquery.fitvids.js"></script>
+<script>
+	$(document).ready(function(){
+		// Target the iframe parent div
+		var bvc = $(".bootbb-video-container");
+		//bvc.css("max-width", "800px");
+		bvc.fitVids();
+	});
+</script>
+<!-- end: headerinclude -->
+<script>
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script src="jscripts/reportdf88.js?ver=1820"></script>
+<script src="jscripts/jeditable/jeditable.min.js"></script>
+<script src="jscripts/threadad07.js?ver=1827"></script>
+<meta name="description" content="SAMP Server Status PHP v1.1B Ajax Version (High Performance Servers): PHP Code: &lt;?php $serverIP = &quot;10.20.30.40&quot;; $serverPort = 7777; ?&gt; &lt;html oncontextmenu=&quot;return false&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href="__link%20rel%3d.html"canonical" href="showthread8b29-2.html?tid=549038" />
+</head>
+<body>
+	<!-- start: header -->
+<header>
+<div class="navbar navbar-default">
+     <div class="container">
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span> 
+               </button>
+			  
+			  <div class="navbar-header scaleimages">
+				  <!--<a class="navbar-brand" href="https://sampforum.blast.hk">BootBB</a>-->
+				  <a class="" href="index.html"><img src="images/bootbb/logo_forum.gif" /></a>
+			  
+			  </div>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				  <!--<li id="nav-portal"><a href="https://sampforum.blast.hk/portal.php"><i class="fa fa-bell"></i> Portal</a></li>-->
+               <li id="nav-forums"><a href="index-2.html"><i class="fa fa-group"></i> Forum</a></li>
+				<!--<li><a href="https://sampforum.blast.hk/search.php?action=getnew"><i class="fa fa-comment"></i> New Posts</a></li>
+            	<li><a href="https://sampforum.blast.hk/search.php?action=getdaily"><i class="fa fa-comments"></i> Today's Posts</a></li>-->
+               <li id="nav-search"><a href="search.html"><i class="fa fa-search"></i> Search</a></li>
+               <li id="nav-member"><a href="memberlist.html"><i class="fa fa-users"></i> Members</a></li>
+               <li id="nav-help"><a href="misc0615.html?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+				  
+<!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cubes"></i> Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			  <li id="nav-help"><a href="https://sampforum.blast.hk/misc.php?action=help"><i class="fa fa-life-bouy"></i> Help</a></li>
+			  <li class="divider"></li>
+			  <li id="nav-calendar"><a href="https://sampforum.blast.hk/calendar.php"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+</li> -->
+</ul>
+  
+          </div>
+     </div>
+</div>
+</header>
+
+
+<div id="container">
+	<a name="top" id="top"></a>
+		<div id="header">
+			<div id="panel">
+				<div class="upper">
+					<div class="container">
+
+						<!-- start: header_welcomeblock_guest -->
+<!--<span><a href="https://sampforum.blast.hk/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login btn btn-danger" style="color: #fff;"><i class="fa fa-sign-in"></i> Login</a> <a href="https://sampforum.blast.hk/member.php?action=register" class="register btn btn-success" style="color: #fff;"><i class="fa fa-user-plus"></i> Register</a></span>-->
+
+<span class="float_right hidden-xs">Hello There, Guest!</span>
+
+<br class="clearfix" />
+	
+
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://sampforum.blast.hk/member.php">
+						<input name="my_post_key" type="hidden" value="0cf074806b26d972988c92d761ffd9a7" />
+						<input name="action" type="hidden" value="do_login" />
+						<input name="url" type="hidden" value="" />
+						<input name="quick_login" type="hidden" value="1" />
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tborder">
+							<tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Username:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus" /></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Password:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox" /> <a href="member9a16.html?action=lostpw" class="lost_password">Lost Password?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked" />
+									<label for="quick_login_remember">Remember me</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login" /></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					
+					</div>
+			</div>
+			</div>
+	</div>
+			</div>
+               
+				   
+                <main class="container">
+				<br />
+                 <!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0709.html?fid=82&amp;page=2">Tools and Files </a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav -->
+				
+				
+				
+				
+				
+				
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	<div class="tborder tfixed clear">
+		<div class="thead">
+				<div class="float_right">
+					<span class="smalltext"><a href="showthreadfdd4-4.html?mode=threaded&amp;tid=549038&amp;pid=4080324#pid4080324">Threaded Mode</a></span>
+				</div>
+				
+					[Tool/Web/Other] SAMP Server Status PHP (AJAX/NON-AJAX)
+			</div>
+	</div>
+<div id="posts_container">
+	<div id="posts">
+		<!-- start: postbit_classic -->
+
+<a id="pid3275743"></a>
+<div class="post classic " style="" id="post_3275743">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercf7d.html?action=profile&amp;uid=138160"><img src="uploads/avatars/138160.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercf7d.html?action=profile&amp;uid=138160">mrsh</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 51<br />
+	Threads: 8<br />
+	Joined: Sep 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation7349-2.html?uid=138160"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadafd2-5.html?tid=549038&amp;pid=3275743#pid3275743" title="SAMP Server Status PHP (AJAX/NON-AJAX)">#1</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 1 by mrsh" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.12.2014, 12:47 <span class="post_edit" id="edited_by_3275743"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by mrsh; 18/02/2016 at 11:36 AM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3275743">
+		<font face="Comic Sans MS"><br />
+<font size="7">SAMP Server Status PHP</font> v1.1B<br />
+<br />
+<font size="6">Ajax Version (High Performance Servers):</font><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br/>&#36;serverIP </span><span style="color: #007700">= </span><span style="color: #DD0000">"10.20.30.40"</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">&#36;serverPort </span><span style="color: #007700">= </span><span style="color: #0000BB">7777</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">?&gt;
+<br/></span>&lt;html oncontextmenu="return false"&gt;
+<br/>&lt;link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"&gt;
+<br/>&lt;div class="wrapper" id="weapper"&gt;
+<br/>&lt;center&gt;
+<br/><span style="color: #0000BB">&lt;?php
+
+<br/></span><span style="color: #007700">function </span><span style="color: #0000BB">sanitize_output</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">) {
+
+<br/>    </span><span style="color: #0000BB">&#36;search </span><span style="color: #007700">= array(
+<br/>        </span><span style="color: #DD0000">'/\&gt;[^\S ]+/s'</span><span style="color: #007700">,  </span><span style="color: #FF8000">// strip whitespaces after tags, except space
+<br/>        </span><span style="color: #DD0000">'/[^\S ]+\&lt;/s'</span><span style="color: #007700">,  </span><span style="color: #FF8000">// strip whitespaces before tags, except space
+<br/>        </span><span style="color: #DD0000">'/(\s)+/s'       </span><span style="color: #FF8000">// shorten multiple whitespace sequences
+<br/>    </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;replace </span><span style="color: #007700">= array(
+<br/>        </span><span style="color: #DD0000">'&gt;'</span><span style="color: #007700">,
+<br/>        </span><span style="color: #DD0000">'&lt;'</span><span style="color: #007700">,
+<br/>        </span><span style="color: #DD0000">'\\1'
+<br/>    </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;buffer </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;search</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;replace</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">);
+
+<br/>    return </span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">;
+<br/>}
+
+<br/></span><span style="color: #0000BB">ob_start</span><span style="color: #007700">(</span><span style="color: #DD0000">"sanitize_output"</span><span style="color: #007700">);
+
+<br/>class </span><span style="color: #0000BB">QueryServer
+<br/></span><span style="color: #007700">{
+<br/>  </span><span style="color: #FF8000">// Private variables used for the query-ing.
+<br/>  </span><span style="color: #007700">private </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">;
+<br/>  private </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">;
+<br/>  private </span><span style="color: #0000BB">&#36;rSocketID</span><span style="color: #007700">;
+
+<br/>  private </span><span style="color: #0000BB">&#36;bStatus</span><span style="color: #007700">;
+
+<br/>  </span><span style="color: #FF8000">// The __construct function gets called automatically
+<br/>  // by PHP once the class gets initialized.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">__construct</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iPort </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">VerifyAddress</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">;
+
+<br/>      if (empty( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">) || !</span><span style="color: #0000BB">is_numeric</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iPort </span><span style="color: #007700">)) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Either the ip-address or the port isn\'t filled in correctly.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">= @</span><span style="color: #0000BB">fsockopen</span><span style="color: #007700">( </span><span style="color: #DD0000">'udp://' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iErrorNo</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;szErrorStr</span><span style="color: #007700">, </span><span style="color: #0000BB">5 </span><span style="color: #007700">);
+<br/>      if (!</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Cannot connect to the server: ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;szErrorStr </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">socket_set_timeout</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">500000 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bStatus </span><span style="color: #007700">= </span><span style="color: #0000BB">true</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The VerifyAddress function verifies the given hostname/
+<br/>  // IP address and returns the actual IP Address.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">VerifyAddress</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">)
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">ip2long</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) !== </span><span style="color: #0000BB">false </span><span style="color: #007700">&amp;&amp; 
+<br/>        </span><span style="color: #0000BB">long2ip</span><span style="color: #007700">( </span><span style="color: #0000BB">ip2long</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) ) == </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) {
+<br/>          return </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">;
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szAddress </span><span style="color: #007700">= </span><span style="color: #0000BB">gethostbyname</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;szAddress </span><span style="color: #007700">== </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">) {
+<br/>          return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;szAddress</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The SendPacket function sends a packet to the server which
+<br/>  // requests information, based on the type of packet send.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;cPacket </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">= </span><span style="color: #DD0000">'SAMP'</span><span style="color: #007700">;
+<br/>      </span><span style="color: #0000BB">&#36;aIpChunks </span><span style="color: #007700">= </span><span style="color: #0000BB">explode</span><span style="color: #007700">( </span><span style="color: #DD0000">'.'</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">);
+
+<br/>      foreach( </span><span style="color: #0000BB">&#36;aIpChunks </span><span style="color: #007700">as </span><span style="color: #0000BB">&#36;szChunk </span><span style="color: #007700">) {
+<br/>          </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szChunk </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">&amp; </span><span style="color: #0000BB">0xFF </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">&gt;&gt; </span><span style="color: #0000BB">8 </span><span style="color: #007700">&amp; </span><span style="color: #0000BB">0xFF </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">&#36;cPacket</span><span style="color: #007700">;
+
+<br/>      return </span><span style="color: #0000BB">fwrite</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;szPacket</span><span style="color: #007700">, </span><span style="color: #0000BB">strlen</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">) );
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetPacket() function returns a specific number of bytes
+<br/>  // read from the socket. This uses a special way of getting stuff.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iBytes </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iBytes </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">=== </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">)
+<br/>          return </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">);
+
+<br/>      return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// After we're done, the connection needs to be closed using
+<br/>  // the Close() function. Otherwise stuff might go wrong.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">Close</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">!== </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          </span><span style="color: #0000BB">fclose</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">);
+<br/>      }
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// A little function that's needed to properly convert the
+<br/>  // four bytes we're recieving to integers to an actual PHP
+<br/>  // integer. ord() can't handle value's higher then 255.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szData </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">;
+
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">0 </span><span style="color: #007700">] ) );
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">1 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">8 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">2 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">16 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">3 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">24 </span><span style="color: #007700">);
+
+<br/>      if( </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">&gt;= </span><span style="color: #0000BB">4294967294 </span><span style="color: #007700">)
+<br/>          </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">-= </span><span style="color: #0000BB">4294967296</span><span style="color: #007700">;
+
+<br/>      return </span><span style="color: #0000BB">&#36;iInteger</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetInfo() function returns basic information about the
+<br/>  // server, like the hostname, number of players online etc.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetInfo</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'i'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">);
+<br/>      if (empty( </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">) || </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">!= </span><span style="color: #DD0000">'SAMP'</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'The server at ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' is not an SA-MP Server.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Pop the first seven characters returned.
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">7 </span><span style="color: #007700">);
+
+<br/>      return array (
+<br/>          </span><span style="color: #DD0000">'Password'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">1 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'Players'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'MaxPlayers' </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'Hostname'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">),
+<br/>          </span><span style="color: #DD0000">'Gamemode'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">),
+<br/>          </span><span style="color: #DD0000">'Map'    </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">)
+<br/>      );
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetRules() function returns the rules which are set
+<br/>  // on the server, e.g. the gravity, version etcetera.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetRules</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'r'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Pop the first 11 bytes from the response;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iRuleCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iRuleCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ ) {
+<br/>          </span><span style="color: #0000BB">&#36;szRuleName </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">);
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ </span><span style="color: #0000BB">&#36;szRuleName </span><span style="color: #007700">] = </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetPlayers() function is pretty much simelar to the
+<br/>  // detailed function, but faster and contains less information.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetPlayers</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Again, pop the first eleven bytes send;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iPlayerCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iPlayerCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ )
+<br/>      {
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ ] = array (
+<br/>              </span><span style="color: #DD0000">'Nickname' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">),
+<br/>              </span><span style="color: #DD0000">'Score'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) )
+<br/>          );
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetDetailedPlayers() function returns the player list,
+<br/>  // but in a detailed form inclusing the score and the ping.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetDetailedPlayers</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Skip the first 11 bytes of the response;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iPlayerCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iPlayerCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ ) {
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ ] = array(
+<br/>              </span><span style="color: #DD0000">'PlayerID'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">1 </span><span style="color: #007700">) ),
+<br/>              </span><span style="color: #DD0000">'Nickname'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">),
+<br/>              </span><span style="color: #DD0000">'Score'   </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) ),
+<br/>              </span><span style="color: #DD0000">'Ping'    </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) )
+<br/>          );
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>function </span><span style="color: #0000BB">RCON</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">)
+<br/>  {
+<br/>      echo </span><span style="color: #DD0000">'Password '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">.</span><span style="color: #DD0000">' with '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">;
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'x '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">.</span><span style="color: #DD0000">' '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      echo </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>}
+
+<br/>class </span><span style="color: #0000BB">QueryServerException </span><span style="color: #007700">extends </span><span style="color: #0000BB">Exception
+<br/></span><span style="color: #007700">{
+<br/>  private </span><span style="color: #0000BB">&#36;szMessage</span><span style="color: #007700">;
+
+<br/>  function </span><span style="color: #0000BB">__construct</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szMessage </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szMessage </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;szMessage</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  function </span><span style="color: #0000BB">toString</span><span style="color: #007700">( )
+<br/>  {
+<br/>      return </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szMessage</span><span style="color: #007700">;
+<br/>  }
+<br/>}
+
+<br/>try
+<br/>{
+<br/>    </span><span style="color: #0000BB">&#36;rQuery </span><span style="color: #007700">= new </span><span style="color: #0000BB">QueryServer</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;serverIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;serverPort </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;aInformation </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetInfo</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aServerRules </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetRules</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aBasicPlayer </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPlayers</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aTotalPlayers </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetDetailedPlayers</span><span style="color: #007700">( );
+
+<br/>    </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Close</span><span style="color: #007700">( );
+<br/>}
+<br/>catch (</span><span style="color: #0000BB">QueryServerException &#36;pError</span><span style="color: #007700">)
+<br/>{
+<br/>    echo </span><span style="color: #DD0000">'ERROR!'</span><span style="color: #007700">;
+<br/>}
+
+<br/>if(isset(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">) &amp;&amp; </span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">)){
+<br/></span><span style="color: #0000BB">?&gt;
+<br/></span>&lt;title&gt;Server Status --&gt; <span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hostname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/title&gt;
+<br/>  &lt;b&gt;General Information&lt;/b&gt;
+<br/>  &lt;table class="pure-table pure-table-horizontal"&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Hostname&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hostname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Gamemode&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Gamemode'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Players&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Players'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span> / <span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'MaxPlayers'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Map&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Map'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Weather&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'weather'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Time&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'worldtime'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Version&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'version'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Password&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Password'</span><span style="color: #007700">] ? </span><span style="color: #DD0000">'Yes' </span><span style="color: #007700">: </span><span style="color: #DD0000">'No'</span><span style="color: #007700">; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>  &lt;/table&gt;
+
+<br/>  &lt;br /&gt;
+<br/><span style="color: #0000BB">&lt;?php
+<br/>  </span><span style="color: #007700">if(!</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aTotalPlayers</span><span style="color: #007700">) || </span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aTotalPlayers</span><span style="color: #007700">) == </span><span style="color: #0000BB">0</span><span style="color: #007700">){
+<br/>      echo </span><span style="color: #DD0000">'&lt;br /&gt;&lt;i&gt;None / Can not give stats. (It is too high)&lt;/i&gt;'</span><span style="color: #007700">;
+<br/>  } else {
+<br/>  </span><span style="color: #0000BB">?&gt;
+<br/></span>  &lt;b&gt;Online Players&lt;/b&gt;
+<br/>      &lt;table class="pure-table pure-table-bordered"&gt;
+<br/>          &lt;tr class="pure-table-odd"&gt;
+<br/>              &lt;td&gt;&lt;b&gt;ID&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Nickname&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Score&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Ping&lt;/b&gt;&lt;/td&gt;
+<br/>          &lt;/tr&gt;
+<br/>  <span style="color: #0000BB">&lt;?php
+<br/>      </span><span style="color: #007700">foreach(</span><span style="color: #0000BB">&#36;aTotalPlayers </span><span style="color: #007700">AS </span><span style="color: #0000BB">&#36;id </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">){
+<br/>      </span><span style="color: #0000BB">?&gt;
+<br/></span>          &lt;tr&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'PlayerID'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Nickname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Score'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Ping'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>          &lt;/tr&gt;
+<br/>      <span style="color: #0000BB">&lt;?php
+<br/>      </span><span style="color: #007700">}
+<br/>    
+<br/>      echo </span><span style="color: #DD0000">'&lt;/table&gt;'</span><span style="color: #007700">;
+<br/>    }
+<br/>}
+<br/></span><span style="color: #0000BB">?&gt;</span>&lt;/div&gt;&lt;script src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;&lt;script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt;function Load_external_content() {&#36;('.wrapper').load('index.php');} setInterval('Load_external_content()',1000);&lt;/script&gt;</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="6">NON-Ajax Version (Normal Servers):</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br/>&#36;serverIP </span><span style="color: #007700">= </span><span style="color: #DD0000">"10.20.30.40"</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">&#36;serverPort </span><span style="color: #007700">= </span><span style="color: #0000BB">7777</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">?&gt;
+<br/></span>&lt;html oncontextmenu="return false"&gt;
+<br/>&lt;link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"&gt;
+<br/>&lt;div class="wrapper" id="weapper"&gt;
+<br/>&lt;center&gt;
+<br/><span style="color: #0000BB">&lt;?php
+
+<br/></span><span style="color: #007700">function </span><span style="color: #0000BB">sanitize_output</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">) {
+
+<br/>    </span><span style="color: #0000BB">&#36;search </span><span style="color: #007700">= array(
+<br/>        </span><span style="color: #DD0000">'/\&gt;[^\S ]+/s'</span><span style="color: #007700">,  </span><span style="color: #FF8000">// strip whitespaces after tags, except space
+<br/>        </span><span style="color: #DD0000">'/[^\S ]+\&lt;/s'</span><span style="color: #007700">,  </span><span style="color: #FF8000">// strip whitespaces before tags, except space
+<br/>        </span><span style="color: #DD0000">'/(\s)+/s'       </span><span style="color: #FF8000">// shorten multiple whitespace sequences
+<br/>    </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;replace </span><span style="color: #007700">= array(
+<br/>        </span><span style="color: #DD0000">'&gt;'</span><span style="color: #007700">,
+<br/>        </span><span style="color: #DD0000">'&lt;'</span><span style="color: #007700">,
+<br/>        </span><span style="color: #DD0000">'\\1'
+<br/>    </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;buffer </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;search</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;replace</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">);
+
+<br/>    return </span><span style="color: #0000BB">&#36;buffer</span><span style="color: #007700">;
+<br/>}
+
+<br/></span><span style="color: #0000BB">ob_start</span><span style="color: #007700">(</span><span style="color: #DD0000">"sanitize_output"</span><span style="color: #007700">);
+
+<br/>class </span><span style="color: #0000BB">QueryServer
+<br/></span><span style="color: #007700">{
+<br/>  </span><span style="color: #FF8000">// Private variables used for the query-ing.
+<br/>  </span><span style="color: #007700">private </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">;
+<br/>  private </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">;
+<br/>  private </span><span style="color: #0000BB">&#36;rSocketID</span><span style="color: #007700">;
+
+<br/>  private </span><span style="color: #0000BB">&#36;bStatus</span><span style="color: #007700">;
+
+<br/>  </span><span style="color: #FF8000">// The __construct function gets called automatically
+<br/>  // by PHP once the class gets initialized.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">__construct</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iPort </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">VerifyAddress</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">;
+
+<br/>      if (empty( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">) || !</span><span style="color: #0000BB">is_numeric</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iPort </span><span style="color: #007700">)) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Either the ip-address or the port isn\'t filled in correctly.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">= @</span><span style="color: #0000BB">fsockopen</span><span style="color: #007700">( </span><span style="color: #DD0000">'udp://' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iPort</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iErrorNo</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;szErrorStr</span><span style="color: #007700">, </span><span style="color: #0000BB">5 </span><span style="color: #007700">);
+<br/>      if (!</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Cannot connect to the server: ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;szErrorStr </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">socket_set_timeout</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">500000 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bStatus </span><span style="color: #007700">= </span><span style="color: #0000BB">true</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The VerifyAddress function verifies the given hostname/
+<br/>  // IP address and returns the actual IP Address.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">VerifyAddress</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">)
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">ip2long</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) !== </span><span style="color: #0000BB">false </span><span style="color: #007700">&amp;&amp; 
+<br/>        </span><span style="color: #0000BB">long2ip</span><span style="color: #007700">( </span><span style="color: #0000BB">ip2long</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) ) == </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">) {
+<br/>          return </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">;
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szAddress </span><span style="color: #007700">= </span><span style="color: #0000BB">gethostbyname</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szServerIP </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;szAddress </span><span style="color: #007700">== </span><span style="color: #0000BB">&#36;szServerIP</span><span style="color: #007700">) {
+<br/>          return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;szAddress</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The SendPacket function sends a packet to the server which
+<br/>  // requests information, based on the type of packet send.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;cPacket </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">= </span><span style="color: #DD0000">'SAMP'</span><span style="color: #007700">;
+<br/>      </span><span style="color: #0000BB">&#36;aIpChunks </span><span style="color: #007700">= </span><span style="color: #0000BB">explode</span><span style="color: #007700">( </span><span style="color: #DD0000">'.'</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">);
+
+<br/>      foreach( </span><span style="color: #0000BB">&#36;aIpChunks </span><span style="color: #007700">as </span><span style="color: #0000BB">&#36;szChunk </span><span style="color: #007700">) {
+<br/>          </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szChunk </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">&amp; </span><span style="color: #0000BB">0xFF </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">chr</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">iPort </span><span style="color: #007700">&gt;&gt; </span><span style="color: #0000BB">8 </span><span style="color: #007700">&amp; </span><span style="color: #0000BB">0xFF </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">.= </span><span style="color: #0000BB">&#36;cPacket</span><span style="color: #007700">;
+
+<br/>      return </span><span style="color: #0000BB">fwrite</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;szPacket</span><span style="color: #007700">, </span><span style="color: #0000BB">strlen</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szPacket </span><span style="color: #007700">) );
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetPacket() function returns a specific number of bytes
+<br/>  // read from the socket. This uses a special way of getting stuff.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iBytes </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iBytes </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">=== </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;iResponse </span><span style="color: #007700">);
+<br/>      if (</span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">)
+<br/>          return </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;iLength </span><span style="color: #007700">);
+
+<br/>      return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// After we're done, the connection needs to be closed using
+<br/>  // the Close() function. Otherwise stuff might go wrong.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">Close</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">!== </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          </span><span style="color: #0000BB">fclose</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID </span><span style="color: #007700">);
+<br/>      }
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// A little function that's needed to properly convert the
+<br/>  // four bytes we're recieving to integers to an actual PHP
+<br/>  // integer. ord() can't handle value's higher then 255.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szData </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">;
+
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">0 </span><span style="color: #007700">] ) );
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">1 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">8 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">2 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">16 </span><span style="color: #007700">);
+<br/>      </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">+= ( </span><span style="color: #0000BB">ord</span><span style="color: #007700">( @</span><span style="color: #0000BB">&#36;szData</span><span style="color: #007700">[ </span><span style="color: #0000BB">3 </span><span style="color: #007700">] ) &lt;&lt; </span><span style="color: #0000BB">24 </span><span style="color: #007700">);
+
+<br/>      if( </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">&gt;= </span><span style="color: #0000BB">4294967294 </span><span style="color: #007700">)
+<br/>          </span><span style="color: #0000BB">&#36;iInteger </span><span style="color: #007700">-= </span><span style="color: #0000BB">4294967296</span><span style="color: #007700">;
+
+<br/>      return </span><span style="color: #0000BB">&#36;iInteger</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetInfo() function returns basic information about the
+<br/>  // server, like the hostname, number of players online etc.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetInfo</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'i'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">);
+<br/>      if (empty( </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">) || </span><span style="color: #0000BB">&#36;szFirstData </span><span style="color: #007700">!= </span><span style="color: #DD0000">'SAMP'</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'The server at ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' is not an SA-MP Server.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Pop the first seven characters returned.
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">7 </span><span style="color: #007700">);
+
+<br/>      return array (
+<br/>          </span><span style="color: #DD0000">'Password'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">1 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'Players'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'MaxPlayers' </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) ),
+<br/>          </span><span style="color: #DD0000">'Hostname'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">),
+<br/>          </span><span style="color: #DD0000">'Gamemode'  </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">),
+<br/>          </span><span style="color: #DD0000">'Map'    </span><span style="color: #007700">=&gt;  </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">4 </span><span style="color: #007700">)
+<br/>      );
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetRules() function returns the rules which are set
+<br/>  // on the server, e.g. the gravity, version etcetera.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetRules</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'r'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Pop the first 11 bytes from the response;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iRuleCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iRuleCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ ) {
+<br/>          </span><span style="color: #0000BB">&#36;szRuleName </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">);
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ </span><span style="color: #0000BB">&#36;szRuleName </span><span style="color: #007700">] = </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetPlayers() function is pretty much simelar to the
+<br/>  // detailed function, but faster and contains less information.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetPlayers</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Again, pop the first eleven bytes send;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iPlayerCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iPlayerCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ )
+<br/>      {
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ ] = array (
+<br/>              </span><span style="color: #DD0000">'Nickname' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">),
+<br/>              </span><span style="color: #DD0000">'Score'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) )
+<br/>          );
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  </span><span style="color: #FF8000">// The GetDetailedPlayers() function returns the player list,
+<br/>  // but in a detailed form inclusing the score and the ping.
+<br/>  </span><span style="color: #007700">function </span><span style="color: #0000BB">GetDetailedPlayers</span><span style="color: #007700">( )
+<br/>  {
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #FF8000">// Skip the first 11 bytes of the response;
+<br/>      </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      </span><span style="color: #0000BB">&#36;iPlayerCount </span><span style="color: #007700">= </span><span style="color: #0000BB">ord</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">2 </span><span style="color: #007700">) );
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= array( );
+
+<br/>      for( </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">&#36;iPlayerCount</span><span style="color: #007700">; </span><span style="color: #0000BB">&#36;i </span><span style="color: #007700">++ ) {
+<br/>          </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">[ ] = array(
+<br/>              </span><span style="color: #DD0000">'PlayerID'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">1 </span><span style="color: #007700">) ),
+<br/>              </span><span style="color: #DD0000">'Nickname'  </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPacket</span><span style="color: #007700">( </span><span style="color: #0000BB">1 </span><span style="color: #007700">),
+<br/>              </span><span style="color: #DD0000">'Score'   </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) ),
+<br/>              </span><span style="color: #DD0000">'Ping'    </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toInteger</span><span style="color: #007700">( </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">4 </span><span style="color: #007700">) )
+<br/>          );
+<br/>      }
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>function </span><span style="color: #0000BB">RCON</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">)
+<br/>  {
+<br/>      echo </span><span style="color: #DD0000">'Password '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">.</span><span style="color: #DD0000">' with '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">;
+<br/>      if (</span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">SendPacket</span><span style="color: #007700">(</span><span style="color: #DD0000">'x '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;rcon</span><span style="color: #007700">.</span><span style="color: #DD0000">' '</span><span style="color: #007700">.</span><span style="color: #0000BB">&#36;command</span><span style="color: #007700">) === </span><span style="color: #0000BB">false</span><span style="color: #007700">) {
+<br/>          throw new </span><span style="color: #0000BB">QueryServerException</span><span style="color: #007700">( </span><span style="color: #DD0000">'Connection to ' </span><span style="color: #007700">. </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szServerIP </span><span style="color: #007700">. </span><span style="color: #DD0000">' failed or has dropped.' </span><span style="color: #007700">);
+<br/>      }
+
+<br/>      </span><span style="color: #0000BB">&#36;aReturnArray </span><span style="color: #007700">= </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      echo </span><span style="color: #0000BB">fread</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rSocketID</span><span style="color: #007700">, </span><span style="color: #0000BB">11 </span><span style="color: #007700">);
+
+<br/>      return </span><span style="color: #0000BB">&#36;aReturnArray</span><span style="color: #007700">;
+<br/>  }
+
+<br/>}
+
+<br/>class </span><span style="color: #0000BB">QueryServerException </span><span style="color: #007700">extends </span><span style="color: #0000BB">Exception
+<br/></span><span style="color: #007700">{
+<br/>  private </span><span style="color: #0000BB">&#36;szMessage</span><span style="color: #007700">;
+
+<br/>  function </span><span style="color: #0000BB">__construct</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;szMessage </span><span style="color: #007700">)
+<br/>  {
+<br/>      </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szMessage </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;szMessage</span><span style="color: #007700">;
+<br/>  }
+
+<br/>  function </span><span style="color: #0000BB">toString</span><span style="color: #007700">( )
+<br/>  {
+<br/>      return </span><span style="color: #0000BB">&#36;this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">szMessage</span><span style="color: #007700">;
+<br/>  }
+<br/>}
+
+<br/>try
+<br/>{
+<br/>    </span><span style="color: #0000BB">&#36;rQuery </span><span style="color: #007700">= new </span><span style="color: #0000BB">QueryServer</span><span style="color: #007700">( </span><span style="color: #0000BB">&#36;serverIP</span><span style="color: #007700">, </span><span style="color: #0000BB">&#36;serverPort </span><span style="color: #007700">);
+
+<br/>    </span><span style="color: #0000BB">&#36;aInformation </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetInfo</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aServerRules </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetRules</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aBasicPlayer </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetPlayers</span><span style="color: #007700">( );
+<br/>    </span><span style="color: #0000BB">&#36;aTotalPlayers </span><span style="color: #007700">= </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">GetDetailedPlayers</span><span style="color: #007700">( );
+
+<br/>    </span><span style="color: #0000BB">&#36;rQuery</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Close</span><span style="color: #007700">( );
+<br/>}
+<br/>catch (</span><span style="color: #0000BB">QueryServerException &#36;pError</span><span style="color: #007700">)
+<br/>{
+<br/>    echo </span><span style="color: #DD0000">'ERROR!'</span><span style="color: #007700">;
+<br/>}
+
+<br/>if(isset(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">) &amp;&amp; </span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">)){
+<br/></span><span style="color: #0000BB">?&gt;
+<br/></span>&lt;title&gt;Server Status --&gt; <span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hostname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/title&gt;
+<br/>  &lt;b&gt;General Information&lt;/b&gt;
+<br/>  &lt;table class="pure-table pure-table-horizontal"&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Hostname&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hostname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Gamemode&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Gamemode'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Players&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Players'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span> / <span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'MaxPlayers'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Map&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Map'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Weather&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'weather'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Time&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'worldtime'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Version&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aServerRules</span><span style="color: #007700">[</span><span style="color: #DD0000">'version'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>      &lt;tr&gt;
+<br/>          &lt;td&gt;Password&lt;/td&gt;
+<br/>          &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;aInformation</span><span style="color: #007700">[</span><span style="color: #DD0000">'Password'</span><span style="color: #007700">] ? </span><span style="color: #DD0000">'Yes' </span><span style="color: #007700">: </span><span style="color: #DD0000">'No'</span><span style="color: #007700">; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>      &lt;/tr&gt;
+<br/>  &lt;/table&gt;
+
+<br/>  &lt;br /&gt;
+<br/><span style="color: #0000BB">&lt;?php
+<br/>  </span><span style="color: #007700">if(!</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aTotalPlayers</span><span style="color: #007700">) || </span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;aTotalPlayers</span><span style="color: #007700">) == </span><span style="color: #0000BB">0</span><span style="color: #007700">){
+<br/>      echo </span><span style="color: #DD0000">'&lt;br /&gt;&lt;i&gt;None / Can not give stats. (It is too high)&lt;/i&gt;'</span><span style="color: #007700">;
+<br/>  } else {
+<br/>  </span><span style="color: #0000BB">?&gt;
+<br/></span>  &lt;b&gt;Online Players&lt;/b&gt;
+<br/>      &lt;table class="pure-table pure-table-bordered"&gt;
+<br/>          &lt;tr class="pure-table-odd"&gt;
+<br/>              &lt;td&gt;&lt;b&gt;ID&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Nickname&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Score&lt;/b&gt;&lt;/td&gt;
+<br/>              &lt;td&gt;&lt;b&gt;Ping&lt;/b&gt;&lt;/td&gt;
+<br/>          &lt;/tr&gt;
+<br/>  <span style="color: #0000BB">&lt;?php
+<br/>      </span><span style="color: #007700">foreach(</span><span style="color: #0000BB">&#36;aTotalPlayers </span><span style="color: #007700">AS </span><span style="color: #0000BB">&#36;id </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">){
+<br/>      </span><span style="color: #0000BB">?&gt;
+<br/></span>          &lt;tr&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'PlayerID'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Nickname'</span><span style="color: #007700">]); </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Score'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>              &lt;td&gt;<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">&#36;value</span><span style="color: #007700">[</span><span style="color: #DD0000">'Ping'</span><span style="color: #007700">]; </span><span style="color: #0000BB">?&gt;</span>&lt;/td&gt;
+<br/>          &lt;/tr&gt;
+<br/>      <span style="color: #0000BB">&lt;?php
+<br/>      </span><span style="color: #007700">}
+<br/>    
+<br/>      echo </span><span style="color: #DD0000">'&lt;/table&gt;'</span><span style="color: #007700">;
+<br/>    }
+<br/>}
+<br/></span><span style="color: #0000BB">?&gt;</span>&lt;/div&gt;</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="5">Change Server IP And Port:</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">&#36;serverIP </span><span style="color: #007700">= </span><span style="color: #DD0000">"10.20.30.40"</span><span style="color: #007700">;
+<br/></span><span style="color: #0000BB">&#36;serverPort </span><span style="color: #007700">= </span><span style="color: #0000BB">7777</span><span style="color: #007700">; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="5">Screenshots:</font><br />
+<img alt="" border="0" src="https://i.imgur.com/6OV2mku.png"/><br />
+<br />
+<font size="5">Error's Reasons:</font><br />
+<font color="Red">None / Can not give stats. (It is too high) </font>= <font color="DarkOrange">This problem when it happens that your players is too high (like 120players) or is too low (like 0!) For Fix this problem you need high performance server.</font><br />
+<br />
+<font color="red">ERROR!</font> = <font color="DarkOrange">This problem when it happens that your server is offline or your server blocked connections! (for big servers) For Fix this problem you need to start your server or add your stats server in your whitelist.</font><br />
+<br />
+<font size="6">Examples:</font><br />
+<font color="DarkOrange">For use this in your website/forum you can use this code:</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php </span><span style="color: #007700">include </span><span style="color: #DD0000">'your stats file adress.php'</span><span style="color: #007700">; </span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font color="DarkOrange">Or for html hostings use this code</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">&lt;iframe src="http://server.com/your stats file adress.php" width="100%" height="100%"&gt;Your browser is **** :|&lt;/iframe&gt;</pre>
+</div></font><br />
+<br />
+Todo:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Creating SA-MP stats with supporting JSON.<br />
+Add language support. (0.3.7 update)<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>Changelogs:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				Fixed major bugs.<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3275743">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc092-2.html?action=finduser&amp;uid=138160" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply5ddc.html?tid=549038&amp;replyto=3275743" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3275750"></a>
+<div class="post classic " style="" id="post_3275750">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member5e93.html?action=profile&amp;uid=183155"><img src="uploads/avatars/183155.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member5e93.html?action=profile&amp;uid=183155">Alex Magaсa</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 2,137<br />
+	Threads: 37<br />
+	Joined: Oct 2012
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationf8d5.html?uid=183155"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread7fce-4.html?tid=549038&amp;pid=3275750#pid3275750" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#2</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 2 by Alex Magaсa" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.12.2014, 12:51 <span class="post_edit" id="edited_by_3275750"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3275750">
+		great work thx for sharing <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> keep it up!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3275750">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search2e2f.html?action=finduser&amp;uid=183155" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyc1e9-3.html?tid=549038&amp;replyto=3275750" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3275767"></a>
+<div class="post classic " style="" id="post_3275767">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercf7d.html?action=profile&amp;uid=138160"><img src="uploads/avatars/138160.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercf7d.html?action=profile&amp;uid=138160">mrsh</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 51<br />
+	Threads: 8<br />
+	Joined: Sep 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation7349-2.html?uid=138160"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9d40-3.html?tid=549038&amp;pid=3275767#pid3275767" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#3</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 3 by mrsh" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.12.2014, 13:03 <span class="post_edit" id="edited_by_3275767"><!-- start: postbit_editedby -->
+<div class="edited_post postbit_edited postbit_editedby postbit_editedpost">(<!-- start: postbit_editedby_editreason -->
+ <em>Last edited by mrsh; 08/10/2016 at 12:28 PM.</em>
+<!-- end: postbit_editedby_editreason -->)</div>
+<!-- end: postbit_editedby --></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3275767">
+		Ajax?<br />
+<br />
+<a href="http://lmgtfy.com/?q=What+is+ajax" target="_blank">Let me ****** that for you!</a>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3275767">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc092-2.html?action=finduser&amp;uid=138160" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply1b8d-2.html?tid=549038&amp;replyto=3275767" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3275793"></a>
+<div class="post classic " style="" id="post_3275793">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere971.html?action=profile&amp;uid=231732"><img src="uploads/avatars/231732.png" alt="" width="54" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere971.html?action=profile&amp;uid=231732">AmirSlaYeR</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 106<br />
+	Threads: 14<br />
+	Joined: Apr 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation4069.html?uid=231732"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread565d-2.html?tid=549038&amp;pid=3275793#pid3275793" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#4</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 4 by AmirSlaYeR" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">04.12.2014, 13:19 <span class="post_edit" id="edited_by_3275793"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3275793">
+		Nice job Thank you Mrsh <br />
+کیرم تو هیکلت <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
+اورین
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3275793">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search3c9a.html?action=finduser&amp;uid=231732" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply01a6.html?tid=549038&amp;replyto=3275793" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3276849"></a>
+<div class="post classic " style="" id="post_3276849">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membera941.html?action=profile&amp;uid=200624"><img src="uploads/avatars/200624.png" alt="" width="46" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membera941.html?action=profile&amp;uid=200624"><s>amirab</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 498<br />
+	Threads: 24<br />
+	Joined: Apr 2013
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread03e4-5.html?tid=549038&amp;pid=3276849#pid3276849" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#5</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 5 by amirab" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">05.12.2014, 12:42 <span class="post_edit" id="edited_by_3276849"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3276849">
+		nice!! and me too like what AmirSlayer said in persian :P
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3276849">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9992.html?action=finduser&amp;uid=200624" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyd4ef-3.html?tid=549038&amp;replyto=3276849" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3277159"></a>
+<div class="post classic " style="" id="post_3277159">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membere971.html?action=profile&amp;uid=231732"><img src="uploads/avatars/231732.png" alt="" width="54" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membere971.html?action=profile&amp;uid=231732">AmirSlaYeR</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 106<br />
+	Threads: 14<br />
+	Joined: Apr 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation4069.html?uid=231732"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread02b9-2.html?tid=549038&amp;pid=3277159#pid3277159" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#6</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 6 by AmirSlaYeR" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">05.12.2014, 17:41 <span class="post_edit" id="edited_by_3277159"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3277159">
+		HaHa ... <br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				nice!! and me too like what AmirSlayer said in persian :P<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>ThankS AmiRAB
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3277159">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search3c9a.html?action=finduser&amp;uid=231732" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplyd910.html?tid=549038&amp;replyto=3277159" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3659467"></a>
+<div class="post classic " style="" id="post_3659467">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercf7d.html?action=profile&amp;uid=138160"><img src="uploads/avatars/138160.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercf7d.html?action=profile&amp;uid=138160">mrsh</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 51<br />
+	Threads: 8<br />
+	Joined: Sep 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation7349-2.html?uid=138160"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadf0a2-3.html?tid=549038&amp;pid=3659467#pid3659467" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#7</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 7 by mrsh" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">18.02.2016, 11:32 <span class="post_edit" id="edited_by_3659467"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3659467">
+		Updated to v1.1
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3659467">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc092-2.html?action=finduser&amp;uid=138160" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply1cae.html?tid=549038&amp;replyto=3659467" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3661147"></a>
+<div class="post classic " style="" id="post_3661147">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberb08a.html?action=profile&amp;uid=250400"><img src="uploads/avatars/250400.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberb08a.html?action=profile&amp;uid=250400">HaRdiiZin</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 803<br />
+	Threads: 38<br />
+	Joined: Jan 2015
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationaade.html?uid=250400"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread9d51-2.html?tid=549038&amp;pid=3661147#pid3661147" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#8</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 8 by HaRdiiZin" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">21.02.2016, 14:39 <span class="post_edit" id="edited_by_3661147"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3661147">
+		Nice work ^^
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3661147">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9be3.html?action=finduser&amp;uid=250400" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplybf70-2.html?tid=549038&amp;replyto=3661147" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3665672"></a>
+<div class="post classic " style="" id="post_3665672">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member0a58.html?action=profile&amp;uid=79298"><img src="uploads/avatars/79298.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member0a58.html?action=profile&amp;uid=79298">Spydah</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 727<br />
+	Threads: 36<br />
+	Joined: Jan 2010
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation2d11.html?uid=79298"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadee8d-2.html?tid=549038&amp;pid=3665672#pid3665672" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#9</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 9 by Spydah" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">02.03.2016, 10:58 <span class="post_edit" id="edited_by_3665672"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3665672">
+		Great work man!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3665672">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc13d.html?action=finduser&amp;uid=79298" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplye921-2.html?tid=549038&amp;replyto=3665672" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3681840"></a>
+<div class="post classic " style="" id="post_3681840">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membercc0a.html?action=profile&amp;uid=183441"><img src="uploads/avatars/183441.png" alt="" width="55" height="54" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membercc0a.html?action=profile&amp;uid=183441">colonel-top</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 110<br />
+	Threads: 35<br />
+	Joined: Oct 2012
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation158a.html?uid=183441"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreade0a9-2.html?tid=549038&amp;pid=3681840#pid3681840" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#10</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 10 by colonel-top" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">05.04.2016, 11:44 <span class="post_edit" id="edited_by_3681840"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3681840">
+		WoW look Cool <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>,  i'm gonna test it &gt;~&lt;<br />
+Keep continue man , it's amazing <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3681840">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc05b-3.html?action=finduser&amp;uid=183441" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply797a-3.html?tid=549038&amp;replyto=3681840" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3682228"></a>
+<div class="post classic " style="" id="post_3682228">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member946a.html?action=profile&amp;uid=171517"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member946a.html?action=profile&amp;uid=171517">Locky_</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				High-roller<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1,605<br />
+	Threads: 61<br />
+	Joined: Jul 2012
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationcd70.html?uid=171517"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread40e0-3.html?tid=549038&amp;pid=3682228#pid3682228" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#11</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 11 by Locky_" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">06.04.2016, 00:49 <span class="post_edit" id="edited_by_3682228"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3682228">
+		You can get the varlist command the RCON function? because I tried and got no results ...
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3682228">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchba15.html?action=finduser&amp;uid=171517" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply200c.html?tid=549038&amp;replyto=3682228" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3682303"></a>
+<div class="post classic " style="" id="post_3682303">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member41c3.html?action=profile&amp;uid=242724"><img src="uploads/avatars/242724.png" alt="" width="44" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member41c3.html?action=profile&amp;uid=242724">Airblog</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Huge Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 272<br />
+	Threads: 43<br />
+	Joined: Sep 2014
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation0951.html?uid=242724"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread7f9c-5.html?tid=549038&amp;pid=3682303#pid3682303" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#12</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 12 by Airblog" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">06.04.2016, 09:50 <span class="post_edit" id="edited_by_3682303"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3682303">
+		Good work <br/><br />
+دمت گرم<br />
+<img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/>
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3682303">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchcc92.html?action=finduser&amp;uid=242724" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreplya72a-2.html?tid=549038&amp;replyto=3682303" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3703465"></a>
+<div class="post classic " style="" id="post_3703465">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2cb8.html?action=profile&amp;uid=120499"><img src="uploads/avatars/120499.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2cb8.html?action=profile&amp;uid=120499">vannesenn</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 607<br />
+	Threads: 90<br />
+	Joined: Feb 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationd909.html?uid=120499"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8683-5.html?tid=549038&amp;pid=3703465#pid3703465" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#13</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 13 by vannesenn" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">22.05.2016, 12:39 <span class="post_edit" id="edited_by_3703465"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3703465">
+		Nice, but I think here\'s easier way to do that with MySQL base.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3703465">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc0ab.html?action=finduser&amp;uid=120499" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply4c97-2.html?tid=549038&amp;replyto=3703465" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3709427"></a>
+<div class="post classic " style="" id="post_3709427">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="membera941.html?action=profile&amp;uid=200624"><img src="uploads/avatars/200624.png" alt="" width="46" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="membera941.html?action=profile&amp;uid=200624"><s>amirab</s></a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Banned<br />
+				<span class="postbit_userstars"></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 498<br />
+	Threads: 24<br />
+	Joined: Apr 2013
+	<br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread3912-2.html?tid=549038&amp;pid=3709427#pid3709427" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#14</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 14 by amirab" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">02.06.2016, 08:42 <span class="post_edit" id="edited_by_3709427"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3709427">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>vannesenn</strong><br />
+<a href="showthread8683-5.html?pid=3703465#pid3703465" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Nice, but I think here\'s easier way to do that with MySQL base.</div>
+</td>
+</tr>
+</table>
+</div>NEVER EVER !<br/><br />
+MySQL base ??<br/><br />
+It\'s using UPD protocol ofc it\'s faster !<br/><br />
+using MySQL Databases means you need to update your server stats , or update your all players\' stats every time<br/><br />
+so can you just imagine how much ram usage will increase ??!!<br/><br />
+lots of lags lots of usage of CPU , RAM , BW !
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3709427">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search9992.html?action=finduser&amp;uid=200624" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply49e5.html?tid=549038&amp;replyto=3709427" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3709433"></a>
+<div class="post classic " style="" id="post_3709433">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member2cb8.html?action=profile&amp;uid=120499"><img src="uploads/avatars/120499.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member2cb8.html?action=profile&amp;uid=120499">vannesenn</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Gangsta<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 607<br />
+	Threads: 90<br />
+	Joined: Feb 2011
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationd909.html?uid=120499"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread637b-6.html?tid=549038&amp;pid=3709433#pid3709433" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#15</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 15 by vannesenn" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">02.06.2016, 08:58 <span class="post_edit" id="edited_by_3709433"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3709433">
+		<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>amirab</strong><br />
+<a href="showthread3912-2.html?pid=3709427#pid3709427" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">NEVER EVER !<br/><br />
+MySQL base ??<br/><br />
+It\'s using UPD protocol ofc it\'s faster !<br/><br />
+using MySQL Databases means you need to update your server stats , or update your all players\' stats every time<br/><br />
+so can you just imagine how much ram usage will increase ??!!<br/><br />
+lots of lags lots of usage of CPU , RAM , BW !</div>
+</td>
+</tr>
+</table>
+</div>I\'m mean only for players(when player connects and disconnects), not on other thing on server(like weather, time etc..)
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3709433">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc0ab.html?action=finduser&amp;uid=120499" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply32d5-2.html?tid=549038&amp;replyto=3709433" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3861764"></a>
+<div class="post classic " style="" id="post_3861764">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member66a5.html?action=profile&amp;uid=287860"><img src="uploads/avatars/287860.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member66a5.html?action=profile&amp;uid=287860">Ayyash</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Big Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 83<br />
+	Threads: 16<br />
+	Joined: Oct 2016
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputationed6b.html?uid=287860"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthreadb7a0.html?tid=549038&amp;pid=3861764#pid3861764" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#16</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 16 by Ayyash" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">29.03.2017, 14:54 <span class="post_edit" id="edited_by_3861764"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3861764">
+		Hello, <br />
+please help me when i put for online what is the link for go to banlist like this,<br />
+<br />
+mywebname.com/banlist? when i put banlist it is showing error page not found<br />
+i hope someone understand please help me
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3861764">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search777e.html?action=finduser&amp;uid=287860" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply5df6.html?tid=549038&amp;replyto=3861764" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid3938290"></a>
+<div class="post classic " style="" id="post_3938290">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="member89f6.html?action=profile&amp;uid=305495"><img src="uploads/avatars/305495.png" alt="" width="55" height="47" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="member89f6.html?action=profile&amp;uid=305495">vHero</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 12<br />
+	Threads: 1<br />
+	Joined: Sep 2017
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation735d.html?uid=305495"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread1345.html?tid=549038&amp;pid=3938290#pid3938290" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#17</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 17 by vHero" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">02.10.2017, 22:02 <span class="post_edit" id="edited_by_3938290"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_3938290">
+		Rep +1 I plan on editing this myself to fit my website needs, thank you!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_3938290">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="search10f5.html?action=finduser&amp;uid=305495" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply4c82.html?tid=549038&amp;replyto=3938290" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic --><!-- start: postbit_classic -->
+
+<a id="pid4080324"></a>
+<div class="post classic " style="" id="post_4080324">
+<div class="post_author scaleimages">
+	<!-- start: postbit_avatar -->
+<div class="postbit_avatar author_avatar"><a href="memberf9b5.html?action=profile&amp;uid=326583"><img src="images/default_avatar.png" alt="" width="55" height="55" /></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="memberf9b5.html?action=profile&amp;uid=326583">kokos22</a></span></strong> <!-- start: postbit_offline -->
+<span class="online_status status_offline" title="Offline"></span>
+<!-- end: postbit_offline --><br />
+			<span class="smalltext">
+				Little Clucker<br />
+				<span class="postbit_userstars"><img src="images/star.png" alt="*" /><img src="images/star.png" alt="*" /><br /></span>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+	Posts: 1<br />
+	Threads: 0<br />
+	Joined: Jan 2019
+	<!-- start: postbit_reputation -->
+<br />Reputation: <!-- start: postbit_reputation_formatted_link -->
+<a href="reputation31c6.html?uid=326583"><strong class="reputation_neutral">0</strong></a>
+<!-- end: postbit_reputation_formatted_link -->
+<!-- end: postbit_reputation --><br />
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="showthread8610.html?tid=549038&amp;pid=4080324#pid4080324" title="Re: SAMP Server Status PHP (AJAX/NON-AJAX)">#18</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<h1 aria-label="Post: 18 by kokos22" style="display:inline;font-size:9px;"><!-- helps navigation for screen readers --></h1>
+		<span class="post_date">01.02.2019, 18:24 <span class="post_edit" id="edited_by_4080324"></span></span>
+	
+	</div>
+	<div class="post_body scaleimages" id="pid_4080324">
+		ERROR! FIX PLS
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_4080324">
+		
+	</div>
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="searchc8e6.html?action=finduser&amp;uid=326583" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="newreply0656.html?tid=549038&amp;replyto=4080324" title="Quote this message in a reply" class="postbit_quote postbit_mirage"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit_classic -->
+	</div>
+</div>
+	
+			<div class="tfoot row">
+				<div class="col-sm-6">
+					<strong>&laquo; <a href="showthread469c.html?tid=549038&amp;action=nextoldest">Next Oldest</a> | <a href="showthread27b0.html?tid=549038&amp;action=nextnewest">Next Newest</a> &raquo;</strong>
+				</div>
+				<div class="col-sm-6"><!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="https://sampforum.blast.hk/search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="549038" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search --></div>
+			</div>
+	<div class="float_left">
+		
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<br class="clear" />
+	
+	
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<!-- start: showthread_printthread -->
+<li class="printable"><a href="printthread8b29.html?tid=549038">View a Printable Version</a></li>
+<!-- end: showthread_printthread -->
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		<!-- start: forumjump_advanced -->
+<form action="https://sampforum.blast.hk/forumdisplay.php" method="get">
+<span class="smalltext">Forum Jump:</span>
+<select name="fid" class="forumjump">
+<option value="-4">Private Messages</option>
+<option value="-3">User Control Panel</option>
+<option value="-5">Who's Online</option>
+<option value="-2">Search</option>
+<option value="-1">Forum Home</option>
+<!-- start: forumjump_bit -->
+<option value="3" > SA-MP</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="74" >-- News and Updates</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="13" >-- General</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="16" >-- Client Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="20" >-- Bug Reports</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="21" >-- Screenshots and Videos</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="6" > SA-MP Server</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="19" >-- Server Support</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="22" >-- Server Advertisements</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="8" > SA-MP Scripting and Plugins</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="12" >-- Scripting Help</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="70" >---- Tutorials</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="84" >---- Discussion</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="89" >---- Help Archive</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="71" >-- Gamemode Scripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="17" >-- Filterscripts</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="83" >---- Includes</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="82" selected="selected">---- Tools and Files </option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="64" >---- Maps</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="18" >-- Plugin Development</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="92" > SA-MP DL Edition</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="90" >-- SA-MP 0.3.DL</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="94" >---- Model Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="7" > Other</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="23" >-- Everything and Nothing</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="9" > Non-English</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="33" >-- Languages</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="31" >---- Nederlands/Dutch</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="76" >------ Scripting Showroom en Discussie</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="87" >------ Off topic</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="29" >---- Español/Spanish</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="59" >------ Lanzamientos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="30" >---- Français/French</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="81" >------ Showroom</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="32" >---- Русский/Russian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="66" >------ Релизы/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="34" >---- Português/Portuguese</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="56" >------ Lançamentos/Releases</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="40" >---- Română/Romanian</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="77" >------ Salonul Scripturilor</option>
+<!-- end: forumjump_bit --><!-- start: forumjump_bit -->
+<option value="88" >---- Archive</option>
+<!-- end: forumjump_bit -->
+</select>
+<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+<script type="text/javascript">
+$(".forumjump").on('change', function() {
+	var option = $(this).val();
+
+	if(option < 0)
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+	else
+	{
+		window.location = 'forumdisplay0eb7.html?fid='+option;
+	}
+});
+</script>
+<!-- end: forumjump_advanced -->
+	</div>
+	<br class="clear" />
+	<!-- start: showthread_usersbrowsing -->
+<br />
+<span class="smalltext">Users browsing this thread: 1 Guest(s)</span>
+<br />
+<!-- end: showthread_usersbrowsing -->
+	<!-- start: footer -->
+<div style="clear:both"><div style="padding-top: 10px"><!-- start: nav -->
+<ol class="breadcrumb container"><!-- start: nav_bit -->
+<li><a href="index-2.html">SA-MP Forums Archive</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplayb1dd.html?fid=8">SA-MP Scripting and Plugins</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0bf6.html?fid=17">Filterscripts</a></li>
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<li><a href="forumdisplay0709.html?fid=82&amp;page=2">Tools and Files </a></li>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+
+<!-- end: nav_sep_active --></ol>
+<!-- end: nav --></div></div>
+</main>
+
+<div class="blankspace"></div>
+
+<footer id="footer">
+	<div class="container">
+    <div class="row">
+		
+        <!--<div class="col-sm-4 foot">
+			<h3>About Our Community</h3>
+			<p>Discuss about various topics in our community and have fun while doing so. Welcome to SA-MP Forums Archive</p>
+			
+		</div>		
+		
+
+		<div class="col-sm-4 foot">
+			<h3>Quick Links</h3>
+			<p>
+
+ 				<a href="https://sampforum.blast.hk" class="btn btn-success" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Forum Home"><i class="fa fa-home"></i></a>
+				
+				<a href="https://sampforum.blast.hk/archive/index.php?thread-549038.html" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Lite (Archive) Mode"><i class="fa fa-archive"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Become a Fan"><i class="fa fa-facebook-square"></i></a>
+				
+				<a href="#" target="_blank"  rel="noopener" class="btn btn-info" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" data-original-title="Follow Us"><i class="fa fa-twitter"></i></a>
+				
+				<a href="https://sampforum.blast.hk/misc.php?action=syndication" class="btn btn-warning" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="RSS Syndication"><i class="fa fa-rss"></i></a>
+				<br/>
+				<a href="misc.php?action=markread&amp;my_post_key=0cf074806b26d972988c92d761ffd9a7" class="btn btn-danger" style="color: #fff; margin-top:10px" data-toggle="tooltip" data-placement="bottom" data-original-title="Mark all forums read"><i class="fa fa-book"></i> Mark all forums read</a><br /><br />
+				
+				
+				</p>
+
+		</div>
+		
+		<div class="col-sm-4 foot">
+			
+			 <h3>Reach Us</h3>
+			 
+<p><a href="contact.php" class="btn btn-primary" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contact Us"><i class="fa fa-envelope"></i> Contact Us</a>&nbsp;
+			
+			<a href="showteam.php" class="btn btn-danger" style="color: #fff;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Meet Our Team"><i class="fa fa-users"></i> Forum Team</a></p>
+		</div>-->
+		
+		
+		
+		<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="task.gif" height="1" alt="" />
+<!-- end: task_image --><!-- End task image code -->
+		</div>
+	
+	</div>
+
+	
+<div id="copyright">
+	<div class="container">
+			<div class="pull-right"><!-- start: footer_languageselect -->
+<div class="language">
+<form method="POST" action="https://sampforum.blast.hk/showthread.php" id="lang_select">
+	<input type="hidden" name="tid" value="549038" />
+<input type="hidden" name="pid" value="4080324" />
+
+	<input type="hidden" name="my_post_key" value="0cf074806b26d972988c92d761ffd9a7" />
+	<select name="language" onchange="MyBB.changeLanguage();">
+		<optgroup label="Quick Language Select">
+			<!-- start: footer_languageselect_option -->
+<option value="english" selected="selected">&nbsp;&nbsp;&nbsp;English (American)</option>
+<!-- end: footer_languageselect_option --><!-- start: footer_languageselect_option -->
+<option value="russian">&nbsp;&nbsp;&nbsp;Russian</option>
+<!-- end: footer_languageselect_option -->
+		</optgroup>
+	</select>
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Go" />
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_languageselect --></div>
+			<div class="pull-left">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="http://www.mybb.com/" target="_blank"  rel="noopener" style="color: #fff;" >MyBB</a>. <a href="https://eree.in/" title="EREE" target="_blank" rel="noopener" style="color: #fff;">Crafted by EREE</a> and <a href="https://forum.androidbg.com/" title="AndroidBG" target="_blank" rel="noopener" style="color: #fff;">Android BG</a>. Also powered by <a href="https://www.blast.hk/"><b>blast.hk</b></a><!-- End powered by -->
+				
+			</div>
+	</div>
+
+</div>
+
+</footer>
+
+<!-- Fix for MentionMe popup window position -->
+<script type="text/javascript">
+	var MentionMe = (function(m) {
+	m.customSCEditorContainerOffset = {
+		left: 0,
+		top: 2,
+	};
+
+	return m;
+})(MentionMe || {});
+</script>
+<!-- End Fix for MentionMe popup window position -->
+<!-- end: footer -->
+	<script type="text/javascript">
+		var thread_deleted = "0";
+		if(thread_deleted == "1")
+		{
+			$("#quick_reply_form, .new_reply_button, .thread_tools, .inline_rating").hide();
+			$("#moderator_options_selector option.option_mirage").attr("disabled","disabled");
+		}
+	</script>
+</body>
+</html>
+<!-- end: showthread -->

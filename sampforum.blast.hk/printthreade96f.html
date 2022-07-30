@@ -1,0 +1,625 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Include] Easy MySQL - Simplifying the usage of MySQL queries! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Easy - MySQL Originally, created by ThePhenix (ThreeKingz), currently maintaining and developing this include. Old thread: Overview: This include allows you to create and manage several MySQL queries" />
+<link rel="canonical" href="showthreade96f.html?tid=606930" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreade96f.html?tid=606930">[Include] Easy MySQL - Simplifying the usage of MySQL queries!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Includes (<i>https://sampforum.blast.hk/forumdisplay.php?fid=83</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Include] Easy MySQL - Simplifying the usage of MySQL queries! (<em>/showthread.php?tid=606930</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread06ff.html?tid=606930&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread544c.html?tid=606930&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread0a75.html?tid=606930&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  11.05.2016
+<br />
+<br />
+<b><div align="center"><font size="7"><font color="Green">E</font><font color="BLACK">asy - MySQ</font><font color="green">L</font> <font color="BLACK">[</font><font color="green">V3.8</font><font color="BLACK">]</font></font></div></b><br />
+<br />
+Originally, created by <a href="http://forum.sa-mp.com/member.php?u=164082" target="_blank">ThePhenix (ThreeKingz)</a>, currently maintaining and developing this include.<br />
+<br />
+<a href="showthread1402.html?tid=590310" target="_blank">Old thread:</a><br />
+<br />
+<br />
+<b><font size="5"><font color="DarkOrange">O</font>vervie<font color="DarkOrange">w</font>:</font></b><br />
+<br />
+This include allows you to create and manage several MySQL queries in a very simplified way, it means that you won't require to write queries on your own for the most part. <br />
+<br />
+<br />
+<font size="3"><b><font color="DarkOrange">L</font>ogin/Register exampl<font color="DarkOrange">e</font>:</b></font><br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">#include &lt;a_samp&gt;
+<br/>#include &lt;easy-mysql&gt;
+
+<br/>/*
+<br/> *  Simple register/login system using easy_mysql.inc!
+<br/>*/
+
+<br/>#define mysql_host    "localhost"
+<br/>#define mysql_user    "root"
+<br/>#define mysql_db        "server"
+<br/>#define mysql_pass         ""
+<br/>#define mysql_debugging_enabled             (true)
+<br/>#define SQL_PLAYERS_TABLE                    "players"
+<br/>#define DIALOG_LOGIN 0
+<br/>#define DIALOG_REGISTER 1
+
+<br/></span><span style="color: #0000BB">enum p_info
+<br/></span><span style="color: #007700">{
+<br/>    </span><span style="color: #0000BB">p_id</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">p_name</span><span style="color: #007700">[</span><span style="color: #0000BB">24</span><span style="color: #007700">],
+<br/>    </span><span style="color: #0000BB">p_password</span><span style="color: #007700">[</span><span style="color: #0000BB">64</span><span style="color: #007700">],
+<br/>    </span><span style="color: #0000BB">p_score</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">Float</span><span style="color: #007700">:</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">,
+<br/>    </span><span style="color: #0000BB">p_loggedin
+<br/></span><span style="color: #007700">};
+<br/>new </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">MAX_PLAYERS</span><span style="color: #007700">][</span><span style="color: #0000BB">p_info</span><span style="color: #007700">];
+<br/>    
+<br/></span><span style="color: #0000BB">stock ret_pName</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)
+<br/>{
+<br/>    new </span><span style="color: #0000BB">name</span><span style="color: #007700">[</span><span style="color: #0000BB">24</span><span style="color: #007700">];
+<br/>    </span><span style="color: #0000BB">GetPlayerName</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">name</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">name</span><span style="color: #007700">));
+<br/>    return </span><span style="color: #0000BB">name</span><span style="color: #007700">;
+<br/>}
+
+
+<br/></span><span style="color: #FF8000">#define IsPlayerRegistered(%0)    (SQL::RowExistsEx(SQL_PLAYERS_TABLE, "p_name", ret_pName(%0)))
+
+
+<br/></span><span style="color: #0000BB">main</span><span style="color: #007700">()
+<br/>{
+<br/>    
+<br/>}
+<br/>public </span><span style="color: #0000BB">OnGameModeInit</span><span style="color: #007700">()
+<br/>{
+<br/>    </span><span style="color: #FF8000">//Connecting to the MySQL database, default connection handle.
+<br/>    </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Connect</span><span style="color: #007700">(</span><span style="color: #0000BB">mysql_host</span><span style="color: #007700">, </span><span style="color: #0000BB">mysql_user</span><span style="color: #007700">, </span><span style="color: #0000BB">mysql_pass</span><span style="color: #007700">, </span><span style="color: #0000BB">mysql_db</span><span style="color: #007700">);
+<br/>    </span><span style="color: #FF8000">//Checking if the table 'players' exists
+<br/>    
+<br/>    //Checking if the table 'players' exists
+<br/>    </span><span style="color: #007700">if(!</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ExistsTable</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">))
+<br/>    {
+<br/>        </span><span style="color: #FF8000">//If not, then create a table called 'players'.
+<br/>        </span><span style="color: #007700">new </span><span style="color: #0000BB">handle </span><span style="color: #007700">= </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Open</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">CREATE</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">); </span><span style="color: #FF8000">//Opening a valid handle to create a table called 'players'
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_id"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_INT</span><span style="color: #007700">, </span><span style="color: #0000BB">11</span><span style="color: #007700">, </span><span style="color: #0000BB">false</span><span style="color: #007700">, </span><span style="color: #0000BB">true</span><span style="color: #007700">); </span><span style="color: #FF8000">//Setting auto-increment for this field.
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_name"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_VCHAR</span><span style="color: #007700">, </span><span style="color: #0000BB">24</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_password"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_VCHAR</span><span style="color: #007700">, </span><span style="color: #0000BB">64</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_score"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_INT</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posx"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_FLOAT</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posy"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_FLOAT</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">AddTableColumn</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posz"</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_TYPE_FLOAT</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Close</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">);</span><span style="color: #FF8000">//Closing the previous opened handle.
+<br/>    </span><span style="color: #007700">}
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnPlayerConnect</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)
+<br/>{
+<br/>    </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_loggedin</span><span style="color: #007700">] = </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_score</span><span style="color: #007700">] = </span><span style="color: #0000BB">0</span><span style="color: #007700">;  </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">] = </span><span style="color: #0000BB">1958.3783</span><span style="color: #007700">;
+<br/>    </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">] = </span><span style="color: #0000BB">1343.1572</span><span style="color: #007700">; </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">] = </span><span style="color: #0000BB">15.3746</span><span style="color: #007700">; 
+
+
+<br/>    if(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">RowExistsEx</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_name"</span><span style="color: #007700">, </span><span style="color: #0000BB">ret_pName</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">))) </span><span style="color: #FF8000">//Check if the name is registered in the database
+<br/>    </span><span style="color: #007700">{
+<br/>        </span><span style="color: #FF8000">//Get the player password and unique ID.
+<br/>        </span><span style="color: #007700">new </span><span style="color: #0000BB">handle </span><span style="color: #007700">= </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">OpenEx</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">READ</span><span style="color: #007700">, </span><span style="color: #DD0000">"players"</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_name"</span><span style="color: #007700">, </span><span style="color: #0000BB">ret_pName</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">));
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadString</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_password"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_password</span><span style="color: #007700">], </span><span style="color: #0000BB">64</span><span style="color: #007700">);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadInt</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_id"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_id</span><span style="color: #007700">]);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Close</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">);
+<br/>        </span><span style="color: #FF8000">//Show the login dialog
+<br/>        </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_LOGIN</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PASSWORD</span><span style="color: #007700">, </span><span style="color: #DD0000">"{0080FF}Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Please input your password below to log in."</span><span style="color: #007700">, </span><span style="color: #DD0000">"Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Exit"</span><span style="color: #007700">);
+<br/>    }
+<br/>    else
+<br/>    {
+<br/>        </span><span style="color: #FF8000">//If not registered, then show the register DIALOG.
+<br/>        </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_REGISTER</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PASSWORD</span><span style="color: #007700">, </span><span style="color: #DD0000">"{0080FF}Register"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Please input a password below to register in."</span><span style="color: #007700">, </span><span style="color: #DD0000">"Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Exit"</span><span style="color: #007700">);
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnPlayerSpawn</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)
+<br/>{
+<br/>    </span><span style="color: #0000BB">SetPlayerPos</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">], </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">], </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">]);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnPlayerDisconnect</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">reason</span><span style="color: #007700">)
+<br/>{
+<br/>    if(</span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_loggedin</span><span style="color: #007700">] == </span><span style="color: #0000BB">1</span><span style="color: #007700">)
+<br/>    {
+<br/>        </span><span style="color: #FF8000">//Save the player data.
+<br/>        </span><span style="color: #0000BB">GetPlayerPos</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">], </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">], </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">]);
+<br/>        new </span><span style="color: #0000BB">handle </span><span style="color: #007700">= </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Open</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">UPDATE</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_id"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_id</span><span style="color: #007700">]); </span><span style="color: #FF8000">//update WHERE p_id = UserInfo[playerid][p_id]
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteInt</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_score"</span><span style="color: #007700">, </span><span style="color: #0000BB">GetPlayerScore</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">));
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posx"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">]);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posy"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">]);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posz"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">]);
+<br/>        </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Close</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">);
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>}
+
+<br/>public </span><span style="color: #0000BB">OnDialogResponse</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">dialogid</span><span style="color: #007700">, </span><span style="color: #0000BB">response</span><span style="color: #007700">, </span><span style="color: #0000BB">listitem</span><span style="color: #007700">, </span><span style="color: #0000BB">inputtext</span><span style="color: #007700">[])
+<br/>{
+<br/>    switch(</span><span style="color: #0000BB">dialogid</span><span style="color: #007700">)
+<br/>    {
+<br/>        case </span><span style="color: #0000BB">DIALOG_REGISTER</span><span style="color: #007700">:
+<br/>        {
+<br/>            if(!</span><span style="color: #0000BB">response</span><span style="color: #007700">) return </span><span style="color: #0000BB">Kick</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">);
+<br/>            if(</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">inputtext</span><span style="color: #007700">) &lt; </span><span style="color: #0000BB">5</span><span style="color: #007700">)
+<br/>            {
+<br/>                </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_REGISTER</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PASSWORD</span><span style="color: #007700">, </span><span style="color: #DD0000">"{0080FF}Register"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Please input a password below to register in."</span><span style="color: #007700">, </span><span style="color: #DD0000">"Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Exit"</span><span style="color: #007700">);
+<br/>                return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>            }
+<br/>            </span><span style="color: #0000BB">SHA256_PassHash</span><span style="color: #007700">(</span><span style="color: #0000BB">inputtext</span><span style="color: #007700">, </span><span style="color: #DD0000">""</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_password</span><span style="color: #007700">], </span><span style="color: #0000BB">64</span><span style="color: #007700">);
+<br/>            new </span><span style="color: #0000BB">handle </span><span style="color: #007700">= </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Open</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">INSERT</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ToggleAutoIncrement</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #0000BB">true</span><span style="color: #007700">);</span><span style="color: #FF8000">//Toggles auto increment, SQL::Close will return cache_insert_id();
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteString</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_name"</span><span style="color: #007700">, </span><span style="color: #0000BB">ret_pName</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">));
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteString</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_password"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_password</span><span style="color: #007700">]);
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteInt</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_score"</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posx"</span><span style="color: #007700">, </span><span style="color: #0000BB">0.0</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posy"</span><span style="color: #007700">, </span><span style="color: #0000BB">0.0</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">WriteFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posz"</span><span style="color: #007700">, </span><span style="color: #0000BB">0.0</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_id</span><span style="color: #007700">] = </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Close</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">); 
+<br/>            </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, -</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #DD0000">"Successfully registered in!"</span><span style="color: #007700">);
+<br/>            </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_loggedin</span><span style="color: #007700">] = </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>        }
+<br/>        case </span><span style="color: #0000BB">DIALOG_LOGIN</span><span style="color: #007700">:
+<br/>        {
+<br/>            if(!</span><span style="color: #0000BB">response</span><span style="color: #007700">) </span><span style="color: #0000BB">Kick</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">); 
+<br/>            new </span><span style="color: #0000BB">hash</span><span style="color: #007700">[</span><span style="color: #0000BB">64</span><span style="color: #007700">];
+<br/>            </span><span style="color: #0000BB">SHA256_PassHash</span><span style="color: #007700">(</span><span style="color: #0000BB">inputtext</span><span style="color: #007700">, </span><span style="color: #DD0000">""</span><span style="color: #007700">, </span><span style="color: #0000BB">hash</span><span style="color: #007700">, </span><span style="color: #0000BB">64</span><span style="color: #007700">);
+<br/>            if(!</span><span style="color: #0000BB">strcmp</span><span style="color: #007700">(</span><span style="color: #0000BB">hash</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_password</span><span style="color: #007700">]))
+<br/>            { 
+<br/>                </span><span style="color: #FF8000">//Load player data
+<br/>                </span><span style="color: #007700">new </span><span style="color: #0000BB">handle </span><span style="color: #007700">= </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Open</span><span style="color: #007700">(</span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">READ</span><span style="color: #007700">, </span><span style="color: #0000BB">SQL_PLAYERS_TABLE</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_id"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_id</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadInt</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_score"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_score</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posx"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posx</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posy"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posy</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">ReadFloat</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">, </span><span style="color: #DD0000">"p_posz"</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_posz</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">SQL</span><span style="color: #007700">::</span><span style="color: #0000BB">Close</span><span style="color: #007700">(</span><span style="color: #0000BB">handle</span><span style="color: #007700">);</span><span style="color: #FF8000">//You must close the handle.
+<br/>                </span><span style="color: #0000BB">SetPlayerScore</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_score</span><span style="color: #007700">]);
+<br/>                </span><span style="color: #0000BB">UserInfo</span><span style="color: #007700">[</span><span style="color: #0000BB">playerid</span><span style="color: #007700">][</span><span style="color: #0000BB">p_loggedin</span><span style="color: #007700">] = </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>                </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, -</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #DD0000">"Successfully logged in!"</span><span style="color: #007700">);
+<br/>                
+<br/>            }
+<br/>            else 
+<br/>            {
+<br/>                </span><span style="color: #0000BB">ShowPlayerDialog</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_LOGIN</span><span style="color: #007700">, </span><span style="color: #0000BB">DIALOG_STYLE_PASSWORD</span><span style="color: #007700">, </span><span style="color: #DD0000">"{0080FF}Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Please input your password below to log in."</span><span style="color: #007700">, </span><span style="color: #DD0000">"Login"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Exit"</span><span style="color: #007700">);
+<br/>            }
+<br/>        }
+<br/>    }
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><font size="5"><b><font color="DarkOrange">C</font>redit<font color="DarkOrange">s</font>:</b></font><br />
+<br />
+- ThePhenix (ThreeKingz) (initial developer)<br />
+- Max_Andolini (latest developer)<br />
+<br />
+----------------------------------------------------------------------------------------------------------------------<br />
+<font size="5"><b><font color="DarkOrange">D</font>ownloa<font color="DarkOrange">d</font>:</b></font><br />
+<br />
+<a href="https://github.com/ThreeKingz/easy-mysql/blob/master/easy-mysql.inc" target="_blank">Download V3.8</a><br />
+<br />
+<font size="1">The latest <a href="https://github.com/pBlueG/SA-MP-MySQL/releases" target="_blank">MySQL plugin (R41-4)</a> is required to use this include.</font><br />
+<br />
+<br />
+If you have any questions or suggestions, comment below.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member210b.html?action=profile&amp;uid=56720">Evoturk</a> -  11.05.2016
+<br />
+<br />
+Thanks for this <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member828c.html?action=profile&amp;uid=215897">Unrea1</a> -  11.05.2016
+<br />
+<br />
+new things have version 3?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  11.05.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>LatinZ</strong><br />
+<a href="showthread2582.html?pid=3698562#pid3698562" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">new things have version 3?</div>
+</td>
+</tr>
+</table>
+</div>Table Read, Multi Table Read, Multi Read, Multi ReadEx etc.<br />
+<br />
+Examine the code for more.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member7c94.html?action=profile&amp;uid=237002">Sensation</a> -  11.05.2016
+<br />
+<br />
+Зok gьzel, bцyle devam kardeş..
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  11.05.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Sensation</strong><br />
+<a href="showthreadd2ad.html?pid=3698652#pid3698652" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Зok gьzel, bцyle devam kardeş..</div>
+</td>
+</tr>
+</table>
+</div>I do not know who you are but thank you krdş <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member7c94.html?action=profile&amp;uid=237002">Sensation</a> -  11.05.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>eco1999</strong><br />
+<a href="showthread2c9d.html?pid=3698657#pid3698657" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Kimsin krdş bilmiyorumda teşekkьr ederim <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/></div>
+</td>
+</tr>
+</table>
+</div>What is your gtaturkish nickname bro?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member7c94.html?action=profile&amp;uid=237002">Sensation</a> -  11.05.2016
+<br />
+<br />
+&lt;removed&gt;
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member9bfe.html?action=profile&amp;uid=248291">Luicy.</a> -  19.06.2016
+<br />
+<br />
+Not really a bump but, Great work buddy.<br />
+Finally I'll move over to MySQL. I'm gone from INI now.<br />
+You just received a rep mate. x3
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  19.06.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Meller</strong><br />
+<a href="showthread0bfb.html?pid=3719644#pid3719644" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Not really a bump but, Great work buddy.<br />
+Finally I'll move over to MySQL. I'm gone from INI now.<br />
+You just received a rep mate. x3</div>
+</td>
+</tr>
+</table>
+</div><font size="3">Thank you.<br />
+<br />
+The new version was released.<br />
+<br />
+<font color="Red">Description:<br />
+<br />
+Bug fixes and improvements.</font></font><br />
+<br />
+<a href="https://github.com/MaxAndolini/easy-mysql/releases/tag/easy-mysqlv3.1" target="_blank">https://github.com/MaxAndolini/easy-...easy-mysqlv3.1</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberba55.html?action=profile&amp;uid=264300">pawnuser</a> -  21.06.2016
+<br />
+<br />
+Russian characters are replaced with "<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??". How to fix?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  21.06.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>pawnuser</strong><br />
+<a href="showthreaddde7-2.html?pid=3720649#pid3720649" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Russian characters are replaced with "<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??". How to fix?</div>
+</td>
+</tr>
+</table>
+</div>Use MySQL Charset.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberba55.html?action=profile&amp;uid=264300">pawnuser</a> -  21.06.2016
+<br />
+<br />
+I will perform this function, it recognizes the name on the account number in the database. (encoding declared at the beginning of fashion after the database connection)<br />
+<br />
+stock GetAccountName(account)<br />
+{<br />
+	new name[MAX_PLAYER_NAME];<br />
+	if(SQL::RowExists("accounts", "ID", account))<br />
+	{<br />
+		new handle = SQL::Open(SQL::READ, "accounts", "ID", account);<br />
+        SQL::ReadString(handle, "Name", name, MAX_PLAYER_NAME);<br />
+        SQL::Close(handle);<br />
+	}<br />
+	return name;<br />
+}<br />
+<br />
+The result of "return" is recognized in the "<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/><img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??"
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  21.06.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>pawnuser</strong><br />
+<a href="showthreadc199.html?pid=3720724#pid3720724" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I will perform this function, it recognizes the name on the account number in the database. (encoding declared at the beginning of fashion after the database connection)<br />
+<br />
+stock GetAccountName(account)<br />
+{<br />
+	new name[MAX_PLAYER_NAME];<br />
+	if(SQL::RowExists("accounts", "ID", account))<br />
+	{<br />
+		new handle = SQL::Open(SQL::READ, "accounts", "ID", account);<br />
+        SQL::ReadString(handle, "Name", name, MAX_PLAYER_NAME);<br />
+        SQL::Close(handle);<br />
+	}<br />
+	return name;<br />
+}<br />
+<br />
+The result of "return" is recognized in the "<img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/><img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/>??"</div>
+</td>
+</tr>
+</table>
+</div>Use This<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">stock GetAccountName(account)
+{
+    new name[MAX_PLAYER_NAME];
+    if(SQL::RowExists("accounts", "ID", account))
+    {
+        SQL::GetStringEntry("accounts", "Name", "ID", account, name, MAX_PLAYER_NAME);
+        return name;
+    }
+    return 0;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberba55.html?action=profile&amp;uid=264300">pawnuser</a> -  21.06.2016
+<br />
+<br />
+LOL what?<br />
+<br />
+I have mysql encoding settings(last): <br />
+"mysql_tquery(mysqlConnection, "SET NAMES cp1251", "", "");"<br />
+"mysql_tquery(mysqlConnection, "SET CHARACTER SET cp1251", "", "");"<br />
+And now I have:<br />
+"   mysql_tquery(mysqlConnection, "SET NAMES cp1251", "", "");<br />
+    mysql_tquery(mysqlConnection, "SET CHARACTER SET cp1251", "", "");<br />
+    mysql_query(mysqlConnection, "SET NAMES cp1251");<br />
+    mysql_query(mysqlConnection, "SET CHARACTER SET cp1251"); " <br />
+And it works!<br />
+It turns out, we specify the encoding for different queries, functions?<br />
+For mysql_tquery and mysql_query separately!<br />
+Problem was solved, thanks for a simplified version of my function!<br />
+<br />
+-----------------------------FIX-------------<br />
+I've used for all requests this "mysql_tquery" function and so I have the encoding for the use of this function. "mysql_tquery" The script uses this function to query "mysql_query" means and coding should be for this function
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  21.06.2016
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>pawnuser</strong><br />
+<a href="showthread08d6-2.html?pid=3720876#pid3720876" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">LOL what?<br />
+<br />
+I have mysql encoding settings(last): <br />
+"mysql_tquery(mysqlConnection, "SET NAMES cp1251", "", "");"<br />
+"mysql_tquery(mysqlConnection, "SET CHARACTER SET cp1251", "", "");"<br />
+And now I have:<br />
+"   mysql_tquery(mysqlConnection, "SET NAMES cp1251", "", "");<br />
+    mysql_tquery(mysqlConnection, "SET CHARACTER SET cp1251", "", "");<br />
+    mysql_query(mysqlConnection, "SET NAMES cp1251");<br />
+    mysql_query(mysqlConnection, "SET CHARACTER SET cp1251"); " <br />
+And it works!<br />
+It turns out, we specify the encoding for different queries, functions?<br />
+For mysql_tquery and mysql_query separately!<br />
+Problem was solved, thanks for a simplified version of my function!<br />
+<br />
+-----------------------------FIX-------------<br />
+I've used for all requests this "mysql_tquery" function and so I have the encoding for the use of this function. "mysql_tquery" The script uses this function to query "mysql_query" means and coding should be for this function</div>
+</td>
+</tr>
+</table>
+</div>mysql_set_charset("cp1251");<br />
+<br />
+Put this after connect.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberba55.html?action=profile&amp;uid=264300">pawnuser</a> -  21.06.2016
+<br />
+<br />
+Well, I have a different, and works well and good))
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member00b6.html?action=profile&amp;uid=206445">Stones</a> -  21.06.2016
+<br />
+<br />
+Thank you very much for this!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="memberdb81.html?action=profile&amp;uid=217871">Max_Andolini</a> -  05.09.2016
+<br />
+<br />
+New version released.<br />
+<br />
+Changes:<br />
+<br />
+MySQL R40 compatibility.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Easy MySQL - Simplifying the usage of MySQL queries! - <a href="member39c6.html?action=profile&amp;uid=22778">morris91</a> -  06.09.2016
+<br />
+<br />
+Im trying to make it so on attachment edit, it adds the floats etc.. to the row that correctly corresponds to the Username &amp; Slot.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ)
+{
+      new handle = SQL::OpenEx(SQL::UPDATE2, ""ATTACHMENTS"", "Username", pNick(playerid), "Slot", index);</pre>
+</div>Getting a argument 6 so guessing im missing something out.<br />
+Anyone can help? il be greatfull
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
