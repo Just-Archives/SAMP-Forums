@@ -1,0 +1,375 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Profiler result's -Optimization mode - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I want to optimize my gamemode and I need some help.I'm put profiler plugin on my server from 01:00 to 11:23 today,so i'm get results. So there are picture who don't want to download: https://i.imgur." />
+<link rel="canonical" href="showthread1a24.html?tid=650448" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread1a24.html?tid=650448">Profiler result's -Optimization mode</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Profiler result's -Optimization mode (<em>/showthread.php?tid=650448</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Profiler result's -Optimization mode - <a href="memberab85.html?action=profile&amp;uid=307928">GospodinX</a> -  28.02.2018
+<br />
+<br />
+I want to optimize my gamemode and I need some help.I'm put profiler plugin on my server from 01:00 to 11:23 today,so i'm get results.<br />
+<br />
+So there are picture who don't want to download:<br />
+<a href="https://i.imgur.com/dYcv4Fd.png" target="_blank">https://i.imgur.com/dYcv4Fd.png</a><br />
+<br />
+So if you can tell me what i need to opimize,because i'm not sure what i need to look on this profiler results.For example i don't understand this:<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				operator&gt;=(Float:,Float<img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>	1515576	6.83%	<br />
+operator&gt;(Float:,Float<img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>	1281151	3.33%<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>
+Is this much?<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				floatcmp	13220491	3.75%<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>I use floatcmp just in one line in my mode.For afk check<br />
+<br />
+Short code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 370px;
+		text-align: left;
+		overflow: auto">function AFKCheck(playerid)
+{
+	GetPlayerPos(playerid, PlayerCurrentPos[playerid][0], PlayerCurrentPos[playerid][1], PlayerCurrentPos[playerid][2]);
+	if(!<b>floatcmp</b>(PlayerCurrentPos[playerid][0], PlayerLastPos[playerid][LastX]) &amp;&amp; !<b>floatcmp</b>(PlayerCurrentPos[playerid][1], PlayerLastPos[playerid][LastY]))
+	{
+		PovecajPVarInt(playerid, "PlayerAFK", 1);
+	}
+	else
+	{
+		SetPVarInt(playerid, "PlayerAFK", 0);
+   		AFK[playerid] = false;
+	}
+	PlayerLastPos[playerid][LastX] = PlayerCurrentPos[playerid][0];
+	PlayerLastPos[playerid][LastY] = PlayerCurrentPos[playerid][1];
+	PlayerLastPos[playerid][LastZ] = PlayerCurrentPos[playerid][2];
+
+	if(GetPVarInt(playerid, "PlayerAFK") &gt;= 20)
+	{
+          //kick(afk 20 minute)
+        }
+       return 1;
+}</pre>
+</div>
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				GetSpeed	790181	8.17%<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>This function I use in OnPlayerUpdate( if(GetSpeed &gt; 299) kick<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">GetSpeed(playerid)
+{
+    new Float:ST[4];
+    if(IsPlayerInAnyVehicle(playerid))
+    GetVehicleVelocity(GetPlayerVehicleID(playerid),ST[0],ST[1],ST[2]);
+    else GetPlayerVelocity(playerid,ST[0],ST[1],ST[2]);
+    ST[3] = floatsqroot(floatpower(floatabs(ST[0]), 2.0) + floatpower(floatabs(ST[1]), 2.0) + floatpower(floatabs(ST[2]), 2.0)) * 178.8617875;
+    return floatround(ST[3]);
+}</pre>
+</div>I'm upload full .html file in attachmens.Thank you
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Profiler result's -Optimization mode - <a href="memberab85.html?action=profile&amp;uid=307928">GospodinX</a> -  28.02.2018
+<br />
+<br />
+First I need to say that my English is not very good,so i hope you will understand me.<br />
+<br />
+1. I had some problems when i had 250+ players(for example my IC Chat is became global chat and also it was start lagg little) -&gt;This is RP server so..I don't use Global Chat) So i'm sure that i need some optimization.Also I need to say that i don't have often a large number of players,so i don't have chance now to turn on profiler with 250+ players(I had it on celebration two years of server so there was many visitors and friends which are not our active players.) <br />
+<br />
+This profiler is turn on midnight(In my time) so we don't have many players at that time .I will post tonight results also.<br />
+<br />
+2.Maybe you are not see,but i'm post full .html file in attachment's.<br />
+<br />
+<br />
+3.I will look on OnPlayerUpdate,i have GetSpeed check,AntiChaet for Weapons and some check which I can transfer on second timer,it will be better,i think.<br />
+<br />
+FC_OnPlayerUpdate is from include "fuckcleo.inc" <br />
+<a href="https://pastebin.com/AVrySvAH" target="_blank">https://pastebin.com/AVrySvAH</a><br />
+<br />
+So I'm not sure about it.<br />
+<br />
+Thank you very much on answer!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Profiler result's -Optimization mode - <a href="member5ba7.html?action=profile&amp;uid=173463">AmigaBlizzard</a> -  08.06.2018
+<br />
+<br />
+I can get why you want to kick cheaters fast, but using OnPlayerUpdate is overkill.<br />
+This callback is called at least 30 times per second FOR EVERY PLAYER.<br />
+If you have 250 players online, you're executing OnPlayerUpdate 7500 times or more every second.<br />
+<br />
+It won't hurt your server when you just transfer all that code to a 1-second timer.<br />
+Then that code runs 250 times per second, which is more than enough.<br />
+<br />
+Optimization starts with clearing OnPlayerUpdate.<br />
+I never used that callback and I never will, because I can see no reason for any code that needs to run 30 times per second.<br />
+<br />
+If someone cheats with a speed hack, kicking him within 30ms or 1 second won't make any difference, the cheater will be kicked before he can do more damage anyways.<br />
+He won't do that much extra damage in 1 second.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Profiler result's -Optimization mode - <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> -  08.06.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>AmigaBlizzard</strong><br />
+<a href="showthreadc6b7.html?pid=4027081#pid4027081" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I can get why you want to kick cheaters fast, but using OnPlayerUpdate is overkill.<br />
+This callback is called at least 30 times per second FOR EVERY PLAYER.<br />
+If you have 250 players online, you're executing OnPlayerUpdate 7500 times or more every second.<br />
+<br />
+It won't hurt your server when you just transfer all that code to a 1-second timer.<br />
+Then that code runs 250 times per second, which is more than enough.</div>
+</td>
+</tr>
+</table>
+</div>Using OnPlayerUpdate as a timer is not an overkill but, a very big mistake.<br />
+I've kept my anti cheat timer to call every 1.5~2 seconds.<br />
+<br />
+So for say, my timer will call 2 times in 3 seconds instead of 3. It may not make a very big difference, so why put unnecessary load?<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>AmigaBlizzard</strong><br />
+<a href="showthreadc6b7.html?pid=4027081#pid4027081" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Optimization starts with clearing OnPlayerUpdate.<br />
+I never used that callback and I never will, because I can see no reason for any code that needs to run 30 times per second.</div>
+</td>
+</tr>
+</table>
+</div>The only reason why anyone will use it is when they're making an Anti AFK system, since OnPlayerUpdate is not called when they are paused.<br />
+<br />
+---<br />
+<br />
+@OP: You can also use GetServerTickRate when you've lots of players in the daytime and let us know of the result.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CMD</span><span style="color: #007700">:</span><span style="color: #0000BB">tickrate</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)
+<br/>{
+<br/>    new </span><span style="color: #0000BB">str</span><span style="color: #007700">[</span><span style="color: #0000BB">25</span><span style="color: #007700">];
+<br/>    </span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">str</span><span style="color: #007700">, </span><span style="color: #0000BB">sizeof str</span><span style="color: #007700">, </span><span style="color: #DD0000">"Server tickrate: %d."</span><span style="color: #007700">, </span><span style="color: #0000BB">GetServerTickRate</span><span style="color: #007700">());
+<br/>    </span><span style="color: #0000BB">SendClientMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">COLOR_GREY</span><span style="color: #007700">, </span><span style="color: #0000BB">str</span><span style="color: #007700">);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Profiler result's -Optimization mode - <a href="memberab85.html?action=profile&amp;uid=307928">GospodinX</a> -  21.10.2018
+<br />
+<br />
+Hi guys,<br />
+<br />
+I need help with optimization one my function which is very bad.This function need to count number of seconds of started event.(It shows for all players in game how much is passed seconds from the starting event)<br />
+<br />
+When I start event:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">        EventCount = GetTickCount();
+	UpdateEvent();
+	eventtimer = SetTimer("UpdateEvent",990,true);</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 210px;
+		text-align: left;
+		overflow: auto">forward UpdateEvent();
+public UpdateEvent()
+{
+	new rTime[3];
+	new string[10];
+  	new TimeStamp,TotalEventTime;
+  	TimeStamp = GetTickCount();
+  	TotalEventTime = TimeStamp - EventCount;
+  	ConvertTime(var, TotalRaceTime, rTime[0], rTime[1], rTime[2]);
+  	format(string, sizeof string, "%02d:%02d",rTime[0], rTime[1]);
+  	TextDrawSetString(TDEvent, string);
+}</pre>
+</div>ConvertTime(used in UpdateEvent)<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">#define ConvertTime(%0,%1,%2,%3,%4) \
+	new \
+	    Float: %0 = floatdiv(%1, 60000) \
+	;\
+	%2 = floatround(%0, floatround_tozero); \
+	%3 = floatround(floatmul(%0 - %2, 60), floatround_tozero); \
+	%4 = floatround(floatmul(floatmul(%0 - %2, 60) - %3, 1000), floatround_tozero)</pre>
+</div>
+Profiler result for this function:<br />
+<img alt="" border="0" src="https://i.imgur.com/ODIP6b3.png"/><br />
+This is 4. worst function in my mode,so I want to optimize this.Maybe someone have better idea for counting number of seconds?Thanks
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Profiler result's -Optimization mode - <a href="memberab85.html?action=profile&amp;uid=307928">GospodinX</a> -  21.10.2018
+<br />
+<br />
+Ohh.<br />
+This is one-second timer,so If I convert number of calls into hours i will get: 1175 hours .<br />
+1175 hours to days = 48 days(but my mode is started only 2 days with profiler)<br />
+It's not possible. So I have mistake in mode(I have stoptimer,but maybe some time it doesn't stop.) I will test it.<br />
+<br />
+2) <div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				except stop using arrays for normal variables, but that's a general rule everywhere<br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>You think that I should use:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new rTime1,rTime2,rTime3 ;</pre>
+</div>instead<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new rTime[3];</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
