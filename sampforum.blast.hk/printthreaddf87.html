@@ -1,0 +1,265 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] State-based hooks (aka pre-hooks) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="This is a hook method I came up with long ago (before hook method 7, i.e. modern ALS). It uses states to determine if a hook exists or not. This was previously documented, but that documentation is bo" />
+<link rel="canonical" href="showthreaddf87.html?tid=665361" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreaddf87.html?tid=665361">[Tutorial] State-based hooks (aka pre-hooks)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] State-based hooks (aka pre-hooks) (<em>/showthread.php?tid=665361</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+State-based hooks (aka pre-hooks) - <a href="member4787.html?action=profile&amp;uid=29176">Y_Less</a> -  31.03.2019
+<br />
+<br />
+This is a hook method I came up with long ago (before hook method 7, i.e. modern ALS). It uses states to determine if a hook exists or not.  This was previously documented, but that documentation is both deleted and obsolete - the technique is the same, but the implementation has evolved a little bit.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">#include &lt;a_samp&gt;
+
+<br/>/*
+<br/>First define several states for "hooked" and "unhooked".  These functions are
+<br/>purely to define states, they are never used.  The states only need to be
+<br/>defined once per mode, and both fixes.inc and YSI already define them.  The
+<br/>function name is unimportant, but the state specifiers must be exactly as below:
+<br/>*/
+
+<br/></span><span style="color: #007700">static </span><span style="color: #0000BB">stock Library_IncludeStates</span><span style="color: #007700">() &lt;</span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x0</span><span style="color: #007700">, </span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x1</span><span style="color: #007700">, </span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x2</span><span style="color: #007700">, </span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x3</span><span style="color: #007700">&gt;
+<br/>{
+<br/>}
+
+<br/>static </span><span style="color: #0000BB">stock Library_IncludeStates</span><span style="color: #007700">() &lt;</span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_go</span><span style="color: #007700">&gt;
+<br/>{
+<br/>}
+
+<br/></span><span style="color: #FF8000">/*
+<br/>Here is our first hooked function, it is always a good idea to hook a ScriptInit
+<br/>function so you can set "_ALS_" state, but you can also do that in any other
+<br/>callback, this is just merely a small optimisation.
+<br/>*/
+<br/></span><span style="color: #007700">public </span><span style="color: #0000BB">OnGameModeInit</span><span style="color: #007700">()
+<br/>{
+<br/>    </span><span style="color: #FF8000">/*
+<br/>    Set the `_ALS_` state to `_ALS_go`.  The basic idea is that this state is
+<br/>    ALWAYS `_ALS_go`, if the next callback in a callback chain exists it will
+<br/>    have an implementation defined for the `_ALS_go` state; if there is no next
+<br/>    callback, only the fallback will exist.  This should be done before the
+<br/>    first chain call - it only NEEDs to be done once but multiple times is fine,
+<br/>    and multiple libraries can (and do) do this.
+<br/>    */
+<br/>    </span><span style="color: #0000BB">state _ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_go</span><span style="color: #007700">;
+
+<br/>    </span><span style="color: #FF8000">/*
+<br/>    Now call the next callback in the chain.  With the normal ALS method this
+<br/>    requires a pre-processor `#if` directive to protect against the case where
+<br/>    the next item in the chain doesn't exist.  With this version, the next
+<br/>    chain callback always exists in some form even if the user didn't define it.
+<br/>    */
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">Library_OnGameModeInit</span><span style="color: #007700">();
+<br/>}
+
+<br/></span><span style="color: #FF8000">/*
+<br/>Forward the next callback in the chain.
+<br/>*/
+<br/></span><span style="color: #0000BB">forward Library_OnGameModeInit</span><span style="color: #007700">();
+
+<br/></span><span style="color: #FF8000">/*
+<br/>Normal ALS redefinition checks.
+<br/>*/
+<br/>#if defined _ALS_OnGameModeInit
+<br/>    #undef OnGameModeInit
+<br/>#else
+<br/>    #define _ALS_OnGameModeInit
+<br/>#endif
+
+<br/>/*
+<br/>Now this is where it starts getting interesting.  Because we unconditionally
+<br/>call `Library_OnGameModeInit`, the code MUST include this function, but because
+<br/>we are hooking it, we don't know if it will or not - so we create it!  But if we
+<br/>create it, then what's in the next library (or mode) in the chain?  The answer
+<br/>is they are BOTH the next function in the chain thanks to the magic of states.
+
+<br/>The first line here defines `OnGameModeInit` when `_ALS` is set to two of the
+<br/>other values - this is actually NEVER the case, but is important as it tells the
+<br/>compiler which automata our `Library_OnGameModeInit` function is controlled by
+<br/>(i.e. `_ALS`).  The second line is the "fallback" function - if `_ALS` is in a
+<br/>state for which there is no specific implementation, this one will get called
+<br/>instead and just instantly return (maybe you can now see the trick).  If `_ALS`
+<br/>is set to `_ALS_go` and there is no other function, then the compiler will
+<br/>identify this fallback function as the correct one to call (or rather the
+<br/>runtime will).  If the hooked function DOES exist, then that more specialised
+<br/>version will be called instead.
+
+<br/>If we didn't have the first function to define states, then the fallback
+<br/>wouldn't compile.
+<br/>*/
+<br/></span><span style="color: #007700">public </span><span style="color: #0000BB">Library_OnGameModeInit</span><span style="color: #007700">() &lt;</span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x0</span><span style="color: #007700">, </span><span style="color: #0000BB">_ALS </span><span style="color: #007700">: </span><span style="color: #0000BB">_ALS_x1</span><span style="color: #007700">&gt; { return </span><span style="color: #0000BB">1</span><span style="color: #007700">; }
+<br/>public </span><span style="color: #0000BB">Library_OnGameModeInit</span><span style="color: #007700">() &lt;&gt; { return </span><span style="color: #0000BB">1</span><span style="color: #007700">; }
+
+<br/></span><span style="color: #FF8000">/*
+<br/>Because we are now using states, we need a slightly more complex redefinition of
+<br/>the next callback's function definition - we need to transparently add the
+<br/>`_ALS : _ALS_go` state to it, so that's exactly what this line does.
+
+<br/>Remember that `_ALS` only needs to be defined once in a mode, and `Library_` is
+<br/>just the prefix I've used in this example - it needs to be unique.
+<br/>*/
+<br/>#define OnGameModeInit(%0) Library_OnGameModeInit(%0) &lt;_ALS : _ALS_go&gt; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">/*
+<br/>This is just another `OnGameModeInit` that will be correctly called if it
+<br/>exists.  It shouldn't be part of your library (i.e. this is user code).
+<br/>*/
+
+<br/></span><span style="color: #007700">public </span><span style="color: #0000BB">OnGameModeInit</span><span style="color: #007700">()
+<br/>{
+<br/>    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Hello"</span><span style="color: #007700">);
+<br/>    return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>y_hooks are simpler to write, and faster to run.  Normal ALS hooks are slightly faster, but lack two properties.  Because this version uses states the next item in the chain always exists, and the entry point to the chain function is in a known format and location in the AMX.  These properties together allow us to detect and intercept these calls at run-time.  And so introduces "pre-hooks".  The standard call order for hooks is as follows:<br />
+<ol style="list-style-type: decimal"><li>y_hooks, in include order.</li>
+<li>ALS hooks, in include order.</li>
+<li>User code.</li>
+</ol>
+However, there are some libraries (notably fixes.inc) which must be called before y_hooks hooks, but can't rely on y_hooks to use `hook` and thus come first.  For these, we have pre-hooks, defined by these state hooks, and natively supported by y_hooks (which leads to the interesting property that including y_hooks actually optimises these functions.  The new order thus becomes:<br />
+<ol style="list-style-type: decimal"><li>Pre-hooks.</li>
+<li>y_hooks, in include order.</li>
+<li>ALS hooks, in include order.</li>
+<li>User code.</li>
+</ol>
+Pre-hooks are called in include order, but y_hooks can not determine which is the last one, so we need to explicitly inform it of the order:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 66px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">CHAIN_ORDER</span><span style="color: #007700">(</span><span style="color: #0000BB">Library</span><span style="color: #007700">);
+<br/></span><span style="color: #FF8000">#undef CHAIN_ORDER
+<br/>#define CHAIN_ORDER CHAIN_NEXT(Library) 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>This assumes you have YSI (and thus y_prehook, part of YSI_Core).  Otherwise, check the file for the macro definitions:<br />
+<br />
+<a href="https://github.com/pawn-lang/YSI-Includes/blob/9868b37e42dd0827058f7ddcae0012a872fb27aa/YSI_Core/y_core/y_prehook.inc" target="_blank">https://github.com/pawn-lang/YSI-Inc.../y_prehook.inc</a><br />
+<br />
+It also defines macros to simplify the forwarding, and add custom return values:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 322px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">/*
+<br/>Normal ALS definitions.
+<br/>*/
+<br/>#if defined _ALS_OnGameModeInit
+<br/>    #undef OnGameModeInit
+<br/>#else
+<br/>    #define _ALS_OnGameModeInit
+<br/>#endif
+
+<br/>/*
+<br/>All that is required for forwarding.  The `= 1` is to define the default return
+<br/>value, so in `OnPlayerCommandText` this would be `= 0`.
+<br/>*/
+<br/></span><span style="color: #0000BB">CHAIN_FORWARD</span><span style="color: #007700">:</span><span style="color: #0000BB">Library_OnGameModeInit</span><span style="color: #007700">() = </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+
+<br/></span><span style="color: #FF8000">/*
+<br/>Now the redefinition.
+<br/>*/
+<br/>#define OnGameModeInit(%0) CHAIN_PUBLIC:Library_OnGameModeInit(%0) 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>Again, check y_prehook for more information.  These macros are also mostly in fixes.inc, but currently misnamed.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: State-based hooks (aka pre-hooks) - <a href="member0365.html?action=profile&amp;uid=319566">DAKYSKYE</a> -  01.04.2019
+<br />
+<br />
+Nice guide!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
