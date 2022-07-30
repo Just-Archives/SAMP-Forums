@@ -1,0 +1,623 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [GameMode] PPC_Trucking V1 - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="PPC Trucking gamemode When I joined the SAMP forum on 16/11/2010, I was a complete newbie when it comes to Pawn scripting. I had some experience writing programs, even small databases, in Visual Basic" />
+<link rel="canonical" href="showthread56ab.html?tid=196493" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread56ab.html?tid=196493">[GameMode] PPC_Trucking V1</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Gamemode Scripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=71</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [GameMode] PPC_Trucking V1 (<em>/showthread.php?tid=196493</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread615e.html?tid=196493&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread8f56.html?tid=196493&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread24f5.html?tid=196493&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread7b8c.html?tid=196493&amp;page=5">5</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadca2c.html?tid=196493&amp;page=6">6</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread308d.html?tid=196493&amp;page=7">7</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadcb83.html?tid=196493&amp;page=8">8</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread67e1.html?tid=196493&amp;page=9">9</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread2084.html?tid=196493&amp;page=10">10</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread825c.html?tid=196493&amp;page=11">11</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+PPC_Trucking V1 - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  05.12.2010
+<br />
+<br />
+<font size="5"><font color="Red"><u>PPC Trucking gamemode</u></font></font><br />
+<br />
+When I joined the SAMP forum on 16/11/2010, I was a complete newbie when it comes to Pawn scripting.<br />
+I had some experience writing programs, even small databases, in Visual Basic 6.0 and BlitzBasic3D though, so I'm not new to programming in general.<br />
+<br />
+<a href="showthread8a12.html?tid=184109" target="_blank">https://sampforum.blast.hk/showthread.php?tid=184109</a><br />
+This is the gamemode (made by Rokzlive) which I used to get started, but I soon realised that everything needed to be rewritten to allow more flexibility, so I started from scratch again.<br />
+Thanks to Rokzlive for this, as still a few commands are still being used inside this gamemode (like /flip and /detach).<br />
+<br />
+I've been writing this gamemode for the past 4 months and I think I can be proud to say that the script has success.<br />
+This is the last version for now, as I have other things to do right now (careing for my baby).<br />
+<br />
+<font color="Red"><font size="5"><b>UPDATE: the baby is born today, so the gamemode isn't in development anymore.<br />
+This project has been discontinued.</b></font></font><br />
+<br />
+You are allowed to use this gamemode to run your own server and you are also allowed to modify it.<br />
+Don't claim this code to be your own.<br />
+Also, if you want to re-release a modified version of this script, don't forget me in the credits.<br />
+Last but not least: don't re-release it under the name "PPC Trucking V2" or anything similar.<br />
+<br />
+<br />
+<br />
+NOTE: this script is quite complex.<br />
+If you don't know anything about<b></b>:<br />
+- unzipping a file<br />
+- scripting or programming in general<br />
+- editing account-files (plain text-files)<br />
+- running a server<br />
+<br />
+Don't use it if you lack any knowledge about one of these things.<br />
+<br />
+<font color="Red"><u>Current features:</u></font><br />
+- trucking missions (231 routes)<br />
+- busdriver missions (7 routes for now)<br />
+- trucker's license and busdriver's license can be bought at driving school in Doherty (allows you to choose your own routes)<br />
+- speedometer with fuel-gauge (you can refuel at a gas station, just park your car over a refuel pickup and honk the horn)<br />
+- pilot missions (you need to transport passengers and cargo between the major airports with a shamal airplane), this class has 82 routes (also includes helicopter routes, these only transport passengers)<br />
+- alot of commands (use the /cmds command to list them all)<br />
+- police class<br />
+- mafia class (you can steal a trucker's trailer or truck when they have a load that's wanted by the mafia)<br />
+- housing system (2 houses per player by default, editable)<br />
+- car-ownership (maximum 5 vehicles per house, not editable)<br />
+*  - house-level 1 or 2 supports 1 carslot<br />
+*  - house-level 3 or 4 supports 2 carslots<br />
+*  - house-level 5 or 6 supports 3 carslots<br />
+*  - house-level 7 or 8 supports 4 carslots<br />
+*  - house-level 9 or 10 supports 5 carslots<br />
+- rentable cars (Wang Cars), these disappear when you logout, you won't get it back when you login<br />
+- speedcamera's to catch speeders (the police will see speeders in red on the radar and need to fine them)<br />
+- business system (you can buy up to 2 businesses, these generate money every hour even when you're offline)<br />
+- roadworker class with 2 job-types: you can use a utility van with utility trailer to fix speedcamera's and you can use a towtruck to tow broken vehicles to the shredder<br />
+- several anti-hacking systems, such as anti-jetpack hack, anti-money hack, anti-score hack, speed hack (anyone driving a vehicle over 300kph is kicked), anti-weapons hack<br />
+- built-in bank system (deposit and withdraw money, transfer money to online or offline players and hourly intrest of 0.1% per hour, even when offline)<br />
+<br />
+<font color="Red"><u>To install properly:</u></font> (I'm using a example directory "D:\Server" here, change this to wherever you want to install the server)<br />
+1. Download the server package here: <a href="http://www.sa-mp.com/download.php" target="_blank">http://www.sa-mp.com/download.php</a> and unzip it in D:\Server<br />
+2. Download this script and unzip is as well, and put everything in the correct folders<br />
+3. You need several plugins/includes as well:<br />
+    - streamer by Incognito: <a href="showthread4d54.html?tid=102865" target="_blank">https://sampforum.blast.hk/showthread.php?tid=102865</a><br />
+    - sscanf by Y-Less: <a href="showthreadaf59-3.html?tid=120356" target="_blank">https://sampforum.blast.hk/showthread.php?tid=120356</a><br />
+    - zcmd by Zeex: <a href="showthreadb4e1.html?tid=91354" target="_blank">https://sampforum.blast.hk/showthread.php?tid=91354</a><br />
+4. Double click the file "D:\Server\Samp server.exe" to start the server<br />
+5. If the server is running, you'll see that the last line will say: "Number of vehicle models: 25"<br />
+6. Open the samp client and add a new server to your favorites by clicking the orange button with a check (Add server) and input: 127.0.0.1:7777<br />
+7. Now you can play locally by choosing the new server you added and start the game.<br />
+<br />
+You must also create a few folders in your scriptfiles folder:<br />
+- scriptfiles/ServerData/Players<br />
+- scriptfiles/ServerData/Houses<br />
+- scriptfiles/ServerData/Cameras<br />
+- scriptfiles/ServerData/Business<br />
+- scriptfiles/ServerData/Bank<br />
+<br />
+If those folders do not exist, your server will crash.<br />
+<br />
+<br />
+<br />
+<font color="Red"><u>To edit something (or do a re-compile):</u></font><br />
+1. Right-click "D:\Server\Pawno\Pawno.exe", select "Properties", then "Compatibility" and set it to execute as administrator<br />
+2. Open the pawno.exe in the same directory (D:\Server\Pawno\Pawno.exe)<br />
+3. From within pawno, select "File -&gt; Open" and load the main script (D:\Server\gamemodes\PPC_Trucking.pwn)<br />
+4. Press F5 to compile the script<br />
+5. If everything went ok, you'll see a new window without errors and the first line should say:<br />
+     "Pawn compiler 3.2.3664	 	 	Copyright &copy; 1997-2006, ITB CompuPhase"<br />
+6. Close pawno<br />
+<br />
+<font color="Red">NOTE: Do NOT open the file PPC_Trucking.pwn by double clicking it and launching pawno that way.<br />
+Always open pawno first, then open the file using pawno's menu: File -&gt; Open.</font><br />
+<br />
+<font color="Red"><u>To set yourself as admin:</u></font><br />
+1. Start your game and register (input your password)<br />
+2. Exit the game, your account will be saved<br />
+3. Go to the folder "D:\Server\scriptfiles\ServerData\Players"<br />
+4. You'll see an ini-file with your name, open it with Notepad<br />
+5. You'll see a line that says: "Level 0", change that to "Level 5" and save the file again (leave the rest as it is)<br />
+6. Start your game again and login, you're now admin lvl 5<br />
+<br />
+You only need to do this once.<br />
+After you've set yourself as lvl 5 admin, you can set admin-levels to other players with the /setlevel command.<br />
+<br />
+<br />
+To make the roadworker and courier classes working properly, you'll need to create speedcamera's and houses.<br />
+To create those, you need to be admin lvl 5.<br />
+Just go to a spot where you want to create a house and enter the command: /createhouse &lt;price&gt; &lt;maxlevel (1-10)&gt;<br />
+"/createhouse 158000 8" would create a house which costs &#36;158000 to buy, with a maximum upgrade-level of 8.<br />
+To delete a house, stand near the pickup and use /delhouse.<br />
+<br />
+To create speedcamera's, go to a spot where you want it and use the command /createcamera &lt;maxspeed&gt;<br />
+"/createcamera 120" would create a speedcamera which gives one star when you drive past it at a speed higher than 120.<br />
+To delete a speedcamera, stand near the camera and use /delcamera.<br />
+<br />
+<br />
+<br />
+<font color="Red">To edit the servername, change the variable (GameModeName) on top of the main script.</font><br />
+This has been moved their because lots of users don't find out how to change the name of the server.<br />
+<br />
+To edit other things, checkout the file "PPC_ServerSettings.inc".<br />
+You can also set the amount of houses/businesses per player to another value, but I don't recommend going over 20, as the dialogs use variables to display the contents and the variables are limited in size.<br />
+Setting it higher than 20 could result in not seeing all your houses/businesses in the dialog.<br />
+<br />
+For letting others join your server, you'll need to port-forward your server's port (mostly 7777) on your router to your pc.<br />
+As every router works differently, I can't give exact details here, but you can ****** for an explanation how to open a port on your router by searching for "port forward router xxx", where xxx is your router brand and model.<br />
+<br />
+Download it here (adapted to work on samp 0.3x by malaka):<br />
+<a href="https://github.com/PPC-Trucking/V1" target="_blank">https://github.com/PPC-Trucking/V1</a><br />
+Or all includes directly pasted into the main gamemode file:<br />
+<a href="http://users.telenet.be/vge/downloads/PPC_Trucking_V1.zip" target="_blank">http://users.telenet.be/vge/download...rucking_V1.zip</a><br />
+<br />
+<br />
+<br />
+PS:<br />
+<br />
+May I please ask that you don't ask me to help run your own server-scripts, host a server, play admin or anything else.<br />
+This project is only to have fun, learn something about scripting and to pass some free time.<br />
+You can do whatever you want with it, but I won't have any spare time to work on something else.<br />
+I'll help if there are problems with my own script and fix bugs if you find some or to explain something if you don't understand it.<br />
+Also, please don't ask me to help you write your own scripts when you don't know anything about scripting.<br />
+<br />
+Warnings or errors shouldn't be present when you run this script, as everything is checked before I upload a new version.<br />
+If you get errors or warnings, chances are that you didn't extract ALL the files.<br />
+When you have an older version of this script and you want to use the latest version, be sure to extract ALL the files, overwriting the old ones.<br />
+If you don't, errors/warnings WILL occur, as everything is connected to eachother.<br />
+Functions are all over the include-files and most of them need functions or defines from other include-files.<br />
+So, update ALL files always.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member0cae.html?action=profile&amp;uid=72594">universe</a> -  05.12.2010
+<br />
+<br />
+Very nice ^^
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member62e8.html?action=profile&amp;uid=106465">SamyRomafia</a> -  05.12.2010
+<br />
+<br />
+Nice i test it
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member9e0e.html?action=profile&amp;uid=72722">Steven82</a> -  05.12.2010
+<br />
+<br />
+Really a terrorist class in a trucking server?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member96ac.html?action=profile&amp;uid=88337">Ruffles.</a> -  05.12.2010
+<br />
+<br />
+Should be like a Cargo Stealer or something, where you're unloading, they can steal some of your cargo.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  05.12.2010
+<br />
+<br />
+The terrorist class will need to stop military transports only.<br />
+They are not meant to just shoot everything and everybody.<br />
+<br />
+The Military class wil be some sort of trucker class, they need to transport weapons to various locations.<br />
+Some cargo will be wanted by the terrorists, same as mafia-wanted loads in trucking servers.<br />
+<br />
+The terrorists can either steal the cargo or they can stop the military, preventing from reaching the destination.<br />
+There will be several rewards (small reward for destroying the military transport, big reward for stealing it).<br />
+<br />
+If they shoot anybody else (a non-military class or a military class without terrorist-wanted load), they will lose 5 points on their score as punishment.<br />
+<br />
+The military can use helicopters and planes to aid their transports.<br />
+The terrorists will have those too.<br />
+<br />
+The mafia will be cargo-stealers as well.<br />
+While a trucker is transporting a mafia-wanted load, the mafia will be informed about it and they need to try to steal the trucker's trailer (or the truck itself, together with the trailer).<br />
+Do they succeed and bring the trailer to the mafia-hideout, they will be rewarded.<br />
+<br />
+But they will have to steal the trailer before the mission of the trucker fails.<br />
+As soon as the trucker loses his trailer, there is a 60 second countdown for the trucker.<br />
+He'll fail the mission when the countdown reached 0.<br />
+So as soon as the mafia succeed in detaching the trucker's trailer, they have 60 seconds to attach the trailer to their own truck.<br />
+<br />
+<br />
+I'm just trying to add several different things to my own gamemode.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member6290.html?action=profile&amp;uid=78597">Ash.</a> -  05.12.2010
+<br />
+<br />
+This was my first post on this thread (05/12/2010!). I am using this post for this so it is on the first page.<br />
+<br />
+<div align="center"><font size="6"><u><b><font color="RoyalBlue">PPC_Questions</font></b></u></font></div>
+Here are some <b>very</b> frequently asked questions with their answers. Some of you may first be asking why I'm posting this rather than PowerPC603 himself. I'm doing this because if I were in his position, I'd be getting very annoyed at many of you right now. He clearly stated that this gamemode was not for new/less experienced scripters, and he has also made editing things <b>very</b> simple, and yet some of you just fail to use your eyes. <br />
+<br />
+Disclaimer: I do not use this gamemode, nor have I been following this thread since page one - however I have skimmed through the script while writing this post, so you will have to excuse me if I make some minor errors.<br />
+<br />
+I will begin.<br />
+<font size="4"><font color="RoyalBlue">How do I change the server's name?</font></font><br />
+<i>PowerPC603 has answered this many times.</i><br />
+Open pawno.exe with administrator privileges (right click "pawno.exe", choose "properties", choose "Compatibility", then check the "run this as administrator").<br />
+Then open "gamemodes\PPC_Trucking.pwn".<br />
+<br />
+This is the main gamemode-file.<br />
+<br />
+On line 10, you'll find this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define GameModeName                "PowerPC603's Trucking Server"</span></div></div></pre>
+</div>Change that into:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#define GameModeName                "YOUR_NEW_SERVER_NAME"</span></div></div></pre>
+</div>
+Then press F5 to compile the gamemode again.<br />
+Now you've changed the name of your server.<br />
+<br />
+Upload the new PPC_Trucking.amx file to your host and restart the server for changes to take effect.<br />
+<br />
+<font size="4"><font color="RoyalBlue">How do I change *this* in my gamemode?</font></font><br />
+Edit the include called PPC_ServerSettings.inc in pawno/includes/*.inc.<br />
+Don't rename any variables though, doing so will result in (probably multiple) errors.<br />
+<br />
+<font size="4"><font color="RoyalBlue">How can I disable a certain class?</font></font><br />
+In the main gamemode file (PPC_Trucking.pwn) you'll find the function<br />
+<font color="Red">public OnPlayerRequestSpawn(playerid)</font><br />
+<br />
+This function executes code when you choose to spawn as a member of a specific class.<br />
+You'll find this code in there:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">case</span> ClassCourier<span style="color: #000000;">:</span><br/>        <span style="color: #000000;">{</span><br/>            Index <span style="color: #000000;">=</span> <span style="color: #222222;">random</span><span style="color: #000000;">(</span><span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ASpawnLocationsCourier<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>            x <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnX<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the X-position for the spawnlocation</span><br/>            y <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnY<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the Y-position for the spawnlocation</span><br/>            z <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnZ<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the Z-position for the spawnlocation</span><br/>            Angle <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnAngle<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the rotation-angle for the spawnlocation</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>Msg, <span style="color: #000000;">128</span>, <span style="color: #000066;">"{00FF00}Player {FFFF00}%s{00FF00} joined {FFFF00}Courier class"</span>, Name<span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span></div></div></pre>
+</div>
+You can change it to this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:247px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">case</span> ClassCourier<span style="color: #000000;">:</span><br/>        <span style="color: #000000;">{</span><br/>            Index <span style="color: #000000;">=</span> <span style="color: #222222;">random</span><span style="color: #000000;">(</span><span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>ASpawnLocationsCourier<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>            x <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnX<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the X-position for the spawnlocation</span><br/>            y <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnY<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the Y-position for the spawnlocation</span><br/>            z <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnZ<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the Z-position for the spawnlocation</span><br/>            Angle <span style="color: #000000;">=</span> ASpawnLocationsCourier<span style="color: #000000;">[</span>Index<span style="color: #000000;">]</span><span style="color: #000000;">[</span>SpawnAngle<span style="color: #000000;">]</span>; <span style="color: #228822;">// Get the rotation-angle for the spawnlocation</span><br/><span style="color: #228822;">//          format(Msg, 128, "{00FF00}Player {FFFF00}%s{00FF00} joined {FFFF00}Courier class", Name);</span><br/><br/>            <span style="color: #228822;">// Let the player know he cannot choose courier class as the admin disabled this class</span><br/>            GameTextForPlayer<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"Courier-class has been disabled by the server-admin"</span>, <span style="color: #000000;">5000</span>, <span style="color: #000000;">4</span><span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFFFFFFFF, <span style="color: #000066;">"{FF0000}Courier-class has been disabled by the server-admin"</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>; <span style="color: #228822;">// Don't allow the player to spawn as courier player</span><br/>        <span style="color: #000000;">}</span></div></div></pre>
+</div>This will prevent anyone to choose the courier-class as it has been disabled by the "return 0;".<br />
+This blocks the function to spawn the player as the chosen class.<br />
+Also the player will be informed that this class has been disabled.<br />
+<br />
+You can use the same setup to disable any other class.<br />
+<br />
+<font size="4"><font color="RoyalBlue">How can I add more missions to the trucking class?</font></font><br />
+Lets say you want to add a new destination for the product "Wheat" when using an ore-trailer.<br />
+In the file "PPC_DefLoads.inc", you'll see this line:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">{</span><span style="color: #000066;">"Wheat"</span>, false, <span style="color: #000000;">1.00</span>, PCV_TruckerOreTrailer, <span style="color: #000000;">{</span><span style="color: #000000;">21</span>, <span style="color: #000000;">22</span><span style="color: #000000;">}</span>, <span style="color: #000000;">{</span><span style="color: #000000;">18</span>, <span style="color: #000000;">23</span>, <span style="color: #000000;">24</span><span style="color: #000000;">}</span><span style="color: #000000;">}</span>, <span style="color: #228822;">// LoadID 10</span></div></div></pre>
+</div>
+This means:<br />
+- productname = Wheat<br />
+- this is a load that's not wanted by the mafia, as it says "false"<br />
+- productprice per meter: &#36;1.00 (used to calculate your payment by calculating the distance between loading and unloading point, multiplied by this value)<br />
+- type of class and vehicle: Trucker class with ore trailer<br />
+- pickup-locations: 21 and 22 (resp: "EasterBoard Farm" and "SF Hill Farm"), these are the location-id's where you load the product<br />
+- destination locations: 18, 23, 24 (resp: "LV Freight Depot", "Pecker's Feed &amp; Seed", "San Fierro Port"), these are the location-id's where you must unload the product<br />
+<br />
+To add a new destination, we check which location where we wanna bring the wheat.<br />
+Let's say you want to deliver it to "LS Ocean Docks" too (we check the file PPC_DefLocations.inc and we find location-ID 38 for "LS Ocean Docks").<br />
+<br />
+So you add it like this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">{</span><span style="color: #000066;">"Wheat"</span>, false, <span style="color: #000000;">1.00</span>, PCV_TruckerOreTrailer, <span style="color: #000000;">{</span><span style="color: #000000;">21</span>, <span style="color: #000000;">22</span><span style="color: #000000;">}</span>, <span style="color: #000000;">{</span><span style="color: #000000;">18</span>, <span style="color: #000000;">23</span>, <span style="color: #000000;">24</span>, <span style="color: #000000;">38</span><span style="color: #000000;">}</span><span style="color: #000000;">}</span>, <span style="color: #228822;">// LoadID 10</span></div></div></pre>
+</div>
+That's it. After saving the file, you only need to recompile and restart the server.<br />
+<br />
+You can add up to 30 pickup-locations and 30 delivery locations per product, that's 900 routes for each product, because you can pickup the load at any defined pickup-location and deliver it to any of the delivery-locations.<br />
+<br />
+<font size="3"><font color="RoyalBlue">I will be adding more to this post as I see them.</font></font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  05.12.2010
+<br />
+<br />
+Convoy Trucking? Never heard of it.<br />
+<br />
+I'm looking at some features here and there, but I'm creating my own code to do it all.<br />
+I'm not copy-pasting bits from other gamemodes into my own.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  06.12.2010
+<br />
+<br />
+@Lookin,<br />
+Yeah, I've played on truckmania before and I'm still playing there, but not as much.<br />
+I played it for more than a week and suddenly I was banned by Dr. Hax for money-cheat.<br />
+I ddn't cheat, but because of lag I got banned.<br />
+I just finished my mission and the server thought I cheated the payout (or something like that).<br />
+<br />
+Then I started my own trucking server, as I figured I could get banned again when finishing a mission.<br />
+<br />
+Some things are based on TruckMania (but still my own code), but the military/terrorist class will be my own implementation.<br />
+<br />
+I'm also looking for a camera that can act as a speedtrap, to place them on several places around the map.<br />
+When the player is driving too fast near such a camera, he should get one star.<br />
+Otherwise the police-class doesn't have much to do.<br />
+Does anybody know the object-model that could function as one (looks like one)?<br />
+<br />
+I'll be using IsPlayerInRangeOfPoint to check if a player is near a speedtrap.<br />
+<br />
+@Lynn,<br />
+Yeak I'm just a beginner.<br />
+You can see in my profile that I joined this forum on 16/11/2010.<br />
+<br />
+But I've programmed before (I created my own Arkanoid3D game with Blitz3D once).<br />
+But discussing this, would be off-topic <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+<br />
+I've even modified my load/save functions to NOT use dini anymore (too much read-write operations as I read somewhere else).<br />
+<br />
+Also on my todo-list: housing system.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberabc0.html?action=profile&amp;uid=107065">[HUN]Poldzsiii</a> -  06.12.2010
+<br />
+<br />
+woaaaaaw<br />
+very goood job
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member6413.html?action=profile&amp;uid=97791">HostiGame</a> -  06.12.2010
+<br />
+<br />
+Looking good, keep it going! XD
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="membere9a5.html?action=profile&amp;uid=62923">Conroy</a> -  06.12.2010
+<br />
+<br />
+Great for a beginner, keep up the good work.<br />
+<br />
+-Conroy
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  06.12.2010
+<br />
+<br />
+I just spent several hours to find every bus-stop in Las Venturas (in the main city, not in the desert) to mark them on a map.<br />
+Now I need to get the coordinates, create some bus-routes and then busdriver class will be implemented.<br />
+The class is there already, but you cannot start a job as a busdriver yet, as there is no code/busroute defined.<br />
+<br />
+I'll keep ya posted on the progress.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member93ab.html?action=profile&amp;uid=110653">Miralem</a> -  06.12.2010
+<br />
+<br />
+--- Truckmania design a lot <img alt="" border="0" class="inlineimg" src="images/smilies/confused.gif" title="Huh?"/> Although I do really respect a ~from-the-zero~ GM <br />
+<br />
+<font color="white">------</font><b>Miralem</b>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  06.12.2010
+<br />
+<br />
+I've taken alot of trucking-missions from TruckMania, that's true. As a newbie, you have to start somewhere with a few ideas from a good server.<br />
+But I'll have to re-create all trucking routes, as some are somewhat strange.<br />
+<br />
+TruckMania is the only online server I play, so I take a few hints, ideas and design-elements from them to put in my own.<br />
+<br />
+Bus-routes are working already (most of the code is finished and working, I have 39 busstops in Las Venturas), but I need some more work on it, as it's not finished yet.<br />
+The game doesn't respond on the racecheckpoint yet when you've finished your bus-route.<br />
+Bus-routes can have up to 20 busstops in them, but they can be small as well (like 5 busstops).<br />
+On each busstop, the player gets a small fee (now fixed at &#36;500, but will be changed to a value based on the number of passengers).<br />
+When you've completed your route, you're given 2 checkpoints:<br />
+- one regular checkpoint that's the startlocation of the route, so you can keep doing the same route over and over again<br />
+- one race-checkpoint which points you to the busdepot (here you can end the route)<br />
+<br />
+The busroutes are my own this time.<br />
+They are located in Las Venturas instead of Los Santos (TruckMania).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member7312.html?action=profile&amp;uid=98382">&lt;Jones&gt;</a> -  07.12.2010
+<br />
+<br />
+I don't understand your Cmds systeme ? Can you explain to me please.<br />
+<br />
+<br />
+++Jones++
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberabc0.html?action=profile&amp;uid=107065">[HUN]Poldzsiii</a> -  07.12.2010
+<br />
+<br />
+very nice job<br />
+you make a new relase??<br />
+for the best GM:<br />
+mor missions<br />
+overload<br />
+more truck depots<br />
+speedcameras<br />
+House &amp; Vehicle ownership<br />
+Convoy<br />
+speedo with fuel<br />
+Most Valued Worker Rank<br />
+and more...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  07.12.2010
+<br />
+<br />
+@Jones:<br />
+<br />
+It's standard dcmd protocol.<br />
+I followed this tutorial:<br />
+<a href="https://sampwiki.blast.hk/wiki/Creating_A_Simple_Administration_FilterScript#Beginning_The_Commands" target="_blank">https://sampwiki.blast.hk/wiki/Creating_...g_The_Commands</a><br />
+and some other dcmd tutorials, like: <a href="https://sampwiki.blast.hk/wiki/Dcmd" target="_blank">https://sampwiki.blast.hk/wiki/Dcmd</a><br />
+<br />
+@[HUN]Poldzsiii:<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				mor missions<br />
+overload<br />
+more truck depots<br />
+speedcameras<br />
+House &amp; Vehicle ownership<br />
+Convoy<br />
+speedo with fuel<br />
+Most Valued Worker Rank<br />
+and more... <br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>There will be new and much more missions, even more goods to transport.<br />
+I just took some goods from TruckMania to get an idea about some goods/routes and to check if I could code my own system to split everything up based on the vehiclemodel (which works perfectly btw).<br />
+<br />
+Loads can be overloaded already. You'll get 2 more stars on your wanted level and the police players will see you in red on the radar.<br />
+Certain goods are also wanted by the mafia, they'll need to steal your truck/trailer, but mafia-class isn't implemented yet.<br />
+For being overloaded, you get 25% extra bonus when you deliver your load (doesn't matter if you got fined by the police or not, being fined doesn't reduce your load after all).<br />
+For a mafia-load, you get a 50% bonus when you deliver the load (when the mafia didn't get a chance to steal it, otherwise your mission fails).<br />
+<br />
+There are already 8 truck depots, so that will do for now.<br />
+Maybe later on I could add some more.<br />
+<br />
+I'm currently looking for a proper speedcamera, but cannot find a proper camera-model.<br />
+Has anybody an idea for those, which model-number could fit as a speedtrap camera?<br />
+<br />
+Housing system will come too, you'll be able to buy a vehicle as soon as the housing system is complete (you'll buy the vehicle from within your house). Not sure about this though.<br />
+<br />
+Convoys won't be implemented soon, but could some later on. I'll have to think about something like this about how it's gonna work.<br />
+<br />
+The speedometer is already implemented, fuel-gauge yet to come, as well as refuelling system.<br />
+<br />
+Most Valued Worker rank will also come if I can find some advantages for it when you get it.<br />
+<br />
+I'll be releasing my gamemode often when time goes by.<br />
+Everytime a class is finished, I'll be releasing it.<br />
+<br />
+More features will come too when everything else is complete.<br />
+Like fragile loads, this will come too.<br />
+You'll be transporting fragile loads from point A to B.<br />
+But your truck cannot take damage.<br />
+As soon as your truck takes damage, your mission will fail.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="member5325.html?action=profile&amp;uid=99200">iRana</a> -  07.12.2010
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Steven82</strong><br />
+<a href="showthread8cbc-2.html?pid=943688#pid943688" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Really a terrorist class in a trucking server?</div>
+</td>
+</tr>
+</table>
+</div>Ye Mafia IS there In Many Trucking Games.....
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: My own trucking server (still in development) - <a href="memberc87c.html?action=profile&amp;uid=109984">PowerPC603</a> -  07.12.2010
+<br />
+<br />
+Update:<br />
+- busdriver class working (only random routes, busdriver's license has no effect currently).<br />
+<br />
+Only 3 testing busroutes for now (will be changed later, more routes to come), they have "SomeStart1" and "SomeStop1" as description.<br />
+Code is complete for now (maybe some changes later on), except for the busdrivers license.<br />
+<br />
+When starting a busdriver job, you won't get any cash when you arrive on the first busstop.<br />
+Reason: you get &#36;9 per passenger who LEAVES your bus (a random amount of passengers leave your bus when you stop on a busstop).<br />
+When you start the job, there aren't any passengers on your bus yet, so a passenger cannot leave and you get no payment.<br />
+<br />
+Up to 30 passengers (minimum 10) can be waiting at a busstop.<br />
+<br />
+The maximum amount of busstops per route has been changed to 30 (may change later in case some busroutes are longer).<br />
+<br />
+When you have reached the last busstop on the route, you also get scorepoints (defined in the route).<br />
+<br />
+<br />
+<br />
+Fixes:<br />
+- /work dialog was shown when you have a truckers license and you were not inside a trucking vehicle, you now get a message like always: "You must be driving a trucking vehicle to start a job"<br />
+<br />
+New zip-file is uploaded, download it using the link in the first post.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

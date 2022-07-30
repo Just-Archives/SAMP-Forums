@@ -1,0 +1,145 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Help With Textdraws - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I need help with textdraws.. So like when a player connects to my server it'll say &quot;Welcome to SDKFreeRoam scripted by Azzeto, This is what I have so far pawn Code: new Text:welcome; pawn Code: Public" />
+<link rel="canonical" href="showthread9d6c.html?tid=278849" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread9d6c.html?tid=278849">Help With Textdraws</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Help With Textdraws (<em>/showthread.php?tid=278849</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Help With Textdraws - <a href="membereb4f-2.html?action=profile&amp;uid=133759">Azzeto</a> -  24.08.2011
+<br />
+<br />
+I need help with textdraws.. So like when a player connects to my server it'll say "Welcome to SDKFreeRoam scripted by [SDK]Azzeto, This is what I have so far<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> <span style="color: #000000;">Text</span><span style="color: #000000;">:</span>welcome;</div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Public OnGameModeInit<br/>welcome <span style="color: #000000;">=</span> TextDrawCreate<span style="color: #000000;">(</span><span style="color: #000000;">240.0</span>,<span style="color: #000000;">580.0</span>,<span style="color: #000066;">"SDKFreeRoam Scripted by [SDK]Azzeto"</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Public OnPlayerConnect<br/>TextDrawShowForPlayer<span style="color: #000000;">(</span>playerid,welcome<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+I'v read the wiki and got that, but It doesnt show ingame.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+Wrong coordinate.<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+			<br />
+				The x,y coordinate is the top left coordinate for the text draw area based on a 640x480 "canvas" (irrespective of screen resolution). If you plan on using TextDrawAlignment with alignment 3 (right), the x,y coordinate is the top right coordinate for the text draw. <br />
+			<br />
+		</td>
+</tr>
+</table>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+The textdraw positions should be between the limits (640 Width and 480 Height)<br />
+<br />
+But your second position doesn't look suitable for the textdraw.<br />
+<br />
+<img alt="" border="0" src="imageshack/img38/3253/limith.html"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="membereb4f-2.html?action=profile&amp;uid=133759">Azzeto</a> -  24.08.2011
+<br />
+<br />
+Any program to use where I could find the coords of where I want the textdraw?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>iPLEOMAX</strong><br />
+<a href="showthread9303.html?pid=1365075#pid1365075" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">The textdraw positions should be between the limits (640 Width and 480 Height)<br />
+<br />
+But your second position doesn't look suitable for the textdraw.<br />
+<br />
+<img alt="" border="0" src="imageshack/img38/3253/limith.html"/></div>
+</td>
+</tr>
+</table>
+</div>I already mention it.<br />
+<br />
+<br />
+FS:<br />
+<a href="showthreada9db.html?tid=117851" target="_blank">https://sampforum.blast.hk/showthread.php?tid=117851</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+Use this: <a href="showthreada9db.html?tid=117851" target="_blank">Textdraw Editor V1 by Zamaroht</a><br />
+<br />
+@Varth, By the time I uploaded the image and responded back, you already posted. I didn't see it before.<br />
+and now, you editted your post with the fs link.. lol. Guess I'm just too late to be on time.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Help With Textdraws - <a href="membereb4f-2.html?action=profile&amp;uid=133759">Azzeto</a> -  24.08.2011
+<br />
+<br />
+Thank you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

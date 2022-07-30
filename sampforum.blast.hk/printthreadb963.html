@@ -1,0 +1,72 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Loading password in y_ini - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hey guys, Im trying to store the playerpassword in a variable, but i dont really get it how to do that. I tried INI_String(); before, but that gave me the error &quot;Undefined symbol&quot;. Zhero(not sure if t" />
+<link rel="canonical" href="showthreadb963.html?tid=278871" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadb963.html?tid=278871">Loading password in y_ini</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Loading password in y_ini (<em>/showthread.php?tid=278871</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Loading password in y_ini - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+Hey guys,<br />
+Im trying to store the playerpassword in a variable, but i dont really get it how to do that. I tried INI_String(); before, but that gave me the error "Undefined symbol". Zhero(not sure if thats the right name) said this can also be done by using INI_ParseFile();, but i dont really get how to use that. <br />
+Zhero also gave me a link to his FS which uses the INI_ParseFile(); aswell, but couldnt really get it how he used it. <br />
+Can anyone give me an hand how to get the player password using INI_ParseFile();?<br />
+Im using the variable PlayerInfo[playerid][pPass] to store the password in, if you wanna know that. <br />
+~Wesley
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Loading password in y_ini - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+I did put the size after the enums. <br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:183px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">enum</span> P_INFO <span style="color: #000000;">{</span><br/>    pName<span style="color: #000000;">[</span><span style="color: #000000;">24</span><span style="color: #000000;">]</span>, <br/>    pPass<span style="color: #000000;">[</span>MAXPSIZE<span style="color: #000000;">]</span>, <span style="color: #228822;">// MAXPSIZE == 16</span><br/><span style="color: #000000;">}</span><br/><br/>INI_String<span style="color: #000000;">(</span><span style="color: #000066;">"Name"</span>, PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pName<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>INI_String<span style="color: #000000;">(</span><span style="color: #000066;">"Password"</span>, PlayerInfo<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>pPass<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/><br/>error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"INI_String"</span><br/>error 017<span style="color: #000000;">:</span> undefined symbol <span style="color: #000066;">"INI_String"</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Loading password in y_ini - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+Thanks!<br />
+That did work <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

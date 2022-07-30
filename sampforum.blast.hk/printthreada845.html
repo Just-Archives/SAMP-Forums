@@ -1,0 +1,124 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> AttachObjectToVehicle - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="GameMod Using: Ravens RP (Fully edited by me) This command dont want to attach object on vehicle....just send message and nothing else.... This is part of this FS http://forum.sa-mp.com/showthread.ph." />
+<link rel="canonical" href="showthreada845.html?tid=278864" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreada845.html?tid=278864">AttachObjectToVehicle</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  AttachObjectToVehicle (<em>/showthread.php?tid=278864</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+AttachObjectToVehicle - <a href="member2ea1.html?action=profile&amp;uid=119872">Dragony92</a> -  24.08.2011
+<br />
+<br />
+GameMod Using: Ravens RP (Fully edited by me)<br />
+<br />
+This command dont want to attach object on vehicle....just send message and nothing else....<br />
+<br />
+This is part of this FS <a href="showthread4077.html?tid=200569&amp;highlight=neon" target="_blank">http://forum.sa-mp.com/showthread.ph...highlight=neon</a><br />
+FS also dont want to work on my server....<br />
+I'm running server on 0.3c R5 (Linux) with plugins streamer(last update, by Incognito) and sscanf(last update), FS junkbuster(v10), that's all...<br />
+<br />
+On my home server everything works fine, on windows with same plugins and FS....<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:279px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span>cmd, <span style="color: #000066;">"/undercover"</span>, true<span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsACop<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> || IsAFreecop<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            SetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"undercover"</span>, CreateDynamicObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>            SetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"undercover1"</span>, CreateDynamicObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>;<br/>            AttachObjectToVehicle<span style="color: #000000;">(</span>GetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"undercover"</span><span style="color: #000000;">)</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;<br/>            AttachObjectToVehicle<span style="color: #000000;">(</span>GetPVarInt<span style="color: #000000;">(</span>playerid, <span style="color: #000066;">"undercover1"</span><span style="color: #000000;">)</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFFFFFFAA, <span style="color: #000066;">"You have Attched Undercover light on your vehicle!"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_GREY, <span style="color: #000066;">"**You are not a Cop!"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">3</span><span style="color: #000000;">]</span>;<br/>UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> CreateDynamicObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>UnderCoverObj<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> CreateDynamicObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>AttachObjectToVehicle<span style="color: #000000;">(</span>UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;<br/>AttachObjectToVehicle<span style="color: #000000;">(</span>UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>You have to create the object before you can attach it. And i dont think this can be done through PVars.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="membere33c.html?action=profile&amp;uid=105308">Gh0sT_</a> -  24.08.2011
+<br />
+<br />
+You can't attach dynamic object, you must use CreateObject
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member2ea1.html?action=profile&amp;uid=119872">Dragony92</a> -  24.08.2011
+<br />
+<br />
+Nothing...i tryed with normal objects (CreateObject)....
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+Try it the way like i said b4. Just add the pieces to your code, and remove the createobjects in the pvars
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member2ea1.html?action=profile&amp;uid=119872">Dragony92</a> -  24.08.2011
+<br />
+<br />
+Same...<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:295px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span>cmd, <span style="color: #000066;">"/undercover"</span>, true<span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsACop<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> || IsAFreecop<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">new</span> UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">3</span><span style="color: #000000;">]</span>;<br/>            UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> CreateObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>            UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> CreateObject<span style="color: #000000;">(</span><span style="color: #000000;">18646</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span>;<br/>            AttachObjectToVehicle<span style="color: #000000;">(</span>UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;<br/>            AttachObjectToVehicle<span style="color: #000000;">(</span>UnderCoverobj<span style="color: #000000;">[</span><span style="color: #000000;">1</span><span style="color: #000000;">]</span>, GetPlayerVehicleID<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.5</span>, <span style="color: #000000;">-</span><span style="color: #000000;">0.2</span>, <span style="color: #000000;">0.8</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">2.0</span>, <span style="color: #000000;">3.0</span><span style="color: #000000;">)</span>;<br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, 0xFFFFFFAA, <span style="color: #000066;">"You have Attched Undercover light on your vehicle!"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid, COLOR_GREY, <span style="color: #000066;">"**You are not a Cop!"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span></div></div></pre>
+</div>
+Edit; Object is creted on coordinates 0 0 0 but not attached...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+Are you sure you got the right coцrds of the neon?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: AttachObjectToVehicle - <a href="member2ea1.html?action=profile&amp;uid=119872">Dragony92</a> -  24.08.2011
+<br />
+<br />
+Object is creted on coordinates 0 0 0 but not attached to vehicle...<br />
+Yeah because i paste it from working FS <a href="showthread4077.html?tid=200569&amp;highlight=neon" target="_blank">http://forum.sa-mp.com/showthread.ph...highlight=neon</a><br />
+Edit: It works on windows server but not on Linux...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

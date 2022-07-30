@@ -1,0 +1,151 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Dynamic items, easy but need help. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hi all! It's my first post. I am from poland, sorry for my bad english I do easy and amateurish script for my gamemod. It's dynamic items system.. But it doesn't work fine. When i put down more than t" />
+<link rel="canonical" href="showthread1f09.html?tid=278555" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread1f09.html?tid=278555">Dynamic items, easy but need help.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Dynamic items, easy but need help. (<em>/showthread.php?tid=278555</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Dynamic items, easy but need help. - <a href="member3cb4.html?action=profile&amp;uid=63903">perki51</a> -  22.08.2011
+<br />
+<br />
+Hi all!<br />
+<br />
+It's my first post. I am from poland, sorry for my bad english <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+<br />
+I do easy and amateurish script for my gamemod. It's dynamic items system.. But it doesn't work fine. When i put down more than two items i can't pick up any item.. It's my code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">new Float:Xitem1;
+new Float:Yitem1;
+new Float:Zitem1;
+new podniesiony1; // it's mean pick up</pre>
+</div>Put down:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 226px;
+		text-align: left;
+		overflow: auto">new Float:x, Float:y, Float:z, world;
+GetPlayerPos(playerid, x, y, z);
+world = GetPlayerVirtualWorld(playerid);
+if(PlayerInfo[playerid][pItem1] == 1)
+{
+Xitem1 = x;
+Yitem1 = y;
+Zitem1 = z;
+podniesiony1 = 0;
+format(string, sizeof(string), "[1] Coffe");
+Przedmiot1[playerid] = Create3DTextLabel(string, COLOR_WHITE, Xitem1, Yitem1, Zitem1 - 1, 20.0, world, 0);
+PlayerInfo[playerid][pItem1] = 0;
+}</pre>
+</div>Pick up:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">if(PlayerToPoint(5.0, playerid, Xitem1, Yitem1, Zitem1) &amp;&amp; podniesiony1 == 0 &amp;&amp; PlayerInfo[playerid][pItem1] == 0)
+{
+PlayerInfo[playerid][pItem1] = 1;
+podniesiony1 = 1;
+Delete3DTextLabel(Przedmiot1[playerid]);
+}</pre>
+</div>For next items i change<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">Xitem1</pre>
+</div>to<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">Xitem2</pre>
+</div>etc..<br />
+<br />
+No errors or warnings here. It's only bug, like i wrote upstairs this message.<br />
+<br />
+So just help me, please.. <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/><br />
+Greetings from poland user!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dynamic items, easy but need help. - <a href="member3cb4.html?action=profile&amp;uid=63903">perki51</a> -  23.08.2011
+<br />
+<br />
+Still need help, refresh.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dynamic items, easy but need help. - <a href="member3cb4.html?action=profile&amp;uid=63903">perki51</a> -  24.08.2011
+<br />
+<br />
+REFRESH
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

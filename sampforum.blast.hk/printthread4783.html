@@ -1,0 +1,347 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Timer won't Countdown!!! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I have a textdraw with a timer: pawn Code: new GameMinutes = 14;new GameSeconds = 59;new Text:Textdraw0; Textdraw properties: pawn Code: Textdraw0 = TextDrawCreate(86.000000,427.000000,&quot;15:00&quot;); TextD" />
+<link rel="canonical" href="showthread4783.html?tid=278802" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread4783.html?tid=278802">Timer won't Countdown!!!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Timer won't Countdown!!! (<em>/showthread.php?tid=278802</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread85f8.html?tid=278802&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[SOLVED]Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+I have a textdraw with a timer:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> GameMinutes <span style="color: #000000;">=</span> <span style="color: #000000;">14</span>;<br/><span style="color: #2222BB;">new</span> GameSeconds <span style="color: #000000;">=</span> <span style="color: #000000;">59</span>;<br/><span style="color: #2222BB;">new</span> <span style="color: #000000;">Text</span><span style="color: #000000;">:</span>Textdraw0;</div></div></pre>
+</div>
+Textdraw properties:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Textdraw0 <span style="color: #000000;">=</span> TextDrawCreate<span style="color: #000000;">(</span><span style="color: #000000;">86.000000</span>,<span style="color: #000000;">427.000000</span>,<span style="color: #000066;">"15:00"</span><span style="color: #000000;">)</span>;<br/>    TextDrawAlignment<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">2</span><span style="color: #000000;">)</span>;<br/>    TextDrawBackgroundColor<span style="color: #000000;">(</span>Textdraw0,0x000000ff<span style="color: #000000;">)</span>;<br/>    TextDrawFont<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">3</span><span style="color: #000000;">)</span>;<br/>    TextDrawLetterSize<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">0.499999</span>,<span style="color: #000000;">2.000000</span><span style="color: #000000;">)</span>;<br/>    TextDrawColor<span style="color: #000000;">(</span>Textdraw0,0xffffffff<span style="color: #000000;">)</span>;<br/>    TextDrawSetOutline<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    TextDrawSetProportional<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    TextDrawSetShadow<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Timer:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetTimer<span style="color: #000000;">(</span><span style="color: #000066;">"GameTime"</span>,<span style="color: #000000;">1000</span>,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Timer function:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:343px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span> || GameMinutes <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        GameSeconds<span style="color: #000000;">--</span>;<br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            GameMinutes<span style="color: #000000;">--</span>;<br/>            GameSeconds<span style="color: #000000;">=</span><span style="color: #000000;">59</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">new</span> TimeString<span style="color: #000000;">[</span><span style="color: #000000;">14</span><span style="color: #000000;">]</span>;<br/>        <span style="color: #222222;">format</span><span style="color: #000000;">(</span>TimeString,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>TimeString<span style="color: #000000;">)</span>,<span style="color: #000066;">"%02d:%02d"</span>,GameMinutes,GameSeconds<span style="color: #000000;">)</span>;<br/>        TextDrawSetString<span style="color: #000000;">(</span>Textdraw0,TimeString<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">==</span> <span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> GameMinutes <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+When I go ingame, all I see is 15:00 and they timer doesn't count down! Please help me!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member81b0-2.html?action=profile&amp;uid=130586">a_big</a> -  24.08.2011
+<br />
+<br />
+I know this is off-topic but couldnt you use the game clock?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> GameSeconds <span style="color: #000000;">=</span> <span style="color: #000000;">900</span>; <span style="color: #228822;">// 60s - min, 300s - 5min</span><br/><span style="color: #2222BB;">public</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> m <span style="color: #000000;">=</span> <span style="color: #000000;">(</span><span style="color: #000000;">(</span>GameSeconds<span style="color: #000000;">/</span><span style="color: #000000;">60</span><span style="color: #000000;">)</span><span style="color: #000000;">%</span>60<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> s <span style="color: #000000;">=</span> <span style="color: #000000;">(</span>GameSeconds<span style="color: #000000;">%</span>60<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> TimeString<span style="color: #000000;">[</span><span style="color: #000000;">14</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>TimeString,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>TimeString<span style="color: #000000;">)</span>,<span style="color: #000066;">"%02d:%02d"</span>,m,s<span style="color: #000000;">)</span>;<br/>    TextDrawSetString<span style="color: #000000;">(</span>Textdraw0,TimeString<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span> OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>    GameSeconds<span style="color: #000000;">--</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>and TextDrawShowForAll or ForPlayer
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+@a_big: No, it's a countdown timer until the end of the gamemode.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member3d6c-2.html?action=profile&amp;uid=110238">Intoxicated</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>a_big</strong><br />
+<a href="showthreadd708.html?pid=1364763#pid1364763" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I know this is off-topic but couldnt you use the game clock?</div>
+</td>
+</tr>
+</table>
+</div>^^ That.<br />
+<br />
+Just use TogglePlayerClock and use a timer to update the time every second or so.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Jefff: It still doesn't count down :/
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member0fe4.html?action=profile&amp;uid=104293">grand.Theft.Otto</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Intoxicated</strong><br />
+<a href="showthreadb8ff.html?pid=1364772#pid1364772" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">^^ That.<br />
+<br />
+Just use TogglePlayerClock and use a timer to update the time every second or so.</div>
+</td>
+</tr>
+</table>
+</div>Do you not get it? He said COUNTDOWN not the default GTA SA clock .. <br />
+<br />
+Why not use gametext instead of textdraws? Then again other gametext may interfere with it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member26b1.html?action=profile&amp;uid=18261">Jefff</a> -  24.08.2011
+<br />
+<br />
+Where is TDShowFor ?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Under OnPlayerConnect<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    TextDrawShowForPlayer<span style="color: #000000;">(</span>playerid, Textdraw0<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member0fe4.html?action=profile&amp;uid=104293">grand.Theft.Otto</a> -  24.08.2011
+<br />
+<br />
+Doubt this will work but, try setting it for max players:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:391px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span> || GameMinutes <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            GameSeconds<span style="color: #000000;">--</span>;<br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                GameMinutes<span style="color: #000000;">--</span>;<br/>                GameSeconds<span style="color: #000000;">=</span><span style="color: #000000;">59</span>;<br/>            <span style="color: #000000;">}</span><br/>            <span style="color: #2222BB;">new</span> TimeString<span style="color: #000000;">[</span><span style="color: #000000;">14</span><span style="color: #000000;">]</span>;<br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>TimeString,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>TimeString<span style="color: #000000;">)</span>,<span style="color: #000066;">"%02d:%02d"</span>,GameMinutes,GameSeconds<span style="color: #000000;">)</span>;<br/>            TextDrawSetString<span style="color: #000000;">(</span>Textdraw0,TimeString<span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">==</span> <span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> GameMinutes <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Nice try, but still no success!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+Try this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> GameSeconds <span style="color: #000000;">=</span> <span style="color: #000000;">1451</span>;<br/><span style="color: #2222BB;">new</span> <span style="color: #000000;">Text</span><span style="color: #000000;">:</span>Textdraw0;</div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:167px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">Textdraw0 <span style="color: #000000;">=</span> TextDrawCreate<span style="color: #000000;">(</span><span style="color: #000000;">86.000000</span>,<span style="color: #000000;">427.000000</span>,<span style="color: #000066;">"Loading.."</span><span style="color: #000000;">)</span>;<br/>    TextDrawAlignment<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">2</span><span style="color: #000000;">)</span>;<br/>    TextDrawBackgroundColor<span style="color: #000000;">(</span>Textdraw0,0x000000ff<span style="color: #000000;">)</span>;<br/>    TextDrawFont<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">3</span><span style="color: #000000;">)</span>;<br/>    TextDrawLetterSize<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">0.499999</span>,<span style="color: #000000;">2.000000</span><span style="color: #000000;">)</span>;<br/>    TextDrawColor<span style="color: #000000;">(</span>Textdraw0,0xffffffff<span style="color: #000000;">)</span>;<br/>    TextDrawSetOutline<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    TextDrawSetProportional<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;<br/>    TextDrawSetShadow<span style="color: #000000;">(</span>Textdraw0,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    TextDrawShowForPlayer<span style="color: #000000;">(</span>playerid, Textdraw0<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> true;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetTimer<span style="color: #000000;">(</span><span style="color: #000066;">"GameTime"</span>,<span style="color: #000000;">1000</span>,<span style="color: #000000;">1</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:231px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">public</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    GameSeconds<span style="color: #000000;">++</span>;<br/>    <span style="color: #2222BB;">new</span> TimeString<span style="color: #000000;">[</span><span style="color: #000000;">14</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #222222;">format</span><span style="color: #000000;">(</span>TimeString,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>TimeString<span style="color: #000000;">)</span>,<span style="color: #000066;">"%i:%i"</span>,<span style="color: #000000;">(</span>GameSeconds<span style="color: #000000;">/</span><span style="color: #000000;">(</span><span style="color: #000000;">60</span><span style="color: #000000;">*</span><span style="color: #000000;">60</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">%</span>24,<span style="color: #000000;">(</span>GameSeconds<span style="color: #000000;">/</span><span style="color: #000000;">60</span><span style="color: #000000;">)</span><span style="color: #000000;">%</span>60<span style="color: #000000;">)</span>;<br/>    <span style="color: #228822;">//                                 Hours:Minutes</span><br/>    TextDrawSetString<span style="color: #000000;">(</span>Textdraw0,TimeString<span style="color: #000000;">)</span>;<br/>    <span style="color: #228822;">//In case you need a reset on completing 24 hours:</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">(</span>GameSeconds<span style="color: #000000;">/</span><span style="color: #000000;">(</span><span style="color: #000000;">60</span><span style="color: #000000;">*</span><span style="color: #000000;">60</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span><span style="color: #000000;">%</span>24 <span style="color: #000000;">==</span> <span style="color: #000000;">24</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span> GameSeconds <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> true;<br/><span style="color: #000000;">}</span><br/><span style="color: #228822;">//You don't need GameMinutes here. No other stuff.</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="memberb24a.html?action=profile&amp;uid=126521">Bakr</a> -  24.08.2011
+<br />
+<br />
+None of the previous posts will fix your problem. You need to hide and re-display the textdraw each time you set a new string to it, or it won't update on the player's screen. You should hide it, set the string, then show it again.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">TextDrawHideForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;<br/>TextDrawSetString<span style="color: #000000;">(</span> Textdraw0, TimeString <span style="color: #000000;">)</span>;<br/>TextDrawShowForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Bakr</strong><br />
+<a href="showthread4991.html?pid=1364903#pid1364903" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">None of the previous posts will fix your problem. You need to hide and re-display the textdraw each time you set a new string to it, or it won't update on the player's screen. You should hide it, set the string, then show it again.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">TextDrawHideForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;<br/>TextDrawSetString<span style="color: #000000;">(</span> Textdraw0, TimeString <span style="color: #000000;">)</span>;<br/>TextDrawShowForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;</div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>Mine is tested and it works without it. (And I usually add that after string update though... Weird, lol.)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Bakr</strong><br />
+<a href="showthread4991.html?pid=1364903#pid1364903" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">None of the previous posts will fix your problem. You need to hide and re-display the textdraw each time you set a new string to it, or it won't update on the player's screen. You should hide it, set the string, then show it again.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">TextDrawHideForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;<br/>TextDrawSetString<span style="color: #000000;">(</span> Textdraw0, TimeString <span style="color: #000000;">)</span>;<br/>TextDrawShowForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;</div></div></pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>No, the timer doesn't countdown, even after putting it in the timer like this:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:439px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> GameTime<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span> || GameMinutes <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            GameSeconds<span style="color: #000000;">--</span>;<br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">&lt;=</span> <span style="color: #000000;">-</span><span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                GameMinutes<span style="color: #000000;">--</span>;<br/>                GameSeconds<span style="color: #000000;">=</span><span style="color: #000000;">59</span>;<br/>            <span style="color: #000000;">}</span><br/>            <span style="color: #2222BB;">new</span> TimeString<span style="color: #000000;">[</span><span style="color: #000000;">14</span><span style="color: #000000;">]</span>;<br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>TimeString,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>TimeString<span style="color: #000000;">)</span>,<span style="color: #000066;">"%02d:%02d"</span>,GameMinutes,GameSeconds<span style="color: #000000;">)</span>;<br/>            TextDrawSetString<span style="color: #000000;">(</span>Textdraw0,TimeString<span style="color: #000000;">)</span>;<br/>            TextDrawHideForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;<br/>            TextDrawSetString<span style="color: #000000;">(</span> Textdraw0, TimeString <span style="color: #000000;">)</span>;<br/>            TextDrawShowForAll<span style="color: #000000;">(</span> Textdraw0 <span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GameSeconds <span style="color: #000000;">==</span> <span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> GameMinutes <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            OnGameModeExit<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+Have you tried my method <a href="showthreadb848.html?pid=1364891#pid1364891" target="_blank">above?^</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Im trying it now.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>iPLEOMAX</strong><br />
+<a href="showthread3033.html?pid=1365106#pid1365106" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Have you tried my method <a href="showthreadb848.html?pid=1364891#pid1364891" target="_blank">above?^</a></div>
+</td>
+</tr>
+</table>
+</div>With your method, all I get is "Loading" in the bottom corner.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+You sure you have done everything correctly? (Look at mine in the screeny here, with seconds <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>)<br />
+<br />
+<img alt="" border="0" src="imageshack/img155/9261/timerj.html"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer won't Countdown!!! - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Well, I copied and pasted your script so it should have worked. I honestly have no idea why it's doing this...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

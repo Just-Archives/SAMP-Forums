@@ -1,0 +1,63 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Please help - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="pawn Code: dcmd_admins(playerid,params[]){ #pragma unused params new string, result; for(new i = 0; i &lt; MAX_PLAYERS; i++) { if(Variables &gt;0 &amp;&amp; Variables &lt; 10) { format(string, sizeof(string), &quot;{FF0000" />
+<link rel="canonical" href="showthread4273.html?tid=278873" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread4273.html?tid=278873">Please help</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Please help (<em>/showthread.php?tid=278873</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Please help - <a href="member3e11.html?action=profile&amp;uid=106102">Hoss</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>, result<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,playerid, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #222222;">strcat</span><span style="color: #000000;">(</span>result, string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>result<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;      <br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, result, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>; <br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>Can anyone help me to make 2 admin lines,cuz when here are 2+ admins in admin list is only 1 admin<br />
+Help me please
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Please help - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+I'll give you mine from XAdmin:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:359px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> Count,i,name<span style="color: #000000;">[</span><span style="color: #000000;">24</span><span style="color: #000000;">]</span>,string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span>i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> IsPlayerXAdmin<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span><span style="color: #000000;">)</span> Count<span style="color: #000000;">++</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>Count<span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid,green,<span style="color: #000066;">"Admins Online: None"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Count <span style="color: #000000;">==</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span>i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> IsPlayerXAdmin<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">break</span>;<br/>        GetPlayerName<span style="color: #000000;">(</span>i,name,<span style="color: #000000;">24</span><span style="color: #000000;">)</span>; <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">128</span>,<span style="color: #000066;">"Admins Online: %s [LVL:%d] [ID:%d]"</span>,name,Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span>,i<span style="color: #000000;">)</span>;<br/>        <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid,green,string<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Count <span style="color: #000000;">&gt;=</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">new</span> <span style="color: #000000;">bool</span><span style="color: #000000;">:</span>First <span style="color: #000000;">=</span> false;<br/>        <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span>i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerConnected<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span> <span style="color: #000000;">&amp;&amp;</span> IsPlayerXAdmin<span style="color: #000000;">(</span>i<span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>            GetPlayerName<span style="color: #000000;">(</span>i,name,<span style="color: #000000;">24</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">!</span>First<span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">128</span>,<span style="color: #000066;">"Admins Online: %s [LVL:%d] [ID:%d],"</span>,name,Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span>,i<span style="color: #000000;">)</span>; First <span style="color: #000000;">=</span> true; <span style="color: #000000;">}</span><br/>            <span style="color: #2222BB;">else</span> <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">128</span>,<span style="color: #000066;">"%s %s [LVL:%d] [ID:%d]"</span>,string,name,Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span>,i<span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid,green,string<span style="color: #000000;">)</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

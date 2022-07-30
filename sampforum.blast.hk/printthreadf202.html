@@ -1,0 +1,127 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> IsPlayerXAdmin(playerid)) Problem - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I am using Xtreme Admin and I have this function in XtremeAdmin.inc: pawn Code: stock IsPlayerXAdmin(playerid) return (Variables &amp;&amp; Variables) ? true:false; This function works fine in the FilterScrip" />
+<link rel="canonical" href="showthreadf202.html?tid=278688" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadf202.html?tid=278688">IsPlayerXAdmin(playerid)) Problem</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  IsPlayerXAdmin(playerid)) Problem (<em>/showthread.php?tid=278688</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+IsPlayerXAdmin(playerid)) Problem - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  23.08.2011
+<br />
+<br />
+I am using Xtreme Admin and I have this function in XtremeAdmin.inc:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> IsPlayerXAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> <span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>LoggedIn<span style="color: #000000;">]</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">?</span> <span style="color: #000000;">true</span><span style="color: #000000;">:</span>false;</div></div></pre>
+</div>
+This function works fine in the FilterScript. But I want to use it in my GameMode:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include "xadmin/XtremeAdmin.inc"</span></div></div></pre>
+</div>
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:279px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">public</span> OnPlayerCommandText<span style="color: #000000;">(</span>playerid, cmdtext<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span><span style="color: #000066;">"/help"</span>, cmdtext, true, <span style="color: #000000;">10</span><span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerXAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid,orange,<span style="color: #000066;">"You are an admin"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid,orange,<span style="color: #000066;">"You are not an admin"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+But the problem is, the game mode script doesn't recognise me as an admin. The filterscript works fine, but I wanna use this function in my Gamemode...
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member8413.html?action=profile&amp;uid=113247">Kingunit</a> -  23.08.2011
+<br />
+<br />
+Maybe this sounds not usefull for you, but why you don't start your own system in your gamemode.<br />
+That's much much much better.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  23.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kingunit</strong><br />
+<a href="showthreadb1db.html?pid=1363667#pid1363667" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Maybe this sounds not usefull for you, but why you don't start your own system in your gamemode.<br />
+That's much much much better.</div>
+</td>
+</tr>
+</table>
+</div>Xtreme Admin comes with commands that I wouldn't normally be able to construct. Plus, I'm making a multi-gamemode server, so for me, it would be easier to just use a fs with admin commands.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+Use this.<br />
+<a href="https://sampwiki.blast.hk/wiki/Per-player_variable_system" target="_blank">https://sampwiki.blast.hk/wiki/Per-player_variable_system</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Where would I set the pVar?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:423px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #228822;">//Where you have the include</span><br/><span style="color: #2222BB;">public</span> OnPlayerConnect<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerXAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span> SetPVarInt<span style="color: #000000;">(</span>playerid,<span style="color: #000066;">"Admin"</span>,<span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>    <span style="color: #2222BB;">else</span>  SetPVarInt<span style="color: #000000;">(</span>playerid,<span style="color: #000066;">"Admin"</span>,<span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #228822;">//On your GM</span><br/><span style="color: #2222BB;">public</span> OnPlayerCommandText<span style="color: #000000;">(</span>playerid, cmdtext<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span> <span style="color: #000000;">(</span><span style="color: #222222;">strcmp</span><span style="color: #000000;">(</span><span style="color: #000066;">"/help"</span>, cmdtext, true, <span style="color: #000000;">10</span><span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>GetPVarInt<span style="color: #000000;">(</span>playerid,<span style="color: #000066;">"Admin"</span><span style="color: #000000;">)</span> <span style="color: #000000;">==</span> <span style="color: #000000;">1</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid,orange,<span style="color: #000066;">"You are an admin"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">else</span><br/>        <span style="color: #000000;">{</span><br/>            SendClientMessage<span style="color: #000000;">(</span>playerid,orange,<span style="color: #000066;">"You are not an admin"</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>        <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">0</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: IsPlayerXAdmin(playerid)) Problem - <a href="member6da4.html?action=profile&amp;uid=60034">Tigerbeast11</a> -  24.08.2011
+<br />
+<br />
+Thanks mate! +Rep!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

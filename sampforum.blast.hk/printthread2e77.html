@@ -1,0 +1,169 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Timer problem - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hey guys! I have a problem... When I and my friend join to server, timers don't work... It have to Set other Camera Pos but don't work. But when I join to server alone, it works... Help me!!! Code: if" />
+<link rel="canonical" href="showthread2e77.html?tid=278846" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2e77.html?tid=278846">Timer problem</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Timer problem (<em>/showthread.php?tid=278846</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Timer problem - <a href="member3cf3.html?action=profile&amp;uid=131315">lukas567</a> -  24.08.2011
+<br />
+<br />
+Hey guys!<br />
+<br />
+I have a problem...<br />
+<br />
+When I and my friend join to server, timers don't work... It have to Set other Camera Pos but don't work.<br />
+But when I join to server alone, it works...<br />
+<br />
+Help me!!!<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 226px;
+		text-align: left;
+		overflow: auto"> 	if(playerDB[playerid][newguy]==true)
+	{
+	TextDrawShowForPlayer(playerid, Text:Line1);
+	TextDrawShowForPlayer(playerid, Text:Line2);
+	SetTimer("lines", 15000, false);
+	SetPlayerCameraPos(playerid,2047.1219,1008.4376,19.7687);
+	SetPlayerCameraLookAt(playerid,2021.9423,1007.6476,15.2949);
+	SetTimer("camera", 5000, false);
+	SetPlayerSkin(playerid,248);
+	playerDB[playerid][skin]=248;
+	SetPlayerAttachedObject(playerid, 3, 1550, 1, 0.1, -0.3, 0, 0, 40, 0, 1, 1, 1);
+		SetPlayerPos(playerid,1903.3308,965.7521,10.8203);
+ 	}</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 482px;
+		text-align: left;
+		overflow: auto">forward camera(playerid);
+public camera(playerid)
+{
+SetPlayerCameraPos(playerid,1908.6547,963.1794,10.8203);
+SetPlayerCameraLookAt(playerid,1903.4467,967.1631,10.8203);
+SetTimer("camera2", 5000, false);
+return 1;
+}
+forward lines(playerid);
+public lines(playerid)
+{
+TextDrawHideForPlayer(playerid, Text:Line1);
+TextDrawHideForPlayer(playerid, Text:Line2);
+return 1;
+}
+forward camera2(playerid);
+public camera2(playerid)
+{
+SetPlayerCameraPos(playerid,1888.9412,946.0771,15.0975);
+SetPlayerCameraLookAt(playerid,1883.4490,977.2070,10.8203);
+SetTimer("camerab", 5000, false);
+return 1;
+}
+forward camerab(playerid);
+public camerab(playerid)
+{
+SetCameraBehindPlayer(playerid);
+return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer problem - <a href="member1ec8.html?action=profile&amp;uid=23565">[HiC]TheKiller</a> -  24.08.2011
+<br />
+<br />
+This must be one of the most common issues with new scripters. You need to actually send the playerid param for the function to actually process it. <br />
+<br />
+For this, we are going to use <a href="https://sampwiki.blast.hk/wiki/SetTimerEx" target="_blank">https://sampwiki.blast.hk/wiki/SetTimerEx</a><br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">SetTimerEx<span style="color: #000000;">(</span><span style="color: #000066;">"camera"</span>, <span style="color: #000000;">5000</span>, false, <span style="color: #000066;">"d"</span>, playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>
+Do the same thing for all of your other timers.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer problem - <a href="member3cf3.html?action=profile&amp;uid=131315">lukas567</a> -  24.08.2011
+<br />
+<br />
+Thanks, but i think there is problem because i didn't put [MAX_PLAYERS] to work for all players, but i dont know where to put it. <br />
+Please help!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer problem - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+Example:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:71px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> Timer<span style="color: #000000;">[</span>MAX_PLAYERS<span style="color: #000000;">]</span>;<br/><br/>Timer<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> SetTimerEx<span style="color: #000000;">(</span>.............<span style="color: #000000;">)</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer problem - <a href="member3cf3.html?action=profile&amp;uid=131315">lukas567</a> -  24.08.2011
+<br />
+<br />
+But this will work just with SetTimerEx?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Timer problem - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+You can set anything to variable. <a href="https://sampwiki.blast.hk/wiki/Scripting_Basics#Variables" target="_blank">https://sampwiki.blast.hk/wiki/Scripting_Basics#Variables</a><br />
+If you need to pass a value, you have to use SetTimerEx.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

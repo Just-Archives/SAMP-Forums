@@ -1,0 +1,403 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [GameMode] [MySQL R41-4] Login / Register Base Script - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Introduction I have created this as a gamemode since I got a lot of messages on discord from people asking me to make a login / register system for them. I didn't want to make this as a tutorial since" />
+<link rel="canonical" href="showthread1878.html?tid=659037" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread1878.html?tid=659037">[GameMode] [MySQL R41-4] Login / Register Base Script</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Gamemode Scripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=71</i>)<br />
+<!-- end: printthread_nav -->
++--- Thread:  [GameMode] [MySQL R41-4] Login / Register Base Script (<em>/showthread.php?tid=659037</em>)<br />
+<br />
+<!-- start: printthread_multipage -->
+<div class="multipage">Pages:  <!-- start: printthread_multipage_page_current -->
+1
+<!-- end: printthread_multipage_page_current --><!-- start: printthread_multipage_page -->
+<a href="printthread47d9.html?tid=659037&amp;page=2">2</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthread6229.html?tid=659037&amp;page=3">3</a>
+<!-- end: printthread_multipage_page --><!-- start: printthread_multipage_page -->
+<a href="printthreadbe33.html?tid=659037&amp;page=4">4</a>
+<!-- end: printthread_multipage_page --></div>
+<!-- end: printthread_multipage --></div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  20.09.2018
+<br />
+<br />
+<font color="Green"><b><font size="4">Introduction</font></b></font><br />
+I have created this as a gamemode since I got a lot of messages on discord from people asking me to make a login / register system for them. I didn't want to make this as a tutorial since I didn't have that much time, but everything is explained inside of the code. So everyone who at least has a little bit of knowledge on MySQL will understand it.<br />
+<br />
+<font color="green"><b><font size="4">What does it have more than other scripts similiar to this</font></b></font><br />
+Well it is simple to use, and it is made for people that want to start their gamemode from scratch. It uses only like 150 lines, and it fully works.<br />
+<br />
+<font color="green"><b><font size="4">Credits</font></b></font><ul><li>SA-MP - a_samp</li>
+<li>BlueG &amp; Maddinator - a_mysql</li>
+<li>****** - Whirlpool</li>
+<li>Zeex - zcmd</li>
+<li>Emmet - easyDialog</li>
+<li>Johnson_boy - BCrypt</li>
+<li>Bork - Suggestions / Helping with BCrypt</li>
+</ul>
+<font color="green"><b><font size="4">Screenshots</font></b></font><br />
+<a href="https://imgur.com/a/8cH1lMa" target="_blank">https://imgur.com/a/8cH1lMa</a><br />
+<br />
+<font color="green"><b><font size="4">Bugs</font></b></font><br />
+I don't think there are any bugs but if you notice a mistake on the script, please let me know.<br />
+<br />
+<font color="green"><b><font size="4">Download</font></b></font><br />
+<b><font size="4">V1.0 (Whirlpool)</font></b> - Not very recommended<br />
+<a href="https://github.com/willbedie/MySQL-Login-Register/tree/master" target="_blank">GitHub</a><br />
+<a href="https://pastebin.com/ETNALFd6" target="_blank">Pastebin</a><br />
+<br />
+The whirlpool version is no longer being updated. You must switch to BCrypt for a better experience.<br />
+<br />
+<b><font size="4">V1.1 (BCrypt)</font></b> - Highly recommended<br />
+<a href="https://github.com/willbedie/MySQL-Login-Register/tree/master/bcrypt-version" target="_blank">GitHub</a><br />
+<a href="https://pastebin.com/HK0VCuxT" target="_blank">Pastebin</a><br />
+<br />
+Changelog:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 194px;
+		text-align: left;
+		overflow: auto">Additions:
+[+] BCrypt version
+[+] Login check
+[+] /changepassword (BCrypt only) - 2/24/2019
+
+Changes:
+[~] Enumerator Variables
+[~] Saving System
+
+Removed:
+[-] MySQL auto-reconnect option</pre>
+</div>Enjoy it <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="memberc908.html?action=profile&amp;uid=317319">KinderClans</a> -  20.09.2018
+<br />
+<br />
+Sorry man but, why using Whirlpool for hashing when BlueG made one with <a href="https://github.com/pBlueG/SA-MP-MySQL/blob/master/example_scripts/login_system-cache.pwn" target="_blank">salt and SHA-256?</a><br />
+<br />
+I apprecciate the effort tho.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member8252.html?action=profile&amp;uid=320232">ZigGamerx</a> -  21.09.2018
+<br />
+<br />
+Really Good Job. +REP
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member278f.html?action=profile&amp;uid=322304">Mazio</a> -  21.09.2018
+<br />
+<br />
+Good one but it could be much better if you could work on the design and add some stuff up.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Mazio</strong><br />
+<a href="showthread1146.html?pid=4053647#pid4053647" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Good one but it could be much better if you could work on the design and add some stuff up.</div>
+</td>
+</tr>
+</table>
+</div>Well if you have any suggestions you can post here and I'll add anything I find useful and interesting
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member8252.html?action=profile&amp;uid=320232">ZigGamerx</a> -  21.09.2018
+<br />
+<br />
+can you make it complete ? like added <br />
+<br />
+VIP,ADMIN levels and more?<br />
+<br />
+SO IT WILL LOOK MORE GOOD
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>ZigGamerx</strong><br />
+<a href="showthreadf602.html?pid=4053667#pid4053667" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">can you make it complete ? like added <br />
+<br />
+VIP,ADMIN levels and more?<br />
+<br />
+SO IT WILL LOOK MORE GOOD</div>
+</td>
+</tr>
+</table>
+</div>Sure but you'll have to make the commands yourself
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="membere319.html?action=profile&amp;uid=317226">Danielknow</a> -  21.09.2018
+<br />
+<br />
+Good Work
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="memberde7f.html?action=profile&amp;uid=281792">Hunud</a> -  21.09.2018
+<br />
+<br />
+One question.<br />
+<br />
+- Why don't you store/load a PlayerName and IP from the enumerator (PlayerData) ?<br />
+-  PlayerName[MAX_PLAYERS]<font color="Red"><font size="5">[30]</font></font> ?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Hunud</strong><br />
+<a href="showthread612b.html?pid=4053680#pid4053680" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">One question.<br />
+<br />
+- Why don't you store/load a PlayerName and IP from the enumerator (PlayerData) ?<br />
+-  PlayerName[MAX_PLAYERS]<font color="Red"><font size="5">[30]</font></font> ?</div>
+</td>
+</tr>
+</table>
+</div>I didn't want to complicate the enumerator much so I decided to do it in another way<br />
+30 is the maximum characters a name can have
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="memberde7f.html?action=profile&amp;uid=281792">Hunud</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>willbedie</strong><br />
+<a href="showthread0819.html?pid=4053684#pid4053684" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I didn't want to complicate the enumerator much so I decided to do it in another way<br />
+30 is the maximum characters a name can have</div>
+</td>
+</tr>
+</table>
+</div>SA:MP limit is 20.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Hunud</strong><br />
+<a href="showthread764e.html?pid=4053686#pid4053686" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">SA:MP limit is 20.</div>
+</td>
+</tr>
+</table>
+</div>I actually remember that now, is it 20 or 24? Afaik it's 24
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> -  21.09.2018
+<br />
+<br />
+You can only have a 20 character input of name in the SA-MP client however, you can set a players name upto of 24 characters in-game.<br />
+<br />
+So use MAX_PLAYER_NAME definition instead of manually putting 30 or 24.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member654a.html?action=profile&amp;uid=116837">Jing_Chan</a> -  21.09.2018
+<br />
+<br />
+this is a bit useless tbh
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  21.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jing_Chan</strong><br />
+<a href="showthread0188.html?pid=4053756#pid4053756" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">this is a bit useless tbh</div>
+</td>
+</tr>
+</table>
+</div>I honestly don't care actually, it took me like 15-20 minutes to create. I've been asked by a lot of people on discord to make a login / register system for them so I made this instead for everyone <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member654a.html?action=profile&amp;uid=116837">Jing_Chan</a> -  22.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>willbedie</strong><br />
+<a href="showthread22dd.html?pid=4053758#pid4053758" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I honestly don't care actually, it took me like 15-20 minutes to create. I've been asked by a lot of people on discord to make a login / register system for them so I made this instead for everyone <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/></div>
+</td>
+</tr>
+</table>
+</div>there'a a widely known mysql register/login tutorial, people should try learn from that rather than download your mildly edited version of the same thing
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  22.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jing_Chan</strong><br />
+<a href="showthread6a1e.html?pid=4053926#pid4053926" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">there'a a widely known mysql register/login tutorial, people should try learn from that rather than download your mildly edited version of the same thing</div>
+</td>
+</tr>
+</table>
+</div>You're salty I reported your topic and it got deleted so you're saying. I don't care if it's useless, I just created it because I was bored lmfao
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="membercc2a.html?action=profile&amp;uid=287837">Mobtiesgangsa</a> -  23.09.2018
+<br />
+<br />
+The Script if fabulous less code full opt Credits will stay if i update your base script and re-release it.<br />
+<br />
+Permission: true : false;<br />
+<br />
++1 Rep
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member0ff8.html?action=profile&amp;uid=274280">solstice_</a> -  23.09.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Mobtiesgangsa</strong><br />
+<a href="showthread02f4.html?pid=4054083#pid4054083" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">The Script if fabulous less code full opt Credits will stay if i update your base script and re-release it.<br />
+<br />
+Permission: true : false;<br />
+<br />
++1 Rep</div>
+</td>
+</tr>
+</table>
+</div>Yo can update it, go ahead and thanks.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [MySQL R41-4] Login / Register Base Script - <a href="member8252.html?action=profile&amp;uid=320232">ZigGamerx</a> -  23.09.2018
+<br />
+<br />
+Are you going to Complete it by adding more savings like Admin level And VIP or not?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

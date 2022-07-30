@@ -1,0 +1,186 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Dialog Problem - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello I want to make /admins with dialogs But i got some problems,with doing it This is original /admins cmd wiht no dialogs pawn Code: dcmd_admins(playerid,params[]){ #pragma unused params new string" />
+<link rel="canonical" href="showthread895a.html?tid=278722" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread895a.html?tid=278722">Dialog Problem</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Dialog Problem (<em>/showthread.php?tid=278722</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Please help - <a href="member3e11.html?action=profile&amp;uid=106102">Hoss</a> -  23.08.2011
+<br />
+<br />
+Hello<br />
+I want to make /admins with dialogs<br />
+But i got some problems,with doing it <br />
+This is original /admins cmd wiht no dialogs<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">128</span><span style="color: #000000;">]</span>,amt;<br/>    string <span style="color: #000000;">=</span> <span style="color: #000066;">"Admins: "</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> || Variables<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">12</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        foreach<span style="color: #000000;">(</span>Player,i<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">12</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">128</span>,<span style="color: #000066;">"%s  %s(%d)"</span>,string,RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                amt<span style="color: #000000;">++</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        foreach<span style="color: #000000;">(</span>Player,i<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">12</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #000000;">128</span>,<span style="color: #000066;">"%s  %s"</span>,string,RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                amt<span style="color: #000000;">++</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>amt <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid,MAIN_COLOR_2,string<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span>playerid,MAIN_COLOR_2,<span style="color: #000066;">"No admins online."</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+and i tried to make it with dialogs,but when i am typing /admins IG i am gettin only 1 admin line<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:247px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,playerid, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>            ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, string, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>Please help me <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member034a.html?action=profile&amp;uid=69868">Jeffry</a> -  23.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:327px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">400</span><span style="color: #000000;">]</span>, admins;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span> admins<span style="color: #000000;">++</span>;<br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>admins <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"%s{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>,string, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,playerid, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>                ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, string, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span> ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, <span style="color: #000066;">"There are no Administrators online."</span>, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Should work then.<br />
+<br />
+Jeffry <img alt="" border="0" class="inlineimg" src="images/smilies/cool.gif" title="Cool"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="memberf0bb.html?action=profile&amp;uid=37431">Hiddos</a> -  23.08.2011
+<br />
+<br />
+This might work: <a href="http://pastebin.com/vR8D1868" target="_blank">http://pastebin.com/vR8D1868</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member034a.html?action=profile&amp;uid=69868">Jeffry</a> -  23.08.2011
+<br />
+<br />
+Oh, good one Hiddos, didn't think of that way.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: Dialog Problem - <a href="memberc71b.html?action=profile&amp;uid=9765">Nero_3D</a> -  23.08.2011
+<br />
+<br />
+If I am not mistaken, than Hiddos code would always show "No admins online!" and the online admins if there are some<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:279px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid, unused<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused unused</span><br/>    <span style="color: #2222BB;">new</span><br/>        i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>,<br/>        string<span style="color: #000000;">[</span><span style="color: #000000;">400</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span> ; i <span style="color: #000000;">!=</span> MAX_PLAYERS; <span style="color: #000000;">++</span>i<span style="color: #000000;">)</span> <span style="color: #000000;">{</span> <span style="color: #228822;">// foreach ?</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">0</span> <span style="color: #000000;">&lt;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span> string, <span style="color: #000066;">"%s{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>, string, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>, i, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>string<span style="color: #000000;">[</span><span style="color: #000000;">0</span><span style="color: #000000;">]</span> <span style="color: #000000;">==</span> EOS<span style="color: #000000;">)</span> <span style="color: #000000;">{</span><br/>        string <span style="color: #000000;">=</span> <span style="color: #000066;">"No admins online."</span>;<br/>    <span style="color: #000000;">}</span><br/>    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, DIALOG_STYLE_MSGBOX, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, string, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> true;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member1785.html?action=profile&amp;uid=127369">PrawkC</a> -  23.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>, result<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,playerid, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #222222;">strcat</span><span style="color: #000000;">(</span>result, string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>result<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;       <br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, result, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;  <br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Pretty sure this will work.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member3e11.html?action=profile&amp;uid=106102">Hoss</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>PrawkC</strong><br />
+<a href="showthread13ec.html?pid=1364258#pid1364258" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:263px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>, result<span style="color: #000000;">[</span><span style="color: #000000;">256</span><span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">for</span><span style="color: #000000;">(</span><span style="color: #2222BB;">new</span> i <span style="color: #000000;">=</span> <span style="color: #000000;">0</span>; i <span style="color: #000000;">&lt;</span> MAX_PLAYERS; i<span style="color: #000000;">++</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span><span style="color: #000000;">0</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">10</span><span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>, <span style="color: #000066;">"{FF0000}ADMINISTRATOR: %s ID[%d]{15D4ED}[Level %d]<span style="color: #000099; font-weight: bold;">\n</span>"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>,playerid, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span><span style="color: #000000;">)</span>;<br/>            <span style="color: #222222;">strcat</span><span style="color: #000000;">(</span>result, string, <span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>result<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;       <br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">5591</span>, <span style="color: #000000;">0</span>, <span style="color: #000066;">"{1B1BE0}Online Admins:"</span>, result, <span style="color: #000066;">"Done"</span>, <span style="color: #000066;">""</span><span style="color: #000000;">)</span>;  <br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+Pretty sure this will work.</div>
+</td>
+</tr>
+</table>
+</div>Thanks<br />
+but can anyone help me to make 2 admin lines,cuz when here are 2+ admins in admin list is only 1 admin <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/><br />
+Help me please
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+AW: Re: Dialog Problem - <a href="memberc71b.html?action=profile&amp;uid=9765">Nero_3D</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>[MD]Gangster</strong><br />
+<a href="showthread750d-2.html?pid=1365135#pid1365135" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thanks<br />
+but can anyone help me to make 2 admin lines,cuz when here are 2+ admins in admin list is only 1 admin <img alt="" border="0" class="inlineimg" src="images/smilies/sad.gif" title="Sad"/><br />
+Help me please</div>
+</td>
+</tr>
+</table>
+</div>He used result instead of string in ShowPlayerDialog, just change it by yourself<br />
+<br />
+Also did you tried Jeffry's, Hiddos's or mine ?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member3d6c-2.html?action=profile&amp;uid=110238">Intoxicated</a> -  24.08.2011
+<br />
+<br />
+EDIT: Oops.. wrong topic
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Dialog Problem - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+Untested:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:503px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">dcmd_admins<span style="color: #000000;">(</span>playerid,params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#pragma unused params</span><br/>    <span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">+</span><span style="color: #000000;">8</span><span style="color: #000000;">*</span><span style="color: #000000;">15</span><span style="color: #000000;">]</span>, stringb<span style="color: #000000;">[</span>MAX_PLAYER_NAME<span style="color: #000000;">+</span><span style="color: #000000;">8</span><span style="color: #000000;">]</span>, amt;<br/>    <br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>IsPlayerAdmin<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span> || Variables<span style="color: #000000;">[</span>playerid<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">12</span><span style="color: #000000;">)</span><br/>    <span style="color: #000000;">{</span><br/>        foreach<span style="color: #000000;">(</span>Player, i<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">12</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>stringb, <span style="color: #2222BB;">sizeof</span> stringb,<span style="color: #000066;">"%s(%d)"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>, Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">strcat</span><span style="color: #000000;">(</span>string, stringb, <span style="color: #2222BB;">sizeof</span> string<span style="color: #000000;">)</span>;<br/>                amt<span style="color: #000000;">++</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">else</span><br/>    <span style="color: #000000;">{</span><br/>        foreach<span style="color: #000000;">(</span>Player,i<span style="color: #000000;">)</span><br/>        <span style="color: #000000;">{</span><br/>            <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&lt;</span> <span style="color: #000000;">12</span> <span style="color: #000000;">&amp;&amp;</span> Variables<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span><span style="color: #000000;">[</span>Level<span style="color: #000000;">]</span> <span style="color: #000000;">&gt;</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span><br/>            <span style="color: #000000;">{</span><br/>                <span style="color: #222222;">format</span><span style="color: #000000;">(</span>stringb,<span style="color: #2222BB;">sizeof</span> stringb,<span style="color: #000066;">"%s"</span>, RealName<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span> <span style="color: #000000;">)</span>;<br/>                <span style="color: #222222;">strcat</span><span style="color: #000000;">(</span>string, stringb, <span style="color: #2222BB;">sizeof</span> string<span style="color: #000000;">)</span>;<br/>                amt<span style="color: #000000;">++</span>;<br/>            <span style="color: #000000;">}</span><br/>        <span style="color: #000000;">}</span><br/>    <span style="color: #000000;">}</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>amt <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> SendClientMessage<span style="color: #000000;">(</span> playerid, MAIN_COLOR_2, <span style="color: #000066;">"No admins are online."</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">else</span> <span style="color: #2222BB;">return</span> ShowPlayerDialog<span style="color: #000000;">(</span>playerid, <span style="color: #000000;">4557</span>, DIALOG_STYLE_LIST, <span style="color: #000066;">"Current Online Admins:"</span>, string, <span style="color: #000066;">"OK"</span>, <span style="color: #000066;">"Close"</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

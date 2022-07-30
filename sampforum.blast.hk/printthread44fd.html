@@ -1,0 +1,78 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Inserting a character into a string. - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I've been trying a lot of methods and some fail and some work a little.. Hmm.. Suppose I have a string &quot;trololo1o1o1olo1&quot; Now How can I replace all the &quot;1&quot;s here with &quot;_1&quot; so it looks like: &quot;trololo_1" />
+<link rel="canonical" href="showthread44fd.html?tid=278882" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread44fd.html?tid=278882">Inserting a character into a string.</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Help Archive (<i>https://sampforum.blast.hk/forumdisplay.php?fid=89</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Inserting a character into a string. (<em>/showthread.php?tid=278882</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Inserting a character into a string. - <a href="member3c7d.html?action=profile&amp;uid=122705">iPLEOMAX</a> -  24.08.2011
+<br />
+<br />
+I've been trying a lot of methods and some fail and some work a little.. Hmm..<br />
+<br />
+Suppose I have a string "trololo1o1o1olo1"<br />
+<br />
+Now How can I replace all the "1"s here with "_1" so it looks like: "trololo_1o_1o_1olo_1"?<br />
+<br />
+I used loops,strfind,strins.. they all failed cuz I'm messing up somewhere..<br />
+<br />
+Any Help Please <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inserting a character into a string. - <a href="member3bab.html?action=profile&amp;uid=126163">Wesley221</a> -  24.08.2011
+<br />
+<br />
+Use str_replace.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;">str_replace<span style="color: #000000;">(</span><span style="color: #000066;">"1 /*the character you  want to replace*/ "</span>, <span style="color: #000066;">"_1 /* what will replace the character */ "</span>, <span style="color: #000066;">"trololo1o1o1olo1 /* in which string do you want this to happen*/ "</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>If you will do this in a printf line, this will output the "trololo_1o_1o_1olo_1" like you said
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Inserting a character into a string. - <a href="member9db6.html?action=profile&amp;uid=125424">=WoR=Varth</a> -  24.08.2011
+<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> string<span style="color: #000000;">[</span><span style="color: #000000;">10</span><span style="color: #000000;">]</span>;<br/><span style="color: #222222;">format</span><span style="color: #000000;">(</span>string,<span style="color: #2222BB;">sizeof</span><span style="color: #000000;">(</span>string<span style="color: #000000;">)</span>,<span style="color: #000066;">"Lololo1lo1lolo1"</span><span style="color: #000000;">)</span>;<br/>string<span style="color: #000000;">[</span><span style="color: #222222;">strfind</span><span style="color: #000000;">(</span>string,<span style="color: #000066;">"1"</span><span style="color: #000000;">)</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">'_1'</span>;<br/><span style="color: #2222BB;">return</span> string;</div></div></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
