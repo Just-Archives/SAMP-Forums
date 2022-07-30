@@ -1,0 +1,459 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tool/Web/Other] [In Development] A New Powerful Scene Editor - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="SceneEditor By Introduction Hello there, I hope you are doing fine. Good news for SA-MP mappers: In my spare time I am working on a new Scene Editor for SA-MP. It's been a while since Jernej L. left S" />
+<link rel="canonical" href="showthread9515.html?tid=660750" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread9515.html?tid=660750">[Tool/Web/Other] [In Development] A New Powerful Scene Editor</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tools and Files  (<i>https://sampforum.blast.hk/forumdisplay.php?fid=82</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tool/Web/Other] [In Development] A New Powerful Scene Editor (<em>/showthread.php?tid=660750</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+[In Development] A New Powerful Scene Editor - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  12.11.2018
+<br />
+<br />
+<div align="center"><font size="7"><font face="Book Antiqua"><font color="Green">Scene</font><font color="Gray">Editor</font></font></font><br />
+<font size="2">By</font><br />
+<img alt="" border="0" src="https://image.ibb.co/cLdEmy/logo_sasinosoft_200px.png"/></div>
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>I</b></font><font color="Gray">ntroduction</font></font></font><br />
+Hello there, I hope you are doing fine. Good news for SA-MP mappers: In my spare time I am working on a new Scene Editor for SA-MP.<br />
+It's been a while since Jernej L. left SA-MP, and unfortunately his awesome map editor that I used a lot, now has become outdated: it does not support some features that were added in SA-MP relatively recently. That is why I think a new editor is needed.<br />
+<br />
+<b>I am posting this thread only because I need help with the development.</b><br />
+<br />
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>W</b></font><font color="Gray">hat Has Already Been Done</font></font></font><br />
+<br />
+<font color="Red">At this stage, the software app is <b>not </b>useable for the purpose.</font><br />
+<br />
+As of 12/11/2018, the following things have been done:<ul><li>A main window with a 3D Viewport and a menu</li>
+<li>The camera mouse/keyboard/touch gestures with Helix Toolkit</li>
+<li>A settings window in which you can configure the path to GTA SA</li>
+<li>An IMG Archive reader (translated from an existent C++ code)</li>
+<li>Parser for RenderWare .DFF models (certain models are not being loaded correctly)</li>
+<li>Parser for RenderWare .TXD texture dictionaries (some types of decompression are missing)</li>
+</ul>
+I want to say thanks to JernejL, kcow, steve-m and the other authors of free/open source software found on the gta forums regarding the RW formats.<br />
+<br />
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>P</b></font><font color="Gray">lanned Features</font></font></font><br />
+<font size="4">1. Not Only Objects!</font><br />
+One of the main differences between this Scene Editor and JernejL's is that, while the latter only allowed to create objects and vehicles (and to remove buildings), this one will support much more:<ul><li>Objects</li>
+<li>Building Removal</li>
+<li>Vehicles</li>
+<li>Pickups</li>
+<li>Actors / FC-NPCs</li>
+<li>Checkpoints</li>
+<li>Race Checkpoints</li>
+<li>3D Text Labels</li>
+<li>Custom Entities (e.g. gates, elevators, barriers)</li>
+<li>Maybe more...</li>
+</ul>
+<font size="4">2. Import / Export</font><br />
+The app will export all the scene data to a .JSON file. This JSON file can be loaded again into the app to resume the previous work, but the point is that this JSON file can also be loaded by the SA-MP scripts using an include that contains a function which parses that kind of file and creates the objects accordingly. The include will use dynamic objects/actors/pickups/text3ds if Incognito's streamer is included. The checkpoints/race checkpoints will be created only if the Streamer is included. The editor will allow you to apply IDs to any object/vehicle/... in order to retreive them later in the code; an example are gates, which often need to be opened and closed.<br />
+<br />
+An example of how it could be used:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:343px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222AA;">#include &lt;streamer&gt;</span><br/><span style="color: #2222AA;">#include &lt;Scene&gt;</span><br/><span style="color: #2222AA;">#include &lt;zcmd&gt;</span><br/><br/><span style="color: #2222BB;">new</span> <span style="color: #000000;">Scene</span><span style="color: #000000;">:</span> islandScene;<br/><span style="color: #2222BB;">new</span> objGate1;<br/><br/><span style="color: #2222BB;">public</span> OnGameModeInit<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #228822;">// Scenes/Island.json is inside scriptfiles</span><br/>    islandScene <span style="color: #000000;">=</span> Scene.Load<span style="color: #000000;">(</span><span style="color: #000066;">"Scenes/Island.json"</span><span style="color: #000000;">)</span>; <span style="color: #228822;">// this single line creates all the objects, pickups, vehicles, actors (etc...) found in this file, and stores references to those who have an ID</span><br/>    objGate1 <span style="color: #000000;">=</span> Scene.FindById<span style="color: #000000;">(</span>islandScene, <span style="color: #000066;">"Gate1"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>opengate1<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    MoveDynamicObject<span style="color: #000000;">(</span>objGate1, <span style="color: #000000;">1242.47</span>, <span style="color: #000000;">4214.55</span>, <span style="color: #000000;">16.5</span>, <span style="color: #000000;">1.0</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+The app will also be able to import a normal .pwn file and interpret all the CreateObject(/CreateDynamicObject/CreateActor/CreateVehicle, etc...) found in it, and save them into the JSON format. This is for backwards compatibility with JernejL's map editor. There will also be an option to export a plain .pwn file, but in that case the advantages of code/resource separation will be lost.<br />
+<br />
+<font size="4">3. Scene Editor</font><br />
+The main scene editor will be pretty much the same as JernejL's. It will feature an object browser window in which you will be able to search through all the objects using their name, id, and maybe category and description. <br />
+It will probably support multiple tabs each of which contains a viewport, enabling you to quickly switch between two or more views.<br />
+You will move around the scene in almost the same way as with JernejL's editor, but since the Helix 3D Viewport also handles touch gestures, it will be a lot easier to use this editor with a tablet (a Windows tablet, of course).<br />
+The right click (or long touch) on an object will open the context menu that offers the ability to delete the object, edit the materials or add attachments (in case of vehicles/FC-NPCs). Of course keyboard shortcuts will be also provided.<br />
+<br />
+<font size="4">4. Material Editor</font><br />
+You will be able to use the material editor to change the materials and material text of any object. This editor will also feature a texture browser in which you will be able to search all textures. <br />
+The material editor can be used both while editing a scene to make a specific object in the scene have a specific set of materials, or alone, allowing you to export only the fragment of JSON data needed for that particular material configuration.<br />
+<br />
+<font size="4">5. Attached Offsets Editor</font><br />
+The editor will feature an editor for Player/Vehicle attachments of objects. If used together with the Scene Editor (for example by right-clicking a vehicle or an FC-NPC), then the changes will reflect in the scene, but in a similar way to the Material Editor, the data can be exported separately.<br />
+<br />
+<font size="4">6. SA-MP DL Support</font><br />
+It will allow the users of the DL editions of SA-MP to also use their custom models in the Scene Editor. They will simply have to add one or more model folders in the settings, and the app will load them.<br />
+<br />
+<font size="4">7. Properties</font><br />
+You will be able to attach properties to scene objects. For example, you could add a <i>weight</i> property to doors, so that you can access that value from code and make the door open after the player presses a certain button a number of times.<br />
+<br />
+<font size="4">8. Add-ons / plugins</font><br />
+There will be support for add-ons that add custom entities. For example, one could create a house filterscript, and then create an add-on for the Scene Editor, so that you can add houses in it.<br />
+<br />
+<font size="4">9. Team</font><br />
+This will be an exciting feature: two or more people can work together on the same scene at the same time in order to enhance productivity. The file on which the team works will only be accessible to the host of the team session; the clients can only work on the scene without the possibility of saving the file on their machines.<br />
+<br />
+<font size="4">10. Themes</font><br />
+The application will support default white and dark themes as well as custom themes.<br />
+<br />
+<font size="4">11. Additional Tools</font><br />
+A few tools that could be useful which don't directly relate to map editing:<ul><li>Animation Browser</li>
+<li>Sound Browser</li>
+</ul>
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>T</b></font><font color="Gray">echnical Information</font></font></font><ul><li>The programming language is <b><font color="Green">C#</font></b></li>
+<li>The app platform is WPF (&gt; .NET Framework 4.6.1)</li>
+<li>3D rendering is done by WPF 3D (which in turn uses Direct3D)</li>
+<li>Uses the Helix Toolkit ( <a href="http://www.helix-toolkit.org/" target="_blank">link</a> ) for some advanced 3D controls, like their enhanced 3D Viewport</li>
+<li>Uses a managed wrapper for Libsquish for texture decompression (DXT)</li>
+<li>The Version Control System is <b><font color="Gray">Mercurial</font></b> and not Git, because it's better <img alt="" border="0" class="inlineimg" src="images/smilies/razz.gif" title="Tongue"/></li>
+</ul>
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>C</b></font><font color="Gray">ontribute To Development</font></font></font><br />
+Everyone is welcomed to contribute to the development of this awesome scene editor! Just send me an email (address at the bottom of my signature) and I will give you permissions to commit in the repository.<br />
+<br />
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>R</b></font><font color="Gray">epository</font></font></font><br />
+Follow this link to see the source code:<br />
+<br />
+<a href="https://bitbucket.org/SaSiNO97/sasinosoft-samp-map-editor/src/default/" target="_blank">Bitbucket</a><br />
+<br />
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>B</b></font><font color="Gray">uilding</font></font></font><br />
+<br />
+<b>Visual Studio 2017</b> and the <b><i>.NET desktop development</i> workload</b> are required to build the project. During the first build, an internet connection is required to download the NuGet packages.<br />
+<br />
+<font face="Book Antiqua"><font size="6"><font color="Green"><b>L</b></font><font color="Gray">icense</font></font></font><br />
+<a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">Mozilla Public License</a>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  12.11.2018
+<br />
+<br />
+Ah damn exactly my Map Editor just in C# xD<br />
+<br />
+No seriously, looks good. I like the direct loading instead of having to paste around code.<br />
+Apart from an Item name ("Gate1" in your example) could there be custom properties for Items?<br />
+So that I could for example add a "Health" attribute to any Item and access that value from the script? That would allow for completely setting up gamemodes/maps in the Editor. That's what I do with my Editor and it's damn useful!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberd286.html?action=profile&amp;uid=307351">Alexis17</a> -  12.11.2018
+<br />
+<br />
+Good
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  13.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthreada6d6-2.html?pid=4064585#pid4064585" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Apart from an Item name ("Gate1" in your example) could there be custom properties for Items?<br />
+So that I could for example add a "Health" attribute to any Item and access that value from the script? That would allow for completely setting up gamemodes/maps in the Editor. That's what I do with my Editor and it's damn useful!</div>
+</td>
+</tr>
+</table>
+</div>That is a cool thing. I thought about it, and it could be done like the following:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    Scene.SetProperty<span style="color: #000000;">(</span>scene, objGate1, <span style="color: #000066;">"Health"</span>, <span style="color: #000000;">50</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> health <span style="color: #000000;">=</span> Scene.GetProperty<span style="color: #000000;">(</span>scene, objGate1, <span style="color: #000066;">"Health"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+But I have to think about the actual implementation. GVars could be an option. As for now, I am focusing on the editor itself.<br />
+<br />
+The same thing however can be done without the need of properties:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> objHealths<span style="color: #000000;">[</span>MAX_DYNAMIC_OBJECTS<span style="color: #000000;">]</span>;<br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    objHealths<span style="color: #000000;">[</span>objGate1<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">50</span>;<br/>    <span style="color: #2222BB;">new</span> health <span style="color: #000000;">=</span> objHealths<span style="color: #000000;">[</span>objGate1<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+(unless you want to be able to specify predefined values for each object)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member12e5.html?action=profile&amp;uid=259773">Logic_</a> -  13.11.2018
+<br />
+<br />
+I'm impressed with this amazing creation of yours.<br />
+<br />
+Good luck with the further development.<br />
+<br />
+4 x <img alt="" border="0" src="https://forum.sa-mp.com/images/buttons/reputation.png"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  13.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Sasino97</strong><br />
+<a href="showthread8837-2.html?pid=4064719#pid4064719" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">That is a cool thing. I thought about it, and it could be done like the following:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    Scene.SetProperty<span style="color: #000000;">(</span>scene, objGate1, <span style="color: #000066;">"Health"</span>, <span style="color: #000000;">50</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">new</span> health <span style="color: #000000;">=</span> Scene.GetProperty<span style="color: #000000;">(</span>scene, objGate1, <span style="color: #000066;">"Health"</span><span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+But I have to think about the actual implementation. GVars could be an option. As for now, I am focusing on the editor itself.<br />
+<br />
+The same thing however can be done without the need of properties:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:151px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> objHealths<span style="color: #000000;">[</span>MAX_DYNAMIC_OBJECTS<span style="color: #000000;">]</span>;<br/><br/><span style="color: #000000;">CMD</span><span style="color: #000000;">:</span>something<span style="color: #000000;">(</span>playerid, params<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    objHealths<span style="color: #000000;">[</span>objGate1<span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">50</span>;<br/>    <span style="color: #2222BB;">new</span> health <span style="color: #000000;">=</span> objHealths<span style="color: #000000;">[</span>objGate1<span style="color: #000000;">]</span>;<br/>    <span style="color: #2222BB;">return</span> <span style="color: #000000;">1</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>
+(unless you want to be able to specify predefined values for each object)</div>
+</td>
+</tr>
+</table>
+</div>I'll tell you how I did it with my editor for an example, I added "Extra IDs" (could call it properties as well) which I can add/remove from any Item inside the Editor.<br />
+So if I want to give an Item health or whatever you can imagine, I add a "Health" Property, set its tag to Float and assign it a value.<br />
+When loading the items in the script, I have a function to search for a property and get its value, then do something with it depending on the Script I load it with.<br />
+<br />
+So i don't define them in the script at all, but solely in the editor.<br />
+There should be enough "slots" to assign even complex properties. For example, I use the Extra IDs for Doors, Gates and moving Platforms which have a set of properties, eg. move Target Position and rotation (x,y,z and rx,ry,rz), move speed, whether or not a dynamic area is created to "trigger" them, the area's size and some other values to describe the type of movement.<br />
+With that I don't even need to touch the script when adding new doors, gates, etc and they can be configured in multiple ways so it looks like it was coded seperately.<br />
+It's probably a feature you don't want to implement early, but it's extremely useful in my opinion. When utilizing them properly you can truly build map resources for your gamemode with complex features without hardcoding them in the script.<br />
+<br />
+You could also think about adding the attributes of existing SAMP Items as properties to the list, for example Picku Type or whether an Actor is invulnerable.<br />
+Or even go as far as adding any and all values you use for an Item into a dynamic property list. With that I mean the Items Position, Rotation and Model. Similar to how the Streamer Plugin has all the data available through Streamer_GetIntData etc. Hope you know what I mean <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
+<br />
+So far all the Editors had good features or were convenient to use, but implementing the maps was always either copy and paste or converting around map files.<br />
+With a good integration and being able to directly load stuff from the Map would be a huge selling point for me as that takes away a lot of unneccessary work AND allows for dynamic configuration of Items etc.<br />
+<br />
+Also please consider allowing attached objects to objects as well. Even if you don't use YSF (which adds AttachPlayerObjectToObject) you can use these in the editor to create something similar to prefabs. You can calculate their real world position in the script based on the offsets quite easily, so they don't actually need to be attached ingame.<br />
+<br />
+Anyway you'll probably focus on other more important things first, just wanted to give you some ideas.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member80b0.html?action=profile&amp;uid=216608">Jking</a> -  13.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Sasino97</strong><br />
+<a href="showthreadf295.html?pid=4064574#pid4064574" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Scene Editor</div>
+</td>
+</tr>
+</table>
+</div>Other things that Map Construction doesn't have:<br />
+<br />
+- Animated objects support.<br />
+- Particle objects support (smoke, fire.. etc.).<br />
+- 2DFX effects support (coronas).<br />
+- Render object pictures without background (.png or .tga with AA if possible)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberefdf.html?action=profile&amp;uid=282620">Eoussama</a> -  13.11.2018
+<br />
+<br />
+Amazing, I'll keep an eye on the project.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member1b07.html?action=profile&amp;uid=300220">JohnRastion</a> -  23.11.2018
+<br />
+<br />
+Perfect man, keep it up
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  28.11.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthread11c0-2.html?pid=4064767#pid4064767" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">I'll tell you how I did it with my editor for an example, I added "Extra IDs" (could call it properties as well) which I can add/remove from any Item inside the Editor.<br />
+So if I want to give an Item health or whatever you can imagine, I add a "Health" Property, set its tag to Float and assign it a value.<br />
+When loading the items in the script, I have a function to search for a property and get its value, then do something with it depending on the Script I load it with.<br />
+<br />
+So i don't define them in the script at all, but solely in the editor.<br />
+There should be enough "slots" to assign even complex properties. For example, I use the Extra IDs for Doors, Gates and moving Platforms which have a set of properties, eg. move Target Position and rotation (x,y,z and rx,ry,rz), move speed, whether or not a dynamic area is created to "trigger" them, the area's size and some other values to describe the type of movement.<br />
+With that I don't even need to touch the script when adding new doors, gates, etc and they can be configured in multiple ways so it looks like it was coded seperately.<br />
+It's probably a feature you don't want to implement early, but it's extremely useful in my opinion. When utilizing them properly you can truly build map resources for your gamemode with complex features without hardcoding them in the script.<br />
+<br />
+You could also think about adding the attributes of existing SAMP Items as properties to the list, for example Picku Type or whether an Actor is invulnerable.<br />
+Or even go as far as adding any and all values you use for an Item into a dynamic property list. With that I mean the Items Position, Rotation and Model. Similar to how the Streamer Plugin has all the data available through Streamer_GetIntData etc. Hope you know what I mean <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/><br />
+<br />
+So far all the Editors had good features or were convenient to use, but implementing the maps was always either copy and paste or converting around map files.<br />
+With a good integration and being able to directly load stuff from the Map would be a huge selling point for me as that takes away a lot of unneccessary work AND allows for dynamic configuration of Items etc.<br />
+<br />
+Also please consider allowing attached objects to objects as well. Even if you don't use YSF (which adds AttachPlayerObjectToObject) you can use these in the editor to create something similar to prefabs. You can calculate their real world position in the script based on the offsets quite easily, so they don't actually need to be attached ingame.<br />
+<br />
+Anyway you'll probably focus on other more important things first, just wanted to give you some ideas.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Jking</strong><br />
+<a href="showthreadfda9.html?pid=4064786#pid4064786" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Other things that Map Construction doesn't have:<br />
+<br />
+- Animated objects support.<br />
+- Particle objects support (smoke, fire.. etc.).<br />
+- 2DFX effects support (coronas).<br />
+- Render object pictures without background (.png or .tga with AA if possible)</div>
+</td>
+</tr>
+</table>
+</div>Thanks, your ideas are highly appreciated.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Eoussama</strong><br />
+<a href="showthreadcf70.html?pid=4064791#pid4064791" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Amazing, I'll keep an eye on the project.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>JohnRastion</strong><br />
+<a href="showthreadc60d.html?pid=4067328#pid4067328" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Perfect man, keep it up</div>
+</td>
+</tr>
+</table>
+</div>Thanks for the support. Although, I hope someone can join me in the development since I have small time to continue it.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberf4d9.html?action=profile&amp;uid=285533">PowerMwK</a> -  29.11.2018
+<br />
+<br />
+<font color="Purple">I compiled this to test, and is cool the design.</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member7e62.html?action=profile&amp;uid=110633">Chaser98</a> -  08.12.2018
+<br />
+<br />
+Good work! I hope the scene viewer will be faster than JernejL\'s map editor. JernejL\'s runs like poop on my PC and I have an i7-7700k D:.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member194f.html?action=profile&amp;uid=278729">RenanMsV</a> -  25.01.2019
+<br />
+<br />
+So whats up for 2019? <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> Great work btw
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member22c4.html?action=profile&amp;uid=316577">logomines</a> -  30.01.2019
+<br />
+<br />
+this is very nice post fantastic.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberf2b1.html?action=profile&amp;uid=273076">homelessdrop</a> -  09.04.2019
+<br />
+<br />
+So, whats news?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberbf87.html?action=profile&amp;uid=214776">Crayder</a> -  09.04.2019
+<br />
+<br />
+Regarding NaS\'s idea, you could simply assign 10 "Extra IDs" and export in streamer format. Streamer already includes an Extra ID suite as well as a lot more information storing.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="memberf2b1.html?action=profile&amp;uid=273076">homelessdrop</a> -  10.04.2019
+<br />
+<br />
+Great job, and maybe possible testing for public?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member83e3.html?action=profile&amp;uid=267531">Joko147</a> -  11.04.2019
+<br />
+<br />
+Any news??
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: [In Development] A New Powerful Scene Editor - <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> -  11.04.2019
+<br />
+<br />
+good idea! I cant wait for this
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,78 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tool/Web/Other] How to get information inside nodes*.dat files? - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="I need to read these files and obtain information about the nodes inside it, I've seen tools that help you edit or see the content inside the files like Kyle's GPS Route Finder, JGuntherS@NL's SA Path" />
+<link rel="canonical" href="showthread2941.html?tid=664614" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2941.html?tid=664614">[Tool/Web/Other] How to get information inside nodes*.dat files?</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tools and Files  (<i>https://sampforum.blast.hk/forumdisplay.php?fid=82</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tool/Web/Other] How to get information inside nodes*.dat files? (<em>/showthread.php?tid=664614</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+How to get information inside nodes*.dat files? - <a href="membere68f.html?action=profile&amp;uid=323896">FR0DG3R</a> -  05.03.2019
+<br />
+<br />
+I need to read these files and obtain information about the nodes inside it, I've seen tools that help you edit or see the content inside the files like <a href="showthread8436.html?tid=496809&amp;highlight=nodes+.dat" target="_blank">Kyle's GPS Route Finder</a>, <a href="https://gtaforums.com/topic/226138-wip-sa-path-editor/" target="_blank">JGuntherS@NL's SA Path Editor</a> and <a href="https://gtaforums.com/topic/283684-sa-path-tool/" target="_blank">Deniska's SA Path Tool</a> but what I really want is to make my own reading of the files.<br />
+<br />
+What I want, in details, is:<ul><li>Decompile nodes*.dat and/or read them through an algorithm</li>
+<li>Use a C++ code or something to filter this content and obtain what I want (e.g. nodes coords)</li>
+<li>Implement this nodes in my own SA-MP scripting project﻿﻿﻿﻿</li>
+</ul>
+Seems like an easy thing to do since many are doing without explaining how.<br />
+Please let me know if I can explain something better.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How to get information inside nodes*.dat files? - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  05.03.2019
+<br />
+<br />
+Just use the GPS Plugin (either by Gamer_Z or kvann's, which is better) and see the GPS.dat.<br />
+It's the original node net including fixes. If you don't want any fixes, use the older GPS.dat which is a 1:1 conversion.<br />
+<br />
+You can also access the Node Data through the Plugin Natives (eg GetNodePos).<br />
+<br />
+FCNPC also supports the original node data. You can check its source to see how to read and process binary data or use FCNPC's natives to access the paths.<br />
+<br />
+Note that the GPS Plugins only have the road Nodes. FCNPC has all of them, boats, navi, veh and ped.<br />
+<br />
+If you want to parse them yourself, they are pretty well documented on various sites: <a href="https://gta.fandom.com/wiki/Paths_(GTA_SA" target="_blank">https://gta.fandom.com/wiki/Paths_(GTA_SA</a>)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How to get information inside nodes*.dat files? - <a href="membere68f.html?action=profile&amp;uid=323896">FR0DG3R</a> -  06.03.2019
+<br />
+<br />
+Thanks <b>a lot</b> man, exactly what I needed.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
