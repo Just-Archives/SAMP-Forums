@@ -1,0 +1,187 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Best way to make log system? - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello everyone. Today I decided to start making my log system and I'm confused a little bit how should I do it. Should I use file management or MySQL? I would like to see advantages and disadvantages" />
+<link rel="canonical" href="showthreadc8b1.html?tid=663649" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadc8b1.html?tid=663649">Best way to make log system?</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Best way to make log system? (<em>/showthread.php?tid=663649</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Best way to make log system? - <a href="member87d3.html?action=profile&amp;uid=297332">Marshas</a> -  07.02.2019
+<br />
+<br />
+Hello everyone. Today I decided to start making my log system and I'm confused a little bit how should I do it. Should I use file management or MySQL? I would like to see advantages and disadvantages of these two ways, if someone can provide them. If file logging is the answer, which file writing/overwriting include/plugin should I use, which one is the best? If I want to have UCP on my website in future, could I load logs from files or I should use MySQL only? How can I store for ex. chat logs there? If I would like to check someone's conversation with other player (to detect IG money selling for IRL money lets say, illegal stuff), how can I log messages which are displayed on players chat, which came from other players? Detect getting messages in certain distance, which I would use in future for displaying messages over players heads (Chat bubbles, I hav'nt done almost anything in my gamemode, just preparing it for easier work in future). Sorry for my english mistakes if there are some. Thanks in advance!<br />
+<br />
+EDIT:<br />
+Recently I tought about multiple mysql connection in my gamemode, one for main server purposes, accounts, houses, businesses, etc. The second for logs, there would be several tables, for chat logs, command logs, movement logs, money logs. Every table would have lets say at least 2 columns, ID of log (A_I) and the log itself ofcourse. Also I tought about foreign keys, and how could I use them if logs would be in the main database, but would it be query, information overflow? Help me decide guys, thanks.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member87d3.html?action=profile&amp;uid=297332">Marshas</a> -  08.02.2019
+<br />
+<br />
+I don't like the usage of that plugin. I already started creating my own unique MySQL logs saving <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>. Thanks for answer!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member7a11.html?action=profile&amp;uid=261301">TheToretto</a> -  08.02.2019
+<br />
+<br />
+MySQL? Really. You're going to send a huge amount of logs each time? You'll need also lots of tables, the plugin is far more optimistic and better.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member435a.html?action=profile&amp;uid=169274">kristo</a> -  08.02.2019
+<br />
+<br />
+If you are planning to create a log viewing interface for your admins on your website or somewhere else, a database is 100% the way to go. I recently built a <a href="https://github.com/kristoisberg/logger-server" target="_blank">general purpose logging service</a> in golang (and <a href="https://github.com/kristoisberg/pawn-logger-client" target="_blank">a client for SA-MP</a>), I'm not going to get into the details since it's an overkill for SA-MP with its queue system needed for checksum chaining, but leaving that out, something similar is fairly easy to implement in PAWN. It might be tempting to just create a table for each log with the necessary parameters (I also fell into that trap years ago), but it makes the process of creating a viewing interface much more complex and time-consuming. Instead of that, my logger is using a fully normalised database model that stores the log types in one table, the parameters associated with them in another, the log rows in another and the parameters associated with them in another. Here is my database model:<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/6vkP7a3.png"/><br />
+<br />
+It's far from perfect, for example all values are stored as strings (with a limited length, 256 should be enough from everything sent from SA-MP though) and the parameters are missing foreign keys to non-log-related tables, even though they could be useful in some cases. It is a lot better than hardcoding the tables and their columns, though.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>TheToretto</strong><br />
+<a href="showthread7d24.html?pid=4081625#pid4081625" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">MySQL? Really. You're going to send a huge amount of logs each time? You'll need also lots of tables, the plugin is far more optimistic and better.</div>
+</td>
+</tr>
+</table>
+</div>MySQL is easily capable of handling large amounts of data, take a look at the <a href="https://www.mysql.com/customers/" target="_blank">companies using it</a>, they are far more demanding than a single SA-MP server. It will also not cause any performance issues with the SA-MP server itself, once the query is dispatched, the server will not expect any response from the database.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member87d3.html?action=profile&amp;uid=297332">Marshas</a> -  08.02.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>kvann</strong><br />
+<a href="showthread5891.html?pid=4081632#pid4081632" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">If you are planning to create a log viewing interface for your admins on your website or somewhere else, a database is 100% the way to go. I recently built a <a href="https://github.com/kristoisberg/logger-server" target="_blank">general purpose logging service</a> in golang (and <a href="https://github.com/kristoisberg/pawn-logger-client" target="_blank">a client for SA-MP</a>), I'm not going to get into the details since it's an overkill for SA-MP with its queue system needed for checksum chaining, but leaving that out, something similar is fairly easy to implement in PAWN. It might be tempting to just create a table for each log with the necessary parameters (I also fell into that trap years ago), but it makes the process of creating a viewing interface much more complex and time-consuming. Instead of that, my logger is using a fully normalised database model that stores the log types in one table, the parameters associated with them in another, the log rows in another and the parameters associated with them in another. Here is my database model:<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/6vkP7a3.png"/><br />
+<br />
+It's far from perfect, for example all values are stored as strings (with a limited length, 256 should be enough from everything sent from SA-MP though) and the parameters are missing foreign keys to non-log-related tables, even though they could be useful in some cases. It is a lot better than hardcoding the tables and their columns, though.<br />
+<br />
+<br />
+<br />
+MySQL is easily capable of handling large amounts of data, take a look at the <a href="https://www.mysql.com/customers/" target="_blank">companies using it</a>, they are far more demanding than a single SA-MP server. It will also not cause any performance issues with the SA-MP server itself, once the query is dispatched, the server will not expect any response from the database.</div>
+</td>
+</tr>
+</table>
+</div>Wouh, I wasn't expecting such serious answer! Thanks for your response, and let me explain you why I do not like your table and column management. I wanted to do something like player chat displaying on my ucp panel or online chat tracking via website for admins FOR CERTAIN PLAYER. If player gets message (chat message, not pm, admin chat or any other message) - that message is stored in database. If he sends that message - it also goes to database. In this proper way I want create an opportunity for admins to see the whole certain player chat. Why am I doing it this way? I don't see any sense of storing just sender name/id and message what he send. If I will have 1000players in future, they all are playing over whole San Andreas map, and how should I detect to whom of left 999players this specified message is adressed? Totally nonsens. Thats how my database management system is made. First of all I have done two mysql connections using mysql_global_options(DUPLICATE_CONNECTIONS, true);. One will be my main database with users, houses, vehicles, etc, and second one is provided entirely for logging purposes. I have separate tables for chat logs, commands, server logs, sms logs, and connections (connects and disconnects). For now, I have only done server log part yet, cause I don't even have registration/login systems in my gamemode, its entirely blank IG, but for now I'm just preparing it for future easier work with it. Soo, I have 3 columns, as far as I remember (I'm writing this post from the phone, soo there is no way at this moment to check my database), ID (Auto increment, unique), Date (YYYY-MM-DD HH:MM:SS), and message itself. I have done Log function, with 3 parameters, 1 of them is optional. It looks like this: Log(type, text[], bool:error = false). Where type is, i put there one of my defines, for ex. LOG_TYPE_CHAT. In text I write comment for the log, actual log, if I can name it this way and error boolean is for kind of tag in text itself. If it's false - log output will start with this symbols [SUCCESS]. If error bool is true, the [SUCCESS] will change to [ERROR]. I'm planning to finish logs system in near future, and the hardest thing so far was generating the idea for proper chatlog saving, what would fit my requirements presented earlier. I decided to do it this way (If someone have better idea, you are free to share it), I have 6 columns. ID, SenderID, ReceiverID, Date, IP and Message. ID is auto increment and unique for every log. SenderID is the database unique ID of player, who sent this message. ReceiverID is player who got that message from Sender. I think there are no inneed of explaining other columns aswell <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>. For ex. if I would wrote something in chat, and near me would be staying a guy, he would receive that message. I'm sender, he is receiver. It may look quite easy from viewpoint of advanced scripter, but I'm scripting only for 9months approximately with breaks of total around 6 months, so I think this solution is quite good for beginner. That's how I decided to store my logs, for easier implementation of live IG chat system or simple chat logs reviewing for admins. What about logging system what you made, I will check it tomorrow and maybe add some comments, if I like it. That's all what I wanted tell you about. Waiting for your response!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="memberb903.html?action=profile&amp;uid=67173">DRIFT_HUNTER</a> -  09.02.2019
+<br />
+<br />
+If done right, MySql will be more powerful, but file logs are way easier to rotate and backup (not that it would be hard with MySql with few queries inside a script, but it would take time and load on server)
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member435a.html?action=profile&amp;uid=169274">kristo</a> -  09.02.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Marshas</strong><br />
+<a href="showthread5c46.html?pid=4081664#pid4081664" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Wouh, I wasn't expecting such serious answer! Thanks for your response, and let me explain you why I do not like your table and column management. I wanted to do something like player chat displaying on my ucp panel or online chat tracking via website for admins FOR CERTAIN PLAYER. If player gets message (chat message, not pm, admin chat or any other message) - that message is stored in database. If he sends that message - it also goes to database. In this proper way I want create an opportunity for admins to see the whole certain player chat. Why am I doing it this way? I don't see any sense of storing just sender name/id and message what he send. If I will have 1000players in future, they all are playing over whole San Andreas map, and how should I detect to whom of left 999players this specified message is adressed? Totally nonsens. Thats how my database management system is made. First of all I have done two mysql connections using mysql_global_options(DUPLICATE_CONNECTIONS, true);. One will be my main database with users, houses, vehicles, etc, and second one is provided entirely for logging purposes. I have separate tables for chat logs, commands, server logs, sms logs, and connections (connects and disconnects). For now, I have only done server log part yet, cause I don't even have registration/login systems in my gamemode, its entirely blank IG, but for now I'm just preparing it for future easier work with it. Soo, I have 3 columns, as far as I remember (I'm writing this post from the phone, soo there is no way at this moment to check my database), ID (Auto increment, unique), Date (YYYY-MM-DD HH:MM:SS), and message itself. I have done Log function, with 3 parameters, 1 of them is optional. It looks like this: Log(type, text[], bool:error = false). Where type is, i put there one of my defines, for ex. LOG_TYPE_CHAT. In text I write comment for the log, actual log, if I can name it this way and error boolean is for kind of tag in text itself. If it's false - log output will start with this symbols [SUCCESS]. If error bool is true, the [SUCCESS] will change to [ERROR]. I'm planning to finish logs system in near future, and the hardest thing so far was generating the idea for proper chatlog saving, what would fit my requirements presented earlier. I decided to do it this way (If someone have better idea, you are free to share it), I have 6 columns. ID, SenderID, ReceiverID, Date, IP and Message. ID is auto increment and unique for every log. SenderID is the database unique ID of player, who sent this message. ReceiverID is player who got that message from Sender. I think there are no inneed of explaining other columns aswell <img alt="" border="0" class="inlineimg" src="images/smilies/smile.png" title="Smiley"/>. For ex. if I would wrote something in chat, and near me would be staying a guy, he would receive that message. I'm sender, he is receiver. It may look quite easy from viewpoint of advanced scripter, but I'm scripting only for 9months approximately with breaks of total around 6 months, so I think this solution is quite good for beginner. That's how I decided to store my logs, for easier implementation of live IG chat system or simple chat logs reviewing for admins. What about logging system what you made, I will check it tomorrow and maybe add some comments, if I like it. That's all what I wanted tell you about. Waiting for your response!</div>
+</td>
+</tr>
+</table>
+</div>That's a very cool idea, I've never thought of this approach to chat logs. My logger was supposed to be as flexible as possible, that's why it stores the data in such way. Yours however has a very specific purpose so hardcoding the table and its columns is not an issue. Your table is okay the way it is, the only issue I have with it is that you are duplicating a lot of data for each receiver, if you wanted to be more space-efficient and add some more flexibility to your system, you could normalise the table and do this:<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/ro1lwxl.png"/><br />
+<br />
+<br />
+Also, if you use parallel queries (<font face="Courier New">mysql_pquery</font>), you don't need a separate connection for the logger, it automatically opens as many connections as your connection pool size is anyway.<br />
+<br />
+Good luck!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Best way to make log system? - <a href="member87d3.html?action=profile&amp;uid=297332">Marshas</a> -  09.02.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>kvann</strong><br />
+<a href="showthreadf090.html?pid=4081795#pid4081795" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">That's a very cool idea, I've never thought of this approach to chat logs. My logger was supposed to be as flexible as possible, that's why it stores the data in such way. Yours however has a very specific purpose so hardcoding the table and its columns is not an issue. Your table is okay the way it is, the only issue I have with it is that you are duplicating a lot of data for each receiver, if you wanted to be more space-efficient and add some more flexibility to your system, you could normalise the table and do this:<br />
+<br />
+<img alt="" border="0" src="https://i.imgur.com/ro1lwxl.png"/><br />
+<br />
+<br />
+Also, if you use parallel queries (<font face="Courier New">mysql_pquery</font>), you don't need a separate connection for the logger, it automatically opens as many connections as your connection pool size is anyway.<br />
+<br />
+Good luck!</div>
+</td>
+</tr>
+</table>
+</div>Thanks for idea! I will definitely try that!<br />
+<br />
+And yeah, I'm using mysql_pquery, but I prefer to keep my logs in separate database, cause I think there will be alot of them in future, just to improve readability in theory. Thanks again!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
