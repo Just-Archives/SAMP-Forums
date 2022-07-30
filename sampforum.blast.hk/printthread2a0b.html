@@ -1,0 +1,149 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> Question about variables - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Do I have to check if variable's value is different before setting it? Example Code: new bool:IsSpawned; public OnPlayerSpawn(playerid) { IsSpawned = true; return 1; } or Code: new bool:IsSpawned; pub" />
+<link rel="canonical" href="showthread2a0b.html?tid=656111" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2a0b.html?tid=656111">Question about variables</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Discussion (<i>https://sampforum.blast.hk/forumdisplay.php?fid=84</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  Question about variables (<em>/showthread.php?tid=656111</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Question about variables - <a href="membered52.html?action=profile&amp;uid=307826">2Col</a> -  07.07.2018
+<br />
+<br />
+Do I have to check if variable's value is different before setting it?<br />
+<br />
+Example<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">new bool:IsSpawned[MAX_PLAYERS];
+
+public OnPlayerSpawn(playerid)
+{
+	IsSpawned[playerid] = true;
+	return 1;
+}</pre>
+</div>or<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">new bool:IsSpawned[MAX_PLAYERS];
+
+public OnPlayerSpawn(playerid)
+{
+	if(IsSpawned[playerid] != true)
+	{
+		IsSpawned[playerid] = true;
+	}
+	return 1;
+}</pre>
+</div>Which way is better? Or is there no difference?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Question about variables - <a href="member08b5.html?action=profile&amp;uid=273034">Dayrion</a> -  08.07.2018
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>2Col</strong><br />
+<a href="showthread182c-2.html?pid=4034996#pid4034996" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Do I have to check if variable's value is different before setting it?<br />
+<br />
+Example<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">new bool:IsSpawned[MAX_PLAYERS];
+
+public OnPlayerSpawn(playerid)
+{
+	IsSpawned[playerid] = true;
+	return 1;
+}</pre>
+</div>or<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">new bool:IsSpawned[MAX_PLAYERS];
+
+public OnPlayerSpawn(playerid)
+{
+	if(IsSpawned[playerid] != true)
+	{
+		IsSpawned[playerid] = true;
+	}
+	return 1;
+}</pre>
+</div>Which way is better? Or is there no difference?</div>
+</td>
+</tr>
+</table>
+</div>In that case, you don't need to. Still in that case, the first one is better : less code, faster compilation (some nanoseconds I guess lol).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
