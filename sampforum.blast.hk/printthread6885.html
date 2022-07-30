@@ -1,0 +1,282 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Returning strings and arrays - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="While functions in Pawn typically return only simple cell-sized values, the language does allow for (even native) functions to return arrays and therefore also strings. However, the mechanism that all" />
+<link rel="canonical" href="showthread6885.html?tid=664024" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread6885.html?tid=664024">[Tutorial] Returning strings and arrays</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Returning strings and arrays (<em>/showthread.php?tid=664024</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Returning strings and arrays - <a href="member705e.html?action=profile&amp;uid=193537">IllidanS4</a> -  17.02.2019
+<br />
+<br />
+While functions in Pawn typically return only simple cell-sized values, the language does allow for (even native) functions to return arrays and therefore also strings. However, the mechanism that allows it is a bit more complex and may not be suited for some use cases.<br />
+<br />
+First of all, let's look at the standard way of getting a string out of a function.<br />
+<br />
+<b>Via an output parameter</b><br />
+All native SA-MP functions produce a string via a standard non-const array parameter. Since arrays are passed by reference (meaning the function gets access to the actual <i>variable</i> and not just the value inside), the native function can easily store any data inside:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> name<span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>;<br/>GetPlayerName<span style="color: #000000;">(</span>playerid, name, <span style="color: #2222BB;">sizeof</span> name<span style="color: #000000;">)</span>;</div></div></pre>
+</div>Usually, another parameter is used alongside the array parameter to specify the length of the array. In Pawn, there is no simple way to obtain the length of an array directly at runtime, and so the compiler has to provide the length when needed (the <font face="Courier New">sizeof</font> operator). For strings, an extra cell must be allocated in the array to store the null character, indicating the end of the string (hence the <font face="Courier New">+ 1</font>).<br />
+<br />
+This way is especially useful for obtaining variable-length arrays (such as strings). The <font face="Courier New">format</font> function, for example, can be only implemented for this way, because the theoretical length of the output string is unlimited.<br />
+<br />
+<b>Returning an array directly</b><br />
+If you want to produce a <b>fixed-size</b> array, you can return it from a function directly:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">stock</span> PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> name<span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>playerid, name, <span style="color: #2222BB;">sizeof</span> name<span style="color: #000000;">)</span>;<br/>    <span style="color: #2222BB;">return</span> name;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>The forward declaration is optional, but it is useful since it makes you keep in mind that the length of the array is important.<br />
+<br />
+Now, if you know a bit of other languages like C etc., you may be aware that since <font face="Courier New">name</font> is allocated on the stack, it doesn't exist anymore when the function returns. Pawn gets around this fact using a trick – when the function is called, extra space for the array is allocated, and the address of this variable is provided to the function via a secret parameter.<br />
+<br />
+In reality, the function looks like this:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:119px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> PlayerName<span style="color: #000000;">(</span>playerid, output<span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> name<span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>;<br/>    GetPlayerName<span style="color: #000000;">(</span>playerid, name, <span style="color: #2222BB;">sizeof</span> name<span style="color: #000000;">)</span>;<br/>    output <span style="color: #000000;">=</span> name;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>As you can see, returning a string is just a convenient syntactic shortcut for an extra output parameter.<br />
+<br />
+However, this comes at a cost of slightly decreased performance and bugs in certain cases. Let's start with the issues:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> Select<span style="color: #000000;">(</span>index, arg<span style="color: #000000;">[</span><span style="color: #000000;">]</span>, arg2<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">if</span><span style="color: #000000;">(</span>index <span style="color: #000000;">==</span> <span style="color: #000000;">0</span><span style="color: #000000;">)</span> <span style="color: #2222BB;">return</span> arg;<br/>    <span style="color: #2222BB;">return</span> arg2;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>This simple function seems to return one of the arguments, but since they have indeterminate sizes (represented as 0), the compiler thinks this function returns a zero-sized array and does not actually allocate any extra space for the string. You cannot return strings (or arrays) that have indeterminate length, and the compiler sometimes fails to inform you about this.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #000000;">[</span><span style="color: #000000;">4</span><span style="color: #000000;">]</span>Func1<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">stock</span> Func1<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> str<span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">"abc"</span>;<br/>    <span style="color: #2222BB;">return</span> str;<br/><span style="color: #000000;">}</span><br/><br/><span style="color: #2222BB;">forward</span> <span style="color: #000000;">[</span><span style="color: #000000;">4</span><span style="color: #000000;">]</span>Func2<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">stock</span> Func2<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">return</span> Func1<span style="color: #000000;">(</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>This code is also horribly wrong, but in a subtle way. <font face="Courier New">Func2</font> does allocate extra space for the array returned from <font face="Courier New">Func1</font>, but before the array can be copied to the secret output array of the second function, it is deallocated again and isn't accessible anymore.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:103px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> Func<span style="color: #000000;">(</span>...<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">new</span> str<span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000066;">"abc"</span>;<br/>    <span style="color: #2222BB;">return</span> str;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>The extra output argument is placed <i>at the end</i> of all arguments, even after the variadic ones. However, the compiler fails to correctly obtain the return address in this case, and assumes its position is constant.<br />
+<br />
+In all these cases, returning a string is a really bad thing to do, since the code usually compiles fine, and the issue only becomes apparent at runtime.<br />
+<br />
+There is a slight performance cost associated with returning arrays as well: the <font face="Courier New">output = name;</font> always happens if the function is implemented in Pawn, and so the array is copied at least once. Take a look at this code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:55px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> name<span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>; <span style="color: #228822;">// = PlayerName(playerid); doesn't work, direct assignment isn't supported</span><br/>name <span style="color: #000000;">=</span> PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;</div></div></pre>
+</div>The compiler again allocates extra space for the string returned from <font face="Courier New">PlayerName</font> (always on the heap), before it moves it to <font face="Courier New">name</font>. Therefore, the array has to be unnecessarily copied twice before it is usable.<br />
+<br />
+As you can see, returning arrays has some significant drawbacks, but it is still useful in some cases, when you are cautious.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:39px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #222222;">format</span><span style="color: #000000;">(</span>string, <span style="color: #2222BB;">sizeof</span> string, <span style="color: #000066;">"Your name is %s."</span>, PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><span style="color: #000000;">)</span>;</div></div></pre>
+</div>This is the intended usage of returning arrays – as temporary arguments to other functions. In all other cases, using a normal output parameter is safer and faster. In this case, no extra copying happens at the caller's site.<br />
+<br />
+<font face="Courier New">PlayerName</font> itself can be "fixed" to return the string directly without unnecessary copying, via in-line assembly:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:215px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">forward</span> <span style="color: #000000;">[</span>MAX_PLAYER_NAME <span style="color: #000000;">+</span> <span style="color: #000000;">1</span><span style="color: #000000;">]</span>PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span>;<br/><span style="color: #2222BB;">stock</span> PlayerName<span style="color: #000000;">(</span>playerid<span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222AA;">#assert MAX_PLAYER_NAME + 1 == 25</span><br/>    <span style="color: #2222AA;">#emit PUSH.C 25 // size parameter of GetPlayerName</span><br/>    <span style="color: #2222AA;">#emit PUSH.S 16 // secret return parameter of PlayerName at address 16 (&amp;playerid + 4)</span><br/>    <span style="color: #2222AA;">#emit PUSH.S playerid // equal to 12</span><br/>    <span style="color: #2222AA;">#emit PUSH.C 12 // number of bytes passed to the function (4 * 3 arguments)</span><br/>    <span style="color: #2222AA;">#emit SYSREQ.C GetPlayerName // calling the function</span><br/>    <span style="color: #2222AA;">#emit STACK 16 // cleanup of the arguments from the stack</span><br/>    <span style="color: #2222AA;">#emit RETN</span><br/><span style="color: #000000;">}</span></div></div></pre>
+</div>This way, <font face="Courier New">PlayerName</font> does no extra copying, passing the secret return address directly to <font face="Courier New">GetPlayerName</font>.<br />
+<br />
+<b><i>PawnPlus</i> strings</b><br />
+Dynamic strings in <i><a href="showthread6947.html?tid=659714" target="_blank">PawnPlus</a></i> offer the flexibility and convenience of normal values, since they are passed around as references.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:87px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">stock</span> <span style="color: #000000;">String</span><span style="color: #000000;">:</span>Func<span style="color: #000000;">(</span><span style="color: #000000;">)</span><br/><span style="color: #000000;">{</span><br/>    <span style="color: #2222BB;">return</span> str_new<span style="color: #000000;">(</span><span style="color: #000066;">"abc"</span><span style="color: #000000;">)</span>;<br/><span style="color: #000000;">}</span></div></div></pre>
+</div>The string can be returned from functions, passed to other functions or even to native functions, inspected, or modified, and all of this without any additional copying.<br />
+<br />
+<b>Constant strings</b><br />
+All the previous methods are suitable for strings that are produced at runtime, but for constant strings, I'd advise against using any of them. Use macros instead.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">pawn Code:</div>
+<pre class="alt2" style="margin:0px; padding:6px; border: 1px solid #C2C2C2; width:800px; height:135px; overflow:auto"><div dir="ltr" style="text-align:left;"><div class="pawn" style="font-family:monospace;"><span style="color: #2222BB;">new</span> <span style="color: #2222BB;">const</span> _tips<span style="color: #000000;">[</span><span style="color: #000000;">]</span><span style="color: #000000;">[</span><span style="color: #000000;">]</span> <span style="color: #000000;">=</span> <span style="color: #000000;">{</span><br/>    <span style="color: #000066;">"Tip one"</span>,<br/>    <span style="color: #000066;">"Tip two"</span>,<br/>    <span style="color: #000066;">"Tip three"</span>,<br/>    <span style="color: #000066;">"Tip four"</span><br/><span style="color: #000000;">}</span>;<br/><span style="color: #2222AA;">#define RandomTip() (_tips[random(sizeof _tips)])</span></div></div></pre>
+</div>Using this in functions like <font face="Courier New">SendClientMessage</font> requires no string copying at all, since the address of the string is used directly. You can also afford to use variable-length strings in the array, resulting in a little more efficient storage.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member278f.html?action=profile&amp;uid=322304">Mazio</a> -  17.02.2019
+<br />
+<br />
+Nice tutorial
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member76e2.html?action=profile&amp;uid=268427">SyS</a> -  17.02.2019
+<br />
+<br />
+Really informative.I always wondered how could the local address be valid after the called function ends it's execution.This article cleared it for me.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="memberbd6c.html?action=profile&amp;uid=326243">SymonClash</a> -  18.02.2019
+<br />
+<br />
+Thank you.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="membercc2a.html?action=profile&amp;uid=287837">Mobtiesgangsa</a> -  18.02.2019
+<br />
+<br />
+i love'd it.. Explained very well..<br />
+<br />
+Congratz <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/> Rep++;
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member6bef.html?action=profile&amp;uid=169807">Pottus</a> -  19.02.2019
+<br />
+<br />
+Nice information I like that not only do you explain how but also why, when, where, what is going on.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="membere0ad.html?action=profile&amp;uid=194608">coool</a> -  20.02.2019
+<br />
+<br />
+Nice.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member6500.html?action=profile&amp;uid=269336">K0P</a> -  20.02.2019
+<br />
+<br />
+k, that helped!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member8713.html?action=profile&amp;uid=304261">B3x7K</a> -  14.09.2019
+<br />
+<br />
+Okay, i want to ask something..<br />
+<br />
+How can i determine if this string having an underscore and i'm want to delete with strdel?<br />
+And, can you give me another example like.... i want to return list to string.<br />
+<br />
+Here is the function:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 162px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">stock ListAdmin</span><span style="color: #007700">(</span><span style="color: #0000BB">admin_level</span><span style="color: #007700">)
+<br/>{
+<br/>     switch (</span><span style="color: #0000BB">admin_level</span><span style="color: #007700">)
+<br/>     {
+<br/>           case </span><span style="color: #0000BB">1</span><span style="color: #007700">: </span><span style="color: #0000BB">txt </span><span style="color: #007700">= </span><span style="color: #DD0000">"text based"</span><span style="color: #007700">;
+<br/>           ...
+<br/>     }
+<br/>     return </span><span style="color: #0000BB">txt</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Returning strings and arrays - <a href="member49d2.html?action=profile&amp;uid=70940">darkdrago</a> -  14.09.2019
+<br />
+<br />
+Really nice tutorial, well explained! +REP<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>B3x7K</strong><br />
+<a href="showthreadee87.html?pid=4113518#pid4113518" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Okay, i want to ask something..<br />
+<br />
+How can i determine if this string having an underscore and i'm want to delete with strdel?</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 274px;
+		text-align: left;
+		overflow: auto">new string[] = "Hello_Hello";
+str_replace("_","",string);
+print(string); //Will output "HelloHello"
+
+stock str_replace(needle[], replace[], haystack[]) //By JaTochNietDan
+{
+    new index = strfind(haystack, needle, true);
+    
+    while(index != -1)
+    {
+        strdel(haystack, index, index + strlen(needle));
+        strins(haystack, replace, index, strlen(haystack));
+        
+        index = strfind(haystack, needle, true);
+    }
+}</pre>
+</div>About the other thing you asked, i don't get what are you asking for, your code should work already, you just need to declare <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new txt[10]; //Depending on how much characters you need on this string</pre>
+</div> inside the callback
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

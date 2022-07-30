@@ -1,0 +1,290 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Anti firing bullets from non-bullet weapon hack - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="In recent days players in my server have been suffering from a game freeze/crash caused by hackers firing bullets from weapon ID 0 (a non-bullet weapon). This was supposedly fixed in the 0.3.7-R2 serv" />
+<link rel="canonical" href="showthread2a82.html?tid=673873" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread2a82.html?tid=673873">[Tutorial] Anti firing bullets from non-bullet weapon hack</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Anti firing bullets from non-bullet weapon hack (<em>/showthread.php?tid=673873</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Anti firing bullets from non-bullet weapon hack - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  07.04.2020
+<br />
+<br />
+In recent days players in my server have been suffering from a game freeze/crash caused by hackers firing bullets from weapon ID 0 (a non-bullet weapon). This was supposedly fixed in the 0.3.7-R2 server, but it doesn't seem to be. This is how you can fix it:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 274px;
+		text-align: left;
+		overflow: auto">public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
+{
+    switch (weaponid)
+    {
+        case 22 .. 34, 38:
+        {
+            // valid bullet weapon
+        }
+        default:
+        {
+            // invalid bullet weapon
+            return 0; // desync the shot
+        }
+    }
+    return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="member2b21.html?action=profile&amp;uid=313961">MarianImmortalGod</a> -  07.04.2020
+<br />
+<br />
+So we need to determine every single weapon that will be used in our server ? <br />
+<br />
+or we can just put<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">switch (weaponid)
+    {
+        default:
+        {
+            // invalid bullet weapon
+            return 0; // desync the shot
+        }
+    }</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>MarianImmortalGod</strong><br />
+<a href="showthreade71c-3.html?pid=4138087#pid4138087" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">So we need to determine every single weapon that will be used in our server ? <br />
+<br />
+or we can just put<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">switch (weaponid)
+    {
+        default:
+        {
+            // invalid bullet weapon
+            return 0; // desync the shot
+        }
+    }</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>That'll desync every shot for every weapon. Use the code I posted.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberdeef.html?action=profile&amp;uid=322066">Kasichok</a> -  07.04.2020
+<br />
+<br />
+weird i tried such thing on my server (R2) didnt crash anyone
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kasichok</strong><br />
+<a href="showthreadaa66.html?pid=4138156#pid4138156" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">weird i tried such thing on my server (R2) didnt crash anyone</div>
+</td>
+</tr>
+</table>
+</div>Is your server version also R2-2? Also did you try weapon ID 0? It's weapon ID 0 that was being used to crash players in my server (0.3.7 R2-2).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberdeef.html?action=profile&amp;uid=322066">Kasichok</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>beckzy</strong><br />
+<a href="showthread43f7.html?pid=4138157#pid4138157" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Is your server version also R2-2? Also did you try weapon ID 0? It's weapon ID 0 that was being used to crash players in my server (0.3.7 R2-2).</div>
+</td>
+</tr>
+</table>
+</div>Yes and yes
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberf4c2.html?action=profile&amp;uid=5303">beckzy</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kasichok</strong><br />
+<a href="showthreadb02c.html?pid=4138159#pid4138159" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Yes and yes</div>
+</td>
+</tr>
+</table>
+</div>Someone must've updated the tool that does it (or made their own?) . OnPlayerWeaponShot rapidly printed that a player was using weapon ID 0 to fire bullets on my server (my 0.3.7 R2-2 server).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberdeef.html?action=profile&amp;uid=322066">Kasichok</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>beckzy</strong><br />
+<a href="showthread4d18.html?pid=4138169#pid4138169" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Someone must've updated the tool that does it (or made their own?) . OnPlayerWeaponShot rapidly printed that a player was using weapon ID 0 to fire bullets on my server (my 0.3.7 R2-2 server).</div>
+</td>
+</tr>
+</table>
+</div>Yea he prob edited<br />
+<br />
+heres my debug:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 50px;
+		text-align: left;
+		overflow: auto">playerid | weaponid | hittype | hitid 
+0              0           1      1</pre>
+</div>no crash no freeze
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberd1f0.html?action=profile&amp;uid=166275">Uberanwar</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Kasichok</strong><br />
+<a href="showthreadaa66.html?pid=4138156#pid4138156" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">weird i tried such thing on my server (R2) didnt crash anyone</div>
+</td>
+</tr>
+</table>
+</div>Maybe you might have some mods installed on your SA-MP? Like SA-MP Addon, or GTA SA Crashfix ASI etc.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Anti firing bullets from non-bullet weapon hack - <a href="memberdeef.html?action=profile&amp;uid=322066">Kasichok</a> -  07.04.2020
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Uberanwar</strong><br />
+<a href="showthread767f.html?pid=4138225#pid4138225" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Maybe you might have some mods installed on your SA-MP? Like SA-MP Addon, or GTA SA Crashfix ASI etc.</div>
+</td>
+</tr>
+</table>
+</div>Iv'e got only anti afk if that somehow prevents this
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

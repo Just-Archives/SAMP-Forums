@@ -1,0 +1,239 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] How To Create Random Spawns! - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Creating Random Spawns So this is a very simple, straight-forward tutorial on how to make random spawns. For creating random spawns, there are 2 methods i can think of right now. First simple switch (" />
+<link rel="canonical" href="showthread9c55.html?tid=668170" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread9c55.html?tid=668170">[Tutorial] How To Create Random Spawns!</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] How To Create Random Spawns! (<em>/showthread.php?tid=668170</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+How To Create Random Spawns! - <a href="member1c7d.html?action=profile&amp;uid=331621">YouShootIDodge</a> -  23.07.2019
+<br />
+<br />
+<b><font size="6"><div align="center"><font color="RoyalBlue">Creating Random Spawns</font></div></font></b><br />
+<br />
+So this is a very simple, straight-forward tutorial on how to make random spawns.<br />
+<br />
+For creating random spawns, there are 2 methods i can think of right now. First simple switch () statement and second using milti-dimentional arrays.<br />
+<br />
+There are alot of beginners who are unable to understand the concept of multi-dimensional arrays so in this tutorial i will show them how to make a random spawn system and similar stuff without using the arrays. Since the array method is explained in the <a href="https://sampwiki.blast.hk/wiki/Random" target="_blank"><b>wiki</b></a>, i'll be explaining the second one.<br />
+<br />
+Here is a code showing the <b>OnPlayerSpawn ()</b> callback, for-example if you want to spawn the player at one of five random positions, this code will work:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 242px;
+		text-align: left;
+		overflow: auto">public OnPlayerSpawn (playerid)
+{
+    new selected_spawn = random (5);
+
+    switch (selected_spawn)
+    {
+        case 0: { SetPlayerPos (playerid, 0.0,   0.0,   0.0);  SetPlayerFacingAngle (playerid, 0.0); }
+        case 1: { SetPlayerPos (playerid, 10.0, 10.0, 10.0); SetPlayerFacingAngle (playerid, 10.0); }
+        case 2: { SetPlayerPos (playerid, 20.0, 20.0, 20.0); SetPlayerFacingAngle (playerid, 20.0); }
+        case 3: { SetPlayerPos (playerid, 30.0, 30.0, 30.0); SetPlayerFacingAngle (playerid, 30.0); }
+        case 4: { SetPlayerPos (playerid, 40.0, 40.0, 40.0); SetPlayerFacingAngle (playerid, 40.0); }
+    }
+    return 1;
+}</pre>
+</div>Explained:<br />
+<br />
+<b>1.</b> <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">new selected_spawn = random (5);</pre>
+</div>Here you can see a new integer type variable being created followed by an assignment operator and a function named '<b>random ()</b>'. This semantic of this line of code works like this:<br />
+<br />
+- It creates an integer variable.<br />
+- It then generates a random value between 0 and 4 (5 is the size of its range, since in coding counting starts from 0 so 0, 1, 2, 3, 4 = 5)<br />
+- It assigns the randomly generated value to the newly created variable.<br />
+<br />
+<br />
+<b>2.</b> <div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">switch (selected_spawn) { }</pre>
+</div>This is called a switch statement, in simple words it is an alternative to the if-statement with some limitations but it can be used neatly in this case. So it will execute a function or set of functions depending upon the value of variable '<b>selected_spawn</b>'.<br />
+<br />
+As you can see, we have provided it 2 functions to perform in each case, for-example if the value of '<b>selected_spawn</b>' turns out to be <b>1</b>, it will perform the following functions and hence the player's position will be set to the given coordinates.<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">switch (selected_spawn)
+    {
+        case 0: { SetPlayerPos (playerid, 0.0,   0.0,   0.0);  SetPlayerFacingAngle (playerid, 0.0); }
+        case 1: { SetPlayerPos (playerid, 10.0, 10.0, 10.0); SetPlayerFacingAngle (playerid, 10.0); }
+        case 2: { SetPlayerPos (playerid, 20.0, 20.0, 20.0); SetPlayerFacingAngle (playerid, 20.0); }
+        case 3: { SetPlayerPos (playerid, 30.0, 30.0, 30.0); SetPlayerFacingAngle (playerid, 30.0); }
+        case 4: { SetPlayerPos (playerid, 40.0, 40.0, 40.0); SetPlayerFacingAngle (playerid, 40.0); }
+    }</pre>
+</div>
+Now, that was all, if you want to add another random spawn, you can increment the range of the <b>random ()</b> function and add it's coordinates in the <b>switch ()</b> statement. <br />
+<br />
+You can also make a function out of it,  so if you want to set random positions multiple times in the code, it will be useful. <br />
+<br />
+Here is an example code:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 338px;
+		text-align: left;
+		overflow: auto">public OnPlayerSpawn (playerid)
+{
+    SetRandomPosition (playerid); // You can use this multiple times in other parts of code too.
+    return 1;
+}
+
+stock SetRandomPosition (playerid)
+{
+    new selected_spawn = random (5);
+
+    switch (selected_spawn)
+    {
+        case 0: { SetPlayerPos (playerid, 0.0,   0.0,   0.0);  SetPlayerFacingAngle (playerid, 0.0); }
+        case 1: { SetPlayerPos (playerid, 10.0, 10.0, 10.0); SetPlayerFacingAngle (playerid, 10.0); }
+        case 2: { SetPlayerPos (playerid, 20.0, 20.0, 20.0); SetPlayerFacingAngle (playerid, 20.0); }
+        case 3: { SetPlayerPos (playerid, 30.0, 30.0, 30.0); SetPlayerFacingAngle (playerid, 30.0); }
+        case 4: { SetPlayerPos (playerid, 40.0, 40.0, 40.0); SetPlayerFacingAngle (playerid, 40.0); }
+    }
+    return 1;
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How To Create Random Spawns! - <a href="member3b33.html?action=profile&amp;uid=97562">Gforcez</a> -  24.07.2019
+<br />
+<br />
+Why not store the positions and looking angles in an array and set spawns based on the array index. It's easier to add positions because you don't need a switch/case, so you don't have to repeat the same code over and over to add more spawn positions.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How To Create Random Spawns! - <a href="member1c7d.html?action=profile&amp;uid=331621">YouShootIDodge</a> -  24.07.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Gforcez</strong><br />
+<a href="showthread389a.html?pid=4107331#pid4107331" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Why not store the positions and looking angles in an array and set spawns based on the array index. It's easier to add positions because you don't need a switch/case, so you don't have to repeat the same code over and over to add more spawn positions.</div>
+</td>
+</tr>
+</table>
+</div>Thanks for the response, this tutorial was for the beginners as i said in the above introduction (please read that).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">There are alot of beginners who are unable to understand the concept of multi-dimensional arrays so in this tutorial i will show them how to make a random spawn system and similar stuff without using the arrays. Since the array method is explained in the <a href="https://sampwiki.blast.hk/wiki/Random" target="_blank"><b>wiki</b></a>, i'll be explaining the second one.</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: How To Create Random Spawns! - <a href="member3b33.html?action=profile&amp;uid=97562">Gforcez</a> -  24.07.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>YouShootIDodge</strong><br />
+<a href="showthreadfb5e.html?pid=4107334#pid4107334" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Thanks for the response, this tutorial was for the beginners as i said in the above introduction (please read that).<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">There are alot of beginners who are unable to understand the concept of multi-dimensional arrays so in this tutorial i will show them how to make a random spawn system and similar stuff without using the arrays. Since the array method is explained in the <a href="https://sampwiki.blast.hk/wiki/Random" target="_blank"><b>wiki</b></a>, i'll be explaining the second one.</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>My bad, I just looked at the code. Maybe it's a good idea to explain arrays and how they work, and show them how it works with an array. Since you'll be teaching them the best way (without loading spawn positions from a database.).
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

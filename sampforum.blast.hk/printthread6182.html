@@ -1,0 +1,192 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tutorial] Adding and Removing Mapped Objects to/from your Script - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Dual Gaming - Tutorial #1 Introduction I've noticed that some tutorials are hard for persons who are opening pawno for the first time or those who are a bit or completely new to how scripting on SA-MP" />
+<link rel="canonical" href="showthread6182.html?tid=666713" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread6182.html?tid=666713">[Tutorial] Adding and Removing Mapped Objects to/from your Script</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tutorial] Adding and Removing Mapped Objects to/from your Script (<em>/showthread.php?tid=666713</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Adding and Removing Mapped Objects to/from your Script - <a href="member523c.html?action=profile&amp;uid=325995">KevTheJoker</a> -  22.05.2019
+<br />
+<br />
+<div align="center"><img alt="" border="0" src="https://i.imgur.com/vgL3x1s.png"/><br />
+<font face="Impact"><font size="6"><font color="Black"><u>Dual Gaming - Tutorial #1</u></font></font></font><br />
+<br />
+<br />
+<font face="Impact"><font size="5"><font color="Sienna"><u>Introduction</u></font></font></font></div>
+I've noticed that some tutorials are hard for persons who are opening pawno for the first time or those who are a bit or completely new to how scripting on SA-MP works. This is my first tutorial, and I hope it helps and aids those who are adding objects to their server or gamemode for the first time.<br />
+<br />
+<div align="center"><font face="Impact"><font size="5"><font color="Sienna"><u>Mapping your objects</u></font></font></font></div>
+Mapping in SA-MP is quite easy, in my point of view. It simply needs patience, dedication and time. Some persons tend to become annoyed when they're mapping, and when things aren't going their way, they flip off. Trust me, it happens to me sometimes. You may map an object in a map editor, but after adding it to the gamemode or filterscript and testing it on the server, it doesn't give the output you expected. What I want you to do is take a deep breath, and aim towards fixing it, as if you've never had difficulties while mapping it.<br />
+<br />
+I personally recommend two map editor softwares. They are:<ul><li>SA-MP Map Editor - <a href="https://www.moddb.com/downloads/san-andreas-multiplayer-map-editor" target="_blank">Click here to download/view it</a> (More preferable)</li>
+<li>MTA (Multi Theft Auto) Map Editor - <a href="https://mtasa.com/" target="_blank">Click here to download/view this extension</a></li>
+</ul>
+The SA-MP Map Editor is a software which is based on the default map of San Andreas. It covers the entire map, and it's used for adding, deleting, and editing objects of all kinds, sorts and models. It's easy to use, and after mapping a specific part of the map, you can click on "Show Code" to give you the codes of the Objects Created and Objects Deleted. On the other hand, the MTA map editor is mainly used for mapping MTA servers (no intentions in drawing your attention away from SA-MP and its Map Editor) but we're luckily able to convert the MTA Object Codes to SA-MP objects. Are you wondering where and how to do that? Simple, head over to <a href="https://convertffs.com/" target="_blank">https://convertffs.com/</a>. After visiting this website, open your MTA map file (the file with the <b>.map</b> extension, e.g. TutorialMaps.map) which you saved via the MTA Map editor and copy its code. Paste the copied code into the dialog box on the convertffs website, and choose an OutPut mode. It's highly recommend to use <b>CreateDynamicObjectEx</b> when compiling object codes, because it caters for lags and avoids the objects limit. In some cases, you may find or see persons using CreateDynamicObject in their codes, but you'll get to know more about that (in-depth info) in the future.<br />
+<br />
+Differences:<br />
+<ul><li>CreateDynamicObjectEx - allows you to change the draw distance (how many objects a player can see from their distance) and show the object for various worlds, interiors or players.</li>
+<li>CreateDynamicObject - has no settings to allow players to view objects from a far distance (streaming many at one time) and such objects can only be seen in one world or interior.</li>
+<li>CreateObject - is default. However, it only limits you to a certain amount of objects (which can be seen here: <a href="https://sampwiki.blast.hk/wiki/Limits" target="_blank">https://sampwiki.blast.hk/wiki/Limits</a>)</li>
+<li>RemoveBuildingForPlayer - this removes the buildings and objects for players.</li>
+</ul>
+<div align="center"><font face="Impact"><font size="5"><font color="Sienna"><u>Differentiation and Specific Usages</u></font></font></font></div>
+If you're adding the mapped object codes to your .pwn gamemode file, found in the <b>gamemode</b> folder, place the codes under:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">public </span><span style="color: #0000BB">OnGameModeInit</span><span style="color: #007700">()
+<br/>{
+<br/>    </span><span style="color: #FF8000">// Place the Codes here
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>For adding the object codes to a filterscript's .pwn file, which can be found in the <b>filterscripts</b> folder, place them under:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">public </span><span style="color: #0000BB">OnFilterScriptInit</span><span style="color: #007700">()
+<br/>{
+<br/>    </span><span style="color: #FF8000">// Place the Codes here
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>For removing objects from the San Andreas Map, place the codes under:<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">public </span><span style="color: #0000BB">OnPlayerRequestClass</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">, </span><span style="color: #0000BB">classid</span><span style="color: #007700">)
+<br/>{
+<br/>    </span><span style="color: #FF8000">// Codes
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>OR <br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">public </span><span style="color: #0000BB">OnPlayerConnect</span><span style="color: #007700">(</span><span style="color: #0000BB">playerid</span><span style="color: #007700">)
+<br/>{
+<br/>        </span><span style="color: #FF8000">// Codes
+<br/>    </span><span style="color: #007700">return </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>For some persons, the objects may not be removed if you place them under <b>public OnPlayerConnect(playerid)</b>, so <b>public OnPlayerRequestClass(playerid, classid)</b> is an alternative method. <br />
+<br />
+<b><u><font color="Red">Tip:</font></u></b> You <b>must</b> add the streamer include to your <b>pawno/includes</b> folder (which can be found here: <a href="https://github.com/samp-incognito/samp-streamer-plugin/releases" target="_blank">GitHub Releases</a>).<br />
+<br />
+How to add it to your .pwn gamemode file after placing it in the include folder? Look below (add it below <b>#include &lt;a_samp&gt;</b><font color="Red">[At the top of the script]</font>)<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">#include &lt;streamer&gt; 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div><div align="center">Good luck, and if you have comments/remarks, feel free to share them below. I might make tutorials of how to create certain stuff, like faction-related scripts, attaching items/objects to players/vehicles, creating login/register dialogs, how to built master-account scripts (which allows you to create a main account, and create characters afterwards in-game (step-by-step), and some other stuff!</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Adding and Removing Mapped Objects to/from your Script - <a href="member8c85.html?action=profile&amp;uid=241260">GTLS</a> -  02.07.2019
+<br />
+<br />
+Decent tutorial, but you should also mention that only Dynamic Objects need streamer. Means, CreateObject function can be called without streamer. It is based on SAMP's default streamer. Also, Streamer requires plugin to be set up too. Its not your job to tell people that after you linked with Github but you mentioned how to add include in the GM, So I said you should mention about plugin too. Good job though.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

@@ -1,0 +1,305 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tool/Web/Other] Check the script for curly bracket mistakes (linux) - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="Hello samp-forum community, I had some problems with curly brackets in the past. I read it also very often already, that people had to deal with these problems already. I just created a tool for findi" />
+<link rel="canonical" href="showthread1b95.html?tid=665470" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthread1b95.html?tid=665470">[Tool/Web/Other] Check the script for curly bracket mistakes (linux)</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Scripting Help (<i>https://sampforum.blast.hk/forumdisplay.php?fid=12</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tutorials (<i>https://sampforum.blast.hk/forumdisplay.php?fid=70</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tool/Web/Other] Check the script for curly bracket mistakes (linux) (<em>/showthread.php?tid=665470</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  05.04.2019
+<br />
+<br />
+Hello samp-forum community,<br />
+<br />
+I had some problems with curly brackets in the past. I read it also very often already, that people had to deal with these problems already.<br />
+<br />
+I just created a tool for finding these curly bracket mistakes and I also tested it. It was really annoying for me to find these curly bracket mistakes. I found them relatively quickly because I know what I have done before etc. but it's better and easier if I use my little tool.<br />
+<br />
+<b>Example code (with the known problem):</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">if(ianduisnotme == 1)
+{
+    put some code in here
+}
+}</pre>
+</div><b>Example code (without the known problem):</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">if(ianduisnotme == 1)
+{
+    put some code in here
+}</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 226px;
+		text-align: left;
+		overflow: auto">Y_Less suggestion:
+How does it deal with code like:
+
+Code:
+
+#if A
+    Func(a) {
+#else
+    Func(b) {
+#endif
+
+
+    }</pre>
+</div>It also deals with this code. <br />
+<br />
+It also tells you if there's a mistake; for instance:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">#if A
+    Func(a) {
+#else
+    Func(b) //Mistake is here
+#endif
+
+
+    }</pre>
+</div>or<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">#if A
+    Func(a) {
+#else
+    Func(b) //Mistake is here, missing opening bracket
+#endif
+
+    //Mistake here also, missing closing bracket</pre>
+</div><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">#if A
+    Func(a) //Mistake here, missing closing bracket
+#else
+    Func(b) //Mistake is here, missing closing bracket
+#endif
+}
+
+    }</pre>
+</div><b>Use:</b><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">perl syncor.pl -f &lt;file.pwn&gt;</pre>
+</div><b><div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">DL-Link (v. 3): <a href="https://drive.******.com/open?id=1XmrkXewtwjX_VW7prC00LYko5SEJ1qeA" target="_blank" rel="noopener" class="mycode_url">https://drive.******.com/open?id=1XmrkXewtwjX_VW7prC00LYko5SEJ1qeA</a></pre>
+</div></b><br />
+<br />
+What doesn't do the script? It doesn't tell you the kind of mistake! It's simply unecessary for you because you know how to script pawno right <img alt="" border="0" class="inlineimg" src="images/smilies/wink.png" title="Wink"/> ?<br />
+<br />
+Have fun and enjoy the future without doing a long long search for the curly bracket mistake!<br />
+<br />
+-Doddinger<br />
+<br />
+PS. If you have any suggestions, simply write them down and reply here.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  05.04.2019
+<br />
+<br />
+I think that I put it in the wrong section. It was not a tutorial. Can a mod move it please to Tools?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  05.04.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreaddf94.html?pid=4092388#pid4092388" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">How does it deal with code like:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto"><font color="Brown">#if A</font>
+    Func(a) {
+<font color="Brown">#else</font>
+    Func(b) {
+<font color="Brown">#endif</font>
+
+
+    }</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>I didn't know about this kind of thing in pawno. Does it exist? If so then I would use another regex and I would add an extra block for it to check it so there won't be a mistake. My current code can't deal with it at the moment.<br />
+I always thought: If there's an opening bracket, then there must be a closing bracket.<br />
+Have to add it then. Thx Y_Less.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  05.04.2019
+<br />
+<br />
+I'm away for now! I add it then (tomorrow for example). Just write your suggestions if you want!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  07.04.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>Y_Less</strong><br />
+<a href="showthreaddf94.html?pid=4092388#pid4092388" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">How does it deal with code like:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 146px;
+		text-align: left;
+		overflow: auto"><font color="Brown">#if A</font>
+    Func(a) {
+<font color="Brown">#else</font>
+    Func(b) {
+<font color="Brown">#endif</font>
+
+
+    }</pre>
+</div></div>
+</td>
+</tr>
+</table>
+</div>I updated it. I simply added two new cases.<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><a href="https://drive.******.com/open?id=1XmrkXewtwjX_VW7prC00LYko5SEJ1qeA" target="_blank" rel="noopener" class="mycode_url">https://drive.******.com/open?id=1XmrkXewtwjX_VW7prC00LYko5SEJ1qeA</a></pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Check the script for curly bracket mistakes (linux) - <a href="memberc97f.html?action=profile&amp;uid=321885">Doddinger</a> -  12.04.2019
+<br />
+<br />
+The script is fully useable now it can also deal with "Y_Less problem" which he tried to make. I'm sorry that I found the time today only and not earlier. I said that I would update it soon but I didn't have the time for it. I had it today. Have fun!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
