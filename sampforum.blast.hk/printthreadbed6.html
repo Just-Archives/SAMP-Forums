@@ -1,0 +1,220 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tool/Web/Other] Pawn Make - A very simple yet powerful build tool - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="PawnMake A very simple yet powerful build tool I'm releasing PawnMake, a build tool I initially made for my personal use. Download Releases Source Description A very simple yet powerful command line t" />
+<link rel="canonical" href="showthreadbed6.html?tid=676075" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadbed6.html?tid=676075">[Tool/Web/Other] Pawn Make - A very simple yet powerful build tool</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tools and Files  (<i>https://sampforum.blast.hk/forumdisplay.php?fid=82</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tool/Web/Other] Pawn Make - A very simple yet powerful build tool (<em>/showthread.php?tid=676075</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+Pawn Make - A very simple yet powerful build tool - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  29.05.2020
+<br />
+<br />
+<div align="center"><font size="7"><font color="Red">Pawn</font>Make</font><br />
+A very simple yet powerful build tool</div>
+I'm releasing PawnMake, a build tool I initially made for my personal use.<br />
+<br />
+<font size="6"><font color="Red">D</font>ownload</font><br />
+<a href="https://github.com/SaSiNO97/PawnMake/releases" target="_blank">Releases</a><br />
+<a href="https://github.com/SaSiNO97/PawnMake" target="_blank">Source</a><br />
+<br />
+<font size="6"><font color="Red">D</font>escription</font><br />
+A very simple yet powerful command line tool which can be used to build Pawn scripts in the form of a project, using a json-based configuration file.<br />
+<br />
+It needs the pawn compiler (in PATH or in the same directory). Currently only working on Windows, being built on .NET Framework 4.7.1, but can be very easily ported to .NET Core, most likely with no changes to the code at all, and it would run on Linux and MacOSX.<br />
+<br />
+<font size="6"><font color="Red">U</font>sage</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">PawnMake &lt;filename.json&gt; [options]</pre>
+</div>Currently the only option available is -r, which means that after building, the programs defined in the Run array should be called.<br />
+<br />
+<font size="6"><font color="Red">E</font>xample input</font><br />
+Example build.json file<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">{
+    "ProjectName" : "Roleplay",
+    "BuildFolders" : [
+        {
+            "SourceFolder" : "src\\gamemodes",
+            "OutputFolder" : "bin\\gamemodes"
+        },
+        {
+            "SourceFolder" : "src\\filterscripts",
+            "OutputFolder" : "bin\\filterscripts"
+        },
+        {
+            "SourceFolder" : "src\\npcmodes",
+            "OutputFolder" : "bin\\npcmodes"
+        }
+    ],
+
+    "IncludeFolders" : [
+        "C:\\pawncc\\include",
+        "src\\include"
+    ],
+
+    "Files" : [
+        "RP.pwn",
+        "RP_Admin.pwn",
+        "RP_Clothes.pwn",
+        "RP_Dealers.pwn",
+        "RP_Friendship.pwn",
+        "RP_Drugs.pwn",
+        "RP_Houses.pwn",
+        "RP_Phone.pwn",
+        "RP_NPC_Intro1.pwn"
+    ],
+
+    "Args" : "-O1 -;+ -(+ -w239 -w214",
+
+    "Run" : [
+        "bin\\samp-server.exe",
+        "bin\\debug.exe"
+    ]
+}</pre>
+</div><b>ProjectName</b>: the displayed project name.<br />
+<br />
+<b>BuildFolders</b>: every BuildFolder entry contains a source and an output folder, which defines that files found in the source folder should be compiled to the output folder. I personally prefer to keep the source separate from the binaries, but if you prefer the default SA-MP server folder structure, you would use the same name for both the source and output settings.<br />
+<br />
+<b>IncludeFolders</b>: defines the folders where the compiler should search for include files.<br />
+<br />
+<b>Files</b>: the list of source code file names, without directory and with the extension.<br />
+<br />
+<b>Args</b>: any additional args you wish to pass to the compiler. For example, pass -w239 to disable warning 239.<br />
+<br />
+<b>Run</b>: the executable files to run after completion, only if the -r arg is passed to the program.<br />
+<br />
+<font size="6"><font color="Red">E</font>xample output</font><br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 402px;
+		text-align: left;
+		overflow: auto">------ Build started - Project: Roleplay ------
+* Compiling src\gamemodes\RP.pwn -&gt; bin\gamemodes\RP.amx
+    src\gamemodes\RP.pwn(271) : warning 204: symbol is assigned a value that is never used: "mapandreasAddress"
+    Pawn compiler 3.10.10                       Copyright &copy; 1997-2006, ITB CompuPhase
+
+
+    1 Warning.
+
+* Compiling src\filterscripts\RP_Admin.pwn -&gt; bin\filterscripts\RP_Admin.amx
+* Compiling src\filterscripts\RP_Clothes.pwn -&gt; bin\filterscripts\RP_Clothes.amx
+    src\filterscripts\RP_Clothes.pwn(475) : error 017: undefined symbol "tmpScore"
+    src\filterscripts\RP_Clothes.pwn(475) : warning 215: expression has no effect
+    Pawn compiler 3.10.10                       Copyright &copy; 1997-2006, ITB CompuPhase
+
+
+    1 Error.
+
+* Skipping src\filterscripts\RP_Dealers.pwn
+* Skipping src\filterscripts\RP_Friendship.pwn
+* Skipping src\filterscripts\RP_Drugs.pwn
+* Skipping src\filterscripts\RP_Houses.pwn
+* Skipping src\filterscripts\RP_Phone.pwn
+* Skipping src\npcmodes\RP_NPC_Intro1.pwn
+========== Build: 2 succeeded, 1 failed, 6 skipped ==========</pre>
+</div>If no errors or warnings were encountered, the pawncc output is ignored, otherwise it is shown after the corresponding line. If a file has been skipped it means that it had no changes since the last build (the .amx file is more recent than the source file).<br />
+<br />
+<br />
+<font size="6"><font color="Red">C</font>onfiguring VSCode</font><br />
+VSCode can be configure to build the script via this program in the tasks.json file. To open this file, simply go to the folder of your project and locate the .vscode folder, or more simply by clicking Task-&gt;Configure Tasks in the VSCode menu.<br />
+<br />
+The following is an example tasks.json:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 418px;
+		text-align: left;
+		overflow: auto">{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "PawnMake.exe",
+            "args": [ "&#36;{workspaceRoot}\\build.json" ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "PawnMake.exe",
+            "args": [ "&#36;{workspaceRoot}\\build.json", "-r" ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}</pre>
+</div>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: Pawn Make - A very simple yet powerful build tool - <a href="memberb6fb.html?action=profile&amp;uid=350233">bestspinner</a> -  29.05.2020
+<br />
+<br />
+Wow, thanks man. Nice job!
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->

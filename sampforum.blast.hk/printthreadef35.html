@@ -1,0 +1,340 @@
+<!DOCTYPE html><!-- start: printthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title> [Tool/Web/Other] bAnticheat [C# Client] - Printable Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="bAnticheat HOW DOES IT WORK? If a server is protected by bAnticheat, a player will only be able to play on it if it has the anticheat client opened in his computer. When a player connects to the serve" />
+<link rel="canonical" href="showthreadef35.html?tid=667208" />
+</head>
+<body>
+<div>
+
+<div><a href="index-2.html"><img src="images/bootbb/logo_forum.gif" alt="SA-MP Forums Archive" title="SA-MP Forums Archive" /></a></div>
+
+
+<div>
+<span class="largetext"> <a href="showthreadef35.html?tid=667208">[Tool/Web/Other] bAnticheat [C# Client]</a> - Printable Version</span><br />
+<br />
++- SA-MP Forums Archive (<em>https://sampforum.blast.hk</em>)<br />
+<!-- start: printthread_nav -->
++-- Forum: SA-MP Scripting and Plugins (<i>https://sampforum.blast.hk/forumdisplay.php?fid=8</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++--- Forum: Filterscripts (<i>https://sampforum.blast.hk/forumdisplay.php?fid=17</i>)<br />
+<!-- end: printthread_nav --><!-- start: printthread_nav -->
++---- Forum: Tools and Files  (<i>https://sampforum.blast.hk/forumdisplay.php?fid=82</i>)<br />
+<!-- end: printthread_nav -->
++---- Thread:  [Tool/Web/Other] bAnticheat [C# Client] (<em>/showthread.php?tid=667208</em>)<br />
+<br />
+</div>
+
+
+<div><br /><hr size="1" /><!-- start: printthread_post -->
+bAnticheat [C# Client] - <a href="member98f5.html?action=profile&amp;uid=181815">bruxo00</a> -  13.06.2019
+<br />
+<br />
+<font face="Trebuchet MS"><br />
+<div align="center">
+<b><font color="Red"><font size="6">bAnticheat</font></font></b><br />
+<img alt="" border="0" src="https://i.gyazo.com/8cae6b9e6779faaa2c94eb413d364458.png"/></div>
+<br />
+<b><font size="5">HOW DOES IT WORK?</font></b><br />
+<br />
+If a server is protected by bAnticheat, a player will only be able to play on it if it has the anticheat client opened in his computer. When a player connects to the server, he will need to input a code that was on the client for authentication purposes. That code will automatically be copied to the player clipboard. After connected, if the player closes the client, uses cheats, or whatever, it will be kicked by the server.<br />
+<br />
+When a player is banned, it's banned through hardware id, meaning it will only be able to join the server if it changes the hardware on the PC. This method can be improved.<br />
+<br />
+<br />
+<b><font size="5">SCHEMA CONFIGURATION</font></b><br />
+<br />
+The first step is to understand the schema that the anticheat uses. When a player connects the anticheat to the server, the server will return a URL that will hold the schema. In this version, it's possible to detect altered game files (via checksum), forbidden files, forbidden directories and forbidden process. This is a simple scheme that I created so you can understand better:<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+<div class="smallfont" style="margin-bottom:2px">PHP Code:</div>
+<div class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px solid #C2C2C2;
+		width: 800px;
+		height: 498px;
+		text-align: left;
+		overflow: auto">
+<code style="white-space:nowrap">
+<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">{
+<br/>  </span><span style="color: #DD0000">"gtaRunning"</span><span style="color: #007700">: </span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br/>  </span><span style="color: #DD0000">"sampRunning"</span><span style="color: #007700">: </span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br/>  </span><span style="color: #DD0000">"monitorProcessesConstantly"</span><span style="color: #007700">: </span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br/>  </span><span style="color: #DD0000">"validationFiles"</span><span style="color: #007700">: [
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"path"</span><span style="color: #007700">: </span><span style="color: #DD0000">"gta_sa.exe"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"hash"</span><span style="color: #007700">: </span><span style="color: #DD0000">"a559aa772fd136379155efa71f00c47aad34bbfeae6196b0fe1047d0645cbd26"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">},
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"path"</span><span style="color: #007700">: </span><span style="color: #DD0000">"newton.dll"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"hash"</span><span style="color: #007700">: </span><span style="color: #DD0000">"5a62625396abcd729d37c969de60b6ff72c36fe8bda4f1ad96a5b97f2e96040b"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">},
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"path"</span><span style="color: #007700">: </span><span style="color: #DD0000">"data/weapon.dat"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"hash"</span><span style="color: #007700">: </span><span style="color: #DD0000">"033b3db45a00464fd95cb28870c97b45b0712f0ac53f3e8c586c88aaa0a420f8"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">}
+<br/>  ],
+<br/>  </span><span style="color: #DD0000">"forbiddenFiles"</span><span style="color: #007700">: [
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"path"</span><span style="color: #007700">: </span><span style="color: #DD0000">"vorbisHooked.dll"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">}
+<br/>  ],
+<br/>  </span><span style="color: #DD0000">"forbiddenDirectories"</span><span style="color: #007700">: [
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"path"</span><span style="color: #007700">: </span><span style="color: #DD0000">"modloader"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">}
+<br/>  ],
+<br/>  </span><span style="color: #DD0000">"forbiddenProcesses"</span><span style="color: #007700">: [
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"name"</span><span style="color: #007700">: </span><span style="color: #DD0000">"cheatengine"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"PREVENT_CONNECT"
+<br/>    </span><span style="color: #007700">},
+<br/>    {
+<br/>      </span><span style="color: #DD0000">"name"</span><span style="color: #007700">: </span><span style="color: #DD0000">"samphack"</span><span style="color: #007700">,
+<br/>      </span><span style="color: #DD0000">"action"</span><span style="color: #007700">: </span><span style="color: #DD0000">"NONE"
+<br/>    </span><span style="color: #007700">}
+<br/>  ]
+<br/>} 
+<br/></span><span style="color: #0000BB"></span>
+</span>
+</code><!-- php buffer end -->
+</code>
+</div>
+</div>This is a JSON object that holds the instructions that the anticheat will understand and execute. Gonna explain every field:<br />
+<br />
+<b>gtaRunning</b> - if <b>true</b>, the AC will be constantly monitoring if GTA is running and also if the running GTA instance is the same that was analysed by the anticheat. This will previne that a player can have multiple installs of GTA, one with cheats and the other one without, and will be always forced to use the clean install. Not having the GTA running or not having the GTA running from the "oficial" location, will result in a kick.<br />
+<br />
+<b>sampRunning</b> - if <b>true</b>, the AC will be constantly monitoring if SAMP is running. It probably can be useful for someone, or in future versions.<br />
+<br />
+<b>monitorProcessesConstantly</b> - if <b>true</b>, the AC will be constantly monitoring the running processes in the player computer. If it founds a forbidden one, he will be kicked.<br />
+<br />
+<b>validationFiles</b> - array of files. The AC will compare the checksums of the player files with the checksum you enter in the schema. If the checksums are different, the AC will execute the action defined for that specific file. At this time, there is only one action avaliable, that is <b>PREVENT_CONNECT</b>, that will prevent the AC to connect to the server. In future versions will be more.<br />
+<br />
+<b>forbiddenFiles</b> - array of files. The AC will verify if any of the forbidden files exist in the GTA directory. If it does, the action for that specific file will be executed.<br />
+<br />
+<b>forbiddenDirectories</b> - array of directories. The AC will verify if any of the forbidden directory exist in the GTA directory. If it does, the action for that specific file will be executed.<br />
+<br />
+<b>forbiddenProcesses</b> - array of processes. The AC will check if any forbidden process is being executed. If it does, the action for that specific process will be executed.<br />
+<br />
+For those who are not familiarized with JSON, you can use this site to try to visualize it better:<br />
+<a href="https://jsoneditoronline.org/" target="_blank">https://jsoneditoronline.org</a><br />
+<br />
+Site to check files checksum (sha256):<br />
+<a href="https://md5file.com/calculator" target="_blank">https://md5file.com/calculator</a><br />
+<br />
+<br />
+<b><font size="5">CONFIGURE FILTERSCRIPT</font></b><br />
+<br />
+First, you will need to create a folder named <b>bac</b> inside the filterscripts. In that folder, create an empty file named <b>uids.txt</b>.<br />
+<br />
+Change the define <b>SECURITY_CODE</b> to the client checksum (compile the client, go to the site above and get the sha256 checksum), if you done any code changes in the client project.<br />
+<br />
+Change the define <b>SCHEMA_URL</b> to the schema created by you. You will need to host it in some place, I recommend pastebin (raw).<br />
+<br />
+Compile.<br />
+<br />
+<b><font size="5">HOW TO CONNECT THE ANTICHEAT</font></b><br />
+<br />
+Open the client, enter the server IP and click connect. If you have done everything right, you will now see the message: <b>Validated. Waiting for player to join.</b> You will also see a 5 digit code near the button. That code will need to be introduced in the server. (Just CTRL+V, it's already in your clipboard)<br />
+<br />
+<br />
+<b><font size="5">PRINTSCREENS</font></b><br />
+<br />
+<b>Interface</b><br />
+<img alt="" border="0" src="https://i.gyazo.com/51825c3f6dae2f92c1988819e2f395d5.png"/><br />
+<br />
+<b>Altered file alert</b><br />
+<img alt="" border="0" src="https://i.gyazo.com/54321a0ef80bbc7800afbdf608681723.png"/><br />
+<br />
+<b>Banned player</b><br />
+<img alt="" border="0" src="https://i.gyazo.com/4f0345f8ca472a61127940a2c3856f6d.png"/><br />
+<br />
+<b>Introduce the join code</b><br />
+<img alt="" border="0" src="https://i.gyazo.com/eeccc5df3b03bffb0bc481a06eb481ea.png"/><br />
+<br />
+<b>If you try to enter without the Anticheat</b><br />
+<img alt="" border="0" src="https://i.gyazo.com/09f14f576c06156cd57ef3280f40719b.png"/><br />
+<br />
+<b><font size="5">DEPENDENCIES</font></b><br />
+<br />
+<a href="https://github.com/oscar-broman/strlib" target="_blank">strlib</a><br />
+<a href="https://github.com/Southclaws/zcmd/blob/master/zcmd.inc" target="_blank">zcmd</a><br />
+<a href="https://github.com/maddinat0r/sscanf/releases" target="_blank">sscanf</a><br />
+<a href="https://mega.nz/#!ScATEAbA!lGz_Ax5_P08RRY4bjE-4x9_JAeklWSmmVDpxRF5WW9k" target="_blank">socket [0.1b] with fixes</a><br />
+<br />
+<b><font size="5">ADMIN COMMANDS</font></b><br />
+<br />
+<b>/bacban</b> - permanently bans a player<br />
+<b>/bacinfo</b> - displays some information about a player<br />
+<br />
+<b><font size="5">DOWNLOADS</font></b><br />
+<br />
+<a href="https://github.com/bruxo00/bAntiCheat/releases/tag/2.0.0" target="_blank"><font size="4">CLIENT</font></a><br />
+<a href="https://github.com/bruxo00/bAntiCheat/archive/master.zip" target="_blank"><font size="4">SOURCE (CLIENT + FILTERSCRIPT)</font></a><br />
+<a href="https://github.com/bruxo00/bAntiCheat" target="_blank"><font size="4">REPOSITORY</font></a><br />
+<br />
+<br />
+</font>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="membera5bf.html?action=profile&amp;uid=183367">GM_KoDi</a> -  13.06.2019
+<br />
+<br />
+Wooow, nice job <img alt="" border="0" class="inlineimg" src="images/smilies/biggrin.png" title="Cheesy"/>
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="member8c7b.html?action=profile&amp;uid=24012">NaS</a> -  13.06.2019
+<br />
+<br />
+There should be a way to know which processes/files are looked for (for the player) before actually joining.<br />
+For example, when the scheme is downloaded and illegal files/processes are found already, there should be a warning to the user before reporting it to the server. That gives them a chance to remove it before getting banned for a harmless vorbisFileHooked.dll or similar. You could make this exclusive to file modifications as those are more likely to happen accidently, as some people use ENB or FPS fixes or an installation with SP mods, vehicle models, etc.<br />
+If they ignore that warning and proceed to join the server anyway, it's their fault for ignoring it.<br />
+<br />
+Also, process names are useless.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="member98f5.html?action=profile&amp;uid=181815">bruxo00</a> -  13.06.2019
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthreade9c1.html?pid=4102084#pid4102084" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">There should be a way to know which processes/files are looked for (for the player) before actually joining.<br />
+For example, when the scheme is downloaded and illegal files/processes are found already, there should be a warning to the user before reporting it to the server. That gives them a chance to remove it before getting banned for a harmless vorbisFileHooked.dll or similar. You could make this exclusive to file modifications as those are more likely to happen accidently, as some people use ENB or FPS fixes or an installation with SP mods, vehicle models, etc.<br />
+If they ignore that warning and proceed to join the server anyway, it's their fault for ignoring it.<br />
+<br />
+Also, process names are useless.</div>
+</td>
+</tr>
+</table>
+</div><div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthreade9c1.html?pid=4102084#pid4102084" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">There should be a way to know which processes/files are looked for (for the player) before actually joining.</div>
+</td>
+</tr>
+</table>
+</div>Do you mean show to the player a list of files/directories/processes that will be scanned?<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthreade9c1.html?pid=4102084#pid4102084" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">For example, when the scheme is downloaded and illegal files/processes are found already, there should be a warning to the user before reporting it to the server. That gives them a chance to remove it before getting banned for a harmless vorbisFileHooked.dll or similar. You could make this exclusive to file modifications as those are more likely to happen accidently, as some people use ENB or FPS fixes or an installation with SP mods, vehicle models, etc.<br />
+If they ignore that warning and proceed to join the server anyway, it's their fault for ignoring it.</div>
+</td>
+</tr>
+</table>
+</div>That's exactly what it does. It connects to the server, scans the files and shows a message in case a file is forbidden/modified. If they connect to the server, it will simply say that the anticheat is not connected. <br />
+<br />
+I don't know which files are "bad" or not, I'm not really in the world of SAMP cheating. The server owner is responsible for that. I'm sure that there are mods and other stuff that don't hurt the gameplay.<br />
+<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr>
+<td class="alt2" style="border: 1px solid #C2C2C2; font-size: 8pt;">
+<div>
+					Originally Posted by <strong>NaS</strong><br />
+<a href="showthreade9c1.html?pid=4102084#pid4102084" rel="nofollow"><img alt="View Post" border="0" class="inlineimg" src="images/buttons/viewpost.gif"/></a><br />
+</div>
+<div style="font-style:italic">Also, process names are useless.</div>
+</td>
+</tr>
+</table>
+</div>Well, it's better than nothing. You say this because it's easy to change a process name, right? The only think I can think of to prevent this is calculate the checksum of every running process and try to find a forbidden one, the only problem is the load I would be putting on the system.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="member7661.html?action=profile&amp;uid=239767">AzaMx</a> -  07.07.2019
+<br />
+<br />
+Client doesn't started?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="membera554.html?action=profile&amp;uid=161134">ToiletDuck</a> -  28.09.2019
+<br />
+<br />
+Hi, is this software good for deployment? any update?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="memberadf8.html?action=profile&amp;uid=111937">Sasino97</a> -  20.04.2020
+<br />
+<br />
+Hi, is it possible to also have a C# server-side part working with SampSharp?
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="member4666.html?action=profile&amp;uid=322592">NimA00GaMeR</a> -  21.04.2020
+<br />
+<br />
+Wow, thanks it's great.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="memberb946.html?action=profile&amp;uid=13213">Chaprnks</a> -  26.04.2020
+<br />
+<br />
+This is an excellent concept, but its unfortunate this will result in banning of ALL mods. Especially those essential .asi based fixes (anticrasher.asi, mousefix.asi, MixSets.asi, fastload.asi). All of those ASI plugins have nothing to do with cheating &amp; actually improve the gameplay experience. Mousefix.asi especially, as for me it fixes some major mouse bugs within GTA SA itself. Not being able to use it would render the whole server unplayable.<br />
+<br />
+In my opinion, completely banning the ASI loader &amp; modloader entirely becomes more harmful than helpful. My suggestion is to add a more in-depth filter, allowing the ASI loader to work; but whitelisting specific ASI plugin hashes. Like a list of known &amp; verified ASI plugins that only improve experience &amp; have zero benefit for cheating.
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --><!-- start: printthread_post -->
+Re: bAnticheat [C# Client] - <a href="member3ea8.html?action=profile&amp;uid=288306">Yukie</a> -  02.05.2020
+<br />
+<br />
+Some server are using this AC, But they're claiming that they create this AC
+<br />
+<br />
+<hr size="1" />
+<!-- end: printthread_post --></div>
+
+</div>
+</body>
+</html>
+<!-- end: printthread -->
